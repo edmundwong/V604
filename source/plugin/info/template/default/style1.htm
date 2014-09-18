@@ -1,0 +1,8 @@
+<script language="javascript" >function killErr(){return true;}var root = "{$sale_config['root']}";</script>
+<script type="text/javascript" src="{$sale_config['sale']}static/js/common.js?{VERHASH}"></script>
+<link rel="stylesheet" type="text/css" href="{$sale_config['sale']}template/{$style}/css/style.css?{VERHASH}" />
+{if $sale_config['header']}<style>#hd{display:none}</style>{/if}
+{if $sale_config['scbar']}<style>#scbar {display:none} </style>  {/if}
+{if $sale_config['diy_css']}<style type="text/css">{$sale_config['diy_css']}</style>{/if}
+{if empty($_GET['diy'])}<style type="text/css">.frame, .frame-tab { background-color:inherit;  border:none; margin:0;}.block { margin:0;}</style>{$_lang['discuz_diy']}{/if}
+<style id="diy_style" type="text/css"></style>

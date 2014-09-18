@@ -1,0 +1,65 @@
+{template house:admin/style}
+<div id="plugin_admin">
+    {if $edit}
+    <h1>{$house_lang['edit']} <a href='admin.php?{$cp_url}'>{$house_lang['return']}</a></h1>
+    <table class='table'>
+    {eval showformheader($self_url); }
+        <input type="hidden" name='area_id'  value='{$edit_array[area_id]}'  />
+        <tr>
+            <th>{$house_lang['area_title']}</th><td><input type='text' class='b' name='area_title' value='{$edit_array[area_title]}' /></td>
+        </tr>
+        <tr>
+            <th>{$house_lang['mark']}</th><td><input type='text' class='m' name='area_remarks' value='{$edit_array[area_remarks]}'  /></td>
+        </tr>
+        <tr>
+            <th>{$house_lang['status']}</th><td>
+            <select  name='area_status'>
+            <option value='1'>{$house_lang['show']}</option>
+            <option value='0'>{$house_lang['hide']}</option>
+            </select></td>
+        </tr>
+        <tr>
+            <th>{$house_lang['sort']}</th><td><input type='text' name='area_sort' value='{$edit_array[area_sort]}'  /></td>
+        </tr>
+        <tr>
+            <th></th><td><input type='submit' name='edit_submit' class='btn' value="{$house_lang['edit']}" /> <a href='admin.php?{$cp_url}'>{$house_lang['return']}</a></td>
+        </tr>
+    {eval showformfooter(); }
+    </table>
+    {else}
+    <h1>1. {$house_lang['admin_area']}</h1>
+    <table class='table'>
+    <tr>
+        <th>ID</th>
+        <th>{$house_lang['area_title']}</th>
+        <th>{$house_lang['mark']}</th>
+        <th>{$house_lang['status']}</th>
+        <th>{$house_lang['sort']}</th>
+        <th>&nbsp;</th>
+    </tr>
+    {if $area_array}
+        {loop $area_array $area}
+        <tr>
+            <td>{$area['area_id']}</td>
+            <td>{$area['area_title']}</td>
+            <td>{$area['area_remarks']}</td>
+            <td>{if $area['area_status']}{$house_lang['show']}{else}{$house_lang['hide']}{/if}</td>
+            <td>{$area['area_sort']}</td>
+            <td><a href="admin.php?{$cp_url}&edit={$area['area_id']}">{$house_lang['edit']}</a> | <a href="admin.php?{$cp_url}&del={$area['area_id']}">{$house_lang['del']}</a></td>
+        </tr>
+        {/loop}
+    {/if}
+    <tr>
+    {eval showformheader($self_url); }
+    <input type='hidden' name='cat_level' value='0' />
+        <td></td>
+        <td><input type='text' name='area_title' class='m' /></td>
+        <td><input type='text' name='area_remarks' /></td>
+        <td><select name='area_status' ><option value=1>{$house_lang['show']}</option><option value=0>{$house_lang['hide']}</option></select></td>
+        <td><input type='text' name='area_sort' /></td>
+        <td><input type='submit' name='submit' value="{$house_lang['add']}" class='btn' /></td>
+     {eval showformfooter(); }
+    </tr>
+    </table>
+    {/if}
+</div>

@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
+	<!--{if $_G['config']['output']['iecompatible']}--><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE{$_G['config']['output']['iecompatible']}" /><!--{/if}-->
+	<title><!--{if !empty($navtitle)}-->$navtitle <!--{/if}--><!--{if empty($nobbname)}--> $_G['setting']['bbname']<!--{/if}--> </title>
+	$_G['setting']['seohead']
+
+	<meta name="keywords" content="{if !empty($metakeywords)}{echo dhtmlspecialchars($metakeywords)}{/if}" />
+	<meta name="description" content="{if !empty($metadescription)}{echo dhtmlspecialchars($metadescription)} {/if}{if empty($nobbname)},$_G['setting']['bbname']{/if}" />
+	<meta name="generator" content="Discuz! $_G['setting']['version']" />
+	<meta name="author" content="Discuz! Team and Comsenz UI Team" />
+	<meta name="copyright" content="2001-2013 Comsenz Inc." />
+	<meta name="MSSmartTagsPreventParsing" content="True" />
+	<meta http-equiv="MSThemeCompatible" content="Yes" />
+	<base href="{$_G['siteurl']}" />
+	<!--{csstemplate}-->
+	<script type="text/javascript">var STYLEID = '{STYLEID}', STATICURL = '{STATICURL}', IMGDIR = '{IMGDIR}', VERHASH = '{VERHASH}', charset = '{CHARSET}', discuz_uid = '$_G[uid]', cookiepre = '{$_G[config][cookie][cookiepre]}', cookiedomain = '{$_G[config][cookie][cookiedomain]}', cookiepath = '{$_G[config][cookie][cookiepath]}', showusercard = '{$_G[setting][showusercard]}', attackevasive = '{$_G[config][security][attackevasive]}', disallowfloat = '{$_G[setting][disallowfloat]}', creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->', defaultstyle = '$_G[style][defaultextstyle]', REPORTURL = '$_G[currenturl_encode]', SITEURL = '$_G[siteurl]', JSPATH = '$_G[setting][jspath]', DYNAMICURL = '$_G[dynamicurl]';</script>
+	<script src="/static/js/jquery-1.9.1.js" type="text/javascript"></script>
+	<script type="text/javascript" src="{$_G[setting][jspath]}common.js?{VERHASH}"></script>
+	<!--{if empty($_GET['diy'])}--><!--{eval $_GET['diy'] = '';}--><!--{/if}-->
+	<!--{if !isset($topic)}--><!--{eval $topic = array();}--><!--{/if}-->
+    <!--{subtemplate common/header_common}-->
+	<meta name="application-name" content="$_G['setting']['bbname']" />
+	<meta name="msapplication-tooltip" content="$_G['setting']['bbname']" />
+	<!--{if $_G['setting']['portalstatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][1]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['portal']) ? 'http://'.$_G['setting']['domain']['app']['portal'] : $_G[siteurl].'portal.php'};icon-uri={$_G[siteurl]}{IMGDIR}/portal.ico" /><!--{/if}-->
+	<meta name="msapplication-task" content="name=$_G['setting']['navs'][2]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['forum']) ? 'http://'.$_G['setting']['domain']['app']['forum'] : $_G[siteurl].'forum.php'};icon-uri={$_G[siteurl]}{IMGDIR}/bbs.ico" />
+	<!--{if $_G['setting']['groupstatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][3]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['group']) ? 'http://'.$_G['setting']['domain']['app']['group'] : $_G[siteurl].'group.php'};icon-uri={$_G[siteurl]}{IMGDIR}/group.ico" /><!--{/if}-->
+	<!--{if helper_access::check_module('feed')}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][4]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['home']) ? 'http://'.$_G['setting']['domain']['app']['home'] : $_G[siteurl].'home.php'};icon-uri={$_G[siteurl]}{IMGDIR}/home.ico" /><!--{/if}-->
+	<!--{if $_G['basescript'] == 'forum' && $_G['setting']['archiver']}-->
+		<link rel="archives" title="$_G['setting']['bbname']" href="{$_G[siteurl]}archiver/" />
+	<!--{/if}-->
+	<!--{if !empty($rsshead)}-->$rsshead<!--{/if}-->
+	<!--{if widthauto()}-->
+		<link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_{STYLEID}_widthauto.css?{VERHASH}" />
+		<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
+	<!--{/if}-->
+	<!--{if $_G['basescript'] == 'forum' || $_G['basescript'] == 'group'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}forum.js?{VERHASH}"></script>
+	<!--{elseif $_G['basescript'] == 'home' || $_G['basescript'] == 'userapp'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}home.js?{VERHASH}"></script>
+	<!--{elseif $_G['basescript'] == 'portal'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+	<!--{/if}-->
+	<!--{if $_G['basescript'] != 'portal' && $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+	<!--{/if}-->
+	<!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+	<link rel="stylesheet" type="text/css" id="diy_common" href="data/cache/style_{STYLEID}_css_diy.css?{VERHASH}" />
+	<!--{/if}-->
+    
+        <link href="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/header.css" rel="stylesheet" type="text/css">
+<link href="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/base.css" rel="stylesheet" type="text/css">
+<link href="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/include.css" rel="stylesheet" type="text/css">
+<link href="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/secondmarket.css" rel="stylesheet" type="text/css">
+    <body style="padding:0 5px !important;min-width:980px !important;max-width:1122px !important;position:relative !important; margin:0 auto;">
+<div class="header-top" style="height:78px; overflow:hidden;">
+  <div class="logo" title="返回首页" >
+    <h1 style="float:left;"><!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}--></h2>
+					</h1>
+    
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  <div class="quick-menu">
+    <ul class="quick-menu-list">
+    <li class="member">
+  <!--{if $_G['uid']}-->
+
+		您好，{$_G[member][username]}
+
+		<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+<!--{elseif !$_G[connectguest]}-->
+
+    您好，欢迎来大温同城！
+
+    <a href="/member.php?mod=logging&action=login">
+
+        [请登录]
+
+    </a>
+    <a href="/member.php?mod=register">
+
+        [免费注册]
+
+    </a>
+
+<!--{/if}--></li>
+      <li class="alipay" title="免费发布个人广告"><a href="/sale.php?mod=choclass" style="color:#f00;">免费发布个人广告</a></li>
+      <li class="alipay" title="发布服务广告"><a href="/info.php?mod=member&op=post">发布服务广告</a></li>
+	  <li class="alipay" title="分类广告"><a href="/sale.php">分类广告</a></li>
+	  <li class="alipay" title="服务黄页"><a href="/info.php">服务黄页</a></li>
+    </ul>
+  </div>
+  <div style="position:relative; float:right;">
+    <div class="channel_top" style="position:absolute; top:47px; width:420px; right:0;">
+      <div class="links">
+	    <a href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">主站</a><span class="sublinks"><a href="/news/">新闻资讯</a>｜<a href="/sale.php">分类广告</a>｜<a href="/info.php">服务黄页</a>｜<a href="/plugin.php?id=dz55625_haodian:haodian">大温店铺</a>｜<a href="/forum.php">社区论坛</a>｜<a href="/home.php">个人空间</a></span>
+      </div>
+    </div>
+  </div>
+</div>

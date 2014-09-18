@@ -1,0 +1,14 @@
+{template common/header_ajax}
+
+<div class="addmapsyh">
+{loop $yhs $yh}
+<h2><strong>{$tmp_lang['youhuititle']}{$yh[title]}</strong><a href="javascript:;" onClick="hideWindow('$_G[gp_handlekey]');" class="flbc" title="{lang close}">{lang close}</a></h2>
+    <ul style=" height:300px; overflow: auto; overflow-x:hidden">
+        {$yh[subject]}
+     {/loop}
+    </ul>
+</div>
+    
+{template common/footer_ajax}
+
+

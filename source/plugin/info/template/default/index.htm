@@ -1,0 +1,160 @@
+<!--{eval include template("info:$style/header");}-->
+
+<style type="text/css">
+.showtab {
+	background-color: #fff;
+	border: 1px solid #ACC3DF;
+	border-bottom: none;
+	font-weight: bold;
+}
+.hidetab {
+}
+ul.wanted_left {
+	height: 38px;
+	width: 100%;
+	margin: 0;
+	padding: 5px 0;
+	position: absolute;
+	left: 0;
+	top: 0px;
+	overflow: hidden;
+}
+ul.wanted_left2 {
+	width: 100%;
+	margin: 0;
+	padding: 5px 0;
+	overflow: hidden;
+}
+ul.wanted_left li {
+	color: #666;
+	padding-left: 5px;
+	line-height: 18px;
+	float: left;
+}
+ul.wanted_left2 li {
+	color: #666;
+	padding-left: 5px;
+	line-height: 18px;
+	float: left;
+}
+ul.wanted_left li h3, ul.wanted_left2 li h3 {
+	margin: 5px 0;
+}
+ul.wanted_left li h3 a, ul.wanted_left2 li h3 a {
+	color: #2244DD;
+	text-decoration: underline;
+	background: none !important;
+	padding-right: 0 !important;
+}
+ul.wanted_left li a, ul.wanted_left2 li a, ul.qita li a {
+	color: #666;
+	text-decoration: none;
+	background: url() no-repeat 100% -829px;
+	padding-right: 20px;
+	display: block;
+	float: left;
+	white-space: nowrap;
+}
+ul.wanted_left li a:visited, ul.wanted_left h3 a:visited, ul.qita li a:visited, ul.wanted_left2 li a:visited, ul.wanted_left2 h3 a:visited {
+	color: #800080;
+}
+ul.wanted_left li a {
+	white-space: nowrap;
+}
+.hid {
+	position: relative;
+	height: 38px;
+	width: 100%;
+	z-index: 100;
+}
+.hidover {
+	background: #fff;
+	border: 1px solid #6694E3;
+	width: 32.8%;
+	_width: 99.8%;
+	position: absolute;
+	z-index: 110;
+}
+
+#wu_fenlei a:visited { color:#636563; }
+#wu_fenlei h3 a:visited { color:#2145de; }
+#wu_fenlei a:hover { color:#e70000; }
+</style>
+<style type="text/css">
+.bod_left { float:left;width:31%;border-right:1px dashed #eee;margin:0 10px 0 5px; padding:5px 0; height:130PX;overflow:hidden;}
+.bod_left li { line-height:21px; }
+.hot ul li { width:8%; }
+body.wanted_index .bod_left {height:101px;}
+
+.bod_left { cursor:pointer; display:block; }
+.bod_left:hover { background:#FFFAE7; }
+.bod_left li { padding:0 0 0 7px; }
+</style>
+<script type="text/javascript" src="{$info_config['info']}static/js/jquery.min.js"></script>
+<script>var jq = jQuery.noConflict();</script>
+<script type="text/javascript" src="{$info_config['info']}static/js/masonry.js"></script>
+<div id="wrapper">
+  <div id="where"><a href="/">首页</a> &gt; <a href="/info.php">服务黄页</a>
+    <div class="wherebg1"> &nbsp;</div>
+    <div class="wherebg2"> &nbsp;</div>
+    <div class="wherebg3"> &nbsp;</div>
+  </div>
+  <form action="{$info_config['root']}?mod=list" method="get" target="_self">
+  <div id="wu_index">
+    <dl>
+      <dt>服务黄页分类&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#333;"><input type="hidden" name="mod" value="list" />
+				            <input type="text" value="{if !empty($keyword)}{$keyword}{else}一个神奇的网站,啥都有!{/if}" onblur="if(this.value=='') this.value='一个神奇的网站,啥都有!';" onfocus="if(this.value=='一个神奇的网站,啥都有!') this.value='';" id="k"  style="color: gray; width:150px;" name="keyword"> <input class="search_bt" type="submit" value="搜索" /></span></dt>
+	  <dd class="wanted_pub" style="position:absolute; top:13px;right:108px;">
+	    <div class="btn_pub"><a href="/sale.php?mod=choclass">免费发布信息</a></div>
+	  </dd>
+      <dd class="index_pub">
+        <div class="jianli_pub"><a href="/info.php?mod=member&op=post">发布服务信息</a></div>
+      </dd>
+    </dl>
+  </div>
+  </form>
+  <div class="fenlei_bg">
+    <div id="wu_fenlei">
+<div class="fenlei_cont">{loop $cat_array $cat}
+                    {if empty($cat['cat_pid'])}
+                    <ul class="bod_left ">
+                        <li><h2 class="info_index_main_block_title">{$cat['cat_title']}</h2><br />
+                            {loop $cat_array $_cat}
+                                {if $_cat['cat_pid'] == $cat['cat_id']}
+                                <a href="{$info_config['root']}?mod=list&subcat_id={$_cat['cat_id']}" target="_blank">{$_cat['cat_title']}({$_cat['sum']})</a>
+                                {/if}
+                            {/loop}
+                            </li>
+                  </ul>
+                    {/if}
+                {/loop}</div>	  </div>
+    </div>
+    <div class="fenlei_cont">
+      <ul class="qita" style="height:60px;">
+        <li class="H_link_blue">
+          <h3 style="padding-bottom:5px;"> 公告 / 联系我们</h3>
+          {$info_config['gonggao']}
+      </ul>
+    </div>
+  </div>
+  <dl class="bottom_columns_b" style="border: 1px solid #ccc; margin: 10px -1px 0 -1px;">
+  <dt style="background: none">服务黄页介绍</dt>
+  <dd><span class="H_jieshao">{$info_config['bangzhu']}</span></dd>
+</dl>
+
+
+
+
+<script type="text/javascript" language="javascript">
+jq(function(){  
+var container = jq('#info_index_main');  
+    container.imagesLoaded( function(){  
+      container.masonry({  
+        itemSelector : '.info_index_main_block'  
+      });  
+    });  
+});
+</script>
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

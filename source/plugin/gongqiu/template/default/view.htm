@@ -1,0 +1,101 @@
+<!--{template common/header}-->
+<!--{eval include template("gongqiu:$style/style");}-->
+
+<div class='brian_main'>
+
+    <!--{eval include template("gongqiu:$style/head");}-->
+    
+    <div class="index_content">
+        <div class="index_content_title">
+            <h1>{$goods['goods_title']}</h1>
+            <div class="index_content_title_subtitle">
+                <div class="z">
+                    {lang gongqiu:member_mypost_htm_6} : {$goods['goods_id']}
+                    {lang gongqiu:member_mypost_htm_8} : {echo dgmdate($goods['goods_time'],'dt');}
+                    {lang gongqiu:view_htm_7}<font color="green">{if $goods['goods_settime']==0}{lang gongqiu:post_htm_20}{elseif $goods['goods_settime']==7}{lang gongqiu:post_htm_21}{elseif $goods['goods_settime']==30}{lang gongqiu:post_htm_22}{elseif $goods['goods_settime']==90}{lang gongqiu:post_htm_23}{elseif $goods['goods_settime']==180}{lang gongqiu:post_htm_24}{/if}</font>
+                    {lang gongqiu:view_htm_13} : <font>{$goods['goods_view']}</font>{lang gongqiu:view_htm_14}
+                </div>
+                <div class="y">
+                    {if $goods['member_uid']==$_G['uid'] || $is_gongqiu_admin}
+                    <a style="color:Red;" href="{$gongqiu_config['root']}?mod=member&op=setpostup&goods_id={$goods['goods_id']}" onclick="showWindow('setpostup',this.href,'get',0);">{lang gongqiu:index_htm_7}</a>
+                    <font color="#333333">|</font>
+                    <a style="color:Red;" href="{$gongqiu_config['root']}?mod=post&op=edit&goods_id={$goods_id}">{lang gongqiu:member_mypost_htm_10}</a>
+                    <font color="#333333">|</font>
+                    <a style="color:Red;" href="{$gongqiu_config['root']}?mod=view&goods_id={$goods_id}&op=del"  onclick="return(confirm('{$_lang['queding_shanchu']}?'))">{lang gongqiu:admin_ad_htm_11}</a>
+                    <font color="#333333">|</font>
+                    {/if}
+                    <a style="color:Red;" href="{$gongqiu_config['root']}?mod=member&op=jubao&goods_id={$goods_id}" onclick="showWindow('jubao',this.href,'get',0);">{lang gongqiu:view_htm_18}</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="index_content_extracontact">
+            <div class="index_content_extracontact_extra">
+                <ul>
+                    <li><span class="des">{$_lang['xinxileixing']} : </span><span class="val">$goods_type_array[$goods['goods_type']]</span></li>
+                    <li><span class="des">{lang gongqiu:member_mypost_htm_7} : </span><span class="val">{if $goods['province']}{$goods['province']}{/if}{if $goods['city']} - {$goods['city']}{/if}{if $goods['dist']} - {$goods['dist']}{/if}{if $goods['community']} - {$goods['community']}{/if}</span></li>
+                    <li><span class="des">{lang gongqiu:admin_cat_htm_3} : </span><span class="val">{if $goods['cat_id']}{$goods['cat_title']}{/if}{if $goods['subcat_id']} - {$goods['subcat_title']}{/if}</span></li>
+                    <li><span class="des">{lang gongqiu:search_htm_12} : </span><span class="val">{if $goods['goods_howtopay']==1}{lang gongqiu:post_htm_35}{elseif $goods['goods_howtopay']==2}{lang gongqiu:post_htm_36}{elseif $goods['goods_howtopay']==3}{lang gongqiu:post_htm_37}{elseif $goods['goods_howtopay']==4}{lang gongqiu:post_htm_38}{/if}</span></li>
+                    <li><span class="des">{lang gongqiu:post_htm_68} : </span><span class="val">{$goods['goods_price']}{lang gongqiu:index_htm_5}</span></li>
+                    <li><span class="des">{lang gongqiu:search_htm_3} : </span><span class="val">{$goods['goods_number']}</span></li>
+                </ul>
+            </div>
+            <div class="index_content_extracontact_contact">
+                <ul>
+                    <li><span class="des">{lang gongqiu:post_htm_57}</span><span class="val">{$member['member_username']} </span></li>
+                    <li><span class="des">{lang gongqiu:post_htm_59}</span><span class="val">{$member['member_phone']} </span> <input type="button" value="{lang gongqiu:view_htm_40}" onclick="window.open('http://www.ip138.com:8080/search.asp?action=mobile&amp;mobile={$member['member_phone']}')" class="button"></li>
+                    <li><span class="des">QQ{lang gongqiu:view_htm_41}</span><span class="val">{$member['member_qq']}</span></li>
+                    <li><span class="des">E-mail{lang gongqiu:view_htm_42}</span><span class="val">{$member['member_email']}</span></li>
+                    <li><span class="des">{lang gongqiu:view_htm_43}</span><span class="val">{echo hidden_ip($goods['goods_ip'])}</span><span style="margin-left:10px; font-size:12px; color:green">{$goods['goods_ip_adr']}</span></li>
+                    <li class="tips"><font color="#FF6600">{lang gongqiu:view_htm_44}</font>{$gongqiu_config['helpnotice']}</li>
+                </ul>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        
+        <div class="index_content" style="margin-top:5px;">
+            <h3 class="h3"><div class="z" style="width:120px;">{lang gongqiu:view_htm_19}</div></h3>
+            <!--{eval include template("gongqiu:$style/share");}-->
+        </div>
+
+        <div class="description">
+            <div class="description_hd">{lang gongqiu:view_htm_45}</div>
+            <div class="description_bd">{$goods['goods_text']}<div>
+                <br />
+                {$gongqiu_config['helpnotice']}</div>
+                {if $goods['goods_upload_file_1']}<a href="{$goods['goods_upload_file_1']}" target="_blank"><img src="{$goods['goods_upload_file_1']}" class="image" alt="{$goods['goods_title']}" title="{lang gongqiu:view_htm_46}" /></a>{/if}
+                {if $goods['goods_upload_file_2']}<a href="{$goods['goods_upload_file_2']}" target="_blank"><img src="{$goods['goods_upload_file_2']}" class="image" alt="{$goods['goods_title']}" title="{lang gongqiu:view_htm_46}"  /></a>{/if}
+                {if $goods['goods_upload_file_3']}<a href="{$goods['goods_upload_file_3']}" target="_blank"><img src="{$goods['goods_upload_file_3']}" class="image" alt="{$goods['goods_title']}" title="{lang gongqiu:view_htm_46}"  /></a>{/if}
+                {if $goods['goods_upload_file_4']}<a href="{$goods['goods_upload_file_4']}" target="_blank"><img src="{$goods['goods_upload_file_4']}" class="image" alt="{$goods['goods_title']}" title="{lang gongqiu:view_htm_46}"  /></a>{/if}
+                <div style="clear:both"></div>
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="relateinfo">
+        <div class="hd">
+			<div class="hd1"><span>{lang gongqiu:view_htm_50}(<a style="color:#ff4500" href="{$gongqiu_config['root']}?mod=post">{lang gongqiu:view_htm_51}</a>)</span></div>
+			<div class="hd2"><span>{lang gongqiu:view_htm_52}</span></div>
+		</div>
+		<div class="bd">
+			<div class="bd1">
+				<ul>
+				    {loop $maybelike $like}
+					<li><span class="ltitle"><a target="_blank" href="{$gongqiu_config['root']}?mod=view&goods_id={$like['goods_id']}" style=" ">{$like['goods_title']}</a></span><span class="ltime">{echo dgmdate($like['goods_time'],'u');}</span></li>
+				    {/loop}
+				</ul>
+			</div>
+			<div class="bd2">
+				<ul>
+				    {loop $maybelike_cat $like}
+						<li><a title="{$like['cat_title']}" href="{$gongqiu_config['root']}?mod=index&cat_id={$like['cat_id']}">{$like['cat_title']}</a></li>
+					{/loop}
+					</ul>
+			</div>
+        </div>
+    </div>
+
+</div>
+
+<!--{template common/footer}-->

@@ -1,0 +1,24 @@
+<table class="tb tb2 ">
+<tr><th colspan="15" class="partition">{$tmp_lang['adminlisth']}($allnum){$tmp_lang['adminjia']}</th></tr>
+</table>
+<table class="tb tb2 ">
+<tr class="header">
+<th>{$tmp_lang['adminbianhao']}</th><th>{$tmp_lang['adminuser']}</th><th>{$tmp_lang['listmc']}</th><th>{$tmp_lang['hometim']}</th><th>{$tmp_lang['xiajiashijian']}</th><th>{$tmp_lang['adminczuo']}</th>
+</tr>
+        
+  {loop $manylist $key $o}
+  <tr class="hover">
+    <td>{echo $key+1+$begin}</td>
+    <td>$o[author]</td>
+    <td>$o[title]</td>
+    <td>{echo date('y-m-d',$o[dateline])}</td>
+    <td>{echo date('y-m-d H:s:i',$o[createtime])}</td>
+    <td>
+    <a href="$appurl&amp;p=del&amp;id=$o[id]" onclick="return confirm('{$tmp_lang['adminshanchutx']}')">{$tmp_lang['adminshanchu']}</a>
+    </td>
+  </tr>
+  {/loop}
+  
+</table>
+<p>&nbsp;</p>
+<div class="cuspages right"><div class="pg">$pagenav</div></div>

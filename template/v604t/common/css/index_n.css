@@ -1,0 +1,154 @@
+/*
+修改后样式
+*/
+.twoList dt:first-child{
+margin-top:5px !important
+}
+.box1 .slide_container{
+margin-bottom:5px
+}
+.box1 .newGgList li {
+margin-top: 2px;
+}
+.translate{
+margin-top:8px
+}
+table.menu tr{
+height:40px
+}
+table.menu td {
+width: 104px; 
+}
+.shreeList .mt15{
+margin-left:5px
+}
+.shreeList{
+margin-left:5px
+}
+.rightBar a {
+margin-top: 4px !important;
+}
+.box2 .imgList {
+width: 250px;
+margin-right: 15px;
+margin-left:10px
+}
+.box2 .foodList li {
+width: 121px;
+height: 121px;
+}
+.twoList dt{
+margin-top:5px !important
+}
+.shreeList .mt10 li a{
+line-height:10px
+}
+.twoList dd{
+line-height:19px
+}
+.box5 .middleBar div {
+margin: 0 0 6px 15px;
+}
+.box5 .middleBar div ul li {
+line-height: 24px;
+}
+.box3 .rightBar dl dd:nth-child(3){
+line-height:18px;
+margin-top:5px
+}
+.box3 .rightBar dl dd.name{
+line-height:16px;
+
+}
+.box3 .rightBar dl{
+margin-top:5px
+}
+.tel{
+line-height:20px
+}
+.fax{
+line-height:15px
+}
+.email{
+margin-top:5px
+}
+.translate{
+line-height:15px;
+margin-top:3px
+}
+.box4 div dl{
+margin-left:0px
+}
+.box5 .rightBar {
+width: 155px;
+}
+.box1 .rightBar {
+width: 155px;
+}
+.newHyList li{
+line-height:18px
+}
+.shreeList  li{
+width: 330px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.meishi  li{
+width: 300px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.luntan  li{
+width: 300px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.middleBar li{
+width: 230px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.imgList li{
+width: 250px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.newHyList li{
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.box1 .newGgList li dt  {
+
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.name p{
+width:180px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.leftBar p, .leftBar dt{
+width:250px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+dt{
+font-weight:bold;
+font-size:16px;
+margin-top:4px
+}
+.mt5{
+margin-top:9px
+}
+.mid a{
+margin-top:5px
+}

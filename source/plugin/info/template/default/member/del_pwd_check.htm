@@ -1,0 +1,88 @@
+<!--{template common/header}-->
+<!--{eval include template("info:$style/style");}-->
+
+
+<script type="text/javascript" src="{$_G['setting']['jspath']}bbcode.js?{VERHASH}"></script>
+
+<div class='brian_main'>
+    <!--{eval include template("info:$style/head");}-->
+{if $ad_array}
+    <div class="top_banner">
+        <ul>
+            {loop $ad_array $ad}
+                <li><a href="{$ad['ad_link']}"><img src="{$ad['ad_pic']}" title="{$ad['ad_title']}" /></a></li>
+            {/loop}
+        </ul>
+        <div style="clear:both"></div>
+    </div>
+ {/if}
+ 
+    <div id="pt" class="bm cl">
+        <span class="z">
+            <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+            <em>&raquo;</em>
+            <a href="{$info_config['root']}">{$info_config['name']}</a>
+            <em>&raquo;</em>
+            <a href="{$info_config['root']}?mod=list&subcat_id={$subcat_id}">{$subcat_title}</a>
+            <em>&raquo;</em>
+        </span>
+        <span class="y">
+            {$info_lang['welcome']} <b>{$_G['username']}</b>
+            <span class="pipe">|</span>
+            {if $_G['uid']}
+            <a href="{$info_config['root']}?mod=member">{$info_lang['member']}</a>
+            {/if}
+        </span>
+    </div>
+    
+    <div class="index_content">
+        <div class="index_content_title">
+            <h1>[{$subcat_title}]{$post['post_title']}</h1>
+            <div class="index_content_title_subtitle cl">
+                <div class="z">
+                    {lang info:space_mypost_htm_6}: {$post['post_id']}
+                    <span class="pipe">|</span>
+                    {lang info:space_mypost_htm_8}: {echo dgmdate($post['post_time'],'dt');}
+                    <span class="pipe">|</span>
+                    {lang info:index_htm_29}: {eval echo date("Y-m-d",$post['post_begin_time']);}
+                    <span class="pipe">|</span>
+                    {lang info:member_apply_htm_6}: {eval echo date("Y-m-d",$post['post_end_time']);}
+                    <span class="pipe">|</span>
+                    {lang info:view_htm_13}: <font>{$post['post_view']}</font>{lang info:view_htm_14}
+                </div>
+                <div class="y">
+                    
+                   <!--  <a style="color:Red;" href="{$info_config['root']}?mod=member&op=setpostup&post_id={$post['post_id']}" onclick="showWindow('setpostup',this.href,'get',0);">{lang info:space_mypost_htm_7}</a> -->
+                    <!-- <font color="#333333">|</font> -->
+                    <a style="color:Red;" href="{$info_config['root']}?mod=member&op=post&ac=edit&subcat_id={$subcat_id}&post_id={$post_id}">{lang info:space_mypost_htm_10}</a>
+                    <font color="#333333">|</font> 
+                    <a style="color:Red;" href="{$info_config['root']}?mod=view&post_id={$post_id}&op=del&check=pwd">{$info_lang['del']}</a>
+                   <!-- <font color="#333333">|</font> -->
+                    
+                   <!--  <a style="color:Red;"  href="{$info_config['root']}?mod=ajax&op=jubao&post_id={$post_id}" onclick="showWindow('jubao_windows',this.href,'get',0);">{lang info:view_htm_18}</a> -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="index_content_extracontact cl">
+            <table class="fix">
+                <tr>
+                    <td>
+                        <!--{eval include template("info:$style/view/view_left");}-->
+                    </td>
+                    
+                    <td style=" width:220px; background-color:#F6F8FA; padding:10px;">
+                        <!--{eval include template("info:$style/view/view_right");}-->
+                    </td>
+                </tr>
+            </table>
+        </div>
+</div>
+</div>
+
+<div class="brian_box pd5 bgf">
+    <div  style="line-height:23px;">{$info_config['topnotice']}</div>
+</div>
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

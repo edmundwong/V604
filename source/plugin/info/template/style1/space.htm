@@ -1,0 +1,80 @@
+<!--{template common/header}-->
+<!--{eval include template("info:$style/style");}-->
+
+
+<div class='brian_main'>
+    <!--{eval include template("info:$style/head");}-->
+    
+    <div class="location">
+        {lang info:index_htm_1} : <a href="{$info_config['root']}">{$info_config['name']}</a>
+        <code> > </code>
+        <a href="{$info_config['root']}>{$pre_city['name']}</a>
+            {$post['post_title']}
+    <span class="y">
+        {if $op != 'view'}
+            <b>{lang info:index_htm_1} : {$_G['username']}</b>
+            <span class="pipe">|</span>
+            <a href="{$info_config['root']}?mod=space">{lang info:index_htm_2}</a>
+            <span class="pipe">|</span>
+            <a href="{$info_config['root']}?mod=space&op=view">{lang info:index_htm_3}</a>
+            <span class="pipe">|</span>
+            <a href="{$info_config['root']}?mod=space&op=fav">{lang info:index_htm_4}</a>
+         {/if}
+        &nbsp;
+    </span>
+    </div>
+    
+    {if $op!='view'}
+    <div class="brian_space">
+        <div class="brian_space_left">
+            {if $is_company}
+            <ul>
+                <li><a href="{$info_config['root']}?mod=space&op=post" {if $op=='post'} class="hover" {/if}>{lang info:space_htm_3}</a></li>
+            </ul>
+            <ul>
+                <li><a href="{$info_config['root']}?mod=space&op=mypost" {if $op=='mypost'} class="hover" {/if}>{lang info:space_view_htm_12}</a></li>
+                <li><a href="{$info_config['root']}?mod=space&op=mypostup" {if $op=='mypostup'} class="hover" {/if}>{lang info:space_htm_5}</a></li>
+            </ul>
+            <ul>
+                <li><a href="{$info_config['root']}?mod=space&op=fav" {if $op=='fav'} class="hover" {/if}>{lang info:index_htm_4}</a></li>
+            </ul>
+            <ul>
+                <li><a href="{$info_config['root']}?mod=space&op=view" target="_blank">{lang info:index_htm_3}</a></li>
+                <li><a href="{$info_config['root']}?mod=space&op=company" {if $op=='company'} class="hover" {/if}>{lang info:space_htm_6}</a></li>
+            </ul>
+            <ul>
+                <li><a href="{$info_config['root']}?mod=space&op=mycredit" {if $op=='mycredit'} class="hover" {/if}>{lang info:space_htm_7}{$info_config['credit_unit']}</a></li>
+                <li><a  href="{$info_config['chongzhi']}" target="_blank">{lang info:space_mypost_htm_9}{$info_config['credit_unit']}</a></li>
+            </ul>
+            {else}
+                <ul>
+                    <li><a href="{$info_config['root']}?mod=space&op=member" {if $op=='member'} class="hover" {/if}>{lang info:space_htm_6}</a></li>
+                </ul>
+            {/if}
+        </div>
+        <div class="brian_space_right">
+            <!--{if $op =='mypost' || $op =='mypostup'}-->
+                <!--{eval include template("info:$style/space/space_mypost");}-->
+            <!--{elseif $op =='member'}-->
+                <!--{eval include template("info:$style/space/space_member");}-->
+            <!--{elseif $op =='company'}-->
+                <!--{eval include template("info:$style/space/space_company");}-->
+            <!--{elseif $op =='mycredit'}-->
+                <!--{eval include template("info:$style/space/space_mycredit");}-->
+            <!--{elseif $op =='setpostup'}-->
+                <!--{eval include template("info:$style/space/space_setpostup");}-->
+            <!--{elseif $op =='post' || $op =='edit'}-->
+                <!--{eval include template("info:$style/space/space_post");}-->
+            <!--{elseif $op =='fav'}-->
+                <!--{eval include template("info:$style/space/space_fav");}-->
+            <!--{/if}-->
+        </div>
+    </div>
+    {else}
+        <!--{eval include template("info:$style/space/space_view");}-->
+    {/if}
+
+</div>
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

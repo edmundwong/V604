@@ -1,0 +1,39 @@
+<table class="tb tb2 ">
+<tr><th colspan="15" class="partition">{$tmp_lang['y_chuang']}</th></tr>
+</table>
+<table class="tb tb2 ">
+<style type="text/css">
+#addonsdiy{ width:960px; overflow:hidden; border-bottom:1px #e3e3e3 solid}
+.ie6 #addonsdiy ul{ width:960px;}
+#addonsdiy ul{ width:980px;}
+#addonsdiy dl{ width:219px; padding:10px; float:left}
+#addonsdiy dt{ width:40px; height:40px; float:left }
+#addonsdiy dd{ width:160px; float:left; height:40px; padding-left:10px }
+#addonsdiy dd p{ color:#999 }
+#addonsdiy dd p a{ color:#2775C8; font-family:"Î¢ÈíÑÅºÚ","ËÎÌå"; font-size:12px;}
+#addonsdiy dd p a:hover{ color: #C00}
+
+#addonsdis{ width:960px; overflow:hidden; border-top:1px #e3e3e3 solid; }
+#addonsdis ul{}
+#addonsdis ul li{ width:100%; border-bottom:1px #e3e3e3 solid; height:30px; line-height:30px}
+
+</style>
+<div class="wp cl z" id="addonsdis">
+<ul>
+{$tmp_lang['c_chuang']}
+</ul>
+</div>
+
+<div class="wp cl" id="addonsdiy">
+<ul class="z cl">
+
+{loop $value $k $var}
+<!--{if $k!=2315 && $k!=2106 && $k!=3552}-->
+    <dl class="cl" onmouseover="this.style.background='#FFFDE6'" onmouseout="this.style.background=''"><dt><a href="{$var[url]}" target="_blank"><img src="{$var[logo]}" /></a></dt><dd><p><a href="{$var[url]}" target="_blank">{$var[name]}</a></p><p>{$tmp_lang['b_chuang']} ({$var[downloads]})</p></dd></dl>
+<!--{/if}-->    
+{/loop}
+</ul>
+</div>
+
+
+</table>

@@ -1,0 +1,70 @@
+<div class="cl " style="margin-bottom:5px;">
+    <div class="z brian_box" style="width:200px; height:280px; overflow:hidden;">
+        <h2 class="h2">{$_lang['zhidingxinxi']}</h2>
+        <div class="pd10">
+            <ul class="cl">
+            {loop $top_left_goods_list $list}
+                <li class="cl" style="height:20px; overflow:hidden;">
+                    <div class="mainbox_bd_right_list_title z" style="width:120px; overflow:hidden;"><b style="font-size:20px; height:20px; overflow:hidden; line-height:15px;">&sdot;</b> <a href="{$sale_config['root']}?mod=view&goods_id={$list['goods_id']}" target="_blank" >{$list['goods_title']}</a></div>
+                    <div class="mainbox_bd_right_list_cat y" style="width:50px; overflow:hidden;">{$list['cat_title']}</div>
+                </li>
+           {/loop}
+            </ul>
+        </div>
+    </div>
+    <div class="z brian_box pd5" style="margin-left:5px; width:495px; overflow:hidden;">
+        <div class="rollbox">
+            <div onmouseout="ISL_StopUp()" onmouseup="ISL_StopUp()" onmousedown="ISL_GoUp()" class="leftbotton"></div>
+            <div id="isl_cont" class="cont">
+            <div class="scrcont">
+               <div id="list_scr1">
+                 <div class="scrpic">
+                    <ul>
+                         {loop $top_goods_list $list}
+                        <li><a class="scrpicimg" href="{$sale_config['root']}?mod=view&goods_id={$list['goods_id']}" target="_blank" ><img src="{$list['goods_upload_file_1']}"  title="{$list['goods_title']}" /></a><a target="_blank" href="{$sale_config['root']}?mod=view&goods_id={$list['goods_id']}" >{$list['goods_title']}</a><br><b>{lang sale:member_mycredit_htm_2}{$list['goods_price']} {$_lang['money']}</b></li>
+                 	    {/loop}
+                     </ul>
+                 </div>
+               </div>
+               <div id="list_scr2"></div>
+              </div>
+         </div>
+            <div onmouseout="isl_stopdown()" onmouseup="isl_stopdown()" onmousedown="isl_godown()" class="rightbotton"></div>
+        </div>
+        <script type="text/javascript" src="{$sale_config['sale']}template/{$style}/js/gd.js"></script>
+        <div style="border-top:1px solid #e1e1e1;">
+                <ul class="cl pd5">
+                {loop $new_hot_goods_list $list}
+                    <li class="cl z" style="height:20px; width:240px; overflow:hidden;">
+                        <b style="font-size:20px; height:20px; overflow:hidden; line-height:15px;">&sdot;</b> <a href="{$sale_config['root']}?mod=view&goods_id={$list['goods_id']}" target="_blank" >{$list['goods_title']}</a>
+                    </li>
+               {/loop}
+                </ul>
+        </div>
+    </div>
+    <div class="y" style="width:240px; overflow:hidden;">
+        <div class="brian_box">
+            <h2 class="h2">{$_lang['remenxinxi']}</h2>
+            <div class="pd10">
+                <ul class="cl">
+                {loop $top_hot_goods_list $list}
+                    <li class="cl" style="height:20px; overflow:hidden;">
+                        <div class="mainbox_bd_right_list_title z" style="width:160px; overflow:hidden;"><b style="font-size:20px; height:20px; overflow:hidden; line-height:15px;">&sdot;</b> <a href="{$sale_config['root']}?mod=view&goods_id={$list['goods_id']}" target="_blank" >{$list['goods_title']}</a></div>
+                        <div class="mainbox_bd_right_list_cat y" style="width:50px; overflow:hidden;">{$list['cat_title']}</div>
+                    </li>
+               {/loop}
+                </ul>
+            </div>
+        </div>
+        <div class="brian_box" style="height:122px; overflow:hidden;">
+            <h2 class="h2">{$_lang['zaqizaba']}</h2>
+            <div class="pd5 cl">
+                {loop $cat_array $cat}
+                    {if $cat['cat_pid']==0}
+                   <a style="padding:0 5px; line-height:20px;" href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}">{$cat['cat_title']}</a>
+                    {/if}
+                {/loop}
+            </div>
+        </div>
+    </div>
+</div>

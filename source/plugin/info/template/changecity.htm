@@ -1,0 +1,43 @@
+<!--{template common/header}-->
+
+    <h3 class="flb" style="background-color:#FF6D00;">
+	    <em id="return_{$_GET['handlekey']}" style="color:#fff; font-weight:normal;">{$info_config['changecity_title']}: </em>
+	    <span>
+		    <a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']')" title="{lang close}" style="background-position:0 -20px;">{lang close}</a>
+	    </span>
+    </h3>
+
+    <div class="c altw" style="width:700px;">
+    
+<div class="cl" style=" padding:10px;">
+    <div style="border-bottom:1px dashed #ccc; margin-bottom:10px; padding-bottom:10px;">
+        
+         <span style=" width:80px; display:inline-block; text-align:right; font-size:14px;color:#CC0000; font-weight:normal;">{$info_lang['admin_area_htm_11']} : </span>
+        {loop $area_array $area}
+        {if empty($area['area_pid']) && $area['area_hot'] =='1' }
+            <a href="{$info_config['root']}?mod=index&area_id={$area['area_id']}" style="color:#0064D3; font-size:14px; margin-right:10px;">{$area['area_title']}</a>
+            {/if}
+        {/loop}
+    </div>
+        <table style="width:100%;">
+            {loop $area_keys $ak}
+            {if !empty($ak)}
+                    <tr style="border-bottom:1px dashed #e1e1e1;">
+                        <td style="text-align:center; width:40px;"><span style="font-size:16px;color:#CC0000;  ">{$ak}</span></td>
+                        <td style="padding:5px 0;">
+                        
+                        {loop $area_array $area}
+                            {if empty($area['area_pid']) && $area['area_key'] ==$ak }
+                                <a href="{$info_config['root']}?mod=index&area_id={$area['area_id']}" style="color:#0064D3; font-size:14px; margin-right:10px; white-space:nowrap;">{$area['area_title']}</a>
+                            {/if}
+                        {/loop}
+                        </td>
+                    </tr>
+                {/if}
+            {/loop}
+        </table>
+</div>
+
+</div>
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

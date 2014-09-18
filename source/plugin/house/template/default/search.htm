@@ -1,0 +1,40 @@
+<div class="category_menu2">
+    <span><strong>{lang house:post_htm_68} : </strong><input type="text" name="goods_price_begin" /> {lang house:search_htm_2} <input type="text"  name="goods_price_end" /></span>
+    <span style="display:none;"><strong>{lang house:search_htm_3} : </strong><input type="text" /> {lang house:search_htm_2} <input type="text" /></span>
+    <span><strong>{lang house:search_htm_5} : </strong><input type="text" style="width:170px;" name="goods_keyword" /> <input type="submit" class="pnc pn" value="&nbsp;{lang house:search_htm_6}&nbsp;" /></span>
+</div>
+<div class="infoselect">
+    <div class="infoselect_left">
+        <div class="pages_sort">
+            <strong>{lang house:search_htm_7} : </strong>
+            <a {if empty($goods_selltype) } class="active"{/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}">{lang house:search_htm_8}</a>
+            <a {if strstr($goods_selltype,'sell')} class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}&goods_selltype=sell">{lang house:index_htm_8}</a>
+            <a {if strstr($goods_selltype,'swap')} class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}&goods_selltype=swap">{lang house:index_htm_9}</a>
+            <a {if strstr($goods_selltype,'give')} class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}&goods_selltype=give">{lang house:index_htm_10}</a>
+        </div>
+        <div class="pages_sort">
+            <strong>{lang house:search_htm_12} : </strong>
+            <a {if empty($goods_howtopay) } class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}">{lang house:search_htm_8}</a>
+            <a {if $goods_howtopay==1} class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}&goods_howtopay=1">{lang house:post_htm_35}</a>
+            <a {if $goods_howtopay==2} class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}&goods_howtopay=2">{lang house:post_htm_36}</a>
+            <a {if $goods_howtopay==3} class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}&goods_howtopay=3">{lang house:post_htm_37}</a>
+            <a {if $goods_howtopay==4} class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}&goods_howtopay=4">{lang house:post_htm_38}</a>
+        </div>
+        <div class="pages_sort">
+            <strong>{lang house:search_htm_18} : </strong>
+            <a {if empty($goods_newold) } class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}">{lang house:search_htm_8}</a>
+            <a {if $goods_newold==1} class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}&goods_newold=1">{lang house:index_htm_12}</a>
+            <a {if $goods_newold==9} class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}&goods_newold=9">9{lang house:index_htm_13}</a>
+            <a {if $goods_newold==8} class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}&goods_newold=8">8{lang house:index_htm_13}</a>
+            <a {if $goods_newold==7} class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}&goods_newold=7">7{lang house:index_htm_13}</a>
+            <a {if $goods_newold==6} class="active" {/if} href="{$house_config['root']}?mod=index&upid={$upid}&level={$level}&category_id={$category_id}&goods_newold=6">6{lang house:search_htm_24}</a>
+        </div>
+    </div>
+    <div class="infoselect_right">
+        <pre>{$house_config['topnotice']}</pre>
+    </div>
+</div>
+<div class="underselect">
+    <span class="z"><strong>{$house_config['name']}</strong></span>
+    <span class="y">{lang house:search_htm_25} : <b style="color:#f54100">{$pagenum}</b>, {lang house:search_htm_26}! &nbsp; <a href="{$house_config['root']}?mod=post"><img src="{$house_config['siteurl']}source/plugin/house/template/{$style}/css/images/postbg.gif" /></a></span>
+</div>

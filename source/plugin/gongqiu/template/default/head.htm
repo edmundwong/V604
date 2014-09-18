@@ -1,0 +1,32 @@
+<div id="pt" class="bm cl">
+    <span class="z">
+        <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+        <em>&raquo;</em>
+        <a href="{$gongqiu_config['root']}">{$gongqiu_config['name']}</a>
+        {if $pre_area['name']}
+            <em>&raquo;</em>
+            <a href="{$gongqiu_config['root']}?mod=index&upid={$pre_area['id']}">{$pre_area['name']}</a>
+        {/if}
+        {if !empty($cat_title)}
+            <em>&raquo;</em>
+            {$cat_title}
+        {/if}
+        {if !empty($goods['goods_title'])}
+            <em>&raquo;</em>
+            {$goods['goods_title']}
+        {/if}
+        
+    </span>
+    
+    <span class="y">
+        {if $_G['uid']}
+        <a href="{$gongqiu_config['root']}?mod=member"> {lang gongqiu:index_htm_2}</a>
+        <span class="pipe">|</span>
+        <a href="{$gongqiu_config['root']}?mod=member"> {lang gongqiu:index_htm_3}</a>
+        <span class="pipe">|</span>
+        <a href="{$gongqiu_config['root']}?mod=member&op=mycredit"> {$gongqiu_config['credit_unit']}{lang gongqiu:index_htm_4}</a>
+        &nbsp;
+            {/if}
+    </span>
+
+</div>

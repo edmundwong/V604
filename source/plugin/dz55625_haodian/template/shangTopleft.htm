@@ -1,0 +1,302 @@
+<div class="Contentboxz"> 
+<!--{if $p == 'index' || $p==''}-->
+<div id="con_ss_1">
+<div style="width:650px;" class="cl">
+<div class="shangSop cl">
+<ul class="z">
+	<li><strong>{$tmp_lang['yytimex']}</strong>{$mythread[yy_ztime]} - {$mythread[yy_wtime]}</li>
+</ul>
+<ol class="y">
+	<li><!--{if !empty({$mythread[taobao]})}-->[ <a href="{$mythread[taobao]}" target="_blank" style="color:#067296">{$tmp_lang['webdianpu']}</a> ]<!--{/if}-->&nbsp;&nbsp;[ <a onclick="showWindow('guanlian', 'plugin.php?id=dz55625_haodian:haodian_fs&action=listinfc&zid={$mythread[uid]}', 'get', 0)" href="javascript:;" style="color:#067296">{$tmp_lang['v_guanlian']}</a> ]<!--{if $mythread[author] == $_G['username']}-->&nbsp;&nbsp;[ <a href=" plugin.php?id=dz55625_haodian:haodian_user&p=edit&sid=$_GET['sid']" target="_blank" style="color:#067296">{$tmp_lang['b_jisss']}</a> ]<!--{/if}--></li>
+</ol>
+</div>
+<div class="shangTop cl">
+    <!--{if $mythread[click]==1}--><span id="vips"></span><!--{/if}-->
+    <h2>
+    <div><span>{$tmp_lang['fangwl']}</span> <em>+{echo $mythread[hits]+$mythread[hitsa]}</em></div>
+        <!--{if !empty($mythread[pic])}-->
+            <img src="{$mythread[pic]}">
+            <!--{else}-->
+            <img src="source/plugin/dz55625_haodian/images/over3.jpg" />
+        <!--{/if}-->
+        <img src="plugin.php?id=dz55625_haodian:haodian_click&sid=$_GET['sid']" style="display:none"/>
+    </h2>
+    <ul>
+        <li><strong>{$mythread[title]}</strong></li>
+        <li><span>{$tmp_lang['homeaddress']}</span> {$mythread[address]}</li>
+        <li><span>{$tmp_lang['hometel']}</span> {$mythread[tel]}</li>
+        <li><span>{$tmp_lang['listtese']}</span> <!--{if !empty({$mythread[tese]})}-->{$mythread[tese]}<!--{else}-->{$tmp_lang['listzanwu']}<!--{/if}--></li>
+    </ul>
+    <ol>
+    	<li><!--{if !empty($Ystart) }--><a href="<!--{if $RewriteStart == 1}-->{$curl}_vy{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=yuyue&sid={$_GET['sid']}<!--{/if}-->" id="yuyues">{$tmp_lang['Wyuyue']}</a><!--{/if}--></li>
+        <li><!--{if $iscouStart=='1'}--><!--{if !empty($iscoupon) && !empty($coupon_status) }--><a href="javascript:;" onclick="showWindow('huoquyhj', 'plugin.php?id=dz55625_haodian_coupon:coupon_cardpup&aid=$_GET['sid']', 'get', 0)" id="youhuis">{$tmp_lang['huoquyhj']}</a><!--{/if}--><!--{else}--><!--{if $mythread[click]==1}-->
+        <!--{if !empty($iscoupon) && !empty($coupon_status) }--><a href="javascript:;" onclick="showWindow('huoquyhj', 'plugin.php?id=dz55625_haodian_coupon:coupon_cardpup&aid=$_GET['sid']', 'get', 0)"  id="youhuis">{$tmp_lang['huoquyhj']}</a><!--{/if}--><!--{/if}--><!--{/if}--></li>
+    </ol>
+    
+</div>
+
+<!--{if $mythread[sad]>'0'}-->
+    <!--{if $zkstart == 1 && $active[click] == 1}-->
+    <div class="shangZop cl">
+        <ul>
+            <p id="Suser"><span>{$tmp_lang['Suser']}</span><em>{$mythread[sad]}</em></p>
+            <p id="Stext">{$mythread[zkoubj]}</p>
+        </ul>
+    </div>
+    <!--{elseif $zkstart == 2}-->
+    <div class="shangZop cl">
+        <ul>
+            <p id="Suser"><span>{$tmp_lang['Suser']}</span><em>{$mythread[sad]}</em></p>
+            <p id="Stext">{$mythread[zkoubj]}</p>
+        </ul>
+    </div>
+    <!--{/if}-->
+<!--{/if}-->  
+
+<div class="shangTopx cl">
+<ul>
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<a class="bds_tsina"></a>
+<a class="bds_qzone"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<a class="bds_kaixin001"></a>
+<a class="bds_sqq"></a>
+<a class="bds_qq"></a>
+<a class="bds_hi"></a>
+<a class="bds_mogujie"></a>
+<a class="bds_ty"></a>
+<a class="bds_twi"></a>
+<a class="bds_fbook"></a>
+<span class="bds_more">{$tmp_lang['moregengs']}</span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+<dl><a onclick="showWindow('miscreport', 'misc.php?mod=report&amp;url='+REPORTURL);return false;" href="javascript:;">{$tmp_lang['jubaoxx']}</a></dl>
+</ul>
+</div>
+</div>
+
+<div class="conzs cl">
+<h2><strong>{$tmp_lang['shangabout']}</strong></h2>
+<ul>
+    <!--{if !empty($mythread[summary])}-->
+       		{$mythread[summary]}
+        <!--{else}-->
+        	{$tmp_lang['zanshiwner']}
+    <!--{/if}-->
+</ul> 
+</div>
+
+<div id="con_ss_8" class="cl">
+<h3><strong>{$tmp_lang['listdianzs']}</strong><span><a href="<!--{if $RewriteStart == 1}-->{$curl}_vp{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=listpic&sid={$_GET['sid']}<!--{/if}-->">{$tmp_lang['moregeng']}</a></span></h3>
+<!--{if $piccount!=0}-->
+    <ul>
+        <!--{eval $j = 0;}-->
+            <!--{loop $shopimgs $key $shopimg}-->
+                                 <!--{if $j>=4}-->
+                                <!--{eval break;}-->
+                         <!--{/if}-->
+                         <!--{eval $j = $j+1;}-->
+                         
+               
+                    <li>
+                        <a href="<!--{if $RewriteStart == 1}-->{$curl}_vp{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=listpic&sid={$_GET['sid']}<!--{/if}-->"><img alt="" src="{$shopimg[shrink_url]}" /></a>
+                
+            <!--{/loop}-->
+    </ul>
+    <!--{else}-->
+     <ol>
+     	<!--{if $mythread[author] == $_G['username']}-->{$tmp_lang['wupicsj']}<!--{else}-->{$tmp_lang['wupicsjs']}<!--{/if}-->
+     </ol>       
+    <!--{/if}-->
+</div>
+
+<!--{if $display==0}--><div class="addkk" style="margin:0; padding:0"><h3>{$tmp_lang['booktx']}</h3></div><!--{/if}-->  
+
+
+<script type="text/javascript">
+function checkLength(which) {
+	var maxChars = 140;
+	if (which.value.length > maxChars)
+	which.value = which.value.substring(0,maxChars);
+	var curr = maxChars - which.value.length;
+	document.getElementById("chLeft").innerHTML = curr.toString();
+}
+var jqp = jQuery.noConflict(); 	
+var ltupper=["2","4","6","8","10"];
+jqp(document).ready(function(){
+  jqp('.star_rating li a').each(function(){
+	  jqp(this).click(function(){						
+          var lt=getStars(jqp(this).attr('class'));
+		  
+		  jqp('#stars').val(lt);
+		  jqp('#selectStars').text(ltupper[lt-1]+'{$tmp_lang['homefen']}');
+		  jqp('.star_rating li a').slice(0,lt).css({'background':'url(source/plugin/dz55625_haodian/images/yellow.jpg)'});
+		  jqp('.star_rating li a').slice(lt,5).css({'background':'url(source/plugin/dz55625_haodian/images/while.jpg)'});
+	  })
+  })
+  jqp('.star_rating li a').hover(function(){
+	  var lt=getStars(jqp(this).attr('class'));
+	  
+		  jqp('.star_rating li a').slice(0,lt).css({'background':'url(source/plugin/dz55625_haodian/images/yellow.jpg)'});
+		  jqp('.star_rating li a').slice(lt,5).css({'background':'url(source/plugin/dz55625_haodian/images/while.jpg)'});
+		  jqp('#selectStars').text(ltupper[lt-1]+'{$tmp_lang['homefen']}');
+  },function(){
+	  var lt=Number(jqp('#stars').val());
+	  if(lt==""){
+		 jqp('#selectStars').text('{$tmp_lang['dafenshu']}');
+	  }else{
+		  jqp('#selectStars').text(ltupper[lt-1]+'{$tmp_lang['homefen']}');
+	  }
+	  jqp('.star_rating li a').slice(0,lt).css({'background':'url(source/plugin/dz55625_haodian/images/yellow.jpg)'});
+	  jqp('.star_rating li a').slice(lt,5).css({'background':'url(source/plugin/dz55625_haodian/images/while.jpg)'});
+  })
+})
+//通过类名判断星星数
+function getStars(stars){
+	var re=1;
+	switch(stars){
+		case 'one_star':re=1;break;
+		case 'two_stars':re=2;break;
+		case 'three_stars':re=3;break;
+		case 'four_stars':re=4;break;
+		case 'five_stars':re=5;break;
+	}
+	return re;
+}
+</script>
+<div id="con_ss_4" class="cl">
+<h3><strong>{$tmp_lang['userbook']}</strong></h3>
+<div id="pingluns" class="cl">
+<dl>
+
+<form method="post" action="plugin.php?id=dz55625_haodian:haodian&mod=view&applysubmit=true" name="applyform">
+    <input type="hidden" name="display" id="display" value="$mythread[display]" />
+    <input type="hidden" name="sid" id="sid" value="{$mythread[id]}" />
+    <input type="hidden" name="formhash" value="{FORMHASH}" />
+		<dt>
+         
+        <strong>
+           <ul class="star_rating">
+               <li><a href="javascript:void(0)" title="2 of 10 stars" class="one_star">2</a></li>
+               <li><a href="javascript:void(0)" title="4 of 10 stars" class="two_stars">4</a></li>
+               <li><a href="javascript:void(0)" title="6 of 10 stars" class="three_stars">6</a></li>
+               <li><a href="javascript:void(0)" title="8 of 10 stars" class="four_stars">8</a></li>
+               <li><a href="javascript:void(0)" title="10 of 10 stars" class="five_stars">10</a></li>
+               <li style="display:none;"><input type="hidden" id="stars" name="total" value="" /></li>
+              </ul>
+              <span id="selectStars" style="padding-left:10px;">{$tmp_lang['dafenshu']}</span>
+        </strong>
+        <small>{$tmp_lang['listksr']}<span id="chLeft">140</span>{$tmp_lang['listgz']}</small>
+           
+          </dt>  
+        <dd id="textareas"><textarea rows="3" cols="40" name="message" class="pt" id="replymessage" onkeyup="checkLength(this);"></textarea></dd>
+       <dd id="buttons"> <button type="submit" name="applysubmit" id="applysubmit" value="true" />{$tmp_lang['listtjj']}</button></dd>
+</form>
+</dl> 
+</div>
+
+<script language="javascript">
+function ajax_haodian(page){
+		var cx={id:'dz55625_haodian:haodian_pl_ajax',page:page,sid:{$sid}}
+		jq.ajax({
+			url: "plugin.php",  
+			type: "POST",
+			data:cx,
+			 dataType: "json",
+			 error: function(){  
+			},  
+			 success: function(ajax_data){
+				if(ajax_data.counts>0){
+					data=ajax_data.data;
+					var s="";
+					for(var i=0;i<data.length;i++){
+						s+=' <dl class="cl">'+
+			'<dt><img src="{$uc}/avatar.php?uid='+data[i].uid+'&size=small"></dt><dd>'+
+            
+                '<p class="aui"><strong>'+data[i].author+'</strong>';
+				if("{$mythread[author]}"==="{$_G['username']}"){
+					s+='<em><a href="javascript:;" onclick="showWindow(\'hf\', \'plugin.php?id=dz55625_haodian:haodian_hf&op=hf&sid='+data[i].id+'\', \'get\', 0)" class="xi3">{$tmp_lang['huifusss']}</a> | <a href="plugin.php?id=dz55625_haodian:haodian_hf&op=del&sid={$_G[gp_sid]}&did='+data[i].id+'">{$tmp_lang['adminshanchu']}</a></em>';
+				}
+				s+='<span>{$tmp_lang['listfb']} '+data[i].dateline+'</span></p>'+
+                '<p class="aum">'+data[i].message+'</p>';
+				if(data[i].nickback){
+					s+='<p class="ahf">{$tmp_lang['dzhuifus']} '+data[i].nickback+'</p>';
+				}
+                
+            s+='</dd></dl>';
+					}
+					jq("#h_list").html(jq("#h_list").html()+s);
+					if((parseInt(ajax_data.page)*parseInt(ajax_data.pagenum))<ajax_data.counts){
+						jq("#pl_multis").html("<a href='javascript:ajax_haodian("+(ajax_data.page+1)+")' >{$tmp_lang['chaxung']}</a>");
+					}else{
+						jq("#pl_multis").html("");
+					}
+				}else{
+					jq("#h_list").html('<ul class="cl erroe">{$tmp_lang['homerprno']}</ul>');
+				}
+			}
+		 });
+	}
+</script>
+
+
+<div class="pl cl" id="h_list">
+        
+</div>
+<div id="pl_multis"></div>
+<script language="javascript" >ajax_haodian(1);</script>
+
+</div>
+
+</div>
+<!--{elseif $p == 'listpic'}-->
+<div id="con_ss_2">
+<ol>
+    <link rel="stylesheet" type="text/css" href="source/plugin/dz55625_haodian/images/fancybox.css" />
+    <script type="text/javascript" src="source/plugin/dz55625_haodian/images/jquery.fancybox-1.3.1.pack.js"></script>
+    <script type="text/javascript">
+    var jqs = jQuery.noConflict(); 
+    jqs(function(){ 
+        jqs("a[rel=group]").fancybox({ 
+            'titlePosition' : 'over', 
+            'cyclic'        : true, 
+            'titleFormat'    : function(title, currentArray, currentIndex, currentOpts) { 
+                        return '<span id="fancybox-title-over">' + (currentIndex + 1) + 
+     ' / ' + currentArray.length + (title.length ? '   ' + title : '') + '</span>'; 
+                    } 
+        }); 
+    });
+    </script>
+    <!--{template dz55625_haodian:photos}-->
+    <div class="pages cl">{$pmulti}</div>
+</ol>
+</div>
+<!--{elseif $p == 'news'}-->
+<div id="con_ss_5">
+ <!--{template dz55625_haodian:view_news}-->
+</div>
+<!--{elseif $p == 'shop'}-->
+<div id="con_ss_6">
+<ul>
+<!--{template dz55625_haodian:view_shop}-->
+</ul>
+</div>
+<!--{elseif $p == 'yuyue'}-->
+<div id="con_ss_7">
+<ul>
+<!--{template dz55625_haodian:view_yuyue}-->
+</ul>
+</div>
+<!--{/if}-->  
+
+</div>

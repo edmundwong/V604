@@ -1,0 +1,142 @@
+<div id="pt" class="bm cl">
+    <span class="z">
+        <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+        <em>&raquo;</em>
+        <a href="{$house_config['root']}">{$house_config['name']}</a>
+        <em>&raquo;</em>
+        <a href="{$house_config['root']}?mod=loupan">{$house_lang['loupan']}</a>
+
+        {if $pre_area['uname']}
+            <em>&raquo;</em>
+            <a href="{$house_config['root']}?mod=loupan&level={$area_level}&upid={$pre_area['upid']}">{$pre_area['uname']}</a>
+        {/if}
+        <em>&raquo;</em>
+        <a href="{$house_config['root']}?mod=loupan&level={$pre_area['level']}&upid={$pre_area['id']}">{$pre_area['name']}</a>
+     </span>
+     
+    <span class="y">
+        {$house_lang['welcome']} <b>{$_G['username']}</b>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=list&profile_type_id=1">{$house_lang['rent']}</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=list&profile_type_id=2">{$house_lang['need_rent']}</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=list&profile_type_id=3">{$house_lang['sell']}</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=list&profile_type_id=5">{$house_lang['need_sell']}</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=loupan">{$house_lang['loupan']}</a>
+        {if $_G['uid']}
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=member">{$house_lang['member']}</a>
+        {if $is_house_admin}
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=admin">{$house_lang['admin_main_1']}</a>
+        {/if}
+        {/if}
+    </span>
+</div>
+
+
+<div class="brian_box bgf house_list_search">
+    <h1 class="h1">{$house_lang['search']}</h1>
+    <table class="fix brian_select_table">
+        {if $area_array}
+        <tr>
+            <td style="width:60px;" class="tr pd5">{$house_lang['area']}: </td>
+            <td class="pd5">
+                {loop $area_array $area}
+                    <a href="{$house_config['root']}?mod=loupan&level={$area['level']}&upid={$area['id']}">{$area['name']}</a>
+                {/loop}
+            </td>
+        </tr>
+        {/if}
+        <tr>
+            <td style="width:60px;" class="tr pd5">{$house_lang['loupan_type']}: </td>
+            <td class="pd5">
+                <a href="{$house_config['root']}?mod=loupan&level={$area_level}&upid={$upid}" {if empty($loupan_type)} class="hover" {/if}>{lang house:list_htm_20}</a>
+                <a href="{$house_config['root']}?mod=loupan&level={$area_level}&upid={$upid}&loupan_type={$house_lang['loupan_type_1']}" {if $loupan_type==$house_lang['loupan_type_1']} class="hover" {/if}>{$house_lang['loupan_type_1']}</a>
+                <a href="{$house_config['root']}?mod=loupan&level={$area_level}&upid={$upid}&loupan_type={$house_lang['loupan_type_2']}" {if $loupan_type==$house_lang['loupan_type_2']} class="hover" {/if}>{$house_lang['loupan_type_2']}</a>
+                <a href="{$house_config['root']}?mod=loupan&level={$area_level}&upid={$upid}&loupan_type={$house_lang['loupan_type_3']}" {if $loupan_type==$house_lang['loupan_type_3']} class="hover" {/if}>{$house_lang['loupan_type_3']}</a>
+                <a href="{$house_config['root']}?mod=loupan&level={$area_level}&upid={$upid}&loupan_type={$house_lang['loupan_type_4']}" {if $loupan_type==$house_lang['loupan_type_4']} class="hover" {/if}>{$house_lang['loupan_type_4']}</a>
+                <a href="{$house_config['root']}?mod=loupan&level={$area_level}&upid={$upid}&loupan_type={$house_lang['loupan_type_5']}" {if $loupan_type==$house_lang['loupan_type_5']} class="hover" {/if}>{$house_lang['loupan_type_5']}</a>
+                <a href="{$house_config['root']}?mod=loupan&level={$area_level}&upid={$upid}&loupan_type={$house_lang['loupan_type_6']}" {if $loupan_type==$house_lang['loupan_type_6']} class="hover" {/if}>{$house_lang['loupan_type_6']}</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:60px;" class="tr pd5">{$house_lang['loupan_junjia']}: </td>
+            <td class="pd5">
+                <a href="{$house_config['root']}?mod={$mod}&profile_type_id={$profile_type_id}" {if empty($_GET['loupan_junjia_2'])} class="hover" {/if}>{lang house:list_htm_20}</a>
+                <input type="text" id="loupan_junjia_1" value="{$loupan_junjia_1}" class="text {if isset($_GET['loupan_junjia_2'])} border_orange {/if}" style="width:50px;"  />
+                <span class="pipe">-</span>
+                <input type="text" id="loupan_junjia_2" value="{$loupan_junjia_2}" class="text {if isset($_GET['loupan_junjia_2'])} border_orange {/if}" style="width:50px;" /> {$house_lang['yuan']}/{$house_lang['admin_post_loupan_htm_2']}
+                <a href="javascript:;" onclick="list_check_btn('loupan_junjia');" class="btn" >{$house_lang['saixuan']}</a>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:60px;" class="tr pd5">{$house_lang['loupan_title']}: </td>
+            <td class="pd5">
+                <a href="{$house_config['root']}?mod={$mod}&profile_type_id={$profile_type_id}" {if empty($_GET['loupan_title'])} class="hover" {/if}>{lang house:list_htm_20}</a>
+                <input type="text" name="loupan_title" id="loupan_title" class="text {if isset($_GET['loupan_title'])} border_orange {/if}" value="{$loupan_title}"  style="width:177px;" />
+                <a href="javascript:;" onclick="list_seach_word('loupan_title');" class="btn" >{$house_lang['search']}</a>
+            </td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        function list_check_btn(id){
+            var urlnow = '{$urlnow}';
+            location.href = urlnow + '&'+id+'_1=' + $(id+'_1').value + '&'+id+'_2=' + $(id+'_2').value;
+        }
+        function  list_seach_word(id){
+            var urlnow = '{$urlnow}';
+            location.href = urlnow + '&'+id+'='+$(id).value;
+        }
+    </script>
+</div>
+
+
+<div class="brian_box pd5 bgf">
+    <div class="brian_post_list">
+        <div class="brian_post_list_cat cl">
+            <span class="z" style="font-size:14px;">{if $pre_area['uname']}{$pre_area['uname']}{/if} {$pre_area['name']} {$house_lang['loupan_index_1']} <b style="color:#FF6600;">{$pagenum}</b> {$house_lang['loupan_index_2']}</span>
+            <span class="y">
+                <a href="{$house_config['root']}?mod=admin&op=post_loupan" class="btn red" {if !$_G['uid']}  onclick="showWindow('login', this.href);return false;" {/if} >+ {$house_lang['post_loupan']}</a>
+            </span>
+        </div>
+        
+        <table class="dt mtm" style="text-align:left;">
+              <tr>
+                <th style="width:200px;"></th>
+                <th>{$house_lang['loupan_info']}</th>
+                <th style="width:150px;">{$house_lang['loupan_company']}</th>
+                <th style="width:150px; ">{$house_lang['loupan_junjia']}</th>
+              </tr>
+             {eval $list_i =0;}
+             {loop $post_array $post}
+            <tr class="li {if $list_i==1} brian_post_list_bg {/if}" onmouseover="this.className='li hover'" onmouseout="this.className='li {if $list_i==1}brian_post_list_bg{/if} '" style="border:none;">
+                <td class="tdimg"><a href="{$house_config['root']}?mod=loupan&op=view&lid={$post['loupan_id']}">{if $post['loupan_img']}<img src="{$post['loupan_img']}" />{else}<img src="{$house_config['house']}static/images/nophotosmall.gif" />{/if}</a></td>
+                <td class="tdtxq" style="vertical-align:top;">
+                    <a href="{$house_config['root']}?mod=loupan&op=view&lid={$post['loupan_id']}" style="font-size:16px; line-height:30px; color:#663300;">{$post['loupan_title']}</a></b> 
+                    <p>{$house_lang['loupan_addr']}: {$post['loupan_addr']}</p>
+                    <p>{$house_lang['loupan_zhuli']}: {$post['loupan_zhuli']}</p>
+                    <p>{$house_lang['loupan_type']}: {$post['loupan_type']}</p>
+                    <p>{$house_lang['area']}: {$post['province']} {$post['city']} {$post['dist']} {$post['community']}</p>
+                </td>
+                <td>{$post['loupan_company']}</td>
+                <td style="text-align:center;"><b style="font-size:18px; color:#FF6600;">{$house_lang['junjia']} {$post['loupan_junjia']}</b>
+                <p style="text-align:center; ">{$house_lang['yuan']}/{$house_lang['admin_post_loupan_htm_2']}</p></td>
+            </tr>
+            {if $list_i ==1}
+                {eval $list_i =0;}
+            {else}
+                {eval $list_i =1;}
+            {/if}
+             {/loop}
+        </table>
+        <div class="cl">{$multipage}</div>
+    </div>
+</div>
+
+<div class="brian_box pd5 bgf">
+    <div  style="line-height:23px;">{$house_config['topnotice']}</div>
+</div>

@@ -1,0 +1,181 @@
+<!--{eval include template("info:$style/style");}-->
+<!--{template info:admin/style}-->
+
+<div id="plugin_admin" class=" brian_main brian_box pd5 bgf">
+    <h1 class="h1">服务信息审核</h1>
+<style type="text/css" >
+.txt{width:300px;}
+</style>
+<form method="POST" name=""  action="/admin.php?action=plugins&operation=config&do=21&identifier=info&pmod=admin_neirong&dcj_action=doedit">
+    <table class="tb tb2 ">
+       <tbody>
+           <tr class="hover">
+               <td class="td25">
+                                                   标题
+               </td>
+               <td>
+                   <input class="txt" type="text" name="post_title" value="{$s['post_title']}"  />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                   编辑密码
+               </td>
+               <td>
+                   <input class="txt" type="text" name="pwd" value="{$s['pwd']}"  />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                   主栏目
+               </td>
+               <td>
+                   <input class="txt" type="text" name="cat_title" value="{$s['cat_title']}"  />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                   次栏目
+               </td>
+               <td>
+                   <input class="txt" type="text" name="subcat_title" value="{$s['subcat_title']}"  />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                   		地区
+               </td>
+               <td>
+                   <input class="txt" type="text" name="area_title" value="{$s['area_title']}"  />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                  市区
+               </td>
+               <td>
+                   <input class="txt" type="text" name="subarea_title" value="{$s['subarea_title']}"  />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                   联系人
+               </td>
+               <td>
+                   <input class="txt" type="text" name="member_username" value="{$s['member_username']}"  />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                   联系地址
+               </td>
+               <td>
+                   <input class="txt" type="text" name="address1" value="{$s['address1']}"  />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                   信息内容
+               </td>
+               <td>
+                   <textarea name="post_text">{$s['post_text']}</textarea>
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                   图片1
+               </td>
+               <td>
+                   <img src="/{$s['post_img_1']}" />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                   图片2
+               </td>
+               <td>
+                   <img name="" src="/{$s['post_img_2']}" />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                   图片3
+               </td>
+               <td>
+                   <img src="/{$s['post_img_3']}" />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                   图片4
+               </td>
+               <td>
+                   <img src="/{$s['post_img_4']}" />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                 QQ
+               </td>
+               <td>
+                   <input class="txt" type="text" name="qq" value="{$s['qq']}"  />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                   电话
+               </td>
+               <td>
+                   <input class="txt" type="text" name="tel" value="{$s['tel']}"  />
+               </td>
+           </tr>
+           <tr class="hover">
+               <td class="td25">
+                                                   邮件
+               </td>
+               <td>
+                   <input class="txt" type="text" name="email" value="{$s['email']}"  />
+               </td>
+           </tr>
+       </tbody>
+       <script type="text/javascript" src="/{$_G['setting']['jspath']}calendar.js?{VERHASH}"></script>
+       <script type="text/javascript" src="/static/js/bbcode.js?{VERHASH}"></script>
+        <tbody>
+        <tr>
+            <td>开始时间</td>
+             <td colspan=6>
+                 <div class="fixsel">
+                     <input type="text"  name="post_begin_time" onclick="showcalendar(event, this)" value="{$s['post_begin_time']}" />:<font color="red">审核不通过将时间设置为0即可</font>
+                 </div>
+             </td>
+         </tr>
+          <tr>
+            <td>结束时间</td>
+             <td colspan=6>
+                 <div class="fixsel">
+                     <input type="text"  name="post_end_time" onclick="showcalendar(event, this)" value="{$s['post_end_time']}" />
+                 </div>
+             </td>
+         </tr>
+         <tr>
+            <td>金额$</td>
+             <td colspan=6>
+                 <div class="fixsel">
+                     <input type="text"  name="price" value="{$s['price']}" />
+                 </div>
+             </td>
+         </tr>
+            <tr>
+                <td></td>
+                <td colspan=6>
+                    <div class="fixsel">
+                    <input name="post_id" type="hidden" value="{$s['post_id']}" />
+                        <input type="submit" class="btn"  name="editsubmit" value="{$info_lang['loupan_view_kanfang_htm_4']}" />
+                    <font color="red">只有时间可以修改！只有时间可以修改！开始的时间设置为0，为审核不通过</font>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+</div>

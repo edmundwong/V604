@@ -1,0 +1,50 @@
+<!--{eval include template("info:$style/header");}-->
+<div class="nav_bottom_line"></div>
+<p style="padding:8px;"></p>
+
+ <link href="{$info_config['siteurl']}source/plugin/info/template/{$style}/post/postb.css" rel="stylesheet" type="text/css">
+ 
+ <div id="content" style="margin:0 auto;">
+  <div class="w760" style="width:950px;">
+    <div id="nav">
+      <ul>
+        
+        <li id="nav1"class="{if !isset($_GET['cat_id']) || !empty($cat_id) } on {/if} ">选择发布类型</li>
+                    <li id="nav2">填写详细信息</li>
+                    <li id="nav3" class="info_select_step_3">发布成功</li>
+                </div>
+      </ul>
+    </div>
+    <div class="blank20"></div>
+
+	<h2 style="color:red; padding:5px 0">请在下边选择一个合适的类目来完成发布↓</h2>
+    
+    <div class="fuwu" id="secondCategory" style="width:970px;">
+			  <h2 style="padding: 5px 0pt;">您将要发布<span style="color:red;">提供服务</span>信息，请选择详细的类目：</h2>
+    <ul class="category">
+                   {if !isset($_GET['cat_id'])}
+                        {loop $cat_array $cat}
+                            {if empty($cat['cat_pid'])}
+                            <li><a href="{$info_config['root']}?mod=select&cat_id={$cat['cat_id']}">{$cat['cat_title']}</a></li>
+                            {/if}
+                        {/loop}
+                    {elseif !empty($cat_id)}
+                        {loop $cat_array $cat}
+                            {if $cat['cat_pid'] ==$cat_id}
+                            <li><a href="{$info_config['root']}?mod=member&op=post&subcat_id={$cat['cat_id']}">{$cat['cat_title']}</a></li>
+                            {/if}
+                        {/loop}
+                    {/if}
+               </ul>
+               </div>
+    
+  </div>
+</div>
+ 
+<div class='brian_main'>
+    
+    
+    
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

@@ -1,0 +1,20 @@
+<div class="house_daohang cl" style="border-radius:4px;">
+    <div class="house_daohang_left z">
+        <a href="{$house_config['root']}">{$house_config['name']}</a>
+    </div>
+    <div class="y">
+        <a href="{$house_config['root']}?mod=list&profile_type_id=1" {if $profile_type_id==1}class="hover"{/if}>{$house_lang['rent']}</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=list&profile_type_id=2" {if $profile_type_id==2}class="hover"{/if}>{$house_lang['need_rent']}</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=list&profile_type_id=3" {if $profile_type_id==3}class="hover"{/if}>{$house_lang['sell']}</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=list&profile_type_id=5" {if $profile_type_id==5}class="hover"{/if}>{$house_lang['need_sell']}</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=loupan" {if $mod=="loupan"}class="hover"{/if}>{$house_lang['loupan']}</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['borker_link']}" target="_blank">{$house_lang['borker_link']}</a>
+    </div>
+</div>
+
+<div style="clear:both;"></div>

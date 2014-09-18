@@ -1,0 +1,36 @@
+{template common/header_ajax}
+
+<div class="userAddyh">
+    <h2><strong>{$tmp_lang['youhuisedit']}</strong><a href="javascript:;" onClick="hideWindow('$_G[gp_handlekey]');" class="flbc" title="{lang close}">{lang close}</a></h2>
+    <ul>
+    <form method="post" action="plugin.php?id=dz55625_haodian:haodian_yh&action=yh&youhui=edit&applysubyhs=true" name="applyforms">
+		<input type="hidden" name="referer" value="$_G[referer]">
+		<input type="hidden" name="formhash" value="{FORMHASH}" />
+        <input type="hidden" name="newid" value="$active[id]" />
+        <input name="title" type="text" id="title" size="50" value="$active[title]" />
+     
+    <select name="dian_id" style="width:180px; height:24px">
+      <!--{loop $zuyongs $zuyong}-->
+     	 <!--{if $zuyong[click]==1}-->
+     		 <option value="{$zuyong[id]}" {if $zuyong[id] == $active[aid]}selected="selected"{/if}>{$zuyong[title]}</option>
+     	 <!--{/if}-->  
+      <!--{/loop}-->
+    </select>
+         <div class="tedt">
+              <div class="bar">
+					<!--{eval $seditor = array('propaganda', array('bold', 'color', 'link', 'img'));}-->
+					<!--{subtemplate common/seditor}-->
+              </div>
+                <textarea id="propagandamessage" class="pt" name="subject">{$active[subject]}</textarea>
+            </div>
+        
+        <div style="text-align:center; margin:10px auto 0;">
+            <button type="submit" name="applysubyhs" id="applysubyhs" class="pn pnc" value="true"><strong style="font-weight:normal;">{$tmp_lang['listtjj']}</strong></button>
+        </div>
+    </form>
+    </ul>
+</div>
+    
+{template common/footer_ajax}
+
+

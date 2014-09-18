@@ -1,0 +1,59 @@
+<!--{template common/header}-->
+<!--{eval include template("sale:$style/style");}-->
+
+<div class='brian_main'>
+    <div class="top_banner">
+        <ul>
+            <li><a href="#"><img src="{$sale_config['siteurl']}source/plugin/sale/banner/1.gif" /></a></li>
+            <li><a href="#"><img src="{$sale_config['siteurl']}source/plugin/sale/banner/2.gif" /></a></li>
+            <li><a href="#"><img src="{$sale_config['siteurl']}source/plugin/sale/banner/3.gif" /></a></li>
+            <li><a href="#"><img src="{$sale_config['siteurl']}source/plugin/sale/banner/4.gif" /></a></li>
+            <li><a href="#"><img src="{$sale_config['siteurl']}source/plugin/sale/banner/5.gif" /></a></li>
+            <li><a href="#"><img src="{$sale_config['siteurl']}source/plugin/sale/banner/6.gif" /></a></li>
+            <li><a href="#"><img src="{$sale_config['siteurl']}source/plugin/sale/banner/1.gif" /></a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    
+    <div class="location">
+        <span class="y"></span>
+        {lang sale:index_htm_1} : <a href="{$sale_config['root']}">{$sale_config['name']}</a>
+        <code> > </code>
+        <a href="{$sale_config['root']}?mod=member"> {lang sale:index_htm_2}</a>
+        <code> > </code>
+    </div>
+    
+    <div class="brian_member">
+        <div class="brian_member_left">
+            <ul>
+                <li><a href="{$sale_config['root']}?mod=post">{lang sale:member_htm_3}</a></li>
+                <li><a href="{$sale_config['root']}?mod=member&op=mypost" {if $op=='mypost'} class="hover" {/if}>{lang sale:index_htm_3}</a></li>
+                <li><a href="{$sale_config['root']}?mod=member&op=mypostup"  {if $op=='mypostup'} class="hover" {/if}>{lang sale:member_htm_5}</a></li>
+            </ul>
+            <ul>
+                <li><a href="{$sale_config['root']}?mod=member&op=memberinfo"  {if $op=='memberinfo'} class="hover" {/if}>{lang sale:member_htm_6}</a></li>
+                <li><a href="{$sale_config['root']}?mod=member&op=mycredit"  {if $op=='mycredit'} class="hover" {/if}>{lang sale:member_htm_7}</a></li>
+                <li><a  href="{$sale_config['chongzhi']}" target="_blank">{$sale_config['credit_unit']}{lang sale:index_htm_4}</a></li>
+            </ul>
+            <ul style="display:none;">
+                <li><a href="{$sale_config['root']}?mod=member&op=kefu"  {if $op=='kefu'} class="hover" {/if}>{lang sale:member_htm_9}</a></li>
+            </ul>
+        </div>
+        <div class="brian_member_right">
+            <!--{if $op =='mypost'}-->
+                <!--{eval include template("sale:$style/member/member_mypost");}-->
+            <!--{elseif $op =='mypostup'}-->
+                <!--{eval include template("sale:$style/member/member_mypost");}-->
+            <!--{elseif $op =='memberinfo'}-->
+                <!--{eval include template("sale:$style/member/member_memberinfo");}-->
+            <!--{elseif $op =='mycredit'}-->
+                <!--{eval include template("sale:$style/member/member_mycredit");}-->
+             <!--{elseif $op =='setpostup'}-->
+                <!--{eval include template("sale:$style/member/member_setpostup");}-->
+            <!--{/if}-->
+        </div>
+    </div>
+
+</div>
+
+<!--{template common/footer}-->

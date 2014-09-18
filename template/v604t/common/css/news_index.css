@@ -1,0 +1,108 @@
+.box5 .leftBar .twoList dt, .box2 .textListTwo .twoList dt, .box1 .newZxList .twoList dt{margin-top:0;}
+.box1 .rslides{ height:290px;}
+.box1 .newFocusList{width:290px;}
+.right h3{color:#fc6328; font-size:14px; text-indent:10px;}
+.box1 .slide .caption{width:100%;}
+.box1 .slide_container{float:none;}
+.news_nav li a {
+padding: 2px 5px;
+margin: 8px 3px 0;
+height: 25px;
+line-height: 25px;
+display: block;
+font-size: 14px;
+color: #a5a5a5;
+}
+.news_nav li a:hover{text-decoration:none; background:#fc6328; color:#fff;}
+.right{
+float:right
+}
+.time{float:right;color:#9c9c9c;font-size:12px}
+.twoList dt{
+margin-top:5px !important
+}
+.twoList dd{
+line-height:20px
+}
+.twoList dt:first-child{
+margin-top:0px !important
+}
+.chongfu2_liebiao ul{
+margin-top:5px
+}
+.chongfu2_liebiao{
+margin-top:12px !important
+}
+.chongfu2 div:first-child {
+margin-top:0px !important
+}
+.chongfu2_liebiao h2{
+font-weight:bold;
+width: 340px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.chongfu2_liebiao  a:first-child{
+text-decoration:none
+}
+.news_right_text {
+margin-top: 0px;
+}
+.each4 li{
+line-height:28px
+}
+.each4 li:nth-child(5n-4){
+margin-top:10px
+}
+.shreeList li{
+line-height:20px;
+}
+.news_right_text li a{
+line-height:20px
+}
+.news_right_text li:first-child{
+margin-top:10px
+}
+.chongfu2_liebiao li{
+line-height:20px;
+
+}
+.chongfu1_list li{
+line-height:20px;
+width: 285px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.chongfu2_liebiao a:nth-child(2){
+line-height:18px
+}
+.news_right li:first-child{
+margin: 5px 0;
+}
+.news_right li div p{
+height:50px;
+text-overflow:ellipsis;
+}
+.news_right li div a {
+color: #9c9c9c;
+}
+.box1 .newZxList .shreeList li span:first-child {
+width: 260px;
+overflow: hidden;
+/*white-space: nowrap;*/
+text-overflow: ellipsis;display:inline-block;
+line-height:16px
+}
+.newZxList .shreeList li{
+line-height:19.5px !important;
+}
+.news_right strong{
+width: 190px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+line-height:16px;
+display: inline-block;
+}

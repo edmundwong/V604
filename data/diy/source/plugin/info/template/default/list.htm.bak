@@ -1,0 +1,336 @@
+<!--{eval include template("info:$style/header");}-->
+<!--{eval include template("info:$style/style");}-->
+
+<div id="wrapper">
+  <div id="where">
+<a href="./">$_G[setting][bbname]</a>
+        <em>&raquo;</em>
+        <a href="/info.php">服务黄页</a>
+       
+        <div class="wherebg1">&nbsp;</div>
+    <div class="wherebg2">&nbsp;</div>
+    <div class="wherebg3">&nbsp;</div>
+  </div>
+  <div id="wu_index">
+    <dl>
+      <dt>分类广告</dt>
+      <dd class="wanted_pub" style="position:absolute; top:13px;right:215px;">
+        <div class="btn_pub"><a href="/sale.php?mod=choclass">免费发布信息</a></div>
+      </dd>
+      <dd class="index_pub" style="position:relative; top:5px;right:110px;">
+        <div class="jianli_pub"><a href="/info.php?mod=member&op=post">发布服务信息</a></div>
+      </dd>
+      <dd style="position:absolute; top:37px;right:10px;">
+        <div><strong>|&nbsp;&nbsp;<a href="sale.php?mod=member&step=check">管理我的信息</a></strong></div>
+      </dd>
+    </dl>
+  </div>
+
+<style type="text/css">
+ul.wanted_left2 li h3 { margin:0; }
+/*
+.bd1f { border:1px solid #fff; }
+.bd1fover { border:1px solid #6694E3; }
+*/
+.bd1f { border:0; }
+.bd1fover { border:0; }
+.wanted_left2 li h3 a:hover { color:#e40000; }
+.wanted_left2 li h3 a:visited { color:#2244DD; }
+.training_hot ul { overflow:hidden;padding:10px 10px 2px 10px;;clear:both;margin:0;width:98%; }
+.training_hot ul li.title { font:14px arial,simsun;font-weight:bold;padding-right:0;margin-right:0; }
+.training_hot ul li { font:14px arial,simsun !important;font-weight:bold !important;padding-right:18px; }
+.training_hot ul li a, .training_hot ul li a:visited, .wanted_left2 li h3 a, .wanted_left2 li h3 a:visited { color:#2244DD !important; }
+.training_hot ul li a:hover, .wanted_left2 li h3 a:hover { color:#e70000 !important; }
+.wanted_left2 li a, .wanted_left2 li a:visited { color:#636363 !important; }
+.wanted_left2 li a:hover { color:#e70000 !important; text-decoration:underline; }
+.catname { height:22px;padding:0 10px;clear:both;overflow:hidden;background:#eff3ff;font-weight:bold; }
+.catname div { height:20px;line-height:18px;*line-height:18px;font-weight:bold; }
+.catname div a { color:#2244dd;text-decoration:underline; }
+.catname div a:hover { color:#000;text-decoration:underline; }
+</style>
+<style type="text/css">
+#content1 {
+    width: 940px;
+    float: left;
+}
+.ico_blue{margin:0 2px;background:#3b79e7;color:#fff;font-size:12px;height:18px;line-height:18px;padding:0 2px;*padding-top:2px;white-space:nowrap;}
+.ico_blue:hover{cursor:pointer; background:#54a70d;}
+.ico_blue a, .ico_blue a:visited, ico_blue a:active, ico_blue:hover { color:#fff; text-decoration:none; }
+
+.newbox { margin:0 5px;padding:8px 0;border-bottom:1px dashed #999;}
+.ppc_list { overflow:hidden;zoom:1;}
+.ppc_list dt {float:left;width:76%;}
+.ppc_a { display:block;float:left;width:96px;height:85px;text-align:center;overflow:hidden;}
+.ppc_list dt img {float:left;width:92px;height:68px; display:block;margin-bottom:3px;}
+.ppc_list ul {margin-left:10px;width:80%;float:left;}
+.ppc_list ul li { line-height:22px;color:#333;}
+.ppc_title {font-size:14px;}
+.ppc_list dd {float:left; text-align:center;margin-left:25px;padding-top:7px;}
+.ppc_list dd p { line-height:25px;color:#333;margin:0;padding:0;}
+.ppc_tel {font-size:16px;font-weight:bold; font-family:Arial; text-align:center;color:#c00!important;}
+/* .ppc_s { background:url(http://s1.ganjistatic1.com/images/ppc/sbg.gif) no-repeat 0 8px; padding-left:10px;} */
+</style>
+
+  <div class="fenlei_bg">
+    <div class="training_hot" style="background:#FFFCCC;padding:0; height:210px !important;">
+    <ul>
+    <table width="100%">
+    <tr><td colspan="6"><li class="title">服务黄页：</li></td></tr>
+                 <tr>         <td><li><a href=" /info.php?mod=list&subcat_id=26 ">家庭旅馆/短期住宿</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=34 ">接送/搬运/库存</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=42  ">购车/租车/运车/拖车</a></li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=48 ">汽车维修/改装/保养</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=49 ">机票旅游</a> </li></td>
+                 </tr> 			 <tr>         <td><li><a href=" /info.php?mod=list&subcat_id=53  ">翻译/生意/印刷/快递服务</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=66 ">清洁/洗衣/地毯/垃圾</a></li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=69 ">水暖电工/通渠/维修</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=75 ">园艺/杀虫</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=90 ">电脑/网络/手机维修</a> </li></td>
+                 </tr> 			 <tr>         <td><li><a href=" /info.php?mod=list&subcat_id=93 ">宠物寄养/美容/食品</a> </li></td>
+                                    <td><li><a href="  /info.php?mod=list&subcat_id=103  ">摄影/婚庆服务</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=105 ">移民/留学/签证</a> </li></td>
+                                    <td><li><a href="  /info.php?mod=list&subcat_id=111  ">公立/私立院校</a> </li></td>
+                                    <td><li><a href="  /info.php?mod=list&subcat_id=117  ">雅思/托福/ESL院校</a> </li></td>
+                 </tr> 			 <tr>         <td><li><a href=" /info.php?mod=list&subcat_id=120 ">各类辅导/家教/补习</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=131 ">音乐/美术/舞蹈/运动/培训</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=136 ">汇款换汇</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=143 ">地产经纪/开发商/贷款按揭</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=148 ">建筑装修/门窗</a> </li></td>
+                 </tr> 			 <tr>         <td><li><a href=" /info.php?mod=list&subcat_id=157 ">验屋/开锁服务</a> </li></td>
+                                    <td><li><a href="/info.php?mod=list&subcat_id=164 ">保健品/酒/本地特产</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=172 ">月子/托儿/保姆</a> </li></td>
+                                    <td><li><a href="/info.php?mod=list&subcat_id=181 ">老牌练车/路试/驾照</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=184  ">会计报税/退税</a> </li></td>
+                 </tr> 			 <tr>         <td><li><a href="/info.php?mod=list&subcat_id=197 ">理财投资/各类保险</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=199  ">法律公证/索赔告票</a> </li></td>
+                                    <td><li><a href="/info.php?mod=list&subcat_id=200  ">医疗诊所/中医/牙医</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=204  ">按摩/足疗/美甲/美容美发</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=209 ">成人娱乐/成人用品</a> </li></td>
+                 </tr> 		</table>
+    </ul>
+    </div>
+
+<table class="wanted_tab">
+  <tbody>
+    <tr>
+      <td width="28%" style="padding:0;">
+        <div class="bd1f" onMouseOver="this.className='bd1fover'" onMouseOut="this.className='bd1f'">
+          <ul class="wanted_left2">
+            <li>
+              <h3><a href="sale.php?mod=index&amp;upid=0&amp;level=0&amp;cat_id=1">二手物品 - 求购信息</a></h3>
+              <div style="height:5px; overflow:hidden; clear:both;"></div>
+                                                   <a href="/sale.php?mod=index&upid=0&level=0&cat_id=2" >汽车及配件 (私人)</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=3" >汽车及配件 (车行)</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=4" >电脑及配件</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=5" >手机通讯</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=6" >家电/数码</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=7" >二手家具</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=8" >书本/音像/乐器</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=9" >包包/服饰/首饰/化妆品</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=10" >休闲运动</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=11" >宠物</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=12" >母婴/儿童用品</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=13" >月票/票据</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=14" >其他物品（包括烟酒）</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=15" >求购/免费</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </li>
+          </ul>
+        </div>
+      </td>
+      <td width="23%" style="padding:0;">
+        <div class="bd1f" onMouseOver="this.className='bd1fover'" onMouseOut="this.className='bd1f'">
+          <ul class="wanted_left2">
+            <li>
+              <h3><a href="sale.php?mod=index&amp;upid=0&amp;level=0&amp;cat_id=16">房屋信息</a></h3>
+              <div style="height:5px; overflow:hidden; clear:both;"></div>
+                                                                                                                                                                                                                                                                                                  <a href="/sale.php?mod=index&upid=0&level=0&cat_id=17" >房屋出租/合租</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=18" >房屋求租</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=19" >出售求购</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=20" >生意转让-商品房出租</a>
+                                                                                                                                                                                                                                                                                                                                                                                                                                            </li>
+          </ul>
+        </div>
+      </td>
+      <td width="26%" style="padding:0;">
+        <div class="bd1f" onMouseOver="this.className='bd1fover'" onMouseOut="this.className='bd1f'">
+          <ul class="wanted_left2">
+            <li>
+              <h3><a href="sale.php?mod=index&amp;upid=0&amp;level=0&amp;cat_id=21">求职 - 招聘</a></h3>
+              <div style="height:5px; overflow:hidden; clear:both;"></div>
+                                                                                                                                                                                                                                                                                                                                                                                 <a href="/sale.php?mod=index&upid=0&level=0&cat_id=22" >餐饮行业</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=23" >保姆看护</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=24" >保洁清洁</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=25" >销售客服</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=26" >美容护理</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=27" >各类工人</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=28" >司机</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=29" >电脑相关</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=30" >家教培训</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=31" >文秘助理</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=32" >医疗护理</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=33" >金融财会</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=34" >其他工作</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=35" >求职</a>
+                                                                                                                                                                                            </li>
+          </ul>
+        </div>
+      </td>
+      <td class="bod_none" width="23%" style="padding:0;">
+        <div class="bd1f" onMouseOver="this.className='bd1fover'" onMouseOut="this.className='bd1f'">
+          <ul class="wanted_left2">
+            <li>
+              <h3><a href="sale.php?mod=index&amp;upid=0&amp;level=0&amp;cat_id=36">其他个人信息</a></h3>
+
+              <div style="height:5px; overflow:hidden; clear:both;"></div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <a href="/sale.php?mod=index&upid=0&level=0&cat_id=37" >外币兑换</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=38" >回国带物</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=39" >找人拼车</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=40" >寻人寻物</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=41" >寻求服务</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=42" >交友征婚</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=43" >结伴出游</a>
+                                    <a href="/sale.php?mod=index&upid=0&level=0&cat_id=44" >其他</a>
+                                            </li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div style="height:5px; clear:both; overflow:hidden;"></div>
+
+  </div>
+  
+  <!--豆腐块广告开始-->
+  <div style="display: none;" id="ad_container_doufu" class="doufuAD_box"></div>
+  <!--豆腐块广告结束-->
+  <div id="content1">
+    <div id="mainSide1">
+      <div class="list_tab">
+        <ul>
+                      <li><a href="/sale.php"><span>分类广告</span></a></li>
+              <li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=45"><span>活动/讲座</span></a></li>
+                  </ul>
+        
+      </div>
+        <form name="" method="post" action="sale.php" >
+<dl class="list_search">
+<dt>
+关键字：<input type="text" style="width:90px;" name="title" value="" onclick="if(this.value=='标题/描述') this.value='';" style="color: #808080;" value="标题/描述" />
+<select style="width:90px;" name="sale_cat_id" class="select_c"><option value="" >请选择类目</option><option   value="1">二手物品 - 求购信息</option><option   value="2">汽车及配件 (私人)</option><option   value="3">汽车及配件 (车行)</option><option   value="4">电脑及配件</option><option   value="5">手机通讯</option><option   value="6">家电/数码</option><option   value="7">二手家具</option><option   value="8">书本/音像/乐器</option><option   value="9">包包/服饰/首饰/化妆品</option><option   value="10">休闲运动</option><option   value="11">宠物</option><option   value="12">母婴/儿童用品</option><option   value="13">月票/票据</option><option   value="14">其他物品（包括烟酒）</option><option   value="15">求购/免费</option><option   value="16">房屋信息</option><option   value="17">房屋出租/合租</option><option   value="18">房屋求租</option><option   value="19">出售求购</option><option   value="20">生意转让-商品房出租</option><option   value="21">求职 - 招聘</option><option   value="22">餐饮行业</option><option   value="23">保姆看护</option><option   value="24">保洁清洁</option><option   value="25">销售客服</option><option   value="26">美容护理</option><option   value="27">各类工人</option><option   value="28">司机</option><option   value="29">电脑相关</option><option   value="30">家教培训</option><option   value="31">文秘助理</option><option   value="32">医疗护理</option><option   value="33">金融财会</option><option   value="34">其他工作</option><option   value="35">求职</option><option   value="36">其他个人信息</option><option   value="37">外币兑换</option><option   value="38">回国带物</option><option   value="39">找人拼车</option><option   value="40">寻人寻物</option><option   value="41">寻求服务</option><option   value="42">交友征婚</option><option   value="43">结伴出游</option><option   value="44">其他</option><option   value="45">活动/讲座 </option></select>
+<select style="width:90px;" name="sale_area" class="select_c"><option value="" >请选择地区</option><option  value="West Vancouver">West Vancouver</option><option  value="White Rock">White Rock</option><option  value="Surrey">Surrey</option><option  value="Langley">Langley</option><option  value="Delta">Delta</option><option  value="North Vancouver">North Vancouver</option><option  value="West Vancouver">West Vancouver</option><option  value="Vancouver">Vancouver</option><option  value="Richmond">Richmond</option><option  value="New Westminster">New Westminster</option><option  value="Coquitlam">Coquitlam</option><option  value="Burnaby">Burnaby</option></select>
+<label><input type="checkbox" name="sale_img" value="1"  />有图片</label>
+<input type="submit" name="" value="搜索" /></dt>
+<dd>电话</dd>
+<dd class="ft">发布时间</dd>
+</dl>
+ 
+</form>
+ 
+<!--list start-->
+      <div class="list">
+        <!--精品推荐广告-->
+				<div class="catname" style="padding-top:8px;"><strong>{if $keyword}{$info_lang['search']} : {$keyword}{else}<a href="{$info_config['root']}?mod=list&subcat_id={$subcat_id}">{$subcat_title}</a>{/if}</strong></div>
+		  
+		<div class="catname" style="padding-bottom:4px;"><div style="float:left;width:800px;">
+			<span style="font-weight:normal;">相关服务：</span>
+			<a href="info.php?mod=list&subcat_id={$subcat_id}">不限</a>&nbsp;&nbsp; 
+			{loop $cat_array_title $info_t}
+			<a href="info.php?mod=list&subcat_id={$info_t['cat_id']}" style="{if $subcat_id == $info_t['cat_id']}color:#000;{/if}">{$info_t['cat_title']}</a>&nbsp;&nbsp;
+			{/loop}
+		</div></div>
+		{eval $list_i =0;}
+     {loop $post_list $post}
+<div class="newbox">
+		<dl class="ppc_list">
+			<dt><a href="{$info_config['root']}?mod=view&post_id={$post['post_id']}" class="ppc_a">{if $post['post_img_1']}<img src="{$post['post_img_1']}"width="92" height="68" />{else}<img src="{$info_config['info']}static/images/noimage.jpg" width="92" height="68"/>{/if} {$post['post_title']}</a>
+			<ul>
+				<li class="ppc_title">
+					<a href="{$info_config['root']}?mod=view&post_id={$post['post_id']} " target="_blank"><strong>{$post['post_title']}</strong></a>
+					<span style="font-size:14px;">
+											{$post['area_title']} {$post['subarea_title']} {$post['thrarea_title']}
+										</span>
+                                        {if $post['post_up']}<img src="{$info_config['info']}static/images/ding.png" title="{lang info:index_htm_7}" />{/if}
+            {if $post['post_img_1']}<span class="ispic">{$info_lang['list_center_htm_1']}</span>{/if}
+				</li>
+				<li class="ppc_s">{$post['enterprise']}</li>
+				<li>
+					<span style="color:#336600;">最后更新：</span>{echo dgmdate($post['post_time'],'u');}，<span style="color:#336600;">{$info_lang['list_center_htm_2']}:</span>
+					<a href="{$info_config['root']}?mod=list&subcat_id={$post['subcat_id']}" style="color:#333;">{$post['subcat_title']}</a>																								</li>
+			</ul>
+			</dt>
+			<dd>
+				<p class="ppc_tel">{$post['tel']}</p>
+				<!--<p><a href="mailto:{$post['email']}">邮件联系</a></p>				<p>--></p>
+					{$post['lang']}				</p>
+			</dd>
+		</dl>
+	</div>
+    
+    {if $list_i ==1}
+        {eval $list_i =0;}
+    {else}
+        {eval $list_i =1;}
+    {/if}
+     {/loop}
+
+		<div class="cl">{$multipage}</div>		
+		<!--GcnAD start--><div class="GcnAD_list imgBlock" id='GcnADId2'></div><!--GcnAD end-->
+		      </div>
+      <!--list end-->
+
+    </div>
+    </div>
+    <div id="rightSide">
+    <!--rightSide start-->
+    <div class="btn_pub" style="height:25px;"></div>
+    <div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_47}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_48}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_49}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_50}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_51}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_52}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_53}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_54}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_55}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_56}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_57}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_58}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_59}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_60}--></div>	<div class="rightSide_cont" style="background:#ffffec;border:1px solid #ffffec;padding:0 6px 0 1px;">
+    <div id="ad_container_pinpai" class="box">
+        <dl class="first_imgAD" style="text-align:center;"><dt style="float:left;color:#333;font-size:12px;"><strong>服务黄页：</strong>[<a href="info.php" target="_blank">更多信息</a>]</dt></dl>
+    </div>
+    <!--{block/354}-->
+</div>
+<div class="rightSide_cont" style="border:1px solid #ccc;padding:0 2px;">
+    <!--帮助问题开始 -->
+    <div class="box">
+        <dl class="right_help">
+            <dt><a href="forum.php?mod=forumdisplay&fid=72" target="_blank">问题解答：</a></dt>
+            <dd><a href="forum.php?mod=viewthread&tid=19&extra=page%3D1" target="_blank">如何免费发布信息？</a><a href="forum.php?mod=viewthread&tid=20&extra=page%3D1" target="_blank">一些简单易用的搜索技巧...</a><a href="forum.php?mod=viewthread&tid=21&extra=page%3D1" target="_blank">如何删除我发布的信息？</a><a href="forum.php?mod=viewthread&tid=22&extra=page%3D1" target="_blank">如何重新编辑/更新信息？</a><a href="forum.php?mod=viewthread&tid=23&extra=page%3D1" target="_blank" title="如何上传图片？上传图片有哪些规定？">如何上传图片？上传图片有...</a></dd>
+        </dl>
+    </div>
+    <!--帮助问题结束 -->
+    <div class="box">
+        <dl class="right_columns_a"><dt>本站客服：</dt><dd style="padding:0 5px 0 0;">这里是温哥华本地生活信息浏览/发布平台，每天有上百条信息供您选择。感谢您对 人在温哥华网 - VanPeople 的支持，并欢迎大家对无效信息进行监督和投诉。</dd></dl>
+        <div><div class="kefu" style="width:159px;border:0;"><a href="mailto:support@vanpeople.com">联系客服</a></div></div>
+    </div>
+</div>    <!--rightSide end-->
+  </div>
+  </div>
+
+
+<script type="text/javascript">
+function cat_change(cat,sub_cat,subname,classname){
+    var cat_title = $(cat).value;
+    var x = new Ajax();
+    var get_url = '{$info_config[root]}?mod=ajax&op=cat&inajax=1';
+    if(subname !=''){
+        get_url = get_url +'&sub_cat='+sub_cat;}
+    if(classname !=''){
+        get_url = get_url +'&classname='+classname;
+        }
+    get_url = get_url +'&cat_title='+cat_title;
+    x.get(get_url, function(str, x) {
+        if( str ==''){
+            $(sub_cat).style.display ='none';
+            $(sub_cat).innerHTML = "";
+        }else{
+            $(sub_cat).style.display ='inline-block';
+            $(sub_cat).innerHTML = str;
+        }
+     });
+}
+cat_change('cat_id','sub_cat_id','1','');
+</script>
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

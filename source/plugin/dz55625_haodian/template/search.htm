@@ -1,0 +1,51 @@
+<div class="haodian_search">
+    <dl>{$tmp_lang['homeyy']} <em>$counts</em> {$tmp_lang['homerz']}&nbsp;&nbsp;&nbsp;&nbsp;{$tmp_lang['homerp']} <em>$countpl</em> {$tmp_lang['homett']}</dl>
+    <ul>
+        <form name="search" action="" method="post">
+<input type="text" onblur="if (value=='') {value='{$tmp_lang['pldpname']}';this.style.color='#999';}" onfocus="if(value=='{$tmp_lang['pldpname']}') {value='';}this.style.color='#000';" value="{$tmp_lang['pldpname']}" name="title" class="keyword">
+<select name="type">
+<option value="0">{$tmp_lang['plbiaot']}</option>
+<option value="1">{$tmp_lang['pldizhi']}</option>
+</select>
+<button type="submit" class="search-submit">{$tmp_lang['homebtn']}</button>
+</form>
+
+    </ul>
+</div>
+<style type="text/css">
+
+</style>
+<div class="diquclass">
+<ul id="SenFe_1" class="xs cl">  
+  <strong><a OnClick="SenFe_Code(this,'SenFe_1');" id="showmore" title="{$tmp_lang['zhankaiks']}"><img src="source/plugin/dz55625_haodian/images/tops.jpg" alt="{$tmp_lang['zhankaiks']}" /></a></strong>
+    <li><a href="<!--{if $RewriteStart == 1}-->{$curl}.html<!--{else}-->$appurl<!--{/if}-->"{if empty($did)} class='haodian_hover'{/if}>{$tmp_lang['buxianzhi']}</a></li>
+        {loop $local $id $arrs}
+           <li><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$cid}_{$arrs['id']}_{$epes}_0.html<!--{else}-->$appurl&c=$cid&d={$arrs['id']}&e=$epes&sd=0<!--{/if}-->"{$av_d[$arrs[id]]}><span>{$arrs['subject']}</span></a></li>
+        {/loop}
+</ul> 
+<!--{if $Crstart=='55625COM'}--><style type="text/css">#dianpBot span{ display:none}</style><!--{/if}-->
+<!--{if $subid}-->
+<dl> 
+<dd><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$_GET['c']}_{$_GET['d']}_{$epes}_0.html<!--{else}-->$appurl&c={$_GET['c']}&d={$_GET['d']}&e=$epes&sd=0<!--{/if}-->"{if empty($sd)} class='haodian_hover'{/if}>{$tmp_lang['buxianzhi']}</a></dd>
+<!--{loop $locals $d $locala}-->
+    <dd><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$cid}_{$locala['upid']}_{$epes}_{$locala['id']}.html<!--{else}-->$appurl&c=$cid&d={$locala['upid']}&e=$epes&sd={$locala['id']}<!--{/if}-->"{$av_d[$locala[id]]}>{$locala['subject']}</a></dd>
+<!--{/loop}-->
+</dl>
+<!--{/if}-->
+
+</div>
+
+<script>
+function SenFe_Code(sname,sid){
+	if(document.getElementById(sid).className=="xs"){
+
+		document.getElementById(sid).className="yc";
+		sname.className="aaa";
+		sname.innerHTML='<img src="source/plugin/dz55625_haodian/images/bots.jpg" />';
+	}else{
+		document.getElementById(sid).className="xs";
+		sname.className="bbb";
+		sname.innerHTML='<img src="source/plugin/dz55625_haodian/images/tops.jpg" />';
+	}
+}
+</script>

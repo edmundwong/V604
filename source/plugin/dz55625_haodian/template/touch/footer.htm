@@ -1,0 +1,22 @@
+
+<style type="text/css">
+	.m_footer{ width:100%;  float:left; margin-top:10px; background:#494949; color:#fff }
+	.m_footer ul{ text-align:center; padding:8px 0 ; text-shadow: #000 0 1px 0;}
+</style>
+<div class="m_footer" >
+<ul>
+    <li>
+		{$tmp_lang['mobile_dqsj']}{echo date("Y-m-d H:i",time())}
+    </li>
+</ul>
+</div>
+<!--{hook/global_footer_mobile}--> 
+</body>
+</html>
+<!--{eval updatesession();}-->
+<!--{if defined('IN_MOBILE')}-->
+	<!--{eval output();}-->
+<!--{else}-->
+	<!--{eval output_preview();}-->
+<!--{/if}-->
+

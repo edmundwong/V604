@@ -1,0 +1,566 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>查询工具<!--{if empty($nobbname)}-->-$_G['setting']['bbname']<!--{/if}--></title>
+<meta name="keywords" content="{$metakeywords}" />
+<meta name="description" content="{$metadescription}" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="template/dawen/tool/css/main.css" rel="stylesheet" type="text/css" media="screen">s
+<style type="text/css">
+.change_css
+{ v
+	margin-top:15px;
+}
+.change_css ul
+{
+	border-top:1px solid #669900;
+	padding-top:1px;
+	border-bottom:1px solid #669900;
+	margin-bottom:8px;
+}
+.change_css ul li
+{
+	height:23px;
+	line-height:23px;
+	padding-left:5px;
+	
+	border-bottom:1px solid #CCCC99;
+	background:url(http://www.vanpeople.com/images_site/list_styles/subscribecategory.gif) 10px 7px no-repeat;
+	
+}
+.change_css ul li a
+{
+	color:#333333;
+	padding-left:22px;
+}
+.change_css ul li a:hover
+{
+	color:#F00;
+}
+.h_26
+{
+}
+.change_css ul .bg_top_li
+{
+	background:#D6E8B5;
+	border-bottom:1px solid #669900;
+	font-size:14px;
+	text-align:center;
+	color:#000;
+}
+
+.change_css ul .ul_li_end a
+{
+	color:#990000;
+	margin-left:22px;
+	background:none;
+	text-align:center;
+	padding-left:0;
+}
+</style>
+</head>
+<body>
+<!--{template common/header}-->
+
+<div class="wrap" style="padding:3px 0;">
+<!--[diy=fcxx_diy01]--><div id="fcxx_diy01" class="area"><div id="frame34xqX7" class="frame move-span cl frame-1"><div id="frame34xqX7_left" class="column frame-1-c"><div id="frame34xqX7_left_temp" class="move-span temp"></div><!--{block/324}--></div></div></div><!--[/diy]-->
+</div>
+<div style="height:3px;clear:both;overflow:hidden;"></div>
+
+<div class="wg">
+  </div>
+
+<div style="height:3px;clear:both;overflow:hidden;"></div>
+<a name="top"></a>
+<!-- start mainbodybox -->
+<div id="mainbodybox" class="wg">
+  <!-- start mainbody -->
+  <div id="indexmainbody" class="mainbody activemainbody">
+    <div id="leftsidebar" class="leftsidebar">
+    <div id="subNav" style="background:none; padding-top:0px;">
+      <div class="change_css" style="margin-top:0px;">
+        <ul><li class="h_26 bg_top_li">社团活动</li><li><a href="/news/tjqc/">近期社团活动</a></li><li><a href="/sale.php?mod=post&classid=53">免费发布</a></li><li class="ul_li_end"><a href="/sale.php">全部社团活动 »</a></li></ul><ul><li class="h_26 bg_top_li">服务黄页</li><li><a href="/info.php?mod=list&subcat_id=26">家庭旅馆</a></li><li><a href="/info.php?mod=list&subcat_id=34">接送搬运</a></li><li><a href="/info.php?mod=list&subcat_id=40">购车租车拖车</a></li><li><a href="/info.php?mod=list&subcat_id=47">汽车维修改装</a></li><li><a href="/info.php?mod=list&subcat_id=64">清洁通渠</a></li><li><a href="/info.php?mod=list&subcat_id=75">园艺杀虫</a></li><li><a href="/info.php?mod=list&subcat_id=69">水暖电工</a></li><li><a href="/info.php?mod=list&subcat_id=148">建筑装修</a></li><li><a href="/info.php?mod=list&subcat_id=49">旅游机票</a></li><li><a href="/info.php?mod=list&subcat_id=191">家电维修</a></li><li><a href="/info.php?mod=list&subcat_id=105">留学移民</a></li><li><a href="/info.php?mod=list&subcat_id=115">雅思托福</a></li><li><a href="/info.php?mod=list&subcat_id=120">家教补习辅导</a></li><li><a href="/info.php?mod=list&subcat_id=134">音乐美术</a></li><li><a href="http://www.vanpeople.com/c/list.aspx?classid=82">老牌练车</a></li><li><a href="/info.php?mod=list&subcat_id=178">月子托儿</a></li><li><a href="/info.php?mod=list&subcat_id=143">地产相关</a></li><li><a href="/info.php?mod=list&subcat_id=199">法律索赔告票</a></li><li><a href="/info.php?mod=list&subcat_id=184">会计报税理财</a></li><li><a href="/info.php?mod=list&subcat_id=205">美容美体护理</a></li><li><a href="/info.php?mod=list&subcat_id=204">按摩中医牙医</a></li><li><a href="/info.php?mod=list&subcat_id=136">汇款/外币兑换</a></li><li><a href="/info.php?mod=list&subcat_id=111">其他服务</a></li><li><a href="/info.php?mod=list&subcat_id=209">成人娱乐</a></li><li class="ul_li_end"><a href="/info.php">全部服务信息 »</a></li></ul>
+        <ul><li class="h_26 bg_top_li">二手物品</li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=2">汽车相关</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=4">电脑相关</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=5">手机通讯</a></li><li><a href="http://www.vanpeople.com/c/list.aspx?classid=115">家电数码</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=6">二手家具</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=8">书本音像</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=9">服饰首饰</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=13">月票票据</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=11">宠物/用品</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=12">儿童用品</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=14">其他物品</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=15">求购/免费</a></li><li class="ul_li_end"><a href="/sale.php?mod=index&upid=0&level=0&cat_id=1">全部二手物品 »</a></li></ul><ul><li class="h_26 bg_top_li">房屋中心</li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=17">房屋出租</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=18">房屋求租</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=19">出售求购</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=20">生意转让</a></li><li class="ul_li_end"><a href="/sale.php?mod=index&upid=0&level=0&cat_id=16">全部房屋信息 »</a></li></ul><ul><li class="h_26 bg_top_li">求职招聘</li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=22">餐饮行业</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=23">保姆看护</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=24">保洁清洁</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=25">销售/客服</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=26">美容护理</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=27">各类工人</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=28">司机接送</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=29">电脑相关</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=30">家教培训</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=31">文秘助理</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=32">医疗护理</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=33">金融财会</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=34">其他工作</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=35">求职信息</a></li><li class="ul_li_end"><a href="/sale.php?mod=index&upid=0&level=0&cat_id=21">全部工作信息 »</a></li></ul>
+        
+        <ul><li class="h_26 bg_top_li">其他信息</li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=38">回国带物</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=37">外币兑换</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=39">拼车搭车</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=40">寻人寻物</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=41">寻求服务</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=43">结伴出游</a></li><li class="ul_li_end"><a href="/sale.php?mod=index&upid=0&level=0&cat_id=36">全部其他信息 »</a></li></ul>      </div>
+    </div>
+    </div>
+    <div id="content" class="content">
+      <!-- start content -->
+      <div id="navbarbox" class="navbarbox">
+        <!-- start navbar -->
+        <div id="navbar" class="navbar">当前位置：<a href='/'>网站首页</a> &#187; <a href='http://www.vanpeople.com/tools/tool.php'>实用查询工具</a></div>
+        <div id="addarclink" class="addarclink"><a href="mailto:support@vanpeople.com" target="_blank">欢迎提供链接信息 &raquo;</a></div>
+        <!-- .end navbar -->
+      </div>
+      <div id="linklistbox_908" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_908" class="listtitle">
+          <h3 class="h3title"><span><a>日常生活</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_908" class="linklist altbg1" >
+          <li class="[">
+            <div class="linkbit"><a href="/plugins/phone.php?keepThis=true&TB_iframe=true&height=450&width=450" title="常用电话号码" target="_blank"  class="isBold isRedirect thickbox" rel="131480" style="color: #FF0000">常用电话号码</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="/plugins/telbook.php?keepThis=true&TB_iframe=true&height=265&width=380" title="电话号码簿" target="_blank"  class="isRedirect thickbox" rel="131289">电话号码簿</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://www.movietickets.com/search_city.asp?SearchCity=vancouver&SearchRadius=15&ShowDate=0&movie_id=0" title="上映电影查询" target="_blank"  class="isRedirect" rel="131304">上映电影查询</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="/plugins/tvschedule.php?keepThis=true&TB_iframe=true&height=150&width=430" title="电视节目表" target="_blank"  class="isRedirect thickbox" rel="131310" style="color: #000099">电视节目表</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.canadapost.ca/cpotools/apps/fpc/personal/findByCity?execution=e2s1" title="加国邮编查询" target="_blank"  class="isRedirect" rel="131284">加国邮编查询</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="/plugins/tvschedule.php?keepThis=true&TB_iframe=true&height=150&width=430" title="电视节目表" target="_blank"  class="isRedirect thickbox" rel="131310" style="color:#336600">电视节目表</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="/news/tjqc/" title="推荐好去处" target="_blank"  class="isRedirect" rel="131468">推荐好去处</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.vpl.vancouver.bc.ca/" title="图书在线续借" target="_blank"  class="isRedirect" rel="131309">图书在线续借</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://www.vpl.vancouver.bc.ca/find/" title="图书馆书目" target="_blank"  class="isRedirect" rel="131303">图书馆书目</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="https://www.addresschange.gov.bc.ca/forms/help.html" title="网上修改地址(个人类)" target="_blank"  class="isRedirect" rel="131470">网上修改地址(个人类)</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.cbs.gov.on.ca/obc/english/5GWMMK.htm" title="网上修改地址(商业类)" target="_blank"  class="isRedirect" rel="131471">网上修改地址(商业类)</a></div>
+          </li>
+          <li class="[interline">
+            <!-- <div class="linkbit"><a href="http://www.reco.on.ca/salespersons_brokers_search.htm" title="安省地产经纪查询" target="_blank"  class="isRedirect" rel="131777">安省地产经纪查询</a></div> -->
+          </li>
+          <li class="[">
+            <!-- <div class="linkbit"><a href="http://www.mpac.ca/" title="安省房地产价值评估" target="_blank"  class="isRedirect" rel="131775">安省房地产价值评估</a></div> -->
+          </li>
+          <li class="[">
+            <!-- <div class="linkbit"><a href="http://www.51.ca/house/agentindex.php?s=" title="华人地产经纪" target="_blank"  class="isRedirect" rel="131486">华人地产经纪</a></div> -->
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="/sale.php?mod=index&upid=0&level=0&cat_id=16" title="租房买房" target="_blank"  class="isRedirect" rel="131479" style="color: #FF3300">租房买房</a></div>
+          </li>
+          <li class="[">
+            <!-- <div class="linkbit"><a href="http://www.lsuc.on.ca/public/a/finding/" title="安省律师查询" target="_blank"  class="isRedirect" rel="131776">安省律师查询</a></div> -->
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://www.ip138.com/post/" title="中国邮编、区号查询" target="_blank"  class="isRedirect" rel="131285">中国邮编、区号查询</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_909" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_909" class="listtitle">
+          <h3 class="h3title"><span><a>交通地图</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_909" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="/plugins/airline.php?keepThis=true&TB_iframe=true&height=330&width=460" title="航班时刻查询" target="_blank"  class="isRedirect thickbox" rel="131305" style="color: #0033CC">航班时刻查询</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&q=Vancouver,+Greater+Vancouver+Regional+District,+British+Columbia,+Canada&sll=37.0625,-95.677068&sspn=0.822976,1.235962&ie=UTF8&cd=1&geocode=FeSz7wId-w2p-A&split=0&t=h&z=12&iwloc=A" title="在线地图册" target="_blank"  class="isRedirect" rel="131287">在线地图册</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="/plugins/transit.php?keepThis=true&TB_iframe=true&height=430&width=480" title="公共交通查询" target="_blank"  class="isRedirect thickbox" rel="131306">公共交通查询</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.vancouvergasprices.com/" title="温哥华油价" target="_blank"  class="isBold isRedirect" rel="131308" style="color: #FF6600">温哥华油价</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.gvrd.com/traffic/" title="实时交通状况" target="_blank"  class="isRedirect" rel="131290">实时交通状况</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.schoolbusmonitor.com/toronto/" title="大多地区校车监控" target="_blank"  class="isRedirect" rel="131482">大多地区校车监控</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="https://www.rtbo.rus.mto.gov.on.ca/scripts/english/index.asp" title="在线预定路考时间" target="_blank"  class="isRedirect" rel="131781">在线预定路考时间</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.dsao.com/students/approvedschools.cfm" title="注册驾校查询" target="_blank"  class="isRedirect" rel="131778">注册驾校查询</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://carcostcanada.com/" title="新车价格查询" target="_blank"  class="isRedirect" rel="131779">新车价格查询</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_910" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_910" class="listtitle">
+          <h3 class="h3title"><span><a>金融理财</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_910" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="http://www.olg.ca/lotteries/viewWinningNumbers.do" title="彩票中奖号码" target="_blank"  class="isBold isRedirect" rel="131307" style="color: #FF6600">彩票中奖号码</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.51.ca/house/mortcal.php?s=&principal=100000&keepThis=true&TB_iframe=true&height=480&width=495" title="房屋按揭计算" target="_blank"  class="isRedirect thickbox" rel="131485">房屋按揭计算</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="/plugins/currency.php?keepThis=true&TB_iframe=true&height=335&width=430" target="_blank" title="货币汇率换算"   class="isBold isRedirect thickbox" rel="131283" style="color: #336600">货币汇率换算</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.cra-arc.gc.ca/esrvc-srvce/tx/ndvdls/qckccss/menu-eng.html" title="缴税查询页" target="_blank"  class="isRedirect" rel="131477">缴税查询页</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.tsx.com/HttpController?GetPage=MDFMarketView&MarketView=MostActive&DetailedView=DetailedPrices&Market=T&Language=en" title="多伦多证交所 (TSX) 行情" target="_blank"  class="isRedirect" rel="131312">证交所 (TSX) 行情</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://quote.stockstar.com/stock/real.asp" title="中国股市行情" target="_blank"  class="isRedirect" rel="131311">中国股市行情</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.icbc.com/autoplan" title="保险价格查询" target="_blank"  class="isRedirect" rel="131780">保险价格查询</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_911" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_911" class="listtitle">
+          <h3 class="h3title"><span><a>实用工具</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_911" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="http://www.tigernt.com/dict.shtml" title="英汉字典" target="_blank"  class="isRedirect" rel="131277">英汉字典</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.m-w.com/" title="英英字典" target="_blank"  class="isRedirect" rel="131278">英英字典</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://www.zdic.net/" title="汉语字典" target="_blank"  class="isRedirect" rel="131279">汉语字典</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.netrui.com/index.html" title="网速测试器" target="_blank"  class="isRedirect" rel="131294">网速测试器</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="/plugins/jfzh.php?keepThis=true&TB_iframe=true&height=280&width=480" title="中文繁简转换" target="_blank"  class="isRedirect thickbox" rel="131276">中文繁简转换</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="/plugins/wn.php?keepThis=true&TB_iframe=true&height=450&width=750" title="万年历查询" target="_blank"  class="isRedirect thickbox" rel="131281">万年历查询</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="/plugins/translator.php?keepThis=true&TB_iframe=true&height=430&width=480" title="免费在线翻译" target="_blank"  class="isRedirect thickbox" rel="131275">免费在线翻译</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="/plugins/calculator.php?keepThis=true&TB_iframe=true&height=370&width=660" title="智能计算器" target="_blank"  class="isRedirect thickbox" rel="131280">智能计算器</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://www.3d114.com/tools/gb_pinyin.htm" title="在线中文输入" target="_blank"  class="isRedirect" rel="131292" style="color: #990000">在线中文输入</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="/plugins/unitconvert.php?keepThis=true&TB_iframe=true&height=150&width=430" title="度量衡换算" target="_blank"  class="isRedirect thickbox" rel="131286">度量衡换算</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_912" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_912" class="listtitle">
+          <h3 class="h3title"><span><a href="http://astro.tom.com/">星座命理</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_912" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="/plugins/astro.php?keepThis=true&TB_iframe=true&height=505&width=340" title="星座运程通" target="_blank"  class="isRedirect thickbox" rel="131301">星座运程通</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="/plugins/shuxiang.php?keepThis=true&TB_iframe=true&height=160&width=300" title="生肖查询器" target="_blank"  class="isRedirect thickbox" rel="131297">生肖查询器</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://www.nongli.com/item4/" title="中国黄历" target="_blank"  class="isRedirect" rel="131296">中国黄历</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.51jiemeng.com/" title="周公解梦" target="_blank"  class="isRedirect" rel="131295">周公解梦</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_913" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_913" class="listtitle">
+          <h3 class="h3title"><span><a>健康相关</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_913" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="http://health.sohu.com/6/0504/21/blank220082154.shtml?keepThis=true&TB_iframe=true&height=410&width=310" title="预产期自测" target="_blank"  class="isRedirect thickbox" rel="131300">预产期自测</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://health.sohu.com/medisearch.html" title="疾病知多少" target="_blank"  class="isRedirect" rel="131299">疾病知多少</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://www.cpso.on.ca/Doctor_Search/ez_srch.asp?Scr=FIRST" title="家庭医生查询" target="_blank"  class="isRedirect" rel="131478" style="color: #000099">家庭医生查询</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.shoushen.com/standard.htm" title="标准体重计算" target="_blank"  class="isRedirect" rel="131298">标准体重计算</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://yy.fh21.com.cn/ying/new/chengfen.htm" title="营养成分查询" target="_blank"  class="isRedirect" rel="131302">营养成分查询</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://health.sohu.com/eden/anquanqi/jump.html?keepThis=true&TB_iframe=true&height=435&width=525" title="妇女安全期" target="_blank"  class="isRedirect thickbox" rel="131282">妇女安全期</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_914" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_914" class="listtitle">
+          <h3 class="h3title"><span><a>其他查询</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_914" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="http://zh.wikipedia.org/w/index.php?title=%E9%A6%96%E9%A1%B5&variant=zh-cn" title="维基百科全书" target="_blank"  class="isRedirect" rel="131288">维基百科全书</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.bbintl.org/indexgb.html" title="中文版圣经" target="_blank"  class="isRedirect" rel="131291">中文版圣经</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_909" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_909" class="listtitle">
+          <h3 class="h3title"><span><a>即时聊天</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_909" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="http://www.skype.com.cn/" title="Skype 语音" target="_blank"  class="isRedirect" rel="131305">Skype 语音</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://messenger.live.cn/" title="MSN Messenger" target="_blank"  class="isRedirect" rel="131287">MSN Messenger</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://im.qq.com/" title="腾讯 QQ" target="_blank"  class="isRedirect" rel="131306">腾讯 QQ</a></div>
+          </li>
+        </ul>
+
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_909" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_909" class="listtitle">
+          <h3 class="h3title"><span><a>上网浏览</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_909" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="http://www.microsoft.com/downloads/details.aspx?familyid=9AE91EBE-3385-447C-8A30-081805B2F90B&displaylang=zh-cn" title="IE 7" target="_blank"  class="isRedirect" rel="131305" style="color: #0033CC">IE 7</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.firefox.com/" title="火狐 (FireFox) 浏览器" target="_blank"  class="isRedirect" rel="131287">火狐 (FireFox) 浏览器</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://www.netscape.com/" title="NetScape" target="_blank"  class="isRedirect" rel="131306">NetScape</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://cn.opera.com/download/" title="Opera" target="_blank"  class="isRedirect" rel="131305">Opera</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://cn.maxthon.com/chs/download.htm" title="遨游浏览器" target="_blank"  class="isRedirect" rel="131287">遨游浏览器</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://www.morequick.com/indexgb.htm" title="MyIE 中文版" target="_blank"  class="isRedirect" rel="131306">MyIE 中文版</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://tt.qq.com/" title="腾讯TT浏览器" target="_blank"  class="isRedirect" rel="131305">腾讯TT浏览器</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash&promoid=BIOW" title="Flash 播放器" target="_blank"  class="isRedirect" rel="131287">Flash 播放器</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_909" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_909" class="listtitle">
+          <h3 class="h3title"><span><a>压缩工具</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_909" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="http://www.winrar.com.cn/index2.htm" title="WinRAR" target="_blank"  class="isRedirect" rel="131305">WinRAR</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.winzip.com/index.htm" title="MSN Messenger" target="_blank"  class="isRedirect" rel="131287">WinZip</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_909" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_909" class="listtitle">
+          <h3 class="h3title"><span><a>中文输入</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_909" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="http://www.sogou.com/pinyin/" title="搜狗拼音输入" target="_blank"  class="isRedirect" rel="131305">搜狗拼音输入</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.microsoft.com/china/msdownload/pinyin/oxp.asp" title="微软拼音输入" target="_blank"  class="isRedirect" rel="131287">微软拼音输入</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://www.unispim.com/" title="紫光拼音" target="_blank"  class="isRedirect" rel="131306">紫光拼音</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://okuc.net/sunwb/" title="海峰五笔" target="_blank"  class="isRedirect" rel="131305">海峰五笔</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://tools.google.com/pinyin/" title="Google 拼音输入法" target="_blank"  class="isRedirect" rel="131287">Google 拼音输入法</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_909" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_909" class="listtitle">
+          <h3 class="h3title"><span><a>MP3工具</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_909" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="http://www.winamp.com/player" title="WinAmp 播放" target="_blank"  class="isRedirect" rel="131305">WinAmp 播放</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.kugoo.com/" title="KuGoo(酷狗)" target="_blank"  class="isRedirect" rel="131287">KuGoo(酷狗)</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://www.ttplayer.com/" title="千千静听" target="_blank"  class="isRedirect" rel="131306">千千静听</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_909" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_909" class="listtitle">
+          <h3 class="h3title"><span><a>视屏播放</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_909" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="http://www.haody99.com/" title="好电影99" target="_blank"  class="isRedirect" rel="131305">好电影99</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.baofeng.com/" title="影音风暴" target="_blank"  class="isRedirect" rel="131287">影音风暴</a></div>
+          </li>
+          <li class="[interline">
+            <div class="linkbit"><a href="http://www.microsoft.com/windows/windowsmedia/download/" title="Media Player" target="_blank"  class="isRedirect" rel="131306">Media Player</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://cn.real.com/?lang=cn&loc=cn" title="RealPlayer" target="_blank"  class="isRedirect" rel="131287">RealPlayer</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_909" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_909" class="listtitle">
+          <h3 class="h3title"><span><a>网络电视</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_909" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="http://www.pplive.com/zh-cn/download.html" title="PPLive 视频" target="_blank"  class="isRedirect" rel="131305">PPLive 视频</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.ppstream.com/download.html" title="PPS 点播" target="_blank"  class="isRedirect" rel="131287">PPS 点播</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="linklistbox_909" class="linklistbox">
+        <!-- start linklist -->
+        <div id="listtitle_909" class="listtitle">
+          <h3 class="h3title"><span><a>邮件发放</a></span></h3>
+          <div class="listmore"></div>
+        </div>
+        <ul id="linklist_909" class="linklist altbg1">
+          <li class="[">
+            <div class="linkbit"><a href="http://fox.foxmail.com.cn/" title="FoxMail" target="_blank"  class="isRedirect" rel="131305">FoxMail</a></div>
+          </li>
+          <li class="[">
+            <div class="linkbit"><a href="http://www.dreammail.org/gb/" title="DreamMail" target="_blank"  class="isRedirect" rel="131287">DreamMail</a></div>
+          </li>
+        </ul>
+        <!-- /end activelist -->
+      </div>
+      <div id="hiddenpagelink">
+        <div class="pagesource"></div>
+        <div class="pagelink"></div>
+      </div>
+      <div id="bottombar" class="bottombar"></div>
+      <!-- /end content -->
+    </div>
+    <div id="rightsidebar" class="rightsidebar">
+      <div id="toolbox" class="arclist column2">
+        <div class="listtitle">
+          <h3><span>实用查询</span></h3>
+          <!-- <div class="more"><a href="http://www.vanpeople.com/tools/tool.php">更多 &raquo;</a></div> //-->
+        </div>
+        <ol>
+          <li class="leftcol"><a href="/plugins/phone.php?keepThis=true&TB_iframe=true&height=450&width=450" target="_blank" title="常用电话号码"   class="isBold isRedirect thickbox" rel="131480" style="color: #FF0000">常用电话号码</a></li>
+          <li class="rightcol"><a href="/plugins/telbook.php?keepThis=true&TB_iframe=true&height=265&width=380" target="_blank" title="电话号码簿"   class="isRedirect thickbox" rel="131289">电话号码簿</a></li>
+          <li class="leftcol"><a href="/plugins/airline.php?keepThis=true&TB_iframe=true&height=330&width=460" target="_blank" title="航班时刻查询"   class="isRedirect thickbox" rel="131305" style="color: #0033CC">航班时刻查询</a></li>
+          <li class="rightcol"><a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Vancouver,+BC,+Canada&sll=43.670233,-79.386755&sspn=0.745994,1.235962&ie=UTF8&t=h&z=12&iwloc=A" target="_blank" title="在线地图册"   class="isRedirect" rel="131287">在线地图册</a></li>
+          <li class="leftcol"><a href="/plugins/transit.php?keepThis=true&TB_iframe=true&height=430&width=480" target="_blank" title="公共交通查询"   class="isRedirect thickbox" rel="131306">公共交通查询</a></li>
+          <li class="rightcol"><a href="http://www.vancouvergasprices.com/" target="_blank" title="温哥华油价"   class="isBold isRedirect" rel="131308" style="color: #FF6600">温哥华油价</a></li>
+          <li class="leftcol"><a href="http://www.gvrd.com/traffic/" target="_blank" title="实时交通状况"   class="isRedirect" rel="131290">实时交通状况</a></li>
+          <li class="rightcol"><a href="http://www.bctransit.com/" target="_blank" title="BC Transit"   class="isRedirect" rel="131482">BC交通</a></li>
+          <li class="leftcol"><a href="http://www.movietickets.com/search_city.asp?SearchCity=vancouver&SearchRadius=15&ShowDate=0&movie_id=0" target="_blank" title="上映电影查询"   class="isRedirect" rel="131304">上映电影查询</a></li>
+          <li class="rightcol"><a href="http://www.citytv.com/vancouver/tvshows_breakfasttelevision.aspx" target="_blank" title="电视节目表"   class="isRedirect thickbox" rel="131310" style="color: #000099">电视节目表</a></li>
+          <li class="leftcol"><a href="http://www.canadapost.ca/cpotools/apps/fpc/personal/findByCity?execution=e2s1" target="_blank" title="加国邮编查询"   class="isRedirect" rel="131284">加国邮编查询</a></li>
+    	  <li class="rightcol"><a href="/info.php" target="_blank" title="大温黄页"   class="isBold isRedirect" rel="131484" style="color: #336600">大温黄页</a></li>
+          <li class="leftcol"><a href="http://www.olg.ca/lotteries/viewWinningNumbers.do" target="_blank" title="彩票中奖号码"   class="isBold isRedirect" rel="131307" style="color: #FF6600">彩票中奖号码</a></li>
+          <li class="rightcol"><a href="/plugins/astro.php?keepThis=true&TB_iframe=true&height=505&width=340" target="_blank" title="星座运程通"   class="isRedirect thickbox" rel="131301">星座运程通</a></li>
+          <li class="leftcol"><a href="http://www.cpso.on.ca/Doctor_Search/ez_srch.asp?Scr=FIRST" target="_blank" title="家庭医生查询"   class="isRedirect" rel="131478" style="color: #000099">家庭医生查询</a></li>
+          <li class="leftcol"><a href="http://ipac.vpl.ca/ipac20/ipac.jsp?menu=account&submenu=itemsout" target="_blank" title="图书在线续借"   class="isRedirect" rel="131309">图书在线续借</a></li>
+          <li class="rightcol"><a href="http://www.vpl.vancouver.bc.ca/" target="_blank" title="图书馆书目"   class="isRedirect" rel="131303">图书馆书目</a></li>
+          <li class="leftcol"><a href="https://www.addresschange.gov.bc.ca/" target="_blank" title="网上修改地址(个人类)"   class="isRedirect" rel="131470">网上修改地址</a></li>
+          <li class="rightcol"><a href="http://www.neilandterie.com/2673_mortgage_calculator.jsp" target="_blank" title="房屋按揭计算"   class="isRedirect thickbox" rel="131485">按揭计算器</a></li>
+          <li class="leftcol"><a href="http://www.x-rates.com" target="_blank" title="货币汇率换算"   class="isBold isRedirect thickbox" rel="131283" style="color: #336600">货币汇率换算</a></li>
+          <li class="rightcol"><a href="http://www.cra-arc.gc.ca/eservices/tax/individuals/myaccount/menu-e.html" target="_blank" title="缴税查询页"   class="isRedirect" rel="131477">缴税查询页</a></li>
+          <li class="leftcol"><a href="http://www.vanpeople.com/ads/realtorzhang/" target="_blank" title="华人地产经纪"   class="isRedirect" rel="131486">华人地产经纪</a></li>
+          <li class="rightcol"><a href="/sale.php?mod=index&upid=0&level=0&cat_id=16" target="_blank" title="租房买房"   class="isRedirect" rel="131479" style="color: #FF3300">租房买房</a></li>
+          <li class="leftcol"><a href="/news/tjqc/" target="_blank" title="近期推荐去处"   class="isBold isRedirect" rel="131483" style="color: #CC0000">近期推荐去处</a></li>
+          <li class="rightcol"><a href="http://health.sohu.com/eden/anquanqi/jump.html?keepThis=true&TB_iframe=true&height=435&width=525" target="_blank" title="妇女安全期"   class="isRedirect thickbox" rel="131282">妇女安全期</a></li>
+          <li class="leftcol"><a href="http://zh.wikipedia.org/w/index.php?title=%E9%A6%96%E9%A1%B5&variant=zh-cn" target="_blank" title="维基百科全书"   class="isRedirect" rel="131288">维基百科全书</a></li>
+        </ol>
+      </div>
+      <div id="hotarclist" class="arclist ">
+        <div class="listtitle">
+          <h3><span>热门链接</span></h3>
+        </div>
+        <ol>
+          <li class=""><a href="/plugins/currency.php?keepThis=true&TB_iframe=true&height=335&width=430" title="货币汇率换算" target="_blank"  class="isBold isRedirect thickbox" rel="131283" style="color: #336600">货币汇率换算</a></li>
+          <li class=""><a href="http://www.olg.ca/lotteries/viewWinningNumbers.do" title="彩票中奖号码" target="_blank"  class="isBold isRedirect" rel="131307" style="color: #FF6600">彩票中奖号码</a></li>
+          <li class=""><a href="http://www.vancouvergasprices.com/" title="温哥华油价" target="_blank"  class="isBold isRedirect" rel="131308" style="color: #FF6600">温哥华油价</a></li>
+          <li class=""><a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&q=Vancouver,+Greater+Vancouver+Regional+District,+British+Columbia,+Canada&sll=37.0625,-95.677068&sspn=0.822976,1.235962&ie=UTF8&cd=1&geocode=FeSz7wId-w2p-A&split=0&t=h&z=12&iwloc=A" title="在线地图册" target="_blank"  class="isRedirect" rel="131287">在线地图册</a></li>
+          <li class=""><a href="/plugins/airline.php?keepThis=true&TB_iframe=true&height=330&width=460" title="航班时刻查询" target="_blank"  class="isRedirect thickbox" rel="131305" style="color: #0033CC">航班时刻查询</a></li>
+          <li class=""><a href="https://www.cpsbc.ca/node/263" title="家庭医生查询" target="_blank"  class="isRedirect" rel="131478" style="color: #000099">家庭医生查询</a></li>
+          <li class=""><a href="http://www.51.ca/service/servicedisplay.php?s=&serviceid=20" title="大多中餐馆" target="_blank"  class="isBold isRedirect" rel="131484" style="color: #336600">大多中餐馆</a></li>
+          <li class=""><a href="https://www.addresschange.gov.bc.ca/forms/help.html" title="网上修改地址(个人类)" target="_blank"  class="isRedirect" rel="131470">网上修改地址(个人类)</a></li>
+          <li class=" lastitem"><a href="/plugins/telbook.php?keepThis=true&TB_iframe=true&height=265&width=380" title="电话号码簿" target="_blank"  class="isRedirect thickbox" rel="131289">电话号码簿</a></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- /end mainbody -->
+</div>
+<!-- /end mainbodybox -->
+
+<!--{template common/footer}-->
+</body>
+</html>

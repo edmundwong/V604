@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2.5,X3]]></item>
+	<item id="Time"><![CDATA[2013-09-09 09:54]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://www.55625.net/discuzx3/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[【55625】好店(黃金版)]]></item>
+			<item id="identifier"><![CDATA[dz55625_haodian]]></item>
+			<item id="description"><![CDATA[]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[dz55625_haodian/]]></item>
+			<item id="copyright"><![CDATA[55625.COM QQ:114512039]]></item>
+			<item id="version"><![CDATA[3.92]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[haodian]]></item>
+					<item id="menu"><![CDATA[好店]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[1]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[haodian_ls]]></item>
+					<item id="menu"><![CDATA[商家管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[2]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[haodian_pl]]></item>
+					<item id="menu"><![CDATA[評論管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[3]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="3">
+					<item id="name"><![CDATA[haodian_wp]]></item>
+					<item id="menu"><![CDATA[旺鋪管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[4]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="4">
+					<item id="name"><![CDATA[haodian_pic]]></item>
+					<item id="menu"><![CDATA[相冊管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[5]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="5">
+					<item id="name"><![CDATA[haodian_yx]]></item>
+					<item id="menu"><![CDATA[商訊管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[6]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="6">
+					<item id="name"><![CDATA[haodian_rl]]></item>
+					<item id="menu"><![CDATA[認領管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[7]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="7">
+					<item id="name"><![CDATA[haodian_dq]]></item>
+					<item id="menu"><![CDATA[地區分類]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[8]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="8">
+					<item id="name"><![CDATA[wap_setting]]></item>
+					<item id="menu"><![CDATA[手機幻燈]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[9]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="9">
+					<item id="name"><![CDATA[haodian_plate]]></item>
+					<item id="menu"><![CDATA[更多插件]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[10]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2.5,X3]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[是否允許普通店鋪設置SEO]]></item>
+				<item id="description"><![CDATA[選擇否爲只允許VIP店鋪使用此功能。]]></item>
+				<item id="variable"><![CDATA[puseo]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[設置黃金旺鋪顯示位置]]></item>
+				<item id="description"><![CDATA[設置黃金旺鋪的顯示位置。]]></item>
+				<item id="variable"><![CDATA[huangTop]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[1=顯示在頂部
+2=顯示在底部]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[設置折扣功能使用範圍]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[zkstart]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1=僅允許VIP店鋪使用
+2=所有店鋪均可使用
+3=關閉店鋪折扣功能]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[是否允許用戶重複登記店鋪]]></item>
+				<item id="description"><![CDATA[選擇否,所有用戶將只能登記壹個店鋪,包括管理員]]></item>
+				<item id="variable"><![CDATA[kaiqidj]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[是否關閉首頁幻燈]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[Hstop]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[好店title定義]]></item>
+				<item id="description"><![CDATA[好店Title標題自定義]]></item>
+				<item id="variable"><![CDATA[navtitle]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[好店(黃金版) V3.9]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[插件介紹定義(description)]]></item>
+				<item id="description"><![CDATA[Header description 內容定義]]></item>
+				<item id="variable"><![CDATA[metadescription]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[這裏是插件介紹]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[關鍵字定義(keywords)]]></item>
+				<item id="description"><![CDATA[Header keywords 關鍵字定義]]></item>
+				<item id="variable"><![CDATA[metakeywords]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[關鍵字,關鍵字,關鍵字,關鍵字,關鍵字]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[插件導航名稱]]></item>
+				<item id="description"><![CDATA[插件導航名稱自定義]]></item>
+				<item id="variable"><![CDATA[ename]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[好店]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[11]]></item>
+				<item id="title"><![CDATA[是否新窗口打開]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[Clickwindow]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[13]]></item>
+				<item id="title"><![CDATA[每頁顯示評論多少條]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[each]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[5]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="11">
+				<item id="displayorder"><![CDATA[14]]></item>
+				<item id="title"><![CDATA[每頁顯示多少商家]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[eacha]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="12">
+				<item id="displayorder"><![CDATA[15]]></item>
+				<item id="title"><![CDATA[資訊列表顯示條數]]></item>
+				<item id="description"><![CDATA[商家資訊列表條數顯示數量設置]]></item>
+				<item id="variable"><![CDATA[yhsum]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="13">
+				<item id="displayorder"><![CDATA[15]]></item>
+				<item id="title"><![CDATA[獲取您當前的服務器時間]]></item>
+				<item id="description"><![CDATA[黃金地段租用時間將以您的服務器時間爲標准,如果時間到了，將自動進行下架處理。(直接填寫您當前的服務器網站地址即可,如服務器不穩定，默認即可)]]></item>
+				<item id="variable"><![CDATA[times]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[www.163.com]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="14">
+				<item id="displayorder"><![CDATA[21]]></item>
+				<item id="title"><![CDATA[行業分類]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[listclass]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[1=娛樂休閑
+2=生活購物
+3=旅遊逛街
+4=活動聚會
+5=運動健身
+6=服飾鞋包
+7=虛擬充值
+8=戶外爬山
+9=珠寶手表]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="15">
+				<item id="displayorder"><![CDATA[23]]></item>
+				<item id="title"><![CDATA[可以錄入信息的用戶組]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[groups]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[10]]></item>
+					<item id="1"><![CDATA[11]]></item>
+					<item id="2"><![CDATA[12]]></item>
+					<item id="3"><![CDATA[13]]></item>
+					<item id="4"><![CDATA[14]]></item>
+					<item id="5"><![CDATA[15]]></item>
+					<item id="6"><![CDATA[20]]></item>
+					<item id="7"><![CDATA[16]]></item>
+					<item id="8"><![CDATA[17]]></item>
+					<item id="9"><![CDATA[18]]></item>
+					<item id="10"><![CDATA[19]]></item>
+					<item id="11"><![CDATA[1]]></item>
+					<item id="12"><![CDATA[2]]></item>
+					<item id="13"><![CDATA[3]]></item>
+				</item>
+			</item>
+			<item id="16">
+				<item id="displayorder"><![CDATA[24]]></item>
+				<item id="title"><![CDATA[用于接收通知的管理UID]]></item>
+				<item id="description"><![CDATA[設置您當前的管理UID號,用于接收商家審核通知]]></item>
+				<item id="variable"><![CDATA[groupso]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="17">
+				<item id="displayorder"><![CDATA[25]]></item>
+				<item id="title"><![CDATA[開啓商家審核]]></item>
+				<item id="description"><![CDATA[會員發布商家信息後，是否開啓後台審核制度]]></item>
+				<item id="variable"><![CDATA[displays]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[0 = 開啓審核
+1 = 關閉審核]]></item>
+			</item>
+			<item id="18">
+				<item id="displayorder"><![CDATA[26]]></item>
+				<item id="title"><![CDATA[開啓評論審核]]></item>
+				<item id="description"><![CDATA[會員發布商家評語後，是否開啓後台審核制度]]></item>
+				<item id="variable"><![CDATA[display]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[0 = 開啓審核
+1 = 關閉審核]]></item>
+			</item>
+			<item id="19">
+				<item id="displayorder"><![CDATA[27]]></item>
+				<item id="title"><![CDATA[自定義幻燈圖片地址]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[pic_dizhi]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[source/plugin/dz55625_haodian/images/ad4.jpg
+source/plugin/dz55625_haodian/images/ad1.jpg]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="20">
+				<item id="displayorder"><![CDATA[28]]></item>
+				<item id="title"><![CDATA[自定義幻燈圖片鏈接]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[pic_links]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[http://www.55625.com
+http://www.55625.com]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="21">
+				<item id="displayorder"><![CDATA[29]]></item>
+				<item id="title"><![CDATA[右側廣告圖片地址]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[ypic_dizhi]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[source/plugin/dz55625_haodian/images/ad3.jpg]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="22">
+				<item id="displayorder"><![CDATA[30]]></item>
+				<item id="title"><![CDATA[右側廣告圖片鏈接]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[ypic_lianjie]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[http://www.55625.com]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="23">
+				<item id="displayorder"><![CDATA[31]]></item>
+				<item id="title"><![CDATA[租用地段所用到的積分名稱]]></item>
+				<item id="description"><![CDATA[選擇租用黃金地段所用到的積分分類]]></item>
+				<item id="variable"><![CDATA[extcredit]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="24">
+				<item id="displayorder"><![CDATA[32]]></item>
+				<item id="title"><![CDATA[黃金地段每月租金爲]]></item>
+				<item id="description"><![CDATA[設置租用黃金地段所消費的積分數]]></item>
+				<item id="variable"><![CDATA[zujin]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="25">
+				<item id="displayorder"><![CDATA[40]]></item>
+				<item id="title"><![CDATA[商家相冊顯示多少張]]></item>
+				<item id="description"><![CDATA[建議不要太大,否則會影響整體頁面加載速度..]]></item>
+				<item id="variable"><![CDATA[photos]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[4]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="26">
+				<item id="displayorder"><![CDATA[41]]></item>
+				<item id="title"><![CDATA[商家相冊圖片大小]]></item>
+				<item id="description"><![CDATA[默認單位爲字節 (1K=1024字節)]]></item>
+				<item id="variable"><![CDATA[piczhanshi]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[500240]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="27">
+				<item id="displayorder"><![CDATA[44]]></item>
+				<item id="title"><![CDATA[商家封面圖片大小]]></item>
+				<item id="description"><![CDATA[默認單位爲字節 (1K=1024字節)]]></item>
+				<item id="variable"><![CDATA[picdx]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[100240]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="28">
+				<item id="displayorder"><![CDATA[45]]></item>
+				<item id="title"><![CDATA[VIP店招圖片大小設置]]></item>
+				<item id="description"><![CDATA[默認單位爲字節 (1K=1024字節)]]></item>
+				<item id="variable"><![CDATA[dzsize]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[500240]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="29">
+				<item id="displayorder"><![CDATA[46]]></item>
+				<item id="title"><![CDATA[VIP店鋪背景圖片大小]]></item>
+				<item id="description"><![CDATA[默認單位爲字節 (1K=1024字節)]]></item>
+				<item id="variable"><![CDATA[bgsize]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[500240]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="30">
+				<item id="displayorder"><![CDATA[50]]></item>
+				<item id="title"><![CDATA[是否開啓發布商鋪收費制度]]></item>
+				<item id="description"><![CDATA[選擇是將開啓會員發布店鋪收費制度，可通過以下積分項進行收費設置]]></item>
+				<item id="variable"><![CDATA[addstart]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="31">
+				<item id="displayorder"><![CDATA[51]]></item>
+				<item id="title"><![CDATA[發布店鋪增減積分選擇]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[ZjenStart]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1=發布獎勵用戶積分
+2=發布扣除用戶積分]]></item>
+			</item>
+			<item id="32">
+				<item id="displayorder"><![CDATA[52]]></item>
+				<item id="title"><![CDATA[發布商鋪所需積分名稱]]></item>
+				<item id="description"><![CDATA[★此項使用需要開啓收費制度]]></item>
+				<item id="variable"><![CDATA[extcredita]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="33">
+				<item id="displayorder"><![CDATA[53]]></item>
+				<item id="title"><![CDATA[發布商鋪所需積分數量]]></item>
+				<item id="description"><![CDATA[★此項使用需要開啓收費制度]]></item>
+				<item id="variable"><![CDATA[addshuliang]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="34">
+				<item id="displayorder"><![CDATA[60]]></item>
+				<item id="title"><![CDATA[是否開啓店鋪列表靜態化]]></item>
+				<item id="description"><![CDATA[需要配合55625官方發布的僞靜態規則使用,否則將出錯]]></item>
+				<item id="variable"><![CDATA[RewriteStart]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="35">
+				<item id="displayorder"><![CDATA[61]]></item>
+				<item id="title"><![CDATA[是否開啓地圖功能]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[stMap]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="36">
+				<item id="displayorder"><![CDATA[62]]></item>
+				<item id="title"><![CDATA[選擇您要使用的地圖]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[mapStart]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1=選擇百度地圖(Baidu)
+2=選擇谷歌地圖(Google)]]></item>
+			</item>
+			<item id="37">
+				<item id="displayorder"><![CDATA[63]]></item>
+				<item id="title"><![CDATA[填寫地圖坐標]]></item>
+				<item id="description"><![CDATA[獲取坐標的方法是在後台編輯店鋪,拖動坐標即可.]]></item>
+				<item id="variable"><![CDATA[zuobiao]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[112.568305, 37.877503]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="38">
+				<item id="displayorder"><![CDATA[64]]></item>
+				<item id="title"><![CDATA[填寫地圖放大級別]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[jibie]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[8]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="39">
+				<item id="displayorder"><![CDATA[70]]></item>
+				<item id="title"><![CDATA[是否開啓壹卡通]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[kastart]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="40">
+				<item id="displayorder"><![CDATA[71]]></item>
+				<item id="title"><![CDATA[壹卡通介紹]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[kalinks]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[forum.php?mod=viewthread&tid=10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="41">
+				<item id="displayorder"><![CDATA[72]]></item>
+				<item id="title"><![CDATA[壹卡通名稱定義]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[kaname]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[壹卡通]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="42">
+				<item id="displayorder"><![CDATA[73]]></item>
+				<item id="title"><![CDATA[VIP商鋪介紹]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[viplinks]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[forum.php?mod=viewthread&tid=10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="43">
+				<item id="displayorder"><![CDATA[75]]></item>
+				<item id="title"><![CDATA[版權關閉密碼]]></item>
+				<item id="description"><![CDATA[關閉密碼商業群內索要(進群憑授權進群)]]></item>
+				<item id="variable"><![CDATA[Crstart]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="44">
+				<item id="displayorder"><![CDATA[76]]></item>
+				<item id="title"><![CDATA[商家列表顯示樣式控制]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[listStyle]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[1=商家橫排顯示
+2=商家方格顯示]]></item>
+			</item>
+			<item id="45">
+				<item id="displayorder"><![CDATA[77]]></item>
+				<item id="title"><![CDATA[是否強制商家上傳封面]]></item>
+				<item id="description"><![CDATA[選擇是，用戶登記商鋪的時候將強制上傳封面圖片。]]></item>
+				<item id="variable"><![CDATA[UpCover]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="46">
+				<item id="displayorder"><![CDATA[78]]></item>
+				<item id="title"><![CDATA[是否限制會員重複留言]]></item>
+				<item id="description"><![CDATA[選擇是，會員將不能重複對店鋪進行評論留言。]]></item>
+				<item id="variable"><![CDATA[Umessage]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="47">
+				<item id="displayorder"><![CDATA[79]]></item>
+				<item id="title"><![CDATA[點擊率防刷新時間]]></item>
+				<item id="description"><![CDATA[時間爲秒(1分鍾=60秒,1小時=3600秒),建議時間爲1800秒以上,數值太小容易加重服務器負擔。]]></item>
+				<item id="variable"><![CDATA[allowTime]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1800]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="48">
+				<item id="displayorder"><![CDATA[81]]></item>
+				<item id="title"><![CDATA[是否開啓域名綁定功能]]></item>
+				<item id="description"><![CDATA[需要先安裝域名功能模塊才可以開啓使用。]]></item>
+				<item id="variable"><![CDATA[isdomain]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="49">
+				<item id="displayorder"><![CDATA[82]]></item>
+				<item id="title"><![CDATA[域名綁定功能使用範圍]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[domainfw]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[0=只限VIP用戶使用
+1=所有用戶使用]]></item>
+			</item>
+			<item id="50">
+				<item id="displayorder"><![CDATA[100]]></item>
+				<item id="title"><![CDATA[右側開啓資訊列表]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[NewStart]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="51">
+				<item id="displayorder"><![CDATA[101]]></item>
+				<item id="title"><![CDATA[右側開啓商品列表]]></item>
+				<item id="description"><![CDATA[應用中心請先安裝55625商品模塊。]]></item>
+				<item id="variable"><![CDATA[ShopStart]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="52">
+				<item id="displayorder"><![CDATA[102]]></item>
+				<item id="title"><![CDATA[是否開啓商家商品功能]]></item>
+				<item id="description"><![CDATA[如需使用,請另外選購此功能。不使用者關閉此功能,以免影響程序正常使用。]]></item>
+				<item id="variable"><![CDATA[StHop]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="53">
+				<item id="displayorder"><![CDATA[103]]></item>
+				<item id="title"><![CDATA[商品功能使用範圍選擇]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[ShopFw]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[1=所有用戶都可使用
+2=只限VIP用戶使用]]></item>
+			</item>
+			<item id="54">
+				<item id="displayorder"><![CDATA[104]]></item>
+				<item id="title"><![CDATA[是否開啓商家廣告功能]]></item>
+				<item id="description"><![CDATA[應用中心請先安裝55625廣告模塊。]]></item>
+				<item id="variable"><![CDATA[Lstart]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="55">
+				<item id="displayorder"><![CDATA[105]]></item>
+				<item id="title"><![CDATA[是否開啓商家預約功能]]></item>
+				<item id="description"><![CDATA[應用中心請先安裝55625預約模塊。]]></item>
+				<item id="variable"><![CDATA[Ystart]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="56">
+				<item id="displayorder"><![CDATA[106]]></item>
+				<item id="title"><![CDATA[是否開啓板塊同步功能]]></item>
+				<item id="description"><![CDATA[應用中心請先安裝55625好店板塊同步模塊。]]></item>
+				<item id="variable"><![CDATA[fidstart]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="57">
+				<item id="displayorder"><![CDATA[107]]></item>
+				<item id="title"><![CDATA[是否啓用優惠券功能]]></item>
+				<item id="description"><![CDATA[應用中心請先安裝55625優惠券模塊。]]></item>
+				<item id="variable"><![CDATA[iscoupon]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="58">
+				<item id="displayorder"><![CDATA[108]]></item>
+				<item id="title"><![CDATA[優惠券使用範圍選擇]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[iscouStart]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[1=所有用戶都可使用
+2=只限VIP用戶使用]]></item>
+			</item>
+			<item id="59">
+				<item id="displayorder"><![CDATA[109]]></item>
+				<item id="title"><![CDATA[是否開啓地圖聚合]]></item>
+				<item id="description"><![CDATA[應用中心請先安裝55625地圖聚合模塊。]]></item>
+				<item id="variable"><![CDATA[mapStarts]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="60">
+				<item id="displayorder"><![CDATA[110]]></item>
+				<item id="title"><![CDATA[是否自動獲取聚合坐標]]></item>
+				<item id="description"><![CDATA[用戶開啓後，地圖將自動獲取當前坐標。選擇否，設置的聚合坐標將生效。]]></item>
+				<item id="variable"><![CDATA[map_z]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="61">
+				<item id="displayorder"><![CDATA[111]]></item>
+				<item id="title"><![CDATA[自定義聚合坐標]]></item>
+				<item id="description"><![CDATA[關閉自動獲取聚合坐標選項時，必須填寫此坐標信息。(百度地圖坐標)]]></item>
+				<item id="variable"><![CDATA[map_d]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[112.558769, 37.880366]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="62">
+				<item id="displayorder"><![CDATA[112]]></item>
+				<item id="title"><![CDATA[是否開啓自助套餐]]></item>
+				<item id="description"><![CDATA[應用中心請先安裝55625自助套餐模塊。]]></item>
+				<item id="variable"><![CDATA[zhu_Start]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="63">
+				<item id="displayorder"><![CDATA[127]]></item>
+				<item id="title"><![CDATA[水印圖片]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[imgwater]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[static/image/common/watermark.png]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="64">
+				<item id="displayorder"><![CDATA[127]]></item>
+				<item id="title"><![CDATA[水印圖片位置]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[imgwater_wz]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[5]]></item>
+				<item id="extra"><![CDATA[5=中間
+8=下方]]></item>
+			</item>
+			<item id="65">
+				<item id="displayorder"><![CDATA[127]]></item>
+				<item id="title"><![CDATA[相冊圖片批量上傳數量]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[pic_plup]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[5]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="blockclass_haodian"><![CDATA[好店類]]></item>
+				<item id="blockclass_data"><![CDATA[好店數據]]></item>
+				<item id="blockclass_mokuai"><![CDATA[好店模塊]]></item>
+				<item id="blockclass_biaotiling"><![CDATA[標題長度]]></item>
+				<item id="blockclass_fangshi"><![CDATA[調用方式]]></item>
+				<item id="blockclass_news"><![CDATA[最新]]></item>
+				<item id="blockclass_comm"><![CDATA[推薦]]></item>
+				<item id="blockclass_zkou"><![CDATA[折扣]]></item>
+				<item id="blockclass_title"><![CDATA[店鋪名稱]]></item>
+				<item id="blockclass_url"><![CDATA[店鋪連接]]></item>
+				<item id="blockclass_pic"><![CDATA[店鋪圖片]]></item>
+				<item id="blockclass_zhekou"><![CDATA[店鋪折扣]]></item>
+				<item id="blockclass_dateline"><![CDATA[發布日期]]></item>
+				<item id="blockclass_address"><![CDATA[商家地址]]></item>
+				<item id="blockclass_tel"><![CDATA[商家電話]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+	</item>
+</root>

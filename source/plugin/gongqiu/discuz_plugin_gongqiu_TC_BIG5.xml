@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3.1]]></item>
+	<item id="Time"><![CDATA[2013-10-08 22:07]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://www.discuzcms.com/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[¡i²`ÂÅ¡j¨Ñ¨D©Û°Ó]]></item>
+			<item id="identifier"><![CDATA[gongqiu]]></item>
+			<item id="description"><![CDATA[¡i²`ÂÅ¬ì§Þ¡jDISCUZªÀ°Ï¬Õ§Q­p¹º±Ò°Ê¡I°ªºÝ¯¸ªøªº¤@­P¿ï¾Ü¡I¡iDiscuz!CMS²`ÂÅ¬ì§Þ¡j©x¤èºô¯¸¡Jwww.DiscuzCMS.com¡A«ÈªAQQ¡J904416539]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[gongqiu/]]></item>
+			<item id="copyright"><![CDATA[¡iDISCUZ!CMS²`ÂÅÀ³¥Î¡jª©Åv©Ò¦³.¡i©x¤èºô¯¸¡jWWW.DISCUZCMS.COM¡i«ÈªAQQ¡j904416539]]></item>
+			<item id="version"><![CDATA[4.1]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[gongqiu]]></item>
+					<item id="menu"><![CDATA[¨Ñ¨D]]></item>
+					<item id="url"><![CDATA[gongqiu.php]]></item>
+					<item id="type"><![CDATA[1]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[admin_goods]]></item>
+					<item id="menu"><![CDATA[1.«H®§ºÞ²z]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[admin_cat]]></item>
+					<item id="menu"><![CDATA[2.Ãþ§OºÞ²z]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[2]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="3">
+					<item id="name"><![CDATA[admin_area]]></item>
+					<item id="menu"><![CDATA[3.°Ï°ìºÞ²z]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[3]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="4">
+					<item id="name"><![CDATA[admin_jubao]]></item>
+					<item id="menu"><![CDATA[4.Á|³ø«H®§]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[4]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="5">
+					<item id="name"><![CDATA[admin_help]]></item>
+					<item id="menu"><![CDATA[5.¨Ï¥Î»¡©ú(¥²¬Ý)]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[5]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X1.5,X2,X2.5,X3,X3.1]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[´¡¥ó¦W]]></item>
+				<item id="description"><![CDATA[´¡¥ó¦W,¨Ò¦p "²`ÂÅ¨Ñ¨D«H®§/©Û°Ó¥[·ù" ·|Åã¥Ü¦b¼ÐÃD¤W]]></item>
+				<item id="variable"><![CDATA[name]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[²`ÂÅ¨Ñ¨D«H®§/©Û°Ó¥[·ù]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[¯¸ÂI¦a§}]]></item>
+				<item id="description"><![CDATA[http://¶}ÀY /µ²§À ,¨Ò:http://www.discuzcms.com/]]></item>
+				<item id="variable"><![CDATA[siteurl]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[http://www.discuzcms.com/]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[²`ÂÅÀW¹D¼Ò¦¡]]></item>
+				<item id="description"><![CDATA[¶È¦b²`ÂÅ¼ÒªO¤U¦³®Ä]]></item>
+				<item id="variable"><![CDATA[shenlan_pindao]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[´¡¥ó­·®æ]]></item>
+				<item id="description"><![CDATA[¼Òª©¥Ø¿ý:source/plugin/gongqiu/template/
+style1=¦Û©w¸q1
+style2=¦Û©w¸q2
+style3=¦Û©w¸q3]]></item>
+				<item id="variable"><![CDATA[style]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[default]]></item>
+				<item id="extra"><![CDATA[default=Àq»{
+style1=¦Û©w¸q1
+style2=¦Û©w¸q2
+style3=¦Û©w¸q3]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[ÁôÂÃdiscuzÀY³¡]]></item>
+				<item id="description"><![CDATA[Àq»{¼Òª©¦³®Ä]]></item>
+				<item id="variable"><![CDATA[header]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[ÁôÂÃdiscuz·j¯Á±ø]]></item>
+				<item id="description"><![CDATA[Àq»{¼Òª©¦³®Ä]]></item>
+				<item id="variable"><![CDATA[scbar]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[·j¯Á®Ç´£¥Ü]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[topnotice]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[1.­n¨D¹w¥I©wª÷,¥[Q¸Ô²á,¶l±H¥æ©öµ¥§¡¦s¦b´ÛÄF¦æ¬°! 
+2.»ù®æ§C·G,¤º®e¨½¯d¦³¹q¸Üªº­nÂÔ·V! 
+3.ÂÔ¨¾¥H¥ô¦ó§Î¦¡«_¥Î¥»¯¸ºô§}ªº³¨³½ºô¯¸!]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[¨C­¶Åã¥Ü¦h¤Ö±ø]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[perpage]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[Áp¨t¤H®ÇÃä´£¥Ü]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[helpnotice]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[Áp¨t§Ú®É½Ð»¡©ú¬O¦b<a href='http://addon.discuz.com/?@gongqiu.plugin'>²`ÂÅ¨Ñ¨D«H®§/©Û°Ó¥[·ù </a>¨½,¶R½æ¸m´«¤]¥i¥H°µ¸õ°D¥«³õªº´¡¥ó¬Ý¨ìªº,ÁÂÁÂ! ]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[«e¥xºÞ²z¥Î¤á²Õ]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[admingroup]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[1]]></item>
+				</item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[¸j©w®ø¶O¿n¤À]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[extcredits]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="11">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[µo¥¬«H®§¦©¿n¤À]]></item>
+				<item id="description"><![CDATA[0¬°¤£¦©¿n¤À.
+³]¸m¦©¿n¤À,¿é¤J¤@­Ó¤j¤_0ªº¥¿¾ã¼Æ.¨Ò¦p 1 5 10 µ¥]]></item>
+				<item id="variable"><![CDATA[postcredit]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="12">
+				<item id="displayorder"><![CDATA[11]]></item>
+				<item id="title"><![CDATA[¿n¤À³æ¦ì]]></item>
+				<item id="description"><![CDATA[«e¥x¿n¤À®ø¶O´£¥Ü,¶ñ¼g¨Ò¦p : ª÷¹ô,¿n¤Àµ¥]]></item>
+				<item id="variable"><![CDATA[credit_unit]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[ª÷¿ú]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="13">
+				<item id="displayorder"><![CDATA[12]]></item>
+				<item id="title"><![CDATA[¸m³»¨C¤Ñ¦¬¶O]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[daycredit]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="14">
+				<item id="displayorder"><![CDATA[13]]></item>
+				<item id="title"><![CDATA[¿n¤À¥R­È¦a§}]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[chongzhi]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[home.php?mod=spacecp&ac=credit&op=buy]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="15">
+				<item id="displayorder"><![CDATA[14]]></item>
+				<item id="title"><![CDATA[Àq»{«°¥«upid]]></item>
+				<item id="description"><![CDATA[¨Ò¦p : ¼s¦{¥« ¶ñ¼g: 289
+Ãì±µ¦a§}¬O: http://www.discuzcms.com/gongqiu.php?mod=index&level=2&upid=289
+¬Ý URL¨½&upid= «á­±ªº¼Æ¦r,³o­Ó¦a¤è´NÀ³¸Ó¶ñ 289]]></item>
+				<item id="variable"><![CDATA[upid]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="16">
+				<item id="displayorder"><![CDATA[15]]></item>
+				<item id="title"><![CDATA[Àq»{¯Å§Olevel]]></item>
+				<item id="description"><![CDATA[¨Ò¦p : ¼s¦{¥« ¶ñ¼g: 2
+Ãì±µ¦a§}¬O: http://www.discuzcms.com/gongqiu.php?mod=index&level=2&upid=289
+¬Ý URL¨½&level= «á­±ªº¼Æ¦r,³o­Ó¦a¤è´NÀ³¸Ó¶ñ 2]]></item>
+				<item id="variable"><![CDATA[level]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="17">
+				<item id="displayorder"><![CDATA[16]]></item>
+				<item id="title"><![CDATA[«H®§¦Û°Ê¼f®Ö]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[auto_pass]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="18">
+				<item id="displayorder"><![CDATA[17]]></item>
+				<item id="title"><![CDATA[¦Û©w¸qCSS]]></item>
+				<item id="description"><![CDATA[.wp,#wp,.brian_main { width:960px !important; overflow:hidden;}
+¬°¨t²ÎÀq»{,¤£À´½Ð¤Å­×§ï]]></item>
+				<item id="variable"><![CDATA[diy_css]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[.brian_main { width:960px !important; overflow:hidden;}]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="19">
+				<item id="displayorder"><![CDATA[18]]></item>
+				<item id="title"><![CDATA[SEO¼ÐÃD]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[seo_title]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[SEO¼ÐÃD]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="20">
+				<item id="displayorder"><![CDATA[19]]></item>
+				<item id="title"><![CDATA[SEOÃöÁäµü]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[seo_keywords]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[SEOÃöÁäµü]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="21">
+				<item id="displayorder"><![CDATA[20]]></item>
+				<item id="title"><![CDATA[SEO´y­z]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[seo_description]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[SEO´y­z]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="22">
+				<item id="displayorder"><![CDATA[21]]></item>
+				<item id="title"><![CDATA[­º­¶ÀY³¡«H®§±ø¼Æ]]></item>
+				<item id="description"><![CDATA[¦Û¥Ñ³]¸m, Àq»{14±ø, ¥D­n¬O©M¥ªÃäªº¦æ·~©M¦a°Ï¤ÀÃþ¬üÆ[³]¸m.]]></item>
+				<item id="variable"><![CDATA[top_list_total]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[14]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="xinxileixing"><![CDATA[«H®§Ãþ«¬]]></item>
+				<item id="suoyouxinxi"><![CDATA[©Ò¦³«H®§]]></item>
+				<item id="diqufenlei"><![CDATA[¦a°Ï¤ÀÃþ]]></item>
+				<item id="buxian"><![CDATA[¤£­­]]></item>
+				<item id="hangyefenlei"><![CDATA[¦æ·~¤ÀÃþ]]></item>
+				<item id="gongqiuxinxi"><![CDATA[¨Ñ¨D«H®§]]></item>
+				<item id="zhaoshangjiameng"><![CDATA[©Û°Ó¥[·ù]]></item>
+				<item id="jiagequjian"><![CDATA[»ù®æ°Ï¶¡]]></item>
+				<item id="saixuan"><![CDATA[¿z¿ï]]></item>
+				<item id="gongyingxinxi"><![CDATA[¨ÑÀ³«H®§]]></item>
+				<item id="xuqiuxinxi"><![CDATA[»Ý¨D«H®§]]></item>
+				<item id="zhaoshangxinxi"><![CDATA[©Û°Ó«H®§]]></item>
+				<item id="jiamengxinxi"><![CDATA[¥[·ù«H®§]]></item>
+				<item id=""><![CDATA[]]></item>
+				<item id="xuanze"><![CDATA[¿ï¾Ü]]></item>
+				<item id="xinxineirong"><![CDATA[«H®§¤º®e]]></item>
+				<item id="zhidingxinxi"><![CDATA[¸m³»«H®§]]></item>
+				<item id="money"><![CDATA[¤¸]]></item>
+				<item id="remenxinxi"><![CDATA[¼öªù«H®§]]></item>
+				<item id="zaqizaba"><![CDATA[Âø¤CÂø¤K]]></item>
+				<item id="tu"><![CDATA[¹Ï]]></item>
+				<item id="meiyoushihe"><![CDATA[¨S§ä¨ì¦X¾Aªºª««~¡J°¨¤Wµo¥¬¤@±ø«H®§§a¡I]]></item>
+				<item id="dianjijinru"><![CDATA[ÂIÀ»¶i¤J]]></item>
+				<item id="jihuarnewu"><![CDATA[­p¹º¥ô°È³]¸m]]></item>
+				<item id="admin_cat"><![CDATA[Ãþ§O³]¸m]]></item>
+				<item id="chakan_zileibei"><![CDATA[ÂIÀ»¬d¬Ý¤lÃþ§O]]></item>
+				<item id="dangqian_mulu"><![CDATA[·í«e¥Ø¿ý]]></item>
+				<item id="submit"><![CDATA[´£¥æ]]></item>
+				<item id="yuan"><![CDATA[¤¸]]></item>
+				<item id="add"><![CDATA[²K¥[]]></item>
+				<item id="edit"><![CDATA[½s¿è]]></item>
+				<item id="sort"><![CDATA[±Æ§Ç]]></item>
+				<item id="del"><![CDATA[§R°£]]></item>
+				<item id="return"><![CDATA[ªð¦^]]></item>
+				<item id="yes"><![CDATA[¬O]]></item>
+				<item id="no"><![CDATA[§_]]></item>
+				<item id="goods_price"><![CDATA[»ù®æ]]></item>
+				<item id="goods_unit"><![CDATA[³æ¦ì]]></item>
+				<item id="fen"><![CDATA[¥÷]]></item>
+				<item id="mark"><![CDATA[³Æª`]]></item>
+				<item id="status"><![CDATA[ª¬ºA]]></item>
+				<item id="show"><![CDATA[Åã¥Ü]]></item>
+				<item id="hide"><![CDATA[ÁôÂÃ]]></item>
+				<item id="area"><![CDATA[±qÄÝ°Ï°ì]]></item>
+				<item id="cat"><![CDATA[Ãþ§O]]></item>
+				<item id="search"><![CDATA[·j¯Á]]></item>
+				<item id="view"><![CDATA[¬d¬Ý]]></item>
+				<item id="click"><![CDATA[ÂIÀ»]]></item>
+				<item id="buy"><![CDATA[ÁÊ¶R]]></item>
+				<item id="time"><![CDATA[®É¶¡]]></item>
+				<item id="kind"><![CDATA[Ãþ«¬]]></item>
+				<item id="cat_title"><![CDATA[Ãþ§O¦W]]></item>
+				<item id="queding_shanchu"><![CDATA[½T©w§R°£]]></item>
+				<item id="more"><![CDATA[§ó¦h]]></item>
+				<item id="tijiaoxinxi"><![CDATA[´£¥æ«H®§]]></item>
+				<item id="shenhe_piliang"><![CDATA[¼f®Ö§å¶q¾Þ§@]]></item>
+				<item id="login"><![CDATA[±z»Ý­n¦bµn¿ý¤§«á¤~¯à¨Ï¥Î]]></item>
+				<item id="upload_msg_error_1"><![CDATA[¤£¤¹³\\¤W¶Ç¸ÓÃþ«¬ªº¤å¥ó!]]></item>
+				<item id="upload_msg_error_2"><![CDATA[¤W¶Çªº¤å¥ó¶W¹L³W©wªº¤j¤p!]]></item>
+				<item id="upload_msg_error_3"><![CDATA[¥¼ª¾¿ù»~,¤å¥ó¤W¶Ç¥¢±Ñ!]]></item>
+				<item id="upload_msg_error_4"><![CDATA[,½Ðªð¦^´«¥t¤@±i¹Ï¤ù¦A¸Õ.]]></item>
+				<item id="must_goods_title"><![CDATA[«H®§¼ÐÃD ¥²¶·¶ñ¼g!]]></item>
+				<item id="must_goods_text"><![CDATA[«H®§¤º®e ¥²¶·¶ñ¼g!]]></item>
+				<item id="must_goods_price"><![CDATA[»ù®æ ¥²¶·¶ñ¼g!]]></item>
+				<item id="must_member_username"><![CDATA[Áp¨t¤H ¥²¶·¶ñ¼g!]]></item>
+				<item id="must_member_qq"><![CDATA[Áp¨tQQ ¥²¶·¶ñ¼g!]]></item>
+				<item id="must_member_phone"><![CDATA[Áp¨t¹q¸Ü ¥²¶·¶ñ¼g!]]></item>
+				<item id="must_goods_selltype"><![CDATA[¥æ©öÃþ«¬ ¥²¶·¿ï¾Ü!]]></item>
+				<item id="delete_ok"><![CDATA[§R°£¦¨¥\\]]></item>
+				<item id="edit_ok"><![CDATA[­×§ï¦¨¥\\]]></item>
+				<item id="no_quanxian"><![CDATA[¨S¦³Åv­­¾Þ§@]]></item>
+				<item id="edit_title"><![CDATA[½s¿è«H®§]]></item>
+				<item id="note_new_jubao"><![CDATA[¦³·sÁ|³ø«H®§,½ÐºÉ§Ö³B²z]]></item>
+				<item id="jubao_ok"><![CDATA[Á|³ø¦¨¥\\,½Ðµ¥«ÝºÞ²z­û¼f®Ö]]></item>
+				<item id="member"><![CDATA[­Ó¤H¤¤¤ß]]></item>
+				<item id="no_extcredits"><![CDATA[¿n¤À¥\\¯à¼È¤£¯à¨Ï¥Î,½ÐÁp¨tºÞ²z­û¸j©w¿n¤À]]></item>
+				<item id="must_province"><![CDATA[©ÒÄÝ¦a°Ï ¥²¶·¶ñ¼g!]]></item>
+				<item id="post_ok"><![CDATA[µo¥¬¦¨¥\\]]></item>
+				<item id="post"><![CDATA[µo¥¬«H®§]]></item>
+				<item id="setpostup_ok"><![CDATA[¸m³»³]¸m¦¨¥\\]]></item>
+				<item id="not_credit"><![CDATA[¤£¨¬]]></item>
+				<item id="what_error"><![CDATA[¥¼ª¾¿ù»~½Ðªð¦^­«¸Õ]]></item>
+				<item id="max7"><![CDATA[³Ì¦h¤ä«ù7­Ó]]></item>
+				<item id="xinxifabu_tishi1"><![CDATA[«H®§µo¥¬´£¥Ü : µo¥¬«H®§»Ý­n®ø¶O]]></item>
+				<item id="nin_dangqian"><![CDATA[±z·í«e]]></item>
+				<item id="zhiding"><![CDATA[¸m³»]]></item>
+				<item id="goods_time"><![CDATA[µo¥¬®É¶¡]]></item>
+				<item id="tongguo"><![CDATA[³q¹L]]></item>
+				<item id="xiajia"><![CDATA[¤U¬[]]></item>
+				<item id="weishenhe"><![CDATA[¥¼¼f®Ö]]></item>
+				<item id="quiteup"><![CDATA[¨ú®ø¸m³»]]></item>
+				<item id="discuz_diy"><![CDATA[<div class='cl' id='discuzcms_diy'>²`ÂÅÀ³¥Î,<a href='http://www.discuzcms.com/'>discuz!cms</a>ª©Åv©Ò¦³.<style>#discuzcms_diy{display:none}</style></div>]]></item>
+				<item id="sql_area"><![CDATA[
+INSERT INTO `pre_gongqiu_area` VALUES ('1', '¥_¨Ê¥«', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('2', '¤Ñ¬z¥«', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('3', 'ªe¥_¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('4', '¤s¦è¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('5', '¤º»X¥j¦Ûªv°Ï', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('6', '¿ñ¹ç¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('7', '¦NªL¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('8', '¶ÂÀs¦¿¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('9', '¤W®ü¥«', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('10', '¦¿µd¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('11', '®ý¦¿¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('12', '¦wÀ²¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('13', 'ºÖ«Ø¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('14', '¦¿¦è¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('15', '¤sªF¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('16', 'ªe«n¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('17', '´ò¥_¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('18', '´ò«n¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('19', '¼sªF¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('20', '¼s¦è§§±Ú¦Ûªv°Ï', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('21', '®ü«n¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('22', '­«¼y¥«', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('23', '¥|¤t¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('24', '¶Q¦{¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('25', '¶³«n¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('26', '¦èÂÃ¦Ûªv°Ï', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('27', '°¢¦è¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('28', '¥ÌµÂ¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('29', '«C®ü¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('30', '¹ç®L¦^±Ú¦Ûªv°Ï', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('31', '·sÃ¦ºû§^º¸¦Ûªv°Ï', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('32', '¥xÆW¬Ù', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('33', '­»´ä¯S§O¦æ¬F°Ï', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('34', '¿Dªù¯S§O¦æ¬F°Ï', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('35', '®ü¥~', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('36', '¨ä¥L', '1', '0', '0', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('37', 'ªF«°°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('38', '¦è«°°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('39', '±R¤å°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('40', '«ÅªZ°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('41', '´Â¶§°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('42', 'Â×¥x°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('43', '¥Û´º¤s°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('44', '®ü¾ý°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('45', 'ªùÀY·¾°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('46', '©Ð¤s°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('47', '³q¦{°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('48', '¶¶¸q°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('49', '©÷¥­°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('50', '¤j¿³°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('51', 'Ãh¬X°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('52', '¥­¨¦°Ï', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('53', '±K¶³¿¤', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('54', '©µ¼y¿¤', '2', '0', '1', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('55', '©M¥­°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('56', 'ªeªF°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('57', 'ªe¦è°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('58', '«n¶}°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('59', 'ªe¥_°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('60', '¬õ¾ô°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('61', '¶íªf°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('62', 'º~ªf°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('63', '¤j´ä°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('64', 'ªFÄR°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('65', '¦è«C°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('66', '¬z«n°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('67', '¥_¨°°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('68', 'ªZ²M°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('69', 'Ä_Ëû°Ï', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('70', '¹çªe¿¤', '2', '0', '2', '0');
+INSERT INTO `pre_gongqiu_area` VALUES ('71', 'ÀR®ü¿¤', '2', '0', '2', '0');]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="view_htm_19"><![CDATA[¤À¨É¤@¤U,«ÜÂ²³æ]]></item>
+				<item id="admin_cat_htm_1"><![CDATA[½s¿è]]></item>
+				<item id="admin_cat_htm_2"><![CDATA[®Ú¥Ø¿ý]]></item>
+				<item id="admin_cat_htm_3"><![CDATA[Ãþ§O±qÄÝ]]></item>
+				<item id="admin_cat_htm_5"><![CDATA[ª¬ºA]]></item>
+				<item id="admin_cat_htm_6"><![CDATA[Åã¥Ü]]></item>
+				<item id="admin_ad_htm_1"><![CDATA[¼s§iºÞ²z]]></item>
+				<item id="admin_ad_htm_2"><![CDATA[Åã¥Ü¦b«H®§³»³¡,³Ì¦h¤ä«ù7­Ó]]></item>
+				<item id="admin_ad_htm_3"><![CDATA[¦pªG¤£¶ñ«h¤£·|Åã¥Ü]]></item>
+				<item id="admin_ad_htm_4"><![CDATA[¦pªG­n²K¥[,³Ì¦n7­Ó³£²K¥[¤W,¹Ï¤ù¦a§},¯d]]></item>
+				<item id="admin_ad_htm_5"><![CDATA[¼s§i¦ì©Û¯²]]></item>
+				<item id="admin_ad_htm_6"><![CDATA[ªº¹Ï¤ù,«á´Á¨Ï¥Î®É¦A½s¿è]]></item>
+				<item id="admin_ad_htm_7"><![CDATA[¼ÐÃD]]></item>
+				<item id="admin_ad_htm_8"><![CDATA[Ãì±µ¦a§}]]></item>
+				<item id="admin_ad_htm_9"><![CDATA[¹Ï¤ù¦a§}]]></item>
+				<item id="admin_ad_htm_10"><![CDATA[±Æ§Ç]]></item>
+				<item id="admin_ad_htm_11"><![CDATA[§R°£]]></item>
+				<item id="admin_ad_htm_12"><![CDATA[²K¥[]]></item>
+				<item id="admin_ad_htm_13"><![CDATA[¯À§÷¹Ï¤ù]]></item>
+				<item id="admin_cat_htm_4"><![CDATA[³Æª`]]></item>
+				<item id="admin_cat_htm_7"><![CDATA[ÁôÂÃ]]></item>
+				<item id="admin_cat_htm_11"><![CDATA[Ãþ§OºÞ²z]]></item>
+				<item id="admin_help_htm_1"><![CDATA[´¡¥ó³]¸m]]></item>
+				<item id="admin_help_htm_2"><![CDATA[³]¸m «á¥x]]></item>
+				<item id="admin_help_htm_3"><![CDATA[³]¸m ¯¸ÂI¦a§}]]></item>
+				<item id="admin_help_htm_4"><![CDATA[«e¥xºÞ²z¥Î¤á²Õ]]></item>
+				<item id="admin_help_htm_5"><![CDATA[¸j©w®ø¶O¿n¤À]]></item>
+				<item id="admin_help_htm_6"><![CDATA[¶i¤J «á¥x]]></item>
+				<item id="admin_help_htm_7"><![CDATA[¤u¨ã]]></item>
+				<item id="admin_help_htm_8"><![CDATA[­p¹º¥ô°È]]></item>
+				<item id="admin_help_htm_9"><![CDATA[·s¼W ¥«³õ­p¹º¥ô°È]]></item>
+				<item id="admin_help_htm_10"><![CDATA[½s¿è ¤p®É ¿ï¾Ü 0®É , ¤ÀÄÁ ¶ñ 0  , ¥ô°È¸}¥» ¶ñ¼g]]></item>
+				<item id="admin_help_htm_11"><![CDATA[´£¥æ]]></item>
+				<item id="admin_help_htm_12"><![CDATA[¦b¥ô°È¦Cªí  ¥i¥Î ¥´¤Ä ´£¥æ
+¥i¥H¦b¦Cªí¤W ÂIÀ» °õ¦æ ´ú¸Õ¤@¤U ¦pªG¥X²{ ­p¹º¥ô°È°õ¦æ¦¨¥\\ «h³]¸m¦¨¥\\<br />
+³]¸m§¹²¦!<br />
+<br />
+Discuz!CMS&²`ÂÅ¬ì§Þ©x¤è¥D­¶ : <a href='http://www.discuzcms.com' target='_blank'>http://www.discuzcms.com</a><br />
+«ÈªAQQ : 904416539<a target='_blank' href='http://wpa.qq.com/msgrd?v=3&uin=904416539&site=qq&menu=yes'>[ÂIÀ»¥æ½Í]</a>
+]]></item>
+				<item id="admin_jubao_htm_1"><![CDATA[Á|³ø«H®§]]></item>
+				<item id="admin_jubao_htm_2"><![CDATA[«H®§¼ÐÃD]]></item>
+				<item id="admin_jubao_htm_3"><![CDATA[Á|³ø®É¶¡]]></item>
+				<item id="admin_jubao_htm_5"><![CDATA[ÁÙ¨S¦³Á|³ø«H®§]]></item>
+				<item id="index_htm_1"><![CDATA[·í«e¦ì¸m]]></item>
+				<item id="index_htm_2"><![CDATA[­Ó¤H¤¤¤ß]]></item>
+				<item id="index_htm_3"><![CDATA[§Úµo¥¬ªº«H®§]]></item>
+				<item id="index_htm_4"><![CDATA[¥R­È]]></item>
+				<item id="index_htm_5"><![CDATA[¤¸]]></item>
+				<item id="index_htm_6"><![CDATA[¦³¹Ï]]></item>
+				<item id="index_htm_7"><![CDATA[¸m³»]]></item>
+				<item id="index_htm_8"><![CDATA[¥X°â]]></item>
+				<item id="index_htm_9"><![CDATA[¥æ´«]]></item>
+				<item id="index_htm_10"><![CDATA[¨DÁÊ]]></item>
+				<item id="index_htm_11"><![CDATA[¦a°Ï]]></item>
+				<item id="index_htm_12"><![CDATA[¥þ·s]]></item>
+				<item id="index_htm_13"><![CDATA[¦¨·s]]></item>
+				<item id="index_htm_16"><![CDATA[¦¨·s¥H¤U]]></item>
+				<item id="jubao_htm_1"><![CDATA[Á|³ø¦¹«H®§]]></item>
+				<item id="jubao_htm_3"><![CDATA[½T»{Á|³ø]]></item>
+				<item id="member_htm_3"><![CDATA[µo¥¬«H®§]]></item>
+				<item id="member_htm_5"><![CDATA[§Ú¸m³»ªº«H®§]]></item>
+				<item id="member_htm_6"><![CDATA[§Úªº¸ê®Æ]]></item>
+				<item id="member_htm_7"><![CDATA[½ã¤á¿n¤À]]></item>
+				<item id="member_htm_9"><![CDATA[¦b½u«ÈªA]]></item>
+				<item id="member_memberinfo_htm_1"><![CDATA[©m¦W]]></item>
+				<item id="member_memberinfo_htm_2"><![CDATA[ºÙ©I]]></item>
+				<item id="member_memberinfo_htm_3"><![CDATA[Áp¨t]]></item>
+				<item id="member_memberinfo_htm_4"><![CDATA[Áp¨t¹q¸Ü]]></item>
+				<item id="member_memberinfo_htm_5"><![CDATA[¹q¤l¶l½c]]></item>
+				<item id="member_mycredit_htm_1"><![CDATA[±b¤á§EÃB]]></item>
+				<item id="member_mycredit_htm_2"><![CDATA[¢D]]></item>
+				<item id="member_mycredit_htm_4"><![CDATA[®ø¶O°O¿ý]]></item>
+				<item id="member_mycredit_htm_6"><![CDATA[¸m³»¤Ñ¼Æ]]></item>
+				<item id="member_mycredit_htm_7"><![CDATA[¿n¤ÀÅÜ§ó]]></item>
+				<item id="member_mycredit_htm_8"><![CDATA[¾Þ§@®É¶¡]]></item>
+				<item id="member_mycredit_htm_9"><![CDATA[¨ì´Á®É¶¡]]></item>
+				<item id="member_mycredit_htm_10"><![CDATA[ÁÙ¨S¦³®ø¶O°O¿ý]]></item>
+				<item id="member_mypost_htm_2"><![CDATA[Ãþ§O]]></item>
+				<item id="member_mypost_htm_3"><![CDATA[¤w¸m³»]]></item>
+				<item id="member_mypost_htm_5"><![CDATA[¥¼¸m³»]]></item>
+				<item id="member_mypost_htm_6"><![CDATA[«H®§½s¸¹]]></item>
+				<item id="member_mypost_htm_7"><![CDATA[°Ï°ì¦WºÙ]]></item>
+				<item id="member_mypost_htm_8"><![CDATA[µo¥¬®É¶¡]]></item>
+				<item id="member_mypost_htm_10"><![CDATA[­×§ï]]></item>
+				<item id="member_mypost_htm_11"><![CDATA[ÁÙ¨S¦³¦¹Ãþ«H®§]]></item>
+				<item id="post_htm_4"><![CDATA[µo¥¬]]></item>
+				<item id="post_htm_5"><![CDATA[«H®§]]></item>
+				<item id="post_htm_12"><![CDATA[°ò¥»«H®§]]></item>
+				<item id="post_htm_13"><![CDATA[±a]]></item>
+				<item id="post_htm_14"><![CDATA[¬°¥²¶ñ¶µ]]></item>
+				<item id="post_htm_15"><![CDATA[«H®§¤ÀÃþ¡J]]></item>
+				<item id="post_htm_16"><![CDATA[ºÞ²z­ûÁÙ¨S¦³³]¸mÃþ§O,¼È®É¤£¯àµo¥¬]]></item>
+				<item id="post_htm_17"><![CDATA[©ÒÄÝ¦a°Ï¡J]]></item>
+				<item id="post_htm_19"><![CDATA[«H®§¦³®Ä´Á¡J]]></item>
+				<item id="post_htm_20"><![CDATA[ªø´Á¦³®Ä]]></item>
+				<item id="post_htm_21"><![CDATA[¤@©P¤º¦³®Ä]]></item>
+				<item id="post_htm_22"><![CDATA[¤@­Ó¤ë¤º¦³®Ä]]></item>
+				<item id="post_htm_23"><![CDATA[¤T­Ó¤ë¤º¦³®Ä]]></item>
+				<item id="post_htm_24"><![CDATA[¥b¦~¤º¦³®Ä]]></item>
+				<item id="post_htm_25"><![CDATA[«H®§¼ÐÃD¡J]]></item>
+				<item id="post_htm_26"><![CDATA[«H®§¤º®e¡J]]></item>
+				<item id="post_htm_27"><![CDATA[¸Ô²Ó¤º®e]]></item>
+				<item id="post_htm_30"><![CDATA[¥æ©öÃþ«¬ ¡J]]></item>
+				<item id="post_htm_34"><![CDATA[¥I´Ú¤è¦¡¡J]]></item>
+				<item id="post_htm_35"><![CDATA[·í­±¥æ©ö]]></item>
+				<item id="post_htm_36"><![CDATA[¾á«O¥æ©ö]]></item>
+				<item id="post_htm_37"><![CDATA[¹q¶×]]></item>
+				<item id="post_htm_38"><![CDATA[¨ä¥L]]></item>
+				<item id="post_htm_39"><![CDATA[»ù®æ¡J]]></item>
+				<item id="post_htm_41"><![CDATA[¼Æ¶q¡J]]></item>
+				<item id="post_htm_42"><![CDATA[·sÂÂµ{«×¡J]]></item>
+				<item id="post_htm_48"><![CDATA[¤W¶Ç¹Ï¤ù¡J]]></item>
+				<item id="post_htm_49"><![CDATA[¹Ï¤ù¥²¶·¬Opng,jpg,gif®æ¦¡¡I¹Ï¤ù¤j¤p¤£±o¶W¹L]]></item>
+				<item id="post_htm_50"><![CDATA[ªþ¥ó¹Ï¤ù]]></item>
+				<item id="post_htm_54"><![CDATA[Áp¨t¤è¦¡]]></item>
+				<item id="post_htm_57"><![CDATA[Áp¨t¤H¡J]]></item>
+				<item id="post_htm_58"><![CDATA[Áp¨tQQ¡J]]></item>
+				<item id="post_htm_59"><![CDATA[Áp¨t¹q¸Ü¡J]]></item>
+				<item id="post_htm_60"><![CDATA[¹q¤l¶l½c¡J]]></item>
+				<item id="post_htm_61"><![CDATA[µo¥¬«H®§]]></item>
+				<item id="post_htm_62"><![CDATA[µo¥¬¯µÄy]]></item>
+				<item id="post_htm_63"><![CDATA[«H®§¶ñ¼g¶V§¹¾ã¸Ô²Ó¡A¶V¯à´£°ª±Æ¦W¼W¥[¥i«H«×¡I]]></item>
+				<item id="post_htm_64"><![CDATA[±zªºIP¬O¡J]]></item>
+				<item id="post_htm_65"><![CDATA[¡A½Ð¤£­nµo¥¬µê°²«H®§¡B­«´_«H®§]]></item>
+				<item id="post_htm_67"><![CDATA[¥²¶·¶ñ¼g]]></item>
+				<item id="post_htm_68"><![CDATA[»ù®æ]]></item>
+				<item id="search_htm_2"><![CDATA[¦Ü]]></item>
+				<item id="search_htm_3"><![CDATA[¼Æ¶q]]></item>
+				<item id="search_htm_5"><![CDATA[ÃöÁäµü]]></item>
+				<item id="search_htm_6"><![CDATA[¬d¸ß]]></item>
+				<item id="search_htm_7"><![CDATA[¥æ©öÃþ«¬]]></item>
+				<item id="search_htm_8"><![CDATA[¤£­­]]></item>
+				<item id="search_htm_12"><![CDATA[¥I´Ú¤è¦¡]]></item>
+				<item id="search_htm_18"><![CDATA[·sÂÂµ{«×]]></item>
+				<item id="search_htm_24"><![CDATA[¦¨¤Î¥H¤U]]></item>
+				<item id="search_htm_25"><![CDATA[«H®§Á`¼Æ]]></item>
+				<item id="search_htm_26"><![CDATA[«H®§¸m³»¥i¨Ï«H®§®i¥Ü®ÄªG§ó¦n]]></item>
+				<item id="setpostup_htm_1"><![CDATA[³]¸m¸m³»«H®§]]></item>
+				<item id="setpostup_htm_2"><![CDATA[¸m³»«H®§]]></item>
+				<item id="setpostup_htm_3"><![CDATA[¸m³»®Éªø]]></item>
+				<item id="setpostup_htm_4"><![CDATA[¤Ñ]]></item>
+				<item id="setpostup_htm_6"><![CDATA[¤@©P]]></item>
+				<item id="setpostup_htm_7"><![CDATA[¥b­Ó¤ë]]></item>
+				<item id="setpostup_htm_8"><![CDATA[¤@­Ó¤ë]]></item>
+				<item id="setpostup_htm_9"><![CDATA[¨â­Ó¤ë]]></item>
+				<item id="setpostup_htm_10"><![CDATA[¤T­Ó¤ë]]></item>
+				<item id="setpostup_htm_11"><![CDATA[¥b¦~]]></item>
+				<item id="setpostup_htm_12"><![CDATA[¿n¤À]]></item>
+				<item id="setpostup_htm_14"><![CDATA[¥»¦¸»Ý­n]]></item>
+				<item id="setpostup_htm_16"><![CDATA[³]¸m¸m³»]]></item>
+				<item id="top_htm_1"><![CDATA[¼öªù«H®§]]></item>
+				<item id="top_htm_3"><![CDATA[³Ì·s¸m³»«H®§Åã¥Ü]]></item>
+				<item id="top_htm_4"><![CDATA[³Ì·s¸m³»«H®§]]></item>
+				<item id="top_htm_5"><![CDATA[©ÒÄÝ¤ÀÃþ]]></item>
+				<item id="top_htm_6"><![CDATA[¤H®ð]]></item>
+				<item id="view_htm_7"><![CDATA[¸Ó«H®§]]></item>
+				<item id="view_htm_13"><![CDATA[ÂsÄý]]></item>
+				<item id="view_htm_14"><![CDATA[¦¸]]></item>
+				<item id="view_htm_18"><![CDATA[Á|³ø]]></item>
+				<item id="view_htm_40"><![CDATA[¬dÂkÄÝ¦a]]></item>
+				<item id="view_htm_41"><![CDATA[«t¸ß¡J]]></item>
+				<item id="view_htm_42"><![CDATA[¡J]]></item>
+				<item id="view_htm_43"><![CDATA[µo¥¬ªÌIP¡J]]></item>
+				<item id="view_htm_44"><![CDATA[¤p´£¥Ü¡J]]></item>
+				<item id="view_htm_45"><![CDATA[«H®§¸Ô±¡]]></item>
+				<item id="view_htm_46"><![CDATA[ÂIÀ»¬d¬Ý­ì¹Ï]]></item>
+				<item id="view_htm_50"><![CDATA[±z¹ï¥H¤U«H®§©Î³\\·P¿³½ì]]></item>
+				<item id="view_htm_51"><![CDATA[¥ß§Yµo¥¬¤@±ø«H®§]]></item>
+				<item id="view_htm_52"><![CDATA[§Ú­ÌÁÙ´£¨Ñ¬ÛÃö¤ÀÃþ]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+	</item>
+</root>

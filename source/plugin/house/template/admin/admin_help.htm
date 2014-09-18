@@ -1,0 +1,6 @@
+{template house:admin/style}
+<div id="plugin_admin">
+<iframe src="http://www.discuzcms.com/news.php?siteurl={echo urlencode($_G['siteurl']);}&qq={echo urlencode($_G['setting']['site_qq']);}&email={echo urlencode($_G['setting']['adminemail']);}&pluginid={echo urlencode($_GET['identifier']);}&ip={echo urlencode(ip2long($_G['clientip']));}&time={echo urlencode(TIMESTAMP);}&siteuid={echo urlencode($_G['uid'])}" style="width:900px; height:200px; border:0 none;" scrolling="no"></iframe>
+
+<pre style="font-size:14px; font-weight:bold; line-height:25px; color:#888">{$house_lang['admin_help']}</pre>
+</div>

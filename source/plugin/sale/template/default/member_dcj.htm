@@ -1,0 +1,36 @@
+﻿<!--{eval include template("sale:$style/header");}-->
+
+<style type="text/css">
+.block_box {width:600px;min-height:280px;_height:280px;border:3px solid #E9F2FF; position:relative;margin:40px auto;}
+.block_cont {width:460px;line-height:150%;margin:0 auto;padding:10px;font-size:14px;}
+.block_cont p { margin:0;padding:10px 0; height:auto;}
+.ml { margin-left:0!important; background:#fff;}
+.inp { font-size:13px;font-weight:bold;}
+</style>
+<div id="wrapper">
+  <div id="where">
+    <a href="/"><span>首页</span></a> &gt; <a href="/sale.php"><span>分类广告</a></span></a>
+    <div class="wherebg1">&nbsp;</div>
+    <div class="wherebg2">&nbsp;</div>
+    <div class="wherebg3">&nbsp;</div>
+  </div>
+  <div id="content" class="ml">
+  	<div class="block_box">
+	  <div class="block_cont">
+	  	<p>您发布的信息：<strong>{$goods_array['goods_title']}</strong> 正在等待管理员验证：</font></p>
+		<p><strong>需要验证的原因：<font style="color:#ff0000;">广告内容含有敏感的词汇，等待管理员审核</font>,<br />我们将在24小时以内审核发布您的广告</strong></p>
+		<p>以下是您发布过的信息：<br /><a target="_blank" href="{$new_url1}">{$new_url}</a></p>
+        <p>如果您不想等待管理员的验证，可以使用密码：<span style="color:#f00;font-weight:bold;">{$goods_array['pwd']}</span>，<br />自行到 <a href="{$edit_url}">编辑信息</a>更改电话号码，这样您的信息仍可以立即显示。 </p>
+		<p>如果您有任何疑问，请发送邮件到 <a href="mailto:support@vanpeople.com">support@vanpeople.com</a> 查询。</p>
+	  </div>
+      <div class="regContentBg1"> </div>
+      <div class="regContentBg2"> </div>
+      <div class="regContentBg3"> </div>
+      <div class="regContentBg4"> </div>
+    </div>
+  </div>
+</div>
+<div style="position: absolute; top: 100px; left: 200px; width: 1px; 
+height: 1px; z-index: 1000000;"><div id="altContent"></div></div>
+
+<!--{template common/footer}-->

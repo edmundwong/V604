@@ -1,0 +1,342 @@
+﻿
+<div id="content">
+<div id="postTable" style="width:910px; margin:0 auto;">
+    <div id="nav">
+      <ul>
+        <li id="nav1"><a href="/sale.php?mod=choclass" style="font-size:14px;">选择发布类型</a></li>
+        <li id="nav2" class="on">
+				  填写详细信息
+	    		</li>
+        <li id="nav3">发布成功</li>
+      </ul>
+    </div>
+    <p style="padding:10px;"></p>
+  </div>
+
+        <form action="{$sale_config['root']}?mod=post" method="post" id="postForm" enctype="multipart/form-data" onsubmit="return validate();">
+        <div id="formInputBox">
+            <input type="hidden" name="mod" value="{$mod}" />
+            <input type="hidden" name="ac" value="{$ac}" />
+            <input type="hidden" name="formhash" value="{$_G['formhash']}" />
+            
+            {if $ac=='edit'}
+                <input type="hidden" name="goods_id" value="{$goods_id}" />
+                <input type="hidden" name="tid" value="{$goods['tid']}" />
+            {/if}
+            
+            
+            {if $ac!='edit' && !empty($sale_config['postcredit']) && 0}
+            <div class="brian_tips" style="margin-top:0;">
+                <p>{$_lang['xinxifabu_tishi1']} <b>{$sale_config['postcredit']}</b> {$sale_config['credit_unit']} , {$_lang['nin_dangqian']}{$sale_config['credit_unit']} : <b>{$my_credit}. </b></p>
+            </div>
+            {/if}
+            
+            <div id="b0b0P0st1d1" class="item">
+            	<table>
+            <tr>
+              <td class="attribute"><font color="red">*</font>{lang sale:post_htm_15}</td>
+              <td class="inputTd">
+              	<strong>分类广告 >> {$dcj_cat2['cat_title']}</strong>
+                        <input type="hidden" name="cat" value="{$dcj_cat1['cat_id']}" />
+                        <input type="hidden" name="subcat" value="{$dcj_cat2['cat_id']}" />
+              </td>
+              <td valign="top" class="value"></td>
+            </tr>
+        </table>
+            </div>
+            
+            <!--标题-->
+            <div class="item">
+        <table>
+            <tr>
+              <td valign="top" class="attribute"><font color="red">*</font>{lang sale:post_htm_25}</td>
+              <td valign="top" class="inputTd"><input size="50" name="goods_title" id="goods_title" maxlength="50" class="input field wide" type="text" value="{$goods['goods_title']}" onfocus='document.getElementById("b0b0P0st1d2tips").style.display="block"' onblur='document.getElementById("b0b0P0st1d2tips").style.display="none"'></td>
+              <td class="value"><div id="b0b0P0st1d9hint" class="hiddenError"></div>
+                <div id="b0b0P0st1d2tips" class="hiddenTips">&nbsp;<img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/icon_comment2.gif" /> 4~18个字，不能填写电话、特殊符号</div></td>
+            </tr>
+        </table>
+      </div>
+            
+            <!--所属地区-->
+            <div class="item">
+        <table>
+            <tr>
+              <td valign="top" class="attribute"><font color="red">*</font>{lang sale:post_htm_17}</td>
+              <td valign="top" class="inputTd">
+		<span id="districtbox_show">{$goods['province']} {$goods['city']} {$goods['dist']} {$goods['community']}</span>
+                        <span id="districtbox">
+                            <a href="javascript:;" onclick="districtbox_edit_fun()">{lang sale:member_mypost_htm_10}</a>
+                        </span>
+                        {if $ac == 'post'}
+                        <script type='text/javascript'>
+                            brian_showdistrict("districtbox", ["province", "city", "dist", "community"], 4, 1);
+                        </script>
+                        {/if}
+			  </td>
+			  <td valign="top" class="value"> <div id="areaIdCheck" class="check"></div></td>
+            </tr>
+        </table>
+        <input type="hidden" name="goods_settime" value="0" />
+      </div>
+            
+             <!--联系人-->
+            <div class="item">
+        <table>
+            <tr>
+              <td class="attribute"><font color="red">*</font>{lang sale:post_htm_57}</td>
+              <td class="inputTd"><input autocomplete="off" name="member_username" size="30" maxlength="60" class="input field wide" type="text" value="{$member['member_username']}"></td>
+              <td class="value"><div id="b0b0P0st1d8hint" class="hiddenError"></div></td>
+            </tr>
+        </table>
+      </div>
+      {if $dcj_cat2['cat_pid'] == 1}      
+            <!--价格-->
+      <div class="item">
+        <table>
+            <tr>
+              <td class="attribute">{lang sale:post_htm_39}</td>
+              <td class="inputTd"><input name="goods_price" id="goods_price" size="4" maxlength="10" class="input input field numeric required" type="text" onfocus='document.getElementById("b0b0P0st1d7tips").style.display="block"' onblur='document.getElementById("b0b0P0st1d7tips").style.display="none"' value="面议" onclick="javascript:if(this.value=='面议') this.value='';" style="text-align:center;">加元</td><script>$('#priceObj').numeric();</script>
+              <td class="value"><div id="b0b0P0st1d7hint" class="hiddenError"></div>
+                <div id="b0b0P0st1d7tips" class="showTips" style="display:none;"><img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/icon_comment2.gif" />请用数字填写，中间不要插入其他符号</div></td>
+            </tr>
+        </table>
+      </div>
+      {/if}
+      
+      <!--信息内容-->
+      <div id="b0b0P0st1d13" class="item">
+        <table>
+            <tr>
+              <td valign="top" class="attribute"><font color="red">*</font>{lang sale:post_htm_26}</td>
+              <td class="inputTd" style="border-top:1px solid #999;">
+			    			  	<script type="text/javascript">
+var charset ="{$_G['charset']}";
+</script>
+<script type="text/javascript" charset="{$_G['charset']}" src="{$sale_config['ue']}editor_config.js"></script>
+<script type="text/javascript" charset="{$_G['charset']}" src="{$sale_config['ue']}editor_all.js"></script>
+<script  id="bb_editor" type="text/plain">{echo stripslashes($goods['goods_text']);}</script>
+<script type="text/javascript">
+var ue = UE.getEditor('bb_editor');
+</script>
+<input type="hidden" name="goods_text" id="goods_text" />
+							  </td>
+              <td valign="top" class="value"><div id="descriptionCheck"></div></td>
+            </tr>
+        </table>
+      </div>
+      
+      <!--电话-->
+       <div id="b0b0P0st1d8" class="item">
+        <table>
+          <tbody>
+            <tr>
+              <td class="attribute"><span class="red">*</span>电话：</td>
+              <td class="inputTd"><input autocomplete="off" name="member_phone" id="tel" size="30" maxlength="30" class="input input field required areaId" type="text" value="{$member['member_phone']}" onfocus='document.getElementById("b0b0P0st1d8tips").style.display="block"' onblur='document.getElementById("b0b0P0st1d8tips").style.display="none"'><dd style="display: none;"></dd></td>
+              <td class="value"><div id="b0b0P0st1d8hint" class="hiddenError"></div>
+                <div id="b0b0P0st1d8tips" class="hiddenTips">&nbsp;<img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/icon_comment2.gif" /> 请填写正确电话，用 “-” 分开</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      {if $cat_id2 == 45}
+	  <div id="b0b0P0st1d8" class="item">
+        <table>
+          <tbody>
+            <tr>
+              <td class="attribute">开始时间：</td>
+              <td class="inputTd"><input type="text" name="huodong_star_time" />
+				<select name="star_hour">
+						<option label="00" value="00">00</option>
+						<option label="01" value="01">01</option>
+						<option label="02" value="02">02</option>
+						<option label="03" value="03">03</option>
+						<option label="04" value="04">04</option>
+						<option label="05" value="05">05</option>
+						<option label="06" value="06">06</option>
+						<option label="07" value="07">07</option>
+						<option label="08" value="08">08</option>
+						<option label="09" value="09">09</option>
+						<option label="10" value="10">10</option>
+						<option label="11" value="11">11</option>
+						<option label="12" value="12">12</option>
+						<option label="13" value="13">13</option>
+						<option label="14" value="14">14</option>
+						<option label="15" value="15">15</option>
+						<option label="16" value="16">16</option>
+						<option label="17" value="17">17</option>
+						<option label="18" value="18">18</option>
+						<option label="19" value="19">19</option>
+						<option label="20" value="20">20</option>
+						<option label="21" value="21">21</option>
+						<option label="22" value="22">22</option>
+						<option label="23" value="23">23</option>
+					</select>
+					
+					<select name="star_fen">
+						<option label="00" value="00">00</option>
+						<option label="05" value="05">05</option>
+						<option label="10" value="10">10</option>
+						<option label="15" value="15">15</option>
+						<option label="20" value="20">20</option>
+						<option label="25" value="25">25</option>
+						<option label="30" value="30">30</option>
+						<option label="35" value="35">35</option>
+						<option label="40" value="40">40</option>
+						<option label="45" value="45">45</option>
+						<option label="50" value="50">50</option>
+						<option label="55" value="55">55</option>
+
+					</select>
+			  </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+	  
+	   <div id="b0b0P0st1d8" class="item">
+        <table>
+          <tbody>
+            <tr>
+              <td class="attribute">结束时间：</td>
+              <td class="inputTd"><input type="text" name="huodong_end_time" />
+				<select name="end_hour">
+						<option label="00" value="00">00</option>
+						<option label="01" value="01">01</option>
+						<option label="02" value="02">02</option>
+						<option label="03" value="03">03</option>
+						<option label="04" value="04">04</option>
+						<option label="05" value="05">05</option>
+						<option label="06" value="06">06</option>
+						<option label="07" value="07">07</option>
+						<option label="08" value="08">08</option>
+						<option label="09" value="09">09</option>
+						<option label="10" value="10">10</option>
+						<option label="11" value="11">11</option>
+						<option label="12" value="12">12</option>
+						<option label="13" value="13">13</option>
+						<option label="14" value="14">14</option>
+						<option label="15" value="15">15</option>
+						<option label="16" value="16">16</option>
+						<option label="17" value="17">17</option>
+						<option label="18" value="18">18</option>
+						<option label="19" value="19">19</option>
+						<option label="20" value="20">20</option>
+						<option label="21" value="21">21</option>
+						<option label="22" value="22">22</option>
+						<option label="23" value="23">23</option>
+					</select>
+					
+					<select name="end_fen">
+						<option label="00" value="00">00</option>
+						<option label="05" value="05">05</option>
+						<option label="10" value="10">10</option>
+						<option label="15" value="15">15</option>
+						<option label="20" value="20">20</option>
+						<option label="25" value="25">25</option>
+						<option label="30" value="30">30</option>
+						<option label="35" value="35">35</option>
+						<option label="40" value="40">40</option>
+						<option label="45" value="45">45</option>
+						<option label="50" value="50">50</option>
+						<option label="55" value="55">55</option>
+
+					</select>
+			  </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+	  {/if}
+	  
+<!--邮箱-->
+     <div id="b0b0P0st1d8" class="item">
+        <table>
+          <tbody>
+            <tr>
+              <td class="attribute">{lang sale:post_htm_60}</td>
+              <td class="inputTd"><input autocomplete="off" value="{$member['member_email']}" name="member_email" id="email" size="30" maxlength="50" class="input input field required areaId" type="text"  onfocus='document.getElementById("b0b0P0st1d9tips").style.display="block"' onblur='document.getElementById("b0b0P0st1d9tips").style.display="none"'><dd style="display: none;"></dd></td>
+              <td class="value"><div id="b0b0P0st1d9hint" class="hiddenError"></div>
+                <div id="b0b0P0st1d9tips" class="hiddenTips">&nbsp;<img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/icon_comment2.gif" /> 格式为:myname@example.com</div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+
+      
+           
+           <!--上传图片-->
+           	  <style type="text/css">
+#picbox { font-size:12px; }
+#picbox table { margin-bottom:5px; }
+</style>
+      <div id="b0b0P0st1d12" class="item">
+        <table>
+            <tr>
+              <td class="attribute">{lang sale:post_htm_48}</td>
+              <td class="inputTd">
+			    <table id="imagesTable">
+                    <tr>
+                      <td>
+					    <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                            <b>{lang sale:post_htm_50}1 : </b><input type="hidden" name="temp_goods_upload_file_1" value="{$goods['goods_upload_file_1']}" />
+                            <input type="file" name="goods_upload_file_1" />
+                            {if $goods['goods_upload_file_1']}<p><img src="{$goods['goods_upload_file_1']}" alt="goods_upload_file_1" /></p>{/if}
+                        </div>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                            <b>{lang sale:post_htm_50}2 : </b><input type="hidden" name="temp_goods_upload_file_2" value="{$goods['goods_upload_file_2']}" />
+                            <input type="file" name="goods_upload_file_2" />
+                            {if $goods['goods_upload_file_2']}<p><img src="{$goods['goods_upload_file_2']}" alt="goods_upload_file_2" /></p>{/if}
+                        </div>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                            <b>{lang sale:post_htm_50}3 : </b><input type="hidden" name="temp_goods_upload_file_3" value="{$goods['goods_upload_file_3']}" />
+                            <input type="file" name="goods_upload_file_3" />
+                            {if $goods['goods_upload_file_3']}<p><img src="{$goods['goods_upload_file_3']}" alt="goods_upload_file_3" /></p>{/if}
+                        </div>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px;margin-bottom:5px;">
+                            <b>{lang sale:post_htm_50}4 : </b><input type="hidden" name="temp_goods_upload_file_4" value="{$goods['goods_upload_file_4']}" />
+                            <input type="file" name="goods_upload_file_4" />
+                            {if $goods['goods_upload_file_4']}<p><img src="{$goods['goods_upload_file_4']}" alt="goods_upload_file_4" /></p>{/if}
+                        </div>
+                       </td>
+                    </tr>
+                </table>
+                <p>{lang sale:post_htm_49}2M </p></td>
+              <td valign="top" class="value"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+           <div style="height:5px; overflow:hidden; clear:both;"></div>
+      <div id="b0b0P0st1d17" class="item">
+        <table>
+          <tbody>
+            <tr>
+              <td class="attribute"></td>
+              <td class="inputTd">              
+              <input type="submit" name="{$ac}_submit"  id="{$ac}_submit" class="ljfb" value="{lang sale:post_htm_61}" />
+                <div id="validateTag"></div></td>
+              <td style="vertical-align:middle"><span style="font-size:12px;">&nbsp;发布即代表您已阅读并同意<a href="/about.php?mod=secret" target="_blank">人在温哥华网服务条款</a></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+     
+<div style="height:20px; clear:both;"></div>
+
+<script type="text/javascript" language="javascript">
+function validate() {
+    if($('goods_title').value ==''){
+        showPrompt(null, null, '"{lang sale:admin_jubao_htm_2}",{lang sale:post_htm_67}!', 2000);
+        $('goods_title').focus();
+        return false;
+    }else{
+        $('goods_text').value =  UE.getEditor('bb_editor').getContent();
+    }
+}
+function districtbox_edit_fun(){
+    display('districtbox_show');
+    brian_showdistrict("districtbox", ["province", "city", "dist", "community"], 4, 1);
+}
+</script>

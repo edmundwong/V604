@@ -1,0 +1,174 @@
+<!--{eval include template("info:$style/style");}-->
+<!--{template info:admin/style}-->
+
+<div id="plugin_admin" class=" brian_main brian_box pd5 bgf">
+    <h1 class="h1">{$info_lang['admin_area']}</h1>
+    <script type="text/javascript">
+    var rowtypedata = [
+        [
+            [1, '']
+            ,[1,'<input type="text" class="txt" name="newarea[area_sort][]" value="0" />', 'td25']
+            ,[1, '<div><input name="newarea[area_title][]" value="{$info_lang['admin_area_htm_2']}" size="20" type="text" class="txt" /><a href="javascript:;" class="deleterow" onClick="deleterow(this)">{$info_lang['del']}</a></div>']
+            ,[1,'<input type="text" class="txt" name="newarea[area_key][]" value="" />', 'td25']
+            ,[1,'<input type="text" class="txt" name="newarea[area_hot][]" value="0" />', 'td25']
+        ],
+       
+        [
+            [1, '']
+            , [1,'<input type="text" class="txt" name="newarea[area_sort][]" value="0" />', 'td25']
+            , [3, '<div class="board"><input name="newarea[area_title][]" value="{$info_lang['admin_area_htm_4']}" size="20" type="text" class="txt" /><a href="javascript:;" class="deleterow" onClick="deleterow(this)">{$info_lang['del']}</a></div>']
+            , [1,'<input type="hidden" class="txt" name="newarea[area_pid][]" value="{1}" />', 'td25']
+        ],
+       
+        [
+            [1, '']
+            , [1,'<input type="text" class="txt" name="newarea[area_sort][]" value="0" />', 'td25']
+            , [3, '<div class="childboard"><input name="newarea[area_title][]" value="{$info_lang['admin_area_htm_6']}" size="20" type="text" class="txt" /><a href="javascript:;" class="deleterow" onClick="deleterow(this)">{$info_lang['del']}</a>&nbsp;</div>']
+            , [1,'<input type="hidden" class="txt" name="newarea[area_pid][]" value="{1}" />', 'td25']
+        ],
+    ];
+    </script>
+   
+    {eval showformheader($self_url); }
+    <table class="tb tb2 ">
+        <tbody>
+            <tr class="header">
+                <th class="td25"></th>
+                <th style="width:80px;">{$info_lang['admin_area_htm_8']}</th>
+                <th>{$info_lang['area_title']}</th>
+                <th class="td25">{$info_lang['admin_area_htm_10']}</th>
+                <th class="td25" style="width:80px">{$info_lang['admin_area_htm_11']}</th>
+                <th style="width:50px;">ID</th>
+                <th class="td25">{$info_lang['admin_area_htm_12']}ID</th>
+                <th class="td25">{$info_lang['admin_area_htm_13']}</th>
+                <th style="width:100px;"></th>
+            </tr>
+        </tbody>
+        {loop $area_array $area}
+            {if empty($area['area_pid'])}
+                <tbody>
+                    <tr class="hover">
+                        <td class="td25" onclick="toggle_group('group_{$area['area_id']}', $('a_group_{$area['area_id']}'))">
+                            <a id="a_group_{$area['area_id']}" href="javascript:;">[-]</a>
+                        </td>
+                        <td class="td25">
+                            <input class="txt" type="text" name="area_sort[{$area['area_id']}]" value="{$area['area_sort']}"  />
+                        </td>
+                        <td>
+                            <input class="txt" type="hidden" name="area_id[{$area['area_id']}]" value="{$area['area_id']}"  />
+                            <input type="text" name="area_title[{$area['area_id']}]" value="{$area['area_title']}" style="width:200px;" />
+                        </td>
+                        <td class="td25"><input  class="txt" type="text" name="area_key[{$area['area_id']}]" value="{$area['area_key']}" /></td>
+                        <td class="td25" style="width:80px"><input  class="txt" type="text" name="area_hot[{$area['area_id']}]" value="{$area['area_hot']}" /></td>
+                        <td>
+                            {$area['area_id']}
+                        </td>
+                        <td class="td25">
+                            <input class="txt" type="text" name="area_pid[{$area['area_id']}]" value="{$area['area_pid']}" />
+                        </td>
+                        <td class="td25">
+                            <input class="txt" type="text" name="area_level[{$area['area_id']}]" value="{$area['area_level']}" />
+                        </td>
+                        <td>
+                            <a class="act"  href="{$now_url}&del={$area['area_id']}">{$info_lang['del']}</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody id="group_{$area['area_id']}">
+                    {loop $area_array $_area}
+                        {if $_area['area_pid'] == $area['area_id']}
+                            <tr class="hover">
+                                <td class="td25"></td>
+                                <td class="td25">
+                                    <input class="txt" type="text" name="area_sort[{$_area['area_id']}]" value="{$_area['area_sort']}"  />
+                                </td>
+                                <td>
+                                    <div class="board">
+                                        <input class="txt" type="hidden" name="area_id[{$_area['area_id']}]" value="{$_area['area_id']}"  />
+                                        <input type="text" name="area_title[{$_area['area_id']}]" value="{$_area['area_title']}" style="width:200px;" />
+                                        <a class="addchildboard" onclick="addrowdirect = 1;addrow(this, 2, {$_area['area_id']})" href="###">{$info_lang['admin_area_htm_15']}</a>
+                                    </div>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    {$_area['area_id']}
+                                </td>
+                                <td class="td25">
+                                    <input  class="txt" type="text" name="area_pid[{$_area['area_id']}]" value="{$_area['area_pid']}" />
+                                </td>
+                                <td class="td25">
+                                    <input class="txt" type="text" name="area_level[{$_area['area_id']}]" value="{$_area['area_level']}" />
+                                </td>
+                                <td>
+                                    <a class="act"  href="{$now_url}&del={$_area['area_id']}">{$info_lang['del']}</a>
+                                </td>
+                            </tr>
+                            {loop $area_array $__area}
+                                {if $__area['area_pid'] == $_area['area_id']}
+                                    <tr class="hover">
+                                        <td class="td25"></td>
+                                        <td class="td25">
+                                            <input class="txt" type="text" name="area_sort[{$__area['area_id']}]" value="{$__area['area_sort']}"  />
+                                        </td>
+                                        <td>
+                                            <div class="lastchildboard">
+                                                <input class="txt" type="hidden" name="area_id[{$__area['area_id']}]" value="{$__area['area_id']}"  />
+                                                <input type="text" name="area_title[{$__area['area_id']}]" value="{$__area['area_title']}" style="width:200px;" />
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            {$__area['area_id']}
+                                        </td>
+                                        <td class="td25">
+                                            <input  class="txt" type="text" name="area_pid[{$__area['area_id']}]" value="{$__area['area_pid']}" />
+                                        </td>
+                                        <td class="td25">
+                                            <input class="txt" type="text" name="area_level[{$__area['area_id']}]" value="{$__area['area_level']}" />
+                                        </td>
+                                        <td>
+                                            <a class="act"  href="{$now_url}&del={$__area['area_id']}">{$info_lang['del']}</a>
+                                        </td>
+                                    </tr>
+                                {/if}
+                            {/loop}
+                        {/if}
+                    {/loop}
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td colspan=2></td>
+                        <td colspan=5>
+                            <div class="lastboard">
+                                <a class="addtr" onclick="addrow(this, 1, {$area['area_id']})" href="###">{$info_lang['admin_area_htm_18']}</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            {/if}
+        {/loop}
+        <tbody>
+            <tr>
+                <td></td>
+                <td colspan=6>
+                    <div class="board">
+                        <a class="addtr" onclick="addrow(this, 0)" href="###">{$info_lang['admin_area_htm_19']}</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td></td>
+                <td colspan=6>
+                    <div class="fixsel">
+                        <input type="submit" class="btn" name="editsubmit" value="{$info_lang['loupan_view_kanfang_htm_4']}" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    {eval showformfooter(); }
+</div>

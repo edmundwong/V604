@@ -1,0 +1,52 @@
+<!--{template common/header}-->
+
+<!--{if $_GET['mod']=='wp'}-->
+<div class="dengjiwp">
+<h2><strong>{$tmp_lang['huangjinzuy']}</strong><a href="javascript:;" onclick="hideWindow('$_G[gp_handlekey]');" class="flbc" title="{lang close}"> </a></h2>
+
+
+ <!--{if !empty($zuyongs) && $_G['uid']}-->
+  <form method="post" action="plugin.php?id=dz55625_haodian:haodian_zy&&mod=wp&applysubmit=true" name="applyform">   
+  <script type="text/javascript" src="{$_G[setting][jspath]}calendar.js?{VERHASH}"></script>  
+       				<input type="hidden" name="referer" value="$_G[referer]">
+				<input type="hidden" name="formhash" value="{FORMHASH}" />
+
+        <table border="1">
+        <tr>
+              <td style=" width:80px; background:#F9F9F9; height:30px; line-height:30px; text-align:center">{$tmp_lang['wodedianpu']}</td>
+              <td>&nbsp;<select name="title" style="width:180px;height:25px;"><!--{loop $zuyongs $zuyong}--><option value="{$zuyong[title]}">{$zuyong[title]}</option><!--{/loop}--></select></td>
+        </tr>      
+        <tr> 
+           <td style=" width:80px; background:#F9F9F9; height:30px; line-height:30px; text-align:center">{$tmp_lang['zujinsss']}</td>
+           <td>&nbsp;{$tmp_lang['meiyueweiss']}<strong style="color:#F30">{$tadayzj}</strong> {$haodian['extcredits'][$set[extcredit]]['title']}</td>
+        </tr>      
+        <tr> 
+           <td style=" width:80px; background:#F9F9F9; height:30px; line-height:30px; text-align:center">{$tmp_lang['qizhushijian']}</td>
+           <td>&nbsp;<input type="text" name="dateline" value="{echo date('Y-m-d H:i:s',time())}" disabled="disabled" /></td>
+        </tr>   
+        
+       <tr> 
+           <td style=" width:80px; background:#F9F9F9; height:30px; line-height:30px; text-align:center">{$tmp_lang['daoqishijian']}</td>
+           <td>&nbsp;<input type="text" name="createtime" value="{echo date('Y-m-d H:i:s',strtotime('+31 day'))}" disabled="disabled" /></td>
+        </tr>          
+        </table>
+        
+        <h3>{$tmp_lang['shanchushijiansss']}</h3>
+                        
+        <div style="text-align:center; margin:10px auto 0;">
+					<button type="submit" name="applysubmits" id="applysubmits" value="true" class="pn pnp" /><strong>{$tmp_lang['qqueding']}</strong></button>
+				    <button type="reset" name="sendreset" class="pn pnp" /><strong>{$tmp_lang['chexiao']}</strong></button>
+		</div>
+      
+     <!--{else}-->
+            
+       <ul>{$tmp_lang['dengjidianpu']}</ul>
+            
+    <!--{/if}-->
+			
+        
+</form>
+</div>
+<!--{/if}-->
+
+<!--{template common/footer}-->               

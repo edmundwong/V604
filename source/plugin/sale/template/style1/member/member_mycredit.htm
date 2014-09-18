@@ -1,0 +1,27 @@
+<div class="brian_account_mycredit">
+<div>{lang sale:member_mycredit_htm_1} : {lang sale:member_mycredit_htm_2}<span style="color:#FF6600; font-size:24px;">{$credit}</span> , <a href="{$sale_config['chongzhi']}" target="_blank">[{$sale_config['credit_unit']}{lang sale:index_htm_4}]</a></div>
+    <table cellspacing="0" cellpadding="0" class="dt mtm" >
+    <caption><h2 class="mbm xs2">{lang sale:member_mycredit_htm_4}</h2></caption>
+    <tbody>
+        <tr>
+            <th>{lang sale:admin_jubao_htm_2}</th>
+            <th width="80">{lang sale:member_mycredit_htm_6}</th>
+            <th width="80">{$sale_config['credit_unit']}{lang sale:member_mycredit_htm_7}</th>
+            <th width="130">{lang sale:member_mycredit_htm_8}</th>
+            <th width="130">{lang sale:member_mycredit_htm_9}</th>
+        </tr>
+        {loop $credit_log $log}
+        <tr>
+            <td><a href="{$sale_config['root']}?mod=view&goods_id={$log['goods_id']}" target="_blank">{$log['goods_title']}</a></td>
+            <td>{$log['up_day']}</td>
+            <td><span class="xg1">-{echo $sale_config['daycredit']*$log['up_day']}</span></td>
+            <td>{echo dgmdate($log['up_time'],'u');}</td>
+            <td>{echo dgmdate($log['up_endtime'],'u');}</td>
+        </tr>
+        {/loop}
+    </tbody>
+    </table>
+    {if !$credit_log}
+        <div class="brian_tips">{lang sale:member_mycredit_htm_10}.</div>
+    {/if}
+</div>

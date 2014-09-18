@@ -1,0 +1,111 @@
+<!--{eval include template("info:$style/header");}-->
+<link type="text/css" rel="stylesheet" href="$_G['style']['v604t_common']css/service.css" />
+<style>
+    .notice {
+        line-height: 20px !important;
+        padding-top:20px !important;
+        padding-bottom:20px !important
+    }
+    .jubao {
+        line-height: 10px !important;
+        padding-top:10px !important;
+        padding-bottom:10px !important;
+        border-bottom:0px solid #000 !important;
+        color:#747474;
+    }
+    .v604_message div strong{
+        color:#747474;
+    }
+    .right div strong{
+        color:#747474;
+    }
+    article section.left .v604_title {
+        margin-top:10px
+    }
+    article section.left .v604_title div {
+        padding-top:5px
+    }
+    article section.left .content p {
+        margin-bottom: 30px ;
+    }
+</style>
+
+<article style="background:#fff4ee">
+    <div class="wrapper neirong clearfix">
+        <section class="v604_fl left" style="border:1px solid #efe6e0 ;">
+            <div class="v604_title">
+                <strong>{$post['post_title']}</strong>
+                <div class="clearfix"style='color:#747474'>
+                    <p class="v604_fl">发布时间 : {echo dgmdate($post['post_time'],'dt');} | 浏览 : {$post['post_view']}次</p>
+                    <p class="v604_fr" style='color:#747474;'>信息编号 : {$post['post_id']}
+                        <!--{if ($goods['member_uid']==$_G['uid'] || $is_sale_admin)}-->
+                        <a href="{$info_config['root']}?mod=member&op=post&ac=edit&subcat_id={$subcat_id}&post_id={$post_id}" style='margin-left:8px'>修改</a> | 
+                        <a href="{$info_config['root']}?mod=view&post_id={$post_id}&op=del&check=pwd">删除</a></span>
+                        <!--{/if}-->
+                    </p>
+                </div>
+            </div>
+            <div class="info clearfix" style="font-size:16px">
+                <div class="v604_fl left">
+                    <div class='v604_fl'>
+                        <img src="$_G['style']['v604t_common']img/null.jpg" style="width:110px;height:110px;margin-top:5px">
+                    </div>
+                    <div class="v604_fl v604_message" style="margin-left:10px">
+                        <div><strong>{$post['subcat_title']}</strong></div>
+                        <div><strong>所属地区：</strong><span>{$post['area_title']} {$post['subarea_title']} {$post['thrarea_title']}</span></div>
+                        <div><strong>类别从属：</strong><span>{$post['cat_title']}</span></div>
+                        <div><strong>服务语言：</strong><span>{$post['lang']}</span></div>
+                    </div>
+                </div>
+                <div class="v604_fl right">
+                    <div><strong>联 系 人：</strong><span>{$post['member_username']}</span></div>
+                    <div><strong>联系电话：</strong><span>{$post['tel']}</span></div>
+                    <div><strong>电子邮件：</strong><span>{$post['email']}</span></div>
+                    <div><span style='vertical-align:top;'><strong>联系地址：</strong></span><span style='display:inline-block;width: 250px;'>{$post['address1']}</span></div>
+                </div>
+            </div>
+            <div class="jubao" >
+                举报：<a href='#'>分类不当</a><a href='#'>商业广告</a><a href='#'>其他问题举报</a>
+            </div>
+            <div class="notice">
+                {$info_config['gonggao']}
+            </div>
+            <div class="content">
+                <strong style='font-size:16px'>描述</strong>
+                <p style='font-size:14px'>{$post[enterprise]}</p>
+                <strong style='font-size:16px;'>信息内容</strong>
+                <!--{eval echo $post['post_text'];}-->
+                <!--{if substr($post['pwd'],0,5) != '_auto'}-->
+                    <!--{loop $info_img $im}-->
+                <div class="pics">
+                    <p>
+                        <img src="{$im['img']}" class="image" style='margin-top:20px' alt="{$im['img']}" title="{lang sale:view_htm_46}" />
+                    </p>
+                </div>
+                    <!--{/loop}-->
+                <!--{/if}-->
+                <p>{$info_config['helpnotice']}</p>
+            </div>
+        </section>
+        <aside class="v604_fr right"style="border:1px solid #efe6e0 ;">
+            <div class="xinxi" style='margin-top:10px;border-bottom:1px solid #ece7e4;'>
+                <strong>问题解答</strong>
+                <ul class="news"style='padding-bottom:0px'>
+                    <li><a href="#">如何免费发布信息？</a></li>
+                    <li><a href="#">如何免费发布信息？</a></li>
+                    <li><a href="#">如何免费发布信息？</a></li>
+                    <li><a href="#">如何免费发布信息？</a></li>
+                    <li><a href="#">如何免费发布信息？</a></li>
+                </ul>
+            </div>
+            <div class="xinxi clearfix"style='margin-top:15px'>
+                <strong>本站客服</strong>
+                <p style='font-size:14px'>这里是温哥华本地生活信息浏 览/发布平台，每天有上百条信 息供您选择。感谢您对 人在温 哥华网 - VanPeople 的支持</p>
+
+                <a class="contact" href="#"style='font-size:14px'>联系客服<img src="$_G['style']['v604t_common']img/message.png" class="v604_fr"style='margin-top:3px' /></a> </div>
+        </aside>
+    </div>
+</article>
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

@@ -1,0 +1,30 @@
+<!--{template common/header}-->
+<!--{eval include template("sale:$style/style");}-->
+<div class='brian_main' style="width:350px !important;">
+    <h3 class="flb">
+	    <em id="return_{$_GET['handlekey']}">{lang sale:jubao_htm_1}</em>
+	    <span>
+		    <a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']')" title="{lang close}">{lang close}</a>
+	    </span>
+    </h3>
+
+    <div class="brian_account_memberinfo">
+    <form action="{$sale_config['root']}?mod=jubao" method="post">
+    <input type="hidden" name="formhash" value="{$_G['formhash']}" />
+    <input type="hidden"  name="mod" value="jubao" />
+    <input type="hidden"  name="goods_id" value="{$goods['goods_id']}" />
+    <table>
+        <tr>
+            <td class="brian_account_memberinfo_left">{lang sale:admin_jubao_htm_2} : </td>
+            <td class="brian_account_memberinfo_right"><a target="_blank" href="{$sale_config['root']}?mod=view&goods_id={$goods['goods_id']}">{$goods['goods_title']}</a></td>
+        </tr>
+        <tr>
+            <td class="brian_account_memberinfo_left"> </td>
+            <td class="brian_account_memberinfo_right"><input type="submit" name="submit_jubao" class="ljfb" value="{lang sale:jubao_htm_3}"  /></td>
+        </tr>
+    </table>
+    </form>
+    </div>
+</div>
+
+<!--{template common/footer}-->

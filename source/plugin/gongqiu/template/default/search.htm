@@ -1,0 +1,53 @@
+<div class="cl">
+    <ul class="TabBarLevel1">
+        <li {if empty($goods_type) }  class="selected" {/if} ><a href="{$gongqiu_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}">{$_lang['suoyouxinxi']}</a></li>
+        {loop $goods_type_array $gta_key $gta}
+             <li {if $goods_type==$gta_key} class="selected" {/if}><a href="{$gongqiu_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_type={$gta_key}">{$gta}</a></li>
+        {/loop}
+    </ul>
+</div>
+<div class="cat_menu2" style="display:none;">
+    <span><strong>{lang gongqiu:post_htm_68} : </strong><input type="text" name="goods_price_begin" /> {lang gongqiu:search_htm_2} <input type="text"  name="goods_price_end" /></span>
+    <span style="display:none;"><strong>{lang gongqiu:search_htm_3} : </strong><input type="text" /> {lang gongqiu:search_htm_2} <input type="text" /></span>
+    <span><strong>{lang gongqiu:search_htm_5} : </strong><input type="text" style="width:170px;" name="goods_keyword" /> <input type="submit" class="pnc pn" value="&nbsp;{lang gongqiu:search_htm_6}&nbsp;" /></span>
+</div>
+<div class="infoselect cl">
+    <div class="infoselect_left">
+        {if !empty($area_id)}
+        <div class="pages_sort cl">
+            <strong>{$_lang['diqufenlei']} : </strong>
+            <a href="{$gongqiu_config['root']}?mod=index">{$_lang['buxian']}</a>
+            <a href="{$gongqiu_config['root']}?mod=index&level={$area['level']}&upid={$area['id']}"  class="active" >{$pre_area['name']}</a>
+        </div>
+        {/if}
+        
+        {if !empty($cat_id)}
+        <div class="pages_sort cl">
+            <strong>{$_lang['hangyefenlei']} : </strong>
+            <a href="{$gongqiu_config['root']}?mod=index&upid={$upid}&level={$level}" >{$_lang['buxian']}</a>
+            <a href="{$gongqiu_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}"  class="active" >{$cat_title}</a>
+        </div>
+        {/if}
+        
+        <div class="pages_sort">
+            <strong>{$_lang['jiagequjian']} : </strong>
+            <a href="#"  class="active" >{$_lang['buxian']}</a>
+            <input type="text" class="text" style="width:50px;" /> - <input type="text" class="text"  style="width:50px;"  /> <input type="submit" class="btn" value="{$_lang['saixuan']}" />
+        </div>
+        <div class="pages_sort">
+            <strong>{lang gongqiu:search_htm_12} : </strong>
+            <a {if empty($goods_howtopay) } class="active" {/if} href="{$gongqiu_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}">{lang gongqiu:search_htm_8}</a>
+            <a {if $goods_howtopay==1} class="active" {/if} href="{$gongqiu_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_howtopay=1">{lang gongqiu:post_htm_35}</a>
+            <a {if $goods_howtopay==2} class="active" {/if} href="{$gongqiu_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_howtopay=2">{lang gongqiu:post_htm_36}</a>
+            <a {if $goods_howtopay==3} class="active" {/if} href="{$gongqiu_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_howtopay=3">{lang gongqiu:post_htm_37}</a>
+            <a {if $goods_howtopay==4} class="active" {/if} href="{$gongqiu_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_howtopay=4">{lang gongqiu:post_htm_38}</a>
+        </div>
+    </div>
+    <div class="infoselect_right">
+        <pre>{$gongqiu_config['topnotice']}</pre>
+    </div>
+</div>
+<div class="underselect">
+    <span class="z"><strong>{$gongqiu_config['name']}</strong></span>
+    <span class="y">{lang gongqiu:search_htm_25} : <b style="color:#f54100">{$pagenum}</b>, {lang gongqiu:search_htm_26}! &nbsp; <a href="{$gongqiu_config['root']}?mod=post"><img src="{$gongqiu_config['siteurl']}source/plugin/gongqiu/template/{$style}/css/images/postbg.gif" /></a></span>
+</div>

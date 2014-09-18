@@ -1,0 +1,255 @@
+
+
+<link rel="stylesheet" type="text/css" href="source/plugin/dz55625_haodian/images/GooUploader/GooUploader.css"/>
+<script  type="text/javascript" src="source/plugin/dz55625_haodian/images/GooUploader/jquery-1.3.2.min.js"></script>
+<script  type="text/javascript" src="source/plugin/dz55625_haodian/images/GooUploader/GooUploader.js" ></script>
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/GooUploader/swfobject.js"></script>
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/GooUploader/swfupload/swfupload.js"></script>
+<script type="text/javascript">
+var jq = jQuery.noConflict();
+var  post_params = {"id":"dz55625_haodian:haodian_pc_up","uid":"{$_G['uid']}","username":"$_G['username']","imgwater":"{$imgwater}","imgwater_wz":"{$imgwater_wz}","aid":"","title":""};
+var property={
+	width:650,
+	height:150,
+	multiple:true,
+	file_post_name : "Filedata",
+    file_types:"*.jpg;*.gif;*.png;",
+    file_types_description: "Web Image Files",
+    post_params:post_params,
+ 	 btn_add_text:"{$tmp_lang['up_add']}",
+    btn_up_text:"{$tmp_lang['up_up']}",
+    btn_cancel_text:"{$tmp_lang['up_cancel']}",
+    btn_clean_text:"{$tmp_lang['up_clean']}",
+    op_del_text:"{$tmp_lang['up_opdel']}",
+    op_up_text:"{$tmp_lang['up_opup']}",
+    op_fail_text:"{$tmp_lang['up_fail']}",
+    op_ok_text:"{$tmp_lang['up_ok']}",
+    op_no_text:"{$tmp_lang['up_no']}",
+	upload_url:"plugin.php",
+	file_size_limit:parseInt({$piczhanshi}/1024),
+	file_upload_limit:{$pic_plup},
+	file_queue_limit:{$pic_plup},
+	flash_url:"source/plugin/dz55625_haodian/images/GooUploader/swfupload/swfupload.swf"
+};
+var img_up=null;
+function load_img_up(){
+  	img_up=jq.createGooUploader(jq("#imgup"),property);
+	img_up.getSwfUpload().fileQueueError=function(f,code, message){
+		var s="";
+		if(code==-100){
+			s="{$tmp_lang['up_upsize']}"+{$pic_plup};
+		}else if(code==-110){
+			s=f.name+"{$tmp_lang['up_filesize']}"+img_up.getFileSize({$piczhanshi});
+		}else if(code==-120){
+			s=f.name+"{$tmp_lang['up_zero']}";
+		}else if(code==-130){
+			s=f.name+"{$tmp_lang['up_arrt']}";
+		}else{
+			s="error code "+code;
+		}
+		alert(s);
+	}
+	img_up.uploadStartBefore=function(){
+		jq("#dian_id").attr("disabled","disabled");
+		jq("#dian_title").attr("disabled","disabled");
+		img_up.getSwfUpload().removePostParam("aid");
+		img_up.getSwfUpload().removePostParam("title");
+		img_up.getSwfUpload().addPostParam("aid",jq("#dian_id").val());
+		if(jq("#dian_title").val()=="{$tmp_lang['usertitle']}"){
+			img_up.getSwfUpload().addPostParam("title","");
+		}else{img_up.getSwfUpload().addPostParam("title",jq("#dian_title").val());}
+		return true;
+	}
+	
+	img_up.uploadAllComplete=function(){
+		jq("#dian_id").removeAttr("disabled");
+		jq("#dian_title").removeAttr("disabled");
+		location.reload();
+	}
+
+}
+
+function close_img_up(){
+	document.getElementById("imgup").innerHTML="";
+	hideWindow('haodian_pc');
+}
+
+function resizepic(thispic)
+{ 
+	if(thispic.width>180) thispic.width=180; 
+	if(thispic.height>122) thispic.height=122; 
+}
+
+function del_ablums(id,title){
+	showDialog('{$tmp_lang['up_abdel1']}'+title+'{$tmp_lang['up_abdel2']}', 'confirm', '{$tmp_lang['querentip']}', function(){window.location="{$appurls}&p=listpic&pp=del_ablums&ablumsid="+id;}, 0);
+}
+function del_img(id){
+	showDialog('{$tmp_lang['adminshanchutx']}', 'confirm', '{$tmp_lang['querentip']}', function(){window.location="{$appurls}&p=listpic&pp=del_img&imgid="+id;}, 0);
+}
+function update_img(id){
+	showWindow('updateimg','plugin.php?id=dz55625_haodian:updateimg&xxx='+id, 'get', 0);
+}
+
+
+function updateimgtext(){
+	var imgtitle=jq("#imgtitle").val();
+	var imgid=jq("#img_id").val();
+	var cx={id:'dz55625_haodian:updateimg_ajax',actions:'updateimg',title:imgtitle,imgid:imgid,xxx:Math.random()*1000};
+	jq.ajax({
+		url: "plugin.php",  
+		type: "POST",
+		data:cx,
+		 dataType: "json",
+		 error: function(){  
+			alert("{$tmp_lang['jz_err']}");
+		},  
+		 success: function(ajaxdata){//如果调用php成功  
+		 	//alert(ajaxdata.text);
+			if(ajaxdata.status==1){
+				jq("#s_title_"+imgid).html(imgtitle);
+			}
+			hideWindow('updateimg');
+			showPrompt(null, null, ajaxdata.text, 2000);
+		}
+	 });
+}
+function updateimgobj(text,action,id){
+	var cx={id:'dz55625_haodian:updateimg_ajax',actions:action,imgid:id,xxx:Math.random()*1000};
+	showDialog(text, 'confirm', '{$tmp_lang['querentip']}',callback, 0);
+	function callback(){
+	
+		jq.ajax({
+			url: "plugin.php",  
+			type: "POST",
+			data:cx, 
+			 dataType: "json",
+			 error: function(){  
+				alert("{$tmp_lang['jz_err']}");
+			},  
+			 success: function(ajaxdata){//如果调用php成功  
+				
+				if(ajaxdata.status==1){
+					try{
+						if(action=="showar"){						
+							
+							jq("#s_showar_"+id).html('<a href="javascript:;" onclick="updateimgobj(\''+text+'\',\'hidear\','+id+')" style="color:#FF0000; padding-right:5px">{$tmp_lang['up_caneltj']}</a>');
+						}else if(action=="hidear"){
+							jq("#s_showar_"+id).html('<a href="javascript:;" onclick="updateimgobj(\''+text+'\',\'showar\','+id+')" style="color:#FF0000; padding-right:5px">{$tmp_lang['up_tj']}</a>');
+						}
+					}catch(e){
+					}
+				}
+				//alert(ajaxdata.text);
+				showPrompt(null, null, ajaxdata.text, 2000);
+			}
+		 });
+	}
+}
+
+
+</script>
+
+<div class="user_pcadd">{if $pp=='list'}<strong>{$tmp_lang['listdianzs']}</strong>{elseif $pp=='imglist'}<strong>{$tmp_lang['sjtext']}{$tmp_lang['c_maohao']}{$ar_sj[title]}</strong><strong>{$tmp_lang['sjtps']}{$tmp_lang['c_maohao']}<em>{$ablums[imgnum]}</em></strong><span><a href="plugin.php?id=dz55625_haodian:haodian_user&p=listpic">{$tmp_lang['sjfhxc']}</a></span>{/if}</div>
+<!--{if $pp=='list'}--> 
+
+   <!--{if $ar_counts == 0}--> 
+     	<div class="addkk" style="width:100%; margin:0 auto"><h3>{$tmp_lang['nodengji']}</h3></div>  
+    <!--{else}-->
+        <div style="width:100%; height:auto; float:left;">
+            <!--{loop $albumslist $key $albums}-->
+                <div style="width:200px; text-align:center; float:left; margin:0px 0 15px 0;" class="cl">
+                
+                     <div  style="width:184px; text-align:center;  border:1px solid #e3e3e3;overflow:hidden;padding:2px 0;position:relative;">
+                        <a href="$appurls&amp;p=listpic&amp;pp=imglist&amp;ablumsid=$albums[id]" title="{$r[title]}" onFocus=this.blur() class="alb_a"><img onload="javascript:resizepic(this)" src="$albums[img_url]"  border="0" width="175" height="120"/>
+                            <div><a href="javascript:;" onclick="del_ablums({$albums[id]},'{$albums['ar_title']}')" style="color:#F00">{$tmp_lang['adminshanchu']}</a></div>
+                        </a>
+                     </div>
+                     <div style="width:184px; text-align:center;  height:30px; padding:2px 0"><span style=" width:140px; margin-left:5px; margin-right:5px; overflow:hidden"><a href="$appurls&amp;p=listpic&amp;pp=imglist&amp;ablumsid=$albums[id]" title="{$r[title]}">{echo cutstr($albums['ar_title'], 18, '')}</a></span>&nbsp;&nbsp;{$albums['imgnum']}张</div>
+                </div>
+               
+            <!--{/loop}-->
+        </div>
+    <!--{/if}-->
+    
+<!--{elseif $pp=='imglist' }-->
+
+	<div style="width:100%; height:auto;float:left;">
+    {if $counts}
+    <!--{loop $imgs $k $v}-->
+    
+        <div style="width:200px; text-align:center; float:left; margin:0px 0 15px 0;" class="cl">
+            <div style="width:184px; text-align:center; border:1px solid #e3e3e3;overflow:hidden; padding:2px 0;position:relative;">
+                <a class="alb_a_img" href="javascript:;"><img src="$v[shrink_url]"  border="0" width="180" height="122" />
+                    <div>
+                   		 <span><a href="javascript:;" onclick="del_img({$v[id]})" style="color:#FF0000; padding-right:5px">{$tmp_lang['adminshanchu']}</a></span><span><a href="javascript:;" onclick="update_img({$v[id]})" style="color:#FF0000; padding-right:5px">{$tmp_lang['up_xg']}</a></span><span id="s_szfm_{$v[id]}"><a href="javascript:;" onclick="updateimgobj('{$tmp_lang['up_xwsz']}','szfm',{$v[id]})" style="color:#FF0000; padding-right:5px">{$tmp_lang['up_szfm']}</a></span><span id="s_showar_{$v[id]}">{if {$v[issz]}}<a href="javascript:;" onclick="updateimgobj('{$tmp_lang['up_xwhidear']}','hidear',{$v[id]})" style="color:#FF0000; padding-right:5px">{$tmp_lang['up_caneltj']}</a>{else}<a href="javascript:;" onclick="updateimgobj('{$tmp_lang['up_xwshowar']}','showar',{$v[id]})" style="color:#FF0000; padding-right:5px">{$tmp_lang['up_tj']}</a>{/if}</span>
+               		</div>
+               </a>
+   			</div>
+         	<div style="height:30px; line-height:30px;"><span id="s_title_{$v[id]}">{echo cutstr($v['title'], 18, '')}</span></div>
+       </div>
+      	
+    <!--{/loop}--> 
+    
+    	<div style="float:none;margin-top:20px; margin-right:15px; width:100%"> {$multis}</div>
+    {else}
+    	<div class="addkk" style="width:96%; margin:0 auto"><h3>{$tmp_lang['wscsjtp']}</h3></div> 
+    {/if}
+	</div>
+<!--{/if}-->
+
+<div class="userAddpc">
+    <h2><strong>{$tmp_lang['shangchuanpic']}</strong></h2>
+    
+    
+   <!--{if $a_counts == 0}--> 
+     <div class="addkk" style="width:96%; margin:0 auto"><h3>{$tmp_lang['nodengji']}</h3></div> 
+    <!--{else}-->
+  	
+    <ul>
+    	<div class="addkk"><h3>{$tmp_lang['userguige']}{$pic_plup}{$tmp_lang['userguige_1']}{echo round($piczhanshi/1024)}K</h3></div> 
+    	<form method="post" enctype="multipart/form-data" action="plugin.php?id=dz55625_haodian:haodian_pc&action=pc&applysubpc=true" name="applyformx">
+
+            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">  
+              <tr>
+                <td class="h2Bt">
+             		 {$tmp_lang['xzsj']}
+                </td>
+                <td>
+                {if $pp=='list'}
+                &nbsp;<select id="dian_id" name="dian_id" style="width:215px; height:24px">
+                  <!--{loop $zuyongs $zuyong}-->
+                  <option value="{$zuyong[id]}">{$zuyong[title]}</option>
+                  <!--{/loop}-->
+                </select>
+                {else}
+                <input type="hidden" value="{$ar_sj[id]}" name="dian_id" id="dian_id"/>
+                &nbsp;{$ar_sj[title]}
+                {/if}
+                
+                </td>
+             </tr>
+             
+              <tr>
+                <td class="h2Bt">
+               {$tmp_lang['xzbiaoti']}
+                </td>
+                <td>&nbsp;<input name="dian_title" type="text" id="dian_title" size="33"  onblur="if(this.value==''){this.value='{$tmp_lang['usertitle']}';this.style.color='#999'}" onfocus="if(this.value=='{$tmp_lang['usertitle']}'){this.value='';this.style.color='#999'}" value='{$tmp_lang['usertitle']}' />
+                </td>
+             </tr>
+              <tr>
+                <td class="h2Bt">
+               {$tmp_lang['xzbiaoti']}
+                </td>
+                <td><div id="imgup" name="imgup"></div>
+                </td>
+             </tr>
+            </table> <input type="hidden" name="formhash" value="{FORMHASH}" />
+       
+      	</form>
+        
+	</ul>
+	
+	<script language="javascript">load_img_up();</script>
+	<!--{/if}-->
+</div>
+<div style="width:100%; float:none;"></div>

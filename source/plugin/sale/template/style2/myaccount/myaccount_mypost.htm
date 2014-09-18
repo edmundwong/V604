@@ -1,0 +1,38 @@
+<div>
+<h2 class="xs2" style="padding-left:10px; padding-top:10px;">{lang sale:index_htm_3}</h2>
+{if $goods_list}
+    <ul class="brian_member_post_list">
+    {loop $goods_list $goods}
+    <li>
+    <table>
+        <tr>
+            {if $goods['goods_upload_file_1']}<td class="brian_member_post_list_pic"><img src="{$goods['goods_upload_file_1']}" width="40" height="40" /></td>{/if}
+            <td class="brian_member_post_list_txt">
+                <p>
+                    <span class="z"><a href="{$sale_config['root']}?mod=view&goods_id={$goods['goods_id']}" target="_blank" style="font-size:14px;">{$goods['goods_title']}</a> {lang sale:member_mypost_htm_2} : {$goods['cat_title']} {if $goods['goods_up']=='1'}<b style="color:#FF6600;">[{lang sale:member_mypost_htm_3}] {lang sale:member_mycredit_htm_9} : {echo dgmdate($goods['up_endtime'],'u');}</b>{else}[{lang sale:member_mypost_htm_5}]{/if}</span>
+                    <span class="y">{lang sale:member_mypost_htm_6} : {$goods['goods_id']}</span>
+                </p>
+                <p class="clear">
+                    <span class="z"> {lang sale:member_mypost_htm_7} : {$goods['province']} {$goods['city']} {$goods['dist']} {$goods['community']} {lang sale:member_mypost_htm_8} : {echo dgmdate($goods['goods_time'],'u');}</span>
+                    <span class="y">
+                        <a href="{$sale_config['root']}?mod=member&op=setpostup&goods_id={$goods['goods_id']}" onclick="showWindow('setpostup',this.href,'get',0);">{lang sale:index_htm_7}</a>
+                        <span class="pipe">/</span>
+                        {if $goods['goods_up']=='1'}
+                        <a href="{$sale_config['root']}?mod=member&op=quiteup&goods_id={$goods['goods_id']}">{$_lang['quiteup']}</a>
+                        <span class="pipe">/</span>
+                        {/if}
+                        <a href="{$sale_config['root']}?mod=post&op=edit&goods_id={$goods['goods_id']}">{lang sale:member_mypost_htm_10}</a>
+                    </span>
+                </p>
+            </td>
+        </tr>
+    </table>
+    </li>
+    {/loop}
+    </ul>
+<div class="clear"></div>
+<div>{$multipage}</div>
+{else}
+<div class="brian_tips">{lang sale:member_mypost_htm_11}.</div>
+{/if}
+</div>

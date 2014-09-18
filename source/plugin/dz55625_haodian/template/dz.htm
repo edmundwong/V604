@@ -1,0 +1,31 @@
+{template common/header}
+
+<div class="dianzhaos">
+    <h2><strong>{$tmp_lang['dianzhaoedit']}</strong><a href="javascript:;" onClick="hideWindow('$_G[gp_handlekey]');" class="flbc" title="{lang close}">{lang close}</a></h2>
+    <ul class="cl">
+
+    <form method="post" enctype="multipart/form-data" action="plugin.php?id=dz55625_haodian:haodian_dz&action=dz&mod=view&applysubdz=true" name="applyforms">
+        <input type="hidden" name="formhash" value="{FORMHASH}" />
+       	<input type="hidden" name="newid" value="$active[id]" />
+<table width="100%">
+<tr>
+<td class="h2Bt">{$tmp_lang['dz_height']}</td>
+<td>&nbsp;<input name="dheight" type="text" id="dheight" value="120" size="8" />&nbsp;&nbsp;<span>{$tmp_lang['dz_moren']}</span></td>
+</tr>
+<tr>
+<td class="h2Bt">{$tmp_lang['dz_upland']}</td>
+<td>&nbsp;<input type="file" name="upload" id="pic" size="30" /></td>
+</tr>
+
+</table>
+
+    <div style="text-align:center; margin:10px auto 0; float:left; width:100%">
+        <button type="submit" name="applysubdz" id="applysubdz" value="true" class="pn pnp" /><strong>{$tmp_lang['listtjj']}</strong></button>
+    </div>
+    </form>
+    </ul>
+</div>
+    
+{template common/footer}
+
+

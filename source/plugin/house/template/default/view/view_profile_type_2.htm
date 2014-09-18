@@ -1,0 +1,50 @@
+<tr>
+    <td colspan=2>
+        <div class="detail-r">
+            <div class="agent-tel">
+                <span class="dt-agent-l">
+                    <div><b>{$post_profile['hope_rent_price']['profile_setting_title']}: </b></div>
+                    <label class="money">{$house_lang['money']}</label>
+                    <em style="font-size:16px;">{$post_profile['hope_rent_price']['post_profile_title']}</em>
+                    {$house_lang['rent_unit']}
+                </span>
+                <span class="dt-agent-num">
+                    <a href="javascript:;" rel="nofollow" style="color:#fff;">{$member['member_phone']}</a>
+                </span>
+                <span class="dt-agent-le">{$house_config['helpnotice']}</span>
+            </div>
+        </div>
+    </td>
+</tr>
+<tr style="border-bottom:1px dashed #ccc;">
+    <td>
+        <span class="des">{$post_profile['house_area']['profile_setting_title']}: </span>
+        <span class="val"><b>{$post_profile['house_area']['post_profile_title']}{$house_lang['m2']}</b></span>
+    </td>
+    <td>
+        <span class="des">{$post_profile['house_type']['profile_setting_title']}: </span>
+        <span class="val">{$post_profile['house_type']['post_profile_title']}</span>
+    </td>
+</tr>
+{if $post['loupan_title']}
+<tr>
+    <td colspan="2">
+        <span class="des">{$house_lang['loupan_title']}: </span>
+        <span class="val">
+        {if $post['loupan_id']}
+            <a target="_blank" href="{$house_config['root']}?mod=loupan&op=view&lid={$post['loupan_id']}">{$post['loupan_title']}</a>
+        {else}
+            {$post['loupan_title']}
+        {/if}
+        &nbsp;
+        {if $post['loupan_title']}
+            <a href="{$house_config['root']}?mod=loupan&loupan_title={$post['loupan_title']}" target="_blank">[{$house_lang['about_loupan']}]</a>
+        {else}
+            <a href="{$house_config['root']}?mod=loupan" target="_blank">[{$house_lang['about_loupan']}]</a>
+        {/if}
+        &nbsp;
+        <a href="{$house_config['root']}?mod=list&profile_type_id={$profile_type_id}" target="_blank">[{$house_lang['about']}{$profile_type_title}{$house_lang['info']}]</a>
+        </span>
+    </td>
+</tr>
+{/if}

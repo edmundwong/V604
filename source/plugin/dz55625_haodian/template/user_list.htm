@@ -1,0 +1,66 @@
+{template common/header}
+<style type="text/css">
+.userList{ width:958px; margin:0 auto 10px; overflow:hidden; border:1px #e3e3e3 solid; background:#fff}
+.userList #userCounts{ border-bottom:1px #e3e3e3 solid; background:#F9F9F9; height:auto;  padding:15px;}
+.userList #userCounts dl{ width:500px;}
+.userList #userCounts dl dt{ width:52px; height:52px; float:left; margin-right:8px}
+.userList #userCounts dl dt img{width:48px; height:48px; border:1px #e3e3e3 solid; background:#fff; padding:1px}
+.userList #userCounts dl dd{ float:left;}
+.userList #userCounts dl dd p{ padding-top:4px}
+.userList #userCounts ul{ width:250px; padding-top:11px}
+.userList #userCounts ul li{}
+.userList #userCounts ul li a{ float:left; margin-right:10px; color:#fff;  font-size:14px; font-family:"Î¢ÈíÑÅºÚ"; padding:5px 20px;}
+.userList #userCounts ul li a:hover{ text-decoration:none}
+
+.userList #user_List{ margin-bottom:10px;}
+.userList #user_List ul{ width:98%; margin:0 auto}
+.userList #user_List ul li{ padding:8px 0; border-bottom:1px #e3e3e3 dotted; float:left; width:100%}
+.userList #user_List ul li strong{ float:left;}
+.userList #user_List ul li span{ float:right;}
+.userList #user_List ul li a{ font-size:14px; font-family:"Î¢ÈíÑÅºÚ"; font-weight:400}
+.userList #user_List ul li a:hover{ color: #C00}
+.pages{ margin-bottom:10px; border:1px #e3e3e3 solid; background:#F9F9F9; padding:5px}
+</style>
+
+
+<div id="pt" class="bm cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em><a href="forum.php"{if $_G['setting']['forumjump']} id="fjump" onmouseover="delayShow(this, 'showForummenu($_G[fid])');" class="showmenu" {/if}>{$_G[setting][navs][2][navname]}</a><em>&raquo;</em><a href="<!--{if $RewriteStart == 1}-->haodian.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian<!--{/if}-->">{$tmp_lang['homesjlm']}</a><em>&raquo;</em>{$tmp_lang['dz_xguan']}
+	</div>
+</div>
+
+<div class="userList cl">
+
+<div id="userCounts" class="cl">
+    <dl class="z">
+        <dt><!--{if $info[uid]}--><img src="$uc/avatar.php?uid={$info[uid]}&size=small"><!--{else}--><img src="$uc/avatar.php?uid=0&size=small"><!--{/if}--></dt>
+        <dd>
+            <p><strong><!--{if !empty($info[author])}-->{$info[author]}<!--{else}-->UserName<!--{/if}--></strong></p>
+            <p>{$tmp_lang['addTiao']}<strong style="color:#F00">{$counts}</strong>{$tmp_lang['addTiao_1']}</p>
+        </dd>
+    </dl>
+    <ul class="y">
+    	<li><a target="_blank" href="<!--{if $RewriteStart == 1}-->{$curl}_add.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=add<!--{/if}-->" style="background:#2873C2">{$tmp_lang['homeadd']}</a></li>
+        <li><a target="_blank" href="<!--{if $RewriteStart == 1}-->{$curl}_user.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian_user<!--{/if}-->" style=" background:#F60">{$tmp_lang['xinxiguanlid']}</a></li>
+
+    </ul>
+</div>
+
+<div id="user_List" class="cl">
+    <ul>
+        {loop $userList $userLs}
+            <li><strong><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$userLs[id]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=index&sid={$userLs[id]}<!--{/if}-->" target="_blank">{if $userLs[click]==1}<font color="#FF0000">[VIP] </font>{/if}{$userLs[title]}</a></strong><span>{$userLs[dateline]}</span></li>
+        {/loop}
+        <!--{if $counts == 0}-->
+        	<li><strong><!--{if !$info[uid]}-->{$tmp_lang['errUser']}<!--{/if}--></strong></li>
+        <!--{/if}-->
+    </ul>
+</div>
+
+</div>
+
+<!--{if $counts > 10}-->{$multis}<!--{/if}-->
+
+
+
+{template common/footer}

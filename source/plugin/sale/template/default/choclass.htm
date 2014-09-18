@@ -1,0 +1,117 @@
+<!--{eval include template("sale:$style/header");}-->
+<link href="/source/plugin/sale/template/{$style}/style/info.css" rel="stylesheet" type="text/css" 1>
+<link href="/source/plugin/sale/template/{$style}/style/post.css" rel="stylesheet" type="text/css"> 
+ <div class="nav_bottom_line"></div>
+
+    <!-- END OF HOME PAGE MAIN MENU //-->
+    <script type="text/javascript" language="javascript" src="/source/plugin/sale/template/{$style}/style/post.js"></script>
+    <p style="padding: 8px;"></p>
+    <div style="height: 30px; clear: both;"></div>
+    <div id="content" style="height: 270px; margin:0 auto;">
+        <div class="w760">
+            <div id="nav">
+                <ul>
+                    <li id="nav1" class="on">选择发布类型</li>
+                    <li id="nav2">填写详细信息</li>
+                    <li id="nav3">发布成功</li>
+                </ul>
+            </div>
+            <div style="height: 50px; clear: both;"></div>
+            <div id="postTable" style="height: 140px; overflow: hidden;">
+
+                <form id="postForm" method="GET" action="#">
+                    <div id="formInputBox">
+                        <div class="item" id="categoryItem">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="attribute" valign="top"><span style="color:red">* </span>选择类目：</td>
+                                        <td id="firstCategory" valign="top">
+                                            <div><a hidefocus="true" onClick="return showSc(this)" title="ershou">二手物品</a>
+                                            <a hidefocus="true" onClick="return showSc(this)" title="gongzuo">房屋信息</a>
+                                            <a hidefocus="true" onClick="return showSc(this)" title="fang">求职/招聘</a>
+                                            <a hidefocus="true" onClick="return showSc(this)" title="other">其他信息</a><!--53-->
+                                            <a href="{$sale_config['root']}?mod=post&classid=45" hidefocus="true" title="huodong">活动/讲座</a></div>
+                                            <input name="category" id="category" style="display: none;" class="required" type="text"></td>
+                                        <td style="vertical-align: middle;" valign="middle">
+                                            <img id="jiantou" src="{$sale_config['sale']}template/{$style}/style/3-5.gif" align="absmiddle"></td>
+                                        <td>
+                                            <div id="secondCategory"></div>
+                                        </td>
+                                        <td class="value" valign="top">
+                                            <div id="categoryCheck">
+                                                <div style="padding: 10px;">
+                                                    <table style="width: 420px; *width: 430px;" border="0" cellpadding="0" cellspacing="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="width: 20px;" width="20">
+                                                                    <img src="{$sale_config['sale']}template/{$style}/style/3-6.gif" name="i" id="i" align="middle"></td>
+                                                                <td style="width: 390px; *width: 400px;">
+                                                                    <h2>请在左边选择您要发布的信息类型</h2>
+                                                                    <div style="height: 7px; overflow: hidden; clear: both;"></div>
+                                                                    <div class="tips">发布信息请遵守<a href="/about.php?mod=secret" target="_blank">分类信息版规</a>，违反版规的信息将有可能被删除。</div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!--class item end-->
+                    </div>
+                    <!-- formInputBox end -->
+                </form>
+            </div>
+            <div>
+                <p style="text-indent: 86px;">发布商业广告请<a href="/info.php?mod=select">点此进入</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="categoryBox">
+        <div id="ershou">
+            <ul>
+            	{loop $cat_array $cat}
+		        {if $cat['cat_pid']==1}
+		            <li><a hidefocus="true" href="{$sale_config['root']}?mod=post&classid={$cat['cat_id']}">{$cat['cat_title']}</a></li>
+		        {/if}
+		        {/loop}
+            </ul>
+        </div>
+        <div id="gongzuo">
+            <ul>
+            	{loop $cat_array $cat}
+		        {if $cat['cat_pid']==16}
+		            <li><a hidefocus="true" href="{$sale_config['root']}?mod=post&classid={$cat['cat_id']}">{$cat['cat_title']}</a></li>
+		        {/if}
+		        {/loop}
+            </ul>
+        </div>
+        <div id="fang">
+            <ul>
+            	{loop $cat_array $cat}
+		        {if $cat['cat_pid']==21}
+		            <li><a hidefocus="true" href="{$sale_config['root']}?mod=post&classid={$cat['cat_id']}">{$cat['cat_title']}</a></li>
+		        {/if}
+		        {/loop}
+            </ul>
+        </div>
+        <div id="other">
+            <ul>
+            	{loop $cat_array $cat}
+		        {if $cat['cat_pid']==36}
+		            <li><a hidefocus="true" href="{$sale_config['root']}?mod=post&classid={$cat['cat_id']}">{$cat['cat_title']}</a></li>
+		        {/if}
+		        {/loop}
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+<!--footer start-->
+<!--{template common/footer}-->

@@ -1,0 +1,16 @@
+<script>
+    function spider_content_continue(){
+        var dom_continue = document.getElementById('sp_continue');
+        dom_continue.click();
+    }
+</script>
+<div id="plugin_admin" class=" brian_main brian_box pd5 bgf">
+    <a id='sp_continue' href='{$now_url}&sp_ac=spiderContent&catid={$_cur_catid}&subcatid={$_cur_subcatid}' style='border:1px solid #0000CC;padding:2px 5px 2px 5px;'>继续抓取内容</a>
+    <a id='sp_stop' href='javascript:clearTimeout(_handle_continue)' style='border:1px solid #0000CC;padding:2px 5px 2px 5px;'>停止</a>
+    剩余:<!--{eval echo count($a_link_list)}-->
+</div>
+<!--{if count($a_link_list)> 0}-->
+<script>
+    var _handle_continue = setTimeout(spider_content_continue,{$_SPIDER_CONTENT_WAIT});
+</script>
+<!--{/if}-->

@@ -1,0 +1,21 @@
+{template common/header_ajax}
+
+<div class="Srenling">
+<h2><strong>{$tmp_lang['renlingliyou']}</strong><span><a href="javascript:;" onClick="hideWindow('$_G[gp_handlekey]');" class="flbc" title="{lang close}">{lang close}</a></span></h2>
+    <ul>
+    <form method="post" enctype="multipart/form-data" action="plugin.php?id=dz55625_haodian:attclass&action=getrling&applysubrl=true" name="applyform">
+        <input type="hidden" name="formhash" value="{FORMHASH}" />
+        <input type="hidden" name="sid" value="{$_G[gp_sid]}" />
+         <input type="hidden" name="uid" value="{$_G['uid']}" />
+         <input type="hidden" name="username" value="{$_G['username']}" />
+        <li id="user_R"><strong>User:</strong>{$_G['username']}&nbsp;&nbsp;&nbsp;<strong>Time:</strong>{echo date('Y-m-d',time())}</li>
+        <li id="user_L"><textarea rows="5" cols="20" name="subject" class="pt"></textarea></li>
+        <div style="text-align:center; margin:5px auto; width:100%; float:left">
+            <button type="submit" name="applysubrl" id="applysubrl" value="true" class="pn pnp" /><strong>{$tmp_lang['listtjj']}</strong></button>
+            <button type="reset" name="sendreset" class="pn pnp" /><strong>{$tmp_lang['cexiao']}</strong></button>
+        </div>
+    </form>
+    </ul> 
+</div>    
+ 
+{template common/footer_ajax}

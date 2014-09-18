@@ -1,0 +1,62 @@
+<style>
+    .sp_link_list{
+        margin-top: 20px;
+        width:1000px;
+    }
+    .sp_link_list tr{
+        border-bottom: 1px solid #0041d9;
+    }
+    .sp_link_list th{
+        text-align : center;
+        font-size : 13px;
+        font-weight : bolder;
+        color: #005AB4;
+    }
+    .sp_link_list td{
+        border-right: 1px solid #333333;
+    }
+    .sp_link_list .is_done_tr{
+        background-color: #DDDDDD;
+    }
+    .a_button {
+        border:1px solid #0000CC;
+        padding:2px 5px 2px 5px;
+    }
+</style>
+<div id="plugin_admin" class=" brian_main brian_box pd5 bgf">
+    <a href='{$now_url}&sp_ac=spiderLink&catid={$_cur_catid}&subcatid={$_cur_subcatid}' class='a_button'>抓取链接</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href='{$now_url}&sp_ac=spiderContent&catid={$_cur_catid}&subcatid={$_cur_subcatid}' class='a_button'>抓取内容</a>
+    <table class="sp_link_list">
+        <tr>
+            <th>No.</th>
+            <th style='width: 80px;'>父类</th>
+            <th style='width: 80px;'>子类</th>
+            <th style='width: 50px;'>子ID</th>
+            <th style='width: 200px;'>标题</th>
+            <th style='width: 50px;'>地区</th>
+            <th style='width: 300px;'>描述</th>
+            <th style='width: 30px;'>状态</th>
+            <th>URL</th>
+            <th style='width: 50px;'>操作</th>
+        </tr>
+        <!--{loop $a_link_list $a_link}-->
+        <!--{if $a_link[state]==1}-->
+        <tr class='is_done_tr'>
+        <!--{else}-->
+        <tr>
+        <!--{/if}-->
+            <td>{$a_link[id]}</td>
+            <td>{$a_link[cattitle]}</td>
+            <td>{$a_link[subcattitle]}</td>
+            <td>{$a_link[subcatid]}</td>
+            <td>{$a_link[title]}</td>
+            <td>{$a_link[area]}</td>
+            <td>{$a_link[summary]}</td>
+            <td>{$a_link[state]}</td>
+            <td>{$a_link[url]}</td>
+            <td><a href='{$now_url}&sp_ac=delLink&id={$a_link[id]}&catid={$_cur_catid}&subcatid={$_cur_subcatid}' class='a_button'>删除</a></td>
+        </tr>
+        <!--{/loop}-->
+    </table>
+</div>

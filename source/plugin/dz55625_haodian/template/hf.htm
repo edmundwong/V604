@@ -1,0 +1,23 @@
+{template common/header_ajax}
+
+<!--{if !$_G[gp_hf]}-->
+<div class="userhf">
+    <h2><strong>{$tmp_lang['dianzhuhuifu']}</strong><a href="javascript:;" onClick="hideWindow('$_G[gp_handlekey]');" class="flbc" title="{lang close}">{lang close}</a></h2>
+    <ul>
+    <form method="post" action="plugin.php?id=dz55625_haodian:haodian_hf&op=hf&applysubhf=true" name="applyform">
+        <input type="hidden" name="referer" value="$_G[referer]">
+        <input type="hidden" name="formhash" value="{FORMHASH}" />
+        {loop $pls $pl}<input type="hidden" name="xid" value="{$pl[id]}" /><input type="hidden" name="sid" value="{$pl[sid]}" />{/loop}
+        <textarea rows="5" cols="20" name="nickback" class="pt" id="nickback"></textarea>
+        <div style="text-align:center; margin:10px auto 0;">
+            <button type="submit" name="applysubhf" id="applysubhf" value="true" class="pn pnp" /><strong>{$tmp_lang['huifusss']}</strong></button>
+            <button type="reset" name="sendreset" class="pn pnp" /><strong>{$tmp_lang['cexiao']}</strong></button>
+        </div>
+    </form>
+    </ul>
+</div>
+<!--{/if}-->
+ 
+{template common/footer_ajax}
+
+                  

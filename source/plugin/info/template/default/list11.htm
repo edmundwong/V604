@@ -1,0 +1,384 @@
+<!--{eval include template("info:$style/header");}-->
+<!--{eval include template("info:$style/style1");}-->
+<!--{eval include template("info:$style/style");}-->
+
+<div id="wrapper">
+  <div id="where">
+<a href="./">$_G[setting][bbname]</a>
+        <em>&raquo;</em>
+        <a href="/info.php">服务黄页</a>
+       
+        <div class="wherebg1">&nbsp;</div>
+    <div class="wherebg2">&nbsp;</div>
+    <div class="wherebg3">&nbsp;</div>
+  </div>
+  <div id="wu_index">
+    <dl>
+      <dt>分类广告</dt>
+      <dd class="wanted_pub" style="position:absolute; top:13px;right:215px;">
+        <div class="btn_pub"><a href="{$sale_config['root']}?mod=choclass">免费发布信息</a></div>
+      </dd>
+      <dd class="index_pub" style="position:relative; top:5px;right:110px;">
+        <div class="jianli_pub"><a href="/info.php?mod=member&op=post">发布服务信息</a></div>
+      </dd>
+      <dd style="position:absolute; top:37px;right:10px;">
+        <div><strong>|&nbsp;&nbsp;<a href="sale.php?mod=member&step=check">管理我的信息</a></strong></div>
+      </dd>
+    </dl>
+  </div>
+
+<style type="text/css">
+ul.wanted_left2 li h3 { margin:0; }
+/*
+.bd1f { border:1px solid #fff; }
+.bd1fover { border:1px solid #6694E3; }
+*/
+.bd1f { border:0; }
+.bd1fover { border:0; }
+.wanted_left2 li h3 a:hover { color:#e40000; }
+.wanted_left2 li h3 a:visited { color:#2244DD; }
+.training_hot ul { overflow:hidden;padding:10px 10px 2px 10px;;clear:both;margin:0;width:98%; }
+.training_hot ul li.title { font:14px arial,simsun;font-weight:bold;padding-right:0;margin-right:0; }
+.training_hot ul li { font:14px arial,simsun !important;font-weight:bold !important;padding-right:18px; }
+.training_hot ul li a, .training_hot ul li a:visited, .wanted_left2 li h3 a, .wanted_left2 li h3 a:visited { color:#2244DD !important; }
+.training_hot ul li a:hover, .wanted_left2 li h3 a:hover { color:#e70000 !important; }
+.wanted_left2 li a, .wanted_left2 li a:visited { color:#636363 !important; }
+.wanted_left2 li a:hover { color:#e70000 !important; text-decoration:underline; }
+.catname { height:22px;padding:0 10px;clear:both;overflow:hidden;background:#eff3ff;font-weight:bold; }
+.catname div { height:20px;line-height:18px;*line-height:18px;font-weight:bold; }
+.catname div a { color:#2244dd;text-decoration:underline; }
+.catname div a:hover { color:#000;text-decoration:underline; }
+</style>
+
+  <div class="fenlei_bg">
+    <div class="training_hot" style="background:#FFFCCC;padding:0; height:210px !important;">
+    <ul>
+    <table width="100%">
+    <tr><td colspan="6"><li class="title">服务黄页：</li></td></tr>
+                 <tr>         <td><li><a href=" /info.php?mod=list&subcat_id=26 ">家庭旅馆/短期住宿</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=34 ">接送/搬运/库存</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=42  ">购车/租车/运车/拖车</a></li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=48 ">汽车维修/改装/保养</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=49 ">机票旅游</a> </li></td>
+                 </tr> 			 <tr>         <td><li><a href=" /info.php?mod=list&subcat_id=53  ">翻译/生意/印刷/快递服务</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=66 ">清洁/洗衣/地毯/垃圾</a></li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=69 ">水暖电工/通渠/维修</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=75 ">园艺/杀虫</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=90 ">电脑/网络/手机维修</a> </li></td>
+                 </tr> 			 <tr>         <td><li><a href=" /info.php?mod=list&subcat_id=93 ">宠物寄养/美容/食品</a> </li></td>
+                                    <td><li><a href="  /info.php?mod=list&subcat_id=103  ">摄影/婚庆服务</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=105 ">移民/留学/签证</a> </li></td>
+                                    <td><li><a href="  /info.php?mod=list&subcat_id=111  ">公立/私立院校</a> </li></td>
+                                    <td><li><a href="  /info.php?mod=list&subcat_id=117  ">雅思/托福/ESL院校</a> </li></td>
+                 </tr> 			 <tr>         <td><li><a href=" /info.php?mod=list&subcat_id=120 ">各类辅导/家教/补习</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=131 ">音乐/美术/舞蹈/运动/培训</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=136 ">汇款换汇</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=143 ">地产经纪/开发商/贷款按揭</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=148 ">建筑装修/门窗</a> </li></td>
+                 </tr> 			 <tr>         <td><li><a href=" /info.php?mod=list&subcat_id=157 ">验屋/开锁服务</a> </li></td>
+                                    <td><li><a href="/info.php?mod=list&subcat_id=164 ">保健品/酒/本地特产</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=172 ">月子/托儿/保姆</a> </li></td>
+                                    <td><li><a href="/info.php?mod=list&subcat_id=181 ">老牌练车/路试/驾照</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=184  ">会计报税/退税</a> </li></td>
+                 </tr> 			 <tr>         <td><li><a href="/info.php?mod=list&subcat_id=197 ">理财投资/各类保险</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=199  ">法律公证/索赔告票</a> </li></td>
+                                    <td><li><a href="/info.php?mod=list&subcat_id=200  ">医疗诊所/中医/牙医</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=204  ">按摩/足疗/美甲/美容美发</a> </li></td>
+                                    <td><li><a href=" /info.php?mod=list&subcat_id=209 ">成人娱乐/成人用品</a> </li></td>
+                 </tr> 		</table>
+    </ul>
+    </div>
+
+<table class="wanted_tab">
+  <tbody>
+    <tr>
+      <td width="28%" style="padding:0;">
+        <div class="bd1f" onMouseOver="this.className='bd1fover'" onMouseOut="this.className='bd1f'">
+          <ul class="wanted_left2">
+            <li>
+              <h3><a href="sale.php?mod=index&upid=0&level=0&cat_id=1">二手物品 - 求购信息</a></h3>
+              <div style="height:5px; overflow:hidden; clear:both;"></div>
+               {loop $cat_array $cat}
+        {if $cat['cat_pid']==1}
+            <a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}{if $keyword}&keyword={$keyword}{/if}" {if $cat['cat_id']==$cat_id} class="hover"{/if}>{$cat['cat_title']}</a>
+        {/if}
+        {/loop}
+            </li>
+          </ul>
+        </div>
+      </td>
+      <td width="23%" style="padding:0;">
+        <div class="bd1f" onMouseOver="this.className='bd1fover'" onMouseOut="this.className='bd1f'">
+          <ul class="wanted_left2">
+            <li>
+              <h3><a href="sale.php?mod=index&upid=0&level=0&cat_id=16">房屋信息</a></h3>
+              <div style="height:5px; overflow:hidden; clear:both;"></div>
+              {loop $cat_array $cat}
+        {if $cat['cat_pid']==16}
+            <a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}{if $keyword}&keyword={$keyword}{/if}" {if $cat['cat_id']==$cat_id} class="hover"{/if}>{$cat['cat_title']}</a>
+        {/if}
+        {/loop}
+            </li>
+          </ul>
+        </div>
+      </td>
+      <td width="26%" style="padding:0;">
+        <div class="bd1f" onMouseOver="this.className='bd1fover'" onMouseOut="this.className='bd1f'">
+          <ul class="wanted_left2">
+            <li>
+              <h3><a href="sale.php?mod=index&upid=0&level=0&cat_id=21">求职 - 招聘</a></h3>
+              <div style="height:5px; overflow:hidden; clear:both;"></div>
+             {loop $cat_array $cat}
+        {if $cat['cat_pid']==21}
+            <a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}{if $keyword}&keyword={$keyword}{/if}" {if $cat['cat_id']==$cat_id} class="hover"{/if}>{$cat['cat_title']}</a>
+        {/if}
+        {/loop}
+            </li>
+          </ul>
+        </div>
+      </td>
+      <td class="bod_none" width="23%" style="padding:0;">
+        <div class="bd1f" onMouseOver="this.className='bd1fover'" onMouseOut="this.className='bd1f'">
+          <ul class="wanted_left2">
+            <li>
+              <h3><a href="sale.php?mod=index&upid=0&level=0&cat_id=36">其他个人信息</a></h3>
+
+              <div style="height:5px; overflow:hidden; clear:both;"></div>
+              {loop $cat_array $cat}
+        {if $cat['cat_pid']==36}
+            <a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}{if $keyword}&keyword={$keyword}{/if}" {if $cat['cat_id']==$cat_id} class="hover"{/if}>{$cat['cat_title']}</a>
+        {/if}
+        {/loop}
+            </li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div style="height:5px; clear:both; overflow:hidden;"></div>
+
+  </div>
+  
+  <!--豆腐块广告开始-->
+  <div style="display: none;" id="ad_container_doufu" class="doufuAD_box"></div>
+  <!--豆腐块广告结束-->
+  <div id="content1">
+    <div id="mainSide1">
+      <div class="list_tab">
+        <ul>
+                      <li><a href="/sale.php"><span>分类广告</span></a></li>
+              <li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=45"><span>活动/讲座</span></a></li>
+                  </ul>
+        
+      </div>
+        <form name="" method="post" action="sale.php" >
+<dl class="list_search">
+<dt>
+关键字：<input type="text" style="width:90px;" name="title" value="{$sale_title}" onclick="if(this.value=='标题/描述') this.value='';" style="color: #808080;" value="标题/描述" />
+<select style="width:90px;" name="sale_cat_id" class="select_c"><option value="" >请选择类目</option>{loop $sale_cat $cats}<option  {if $cats['cat_id'] == $sale_cat_id }selected{/if} value="{$cats['cat_id']}">{$cats['cat_title']}</option>{/loop}</select>
+<select style="width:90px;" name="sale_area" class="select_c"><option value="" >请选择地区</option>{loop $sale_area $areas}<option {if $areas['name'] == $dcj_sale_area }selected{/if} value="{$areas['name']}">{$areas['name']}</option>{/loop}</select>
+<label><input type="checkbox" name="sale_img" value="1" {if $sale_img == 1}checked="checked"{/if} />有图片</label>
+<input type="submit" name="" value="搜索" /></dt>
+<dd>电话</dd>
+<dd class="ft">发布时间</dd>
+</dl>
+ 
+</form>
+                          
+        
+                
+<div class="list">		  
+        
+  
+<div class="catname" style="padding-top:8px;"><strong> 全部信息 (不分类)</strong></div>
+        {loop $goods_list $goods}
+        
+          <dl class="list_img">
+        <dt><a href="{$sale_config['root']}?mod=view&goods_id={$goods['goods_id']}" style="float:left; padding-right:20px;">{if $goods['goods_upload_file_1']}<img src="{$goods['goods_upload_file_1']}" width="82" height="62" />{else}<img src="{$sale_config['sale']}images/nophotosmall.gif" />{/if}</a><a href="{$sale_config['root']}?mod=view&goods_id={$goods['goods_id']}" class="list_title"><strong>{if $goods['goods_selltype_give']}{lang sale:index_htm_10}{/if}{$goods['goods_title']}</strong></a>&nbsp;{if $goods['goods_upload_file_1']}<span class="ispic">{$_lang['tu']}</span>{/if}
+                    {if $goods['goods_up']}<img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/css/images/ding.png" title="{lang sale:index_htm_7}" />{/if}&nbsp;
+                <span class="ico_yellow">
+                            {if $goods['province']}{$goods['province']}{/if}
+                    </span>
+                <div class="list_word" style="height:20px; overflow:hidden; color:#363636;">{eval echo cutstr($goods['goods_text'],30);}...<br /></div>
+        </dt>
+        <dd style="height:30px; overflow:hidden;"> {$goods['member_phone']} </dd>
+        <dd class="f_c_gray" style="height:30px; overflow:hidden;">{$goods['goods_time']}</dd>
+    </dl>
+         {/loop}
+    <div class="cl pd5">
+            <div class="z">{$multipage}</div>
+            <div class="y">{$_lang['meiyoushihe']}<a href="{$sale_config['root']}?mod=post">{$_lang['dianjijinru']}>></a></div>
+        </div>
+
+        </div>
+      <!--list end-->
+    </div>
+    </div>
+    <div id="rightSide">
+    <!--rightSide start-->
+    <div class="btn_pub" style="height:25px;"></div>
+    <div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_47}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_48}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_49}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_50}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_51}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_52}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_53}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_54}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_55}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_56}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_57}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_58}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_59}--></div><div class="rightSide_cont" style="margin-bottom:5px;"><!--{ad/custom_60}--></div>	<div class="rightSide_cont" style="background:#ffffec;border:1px solid #ffffec;padding:0 6px 0 1px;">
+    <div id="ad_container_pinpai" class="box">
+        <dl class="first_imgAD" style="text-align:center;"><dt style="float:left;color:#333;font-size:12px;"><strong>服务黄页：</strong>[<a href="/yellowpage/" target="_blank">更多信息</a>]</dt></dl>
+    </div>
+    <!--{block/246}-->
+</div>
+<div class="rightSide_cont" style="border:1px solid #ccc;padding:0 2px;">
+    <!--帮助问题开始 -->
+    <div class="box">
+        <dl class="right_help">
+            <dt><a href="help/help1.php" target="_blank">问题解答：</a></dt>
+            <dd><a href="help/help1.php" target="_blank">如何免费发布信息？</a><a href="help/help2.php" target="_blank">一些简单易用的搜索技巧...</a><a href="help/help3.php" target="_blank">如何删除我发布的信息？</a><a href="help/help4.php" target="_blank">如何重新编辑/更新信息？</a><a href="help/help5.php" target="_blank" title="如何上传图片？上传图片有哪些规定？">如何上传图片？上传图片有...</a></dd>
+        </dl>
+    </div>
+    <!--帮助问题结束 -->
+    <div class="box">
+        <dl class="right_columns_a"><dt>本站客服：</dt><dd style="padding:0 5px 0 0;">这里是温哥华本地生活信息浏览/发布平台，每天有上百条信息供您选择。感谢您对 人在温哥华网 - VanPeople 的支持，并欢迎大家对无效信息进行监督和投诉。</dd></dl>
+        <div><div class="kefu" style="width:159px;border:0;"><a href="mailto:support@vanpeople.com">联系客服</a></div></div>
+    </div>
+</div>    <!--rightSide end-->
+  </div>
+  </div>
+
+
+<div class='brian_main'>
+    <!--{eval include template("info:$style/head");}-->
+    
+    <!--[diy=info_list_top]--><div id="info_list_top" class="area"></div><!--[/diy]-->
+    
+    <div class="bgf info_list_search">
+            <h1 class="h1">{$info_lang['search']}</h1>
+            <table class="fix brian_select_table">
+                {if $area_array}
+                <tr>
+                    <td style="width:60px;" class="tr pd5">{$info_lang['area']}: </td>
+                    <td class="pd5">
+                        <a href="{$info_config['root']}?mod=list&subcat_id={$subcat_id}" {if empty($subarea_id)} class="hover"  {/if} >{lang info:list_htm_20}</a>
+                        {loop $area_array $area}
+                            {if $area['area_pid'] == $area_id}
+                            <a href="{$info_config['root']}?mod=list&subcat_id={$subcat_id}&subarea_id={$area['area_id']}" {if $subarea_id == $area['area_id']} class="hover"  {/if} >{$area['area_title']}</a>
+                            {/if}
+                        {/loop}
+                    </td>
+                </tr>
+                {/if}
+                {loop $profile_setting $ps}
+                    {if $ps['profile_setting_formtype'] =='select' && $ps['profile_setting_allowsearch']==1}
+                    <tr>
+                        <td style="width:60px;" class="tr pd5">{$ps['profile_setting_title']}: </td>
+                        <td class="pd5">
+                            {eval $ps['profile_setting_choices'] = explode("\r\n",$ps['profile_setting_choices']);}
+                                <a href="{$urlnow}&{$ps['profile_setting_name']}=" {if empty($_GET[$ps['profile_setting_name']])} class="hover" {/if}>{lang info:list_htm_20}</a>
+                                {loop $ps['profile_setting_choices'] $v}
+                                    <a href="{$urlnow}&{$ps['profile_setting_name']}={$v}" {if $_GET[$ps['profile_setting_name']] == $v } class="hover" {/if} >{$v}</a>
+                                {/if}
+                        </td>
+                    </tr>
+                    {/if}
+                {/loop}
+            </table>
+            <script type="text/javascript">
+                function list_check_btn(id){
+                    var urlnow = '{$urlnow}';
+                    location.href = urlnow + '&'+id+'_1=' + $(id+'_1').value + '&'+id+'_2=' + $(id+'_2').value;
+                }
+            </script>
+    </div>
+    
+    <div class="cl bgf">
+        <!--[diy=info_list_ad01]--><div id="info_list_ad01" class="area"></div><!--[/diy]-->
+    </div>
+    
+    <div class="pd5 bgf">
+        <div>
+            {if $profile_setting_done ==1 || $search['search_txt']}
+            <div class="ltips">
+                {if $profile_setting_done ==1}
+                    {lang info:list_htm_29} : 
+                    {loop $profile_setting $v}
+                        {if !empty($_GET[$v['profile_setting_name']])}
+                           <b>{$profile_setting[$v['profile_setting_name']]['profile_setting_title']}:</b> {$_GET[$v['profile_setting_name']]}
+                           <span class="pipe">|</span>
+                        {/if}
+                    {/loop}
+                {/if}
+                {if $search['search_txt']}<b>{$info_lang['search_txt']}: </b>{$search['search_txt']}{/if}
+            </div>
+            {/if}
+            
+            <div style="clear:both;"></div>
+            <div class="info_list_table_title cl">
+                <div class="z">{if $keyword}{$info_lang['search']} : {$keyword}{else}<a href="{$info_config['root']}?mod=list&subcat_id={$subcat_id}">{$subcat_title}</a>{/if}</div>
+                <!-- <div class="y">
+                    <a href="{$info_config['root']}?mod=member&op=post&subcat_id={$subcat_id}" class="btn" {if !$_G['uid']}  onclick="showWindow('login', this.href);return false;" {/if}>+ {$info_lang['lijifabu']}</a>
+                    <span style="display:none">
+                        <span class="pipe">|</span>
+                        <a href="#" class="hover"><img src="{$info_config['info']}template/{$style}/css/images/btn_tuwen.gif" /></a>
+                        <span class="pipe">|</span>
+                        <a href="#"><img src="{$info_config['info']}template/{$style}/css/images/btn_wenben.gif" /></a>
+                    </span>
+                </div> -->
+            </div>
+            <div class="info_list_table_main_bg">
+                <div class="z">
+                    <div style="width:130px;">&nbsp;</div>
+                    <div style="width:440px; text-align:center;">{$info_lang['list_htm_2']}</div>
+                    <div style="width:150px; text-align:center;">{$info_lang['list_htm_3']}</div>
+                </div>
+                <div class="y">
+                    <div class="sort_wrap">
+                        <span class="default  {if $orderby=='post_time'} active {/if}"><a rel="nofollow" href="{$urlnow}&orderby=post_time">{$info_lang['post_time']}</a></span>
+                        <span class="time  {if $orderby=='post_end_time'} active {/if}"><a rel="nofollow"  href="{$urlnow}&orderby=post_end_time">{$info_lang['list_htm_5']}</a></span>
+                        <span class="sort_price {if $orderby=='post_begin_time'} active {/if}"><a rel="nofollow" href="{$urlnow}&orderby=post_begin_time">{$info_lang['list_htm_6']}</a></span>
+                    </div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+            <table class="fix">
+                <tr>
+                    <td style="padding-right:5px;">
+                        <!--{eval include template("info:$style/list/list_center");}-->
+                    </td>
+                    <td style="width:160px;">
+                        <!--[diy=info_list_right_ad_1]--><div id="info_list_right_ad_1" class="area"></div><!--[/diy]-->
+                       <!--[diy=info_list_right_ad_2]--><div id="info_list_right_ad_2" class="area"></div><!--[/diy]-->
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+    </div>
+    
+    <div class="brian_box pd5 bgf">
+        <div style="line-height:23px;">{$info_config['topnotice']}</div>
+    </div>
+    
+    <!--[diy=info_list_bottom]--><div id="info_list_bottom" class="area"></div><!--[/diy]-->
+</div>
+<script type="text/javascript">
+function cat_change(cat,sub_cat,subname,classname){
+    var cat_title = $(cat).value;
+    var x = new Ajax();
+    var get_url = '{$info_config[root]}?mod=ajax&op=cat&inajax=1';
+    if(subname !=''){
+        get_url = get_url +'&sub_cat='+sub_cat;}
+    if(classname !=''){
+        get_url = get_url +'&classname='+classname;
+        }
+    get_url = get_url +'&cat_title='+cat_title;
+    x.get(get_url, function(str, x) {
+        if( str ==''){
+            $(sub_cat).style.display ='none';
+            $(sub_cat).innerHTML = "";
+        }else{
+            $(sub_cat).style.display ='inline-block';
+            $(sub_cat).innerHTML = str;
+        }
+     });
+}
+cat_change('cat_id','sub_cat_id','1','');
+</script>
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

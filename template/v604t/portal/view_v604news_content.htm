@@ -1,0 +1,119 @@
+<!--{template common/header}-->
+<!--[name]V604_新闻资讯正文[/name]-->
+
+<script type="text/javascript" src="{$_G['setting']['jspath']}forum_viewthread.js?{VERHASH}"></script>
+<script type="text/javascript">zoomstatus = parseInt($_G['setting']['zoomstatus']), imagemaxwidth = '{$_G['setting']['imagemaxwidth']}', aimgcount = new Array();</script>
+
+<link type="text/css" rel="stylesheet" href="$_G['style']['v604t_common']css/reset_pc.css" />
+<link type="text/css" rel="stylesheet" href="$_G['style']['v604t_common']css/common.css" />
+<link type="text/css" rel="stylesheet" href="$_G['style']['v604t_common']css/news.css" />
+<script type="text/javascript" src="$_G['style']['v604t_common']js/html5.js"></script>
+<script type="text/javascript" src="$_G['style']['v604t_common']js/prefixfree.min.js"></script>
+<script type="text/javascript" src="$_G['style']['v604t_common']js/respond.js"></script>
+<script type="text/javascript" src="$_G['style']['v604t_common']js/global.js"></script>
+<style>
+    .left {
+        float: left;
+        width: 500px !important;
+    }
+    .con p{
+        font-family:'宋体';font-size:14px;
+        line-height:30px
+    }
+</style>
+
+<div id="pt" class="bm cl">
+    <div class="z">
+        <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+        <a href="$_G[setting][navs][1][filename]">{lang nav_index}</a> <em>&rsaquo;</em>
+        <!--{loop $cat[ups] $value}-->
+        <a href="{echo getportalcategoryurl($value[catid])}">$value[catname]</a><em>&rsaquo;</em>
+        <!--{/loop}-->
+        <a href="{echo getportalcategoryurl($cat[catid])}">$cat[catname]</a> <em>&rsaquo;</em>
+        正文
+    </div>
+</div>
+
+<!--{hook/view_article_top}-->
+<!--{ad/text/wp a_t}-->
+<style id="diy_style" type="text/css"></style>
+
+<div class="wrapper clearfix">
+    <section class="news_page" >
+        <div class="left" style="width:640px !important">
+            <h1 style="font-size:24px; color:#262626;">$article[title] <!--{if $article['status'] == 1}-->({lang moderate_need})<!--{elseif $article['status'] == 2}-->({lang ignored})<!--{/if}--></h1>		    
+            <p style="color:#777777; margin:10px 0 25px;">$article[dateline]<span class="pipe">|</span>作者: $article[username]</p>
+            <div class="con" style="color:#262626;font-size:14px">
+                <!--{ad/article/a_af/1}-->
+                <!--{if $content[title]}-->
+                <div class="vm_pagetitle xw1">$content[title]</div>
+                <!--{/if}-->
+                $content[content]
+                <!--{hook/view_article_content}-->
+                <!--{if $multi}--><div class="ptw pbw cl">$multi</div><!--{/if}-->
+            </div>
+            <div style='border-top: 1px solid #efe6e0;margin-top:30px ;color:#9c9c9c;padding-top:20px'>
+                声明：大温同城新闻资讯内容来自于各大新闻媒体，部分内容由大温同城网读者、本地华人社团提供；刊载此文仅为提供更多信息，不代表同意其说法或描述，也不构成投资或其他建议如发现稿件侵权；或作者不愿在大温同城网发表文章，请版权拥有者通知大温同城网处理。
+            </div>
+            <div class="o cl ptm pbm">
+                <!--{hook/view_article_op_extra}-->
+                <!--{if $_G['group']['allowmanagearticle'] || ($_G['group']['allowpostarticle'] && $article['uid'] == $_G['uid'] && (empty($_G['group']['allowpostarticlemod']) || $_G['group']['allowpostarticlemod'] && $article['status'] == 1)) || $categoryperm[$value['catid']]['allowmanage']}-->
+                <a href="portal.php?mod=portalcp&ac=article&op=edit&aid=$article[aid]">{lang edit}</a><span class="pipe">|</span>
+                <a  id="related_article" href="portal.php?mod=portalcp&ac=related&aid=$article[aid]&catid=$article[catid]&update=1" onclick="showWindow(this.id, this.href, 'get', 0); return false;">{lang article_related}</a><span class="pipe">|</span>
+                <!--{if $article[status]>0 && ($_G['group']['allowmanagearticle'] || $categoryperm[$value['catid']]['allowmanage'])}-->
+                <a href="portal.php?mod=portalcp&ac=article&op=verify&aid=$article[aid]" id="article_verify_$article[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang moderate}</a>
+                <!--{else}-->
+                <a href="portal.php?mod=portalcp&ac=article&op=delete&aid=$article[aid]" id="article_delete_$article[aid]" onclick="showWindow(this.id, this.href, 'get', 0);">{lang delete}</a>
+                <!--{/if}-->
+                <span class="pipe">|</span>
+                <!--{/if}-->
+                <!--{if $article[status]==0 && ($_G['group']['allowdiy']  || getstatus($_G['member']['allowadmincp'], 4) || getstatus($_G['member']['allowadmincp'], 5) || getstatus($_G['member']['allowadmincp'], 6))}-->
+                <a href="portal.php?mod=portalcp&ac=portalblock&op=recommend&idtype=aid&id=$article[aid]" onclick="showWindow('recommend', this.href, 'get', 0)">{lang blockdata_recommend}</a><span class="pipe">|</span>
+                <!--{/if}-->
+            </div>
+            <!--{if $article['preaid'] || $article['nextaid']}-->
+            <div class="pren pbm cl">
+                <!--{if $article['prearticle']}--><em>{lang pre_article}<a href="{$article['prearticle']['url']}">{$article['prearticle']['title']}</a></em><!--{/if}-->
+                <!--{if $article['nextarticle']}--><em>{lang next_article}<a href="{$article['nextarticle']['url']}">{$article['nextarticle']['title']}</a></em><!--{/if}-->
+            </div>
+            <!--{/if}-->
+            <!--{ad/article/mbm hm/2}--><!--{ad/article/mbm hm/3}-->
+            <!--{if $article['related']}-->
+            <div id="related_article" class="bm">
+                <div class="bm_h cl">
+                    <h3>{lang view_related}</h3>
+                </div>
+                <div class="bm_c">
+                    <ul class="xl xl2 cl" id="raid_div">
+                        <!--{loop $article['related'] $raid $rvalue}-->
+                        <input type="hidden" value="$raid" />
+                        <li>&bull; <a href="{$rvalue[uri]}">{$rvalue[title]}</a></li>
+                        <!--{/loop}-->
+                    </ul>
+                </div>
+            </div>
+            <!--{/if}-->
+            <!--{if $article['allowcomment']==1}-->
+            <!--{eval $data = &$article}-->
+            <!--{subtemplate portal/portal_comment}-->
+            <!--{/if}-->
+        </div>
+        <div class="right" style="width:320px">
+            <h3>热点新闻</h3>
+            <!--{block/405}-->
+            <h3 style='margin-top:20px'>最新推荐</h3>
+            <!--{block/406}-->
+        </div>
+    </section>
+</div>
+<!--{if $_G['relatedlinks']}-->
+<script type="text/javascript">
+            var relatedlink = [];<!--{loop $_G['relatedlinks'] $key $link}-->
+            relatedlink[$key] = {'sname':'$link[name]', 'surl':'$link[url]'};<!--{/loop}-->
+            relatedlinks('article_content');
+</script>
+<!--{/if}-->
+
+<input type="hidden" id="portalview" value="1">
+
+<!--{template common/footer}-->

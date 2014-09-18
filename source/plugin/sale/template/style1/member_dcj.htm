@@ -1,0 +1,18 @@
+﻿<!--{eval include template("sale:$style/header");}-->
+<style>
+header {border-bottom: 0px solid #efe6e0;}
+.line {border-bottom: 1px solid #efe6e0;}
+</style>
+<div class="line" style=""></div>
+<div style="width:500px; margin:auto; font-size:16px; text-align:left; color:#3d3d45;">
+    <p style="margin:50px auto 20px;">您发布的信息：<span style=" font-weight:bold;">{$goods_array['goods_title']}</span> 正在等待管理员验证 ...</p>
+    <p style="font-weight:bold;margin-top:10px">需要验证的原因：</p>
+    <p style="color:#df424a;font-weight:bold;margin-top:10px">广告内容可能含有敏感的词汇，需要等待管理员审核。</p>
+    <p style="font-weight:bold;margin-top:10px">我们将在24小时以内审核发布您的广告</p>
+    <p style="margin:20px auto 0;">以下是您发布过的信息：</p>
+    <p style="color:#fc6328;margin-top:10px"><a href='{$new_url1}}' style="color:#fc6328;" >{$new_url}</a></p>
+    <p style='margin-top:30px'>如果您不想等待管理员的验证，可以使用密码： <span style="color:#df424a;font-weight:bold;">{$goods_array['pwd']}</span> ，</p>
+    <p style='margin-top:10px'>自行到 <a href='{$edit_url}' style="color:#fc6328;">编辑信息</a> 更改电话号码，这样您的信息仍可以立即显示。</p>
+    <p style=" margin:30px auto 50px;">如果您有任何疑问，请发送邮件到 <span style="color:#fc6328">support@van604.com</span> 查询。</p>
+</div>
+<!--{template common/footer}-->

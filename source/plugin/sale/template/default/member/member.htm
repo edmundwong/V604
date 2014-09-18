@@ -1,0 +1,38 @@
+<!--{template common/header}-->
+<!--{eval include template("sale:$style/style");}-->
+
+<div class='brian_main'>
+    
+    <!--{eval include template("sale:$style/head");}-->
+    
+ <!--   <div class="brian_member">
+        <div class="brian_member_left">
+            <ul>
+                <li><a href="{$sale_config['root']}?mod=post"  {if $mod=='post'} class="hover" {/if}>{lang sale:member_htm_3}</a></li>
+                <li><a href="{$sale_config['root']}?mod=member&op=mypost" {if $op=='mypost'} class="hover" {/if}>{lang sale:index_htm_3}</a></li>
+                <li><a href="{$sale_config['root']}?mod=member&op=mypostup"  {if $op=='mypostup'} class="hover" {/if}>{lang sale:member_htm_5}</a></li>
+            </ul>
+            <ul>
+				
+                <li><a href="{$sale_config['root']}?mod=member&op=memberinfo"  {if $op=='memberinfo'} class="hover" {/if}>{lang sale:member_htm_6}</a></li>
+                <li><a href="{$sale_config['root']}?mod=member&op=mycredit"  {if $op=='mycredit'} class="hover" {/if}>{lang sale:member_htm_7}</a></li>
+                <li><a  href="{$sale_config['chongzhi']}" target="_blank">{$sale_config['credit_unit']}{lang sale:index_htm_4}</a></li>
+            </ul>
+            <ul style="display:none;">
+                <li><a href="{$sale_config['root']}?mod=member&op=kefu"  {if $op=='kefu'} class="hover" {/if}>{lang sale:member_htm_9}</a></li>
+            </ul>
+        </div>
+        -->
+        <div class="brian_member_right" style="float:left;">
+            <!--{if $op =='mypost' || $op =='mypostup'}-->
+                <!--{eval include template("sale:$style/member/member_mypost");}-->
++++++++++++++++++++++++
+            <!--{else}-->
+                <!--{eval include template("sale:$style/member/member_$op");}-->
+            <!--{/if}-->
+        </div>
+    </div>
+
+</div>
+
+<!--{template common/footer}-->

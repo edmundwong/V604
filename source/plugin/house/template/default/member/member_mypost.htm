@@ -1,0 +1,40 @@
+<div>
+<div class="brian_main_crumb"><ol class="pre" style="width:auto;">{if $op=='mypost' && $ac !='up'}{$house_lang['mypost']}{elseif $op=='mypost' && $ac=='up'}{$house_lang['mypost_up']}{/if}</ol></div>
+
+{if $post_list}
+<div class="pd5 cl">
+<table class="dt mtm" style="text-align:left;">
+    <tr>
+        <th style="width:60px;" class="tc"></th>
+        <th>{$house_lang['info']}</th>
+        <th style="width:100px;">{lang house:member_apply_htm_5}</th>
+        <th style="width:100px;">{lang house:member_apply_htm_6}</th>
+        <th style="width:100px;">{lang house:space_mypost_htm_5}</th>
+        <th style="width:100px;">{lang house:member_fav_htm_8}</th>
+    </tr>
+{loop $post_list $post}
+    <tr>
+        <td class="tc">
+            {if $post['profile_type_id']=='1'}{$house_lang['rent']}
+            {elseif $post['profile_type_id']=='2'}{$house_lang['need_rent']}
+            {elseif $post['profile_type_id']=='3'}{$house_lang['2sell']}
+            {/if}
+        </td>
+        <td><a href="{$house_config['root']}?mod=view&post_id={$post['post_id']}" style="font-size:14px;">{$post['post_title']}</a></td>
+        <td style="width:100px;">{echo date('Y-m-d',$post['post_begin_time']);}</td>
+        <td style="width:100px;">{echo date('Y-m-d',$post['post_end_time']);}</td>
+        <td style="padding-left:10px;">{if $post['post_up']=='1'}<b style="color:#FF6600;"><p>{echo date('Y-m-d',$post['up_endtime']);}</p></b>{else}[{lang house:space_mypost_htm_5}]{/if}</td>
+        <td>
+            <a href="{$house_config['root']}?mod=member&op=setpostup&post_id={$post['post_id']}" onclick="showWindow('setpostup_{$post['post_id']}',this.href,'get',0);">{lang house:space_mypost_htm_7}</a>
+            <span class="pipe">/</span>
+            <a href="{$house_config['root']}?mod=member&op=post&ac=edit&profile_type_id={$post['profile_type_id']}&post_id={$post['post_id']}">{lang house:space_mypost_htm_10}</a>
+        </td>
+    </tr>
+{/loop}
+</table>
+</div>
+<div class="cl">{$multipage}</div>
+{else}
+<div class="brian_tips">{lang house:space_mypost_htm_11}.</div>
+{/if}
+</div>

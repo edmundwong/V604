@@ -1,0 +1,93 @@
+<!--{template common/header}-->
+<link type="text/css" rel="stylesheet" href="$_G['style']['v604t_common']css/reset_pc.css" />
+<link type="text/css" rel="stylesheet" href="$_G['style']['v604t_common']css/common.css" />
+<link type="text/css" rel="stylesheet" href="$_G['style']['v604t_common']css/news.css" />
+<script type="text/javascript" src="$_G['style']['v604t_common']js/html5.js"></script>
+<script type="text/javascript" src="$_G['style']['v604t_common']js/prefixfree.min.js"></script>
+<script type="text/javascript" src="$_G['style']['v604t_common']js/respond.js"></script>
+<script type="text/javascript" src="$_G['style']['v604t_common']js/global.js"></script>
+<style>
+.news_nav li a {
+padding: 2px 5px;
+margin: 8px 3px 0;
+height: 25px;
+line-height: 25px;
+display: block;
+font-size: 14px;
+color: #a5a5a5 ;
+}
+.news_nav li a:hover{text-decoration:none; background:#fc6328; color:#fff;}
+.scur{
+}
+.liebiao li{
+line-height:27px
+}
+.v604_title {
+font-size:18px !important
+}
+.liebiao {
+margin-bottom:20px
+}
+.news_right_text li a{
+line-height:15px
+}
+
+</style>
+
+<!--{if $cat[others]}-->
+<ul class="wrapper news_nav clearfix">
+    <!--{eval $i = 1;}-->
+    <!--{loop $cat[others] $value}-->
+        <!--{if $cat[caturl] == $value[caturl]}-->
+    <li ><a style="color:#fff;background:#fc6328;" href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a></li>
+        <!--{else}-->
+    <li ><a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a></li>
+        <!--{/if}-->
+    <!--{eval $i--;}-->
+    <!--{/loop}-->
+</ul>
+<!--{/if}-->
+
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+
+<!--{ad/text/wp a_t}-->
+<style id="diy_style" type="text/css">#frame5u8j2N {  background-color:transparent !important;background-image:none !important;border:transparent 0px !important;margin:0px !important;}#portal_block_403 {  background-color:transparent !important;background-image:none !important;border:transparent 0px !important;margin:0px !important;}#portal_block_403 .dxb_bc {  margin:0px !important;}#frame72nQsU {  background-color:transparent !important;background-image:none !important;border:transparent 0px !important;margin:0px !important;}#portal_block_404 {  background-color:transparent !important;background-image:none !important;border:transparent 0px !important;margin:0px !important;}#portal_block_404 .dxb_bc {  margin:0px !important;}</style>
+<div style="border-top: 1px solid #efe6e0;width:100%;margin-top:10px"></div>
+    <div class="wrapper clearfix">
+    <section class="news_page">
+    	<div class="left">
+        <!--{eval $i_loop = 0;}-->
+        <!--{loop $list['list'] $value}-->
+            <!--{eval $highlight = article_title_style($value);}-->
+            <!--{eval $article_url = fetch_article_url($value);}-->
+            <!--{if $i_loop == 0}-->
+            <ul class="liebiao">
+            	<li><a href="$article_url"class='v604_title' style=" font-weight:bold;" $highlight>$value[title]</a><!--{if $value[status] == 1}-->({lang moderate_need})<!--{/if}--><span>$value[dateline]</span></li>
+            <!--{else}-->
+                <li><a href="$article_url" $highlight>$value[title]</a><!--{if $value[status] == 1}-->({lang moderate_need})<!--{/if}--><span>$value[dateline]</span></li>
+            <!--{/if}-->
+            <!--{if $i_loop == 7}-->
+            </ul>
+            <!--{/if}-->
+            <!--{if ++$i_loop > 7}-->
+            <!--{eval $i_loop = 0;}-->
+            <!--{/if}-->
+            <!--{/loop}-->
+            <!--{if $list['multi']}--><div class="pgs cl">{$list['multi']}</div><!--{/if}-->
+            <!-- 原始分页设计，不好实现暂时搁置 <ul class="page clearfix">
+            <li>首页</li>
+                <li class="current">1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>下一页</li>
+                <li>尾页</li>
+            </ul> -->
+        </div>
+        <div class="right">
+            <h3>头条回顾</h3>
+                <!--{block/405}-->
+            <h3 style="margin-top:20px">最新推荐</h3>
+                <!--{block/406}-->
+        </div>
+    </section>
+    </div>
+<!--{template common/footer}-->

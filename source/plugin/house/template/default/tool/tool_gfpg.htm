@@ -1,0 +1,61 @@
+<!--{template common/header}-->
+<!--{eval include template("house:$style/style");}-->
+<!--{eval include template("house:$style/head");}-->
+
+<div class='brian_main'>
+    <!--[diy=diy_house_1]--><div id="diy_house_1" class="area"></div><!--[/diy]-->
+    
+    <div id="pt" class="bm cl">
+        <span class="z">
+            <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+            <em>&raquo;</em>
+            <a href="{$house_config['root']}">{$house_config['name']}</a>
+            <em>&raquo;</em>
+            <a href="{$house_config['root']}?mod=tool&op={$op}">{$house_lang['house_tool']}</a>
+            <em>&raquo;</em>
+            {if $op=='fdjsq'}{$house_lang['fdjsq']}
+            {elseif $op=='gfpg'}{$house_lang['gfpg']}
+            {elseif $op=='zsht'}{$house_lang['zsht']}
+            {/if}
+        </span>
+        <span class="y">
+            {$house_lang['welcome']} <b>{$_G['username']}</b>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=1">{$house_lang['rent']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=2">{$house_lang['need_rent']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=3">{$house_lang['sell']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=loupan">{$house_lang['loupan']}</a>
+            {if $_G['uid']}
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=member">{$house_lang['member']}</a>
+                {if $is_house_admin}
+                <span class="pipe">|</span>
+                <a href="{$house_config['root']}?mod=admin">{$house_lang['admin_main_1']}</a>
+                {/if}
+            {/if}
+            &nbsp;
+        </span>
+    </div>
+    
+    <div class="brian_box" style="background-color:#EEEEEE">
+        <table class="fix tc">
+            <tr>
+                <td>{$house_lang['house_tool']}: </td>
+                <td><a href="{$house_config['root']}?mod=tool&op=fdjsq">{$house_lang['fdjsq']}</a></td>
+                <td><a href="{$house_config['root']}?mod=tool&op=gfpg">{$house_lang['gfpg']}</a></td>
+                <td><a href="{$house_config['root']}?mod=tool&op=zsht">{$house_lang['zsht']}</a></td>
+            </tr>
+        </table>
+        
+        <div style="width:780px; height:700px; margin:0 auto; margin-top:10px;" >
+            <iframe src="http://1.goufangpinggu.duapp.com/index.html" style="width:780px; height:660px;" frameborder=0 scrolling=no ></iframe>
+        </div>
+        
+    </div>
+</div>
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

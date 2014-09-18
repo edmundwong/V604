@@ -1,0 +1,122 @@
+<div class="shangVier cl">
+<div class="users">
+
+ <dl>
+        <dt>
+        <h2></h2>
+            <div class="rate">
+                <div class="big_rate">
+                    <span rate="2">&nbsp;</span>
+                    <span rate="4">&nbsp;</span>
+                    <span rate="6">&nbsp;</span>
+                    <span rate="8">&nbsp;</span>
+                    <span rate="10">&nbsp;</span>
+                    <div style="width:45px;" class="big_rate_up"></div>
+                </div>
+                    <p><span id="s" class="s"></span><span id="g" class="g"></span></p>
+                <div id="my_rate"></div>
+            </div>  
+        </dt>
+        <dd id="user_v">
+            <strong><img src="plugin.php?id=dz55625_haodian:attclass&action=ercode&sid={$_GET['sid']}" /></strong>
+        	<span>
+            	<p id="namea">
+                 {$tmp_lang['ercode']}
+                </p>
+                <p id="names">
+                <b>{$tmp_lang['viewdianzhu']}</b> <a href="home.php?mod=space&uid={$mythread[uid]}&do=profile">{$mythread[author]}</a>
+                </p>
+                <p id="namex"><a href="home.php?mod=space&uid={$mythread[uid]}&do=profile"{$Clickwindow}>{$tmp_lang['listkj']}</a><a class="xi2" onclick="showWindow(this.id, this.href, 'get', 0);" id="a_poke_1" href="home.php?mod=spacecp&amp;ac=poke&amp;op=send&amp;uid={$mythread[uid]}&amp;handlekey=propokehk_1">{$tmp_lang['listzh']}</a></p>
+                <p id="namez">
+                 <!--{if !empty($mythread[tenqq])}--><a href="http://wpa.qq.com/msgrd?v=3&amp;uin={$mythread[tenqq]}&amp;site=qq&amp;menu=yes" target="_blank"><img border="0" title="{$tmp_lang['listxiaoxixx']}" alt="{$tmp_lang['listxiaoxixx']}" src="http://wpa.qq.com/pa?p=2:{$mythread[tenqq]}:16"></a><!--{/if}--></p>
+                
+            </span>
+        </dd>
+        <dd id="user_x">
+        	<p><a id="shoucang" style="margin-right:15px" onclick="AddFavorite();return false" rel="sidebar">{$tmp_lang['viewshoucang']}</a></p>
+           	<p><!--{if {$mythread[renling]}=='1'||{$mythread[click]}=='1'}--><a id="yrenling">{$tmp_lang['ybeirenling']}</a><!--{else}--><a href="javascript:;" onclick="showWindow('renling', 'plugin.php?id=dz55625_haodian:attclass&action=getrling&mod=view&sid={$_G[gp_sid]}', 'get', 0)" id="renling">{$tmp_lang['viewrenling']}</a><!--{/if}--></p>
+        </dd>
+    </dl>
+</div>
+
+<!-----------自助区域开始------------->
+{if $zhu_Start == '1'}
+<script type="text/javascript">
+	function show_window(aid,type){
+		
+		var code=Math.random()*1000;
+		var v_code=parseInt(Math.random()*1000);
+		var key="tc";
+		var url='plugin.php?id=dz55625_haodian_buffet:buffet_hv_pup&aid='+aid+'&type='+type+'&timeStamp='+new Date().getTime();
+		showWindow(key,url,'get',0);
+	}
+	function showbuffet(ar_id,buffet_id){
+		hideWindow("tc");
+		var url='plugin.php?id=dz55625_haodian_buffet:buffet_hv_pup_s&ar_id='+ar_id+'&buffet_id='+buffet_id+'&timeStamp='+new Date().getTime();
+		showWindow("ty",url,'get',0);
+	}
+	function payok(){
+		var payzf=jq('input:radio[name=payfs]:checked').val();
+		if(!payzf){
+			alert("{$tmp_lang['v_zhizhu_5']}"); 
+			return;
+		}
+		var arid=jq("#arid").val();
+		var url='plugin.php?id=dz55625_haodian_buffet:buffet_pay&bid='+jq("#buffetid").val()+'&aid='+arid+'&pay='+payzf+"&ishv=1";
+		hideWindow('ty');
+		showWindow('hd',url, 'get', 0);
+	}
+</script>
+<div class="L_zizhu cl" style="margin-top:0;">
+<h2><strong>{$tmp_lang['v_zhizhu']}</strong><span><a href="<!--{if $RewriteStart == 1}-->haodian_zizhu.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian_user&p=zizhu<!--{/if}-->" target="_blank">{$tmp_lang['moregeng']}</a></span></h2>
+    <ul>
+        <dl>
+         <dt id="v_z_vip">
+             <!--{if {$mythread[click]}=='1'}-->
+             <a href="javascript:;" title="{$tmp_lang['v_zhizhu_1']}" id="v_z_vip_a">{$tmp_lang['v_zhizhu_1']}</a>
+             <!--{else}-->
+              <a href="javascript:;" onclick="show_window({$mythread[id]},'vip')" title="{$tmp_lang['v_zhizhu_2']}">{$tmp_lang['v_zhizhu_2']}</a>
+             <!--{/if}-->
+         </dt>
+        </dl>
+        <dl>
+         <dt id="v_z_tui">
+             <!--{if {$mythread[top]}=='1'}-->
+             <a href="javascript:;" title="{$tmp_lang['v_zhizhu_3']}" id="v_z_tui_a">{$tmp_lang['v_zhizhu_3']}</a>
+             <!--{else}-->
+             <a href="javascript:;" onclick="show_window({$mythread[id]},'tj')" title="{$tmp_lang['v_zhizhu_3']}">{$tmp_lang['v_zhizhu_3']}</a>
+             <!--{/if}-->
+         </dt>
+        </dl>
+        <dl>
+         <dt id="v_z_top">
+         <!--{if {$mythread[topid]}=='1'}-->
+             <a href="javascript:;" title="{$tmp_lang['v_zhizhu_4']}" id="v_z_top_a">{$tmp_lang['v_zhizhu_4']}</a>
+             <!--{else}-->
+             <a href="javascript:;" onclick="show_window({$mythread[id]},'zd')" title="{$tmp_lang['v_zhizhu_4']}">{$tmp_lang['v_zhizhu_4']}</a>
+             <!--{/if}-->
+         </dt>
+        </dl>
+    </ul>
+</div>
+{/if}
+<!-----------自助区域结束------------->
+</div>
+<script>
+function AddFavorite() {
+	stitle = "{$mythread[title]}", 
+	note = "{$tmp_lang['viewshoucno']}";
+    try {
+        window.external.addFavorite(document.location.href, stitle);
+    }
+    catch (e) {
+        try {
+            window.sidebar.addPanel(stitle, document.location.href, "");
+        }
+        catch (e) {
+            alert(note);
+        }
+    }
+}
+</script>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[sjxj_bbx.plugin]]></item>
+	<item id="RevisionID"><![CDATA[1747]]></item>
+	<item id="SN"><![CDATA[2014021110uu21e5VvRl]]></item>
+	<item id="RevisionDateline"><![CDATA[1343181954]]></item>
+	<item id="Data">
+		<item id="/discuz_plugin_sjxj_bbx_SC_GBK.xml"><![CDATA[38566e3444f0098b8ae73c4dafb67966]]></item>
+		<item id="/discuz_plugin_sjxj_bbx_SC_UTF8.xml"><![CDATA[57bdedadd3911226a4d3182b5e5408a3]]></item>
+		<item id="/discuz_plugin_sjxj_bbx_TC_BIG5.xml"><![CDATA[6d071ff123db4fb0945336d20dd25827]]></item>
+		<item id="/discuz_plugin_sjxj_bbx_TC_UTF8.xml"><![CDATA[01fbec662e28fdb62d8f584cad60cb34]]></item>
+		<item id="/index.html"><![CDATA[f007033a8b2e563c70d2578b941e4ae0]]></item>
+		<item id="/sjxj_bbx.inc.php"><![CDATA[e76917fc8c6693d6acc26005982966b4]]></item>
+		<item id="/template/index.htm"><![CDATA[bf58fef1d28799c9cc5f41c4d6eb9024]]></item>
+	</item>
+</root>

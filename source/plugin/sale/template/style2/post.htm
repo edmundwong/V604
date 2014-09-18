@@ -1,0 +1,208 @@
+<!--{template common/header}-->
+<!--{eval include template("sale:$style/style");}-->
+
+<div class='brian_main'>
+    <div class="location">
+        {lang sale:index_htm_1} : <a href="{$sale_config['root']}">{$sale_config['name']}</a>
+        <code> > </code>
+        <a href="{$sale_config['root']}?mod=member"> {lang sale:index_htm_2}</a>
+        {if $op=='edit'}<code> > </code> <a href="{$sale_config['root']}?mod=view&goods_id={$goods_id}">{$goods['goods_title']}</a> {/if}
+        <code> > </code>
+         {if $op=='edit'}{lang sale:admin_cat_htm_1}{else}{lang sale:post_htm_4}{/if}{lang sale:post_htm_5}
+         {if $_G['uid']}
+        <span class="y">
+            <a href="{$sale_config['root']}?mod=member"> {lang sale:index_htm_2}</a>
+            <span class="pipe">|</span>
+            <a href="{$sale_config['root']}?mod=member"> {lang sale:index_htm_3}</a>
+            <span class="pipe">|</span>
+            <a href="{$sale_config['root']}?mod=member&op=mycredit"> {$sale_config['credit_unit']}{lang sale:index_htm_4}</a>
+            &nbsp;
+        </span>
+        {/if}
+    </div>
+    
+    <div class="brian_main_crumb"><ol class="pre" style="width:auto;">{if $op=='edit'}{lang sale:admin_cat_htm_1}{lang sale:post_htm_5}{else}{lang sale:post_htm_4}{lang sale:post_htm_5} {/if} </ol></div>
+    
+    <div class="brian_main_subcontent">
+        <form action="sale.php?mod=post" method="post" enctype="multipart/form-data" onsubmit="return validate();">
+            <input type="hidden" name="mod" value="{$now}" />
+            <input type="hidden" name="op" value="{$op}" />
+            <input type="hidden" name="formhash" value="{$_G['formhash']}" />
+            <input type="hidden" name="goods_id" value="{$goods_id}" />
+            <div class="brian_main_subcontent_content">
+            {if $op!='edit'}<p>{$_lang['xinxifabu_tishi1']} <b>{$sale_config['postcredit']}</b> {$sale_config['credit_unit']} , {$_lang['nin_dangqian']}{$sale_config['credit_unit']} : <b>{$my_credit}. </b></p>{/if}
+            <div class="fb_bt"><span class="f14">{lang sale:post_htm_12} </span> {lang sale:post_htm_13}<font color="red">*</font>{lang sale:post_htm_14} </div>
+            <table class="fb_form">
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_15}</td>
+                    <td>
+                    {if $cat}
+                    <select name="cat_id">
+                    {loop $cat $cat}
+                        <option value="{$cat['cat_id']}##{$cat['cat_title']}" {if $goods['cat_id']==$cat['cat_id']} selected='selected' {/if}>{$cat['cat_title']}</option>
+                    {/loop}
+                    </select>
+                    {else}
+                    <b style="color:red">{lang sale:post_htm_16}</b>
+                    {/if}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_17}</td>
+                    <td>
+                        <span id="districtbox_show">{$goods['province']} {$goods['city']} {$goods['dist']} {$goods['community']}</span>
+                        <span id="districtbox">
+                        <a href="javascript:;" onclick="districtbox_edit_fun()">{lang sale:member_mypost_htm_10}</a>
+                        </span>
+                        {if $op == 'post'}
+                        <script type='text/javascript' language='javascript'>
+                            showdistrict("districtbox", ["province", "city", "dist", "community"], 4, 1);
+                        </script>
+                        {/if}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_19}</td>
+                    <td>
+                        <select name="goods_settime">
+                            <option value="0" {if $goods['goods_settime']==0} selected='selected' {/if}>{lang sale:post_htm_20}</option>
+                            <option value="7" {if $goods['goods_settime']==7} selected='selected' {/if}>{lang sale:post_htm_21}</option>
+                            <option value="30" {if $goods['goods_settime']==30} selected='selected' {/if}>{lang sale:post_htm_22}</option>
+                            <option value="90" {if $goods['goods_settime']==90} selected='selected' {/if}>{lang sale:post_htm_23}</option>
+                            <option value="180" {if $goods['goods_settime']==180} selected='selected' {/if}>{lang sale:post_htm_24}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_25}</td>
+                    <td><input type="text" class="text" id="goods_title" name="goods_title" style="width:350px;"  value="{$goods['goods_title']}"/></td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_26}</td>
+                    <td>
+                        <script type="text/javascript" language="javascript" src="{STATICURL}image/editor/editor_function.js?{VERHASH}"></script>
+                        <textarea class="userData" name="goods_text" id="uchome-ttHtmlEditor" style="height: 100%; width: 100%; display: none; border: 0px">{$goods['goods_text']}</textarea>
+	                    <iframe src="home.php?mod=editor&charset={CHARSET}&allowhtml=1&isportal=0" name="uchome-ifrHtmlEditor" id="uchome-ifrHtmlEditor" scrolling="no" border="0" frameborder="0" style="width:570px;height:300px;border:1px solid #C5C5C5;position:relative;"></iframe>
+                    </td>
+                </tr>
+            </table>
+            <div class="fb_bt"><span class="f14">{lang sale:post_htm_27} </span><a name="salaryInfo"></a> {lang sale:post_htm_13}<font color="red">*</font>{lang sale:post_htm_14}</div>
+             <table class="fb_form">
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_30}</td>
+                    <td>
+                        <input type="checkbox" name="goods_selltype_sell" value="1" {if $goods['goods_selltype_sell']==1}  checked='checked' {/if} {if $op=='post'}  checked='checked' {/if} />{lang sale:index_htm_8} 
+                        <input type="checkbox" name="goods_selltype_swap" value="1" {if $goods['goods_selltype_swap']==1}  checked='checked' {/if} />{lang sale:index_htm_9} 
+                        <input type="checkbox" name="goods_selltype_give" value="1" {if $goods['goods_selltype_give']==1}  checked='checked' {/if} />{lang sale:index_htm_10}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_34}</td>
+                    <td>
+                        <select name="goods_howtopay">
+                            <option value="1">{lang sale:post_htm_35}</option>
+                            <option value="2">{lang sale:post_htm_36}</option>
+                            <option value="3">{lang sale:post_htm_37}</option>
+                            <option value="4">{lang sale:post_htm_38}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_39}</td>
+                    <td><input type="text" class="text" id="goods_price" name="goods_price" value="{$goods['goods_price']}" /> {lang sale:index_htm_5}</td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_41}</td>
+                    <td><input type="text" class="text" name="goods_number" value="{if $goods['goods_number']}{$goods['goods_number']}{else}1{/if}"  /></td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_42}</td>
+                    <td><select name="goods_newold">
+                        <option value="1">{lang sale:index_htm_12}</option> 
+                        <option value="9">9{lang sale:index_htm_13}</option> 
+                        <option value="8">8{lang sale:index_htm_13}</option> 
+                        <option value="7">7{lang sale:index_htm_13}</option> 
+                        <option value="6">6{lang sale:index_htm_16}</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td class="tdr">{lang sale:post_htm_48}</td>
+                    <td><p>{lang sale:post_htm_49}2M </p>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                            <b>{lang sale:post_htm_50}1 : </b><input type="hidden" name="temp_goods_upload_file_1" value="{$goods['goods_upload_file_1']}" />
+                            <input type="file" name="goods_upload_file_1" />
+                            {if $goods['goods_upload_file_1']}<p><img src="{$goods['goods_upload_file_1']}" alt="goods_upload_file_1" /></p>{/if}
+                        </div>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                            <b>{lang sale:post_htm_50}2 : </b><input type="hidden" name="temp_goods_upload_file_2" value="{$goods['goods_upload_file_2']}" />
+                            <input type="file" name="goods_upload_file_2" />
+                            {if $goods['goods_upload_file_2']}<p><img src="{$goods['goods_upload_file_2']}" alt="goods_upload_file_2" /></p>{/if}
+                        </div>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                            <b>{lang sale:post_htm_50}3 : </b><input type="hidden" name="temp_goods_upload_file_3" value="{$goods['goods_upload_file_3']}" />
+                            <input type="file" name="goods_upload_file_3" />
+                            {if $goods['goods_upload_file_3']}<p><img src="{$goods['goods_upload_file_3']}" alt="goods_upload_file_3" /></p>{/if}
+                        </div>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px;margin-bottom:5px;">
+                            <b>{lang sale:post_htm_50}4 : </b><input type="hidden" name="temp_goods_upload_file_4" value="{$goods['goods_upload_file_4']}" />
+                            <input type="file" name="goods_upload_file_4" />
+                            {if $goods['goods_upload_file_4']}<p><img src="{$goods['goods_upload_file_4']}" alt="goods_upload_file_4" /></p>{/if}
+                        </div>
+                    </td>
+                </tr>
+             </table>
+            <div class="fb_bt"><span class="f14">{lang sale:post_htm_54}</span><a name="contactInfo"></a> {lang sale:post_htm_13}<font color="red">*</font>{lang sale:post_htm_14}</div>
+            <table class="fb_form">
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_57}</td>
+                    <td><input type="text" class="text" name="member_username" value="{$member['member_username']}" /></td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_59}</td>
+                    <td><input type="text" class="text" name="member_phone" value="{$member['member_phone']}" /></td>
+                </tr>
+                <tr>
+                    <td class="tdr">{lang sale:post_htm_58}</td>
+                    <td><input type="text" class="text" name="member_qq" value="{$member['member_qq']}" /></td>
+                </tr>
+                <tr>
+                    <td class="tdr">{lang sale:post_htm_60}</td>
+                    <td><input type="text" class="text" name="member_email" value="{$member['member_email']}" /></td>
+                </tr>
+            </table>
+            <div class="post_box">
+                <input type="submit" name="{$op}_submit"  id="{$op}_submit" class="ljfb" value="{lang sale:post_htm_61}" />
+            </div>
+        </div>
+        </form>
+        <div class="side_tip">
+            <dl>
+            <dt class="f14"><strong>{lang sale:post_htm_62}</strong></dt>
+            <dd>{lang sale:post_htm_63}</dd>
+            <dd>{lang sale:post_htm_64}<span style="color:red">{$_SERVER["REMOTE_ADDR"]}</span>{lang sale:post_htm_65}</dd>
+            </dl>
+        </div>
+    </div>
+    
+</div>
+<script type="text/javascript" language="javascript">
+function validate() {
+    if($('goods_title').value ==''){
+        showPrompt(null, null, '"{lang sale:admin_jubao_htm_2}",{lang sale:post_htm_67}!', 2000);
+        $('goods_title').focus();
+        return false;
+    }else if($('goods_price').value ==''){
+        showPrompt(null, null, '"{lang sale:post_htm_68}",{lang sale:post_htm_67}!', 2000);
+        $('goods_price').focus();
+        return false;
+    }else{
+        edit_save();
+        window.onbeforeunload = null;
+    }
+}
+function districtbox_edit_fun(){
+    display('districtbox_show');
+    showdistrict("districtbox", ["province", "city", "dist", "community"], 4, 1);
+}
+</script>
+<!--{template common/footer}-->

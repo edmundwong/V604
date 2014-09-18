@@ -1,0 +1,190 @@
+<!--{template common/header}-->
+<!--{eval include template("gongqiu:$style/style");}-->
+<link href="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/base.css" rel="stylesheet" type="text/css">
+<link href="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/include.css" rel="stylesheet" type="text/css">
+<link href="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/secondmarket.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+.showtab {
+	background-color: #fff;
+	border: 1px solid #ACC3DF;
+	border-bottom: none;
+	font-weight: bold;
+}
+.hidetab {
+}
+ul.wanted_left {
+	height: 38px;
+	width: 100%;
+	margin: 0;
+	padding: 5px 0;
+	position: absolute;
+	left: 0;
+	top: 0px;
+	overflow: hidden;
+}
+ul.wanted_left2 {
+	width: 100%;
+	margin: 0;
+	padding: 5px 0;
+	overflow: hidden;
+}
+ul.wanted_left li {
+	color: #666;
+	padding-left: 5px;
+	line-height: 18px;
+	float: left;
+}
+ul.wanted_left2 li {
+	color: #666;
+	padding-left: 5px;
+	line-height: 18px;
+	float: left;
+}
+ul.wanted_left li h3, ul.wanted_left2 li h3 {
+	margin: 5px 0;
+}
+ul.wanted_left li h3 a, ul.wanted_left2 li h3 a {
+	color: #2244DD;
+	text-decoration: underline;
+	background: none !important;
+	padding-right: 0 !important;
+}
+ul.wanted_left li a, ul.wanted_left2 li a, ul.qita li a {
+	color: #666;
+	text-decoration: none;
+	background: url() no-repeat 100% -829px;
+	padding-right: 20px;
+	display: block;
+	float: left;
+	white-space: nowrap;
+}
+ul.wanted_left li a:visited, ul.wanted_left h3 a:visited, ul.qita li a:visited, ul.wanted_left2 li a:visited, ul.wanted_left2 h3 a:visited {
+	color: #800080;
+}
+ul.wanted_left li a {
+	white-space: nowrap;
+}
+.hid {
+	position: relative;
+	height: 38px;
+	width: 100%;
+	z-index: 100;
+}
+.hidover {
+	background: #fff;
+	border: 1px solid #6694E3;
+	width: 32.8%;
+	_width: 99.8%;
+	position: absolute;
+	z-index: 110;
+}
+
+#wu_fenlei a:visited { color:#636563; }
+#wu_fenlei h3 a:visited { color:#2145de; }
+#wu_fenlei a:hover { color:#e70000; }
+</style>
+<style type="text/css">
+.bod_left { float:left;width:31%;border-right:1px dashed #eee;margin:0 10px 0 5px; padding:5px 0; height:90px;overflow:hidden;}
+.bod_left li { line-height:21px; }
+.hot ul li { width:8%; }
+body.wanted_index .bod_left {height:101px;}
+
+.bod_left { cursor:pointer; display:block; }
+.bod_left:hover { background:#FFFAE7; }
+.bod_left li { padding:0 0 0 7px; }
+</style>
+
+<!--<div id="wrapper">
+  <div id="where"><a href="http://www.vanpeople.com">首页</a> &gt; <a href="/yellowpage">服务黄页</a>
+    <div class="wherebg1"> &nbsp;</div>
+    <div class="wherebg2"> &nbsp;</div>
+    <div class="wherebg3"> &nbsp;</div>
+  </div>
+  <form action="/c/list.aspx" method="get" id="seformxxx" onsubmit="if(this.keyword.value=='搜索 黄页/公司') this.keyword.value=''; document.getElementById('submit').value='';" class="searchform">
+  <div id="wu_index">
+    <dl>
+      <dt>服务黄页分类&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#333;"><input name="areaid" type="hidden" id="areaid" value="0" />
+<input name="classid" type="hidden" value="31" /><input type="text" name="keyword" id="keyword" value="搜索 黄页/公司" style="color: gray; width:150px;" onclick="if(this.value=='搜索 黄页/公司') this.value='';"> <input value="搜索" type="submit"></span></dt>
+	  <dd class="wanted_pub" style="position:absolute; top:13px;right:108px;">
+	    <div class="btn_pub"><a href="/c//post.aspx">免费发布信息</a></div>
+	  </dd>
+      <dd class="index_pub">
+        <div class="jianli_pub"><a href="/c//postb.aspx">发布服务信息</a></div>
+      </dd>
+    </dl>
+  </div>
+  </form>
+  <div class="fenlei_bg">
+    <div id="wu_fenlei">
+<div class="fenlei_cont"><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=128">家庭旅馆/短期住宿 (32)</a></h3><br /> {loop $cat_array $cat}
+                {if $cat['cat_pid']==1}
+
+            <a href="gongqiu.php?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}{if $keyword}&keyword={$keyword}{/if}" {if $cat['cat_id']==$cat_id} class="hover"{/if}>{$cat['cat_title']}</a>
+        {/if}
+            {/loop}</li></ul><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=96">接送/搬运/库存 (53)</a></h3><br /><a href="/c//service.aspx?classid=96&tagid=4">搬家搬运</a><a href="/c//service.aspx?classid=96&tagid=5">精搬钢琴</a><a href="/c//service.aspx?classid=96&tagid=6">机场接送</a><a href="/c//service.aspx?classid=96&tagid=7">旅游观光</a><a href="/c//service.aspx?classid=96&tagid=8">边境过关</a><a href="/c//service.aspx?classid=96&tagid=69">材料运输</a><a href="/c//service.aspx?classid=96&tagid=70">带烟</a><a href="/c//service.aspx?classid=96&tagid=94">仓储服务</a><a href="/c//service.aspx?classid=96&tagid=128">货运物流</a></li></ul><ul class="bod_left bod_none"><li><h3><a href="/c//list.aspx?classid=150">购车/租车/运车/拖车 (19)</a></h3><br /><a href="/c//service.aspx?classid=150&tagid=11">汽车买卖</a><a href="/c//service.aspx?classid=150&tagid=12">租车服务</a><a href="/c//service.aspx?classid=150&tagid=13">运车回国</a><a href="/c//service.aspx?classid=150&tagid=71">拖车服务</a></li></ul></div><div class="fenlei_cont"><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=169">汽车维修/改装/保养 (20)</a></h3><br /><a href="/c//service.aspx?classid=169&tagid=10">汽车维修</a><a href="/c//service.aspx?classid=169&tagid=14">翻新保养</a><a href="/c//service.aspx?classid=169&tagid=15">汽车防盗</a><a href="/c//service.aspx?classid=169&tagid=16">音响改装</a></li></ul><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=133">机票旅游 (23)</a></h3><br /><a href="/c//service.aspx?classid=133&tagid=96">旅游机票</a><a href="/c//service.aspx?classid=133&tagid=105">代办签证</a><a href="/c//service.aspx?classid=133&tagid=102">旅游保险</a></li></ul><ul class="bod_left bod_none"><li><h3><a href="/c//list.aspx?classid=175">翻译/生意/印刷/快递服务 (229)</a></h3><br /><a href="/c//service.aspx?classid=175&tagid=67">设计印刷</a><a href="/c//service.aspx?classid=175&tagid=80">航空快递</a><a href="/c//service.aspx?classid=175&tagid=92">网页制作</a><a href="/c//service.aspx?classid=175&tagid=118">翻译服务</a><a href="/c//service.aspx?classid=175&tagid=103">生意公司</a></li></ul></div><div class="fenlei_cont"><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=81">清洁/洗衣/地毯/垃圾 (26)</a></h3><br /><a href="/c//service.aspx?classid=81&tagid=21">房屋清洁</a><a href="/c//service.aspx?classid=81&tagid=22">地毯清洗</a><a href="/c//service.aspx?classid=81&tagid=24">清理垃圾</a><a href="/c//service.aspx?classid=81&tagid=112">家居维修</a><a href="/c//service.aspx?classid=81&tagid=125">洗衣店</a></li></ul><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=135">水暖电工/通渠/维修 (28)</a></h3><br /><a href="/c//service.aspx?classid=135&tagid=97">水暖电工</a><a href="/c//service.aspx?classid=135&tagid=23">通渠水喉</a><a href="/c//service.aspx?classid=135&tagid=131">维修</a></li></ul><ul class="bod_left bod_none"><li><h3><a href="/c//list.aspx?classid=161">园艺/杀虫 (9)</a></h3><br /><a href="/c//service.aspx?classid=161&tagid=85">园艺</a><a href="/c//service.aspx?classid=161&tagid=86">灭虫灭鼠</a></li></ul></div><div class="fenlei_cont"><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=151">电脑/网络/手机维修 (25)</a></h3><br /><a href="/c//service.aspx?classid=151&tagid=34">电器维修</a><a href="/c//service.aspx?classid=151&tagid=35">电脑维修</a><a href="/c//service.aspx?classid=151&tagid=36">电话手机</a><a href="/c//service.aspx?classid=151&tagid=37">游戏机</a><a href="/c//service.aspx?classid=151&tagid=104">网络/电视</a></li></ul><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=172">宠物寄养/美容/食品 (12)</a></h3><br /><a href="/c//service.aspx?classid=172&tagid=100">宠物美容/训练/寄养</a></li></ul><ul class="bod_left bod_none"><li><h3><a href="/c//list.aspx?classid=173">摄影/婚庆服务 (10)</a></h3><br /><a href="/c//service.aspx?classid=173&tagid=82">婚纱摄影</a></li></ul></div><div class="fenlei_cont"><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=79">移民/留学/签证 (43)</a></h3><br /><a href="/c//service.aspx?classid=79&tagid=39">留学签证</a><a href="/c//service.aspx?classid=79&tagid=40">移民申请</a><a href="/c//service.aspx?classid=79&tagid=41">特快美签</a><a href="/c//service.aspx?classid=79&tagid=73">入籍专家</a><a href="/c//service.aspx?classid=79&tagid=132">美国移民</a></li></ul><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=171">公立/私立院校 (31)</a></h3><br /><a href="/c//service.aspx?classid=171&tagid=138">夏令营/冬令营</a><a href="/c//service.aspx?classid=171&tagid=115">公立/私立院校</a><a href="/c//service.aspx?classid=171&tagid=116">职业培训学校</a><a href="/c//service.aspx?classid=171&tagid=117">公立私立高中</a></li></ul><ul class="bod_left bod_none"><li><h3><a href="/c//list.aspx?classid=145">雅思/托福/ESL院校 (22)</a></h3><br /><a href="/c//service.aspx?classid=145&tagid=42">托福雅思</a><a href="/c//service.aspx?classid=145&tagid=113">ESL院校</a><a href="/c//service.aspx?classid=145&tagid=114">名牌学院</a></li></ul></div><div class="fenlei_cont"><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=168">各类辅导/家教/补习 (57)</a></h3><br /><a href="/c//service.aspx?classid=168&tagid=45">补习学校</a><a href="/c//service.aspx?classid=168&tagid=107">私人补习</a><a href="/c//service.aspx?classid=168&tagid=127">论文辅导</a><a href="/c//service.aspx?classid=168&tagid=134">入籍辅导</a></li></ul><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=165">音乐/美术/舞蹈/运动/培训 (48)</a></h3><br /><a href="/c//service.aspx?classid=165&tagid=106">音乐类</a><a href="/c//service.aspx?classid=165&tagid=108">美术类</a><a href="/c//service.aspx?classid=165&tagid=110">舞蹈类</a><a href="/c//service.aspx?classid=165&tagid=111">其他培训</a><a href="/c//service.aspx?classid=165&tagid=122">体育运动</a></li></ul><ul class="bod_left bod_none"><li><h3><a href="/c//list.aspx?classid=174">汇款换汇 (14)</a></h3><br /><a href="/c//service.aspx?classid=174&tagid=66">汇款换汇</a></li></ul></div><div class="fenlei_cont"><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=162">地产经纪/开发商/贷款按揭 (27)</a></h3><br /><a href="/c//service.aspx?classid=162&tagid=87">贷款按揭</a><a href="/c//service.aspx?classid=162&tagid=99">地产经纪</a><a href="/c//service.aspx?classid=162&tagid=136">开发商</a><a href="/c//service.aspx?classid=162&tagid=137">开发商</a></li></ul><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=132">建筑装修/门窗 (44)</a></h3><br /><a href="/c//service.aspx?classid=132&tagid=25">建筑装修</a><a href="/c//service.aspx?classid=132&tagid=26">屋顶地板</a><a href="/c//service.aspx?classid=132&tagid=27">油漆粉刷</a><a href="/c//service.aspx?classid=132&tagid=28">门窗枱柜</a><a href="/c//service.aspx?classid=132&tagid=30">防盗报警</a><a href="/c//service.aspx?classid=132&tagid=123">铝铁烧焊</a><a href="/c//service.aspx?classid=132&tagid=135">建筑设计</a></li></ul><ul class="bod_left bod_none"><li><h3><a href="/c//list.aspx?classid=180">验屋/开锁服务 (6)</a></h3><br /><a href="/c//service.aspx?classid=180&tagid=29">紧急开锁</a><a href="/c//service.aspx?classid=180&tagid=88">验屋服务</a></li></ul></div><div class="fenlei_cont"><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=160">保健品/酒/本地特产 (9)</a></h3><br /><a href="/c//service.aspx?classid=160&tagid=129">保健品</a><a href="/c//service.aspx?classid=160&tagid=130">酒</a><a href="/c//service.aspx?classid=160&tagid=84">热卖用品</a></li></ul><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=129">月子/托儿/保姆 (14)</a></h3><br /><a href="/c//service.aspx?classid=129&tagid=50">月子托儿</a><a href="/c//service.aspx?classid=129&tagid=51">保姆家政</a><a href="/c//service.aspx?classid=129&tagid=52">幼儿教育</a></li></ul><ul class="bod_left bod_none"><li><h3><a href="/c//list.aspx?classid=82">老牌练车/路试/驾照 (145)</a></h3><br /><a href="/c//service.aspx?classid=82&tagid=64">考牌练车</a><a href="/c//service.aspx?classid=82&tagid=77">驾照笔试</a><a href="/c//service.aspx?classid=82&tagid=78">速办驾照</a><a href="/c//service.aspx?classid=82&tagid=79">笔试翻译</a></li></ul></div><div class="fenlei_cont"><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=142">会计报税/退税 (23)</a></h3><br /><a href="/c//service.aspx?classid=142&tagid=53">会计报税</a><a href="/c//service.aspx?classid=142&tagid=54">申请EI</a></li></ul><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=181">理财投资/各类保险 (8)</a></h3><br /><a href="/c//service.aspx?classid=181&tagid=55">投资理财</a><a href="/c//service.aspx?classid=181&tagid=119">保险</a></li></ul><ul class="bod_left bod_none"><li><h3><a href="/c//list.aspx?classid=170">法律公证/索赔告票 (16)</a></h3><br /><a href="/c//service.aspx?classid=170&tagid=56">法律公证</a></li></ul></div><div class="fenlei_cont"><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=83">医疗诊所/中医/牙医 (31)</a></h3><br /><a href="/c//service.aspx?classid=83&tagid=60">医疗诊所</a><a href="/c//service.aspx?classid=83&tagid=61">牙医诊所</a><a href="/c//service.aspx?classid=83&tagid=62">听力诊所</a><a href="/c//service.aspx?classid=83&tagid=63">针灸医师</a></li></ul><ul class="bod_left "><li><h3><a href="/c//list.aspx?classid=167">按摩/足疗/美甲/美容美发 (31)</a></h3><br /><a href="/c//service.aspx?classid=167&tagid=89">推拿按摩</a><a href="/c//service.aspx?classid=167&tagid=98">美容护理</a><a href="/c//service.aspx?classid=167&tagid=120">美甲</a><a href="/c//service.aspx?classid=167&tagid=124">足疗保健</a><a href="/c//service.aspx?classid=167&tagid=121">美发</a></li></ul><ul class="bod_left bod_none"><li><h3><a href="/c//list.aspx?classid=139">成人娱乐/成人用品 (54)</a></h3><br /><a href="/c//service.aspx?classid=139&tagid=90">成人娱乐</a><a href="/c//service.aspx?classid=139&tagid=91">成人商店</a></li></ul></div>	  </div>
+    </div>
+    <div class="fenlei_cont">
+      <ul class="qita" style="height:60px;">
+        <li class="H_link_blue">
+          <h3 style="padding-bottom:5px;"> 公告 / 联系我们</h3>
+          若您对我们的服务感到不满或对我们的服务有良好的建议，欢迎致电：<font color="#0000FF">778-686-6618</font> 或直接发邮件给我们：<a href="mailto:support@vanpeople.com" style="float:right;"><font color="#0000FF">support@vanpeople.com</font></a> <br />
+          感谢您对人在温哥华 - VanPeople.com 的大力支持。</li>
+      </ul>
+    </div>
+  </div>-->
+
+
+
+
+<div class='brian_main'>
+    <!--[diy=diy_gongqiu_1]--><div id="diy_gongqiu_1" class="area"></div><!--[/diy]-->
+    
+    <!--{eval include template("gongqiu:$style/head");}-->
+    
+    {if empty($goods_type)}
+    <!--{eval include template("gongqiu:$style/top");}-->
+    {/if}
+    
+    <!--[diy=diy_gongqiu_2]--><div id="diy_gongqiu_2" class="area"></div><!--[/diy]-->
+    
+    <!--{eval include template("gongqiu:$style/search");}-->
+   <!--[diy=diy_gongqiu_3]--><div id="diy_gongqiu_3" class="area"></div><!--[/diy]-->
+    <div class="gongqiulist">
+        
+        <table class="fix cl">
+
+        {loop $goods_list $goods}
+          <tr style="border-bottom:1px dashed #e1e1e1;">
+            <td style="width:90px;" class="tc"><span class="gongqiu_pic tc"><a href="{$gongqiu_config['root']}?mod=view&goods_id={$goods['goods_id']}">{if $goods['goods_upload_file_1']}<img src="{$goods['goods_upload_file_1']}" />{else}<img src="{$gongqiu_config['gongqiu']}images/nophotosmall.gif" />{/if}</a></span></td>
+            <td style="width:80px; " class="tc"><span>
+            <b>
+            <div style="color:#FF5500; font-size:12px;">[{$goods_type_array[$goods['goods_type']]}]</div>
+            </b></span></td>
+            <td style="width:400px;">
+                <span class="gongqiu_title">
+                <div style="font-size:14px;">
+                    <a href="{$gongqiu_config['root']}?mod=view&goods_id={$goods['goods_id']}" style="font-size:15px;">{if $goods['goods_selltype_give']}{lang gongqiu:index_htm_10}{/if}{$goods['goods_title']}</a> 
+                    {if $goods['goods_upload_file_1']}<span class="ispic">{$_lang['tu']}</span>{/if}
+                    {if $goods['goods_up']}<img src="{$gongqiu_config['siteurl']}source/plugin/gongqiu/template/{$style}/css/images/ding.png" title="{lang gongqiu:index_htm_7}" />{/if}
+                </div>
+                </span>
+                <div>{lang gongqiu:index_htm_11}:{if $goods['province']}<span class="gongqiu_title_area">{$goods['province']}</span>{/if}{if $goods['city']}-<span class="gongqiu_title_area">{$goods['city']}</span>{/if}{if $goods['dist']} - <span class="gongqiu_title_area">{$goods['dist']}</span>{/if}{if $goods['community']}-<span class="gongqiu_title_area">{$goods['community']}</span>{/if}</div>
+            </td>
+            <td class="tr">
+                <span class="gongqiu_price tr cl"><b style="color:#FF5500; font-size:16px;">&yen;{$goods['goods_price']}</b>{lang gongqiu:index_htm_5}</span>
+            </td>
+            <td class="tc" style="padding-left:10px;">
+                <span class="gongqiu_new_old">{if $goods['goods_newold']==1}{lang gongqiu:index_htm_12}{elseif $goods['goods_newold']==9 }9{lang gongqiu:index_htm_13}{elseif $goods['goods_newold']==8 }8{lang gongqiu:index_htm_13}{elseif $goods['goods_newold']==7 }7{lang gongqiu:index_htm_13}{elseif $goods['goods_newold']==6}6{lang gongqiu:index_htm_16}{/if}</span>
+            </td>
+            <td class="tc" style="width:120px;">{if $goods['cat_id']}{$goods['cat_title']}{/if}{if $goods['subcat_id']}<br />{$goods['subcat_title']}{/if}</td>
+            <td style="width:100px;" class="tc">{echo dgmdate($goods['goods_time'],'u');}</td>
+          </tr>
+         {/loop}
+        </table>
+        <div class="cl pd5">
+            <div class="z">{$multipage}</div>
+            <div class="y">{$_lang['meiyoushihe']}<a href="{$gongqiu_config['root']}?mod=post">{$_lang['dianjijinru']}>></a></div>
+        </div>
+    </div>
+</div>
+<!--{template common/footer}-->

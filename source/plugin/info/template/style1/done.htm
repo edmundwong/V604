@@ -1,0 +1,22 @@
+<!--{template common/header}-->
+
+    <h3 class="flb">
+	    <em id="return_{$_GET['handlekey']}">{lang info:done_htm_1} : </em>
+	    <span>
+		    <a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']')" title="{lang close}">{lang close}</a>
+	    </span>
+    </h3>
+
+    <div class="c altw"><div class="alert_info"><p>{if $tips}{$tips}{else}{lang info:done_htm_2}!{/if}</p></div></div>
+    
+    <p class="o pns">
+        <span class="z xg1">3 {lang info:done_htm_3}</span>
+        <button class="pn pnc" value="true" id="fwin_dialog_submit" onclick="hideWindow('$_GET['handlekey']')"><strong>{lang info:done_htm_4}</strong></button>
+    </p>
+    
+<script language="javascript" type="text/javascript">
+   window.setTimeout("hideWindow('{$_GET['handlekey']}')", 3000);
+</script>
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+.fabu{text-align:center; padding-top:140px;}
+.fabu a{font-size:14px; color:#fff;}
+.fabu span{margin:0 10px; color:#fff;}
+article{overflow:hidden;background:#fff4ee; padding:50px 0 10px; z-index:-1;}
+.v604_navigation {padding:20px;}
+.v604_navigation strong{ display:block; font-size:18px; color:#3d3d45; margin-left:30px !important;margin-top:5px;}
+.v604_navigation td{width:33.3%; padding:7px 20px 0;vertical-align:top;padding:14px 20px 20px 20px !important;border: 1px solid #EFE6E0;}
+.v604_navigation td a{ color:#3d3d45;}
+.v604_navigation td em{color:#828999;}
+.v604_navigation li{float:left; margin-right:5px;margin-top:3px;}
+.v604_navigation tr{height:120px；}
+.v604_navigation tr:first-child{height:145px;}
+.bg_sprite{background-image:url('../img/icon.png'); background-repeat:no-repeat;float:left;margin-top:5px;width:22px;height:22px;}
+.ico1{background-position: -20px -10px;}
+.ico2{background-position: -352px -10px;}
+.ico3{background-position: -679px -10px;}
+
+.ico4{background-position: -20px -155px;}
+.ico5{background-position: -352px -155px;}
+.ico6{background-position: -679px -155px;}
+
+.ico7{background-position: -20px -274px;}
+.ico8{background-position: -352px -274px;}
+.ico9{background-position: -679px -274px;}
+
+.ico10{background-position: -20px -392px;}
+.ico11{background-position: -352px -392px;}
+.ico12{background-position: -679px -392px;}
+
+.ico13{background-position: -20px -510px;}
+.ico14{background-position: -352px -510px;}
+.ico15{background-position: -679px -510px;}
+
+.ico16{background-position: -20px -629px;}
+.ico17{background-position: -352px -629px;}
+.ico18{background-position: -679px -629px;}
+
+.ico19{background-position: -20px -747px;}
+.ico20{background-position: -352px -747px;}
+.ico21{background-position: -679px -747px;}
+
+.ico22{background-position: -20px -866px;}
+.ico23{background-position: -352px -866px;}
+.ico24{background-position: -679px -866px;}
+
+.ico25{background-position: -20px -957px;}
+.ico26{background-position: -352px -957px;}
+.ico27{background-position: -679px -957px;}
+
+.ico28{background-position: -20px -1048px;}
+.ico29{background-position: -352px -1048px;}
+.ico30{background-position: -679px -1048px;}

@@ -1,0 +1,46 @@
+<table class="fix">
+<tr>
+    <td colspan=2>
+        <div class="detail-r">
+            <div class="agent-tel">
+                <span class="dt-agent-l">
+                    <label class="money"><!-- {$info_lang['money']} --></label>
+                    <em>{$post['member_username']}</em>
+                    <!-- {$post['post_price_unit']} -->
+                </span>
+                <span class="dt-agent-num">
+                    <a href="javascript:;" rel="nofollow" style="color:#fff;">{$member['member_phone']}</a>
+                </span>
+                <span class="dt-agent-le">{$info_config['helpnotice']}</span>
+            </div>
+        </div>
+    </td>
+</tr>
+</table>
+
+<ul class="cl">
+    {loop $post_profile $pp}
+    {if $pp['profile_setting_formtype']=='select'}
+        <li>
+            <span class="des">{$pp['profile_setting_title']} : </span>
+            <span class="val">{$pp['post_profile_title']}{$pp['profile_setting_unit']}</span>
+        </li>
+    {elseif $pp['profile_setting_formtype']=='input'}
+        <li>
+            <span class="des">{$pp['profile_setting_title']} : </span>
+            <span class="val">{$pp['post_profile_title']}{$pp['profile_setting_unit']}</span>
+        </li>
+    {elseif $pp['profile_setting_formtype']=='checkbox'}
+        <li>
+            <span class="des">{$pp['profile_setting_title']} : </span>
+            <span class="val">
+            {loop $pp['post_profile_title'] $v}
+                {$v}
+            {/loop}
+            {$pp['profile_setting_unit']}
+            </span>
+        </li>
+        
+    {/if}
+    {/loop}
+</ul>

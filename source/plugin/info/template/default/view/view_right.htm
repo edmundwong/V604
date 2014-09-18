@@ -1,0 +1,95 @@
+<div class="index_content_extracontact_userinfo">
+
+<div class="index_content_extracontact_userinfo_ava">
+    <a href="home.php?mod=space&uid={$member['member_uid']}" target="_blank"><!--{avatar($member['member_uid'],big)}--></a>
+    <p style="line-height:25px; font-size:14px; text-align:center;">
+        <a href="home.php?mod=space&uid={$member['member_uid']}" target="_blank">{$member['member_title']}</a>
+    </p>
+    
+    <div>
+    {if $member['verify'.$info_config['geren']]==1}
+        <span class="info_geren"><a href="home.php?mod=spacecp&ac=profile&op=verify&vid={$info_config['geren']}" target="_blank">{$info_lang['list_center_htm_3']}</a></span>
+    {elseif $member['verify'.$info_config['qiye']]==1}
+        <span class="info_qiye"><a href="home.php?mod=spacecp&ac=profile&op=verify&vid={$info_config['qiye']}" target="_blank">{$info_lang['list_center_htm_4']}</a></span>
+    {/if}
+    </div>
+    
+    <div style="line-height:35px;">
+        <a class="btn" onclick="showWindow('showPoke', this.href, 'get', 0);" id="a_poke_{$post['member_uid']}" href="{$_G['siteurl']}home.php?mod=spacecp&ac=poke&op=send&uid={$post['member_uid']}" class="space_weibo_btn"><span>{$info_lang['view_right_htm_3']}</span></a>
+        <span class="pipe">|</span>
+        <a class="btn" onclick="showWindow('showMsgBox', this.href, 'get', 0)" id="a_sendpm_{$post['member_uid']}" href="{$_G[siteurl]}home.php?mod=spacecp&ac=pm&op=showmsg&handlekey=showmsg_{$post['member_uid']}&touid={$post['member_uid']}&pmid={$_G['uid']}&daterange=2"  class="space_weibo_btn"><span>{$info_lang['view_right_htm_4']}</span></a>
+        <br />
+        <a class="btn" id="followmod" onclick="showWindow(this.id, this.href, 'get', 0);" href="{$_G['siteurl']}home.php?mod=spacecp&ac=follow&op=add&hash={$_G[formhash]}&fuid={$post['member_uid']}" class="space_weibo_btn"><span><b>+</b>{$info_lang['view_right_htm_5']}</span></a>
+        <span class="pipe">|</span>
+        <a class="btn" onclick="showWindow(this.id, this.href, 'get', 0);" id="a_friend_li_{$post['member_uid']}" href="home.php?mod=spacecp&ac=friend&op=add&uid={$post['member_uid']}&handlekey=addfriendhk_{$post['member_uid']}" class="space_weibo_btn"><span><b>+</b>{$info_lang['view_right_htm_6']}</span></a>
+    </div>
+</div>
+<table class="fix" style="color:#A7A7A7;line-height:25px;">
+    {if $member['member_qq']}<tr><td style=" width:68px;" class="tr">{$info_lang['member_qq']}: </td><td ><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin={$member['member_qq']}&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:{$member['member_qq']}:41"></a></td></tr>{/if}
+    {if $member['member_email']}<tr><td style=" width:68px;" class="tr">{$info_lang['member_email']}: </td>
+    <td ><div style="height:25px; overflow:hidden;">{$member['member_email']}</div></td></tr>{/if}
+</table>
+</div>
+
+<div class="bgf pd5" style="margin-bottom:10px;">
+    <h1 class="h1">TA{$info_lang['view_right_htm_7']}</h1>
+    {if $otherpost}
+    {loop $otherpost $ot}
+    <div class="view_right_hose_info tc pd5">
+        <div style="position:relative;">
+             {if $ot['post_up']}<div class="post_up"></div>  {/if}
+            <a href="{$info_config['root']}?mod=view&post_id={$ot['post_id']}"><img src="{if $ot['post_img_1']}{$ot['post_img_1']}{else}{$info_config['info']}static/images/noimage.jpg{/if}" /></a>
+        </div>
+        
+        <div><a href="{$info_config['root']}?mod=view&post_id={$ot['post_id']}">{$ot['post_title']}</a></div>
+        <div class="cl">
+            <div class="z">
+                {if $ot['loupan_title']}
+                    {if $ot['loupan_id']}
+                        <a href="{$info_config['root']}?mod=loupan&op=view&lid={$ot['loupan_id']}" target="_blank">[{$ot['loupan_title']}] </a>
+                    {else}
+                        [{$ot['loupan_title']}] 
+                    {/if}
+                {/if}
+            </div>
+           <!--  <div class="y">{$ot['profile']['info_area']['post_profile_title']}{$info_lang['m2']}</div>
+           <div class="y">
+           <em>{if $profile_type_id=='1'}{$ot['profile']['rent_price']['post_profile_title']}{$info_lang['rent_unit']}{elseif $profile_type_id=='3'}{$info_lang['money']}{$ot['profile']['sell_price']['post_profile_title']}{$info_lang['wan']}{/if}</em> &nbsp;</div> -->
+        </div>
+    </div>
+    {/loop}
+    {else}
+    <div class="brian_tips">{$info_lang['view_right_htm_8']}</div>
+    {/if}
+ </div>
+ 
+<div class="bgf pd5">
+    <h1 class="h1">{$info_lang['view_right_htm_9']}</h1>
+    {if $maybelike}
+    {loop $maybelike $mb}
+    <div class="view_right_hose_info tc pd5">
+        <div style="position:relative;">
+             {if $mb['post_up']}<div class="post_up"></div>  {/if}
+            <a href="{$info_config['root']}?mod=view&post_id={$mb['post_id']}"><img src="{if $mb['post_img_1']}{$mb['post_img_1']}{else}{$info_config['info']}static/images/noimage.jpg{/if}" /></a>
+        </div>
+        
+        <div><a href="{$info_config['root']}?mod=view&post_id={$mb['post_id']}">{$mb['post_title']}</a></div>
+        <div class="cl">
+            <div class="z">
+                {if $mb['loupan_title']}
+                    {if $mb['loupan_id']}
+                        <a href="{$info_config['root']}?mod=loupan&op=view&lid={$mb['loupan_id']}" target="_blank">[{$mb['loupan_title']}] </a>
+                    {else}
+                        [{$mb['loupan_title']}] 
+                    {/if}
+                {/if}
+            </div>
+           <!--  <div class="y">{$mb['profile']['info_area']['post_profile_title']}{$info_lang['m2']}</div>
+           <div class="y"><em>{$info_lang['money']}{$mb['profile']['sell_price']['post_profile_title']}{$info_lang['wan']}</em> &nbsp;</div> -->
+        </div>
+    </div>
+    {/loop}
+    {else}
+    <div class="brian_tips">{$info_lang['view_right_htm_10']}</div>
+    {/if}
+</div>

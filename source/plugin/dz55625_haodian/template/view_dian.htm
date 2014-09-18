@@ -1,0 +1,24 @@
+<!--{template common/header}-->
+{if $Spcount != '0'}
+<div class="dianzd">
+	<h2><strong>{$tmp_lang['slistcp']}</strong><span><a href="<!--{if $RewriteStart == 1}-->{$curl}_vs{$_G[gp_zid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=shop&sid={$_GET['zid']}<!--{/if}-->">{$tmp_lang['moregeng']}</a></span></h2>
+<ol>    
+   <!--{loop $spins $spin}-->
+   <dl>
+   	<dt><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$spin['id']}_vs{$_G[gp_zid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=shop&sp={$spin['id']}&sid={$_GET['zid']}<!--{/if}-->"><img src="{$spin['photos']}" /></a></dt>
+    <dd>
+    	<p class="titles"><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$spin['id']}_vs{$_G[gp_zid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=shop&sp={$spin['id']}&sid={$_GET['zid']}<!--{/if}-->">{$spin['title']}</a></p>
+        <!--{if $spin['price'] > $spin['cprice'] && $spin['cprice']!='0'}--><p style="text-decoration:line-through;"><strong>{$tmp_lang['shichangjg']}</strong> {$spin['price']} {$tmp_lang['kkprice']}</p><!--{else}--><p><strong>{$tmp_lang['shichangjg']}</strong> <em>{$spin['price']}</em> {$tmp_lang['kkprice']}</p><!--{/if}-->
+            <!--{if $spin['cprice']!='0' && $spin['price'] > $spin['cprice']}--><p><strong>{$tmp_lang['cuxiaojg']}</strong> <em>{$spin['cprice']}</em> {$tmp_lang['kkprice']}</p><!--{/if}-->
+    </dd>
+   </dl>
+   <!--{/loop}-->
+</ol>   
+</div>
+{else}
+<div class="dianzd">
+	<h2><strong>{$tmp_lang['slistcp']}</strong><span><a href="<!--{if $RewriteStart == 1}-->{$curl}_vs{$_G[gp_zid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=shop&sid={$_GET['zid']}<!--{/if}-->">{$tmp_lang['moregeng']}</a></span></h2>
+   <ul class="dianerr">{$tmp_lang['noaddnew']}</ul>
+</div>  
+{/if}
+<!--{template common/footer}-->

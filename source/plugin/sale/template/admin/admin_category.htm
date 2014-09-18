@@ -1,0 +1,73 @@
+{template sale:admin/style}
+<div id="plugin_admin">
+    {if $edit}
+    <h1>{lang sale:admin_category_htm_1} <a href='admin.php?{$cp_url}'>{lang sale:admin_category_htm_2}</a></h1>
+    <table class='table'>
+    {eval showformheader($self_url); }
+    <input type="hidden" name='category_id'  value='{$edit_array[category_id]}'  />
+    <input type="hidden" name='category_level'  value='{$edit_array[category_level]}'  />
+        <tr>
+            <th>{lang sale:admin_category_htm_3}</th><td><input type='text' class='b' name='category_title' value='{$edit_array[category_title]}' /></td>
+        </tr>
+        <tr>
+            <th>{lang sale:admin_category_htm_4}</th><td><input type='text' class='m' name='category_remarks' value='{$edit_array[category_remarks]}'  /></td>
+        </tr>
+        <tr>
+            <th>{lang sale:admin_category_htm_5}</th><td>
+            <select name='category_status' >
+                <option value='1'>{lang sale:admin_category_htm_6}</option>
+                <option value='0'>{lang sale:admin_category_htm_7}</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <th>{lang sale:admin_ad_htm_10}</th><td><input type='text' name='category_sort' value='{$edit_array[category_sort]}'  /></td>
+        </tr>
+        <tr>
+            <th></th><td><input type='submit' name='edit_submit' class='btn' value='{lang sale:admin_category_htm_1}' /> <a href='admin.php?{$cp_url}'>{lang sale:admin_category_htm_2}</a></td>
+        </tr>
+     {eval showformfooter(); }
+    </table>
+    {else}
+
+    <h1>1. {lang sale:admin_category_htm_11}</h1>
+    <table class='table'>
+    <tr>
+        <th>ID</th>
+        <th>{lang sale:admin_category_htm_3}</th>
+        <th>{lang sale:admin_category_htm_4}</th>
+        <th>{lang sale:admin_category_htm_5}</th>
+        <th>{lang sale:admin_ad_htm_10}</th>
+        <th>&nbsp;</th>
+    </tr>
+    {if $category_array}
+    {loop $category_array $category}
+    {if $category['category_level'] ==1}
+    <tr>
+        <td>{$category['category_id']}</td>
+        <td>{$category['category_title']}</td>
+        <td>{$category['category_remarks']}</td>
+        <td>{if $category['category_status']}{lang sale:admin_category_htm_6}{else}{lang sale:admin_category_htm_7}{/if}</td>
+        <td>{$category['category_sort']}</td>
+        <td><a href="admin.php?{$cp_url}&edit={$category['category_id']}">{lang sale:admin_category_htm_1}</a> | <a href="admin.php?{$cp_url}&del={$category['category_id']}">{lang sale:admin_ad_htm_11}</a></td>
+    </tr>
+    {/if}
+    {/loop}
+    {/if}
+    <tr>
+    {eval showformheader($self_url); }
+    <input type='hidden' name='category_level' value='1' />
+        <td></td>
+        <td><input type='text' name='category_title' class='m' /></td>
+        <td><input type='text' name='category_remarks' /></td>
+        <td><select name='category_status' >
+                <option value='1'>{lang sale:admin_category_htm_6}</option>
+                <option value='0'>{lang sale:admin_category_htm_7}</option>
+            </select></td>
+        <td><input type='text' name='category_sort' /></td>
+        <td><input type='submit' name='admin_submit' value='{lang sale:admin_ad_htm_12}' class='btn' /></td>
+     {eval showformfooter(); }
+    </tr>
+    </table>
+    {/if}
+</div>

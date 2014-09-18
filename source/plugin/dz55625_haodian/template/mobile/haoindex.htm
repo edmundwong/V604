@@ -1,0 +1,436 @@
+<!--{template dz55625_haodian:touch/header}-->
+<style type="text/css">
+.listSj{ width:96%; margin:0 auto;}
+.listSj dl{width:100%; padding:5px 0;  background:#fff; border-bottom:1px #f2f2f2 solid; border-top:1px #fff solid; float:left; }
+.listSj dl dt{ padding-left:5px; width:90px; height:70px; float:left; background: #fff; margin-right:8px; }
+.listSj dl dt img{ width:90px; height:70px;}
+.listSj dl dd{ float:left; }
+.listSj dl dd p{ font-size:9pt; padding-top:2px; color:#999; height:20px; line-height:20px;}
+.listSj dl dd p strong a{font-size:11pt; color:#666; text-shadow: #fff 0 2px 0; }
+.listSj dl dd p strong a:visited{  color:#666}
+.listSj dl dd p span{ color: #F90}
+.listSj dl dd p em{ padding-right:10px;}
+.listSj ul{ height:50px; line-height:50px; font-size:10pt; background:#fff; text-align:center; border-bottom:1px #EBEBEB solid; }
+
+
+.listSj ol{ width:100%; text-align:center; border-bottom:1px #e3e3e3 solid; background:#f7f7f7; float:left; padding:8px 0}
+ol#multis a{ margin-right:15px; text-shadow: #fff 0 1px 0; }
+ol#multis span{ color:#999; margin-right:15px; text-shadow: #fff 0 1px 0;}
+
+.edit_div{ width:96%; background:#fff; margin:0 auto;}
+.edit_div ul{ width:100%; margin-top:10px; height:auto; }
+.edit_div ul li{width:100%; height:auto;}
+.edit_div ul li dl{width:100%; }
+.edit_div ul li dl dt{width:80px; float:left; text-align:right; height:30px; line-height:30px; }
+.edit_div ul li dl dd{height:30px; line-height:30px;}
+.edit_div ul li dl .input_c{ border: none; padding:2px 15px; background:#FF7940; color:#fff}
+
+.sousutj{ width:96%; margin-top:2px;background:#fff; margin:0 auto}
+.sousutj ol{ padding-left:10px; height:25px; line-height:25px; }
+.sousutj ul{ border-top:#e3e3e3 1px solid; border-bottom:#e3e3e3 1px solid; padding:2px 0}
+.sousutj ul li{ height:20px; line-height:20px; padding-left:10px;}
+
+.listView{ width:96%; margin:0 auto; background:#fff}
+.listView h2{ font-size:12pt; text-align:center; border-bottom:1px #EBEBEB solid; padding:5px 0 3px 0 }
+.listView h2 p#title_s{ height:25px; line-height:25px;}
+.listView h2 p#title_s strong{}
+
+.listView h2 p#title_x{ color:#CCC; font-size:9pt; height:20px; line-height:20px; padding:0 5px}
+.listView h2 p#title_x strong{ font-weight:400; float:left;}
+.listView h2 p#title_x span{ float:right}
+
+
+
+.listView ul{width:100%; border-bottom:1px #EBEBEB solid; padding:5px 0}
+.listView ul li{width:100%;padding:3px 0; color:#666}
+.listView ul li img{ height:15px; margin-right:5px; margin-top:2px;}
+.listView ul li span{ color:#333; padding-left:8px; font-weight:bold}
+.listView ul li em{color: #F90;}
+.listView ul li dl{width:100%;}
+.listView ul li dl dt{width:53%; float:left; }
+.listView ul li dl dd{}
+
+.listView h3{ width:100%; padding:8px 0; border-bottom:1px #EBEBEB solid; background: #F7F7F7; text-align:center }
+.listView ol{color:#666;  padding:8px 8px 10px 8px; border-bottom:1px #EBEBEB solid; min-height:50px; font-size:10pt}
+
+.sjly{ width:96%; margin:0 auto; margin-top:8px; } 
+.sjly h3{ width:100%; padding:8px 0; border-bottom:1px #EBEBEB solid; background: #F7F7F7; text-align:center }
+.sjly ul{ padding:8px; background:#fff;}
+.sjly ul li{ border-bottom:1px #EBEBEB solid; color:#666; width:100%; padding:8px 0 }
+.sjly ul li p.authors{ width:100%;}
+.sjly ul li p.authors span{ width:30px; height:30px; float:left; padding-right:5px;}
+.sjly ul li p.authors span img{ width:30px; height:30px;padding:0; } 
+
+.sjly ul li p.authors strong{ color:#F60}
+.sjly ul li p.authors em{ color:#A7A7A7}
+
+.sjly ol{ padding:8px; background:#fff; text-align:center}
+
+/* iphonebox */
+
+.webbox{position:relative;width:96%; height:180px;overflow:hidden; margin:0 auto 8px}
+#wrapper{position:absolute;z-index:1;top:0;bottom:0;left:0;width:100%;background:#aaa;overflow:hidden;}
+
+/* swipe */
+.swipe{width:100%; height:180px;overflow:hidden;position:relative;}
+.swipe ul{
+	-webkit-transition:left 800ms ease-in 0;
+	-moz-transition:left 800ms ease-in 0;
+	-o-transition:left 800ms ease-in 0;
+	-ms-transition:left 800ms ease-in 0;
+	transition:left 800ms ease-in 0;
+}
+.swipe #pagenavi{position:absolute;left:0;bottom:10px;text-align:center;width:100%;}
+.swipe #pagenavi a{width:14px;height:14px;line-height:99em;background:#b5b5b5;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;margin:0 4px;overflow:hidden;cursor:pointer;display:inline-block;*display:inline;*zoom:1;}
+.swipe #pagenavi a.active{background:#C80002;}
+.sjMaps{ width:96%; margin:0 auto; background:#fff; padding:8px 0}
+</style>
+
+<!--{if $mobile_action == 'mobile_sousu'}-->
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/jquery-1.3.2.min.js"></script> 
+<script type="text/javascript">
+function ajax_select(oneid,two_div,mrtwotext,mod){
+	if(parseInt(oneid)<=0){
+		var s="<select name='"+two_div+"id'>";
+		s+="<option value='0'>"+mrtwotext+"</option>";
+		s+="</select>";
+		$("#"+two_div).html(s);
+	}else{
+		var cx={id:'dz55625_haodian:mobile_haodian',mod:mod,oneid:oneid}
+		$.ajax({
+			url: "plugin.php",  
+			type: "POST",
+			data:cx,
+			 dataType: "json",
+			 error: function(e){  
+			// alert(e);
+			 $("#"+two_div).html("{$tmp_lang['mobile_error']}");
+			},  
+			 success: function(ajax_data){
+				 var s="<select name='"+two_div+"id'>";
+				s+="<option value='0'>"+mrtwotext+"</option>";
+				for(var i=0;i<ajax_data.length;i++){
+					s+="<option value='"+ajax_data[i].id+"'>"+ajax_data[i].subject+"</option>";
+				}
+				s+="</select>";
+				$("#"+two_div).html(s);
+			}
+		 });
+	}
+}
+</script>
+<!--{/if}-->
+<!--{if $mobile_action=="mobile_list"}--> 
+
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/jquery.1.4.2-min.js"></script>
+
+{if $mobile_conf['ishuandeng']}
+	<div class="webbox">
+		<div id="wrapper">
+			<div class="swipe">
+				<ul id="slider">
+                	{loop $mobile_conf['magic_lantern'] $k $v}					
+					<li><a href="{$v[link]}"><img src="{$v[pic]}" alt="" /></a></li> 
+                    {/loop}
+				</ul>
+				<div id="pagenavi">
+                    {loop $mobile_conf['magic_lantern'] $k $v}	
+					<a href="{$v[link]}">1</a>
+                    {/loop}
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/mobile/touchScroll.js"></script>
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/mobile/touchslider.dev.js"></script>
+<script type="text/javascript">
+var active=0,
+as=document.getElementById('pagenavi').getElementsByTagName('a');
+for(var i=0;i<as.length;i++){
+	(function(){
+		var j=i;
+		as[i].onclick=function(){
+			t2.slide(j);
+			return false;
+		}
+	})();
+}
+
+var t1=new TouchScroll({id:'wrapper','width':5,'opacity':0.7,color:'#555',minLength:20});
+
+var t2=new TouchSlider({id:'slider', speed:600, timeout:6000, before:function(index){
+		as[active].className='';
+		active=index;
+		as[active].className='active';
+	}});
+</script>
+{/if}
+
+<div class="listSj" id="h_list">
+{if $counts}
+    {loop $infos $info}
+    	<dl onclick="location.href='{$appl}&mod=mobile_view&info_id={$info[id]}'" onmouseover="this.style.background='#FFFDE6'" onmouseout="this.style.background=''">
+        <dt><a href="{$appl}&mod=mobile_view&info_id={$info[id]}"><img src="{if $info[pic]}{$info[pic]}{else}source/plugin/dz55625_haodian/images/over.jpg{/if}" /></a></dt>
+        <dd>
+            <p><strong><a href="{$appl}&mod=mobile_view&info_id={$info['id']}">{echo cutstr($info['title'], 25, '.');}</a></strong></p>
+            <p><em>{$tmp_lang['hometel']}{$info['tel']}</em>{if ($zkstart==1 && $info[sad]>0 && $info[click]==1) || ($zkstart==2 && $info[sad]>0)}<em>{$tmp_lang['pazhekou']}<span>{$info['sad']}{$tmp_lang['pazhe']}</span></em>{/if}</p>
+            <p>{$tmp_lang['mobile_pft']}{$info[tvs]}</p>
+       </dd></dl>
+    {/loop}  
+{else}
+	<ul>{$tmp_lang['mobile_noinfo']}</ul>
+{/if}
+
+<ol id="multis">{if $prepage}<a href="{$appl}&mobile_list_status={$mobile_list_status}&page={$prepage}">{$tmp_lang['mobile_pre']}</a>{else}<span>{$tmp_lang['mobile_pre']}</span>{/if}{if $nextpage}<a href="{$appl}&mobile_list_status={$mobile_list_status}&page={$nextpage}">{$tmp_lang['mobile_next']}</a>{else}<span>{$tmp_lang['mobile_next']}</span>{/if}</ol>   
+</div>
+
+<!--{elseif $mobile_action=="mobile_wp"}--> 
+
+<div class="listSj" id="h_list">
+{if count($infos)}
+    {loop $infos $info}
+    	<dl onclick="location.href='{$appl}&mod=mobile_view&info_id={$info[id]}'" onmouseover="this.style.background='#FFFDE6'" onmouseout="this.style.background=''">
+        <dt><a href="{$appl}&mod=mobile_view&info_id={$info[id]}"><img src="{if $info[pic]}{$info[pic]}{else}source/plugin/dz55625_haodian/images/over.jpg{/if}" /></a></dt>
+        <dd>
+            <p><strong><a href="{$appl}&mod=mobile_view&info_id={$info['id']}">{$info['title']}</a></strong></p>
+            <p><em>{$tmp_lang['hometel']}{$info['tel']}</em>{if ($zkstart==1 && $info[sad]>0 && $info[click]==1) || ($zkstart==2 && $info[sad]>0)}<em>{$tmp_lang['pazhekou']}<span>{$info['sad']}{$tmp_lang['pazhe']}</span></em>{/if}</p>
+            <p>{$tmp_lang['mobile_pft']}{$info[tvs]}</p>
+       </dd></dl>
+    {/loop}  
+{else}
+	<ul>{$tmp_lang['mobile_noinfo']}</ul>
+{/if}   
+</div>
+<!--{elseif $mobile_action == 'mobile_sousu'}-->
+
+<div class="edit_div">
+<form action="{$appl}&mod=mobile_sousu_view" style="margin:0; padding:0; width:100%" method="post">
+    <ul class="f_edit">
+      <li>
+        	<dl>
+            	<dt>{$tmp_lang['mobile_bt']}{$tmp_lang['c_maohao']}</dt>
+                <dd>
+               	    <input type="text" value="" name="title" class="input_a" />
+                </dd>
+            </dl>
+        </li>
+        <li>
+            <dl>
+            	<dt>{$tmp_lang['mobile_dy']}{$tmp_lang['c_maohao']}</dt>
+                <dd  >
+                	<select name="cityoneid" id="cityoneid" onchange="ajax_select(this.value,'citytwo','{$tmp_lang['mobile_xzejdy']}','select_fl')" class="input_b">
+                    	<option value="0" >{$tmp_lang['mobile_xzyjqy']}</option>
+                    	{loop $citys $city}
+                        	<option value="{$city['id']}" >{$city['subject']}</option>
+                        {/loop}
+                    </select>
+                    
+                </dd>
+               
+            </dl>
+            
+            <dl>
+            	<dt></dt>
+                <dd  id="citytwo">
+                	
+                </dd>
+               
+            </dl>
+            <script  type="text/javascript">ajax_select($("#cityoneid").val(),"citytwo","{$tmp_lang['mobile_xzejdy']}","select_fl");</script>
+        </li>
+       
+      
+        <li>
+        	<dl>
+            	<dt>{$tmp_lang['mobile_fl']}{$tmp_lang['c_maohao']}</dt>
+                <dd>
+               	    <select name="fl" id="fl" class="input_b" />
+                    	<option value="0" >{$tmp_lang['c_buxian']}</option>
+                        {loop $listclass $k $v}
+                    		<option value="{$k}" >{$v}</option>
+                         {/loop} 
+                    </select>
+                </dd>
+            </dl>
+        </li>
+        
+      
+        <li><dl>
+            	<dt></dt>
+                <dd><button type="submit" class="input_c">{$tmp_lang['mobile_find']}</button></dd>
+            </dl></li>
+    </ul>
+</form>
+</div>
+<!--{elseif $mobile_action=="mobile_sousu_view"}--> 
+<div class="sousutj">
+	<ol>{$tmp_lang['mobile_sstj']}</ol>
+	<ul>
+       <li>{$tmp_lang['mobile_bt']}{$tmp_lang['c_maohao']}{$title_text}&nbsp;&nbsp;{$tmp_lang['mobile_dy']}{$tmp_lang['c_maohao']}{$city_text}&nbsp;&nbsp;{$tmp_lang['mobile_fl']}{$tmp_lang['c_maohao']}{$fl_text}</li>
+    </ul>
+</div>
+<div class="listSj" id="h_list">
+{if $counts}
+    {loop $infos $info}
+    	<dl onclick="location.href='{$appl}&mod=mobile_view&info_id={$info[id]}'" onmouseover="this.style.background='#FFFDE6'" onmouseout="this.style.background=''">
+        <dt><a href="{$appl}&mod=mobile_view&info_id={$info[id]}"><img src="{if $info[pic]}{$info[pic]}{else}source/plugin/dz55625_haodian/images/over.jpg{/if}" /></a></dt>
+        <dd>
+            <p><strong><a href="{$appl}&mod=mobile_view&info_id={$info['id']}">{$info['title']}</a></strong></p>
+            <p><em>{$tmp_lang['hometel']}{$info['tel']}</em>{if ($zkstart==1 && $info[sad]>0 && $info[click]==1) || ($zkstart==2 && $info[sad]>0)}<em>{$tmp_lang['pazhekou']}<span>{$info['sad']}{$tmp_lang['pazhe']}</span></em>{/if}</p>
+            <p>{$tmp_lang['mobile_pft']}{$info[tvs]}</p>
+       </dd></dl>
+    {/loop}  
+{else}
+	<ul>{$tmp_lang['mobile_noinfo']}</ul>
+{/if}   
+
+<ol id="multis">{if $prepage}<a href="{$appl}&mod=mobile_sousu_view&cityoneid={$cityoneid}&fl={$fl}&citytwoid={$citytwoid}&title={$title}&page={$prepage}">{$tmp_lang['mobile_pre']}</a>{else}<span>{$tmp_lang['mobile_pre']}</span>{/if}{if $nextpage}<a href="{$appl}&mod=mobile_sousu_view&cityoneid={$cityoneid}&fl={$fl}&citytwoid={$citytwoid}&title={$title}&page={$nextpage}">{$tmp_lang['mobile_next']}</a>{else}<span>{$tmp_lang['mobile_next']}</span>{/if}</ol>
+
+</div>
+
+
+<!--{elseif $mobile_action=="mobile_view"}--> 
+ 	<div class="listView">
+        <h2>
+            <p id="title_s"><strong>{$info[title]}</strong></p>
+            <p id="title_x"><strong>{$tmp_lang['mobile_fbrq']}{$info[dateline]}</strong><span>{$tmp_lang['wapyyou']}{echo $info[hits]+$info[hitsa]}{$tmp_lang['wapliul']}</span></p>
+        </h2>
+        <ul>
+            <li><span>{$tmp_lang['mobile_sjfl']}{$tmp_lang['c_maohao']}</span> {$info[fl]}</li>
+            <li><span>{$tmp_lang['mobile_szdq']}{$tmp_lang['c_maohao']}</span> {$info[region]}</li>
+            <li><span>{$tmp_lang['mobile_homeaddress']}{$tmp_lang['c_maohao']}</span> {$info[address]}</li> 
+            <li><span>{$tmp_lang['mobile_hometel']}{$tmp_lang['c_maohao']}</span> <a href="tel:{$info[tel]}" target="_blank" rel="nofollow">{$info[tel]}</a></li>
+            <li><span>{$tmp_lang['mobile_listtese']}{$tmp_lang['c_maohao']}</span> <!--{if !empty({$info[tese]})}-->{$info[tese]}<!--{else}-->{$tmp_lang['listzanwu']}<!--{/if}--></li>
+            <li><span>{$tmp_lang['mobile_pft']}</span> {$info[tvs]}</li>
+            <li><span>QQ:</span> {$info[tenqq]}</li>  
+        </ul>
+        <h3>{$tmp_lang['wapxaing']}</h3>
+        <ol>{$info[summary]}</ol>
+    </div>
+    
+     <!--{if $stMap==1}-->  
+    <div class="sjMaps">
+    
+       
+    <!--{if $mapStart==1}-->
+    
+                <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+            <script type="text/javascript" src="source/plugin/dz55625_haodian/images/convertor.js"></script>
+            <div id="mapCanvas" style="height:200px; margin:0 auto; width:96%;"></div>
+            
+            	<script type="text/javascript">
+		var map = new BMap.Map("mapCanvas");  
+		var lng="{$info[lng]}";
+		var os=null;
+		var point=null;
+		{if !empty($info[lng]) }
+			os=lng.split(",");
+			if($info[map_type]==1){
+				point=new BMap.Point(os[0],os[1]);
+			}else{
+				point=new BMap.Point(os[1],os[0]);
+			}
+		{else}
+			point=new BMap.Point({$zuobiao});
+		{/if}
+		
+		var marker=null;
+			{if !empty($info[lng])}
+				{if $info[map_type]==1}
+					marker = new BMap.Marker(point);
+					marker_s(point);
+				{else}
+				 BMap.Convertor.translate(point,2,function(point1){
+							 marker = new BMap.Marker(point1);
+							 marker_s(point1);		  
+										});
+				{/if}
+				
+			{/if}
+		 function marker_s(point2){
+				 map.centerAndZoom(point2, {$info[jib]});         
+		map.addOverlay(marker);  
+			 }
+		   
+		
+		
+		var opts = {type: BMAP_NAVIGATION_CONTROL_SMALL}  
+		map.addControl(new BMap.NavigationControl(opts));  
+		map.enableScrollWheelZoom();                            
+    </script>
+    
+    
+
+
+    <!--{else}-->
+               <script src="http://maps.google.cn/maps/api/js?sensor=false&language=zh-cn"  type="text/javascript" ></script>
+           <div id="mapCanvas" style="height:200px; margin:0 auto; width:96%;">{$tmp_lang['maplading']}</div>
+         
+    
+            <script type="text/javascript"> 
+var geocoder = new google.maps.Geocoder();
+function initialize() {
+  var mapxy = '{$info[lng]}';
+xyarr=mapxy.split(",");
+  var latLng = new google.maps.LatLng(xyarr[0], xyarr[1]);
+  var map = new google.maps.Map(document.getElementById("mapCanvas"), {
+    zoom: {$info[jib]},
+    center: latLng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+  var marker = new google.maps.Marker({
+    position: latLng,
+    title: '',
+    map: map,
+    draggable: false
+  });
+   google.maps.event.addListener(map, 'zoom_changed', function() {
+    zoomLevel = map.getZoom();
+    map.setCenter(latLng);
+    if (zoomLevel == 0) {
+      map.setZoom({$info[jib]});
+    }
+  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+    <!--{/if}-->
+
+    
+    </div>
+    
+   <!--{/if}--> 
+          <div class="sjly">
+             <h3>{$tmp_lang['mobile_zxly']}</h3>
+            
+        	{if count($pls)} 
+             <ul>
+                	{loop $pls $k $pl}
+                        <li>
+                            <p class="authors">
+                            <span><img src="{$uc}/avatar.php?uid={$pl[uid]}&size=small"></span>
+                            <strong>{$pl[author]}</strong>
+                            <em>{$pl[dateline]}</em>
+                            </p>
+                            <p class="authorm">{$pl[message]}</p>
+                        </li>
+                    {/loop}
+
+            </ul>
+                        {else}
+            	<ol>{$tmp_lang['mobile_nozwly']}</ol>
+            {/if}
+         </div>
+         
+<!--{elseif $mobile_action=="mobile_error"}-->
+<div class="listSj" style="height:70px;">
+	<script language="javascript">function dzpage(){window.location="{$back_url}"} setTimeout("dzpage()",2000); </script>
+	<ul style="height:30px; line-height:30px;">{$error}<br /><a href="{$back_url}">{$tmp_lang['mobile_dzlfh']}</a></ul>
+</div>
+
+
+<!--{/if}-->
+<!--{template dz55625_haodian:touch/footer}-->

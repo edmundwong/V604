@@ -1,0 +1,148 @@
+<div>
+    <div class="index_content_extracontact_images cl" >
+        <div class="index_content_extracontact_images_main"><img id="post_img" src="/{if  $post['post_img_1']}{$post['post_img_1']}{else}{$info_config['info']}static/images/noimage.jpg{/if}" /></div>
+        <ul class="index_content_extracontact_images_list cl">
+            <li><img  onmouseover="$('post_img').src=this.src" src="{if  $post['post_img_1']}{$post['post_img_1']}{else}{$info_config['info']}static/images/noimage.jpg{/if}" style="cursor:pointer;" /></li>
+            {if  $post['post_img_2']}<li><img onmouseover="$('post_img').src=this.src" src="{$post['post_img_2']}" style="cursor:pointer;" /></li>{/if}
+            {if  $post['post_img_3']}<li><img onmouseover="$('post_img').src=this.src" src="{$post['post_img_3']}" style="cursor:pointer;" /></li>{/if}
+            {if  $post['post_img_4']}<li><img onmouseover="$('post_img').src=this.src" src="{$post['post_img_4']}" style="cursor:pointer;" /></li>{/if}
+        </ul>
+    </div>
+    
+    <div class="index_content_extracontact_extra">
+           <!--{eval include template("info:$style/view/view_profile_type");}-->
+           
+           {if  $post['area_title']}
+            <div style="clear:both; font-size:14px;">
+                    <span class="des">{$info_lang['area']} : </span>
+                    <span class="val">
+                        {$post['area_title']} {$post['subarea_title']} {$post['thrarea_title']}
+                    </span>
+            </div>
+            {/if}
+            {if  $post['cat_id']}
+            <div style="clear:both; font-size:14px;">
+                <span class="des">{$info_lang['area']} : </span>
+                <span class="val">
+                    {$post['cat_title']} {$post['subcat_title']} {$post['thrsubcat_title']}
+                </span>
+            </div>
+            {/if}
+    </div>
+</div>
+
+<div style="clear:both;"></div>
+<div class="index_content" style="margin-top:5px;">
+    <h3 class="h3"><div class="z" style="width:120px;">{lang info:view_htm_19}</div></h3>
+    <!--{eval include template("info:$style/share");}-->
+</div>
+
+<div class="tuan_box_tab ">
+        <div class="tuan_box_tab_nav ">
+            <a href="javascript:;" id="m1" name="m1" onmouseover="mm_all(0,'m1','b1','');" class="hover" style="border-left:1px solid #C6C6C6;">{$info_lang['details']}</a>
+            <a href="javascript:;" id="m1" name="m1" onmouseover="mm_all(1,'m1','b1','');" class="off">{$info_lang['view_left_htm_1']}</a>
+            <a href="javascript:;" id="m1" name="m1" onmouseover="mm_all(2,'m1','b1','');" class="off" >{$info_lang['view_left_htm_2']}</a>
+           <!--  <a href="javascript:;" id="m1" name="m1" onmouseover="mm_all(3,'m1','b1','');" class="off" >{$info_lang['biaozhuditu']}</a> -->
+        </div>
+        <div class="tuan_box_tab_cat ">
+            <div  id="b1" name="b1">
+                <div class="cl" style="margin:10px 0;">{$post['post_text']}</div>
+            </div>
+            
+            <div  id="b1" name="b1">
+                    {if $post['post_img_1']}<div class="post_img" href="{$post['post_img_1']}"><img src="{$post['post_img_1']}" class="image" alt="{$post['post_title']}" title="{$post['post_title']}" /></div>{/if}
+                    {if $post['post_img_2']}<div class="post_img" href="{$post['post_img_2']}"><img src="{$post['post_img_2']}" class="image" alt="{$post['post_title']}" title="{$post['post_title']}"  /></div>{/if}
+                    {if $post['post_img_3']}<div class="post_img" href="{$post['post_img_3']}"><img src="{$post['post_img_3']}" class="image" alt="{$post['post_title']}" title="{$post['post_title']}"  /></div>{/if}
+                    {if $post['post_img_4']}<div class="post_img" href="{$post['post_img_4']}"><img src="{$post['post_img_4']}" class="image" alt="{$post['post_title']}" title="{$post['post_title']}"  /></div>{/if}
+                <div style="clear:both"></div>
+            </div>
+            
+            <div  id="b1" name="b1">
+                <script src="http://ditu.google.cn/maps/api/js?sensor=false&language={$_G['config']['output']['language']}" type="text/javascript"></script>
+              <!--   <div id="mapCanvas" style="width:99%; height:400px; margin:0 auto; "></div> -->
+                <p style="color:Green" id="map_tips"></p>
+<script type="text/javascript" language="javascript"> 
+
+var google_latlng= new google.maps.LatLng({$post['post_map']});
+var google_map;
+var google_marker;
+var google_geocoder;
+var google_zoom = 13;
+function google_initialize() {
+var myOptions = {
+    zoom: google_zoom,
+    center: google_latlng,
+    mapTypeControl: false,	
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+google_map = new google.maps.Map(document.getElementById("mapCanvas"), myOptions);
+
+google_marker = new google.maps.Marker({
+    position: google_latlng,
+    title: '',
+    map: google_map,
+    draggable: true}); 
+
+google_geocoder = new google.maps.Geocoder();
+google_setZoom(google_map.getZoom());
+google_setPosition(google_marker.getPosition());
+google_setAddress(google_marker.getPosition());
+
+google.maps.event.addListener(google_map, 'zoom_changed', function() {
+google_setZoom(google_map.getZoom());});
+
+google.maps.event.addListener(google_marker, 'drag', function() {
+google_setPosition(google_marker.getPosition());});
+
+google.maps.event.addListener(google_marker, 'dragend', function() {
+google_setAddress(google_marker.getPosition());}); 
+}
+
+function google_getAddress(address) {
+google_geocoder.geocode( {"address": address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+        google_map.setCenter(results[0].geometry.location);  
+        google_marker.setPosition(results[0].geometry.location);
+        google_setZoom(google_map.getZoom());
+        google_setAddress(results[0].geometry.location);
+        google_setPosition(results[0].geometry.location);
+        google.maps.event.addListener(google_map, 'zoom_changed', function() {
+            google_setZoom(google_map.getZoom());
+        });
+        google.maps.event.addListener(google_marker, 'drag', function() {
+            google_setPosition(google_marker.getPosition());
+        });
+        google.maps.event.addListener(google_marker, 'dragend', function() {
+            google_setAddress(google_marker.getPosition());
+        });
+    } else {
+        alert('searchcity');     
+    }
+});
+}
+
+function google_setAddress(pos){   
+google_geocoder.geocode({
+latLng: pos
+}, function(responses) {
+
+});
+}
+function google_setPosition(latlng){    
+newxy = [
+latlng.lat(),
+latlng.lng()
+].join(', ');
+document.getElementById('shop_map').value = newxy;
+}
+function google_setZoom(zoom){    
+//document.getElementById('mapzoom').value = zoom;
+}
+
+google.maps.event.addDomListener(window, 'load', google_initialize);
+</script>
+            </div>
+            
+            
+        </div>
+</div>

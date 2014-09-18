@@ -1,0 +1,203 @@
+@charset "utf-8";
+
+        .ico_blue {
+            margin: 0 2px;
+            background: #3b79e7;
+            color: #fff;
+            font-size: 12px;
+            height: 18px;
+            line-height: 18px;
+            padding: 0 2px;
+            *padding-top: 2px;
+            white-space: nowrap;
+        }
+
+        .ico_blue:hover {
+            cursor: pointer;
+            background: #54a70d;
+        }
+
+        .ico_blue a, .ico_blue a:visited, ico_blue a:active, ico_blue:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .newbox {
+            margin: 0 5px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #999;
+        }
+
+        .ppc_list {
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        .ppc_list dt {
+            float: left;
+            width: 76%;
+        }
+
+        .ppc_a {
+            display: block;
+            float: left;
+            width: 96px;
+            height: 85px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .ppc_list dt img {
+            float: left;
+            width: 92px;
+            height: 68px;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .ppc_list ul {
+            margin-left: 10px;
+            width: 80%;
+            float: left;
+        }
+
+        .ppc_list ul li {
+            line-height: 22px;
+            color: #333;
+        }
+
+        .ppc_title {
+            font-size: 14px;
+        }
+
+        .ppc_list dd {
+            float: left;
+            text-align: center;
+            margin-left: 25px;
+            padding-top: 7px;
+        }
+
+        .ppc_list dd p {
+            line-height: 25px;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .ppc_tel {
+            font-size: 16px;
+            font-weight: bold;
+            font-family: Arial;
+            text-align: center;
+            color: #c00!important;
+        }
+        /* .ppc_s { background:url(http://s1.ganjistatic1.com/images/ppc/sbg.gif) no-repeat 0 8px; padding-left:10px;} */
+
+ul.wanted_left2 li h3 {
+                margin: 0;
+            }
+            /*
+.bd1f { border:1px solid #fff; }
+.bd1fover { border:1px solid #6694E3; }
+*/
+            .bd1f {
+                border: 0;
+            }
+
+            .bd1fover {
+                border: 0;
+            }
+
+            .wanted_left2 li h3 a:hover {
+                color: #e40000;
+            }
+
+            .wanted_left2 li h3 a:visited {
+                color: #2244DD;
+            }
+
+            .training_hot ul {
+                overflow: hidden;
+                padding: 10px 10px 2px 10px;
+                ;
+                clear: both;
+                margin: 0;
+                width: 98%;
+            }
+
+            .training_hot ul li.title {
+                font: 14px arial,simsun;
+                font-weight: bold;
+                padding-right: 0;
+                margin-right: 0;
+            }
+
+            .training_hot ul li {
+                font: 14px arial,simsun !important;
+                font-weight: bold !important;
+                width:19%;
+                overflow:hidden;
+            }
+            .training_hot .hy_title{font: bold 14px arial,simsun !important;padding-bottom:10px;}        
+            .training_hot ul li a, .training_hot ul li a:visited, .wanted_left2 li h3 a, .wanted_left2 li h3 a:visited {
+                color: #2244DD !important;
+            }
+
+            .training_hot ul li a:hover, .wanted_left2 li h3 a:hover {
+                color: #e70000 !important;
+            }
+
+            .wanted_left2 li a, .wanted_left2 li a:visited {
+                color: #636363 !important;
+            }
+
+            .wanted_left2 li a:hover {
+                color: #e70000 !important;
+                text-decoration: underline;
+            }
+
+            .catname {
+                height: 22px;
+                padding: 0 10px;
+                clear: both;
+                overflow: hidden;
+                background: #eff3ff;
+                font-weight: bold;
+            }
+
+            .catname div {
+                height: 20px;
+                line-height: 18px;
+                *line-height: 18px;
+                font-weight: bold;
+            }
+
+            .catname div a {
+                color: #2244dd;
+                text-decoration: underline;
+            }
+
+            .catname div a:hover {
+                color: #000;
+                text-decoration: underline;
+            }
+            .isiptu{
+	          width:15px;
+              height:16px;
+              background:url(../css/images/ding.png) no-repeat 0 0px;
+            }
+.cl:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.pd5 {
+    padding: 5px;
+}
+.y {
+	    color: #444444;
+    font-family: Arial !important;
+    float: right;
+}

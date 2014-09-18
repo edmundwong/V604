@@ -1,0 +1,159 @@
+{template common/header}
+<style type="text/css">
+#allmap {margin-right: 0px;width:670px;height:500px;overflow: hidden; float:left;}
+#result {border-left:1px dotted #999;height:500px;;width:287px; float:right; font-size:12px; overflow:hidden}
+dl,dt,dd,ul,li{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+dt{
+    font-size:14px;
+    font-family:"微软雅黑";
+    font-weight:bold;
+    border-bottom:1px dotted #000;
+    padding:0 0 5px 5px;
+    margin:5px 0;
+}
+dd{
+    padding:5px 0 0 0px;
+}
+li{
+	line-height:28px
+}
+.mapHaoList{ background:#fff; border:1px #e3e3e3 solid; margin:0 auto 10px}
+.mapHaoList input{ border:1px #e3e3e3 solid; height:25px; padding:0 5px}
+#result ul{ float:left; width:282px; padding:0 0 0 5px}
+#result dd ul li input{ margin-right:8px}
+#result dd ul li button{ border: none; color:#fff; background:#0A57AC; height:27px; width:50px}
+#result dd ol{ width:282px; float:left; border-top:1px #000 dotted; border-bottom:1px #000 dotted; margin-top:10px; padding:8px 0 8px 5px;}
+#result dd ol button{ border: none; color:#fff; background:#0A57AC; height:27px; width:277px; margin:0 auto}
+.listHs{ width:270px; padding:0; margin:0; overflow:hidden ;}
+.listHs ul{ margin-top:-5px }
+.listHs ul li{ border-bottom:1px #e3e3e3 dotted}
+.listHs ul li a{ color:#0A57AC;}
+.listHs ul li .fd_map{ color:#F00}
+</style>
+
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/SearchInfoWindow_min.js"></script>
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/convertor.js"></script>
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/Map.js"></script>
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/BaiduMap.js"></script>
+
+<link rel="stylesheet" href="source/plugin/dz55625_haodian/images/SearchInfoWindow_min.css" />
+
+
+<div id="pt" class="bm cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em><a href="forum.php"{if $_G['setting']['forumjump']} id="fjump" onmouseover="delayShow(this, 'showForummenu($_G[fid])');" class="showmenu" {/if}>{$_G[setting][navs][2][navname]}</a><em>&raquo;</em><a href="<!--{if $RewriteStart == 1}-->haodian.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian<!--{/if}-->">{lang dz55625_haodian:homesjlm}</a><em>&raquo;</em>{lang dz55625_haodian:s_jhe}
+	</div>
+</div>
+
+
+<div class="mapHaoList cl">
+    <div id="allmap" style="overflow:hidden;zoom:1;position:relative;">	 
+        <div id="map" style="height:100%;-webkit-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;"></div>
+        <div id="panelWrap" style="width:0px;position:absolute;top:0px;right:0px;height:100%;overflow:auto;-webkit-transition: all 0.5s ease-in-out;transition: all 0.5s ease-in-out;">
+            <div style="width:20px;height:200px;margin:-100px 0 0 -10px;color:#999;position:absolute;opacity:0.5;top:50%;left:50%;">{lang dz55625_haodian:s_jiguo}</div>
+            <div id="panel" style="position:absolute;"></div>
+        </div>
+    </div>
+    <div id="result">
+        <dl class="cl">
+            <dt class="cl">{lang dz55625_haodian:baidumap_citytitle}</dt>
+            <dd class="cl">
+                <ul>
+                    <li>{lang dz55625_haodian:baidumap_cityname}<input type="text" id="cityname"  style="width:140px;"/><button id="setValue" onClick="sousucity()">{lang dz55625_haodian:baidumap_sousu}</button></li>
+                </ul>
+            </dd>
+            <dt style="border-top:1px #000 dotted; margin-top:10px; padding-top:5px">{lang dz55625_haodian:baidumap_sjtitle}</dt>
+            <dd class="cl">
+                <ul class="z cl">
+                    <li>{lang dz55625_haodian:baidumap_sjname}<input type="text" id="sjname"  style="width:200px;"/></li>
+                    <li style="margin-top:5px">{lang dz55625_haodian:baidumap_sjaddr}<input type="text" id="sjaddr"  style="width:200px;"/></li>
+                    <li style="margin-top:5px">{lang dz55625_haodian:baidumap_sjtel}<input type="text" id="sjtel"  style="width:200px;"/></li>
+                </ul>
+                <ol class="z cl"><button id="setValue" onClick="soususj()">{lang dz55625_haodian:baidumap_sousu}</button></ol>
+            </dd>
+            <dt>{lang dz55625_haodian:baidumap_sousur}</dt>
+            <dd class="cl" style="overflow: auto; overflow-x:hidden; height:185px">
+                <ul id="r_result"></ul>
+            </dd>
+        </dl>
+    
+    </div>
+</div>
+
+<script type="text/javascript">
+var jq = jQuery.noConflict();
+	function bdmap_init(cx){
+		jq.ajax({
+			url: "plugin.php",  
+			type: "POST",
+			data:cx,
+			 dataType: "json",
+			 error: function(){  
+				alert("{lang dz55625_haodian:jz_err}");
+			},  
+			 success: function(data){//如果调用php成功  
+				for(var i=0;i<data.length;i++){
+					var obj=data[i];
+					var os=obj.lng.split(",");
+					var content='<div style="margin:0;line-height:20px;padding:2px;">'+
+	'<div style="width:172px; float:left;height:105px;">'+
+    	'<div style="width:100%;height:25px; line-height:25px;">{lang dz55625_haodian:baidumap_js_sjname}'+obj.title+'</div>'+
+        '<div style="width:100%;height:25px;line-height:25px;">{lang dz55625_haodian:baidumap_js_sjtel}'+obj.tel+'</div>'+
+        '<div style="width:100%;height:55px;">{lang dz55625_haodian:baidumap_js_sjaddr}'+obj.address+'</div>'+
+    '</div>'+
+    '<div style="width:112px;height:105px;float:left;"><img src="'+obj.pic+'" alt="" style="width:112px;height:82px;margin-left:3px;"/></div>'+
+'</div>';
+				bdmap.addMarker(os[0],os[1],content,(obj.map_type==1?"baidu":"google"));
+				}
+			}
+		 });
+	}
+	
+	 var bdmap=new BaiduMap("map","{lang dz55625_haodian:baidumap_maptitle}",false,""); 
+	  bdmap.initfun=function(){
+			 bdmap_init({id:'dz55625_haodian:baidu_map'});
+			 jq("#cityname").val(bdmap.getCityname());
+		 }
+	 {if (!$map_z && !empty($map_d)) }
+	 	var map_d="{$map_d}";
+		var map_ds=map_d.split(",");
+		if(map_ds.length!=2){
+			alert("error");
+		}else{
+		 	bdmap.init({$map_z},parseFloat(map_ds[0]),parseFloat(map_ds[1]));
+		}
+	 {else}
+		 
+	
+	bdmap.init();
+	 {/if}
+	 
+	
+	
+	
+	
+function sousucity(){
+	bdmap.centerAndZoom(jq("#cityname").val());
+}
+
+function soususj(){
+	var cx={id:'dz55625_haodian:baidu_map'};
+	var sjname=jq("#sjname").val();
+	var sjaddr=jq("#sjaddr").val();
+	var sjtel=jq("#sjtel").val();
+	if(sjname!="" || sjaddr!="" || sjtel!=""){
+		ajaxget('plugin.php?id=dz55625_haodian:baidu_map_cx&sjname='+sjname+'&sjaddr='+sjaddr+'&sjtel='+sjtel, 'r_result');
+	}
+}
+
+</script>   
+
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/jq.js"></script>
+
+{template common/footer}

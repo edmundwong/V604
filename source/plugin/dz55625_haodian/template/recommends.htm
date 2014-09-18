@@ -1,0 +1,25 @@
+<div id="haodian">
+     <h2><strong>{$tmp_lang['homedtj']}</strong></h2>
+      <div class="hdxx cl">  
+     <!--{if $tuijians}-->        
+    {loop $tuijians $key $tuijian}
+    <dl>
+        <dt>
+        <!--{if !empty($tuijian[pic])}-->
+        <a href="<!--{if $isdomain && $tuijian[domain]}-->$tuijian[domain]<!--{elseif $RewriteStart == 1}-->{$curl}_{$tuijian[id]}.html<!--{else}-->{$curls}{$tuijian[id]}<!--{/if}-->"{$Clickwindow}><img src="{$tuijian[pic]}"></a>
+        <!--{else}-->
+        <a href="<!--{if $isdomain && $tuijian[domain]}-->$tuijian[domain]<!--{elseif $RewriteStart == 1}-->{$curl}_{$tuijian[id]}.html<!--{else}-->{$curls}{$tuijian[id]}<!--{/if}-->"{$Clickwindow}><img src="source/plugin/dz55625_haodian/images/over2.jpg" /></a>
+       <!--{/if}-->
+        </dt>
+        <dd>
+            <strong><a href="<!--{if $isdomain && $tuijian[domain]}-->$tuijian[domain]<!--{elseif $RewriteStart == 1}-->{$curl}_{$tuijian[id]}.html<!--{else}-->{$curls}{$tuijian[id]}<!--{/if}-->"{$Clickwindow}>{$tuijian[title]}</a></strong>
+            <span>{$tuijian[tel]}</span>
+        </dd>
+    
+    </dl>
+    {/loop} 
+     <!--{else}--> 
+        <ul class="erroe">{$tmp_lang['homewtj']}</ul>
+     <!--{/if}--> 
+     </div>
+</div>

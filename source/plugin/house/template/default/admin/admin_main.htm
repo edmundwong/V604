@@ -1,0 +1,48 @@
+<!--{template common/header}-->
+<!--{eval include template("house:$style/style");}-->
+<!--{eval include template("house:$style/head");}-->
+
+<div class='brian_main'>
+
+    <div id="pt" class="bm cl">
+        <span class="z">
+            <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+            <em>&raquo;</em>
+            <a href="{$house_config['root']}">{$house_config['name']}</a>
+            <em>&raquo;</em>
+            <a href="{$house_config['root']}?mod=admin">{$house_lang['admin_main_1']}</a>
+        </span>
+        <span class="y">
+            {$house_lang['welcome']} <b>{$_G['username']}</b>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=1">{$house_lang['rent']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=2">{$house_lang['need_rent']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=3">{$house_lang['sell']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=3">{$house_lang['need_sell']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=loupan">{$house_lang['loupan']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=member">{$house_lang['member']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=admin">{$house_lang['admin_main_1']}</a>
+            &nbsp;
+        </span>
+    </div>
+    
+    <div class="brian_space">
+        <div class="brian_space_left">
+            <ul>
+                <li><a href="{$house_config['root']}?mod=admin&op=post_loupan" {if $op=='post_loupan'} class="hover" {/if}>{$house_lang['post_loupan']}</a></li>
+            </ul>
+        </div>
+        <div class="brian_space_right">
+             <!--{eval include template("house:$style/$mod/admin_$op");}-->
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

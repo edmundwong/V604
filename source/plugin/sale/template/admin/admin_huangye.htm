@@ -1,0 +1,103 @@
+{template sale:admin/style}
+<!--{eval include template("sale:$style/style");}-->
+
+<div class="brian_main">
+    <div class="admin_content brian_box pd10 bgf">
+    {if $edit}
+    <h2 class="h2">{$_lang['edit']} <a href='{$now_url}'>{$_lang['return']}</a></h2>
+    <table class='brian_table'>
+    {eval showformheader($form_url); }
+    <input type="hidden" name='cat_id'  value='{$edit_array[cat_id]}'  />
+        <tr>
+            <th style="width:80px;">{$_lang['cat_title']}</th><td><input type='text' name='cat_title' value='{$edit_array[cat_title]}' /></td>
+        </tr>
+        <tr>
+            <th>{$_lang['mark']}</th><td><input type='text' name='cat_remarks' value='{$edit_array[cat_remarks]}'  /></td>
+        </tr>
+        <tr>
+            <th>{$_lang['status']}</th><td>
+            <select name='cat_status' >
+                <option value='1' {if $edit_array['cat_status']=="1"} selected="selected" {/if} >{$_lang['show']}</option>
+                <option value='0' {if $edit_array['cat_status']=="0"} selected="selected" {/if} >{$_lang['hide']}</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <th>{lang sale:admin_cat_htm_1}</th>
+            <td>
+                <select name="cat_pid">
+                    <option value="0">{lang sale:admin_cat_htm_2}</option>
+                    {loop $cat_array $cat}
+                        {if $cat['cat_pid'] =='0'}
+                        <option value="{$cat['cat_id']}" {if $edit_array['cat_pid']==$cat['cat_id']} selected="selected" {/if} >{$cat['cat_title']}</option>
+                        {/if}
+                    {/loop}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>{$_lang['sort']}</th><td><input type='text' name='cat_sort' value='{$edit_array[cat_sort]}'  /></td>
+        </tr>
+        <tr>
+            <th></th><td><input type='submit' name='edit_submit' class='btn' value='{$_lang['edit']}' /> <a href='{$now_url}'>{$_lang['return']}</a></td>
+        </tr>
+     {eval showformfooter(); }
+    </table>
+    {else}
+
+    <h2 class="h2">1. {$_lang['admin_cat']}</h2>
+    <table class='brian_table'>
+    <tr style="border:none;">
+        <th style="width:40px;">ID</th>
+        <th>{$_lang['cat_title']} <div>{if $cat_pid=='0'}({$_lang['chakan_zileibei']}){else}({$_lang['dangqian_mulu']}: $pid_cat_array[cat_title]){/if}</div></th>
+        <th>{$_lang['mark']}</th>
+        <th style="width:60px;">{$_lang['status']}</th>
+        <th style="width:80px;">{lang sale:admin_cat_htm_3}</th>
+        <th style="width:40px;">{$_lang['sort']}</th>
+        <th>&nbsp;</th>
+    </tr>
+    {if $cat_array}
+    {loop $cat_array $cat}
+        {if $cat['cat_pid'] ==$cat_pid}
+            <tr>
+                <td>{$cat['cat_id']}</td>
+                <td>{if empty($cat['cat_pid'])}<a href="{$now_url}&cat_pid={$cat['cat_id']}">{$cat['cat_title']}</a>{else}{$cat['cat_title']}{/if}</td>
+                <td>{$cat['cat_remarks']}</td>
+                <td style="width:60px;">{if $cat['cat_status']}{$_lang['show']}{else}{$_lang['hide']}{/if}</td>
+                <td style="width:80px;">{if $cat['cat_pid'] ==0}{lang sale:admin_cat_htm_2}{else}{lang sale:admin_cat_htm_5}{/if}</td>
+                <td style="width:40px;">{$cat['cat_sort']}</td>
+                <td><a href="{$now_url}&edit={$cat['cat_id']}">{$_lang['edit']}</a> | <a href="{$now_url}&del={$cat['cat_id']}"  onclick="return(confirm('{$_lang['queding_shanchu']}?'))">{$_lang['del']}</a></td>
+            </tr>
+        {/if}
+    {/loop}
+    {else}
+    <tr>
+        <td colspan=7 style="text-align:center;">{lang sale:admin_cat_htm_6}</td>
+    </tr>
+    {/if}
+    <tr>
+    {eval showformheader($form_url); }
+        <td></td>
+        <td><input type='text' name='cat_title'  /></td>
+        <td><input type='text' name='cat_remarks' /></td>
+        <td><select name='cat_status' >
+                <option value='1'>{$_lang['show']}</option>
+                <option value='0'>{$_lang['hide']}</option>
+            </select></td>
+        <td>
+            <select name="cat_pid">
+                <option value="0">{lang sale:admin_cat_htm_2}</option>
+                {loop $cat_array $cat}
+                    {if $cat['cat_pid'] ==0}
+                    <option value="{$cat['cat_id']}" {if $cat_pid==$cat['cat_id']} selected="selected" {/if} >{$cat['cat_title']}</option>
+                    {/if}
+                {/loop}
+            </select>
+        </td>
+        <td><input type='text' name='cat_sort' style="width:20px;" /></td>
+        <td><input type='submit' name='submit' value='{$_lang['add']}' class='btn' /></td>
+     {eval showformfooter(); }
+    </tr>
+    </table>
+    {/if}
+</div>

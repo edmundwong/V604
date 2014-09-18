@@ -1,0 +1,29 @@
+<div class="brian_account_memberinfo">
+<form action="{$sale_config['root']}?mod=member&op=memberinfo" method="post">
+<input type="hidden" name="formhash" value="{$_G['formhash']}" />
+<input type="hidden"  name="mod" value="member" />
+<input type="hidden"  name="op" value="memberinfo" />
+<table>
+    <tr>
+        <td class="brian_account_memberinfo_left">{lang sale:member_memberinfo_htm_1}/{lang sale:member_memberinfo_htm_2} : </td>
+        <td class="brian_account_memberinfo_right"><input type="text" name="member_username" value="{$member['member_username']}" /></td>
+    </tr>
+    <tr>
+        <td class="brian_account_memberinfo_left">{lang sale:member_memberinfo_htm_3}QQ : </td>
+        <td class="brian_account_memberinfo_right"><input type="text" name="member_qq" value="{$member['member_qq']}" /></td>
+    </tr>
+    <tr>
+        <td class="brian_account_memberinfo_left">{lang sale:member_memberinfo_htm_4} : </td>
+        <td class="brian_account_memberinfo_right"><input type="text" name="member_phone" value="{$member['member_phone']}" /></td>
+    </tr>
+    <tr>
+        <td class="brian_account_memberinfo_left">{lang sale:member_memberinfo_htm_5} : </td>
+        <td class="brian_account_memberinfo_right"><input type="text" name="member_email" value="{$member['member_email']}" /></td>
+    </tr>
+    <tr>
+        <td class="brian_account_memberinfo_left"> </td>
+        <td class="brian_account_memberinfo_right"><input type="submit" name="submit_member" class="ljfb"  /></td>
+    </tr>
+</table>
+</form>
+</div>

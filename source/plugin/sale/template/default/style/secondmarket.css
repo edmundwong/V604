@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+body.secondmarket_detail #rightSide{padding-top:55px;}
+
+body.secondmarket_detail .img_lunbo{float:none;position:absolute;top:10px;left:10px;}
+body.secondmarket_detail .detail_info{width:auto;float:none;margin:0;padding:0 10px 0 328px;}
+body.secondmarket_detail .lunboBox{position:relative;min-height:305px;}*html body.secondmarket_detail .lunboBox{height:305px;}
+body.secondmarket_detail .detail_info_ul li{position:relative;}
+dl.list_img .ft,dl.list_search .ft{float:right;}
+
+body.secondmarket_list .GcnAD_list{background:#fff7d7;}
+
+.G_d_box1{position:relative;height:60px;}
+.G_d_box2{position:absolute;top:0;left:50%;}
+.G_d_box3{margin-left:-234px;}
+
+

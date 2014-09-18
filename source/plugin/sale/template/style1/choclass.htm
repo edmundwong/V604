@@ -1,0 +1,121 @@
+<!--{eval include template("sale:$style/header");}-->
+<script type="text/javascript" src="$_G['style']['v604t_common']js/jquery-1.9.1.js"></script>
+<style type="text/css">
+    .fabu_type{ margin:25px 0 60px;width:106px;float:left}
+    .fabu_type>li{ position:relative;}
+    .fabu_type>li>span{ font-size:16px; width:105px !important; background:#fff; border:1px solid #fff; color:#808080;width:105px; height:40px; text-align:center; line-height:40px; display:block;border-radius:2px}
+    .fabu_type>li>span.current{text-decoration:none; border:1px solid #fc6328; border-right:2px solid #fff;color:#fc6328;font-weight:bold;border-radius:2px}
+    .children{ display:block;  width:auto; height:auto; left:105px; top:0;border:1px solid #fc6328; padding:10px; margin-left:2px;border-radius:2px}
+    .children li{ float:left; margin:10px 30px 10px 0;}
+    .children li span{ font-size:16px; color:#3d3d45;}
+    header {
+        border-bottom: 0px solid #efe6e0;
+    }
+    .children{
+        padding-top:2px
+    }
+    .children tr{
+        height:40px;
+    }
+    .children td{
+        width:200px;
+    }
+    .children td a{
+        color:#000;
+        font-size:16px;
+        margin-left:5px
+    }
+    .children a{
+        position:absolute; z-index:1
+    }
+</style>
+<div class="line" style=""></div>
+<div style="text-align:center; margin:40px auto 30px; font-size:18px; color:#828999;" class="fenlei">
+    <span style="color:#8cc152;">1.选择发布类型</span><em>></em><span>2.填写详细信息</span><em>></em><span>3.发布成功</span>
+</div>
+<div class="wrapper" style="width:750px">
+    <p style="color:#4a4d54;">注：发布信息请遵守 <span style="color:#fc6328;">分类信息版规</span>，违反版规的信息将有可能被删除。</p>
+
+    <ul class="fabu_type">
+    <!--{loop $cat_array $cat}-->
+        <!--{if $cat['cat_pid'] == 0}-->
+        <li ><span>{$cat['cat_title']}</span></li>
+        <!--{/if}-->
+    <!--{/loop}-->
+    </ul>
+    <div style='margin-left:105px;margin-top:21px;margin-bottom:50px'>
+        <table id="sub0" class="children" style="display:none">
+    <!--{eval $i_tr_tmp = 0;}-->
+    <!--{loop $cat_array $cat}-->
+        <!--{if $cat['cat_pid'] == 1}-->
+            <!--{if $i_tr_tmp == 0}--><tr><!--{/if}-->
+                <td><a href="{$sale_config['root']}?mod=post&classid={$cat['cat_id']}">{$cat['cat_title']}</a></td>
+            <!--{if ++$i_tr_tmp > 2}-->
+                <!--{eval $i_tr_tmp = 0;}-->
+                </tr>
+            <!--{/if}-->
+        <!--{/if}-->
+    <!--{/loop}-->        
+        </table>
+        <table id="sub1" class="children" style="display:none;margin-top:0px">
+    <!--{eval $i_tr_tmp = 0;}-->
+    <!--{loop $cat_array $cat}-->
+        <!--{if $cat['cat_pid'] == 16}-->
+            <!--{if $i_tr_tmp == 0}--><tr><!--{/if}-->
+                <td><a href="{$sale_config['root']}?mod=post&classid={$cat['cat_id']}">{$cat['cat_title']}</a></td>
+            <!--{if ++$i_tr_tmp > 2}-->
+                <!--{eval $i_tr_tmp = 0;}-->
+                </tr>
+            <!--{/if}-->
+        <!--{/if}-->
+    <!--{/loop}-->        
+        </table>
+        <table id="sub2" class="children" style="display:none;margin-top:0px">
+    <!--{eval $i_tr_tmp = 0;}-->
+    <!--{loop $cat_array $cat}-->
+        <!--{if $cat['cat_pid'] == 21}-->
+            <!--{if $i_tr_tmp == 0}--><tr><!--{/if}-->
+                <td><a href="{$sale_config['root']}?mod=post&classid={$cat['cat_id']}">{$cat['cat_title']}</a></td>
+            <!--{if ++$i_tr_tmp > 2}-->
+                <!--{eval $i_tr_tmp = 0;}-->
+                </tr>
+            <!--{/if}-->
+        <!--{/if}-->
+    <!--{/loop}-->        
+        </table>
+        <table id="sub3" class="children" style="display:none;margin-top:0px">
+    <!--{eval $i_tr_tmp = 0;}-->
+    <!--{loop $cat_array $cat}-->
+        <!--{if $cat['cat_pid'] == 36}-->
+            <!--{if $i_tr_tmp == 0}--><tr><!--{/if}-->
+                <td><a href="{$sale_config['root']}?mod=post&classid={$cat['cat_id']}">{$cat['cat_title']}</a></td>
+            <!--{if ++$i_tr_tmp > 2}-->
+                <!--{eval $i_tr_tmp = 0;}-->
+                </tr>
+            <!--{/if}-->
+        <!--{/if}-->
+    <!--{/loop}-->        
+        </table>
+    </div>
+
+    <div class="wrapper clearfix" style="border-bottom: 1px solid #efe6e0;"></div>
+    <p style="text-align:center; font-size:16px; color:#3d3d45; margin:30px auto 70px auto;">发布商业广告 <a style="color:#fc6328;" href="#">请点此进入</a></p>
+</div>
+<script>
+    var curid;
+    var current = $(".fabu_type li:first-child");
+    $(function() {
+        $(".fabu_type li span").bind("mouseover", function() {
+            if (current)
+                current.removeClass('current');
+            current = $(this);
+            $(this).addClass('current');
+            if (curid)
+                $('#' + curid).css('display', 'none');
+            curid = 'sub' + $(this).parent().index();
+            $('#sub' + $(this).parent().index()).css('display', 'block');
+        });
+    });
+</script>
+<!--footer start-->
+<!--{template common/footer}-->

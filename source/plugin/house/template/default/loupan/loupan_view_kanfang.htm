@@ -1,0 +1,53 @@
+<style type="text/css">
+.view_kangfang {width:400px !important; margin:0 auto;}
+.view_kangfang td,.view_kangfang th { color:#666; font-size:14px; padding:5px; }
+.view_kangfang th { background-color:#F5F3EF; color:#663300; font-weight:bold; text-align:center;}
+</style>
+<div class="brian_box pd5 bgf">
+    <h4 class="h4"><span>{$house_lang['loupan_view_htm_4']}</span></h4>
+    <div >
+        <form action="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=kanfang" method="get">
+        <input type="hidden" name="mod" value="loupan" />
+        <input type="hidden" name="op" value="view" />
+        <input type="hidden" name="lid" value="{$loupan_id}" />
+        <input type="hidden" name="loupan_id" value="{$loupan_id}" />
+        <input type="hidden" name="ac" value="kanfang" />
+        
+            <table class="fix view_kangfang">
+                <tr>
+                    <td class="tr" style="width:80px;">{$house_lang['member_title']}: </td>
+                    <td><input type="text" class="text" name="kan_name" style="width:200px;" /></td>
+                </tr>
+                <tr>
+                    <td class="tr" style="width:80px;">{$house_lang['loupan_view_kanfang_htm_3']}: </td>
+                    <td><input type="text" class="text" name="kan_phone" style="width:200px;"   /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;" colspan=2><input type="submit" name="submit_kanfang" class="btn" value="{$house_lang['loupan_view_kanfang_htm_4']}"  /></td>
+                </tr>
+            </table>
+            
+        </form>
+    </div>
+    
+    <div>
+    {if $is_house_admin}
+    <h4 class="h4"><span>{$house_lang['loupan_view_kanfang_htm_5']}</span></h4>
+    <table class="fix view_kangfang" style="width:800px !important;" border=1>
+        <tr>
+            <th>{$house_lang['member_title']}</th>
+            <th>{$house_lang['loupan_view_kanfang_htm_7']}</th>
+            <th>{$house_lang['loupan_view_kanfang_htm_8']}</th>
+        </tr>
+        {loop $kan_array $ka}
+            <tr>
+                <td>{$ka['kan_name']}</td>
+                <td>{$ka['kan_phone']}</td>
+                <td>{echo date("Y-m-d H:i:s",$ka['kan_dateline']);}</td>
+            </tr>
+        {/loop}
+    </table>
+    {/if}
+    </div>
+</div>
+

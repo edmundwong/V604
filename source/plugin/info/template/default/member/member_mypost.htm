@@ -1,0 +1,43 @@
+<div>
+<div class="brian_main_crumb"><ol class="pre" style="width:auto;">{if $op=='mypost' && $ac !='up'}{$info_lang['mypost']}{elseif $op=='mypost' && $ac=='up'}{$info_lang['mypost_up']}{/if}</ol></div>
+
+{if $post_list}
+<div class="pd5 cl">
+<style type="text/css">
+.mtm td { vertical-align:middle !important;}
+</style>
+<table class="dt mtm" style="text-align:left;">
+    <tr>
+        <th style="width:100px;" class="tc"></th>
+        <th style="width:80px;"></th>
+        <th>{$info_lang['info']}</th>
+        <th style="width:160px;">{$info_lang['member_mypost_htm_1']}</th>
+        <th style="width:100px;">{lang info:space_mypost_htm_5}</th>
+        <th style="width:100px;">{lang info:member_fav_htm_8}</th>
+    </tr>
+{loop $post_list $post}
+    <tr>
+        <td class="tc">{$post['subcat_title']}</td>
+        <td>
+            <a href="{$info_config['root']}?mod=view&post_id={$post['post_id']}" target="_blank">
+                <img style="width:60px;" src="{if $post['post_img_1']}{$post['post_img_1']}{else}{$info_config['info']}static/images/noimage.jpg{/if}" />
+            </a>
+        </td>
+        <td><a href="{$info_config['root']}?mod=view&post_id={$post['post_id']}" style="font-size:14px;" target="_blank">{$post['post_title']}</a></td>
+        <td style="width:100px;">
+            {echo date('Y-m-d',$post['post_begin_time']);} <span class="pipe">/</span>{echo date('Y-m-d',$post['post_end_time']);}</td>
+        <td style="padding-left:10px;">{if $post['post_up']=='1'}<b style="color:#FF6600;"><p>{echo date('Y-m-d',$post['up_endtime']);}</p></b>{else}[{lang info:space_mypost_htm_5}]{/if}</td>
+        <td>
+            <a href="{$info_config['root']}?mod=member&op=setpostup&post_id={$post['post_id']}" onclick="showWindow('setpostup_{$post['post_id']}',this.href,'get',0);">{lang info:space_mypost_htm_7}</a>
+            <span class="pipe">/</span>
+            <a href="{$info_config['root']}?mod=member&op=post&ac=edit&post_id={$post['post_id']}">{lang info:space_mypost_htm_10}</a>
+        </td>
+    </tr>
+{/loop}
+</table>
+</div>
+<div class="cl">{$multipage}</div>
+{else}
+<div class="brian_tips">{lang info:space_mypost_htm_11}.</div>
+{/if}
+</div>

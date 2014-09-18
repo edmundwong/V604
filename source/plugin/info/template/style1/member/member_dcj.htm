@@ -1,0 +1,48 @@
+<style type="text/css">
+    .result{color:#3d3d45; font-size:24px; font-weight:normal;}
+    input[type="checkbox"]{margin-left:10px;margin-right:10px}
+    label[for~='list']{
+        margin-right:5px
+    }
+</style>
+
+<div style="width:640px; margin:auto; font-size:16px;margin-top:40px">
+    <form action="{$info_config['root']}?mod={$mod}&op=dcj_zhifu" method="post" enctype="multipart/form-data" onsubmit="return validate();">
+        <input type="hidden" name="mod" value="{$mod}" />
+        <input type="hidden" name="op" value="dcj_zhifu" />
+        <input type="hidden" name="ac" value="{$ac}" />
+        <input type="hidden" name="formhash" value="{$_G['formhash']}" />
+        <input type="hidden" name="post_id" value="{$post_id}" />
+        <input type="hidden" name="profile_type_id" value="{$profile_type_id}" />
+        <input type="hidden" name="subcat_id" value="{$subcat_id}" />
+        <input type="hidden" name="zhifu_yanzheng" value="{$zhifu_yanzheng}" />
+        <input type="hidden" name="biaoti" value="{$biaoti}" />
+        <input type="hidden" name="dcj_session" value="{$zhifu_session}" />
+        
+        <input type="hidden" name="info_username" value="{$post_array['member_username']}" />
+        <input type="hidden" name="info_tel" value="{$post_array['tel']}" />
+        <input type="hidden" name="info_mail" value="{$post_array['email']}" />
+        <input type="hidden" name="info_pwd" value="{$dcj_pwd}" />
+    
+    <strong class="result">感谢您发布信息！</strong>
+    <p style=" color:#ed3844; margin:20px 0 15px; font-size:16px;font-weight:bold">由于该分类为收费栏目，因此需要在您确认付款后，您发布的信息才会公开显示。</p>
+    <p style="margin-top:20px">信息标题：<strong>{$post_array['post_title']}</strong></p>
+    <p style="margin:5px 0;">信息位于：<span style="color:#ff5d00">{$dcj_url}</span></p>
+    <p style="margin-bottom:10px;">编辑密码：{$dcj_pwd}</p>
+    <div style="margin-bottom:20px;margin-top:20px">
+        <label>请选择收费标准：</label>
+        <input type="radio" name="biaozhun" value="1" id="list1" /><label for="list1">240 加元 3 个月</label>
+        <input type="radio" name="biaozhun" value="2" id="list2" /><label for="list2">2360 加元 6 个月</label>
+        <input type="radio" name="biaozhun" value="3" id="list3" /><label for="list3">2600 加元 12 个月</label>
+    </div>
+    <div style="margin-bottom:20px;">
+        <label>请选择支付方式：</label>
+        <input type="radio" name="pay_way" value="1" id="list1" /><label for="list1">PayPal&nbsp;&nbsp;</label>
+        <input type="radio" name="pay_way" value="2" id="list2" /><label for="list2">当面支付（现金）&nbsp;&nbsp;</label>
+        <input type="radio" name="pay_way" value="3" id="list3" /><label for="list3">邮政支付&nbsp;&nbsp;</label>
+    </div>
+    <input type="submit" name="button_{$ac}_submit"  id="button_{$ac}_submit" value="确定提交" style=" display:block; padding:8px 45px; margin:30px auto 25px; border-radius:2px; background:#fc6328; border:0 none; color:#fff;font-size:14px" />
+    <p style="font-size:14px; text-align:center; color:#828999;">如果有任何不清楚的问题，请联系我们: 778-686-6618。</p>
+    </form>
+</div>
+

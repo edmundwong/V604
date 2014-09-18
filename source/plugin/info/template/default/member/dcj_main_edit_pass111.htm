@@ -1,0 +1,54 @@
+<!--{template common/header}-->
+<!--{eval include template("info:$style/style");}-->
+
+
+<div class='brian_main cl'>
+    <!--{eval include template("info:$style/head");}-->
+    <div id="pt" class="bm cl">
+         <span class="z">
+            <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+            <em>&raquo;</em>
+            <a href="{$info_config['root']}">{$info_config['name']}</a>
+            <em>&raquo;</em>
+            <a href="{$info_config['root']}?mod=member">{$info_lang['member']}</a>
+         </span>
+        <span class="y">
+            {$info_lang['welcome']} <b>{$_G['username']}</b>
+            {if $_G['uid']}
+            <span class="pipe">|</span>
+            <a href="{$info_config['root']}?mod=member">{$info_lang['member']}</a>
+            {/if}
+            &nbsp;
+        </span>
+    </div>
+    
+    <div class="brian_space">
+    <table class="fix">
+        <tr>
+           
+            <td class="brian_space_right">
+               未登录账户发布的广告：未登录账户发布的广告：请输入发布广告后系统为您提供的4位管理密码进行编辑/删除操作，如果您不记得密码了，可以发送邮件至 support@vanpeople.com，或 联系我们。
+            </td>
+            
+        </tr>
+        <tr>
+            
+            <td>
+                
+                <form name="form1" method="GET" action="/info.php">
+                    <input type="hidden" name="mod" value="member" />
+                    <input type="hidden" name="op" value="post" />
+                    <input type="hidden" name="ac" value="edit" />
+                    <input type="hidden" name="subcat_id" value="{$subcat_id}" />
+                    <input type="hidden" name="post_id" value="{$post_id}" />
+                    请您输入信息管理密码:<input name="pas" type="text" />   管理密码，或输入登陆时的密码。</br>
+                    <input type="submit" value="提交" />
+                </form>
+            </td>
+        </tr>
+    </table>
+    </div>
+</div>
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

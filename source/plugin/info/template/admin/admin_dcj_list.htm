@@ -1,0 +1,48 @@
+<!--{eval include template("info:$style/style");}-->
+<!--{template info:admin/style}-->
+
+<div id="plugin_admin" class=" brian_main brian_box pd5 bgf">
+    <h1 class="h1">信息管理</h1>
+   
+
+    <table class="tb tb2 ">
+        <tbody>
+            <tr class="header">
+                <th >标题</th>
+                <th>类型</th>
+                <th>添加时间</th>
+                <th>电话</th>
+                <th >QQ</th>
+                <th >时间</th>
+                <th>支付方式</th>
+                <th>金额</th>
+                <th style="width:100px;">操作</th>
+            </tr>
+            {loop $post_list $vv}
+            <tr>
+            	<td>{$vv['post_title']}</td>
+            	<td>{$vv['cat_title']}/{$vv['subcat_title']}</td>
+            	<td>{$vv['post_time']}</td>
+            	<td>{$vv['tel']}</td>
+            	<td>{$vv['qq']}</td>
+            	<td>{$vv['b_e']}</td>
+            	<td>{$vv['pay_way']}</td>
+            	<td>${$vv['price']}</td>
+            	<td><a href="/admin.php?action=plugins&operation=config&do=21&identifier=info&pmod=admin_neirong&dcj_action=edit&post_id={$vv['post_id']}">修改</a></td>
+            </tr>
+            {/loop}
+            <tr><td colspan=6></td><td colspan=2>{$multipage}</td></tr>
+        </tbody>
+        <!-- <tbody>
+            <tr>
+                <td></td>
+                <td colspan=6>
+                    <div class="fixsel">
+                        <input type="submit" class="btn" name="editsubmit" value="{$info_lang['loupan_view_kanfang_htm_4']}" />
+                    </div>
+                </td>
+            </tr>
+        </tbody> -->
+    </table>
+    
+</div>

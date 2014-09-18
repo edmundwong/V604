@@ -1,0 +1,44 @@
+<div class="indexHuang">
+
+<h2><span>{$tmp_lang['meiyuezj']}<em>{$tadayzj}</em>$haodian['extcredits'][$extcredit]['title']&nbsp; - &nbsp;{$tmp_lang['haishengs']}<em>{$shjengyuwp}</em>{$tmp_lang['huangjge']}</span></h2>
+
+<div id="qiangzu"><!--{if $wpcount == '5' }--><img src="source/plugin/dz55625_haodian/images/qiangzum.png" /><!--{else}--><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/qiangzu.png" /></a> <!--{/if}--></div>
+
+<dl>   
+    <!--{if empty($wpcount)}-->
+         <ol>
+            <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+            <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+            <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+            <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+            <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+         </ol>
+    <!--{else}-->
+    <ul>
+        <!--{loop $wangpus $wangpu}-->
+                <li>
+                    <strong><a href="<!--{if $isdomain && $wangpu[domain]}-->$wangpu[domain]<!--{elseif $RewriteStart == 1}-->{$curl}_{$wangpu[sid]}.html<!--{else}-->{$curls}{$wangpu[sid]}<!--{/if}-->"{$Clickwindow}><img src="{$wangpu[pic]}" /></a></strong>
+                    <em>{$wangpu[title]}</em>
+                </li>
+        <!--{/loop}-->
+        
+        <!--{if $wpcount == '1'}-->
+            <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+            <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+            <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+             <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+        <!--{elseif $wpcount == '2'}-->
+            <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+            <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+             <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+        <!--{elseif $wpcount == '3'}-->
+            <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+             <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+        <!--{elseif $wpcount == '4'}-->
+             <li><a href="plugin.php?id=dz55625_haodian:haodian_zy&mod=wp" onclick="showWindow('wp', this.href);return false;"><img src="source/plugin/dz55625_haodian/images/no.jpg"></a></li>
+        <!--{/if}-->
+           
+   </ul>
+   <!--{/if}-->
+  </dl> 
+</div>

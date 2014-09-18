@@ -1,0 +1,352 @@
+<script src="{$house_config['house']}static/js/common.js?{VERHASH}" type="text/javascript"></script>
+<script type="text/javascript" src="{$_G['setting']['jspath']}calendar.js?{VERHASH}"></script>
+<script type="text/javascript" src="{$_G['setting']['jspath']}bbcode.js?{VERHASH}"></script>
+<script type="text/javascript" src="{$house_config['house']}editor/editor_function.js?{VERHASH}"></script>
+ 
+<div class="brian_main_subcontent" style="line-height:28px;">
+    <div class="brian_main_crumb"><ol class="pre" style="width:auto;">{if $ac=='edit'}{lang house:space_mypost_htm_10}{lang house:post_htm_5}{else}{lang house:space_htm_3}{/if} </ol>
+    {if $ac!='edit'}<p>{$house_lang['xinxifabu_tishi1']} <b>{$house_config['postcredit']}</b> {$house_config['credit_unit']} , {$house_lang['nin_dangqian']}{$house_config['credit_unit']} : <b>{$my_credit}. </b></p>{/if}
+    </div>
+    <form action="{$house_config['root']}?mod={$mod}" method="post" enctype="multipart/form-data" onsubmit="return validate();">
+        <input type="hidden" name="mod" value="{$mod}" />
+        <input type="hidden" name="op" value="{$op}" />
+        <input type="hidden" name="ac" value="{$ac}" />
+        <input type="hidden" name="formhash" value="{$_G['formhash']}" />
+        <input type="hidden" name="post_id" value="{$post_id}" />
+        <input type="hidden" name="profile_type_id" value="{$profile_type_id}" />
+        
+        <div class="brian_main_subcontent_content">
+        
+        <div class="fb_bt"><span class="f14">{lang house:post_htm_27} </span><a name="salaryInfo"></a> {lang house:post_htm_13}<font color="red">*</font>{lang house:post_htm_14}</div>
+         <table class="fb_form">
+         {eval $profile_setting_names=array();}
+         {eval $tr = 0;}
+         {loop $profile_setting $ps}
+            {if $tr ==0}
+            <tr>
+            {/if}
+                <td class="tdr">{if $ps['profile_setting_required']}<font color="red">*</font>{/if}{$ps['profile_setting_title']} : </td>
+                <td>
+                    {if $ps['profile_setting_formtype']=='select'}
+                        {eval $ps['profile_setting_choices'] = explode("\r\n",$ps['profile_setting_choices']);}
+                        <select name="profile_setting_{$ps['profile_setting_name']}">
+                            {loop $ps['profile_setting_choices'] $v}
+                                <option {if $post_profile[$ps['profile_setting_name']]['post_profile_title'] == $v } selected="selected" {/if} >{$v}</option>
+                            {/loop}
+                        </select>
+                    {elseif $ps['profile_setting_formtype']=='input'}
+                        <input type="text"  name="profile_setting_{$ps['profile_setting_name']}" value="{$post_profile[$ps['profile_setting_name']]['post_profile_title']}" />
+                    {elseif $ps['profile_setting_formtype']=='checkbox'}
+                        {eval $ps['profile_setting_choices'] = explode("\r\n",$ps['profile_setting_choices']);}
+                        {loop $ps['profile_setting_choices'] $k $v}
+                            <div class="z cl"><input type="checkbox" name="profile_setting_{$ps['profile_setting_name']}[]"
+                             {if $ac=='edit' && @in_array($v,$post_profile[$ps['profile_setting_name']]['post_profile_title']) }
+                             checked="checked"
+                             {/if}
+                             value="{$v}" />{$v}</div>
+                        {/loop}
+                    {/if}
+                    {$ps['profile_setting_unit']}
+                </td>
+            {if $tr ==1}
+                </tr>
+                {eval $tr = 0;}
+            {else}
+                {eval $tr++;}
+            {/if}
+            
+            {eval $profile_setting_names[] = 'profile_setting_'.$ps['profile_setting_name'];}
+         {/loop}
+         </table>
+        
+        <div class="fb_bt"><span class="f14">{lang house:post_htm_12} </span> {lang house:post_htm_13}<font color="red">*</font>{lang house:post_htm_14} </div>
+        <table class="fb_form">
+            <tr>
+                <td class="tdr"><font color="red">*</font>{$house_lang[area]}{$house_lang['dian']}</td>
+                <td>
+                    <span id="districtbox_show">{$post['province']} {$post['city']} {$post['dist']} {$post['community']}</span>
+                    <span id="districtbox">
+                    <a href="javascript:;" onclick="districtbox_edit_fun()">{lang house:myaccount_mypost_htm_10}</a>
+                    </span>
+                    {if $ac == 'post'}
+                    <script type='text/javascript' language='javascript'>
+                        brian_showdistrict("districtbox", ["province", "city", "dist", "community"], 4, 1);
+                    </script>
+                    {/if}
+                </td>
+            </tr>
+            <tr>
+                <td class="tdr">{$house_lang['loupan_title']}{$house_lang['dian']}</td>
+                <td>
+                    <span id="loupan_box">
+                        <input type="text" name="loupan" value="{$post['loupan_title']}" />
+                        <input type="hidden" name="loupan_id" value="{$post['loupan_id']}" />
+                        <input type="hidden" name="loupan_title" value="{$post['loupan_title']}"  />
+                    </span>
+                    <button class="btn" type="button" onclick="search_loupan()" >{$house_lang['search_loupan']}</button>
+                    <button class="btn" type="button" onclick="loupan_byhand()" >{$house_lang['by_hand']}</button>
+                    <p class="brian_ltips">{$house_lang['search_loupan_tips']} </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdr"><font color="red">*</font>{lang house:space_post_htm_2}{$house_lang['dian']}</td>
+                <td><input type="text" id="post_begin_time" name="post_begin_time"  value="{if $post['post_begin_time']}{echo date('Y-m-d',$post['post_begin_time'])}{/if}" class="w200" onclick="showcalendar(event, this)" />
+                <span class="ltips">{lang house:member_resume_htm_37} : 2010-06-10</span></td>
+            </tr>
+            <tr>
+                <td class="tdr"><font color="red">*</font>{lang house:space_post_htm_4}{$house_lang['dian']}</td>
+                <td><input type="text" id="post_end_time" name="post_end_time"  value="{if $post['post_end_time']}{echo date('Y-m-d',$post['post_end_time'])}{/if}" class="w200" onclick="showcalendar(event, this)" />
+                <span class="ltips">{lang house:member_resume_htm_37} : 2010-06-10</span></td>
+            </tr>
+            <tr>
+                <td class="tdr"><font color="red">*</font>{lang house:post_htm_25}</td>
+                <td><input type="text" class="text" id="post_title" name="post_title" style="width:350px;"  value="{$post['post_title']}"/></td>
+            </tr>
+            <tr>
+                <td class="tdr"><font color="red">*</font>{lang house:post_htm_26}</td>
+                <td>
+                    <textarea class="userData" name="post_text" id="uchome-ttHtmlEditor" style="display: none;" >{echo stripslashes($post['post_text'])}</textarea>
+                    <iframe src="{$house_config['root']}?mod=editor&charset={CHARSET}" name="uchome-ifrHtmlEditor" id="uchome-ifrHtmlEditor" scrolling="no" border="0" frameborder="0" style="width:570px;height:410px;border:1px solid #C5C5C5;position:relative;"></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdr">{lang house:post_htm_48}</td>
+                <td><p class="ltips">{lang house:post_htm_49}2M </p>
+                    <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                        <b>{lang house:post_htm_50}1 : </b><input type="hidden" name="temp_post_img_1" value="{$post['post_img_1']}" />
+                        <input type="file" name="post_img_1" />
+                        {if $post['post_img_1']}<p><img src="{$post['post_img_1']}" alt="post_img_1" /></p>{/if}
+                    </div>
+                    <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                        <b>{lang house:post_htm_50}2 : </b><input type="hidden" name="temp_post_img_2" value="{$post['post_img_2']}" />
+                        <input type="file" name="post_img_2" />
+                        {if $post['post_img_2']}<p><img src="{$post['post_img_2']}" alt="post_img_2" /></p>{/if}
+                    </div>
+                    <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                        <b>{lang house:post_htm_50}3 : </b><input type="hidden" name="temp_gpost_img_3" value="{$post['post_img_3']}" />
+                        <input type="file" name="post_img_3" />
+                        {if $post['post_img_3']}<p><img src="{$post['post_img_3']}" alt="post_img_3" /></p>{/if}
+                    </div>
+                    <div style="border-bottom:1px dashed #ccc; padding:5px;margin-bottom:5px;">
+                        <b>{lang house:post_htm_50}4 : </b><input type="hidden" name="temp_post_img_4" value="{$post['post_img_4']}" />
+                        <input type="file" name="post_img_4" />
+                        {if $post['post_img_4']}<p><img src="{$post['post_img_4']}" alt="post_img_4" /></p>{/if}
+                    </div>
+                </td>
+            </tr>
+        </table>
+         
+        <div class="fb_bt" style="display:none;"><span class="f14">{lang house:post_htm_54}</span><a name="contactInfo"></a> {lang house:post_htm_13}<font color="red">*</font>{lang house:post_htm_14}</div>
+        <table class="fb_form" style="display:none;">
+            <tr>
+                <td class="tdr"><font color="red">*</font>{lang house:post_htm_57}</td>
+                <td><input type="text" class="text" name="member_username" value="{$member['member_username']}" /></td>
+            </tr>
+            <tr>
+                <td class="tdr">{lang house:post_htm_58}</td>
+                <td><input type="text" class="text" name="member_qq" value="{$member['member_qq']}" /></td>
+            </tr>
+            <tr>
+                <td class="tdr"><font color="red">*</font>{lang house:post_htm_59}</td>
+                <td><input type="text" class="text" name="member_phone" value="{$member['member_phone']}" /></td>
+            </tr>
+            <tr>
+                <td class="tdr"><font color="red">*</font>{lang house:post_htm_60}</td>
+                <td><input type="text" class="text" name="member_email" value="{$member['member_email']}" /></td>
+            </tr>
+        </table>
+        <div class="fb_bt" ><span class="f14">{$house_lang['biaozhuditu']}</span><a name="contactInfo"></a> {lang house:post_htm_13}<font color="red">*</font>{lang house:post_htm_14}</div>
+         <table class="fb_form">
+            <tr>
+                <td class="tdr"><font color="red">*</font>{$house_lang['biaozhuditu']} : </td>
+                <td><input type="text" id="post_map" name="post_map" value='{$post['post_map']}' style="width:350px;" /></td>
+            </tr>
+            <tr>
+            <td colspan=2>
+<script src="http://ditu.google.cn/maps/api/js?sensor=false&language={$_G['config']['output']['language']}" type="text/javascript"></script>
+                    <div class="ltips tc">{$house_lang['map_tips']}</div>
+                    <div id="mapCanvas" style="width:99%; height:300px; margin:0 auto; "></div>
+                    <p style="color:Green" id="map_tips"></p>
+<script type="text/javascript" language="javascript">
+var google_latlng= new google.maps.LatLng({$post['post_map']});
+var google_map;
+var google_marker;
+var google_geocoder;
+var google_zoom = 13;
+
+function google_initialize() {
+    var myOptions = {
+        zoom: google_zoom,
+        center: google_latlng,
+        mapTypeControl: false,	
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    google_map = new google.maps.Map(document.getElementById("mapCanvas"), myOptions);
+    
+    google_marker = new google.maps.Marker({
+        position: google_latlng,
+        title: '',
+        map: google_map,
+        draggable: true}); 
+    
+    var contentString = "{$house_lang['admin_post_loupan_htm_1']}";
+var infowindow = new google.maps.InfoWindow({
+content: contentString
+});
+infowindow.open(google_map,google_marker);
+
+    google_geocoder = new google.maps.Geocoder();
+    google_setZoom(google_map.getZoom());
+    google_setPosition(google_marker.getPosition());
+    google_setAddress(google_marker.getPosition());
+    
+    google.maps.event.addListener(google_map, 'zoom_changed', function() {
+    google_setZoom(google_map.getZoom());});
+
+    google.maps.event.addListener(google_marker, 'drag', function() {
+    google_setPosition(google_marker.getPosition());});
+    
+    google.maps.event.addListener(google_marker, 'dragend', function() {
+    google_setAddress(google_marker.getPosition());}); 
+}
+
+function google_getAddress(address) {
+    google_geocoder.geocode( {"address": address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            google_map.setCenter(results[0].geometry.location);  
+            google_marker.setPosition(results[0].geometry.location);
+            google_setZoom(google_map.getZoom());
+            google_setAddress(results[0].geometry.location);
+            google_setPosition(results[0].geometry.location);
+            google.maps.event.addListener(google_map, 'zoom_changed', function() {
+                google_setZoom(google_map.getZoom());
+            });
+            google.maps.event.addListener(google_marker, 'drag', function() {
+                google_setPosition(google_marker.getPosition());
+            });
+            google.maps.event.addListener(google_marker, 'dragend', function() {
+                google_setAddress(google_marker.getPosition());
+            });
+        } else {
+            alert('searchcity');     
+        }
+    });
+}
+
+function google_setAddress(pos){   
+  google_geocoder.geocode({
+    latLng: pos
+  }, function(responses) {
+   
+  });
+}
+function google_setPosition(latlng){    
+  newxy = [
+    latlng.lat(),
+    latlng.lng()
+  ].join(', ');
+  document.getElementById('post_map').value = newxy;
+}
+function google_setZoom(zoom){    
+    //document.getElementById('mapzoom').value = zoom;
+}
+
+google.maps.event.addDomListener(window, 'load', google_initialize);
+</script>
+            </td>
+            </tr>
+        </table>
+        <div class="post_box">
+            <input type="submit" name="button_{$ac}_submit"  id="button_{$ac}_submit" class="ljfb" value="{lang house:post_htm_61}" />
+        </div>
+    </div>
+    </form>
+
+</div>
+<script type="text/javascript" language="javascript">
+var allowhtml = 1;
+var allowbbcode = 1;
+var allowsmilies = 1;
+var allowimgcode = 1;
+
+$('uchome-ttHtmlEditor').value = bbcode2html($('uchome-ttHtmlEditor').value);
+
+function validate() {
+    edit_save();
+    window.onbeforeunload = null;
+    $('uchome-ttHtmlEditor').value = html2bbcode($('uchome-ttHtmlEditor').value);
+    
+    if($('post_title').value =='' || $('post_text').value ==''){
+        showPrompt(null, null, '"{lang house:admin_jubao_htm_2}" {lang house:post_htm_67}!', 2000);
+        $('post_title').focus();
+        return false;
+    }
+}
+
+function districtbox_edit_fun(){
+    display('districtbox_show');
+    brian_showdistrict("districtbox", ["province", "city", "dist", "community"], 4, 1);
+}
+
+function cat_change(cat,sub_cat,subname,classname){
+    var cat_title = $(cat).value;
+    var get_url = '{$house_config[root]}?mod=ajax&op=cat&inajax=1';
+    if(subname !=''){
+        get_url = get_url +'&sub_cat='+sub_cat;}
+    if(classname !=''){
+        get_url = get_url +'&classname='+classname;}
+    get_url = get_url +'&cat_title='+cat_title;
+    
+    var x = new Ajax();
+    x.get(get_url, function(str, x) {
+        if( str ==''){
+            $(sub_cat).style.display ='none';
+            $(sub_cat).innerHTML = "";
+        }else{
+            $(sub_cat).style.display ='inline-block';
+            $(sub_cat).innerHTML = str;
+        }
+     });
+}
+
+function search_loupan(){
+    var search_url = '{$house_config[root]}?mod=ajax&op=area_loupan&inajax=1';
+    if($('province')){
+        var _province = $('province').value;
+        if(_province !=''){
+            search_url = search_url + "&province=" + _province;
+            }
+    }
+    if($('city')){
+        var _city = $('city').value;
+        if(_city !=''){
+            search_url = search_url + "&city=" + _city;
+            }
+    }
+    if($('dist')){
+        var _dist = $('dist').value;
+        if(_dist !=''){
+            search_url = search_url + "&dist=" + _dist;
+            }
+    }
+    if($('community')){
+        var _community = $('community').value;
+        if(_community !=''){
+            search_url = search_url + "&community=" + _community;
+            }
+    }
+    var x = new Ajax();
+    x.get(search_url , function(str, x) {
+        if( str !=''){
+            $('loupan_box').innerHTML = str;
+        }else{
+            $('loupan_box').innerHTML = '<b class="red">{$house_lang[search_loupan_error]}</b>';
+        }
+    });
+}
+
+function loupan_byhand(){
+    $('loupan_box').innerHTML = '<input type="text" name="loupan">';
+}
+
+</script>

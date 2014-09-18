@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>paypal支付</title>
+</head>
+<body>
+支付正在提交中...........................................
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" name="form1" target="_top" id="su">
+<input type="hidden" name="cmd" value="_xclick">
+<input type="hidden" name="business" value="mcsszw@hotmail.com" />
+<input type="hidden" name="item_name" value="{$biaoti}" />
+<input type="hidden" name="amount" value="{$biaozhun_money[$biaozhun]}" />
+<input type="hidden" name="currency" value="USD" />
+<input type="hidden" name="invoice" value="{$invoice}" />
+<input type="hidden" name="notify_url" value="{$notify_url}" />
+<input type="hidden" name="return" value="" />
+<input type="hidden" name="charset" value="UTF-8" />
+
+<!-- input type="image" src="https://www.paypalobjects.com/zh_XC/C2/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal——最安全便捷的在线支付方式！">
+<img alt="" border="0" src="https://www.paypalobjects.com/zh_XC/i/scr/pixel.gif" width="1" height="1"> -->
+<script type="text/javascript">
+setTimeout("document.form1.submit()",100) 
+//window.onload=function(){document.forms["form1"].submit();}
+   /* var a = document.getElementById("du");
+    a.submit();*/
+</script>
+</form>
+</body>
+</html>

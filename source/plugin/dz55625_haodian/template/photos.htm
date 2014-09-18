@@ -1,0 +1,14 @@
+<div class="pl cl">
+<!--{if $shopimgs}-->
+    <ul class="cl">
+        <!--{loop $shopimgs $key $shopimg}-->
+                <li>
+                    <span><a rel="group" href="{$shopimg[original_url]}" title="{$shopimg[title]}"><img alt="" src="{$shopimg[shrink_url]}" /></a></span>
+                    <strong>{$shopimg[title]}</strong>
+                </li>
+            <!--{/if}--> 
+    </ul>
+ <!--{else}--> 
+    <ul style="padding:0px 0 6px 10px"><!--{if $mythread[author] == $_G['username']}-->{$tmp_lang['wupicsj']}<!--{else}-->{$tmp_lang['wupicsjs']}<!--{/if}--> </ul>     
+ <!--{/if}-->    
+</div>

@@ -1,0 +1,31 @@
+
+{if count($huandes)}
+<link rel="stylesheet" type="text/css" href="source/plugin/dz55625_hadone/images/body.css" />
+<style type="text/css">
+.shangHuan{ width:300px; height:{$hadConfig['hheight']}px; background:#e3e3e3; margin:10px auto 0; overflow:hidden}
+.focusa{ overflow:hidden; width:{$hadConfig['hwidth']}px; height:{$hadConfig['hheight']}px; position:relative; margin:0 auto 10px }
+.f426x240{width:{$hadConfig['hwidth']}px; height:{$hadConfig['hheight']}px; overflow:hidden}
+.f426x240 img{width:{$hadConfig['hwidth']}px; height:{$hadConfig['hheight']}px}
+</style>
+
+<div class="focusa">
+    <ul class="rslides f426x240">
+     <!--{loop $huandes $huande}-->
+        <li><a href="{$huande['tid']}"{$Clickwindow}><img src="{$huande['pic']}" /></a></li>
+     <!--{/loop}-->  
+    </ul>
+</div>
+
+<script type="text/javascript" src="source/plugin/dz55625_hadone/images/lrtk.js"></script>
+<script type="text/javascript">
+jq(function() {
+    jq(".f426x240").responsiveSlides({
+        auto: true,
+        pager: true,
+        nav: true,
+        speed: 700,
+        maxwidth: {$hadConfig['hwidth']}
+    });
+});
+</script>
+{/if}

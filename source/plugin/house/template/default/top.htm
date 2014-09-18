@@ -1,0 +1,49 @@
+<div class="mainbox" >
+        <div class="mainbox_left">
+            <span class="mainbox_hd_left">
+                <span class="z"><strong>{lang house:top_htm_1}</strong></span>
+                <span class="y"><a href="{$house_config['root']}?mod=post"><img src="{$house_config['siteurl']}source/plugin/house/template/{$style}/css/images/post_house.gif" /></a></span>
+            </span>
+            
+            <div class="mainbox_bd_left">
+                <ul>
+                {loop $top_post_list $list}
+                    <li>
+                        <a href="{$house_config['root']}?mod=view&post_id={$list['post_id']}" target="_blank" ><img src="{$list['post_upload_file_1']}"  title="{$list['post_title']}" /></a>
+                        <p><a href="{$house_config['root']}?mod=view&post_id={$list['post_id']}" target="_blank"  title="{$list['post_title']}" >{$list['post_title']}</a></p>
+                        <span>{lang house:space_mycredit_htm_2}{$list['post_price']}</span>
+                    </li>
+                 {/loop}
+                </ul>
+            </div>
+            
+        </div>
+        <div class="mainbox_right">
+            <div class="mainbox_right_show_help"><a>{lang house:top_htm_3}</a></div>
+            <span class="mainbox_hd_right">
+                <div class="mainbox_bd_right_title">
+                    <table>
+                    <tr>
+                        <td style="width:130px;">{lang house:top_htm_4}</td>
+                        <td style="width:69px;">{lang house:top_htm_5}</td>
+                        <td style="width:40px;">{lang house:top_htm_6}</td>
+                    </tr>
+                    </table>
+                </div>
+            </span>
+            
+            <div class="mainbox_bd_right">
+                <div class="mainbox_bd_right_list">
+                    <ul>
+                    {loop $top_left_post_list $list}
+                            <li>
+                                <span class="mainbox_bd_right_list_title"><a href="{$house_config['root']}?mod=view&post_id={$list['post_id']}" target="_blank" >{$list['post_title']}</a></span>
+                                <span class="mainbox_bd_right_list_category">{$list['category_title']}</span>
+                                <span class="mainbox_bd_right_list_view">{$list['post_view']}</span>
+                            </li>
+                   {/loop}
+                        </ul>
+                </div>
+            </div>
+        </div>
+</div>

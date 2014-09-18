@@ -1,0 +1,48 @@
+<style type="text/css">
+.view_kangfang td,.view_kangfang th { color:#666; font-size:14px; padding:5px; }
+.view_kangfang th { background-color:#F5F3EF; color:#663300; font-weight:bold; text-align:center;}
+.zhoubian_table td { padding:5px; font-size:14px;}
+.zhoubian_table a { color:#666; font-size:14px;}
+</style>
+
+<div class="brian_box pd5 bgf">
+    <h4 class="h4"><span>{$house_lang['loupan_view_htm_4']}</span></h4>
+    <div>
+    <form action="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=kanfang" method="get">
+        <input type="hidden" name="mod" value="loupan" />
+        <input type="hidden" name="op" value="view" />
+        <input type="hidden" name="lid" value="{$loupan_id}" />
+        <input type="hidden" name="loupan_id" value="{$loupan_id}" />
+        <input type="hidden" name="ac" value="kanfang" />
+        
+            <table class="fix view_kangfang">
+                <tr>
+                    <td class="tr" style="width:40px;">{$house_lang['member_title']}: </td>
+                    <td><input type="text" class="text" name="kan_name" style="width:150px;  border:1px solid #E7E3DF;" /></td>
+                </tr>
+                <tr>
+                    <td class="tr" style="width:40px;">{$house_lang['loupan_view_kanfang_htm_3']}: </td>
+                    <td><input type="text" class="text" name="kan_phone" style="width:150px; border:1px solid #E7E3DF;"   /></td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;" colspan=2><input type="submit" name="submit_kanfang" class="btn" value="{$house_lang['loupan_view_kanfang_htm_4']}" /></td>
+                </tr>
+            </table>
+            
+        </form>
+    </div>
+</div>
+
+<div class="brian_box pd5 bgf">
+    <h4 class="h4"><span>{$house_lang['loupan_view_right_htm_5']}</span></h4>
+    <div>
+        <table class="fix zhoubian_table">
+        {loop $zhoubain $zb}
+        <tr>
+            <td><a href="{$house_config['root']}?mod=loupan&op=view&lid={$zb['loupan_id']}">{$zb['loupan_title']}</a></td>
+            <td>{$zb['loupan_junjia']}{$house_lang['yuan']}/m<sup>2</sup></td>
+        </tr>
+        {/loop}
+        </table>
+    </div>
+</div>

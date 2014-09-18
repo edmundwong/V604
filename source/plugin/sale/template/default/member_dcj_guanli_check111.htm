@@ -1,0 +1,36 @@
+﻿<!--{template common/header}-->
+<!--{eval include template("sale:$style/style");}-->
+
+<div class='brian_main'>
+    
+    <!--{eval include template("sale:$style/head");}-->
+    
+ <div class="brian_member">
+        <!--<div class="brian_member_left">
+          
+        </div>-->
+        <!--  输入修改的密码   -->
+        <div class="brian_member_right" style="float:left;">
+            请输入您的电话或者e-mail查找要编辑的信息
+        <form id="dcj_form" action="sale.php?mod=member" method="post" >
+            电话号码：<input id="tel" type="text" name="tel"  />或者电子邮件 <input id="email" type="text" name="email"  />
+            <input type="button" name=""  value="提交" onclick="dcj_check();"/>
+        </form>
+        </div>
+        <script type="text/javascript">
+			function dcj_check()
+			{
+				var tel = document.getElementById("tel").value;
+				var email = document.getElementById("email").value;
+				if(tel =='' && email == '')
+				{
+					alert("电话号码或者邮件至少填一项！");return false;
+				}
+				document.getElementById("dcj_form").submit();
+			}
+		</script>
+    </div>
+
+</div>
+
+<!--{template common/footer}-->

@@ -1,0 +1,85 @@
+
+
+<div class="cl">
+<h2 class="h2"> - {$_lang['hangyefenlei']} - </h2>
+        <div class="gongqiu_top_list pd5">
+            {loop $cat_array $cat}
+                {if empty($cat_id)}
+                    {if empty($cat['cat_pid'])}
+                    <a href="{$gongqiu_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}" {if $cat['cat_id']==$cat_id}   style="font-weight:bold;"  {/if}>{$cat['cat_title']}</a>
+                    <span class="pipe">|</span> 
+                    {/if}
+                {else}
+                     {if $empty_cat}
+                        {if $cat['cat_pid'] == $cat_id}
+                            <a href="{$gongqiu_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}" {if $cat['cat_id']==$cat_id}   style="font-weight:bold;"  {/if}>{$cat['cat_title']}</a>
+                            <span class="pipe">|</span> 
+                        {/if}
+                    {else}
+                        {if $cat['cat_pid'] == $pre_cat['cat_pid']}
+                            <a href="{$gongqiu_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}" {if $cat['cat_id']==$cat_id}   style="font-weight:bold;"  {/if}>{$cat['cat_title']}</a>
+                            <span class="pipe">|</span> 
+                        {/if}
+                    {/if}
+                {/if}
+            {/loop}
+        </div>
+</div>
+
+<div class="cl" style="display:none;">
+    <div class="z brian_box"  style="width:233px; overflow:hidden; margin-right:5px;">
+        <h2 class="h2"> - {$goods_type_array['1']}- </h2>
+        <div class="gongqiu_top_list pd5">
+                <ul class="cl">
+                    {loop $type_1_list $list}
+                        <li class="cl" style="height:20px; overflow:hidden;">
+                            <div class="mainbox_bd_right_list_title z" style="width:170px; overflow:hidden;"><b style="font-size:20px; height:20px; overflow:hidden; line-height:15px;">&sdot;</b> <a href="{$gongqiu_config['root']}?mod=view&goods_id={$list['goods_id']}" target="_blank" >{$list['goods_title']}</a></div>
+                            <div class="mainbox_bd_right_list_cat y" style="width:50px; overflow:hidden;">{$list['cat_title']}</div>
+                        </li>
+                   {/loop}
+                </ul>
+        </div>
+    </div>
+    
+    <div class="z brian_box"  style="width:233px; overflow:hidden; margin-right:5px;">
+        <h2 class="h2"> - {$goods_type_array['2']}- </h2>
+        <div class="gongqiu_top_list pd5">
+                <ul class="cl">
+                    {loop $type_2_list $list}
+                        <li class="cl" style="height:20px; overflow:hidden;">
+                            <div class="mainbox_bd_right_list_title z" style="width:170px; overflow:hidden;"><b style="font-size:20px; height:20px; overflow:hidden; line-height:15px;">&sdot;</b> <a href="{$gongqiu_config['root']}?mod=view&goods_id={$list['goods_id']}" target="_blank" >{$list['goods_title']}</a></div>
+                            <div class="mainbox_bd_right_list_cat y" style="width:50px; overflow:hidden;">{$list['cat_title']}</div>
+                        </li>
+                   {/loop}
+                </ul>
+        </div>
+    </div>
+    
+    <div class="z brian_box"  style="width:233px; overflow:hidden; margin-right:5px;">
+        <h2 class="h2"> - {$goods_type_array['3']}- </h2>
+        <div class="gongqiu_top_list pd5">
+                <ul class="cl">
+                    {loop $type_3_list $list}
+                        <li class="cl" style="height:20px; overflow:hidden;">
+                            <div class="mainbox_bd_right_list_title z" style="width:170px; overflow:hidden;"><b style="font-size:20px; height:20px; overflow:hidden; line-height:15px;">&sdot;</b> <a href="{$gongqiu_config['root']}?mod=view&goods_id={$list['goods_id']}" target="_blank" >{$list['goods_title']}</a></div>
+                            <div class="mainbox_bd_right_list_cat y" style="width:50px; overflow:hidden;">{$list['cat_title']}</div>
+                        </li>
+                   {/loop}
+                </ul>
+        </div>
+    </div>
+    
+    <div class="z brian_box"  style="width:233px; overflow:hidden; margin-right:5px;">
+        <h2 class="h2"> - {$goods_type_array['4']}- </h2>
+        <div class="gongqiu_top_list pd5">
+                <ul class="cl">
+                    {loop $type_4_list $list}
+                        <li class="cl" style="height:20px; overflow:hidden;">
+                            <div class="mainbox_bd_right_list_title z" style="width:170px; overflow:hidden;"><b style="font-size:20px; height:20px; overflow:hidden; line-height:15px;">&sdot;</b> <a href="{$gongqiu_config['root']}?mod=view&goods_id={$list['goods_id']}" target="_blank" >{$list['goods_title']}</a></div>
+                            <div class="mainbox_bd_right_list_cat y" style="width:50px; overflow:hidden;">{$list['cat_title']}</div>
+                        </li>
+                   {/loop}
+                </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+<p style="padding:15px;"></p>
+
+<!--{if $_G['uid']}-->
+
+<!--{elseif !$_G[connectguest]}-->
+<div style="margin:0 auto; width:100%;">
+<form id="dcj_form" action="sale.php?mod=member" method="post" >
+  <table width="100%" border="0" align="center">
+    <tr>
+      <td style="font-size:14px; text-align:center;">请输入您的 电话号码 或者 e-mail 查找要编辑的信息：</td>
+    </tr>
+	<tr><td height="10"></td></tr>
+    <tr>
+      <td align="center">
+	    <table align="center">
+		<tr><td align="center">电话号码：<input id="tel" type="text" name="tel" style="padding:2px;" maxlength="10"/>&nbsp;&nbsp;&nbsp;或&nbsp;&nbsp;电子邮箱： <input id="email" type="text" name="email" style="padding:2px; width:200px;" /></td></tr>
+		<tr><td height="10"></td></tr>
+        <tr><td align="center"><input type="button" name=""  value="查找我发布过的信息" onclick="dcj_check();"/></td></tr>
+		</table>
+	  </td>
+    </tr>
+  </table>
+</form>
+ <script type="text/javascript">
+			function dcj_check()
+			{
+				var tel = document.getElementById("tel").value;
+				var email = document.getElementById("email").value;
+				if(tel =='' && email == '')
+				{
+					alert("电话号码或者邮件至少填一项！");return false;
+				}
+				document.getElementById("dcj_form").submit();
+			}
+		</script>
+</div>
+<!--{/if}-->
+
+<h2 class="xs2" style="padding-left:10px; padding-top:10px;">{lang sale:index_htm_3}</h2>
+    <ul class="brian_member_post_list">
+    {loop $info_list $info}
+    <li>
+    <table>
+        <tr style="{if $info['status'] == 0}background-color:red;{/if}">
+           <td class="brian_member_post_list_pic">{if $info['post_img_1']==""}<img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/nopic.gif" width="40" height="40"  />{else}<img src="{$info['post_img_1']}" width="40" height="40" />{/if}</td>
+            <td class="brian_member_post_list_txt">
+                <p>
+                    <span class="z"><a href="/info.php?mod=view&post_id={$info['post_id']}" target="_blank" style="font-size:14px;">{$info['post_title']}</a>
+						{lang sale:member_mypost_htm_2} : {$info['area_title']}
+						{if $info['post_up']=='1'}
+							<b style="color:#FF6600;">[{lang sale:member_mypost_htm_3}] {lang sale:member_mycredit_htm_9} : {echo dgmdate($goods['up_endtime'],'u');}</b>
+						{else}
+							[{lang sale:member_mypost_htm_5}]
+						{/if}
+					</span>
+                </p>
+                <p class="cl" style="clear:both;">
+                    <span class="z"> {lang sale:member_mypost_htm_7} : {$info['area_title']} {$goods['city']} {$info['thrarea_title']}  {lang sale:member_mypost_htm_8} : {echo dgmdate($info['post_begin_time'],'u');}</span>
+                </p>
+            </td>
+			<td class="brian_member_post_list_pic" style="width:200px;">
+				 <span class="y">
+                      {$info['fabu_time']}
+                    </span>
+			</td>
+			<td class="brian_member_post_list_pic" style="width:100px">
+				<span class="y">
+                    {if $info['status'] == 0}未发布{else}已发布{/if}
+                    </span>
+			</td>
+			<td class="brian_member_post_list_pic" style="width:200px">
+				 <span class="y">
+                       <!-- <a href="{$sale_config['root']}?mod=member&op=setpostup&goods_id={$goods['goods_id']}" onclick="showWindow('setpostup',this.href,'get',0);">{lang sale:index_htm_7}</a>
+                        <span class="pipe">/</span>-->
+                        {if $info['status'] == 1}
+                        <a href="{$sale_config['root']}?mod=member&op=postup&post_id={$info['post_id']}">免费刷新</a>
+                        <span class="pipe">|</span>
+                        
+                        <a href="/info.php?mod=member&op=post&ac=edit&subcat_id={$info['subcat_id']}&post_id={$info['post_id']}">{lang sale:member_mypost_htm_10}</a>
+                        <span class="pipe">|</span>
+                        <a style="color:Red;" href="info.php?mod=view&post_id={$info['post_id']}&op=del&check=pwd"  onclick="return(confirm('{$_lang['queding_shanchu']}?'))" target="_blank">{lang sale:admin_ad_htm_11}</a>
+						{else}
+							关键字屏蔽
+						{/if}
+					</span>
+			</td>
+        </tr>
+    </table>
+    </li>
+    {/loop}
+	<!-- 免费的信息 -->
+	{loop $goods_list $goods}
+    <li>
+    <table>
+        <tr style="{if $goods['goods_status']==0}background-color:red;{/if}" >
+            <td class="brian_member_post_list_pic">{if $goods['goods_upload_file_1']==""}<img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/nopic.gif" width="40" height="40"  />{else}<img src="{$goods['goods_upload_file_1']}" width="40" height="40" />{/if}</td>
+            <td class="brian_member_post_list_txt">
+                <p>
+                    <span class="z"><a href="{$sale_config['root']}?mod=view&goods_id={$goods['goods_id']}" target="_blank" style="font-size:14px;">{$goods['goods_title']}</a> {lang sale:member_mypost_htm_2} : {$goods['cat_title']}</span>
+                   <!-- <span class="y">{lang sale:member_mypost_htm_6} : {$goods['goods_id']}</span>-->
+                </p>
+                <p class="cl" style="clear:both;">
+                    <span class="z"> {lang sale:member_mypost_htm_7} : {$goods['province']} {$goods['city']} {$goods['dist']} {$goods['community']} {lang sale:member_mypost_htm_8} : {echo dgmdate($goods['goods_time'],'u');}</span>
+                   
+                </p>
+            </td>
+			<td class="brian_member_post_list_pic" style="width:200px;">
+				 <span class="y">
+                      {$goods['fabu_time']}
+                    </span>
+			</td>
+			<td class="brian_member_post_list_pic" style="width:100px;">
+				 <span class="y">
+                    {if $goods['goods_status'] == 0}未发布{else}已发布{/if}
+                    </span>
+			</td>
+			<td class="brian_member_post_list_pic" style="width:200px;">
+				 <span class="y">
+                       <!-- <a href="{$sale_config['root']}?mod=member&op=setpostup&goods_id={$goods['goods_id']}" onclick="showWindow('setpostup',this.href,'get',0);">{lang sale:index_htm_7}</a>
+                        <span class="pipe">/</span>-->
+                        {if $goods['goods_status'] == 1}
+                        <a href="{$sale_config['root']}?mod=member&op=quiteup&goods_id={$goods['goods_id']}">免费刷新</a>
+                        <span class="pipe">|</span>
+                        
+                        <a href="{$sale_config['root']}?mod=post&ac=edit&goods_id={$goods['goods_id']}&pwd=check">{lang sale:member_mypost_htm_10}</a>
+                        <span class="pipe">|</span>
+                        <a style="color:Red;" href="{$sale_config['root']}?mod=view&goods_id={$goods['goods_id']}&op=del"  onclick="return(confirm('{$_lang['queding_shanchu']}?'))" target="_blank">{lang sale:admin_ad_htm_11}</a>
+						{else}
+							关键字屏蔽
+						{/if}
+					</span>
+			</td>
+        </tr>
+    </table>
+    </li>
+    {/loop}
+    </ul>
+<div style="clear:both"></div>
+<div>{$multipage}</div>
+
+<!--<div class="brian_tips">{lang sale:member_mypost_htm_11}.</div>-->
+
+</div>

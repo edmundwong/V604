@@ -1,0 +1,27 @@
+<div class="listSp cl" id="bh">
+    <!--{if $mythreads}-->  
+    <ul >             
+    {loop $mythreads $key $mythread}
+       <li  {if $mythread[topid]=='1'}style="background:#FFFDE6"{else}onmouseover="this.style.background='#FFFDE6'" onmouseout="this.style.background=''"{/if}>
+       	<p class="P_a">
+       		<!--{if $mythread[click]==1}--><span></span><!--{/if}-->
+            <!--{if !empty($mythread[pic])}-->
+            	<a href="<!--{if $RewriteStart == 1}-->{$curl}_{$mythread[id]}.html<!--{else}-->{$curls}{$mythread[id]}<!--{/if}-->"{$Clickwindow}><img src="{$mythread[pic]}" width="120" height="120" /></a>
+            <!--{else}-->
+            	<a href="<!--{if $RewriteStart == 1}-->{$curl}_{$mythread[id]}.html<!--{else}-->{$curls}{$mythread[id]}<!--{/if}-->"{$Clickwindow}><img src="source/plugin/dz55625_haodian/images/over.jpg" /></a>
+            <!--{/if}-->
+        </p>
+       	<p class="P_b">
+        	<a href="<!--{if $RewriteStart == 1}-->{$curl}_{$mythread[id]}.html<!--{else}-->{$curls}{$mythread[id]}<!--{/if}-->"{$Clickwindow}>{echo cutstr($mythread['title'], 18, '');}</a>
+        </p>
+        <p class="P_c">
+        	<!--{if round($mythread[total]/$mythread[voter],1) != 0}--><span>{echo round($mythread[total]/$mythread[voter]+$mythread[bonus],1)}</span> {$tmp_lang['homefen']}<!--{else}-->{$tmp_lang['zanwupfen']}<!--{/if}-->&nbsp;&nbsp;<!--{if $mythread[sad]>'0'}-->{$tmp_lang['pazhekou']}<span>{$mythread[sad]}</span><!--{/if}-->
+        </p>
+       </li>
+    {/loop} 
+    </ul> 
+    <!--{else}--> 
+    	<ul class="cl erroe">{$tmp_lang['homewsj']}</ul>
+    <!--{/if}--> 
+</div>
+{$multis}

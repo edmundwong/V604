@@ -1,0 +1,50 @@
+<!--{eval include template("info:$style/header");}-->
+<script type="text/javascript" src="{$_G['setting']['jspath']}bbcode.js?{VERHASH}"></script>
+<div class="nav_bottom_line"></div>
+
+<!-- END OF HOME PAGE MAIN MENU //--><p style="padding:15px;"></p>
+<div style="margin:0 auto; width:650px;">
+<form name="form" id="form" action="info.php" method="post">
+  <table width="650" border="0" align="left">
+    <tr>
+	  <td colspan="2" style="border:2px solid #ddd; padding:10px 20px;">
+	    <p><strong>如何修改 / 删除您发布的信息？</strong></p>
+		<div style="height:10px;clear:both;"></div>
+	  	<p><span style="color:#f00;">未登录账户发布的广告：</span>未登录账户发布的广告：请输入发布广告后系统为您提供的4位管理密码进行编辑/删除操作，如果您不记得密码了，可以发送邮件至 <a href="mailto:admin@dawen.ca">admin@dawen.ca</a>，或 <a href="/about.php?mod=article" target="_blank">联系我们</a>。</p>
+		<div style="height:8px;clear:both;overflow:hidden;"></div>
+		<p><span style="color:#f00;">登录账户发布的广告：</span>请输入您的vanpeople账户登录密码进行编辑/删除操作，如果您不记得密码了，可以点此链接（<a href="/member.php?mod=logging&action=login" target="_blank">找回密码</a>）。</p>
+	  </td>
+	</tr>
+	<tr><td colspan="2" height="25"></td></tr>
+    <tr>
+      <td style="text-align:right; width:235px;">
+	    <span style="font-size:14px;">请您输入信息管理密码：</span>
+	  </td>
+	  <td>
+      <input type="hidden" name="mod" value="member" />
+	    <input name="pwd" id="pwd" type="text" style="padding:2px;" />&nbsp;&nbsp;<span style="color:#f00;">4位管理密码，或输入登陆时的密码。</span>
+        <input type="hidden" name="post_id" value="{$post_id}" />
+		<input type="hidden" name="mod" value="{$mod}" />
+		<input type="hidden" name="op" value="{$op}" />
+	  </td>
+	</tr>
+	<tr>
+	  <td></td>
+	  <td style="text-align:left;padding-top:5px;">
+      <input type="button" name="" onclick="check_dcj();" value="提交" />
+	  </td>
+    </tr>
+  </table>
+</form>
+<script type="text/javascript">
+		function check_dcj()
+		{
+			var pwd = document.getElementById("pwd").value;
+			if(pwd == '')
+			{alert("请输入您的密码！");return false}
+			document.getElementById("form").submit();
+		}
+	</script>
+</div>
+<div style="height:40px;clear:both;"></div>
+<!--{template common/footer}-->

@@ -1,0 +1,217 @@
+<style type="text/css">
+form label{width:90px; text-align:right; display:inline-block; margin-right:10px;font-size:14px}
+form label em{ color:#fc6328;}
+.wrapper form div{margin-top:20px;}
+header {border-bottom: 0px solid #efe6e0;}
+#bb_editor{
+    display:inline-block !important; 
+    margin-top:0px !important;
+}
+#bb_editor div{
+    margin-top:0px !important;
+}
+#postForm .showError {
+	background:#FFEBDD;
+	font-weight:bold;
+}
+#postForm .value .showError {
+	color:#F30;
+}
+#postForm .hiddenError {
+	display:none;
+}
+#postForm .hiddenTips {
+	display:none;
+}
+#postForm .showTips {
+	font-weight:normal;
+	display:block;
+	padding:0 5px 0 20px;
+	background:url(http://static.baixing.com/images/css/global/icon_comment2.gif) no-repeat 5px 4px;
+}
+</style>
+<div class="line" style=""></div>
+<div style="text-align:center; margin:40px auto 30px; font-size:18px; color:#828999;" class="fenlei">
+    <span >1.选择发布大类</span><em>></em><span style="color:#8cc152;">2.填写详细信息</span><em>></em><span>3.发布成功</span>
+</div>
+<div class="wrapper">
+    <form action="{$sale_config['root']}?mod=post" style="margin-left:160px" name="form1" method="post" id="postForm" enctype="multipart/form-data" onsubmit="return validate();">
+        <input type="hidden" name="mod" value="{$mod}" />
+        <input type="hidden" name="ac" value="{$ac}" />
+        <input type="hidden" name="formhash" value="{$_G['formhash']}" />
+        <input type="hidden" name="cat" value="{$dcj_cat1['cat_id']}" />
+        <input type="hidden" name="subcat" value="{$dcj_cat2['cat_id']}" />
+        <input type="hidden" name="goods_settime" value="0" />
+              
+    <!--{if $ac=='edit'}-->
+        <input type="hidden" id="goods_id" name="goods_id" value="{$goods_id}" />
+        <input type="hidden" name="tid" value="{$goods['tid']}" />
+    <!--{/if}-->
+    
+    <!--{if $ac!='edit' && !empty($sale_config['postcredit']) && 0}-->
+        <div class="brian_tips" style="margin-top:0;">
+            <p>{$_lang['xinxifabu_tishi1']} <b>{$sale_config['postcredit']}</b> {$sale_config['credit_unit']} , {$_lang['nin_dangqian']}{$sale_config['credit_unit']} : <b>{$my_credit}. </b></p>
+        </div>
+    <!--{/if}-->
+        
+        <div>
+            <label><em>*</em>信息分类:</label>
+            <span style='font-size:16px'>分类广告 > {$dcj_cat2['cat_title']}</span><a style="color:#fc6328; margin:0 0 0 10px;font-size:14px" href="#">[更改分类]</a>
+        </div>
+        <div>
+            <label><em>*</em>信息标题:</label>
+            <input type="text" size="50" name="goods_title" id="goods_title" maxlength="50" value="{$goods['goods_title']}" style="width:550px; height:28px;">
+            <div id="b0b0P0st1d9hint" class="hiddenError"></div>
+        </div>
+        <div>
+            <label><em>*</em>所属地区:</label>
+            <select name='province'>
+                <option value="" selected="selected">默认地区</option>
+            <!--{loop $_a_sale_area $sale_area}-->
+                <option value="{$sale_area['name']}">{$sale_area['name']}</option>
+            <!--{/loop}-->
+            </select>
+        </div>
+        <div>
+            <label><em>*</em>联系人:</label>
+            <input type="text" autocomplete="off" name="member_username" size="30" maxlength="60"  value="{$member['member_username']}" style="width:220px; height:28px;">
+            <div id="b0b0P0st1d8hint" class="hiddenError"></div>
+        </div>
+    <!--{if $dcj_cat2['cat_pid'] == 1}-->
+        <div>
+            <label><em>*</em>价格:</label>
+            <input name="goods_price" id="goods_price" size="4" maxlength="10" value=""  style="width:220px; height:28px;"/>
+            <div id="b0b0P0st1d7hint" class="hiddenError"></div>
+            <div id="b0b0P0st1d7tips" class="showTips" style="display:none;"><img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/icon_comment2.gif" />请用数字填写，中间不要插入其他符号</div>
+        </div>
+    <!--{/if}-->
+        <div>
+            <label class="v604_fl"><em>*</em>信息内容:</label>
+            <!--<textarea style=" width:550px; height:235px;margin-left:4px"></textarea>-->
+            <script type="text/javascript">
+                var charset ="{$_G['charset']}";
+            </script>
+            <script type="text/javascript" charset="{$_G['charset']}" src="{$sale_config['ue']}editor_config.js"></script>
+            <script type="text/javascript" charset="{$_G['charset']}" src="{$sale_config['ue']}editor_all.js"></script>
+            <script  id="bb_editor" type="text/plain"><!--{eval echo stripslashes($goods['goods_text']);}--></script>
+            <script type="text/javascript">
+                var ue = UE.getEditor('bb_editor');
+            </script>
+            <input type="hidden" name="goods_text" id="goods_text" />
+        </div>
+        <div>
+            <label>电话:</label>
+            <input autocomplete="off" name="member_phone" id="tel" size="30" maxlength="30" type="text" value="{$member['member_phone']}"  style="width:220px; height:28px;"/>
+            <div id="b0b0P0st1d8hint" class="hiddenError"></div>
+            <div id="b0b0P0st1d8tips" class="hiddenTips">&nbsp;<img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/icon_comment2.gif" /> 请填写正确电话，用 “-” 分开</div>
+        </div>
+        <div>
+            <label>电子邮箱:</label>
+            <input autocomplete="off" value="{$member['member_email']}" name="member_email" id="email" size="30" maxlength="50" type="text" style="width:220px; height:28px;"/>
+            <div id="b0b0P0st1d9hint" class="hiddenError"></div>
+            <div id="b0b0P0st1d9tips" class="hiddenTips">&nbsp;<img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/icon_comment2.gif" /> 格式为:myname@example.com</div>
+        </div>
+<style type="text/css">
+#picbox { font-size:12px; }
+#picbox table { margin-bottom:5px; }
+</style><!--
+<div id="b0b0P0st1d12" class="item">
+    <table>
+        <tr>
+            <td class="attribute">{lang sale:post_htm_48}</td>
+            <td class="inputTd">
+                <table id="imagesTable">
+                    <tr>
+                        <td>
+                            <div class="shangchuan">
+                                <input type="button" onclick="document.getElementById('goods_upload_file').click()" name="temp_goods_upload_file_1" value="点击上传图片" style="border:1px solid #ff5200;padding:5px 20px;margin-left:4px;color:#ff5200"/>
+                                <span class="loading" style="display:none;">图片上传中................</span>
+                                <input type="file" style="display:none;" id="goods_upload_file" name="goods_upload_file" />
+                            </div>
+                            <!--{loop $sale_goods_img $sale_img}--
+                            <div class="shangchuan"><img width="100" height="100" src="{$sale_img['img']}" />
+                                <input type="hidden" name="goods_upload_file_[]" value="{$sale_img['img']}" />
+                                <a href="javascript:;" onclick="dcj_del_img(this,{$sale_img['goods_id']},'{$sale_img['img']}');">删除</a>
+                            </div>
+                            <!--{/loop}--
+                        </td>
+                    </tr>
+                </table>
+                <p>{lang sale:post_htm_49}2M </p></td>
+            <td valign="top" class="value"></td>
+        </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript" src="$_G['style']['v604t_common']js/jquery-1.9.1.js"></script>
+    <script type="text/javascript">
+        jQuery.noConflict();
+      jQuery(document).ready(function(){
+
+        jQuery("#goods_upload_file").change(function(){
+            var data = new FormData();
+            jQuery.each(jQuery("#goods_upload_file")[0].files,function(i,file){
+              data.append("goods_upload_file_"+i,file);
+            });
+            jQuery(".loading").show();
+            var goods_id = jQuery("#goods_id").val();
+        //发送数据
+        jQuery.ajax({
+          url:'sale.php?mod=post&goods_file=goods_upload_file',
+          type:'POST',
+          data:data,
+          cache: false,
+          contentType: false,   //不可缺参数
+          processData: false,   //不可缺参数
+          success:function(data){
+            //data = $(data).html();
+            //第一个feedback数据直接append，其他的用before第1个（ .eq(0).before() ）放至最前面。
+            //data.replace(/&lt;/g,'<').replace(/&gt;/g,'>') 转换html标签，否则图片无法显示。
+            var img = '<div class="shangchuan"><img width="100" height="100" src="'+data+'" />'+
+                '<input type="hidden" name="goods_upload_file_[]" value="'+data+'" />'+
+                '<a href="javascript:;" onclick="dcj_del_img(this,'+goods_id+',\''+data+'\')">删除</a></div>';
+             jQuery(".shangchuan").last().after(img);
+            jQuery(".loading").hide();
+            jQuery("#goods_upload_file").val(''); //加载成功移除加载图片
+          },
+          error:function(){
+            alert('上传出错');
+            jQuery(".loading").hide();  //加载失败移除加载图片
+          }
+
+        });
+
+      });
+    });
+
+    function dcj_del_img(obj,post_id,img){
+      jQuery.post(
+        'sale.php?mod=post&goods_file=del_upfile',
+        {post_id:post_id,img:img},
+        function(data)
+        {
+          jQuery(obj).parent().remove();
+        },'json'
+      );
+    }
+    </script>
+    </div>-->
+    <div style="height:5px; overflow:hidden; clear:both;"></div>
+    <script type="text/javascript" language="javascript">
+        function validate() {
+            if(jQuery('goods_title').value ==''){
+                showPrompt(null, null, '"{lang sale:admin_jubao_htm_2}",{lang sale:post_htm_67}!', 2000);
+                jQuery('goods_title').focus();
+                return false;
+            }else{
+                jQuery('goods_text').value =  UE.getEditor('bb_editor').getContent();
+            }
+        }
+        function districtbox_edit_fun(){
+            display('districtbox_show');
+            brian_showdistrict("districtbox", ["province", "city", "dist", "community"], 4, 1);
+        }
+    </script>
+    <input type="submit" name="{$ac}_submit" value="发布信息" style=" display:block; padding:8px 50px; margin:50px auto 20px; border-radius:2px; background:#fc6328; border:0 none; color:#fff;margin-left:240px;font-size:14px" />
+    <p style="text-align:center; color:#828999; margin-bottom:50px;margin-left:-190px">注：发布即代表您已阅读并同意 <a href="#" style="color:#fc6328;">《人在温哥华网服务条款》</a></p>
+    </form>
+</div>

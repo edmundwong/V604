@@ -1,0 +1,75 @@
+<!--{subtemplate common/header_common}-->
+    <link href="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/header.css" rel="stylesheet" type="text/css">
+<link href="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/base.css" rel="stylesheet" type="text/css">
+<link href="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/include.css" rel="stylesheet" type="text/css">
+<link href="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/secondmarket.css" rel="stylesheet" type="text/css">
+    
+    <body id="nv_{$_G[basescript]}" class="pg_{CURMODULE}{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}" onkeydown="if(event.keyCode==27) return false;">
+    
+    <div id="append_parent"></div><div id="ajaxwaitid"></div>
+    
+<div class="header-top" style="height:78px; overflow:hidden;">
+  <div class="logo" title="返回首页" >
+    <h1 style="float:left;"><!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}--></h2>
+					</h1>
+
+		    <div class="z" style="width:100px; text-align:center; padding-top:15px;  ">
+		        <p style="color:#FB8730; font-size:20px;">{$area_title}</p>
+		        <p><a href="{$info_config['root']}?mod=ajax&op=changecity" onClick="showWindow('changecity',this.href,'get','0');">[切换]</a></p>
+		    </div>
+
+    
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  <div class="quick-menu">
+    <ul class="quick-menu-list">
+    <li class="member">
+  <!--{if $_G['uid']}-->
+
+		您好，{$_G[member][username]}
+
+		<a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+<!--{elseif !$_G[connectguest]}-->
+
+    您好，欢迎来大温同城！
+
+    <a href="/member.php?mod=logging&action=login">
+
+        [请登录]
+
+    </a>
+    <a href="/member.php?mod=register">
+
+        [免费注册]
+
+    </a>
+
+<!--{/if}--></li>
+      <li class="alipay" title="免费发布个人广告"><a href="/sale.php?mod=choclass" style="color:#f00;">免费发布个人广告</a></li>
+      <li class="alipay" title="发布服务广告"><a href="/info.php?mod=member&op=post">发布服务广告</a></li>
+	  <li class="alipay" title="分类广告"><a href="/sale.php">分类广告</a></li>
+	  <li class="alipay" title="服务黄页"><a href="/info.php">服务黄页</a></li>
+    </ul>
+  </div>
+  <div style="position:relative; float:right;">
+    <div class="channel_top" style="position:absolute; top:47px; width:420px; right:0;">
+      <div class="links">
+	    <a href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">主站</a><span class="sublinks"><a href="/news/">新闻资讯</a>｜<a href="/sale.php">分类广告</a>｜<a href="/info.php">服务黄页</a>｜<a href="/plugin.php?id=dz55625_haodian:haodian">大温店铺</a>｜<a href="/forum.php">社区论坛</a>｜<a href="/home.php">个人空间</a></span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+{template sale:admin/style}
+<div id="plugin_admin">
+    <h1>{lang sale:admin_ad_htm_1}({lang sale:admin_ad_htm_2}.)</h1>
+    <div class="brian_tips">
+        <p>{lang sale:admin_ad_htm_3}</p>
+        <p>{lang sale:admin_ad_htm_4}"{lang sale:admin_ad_htm_5}"{lang sale:admin_ad_htm_6}.</p>
+    </div>
+    <table class='table'>
+    <tr>
+        <th>{lang sale:admin_ad_htm_7}</th>
+        <th>{lang sale:admin_ad_htm_8}</th>
+        <th>{lang sale:admin_ad_htm_9}</th>
+        <th>{lang sale:admin_ad_htm_10}</th>
+        <th>&nbsp;</th>
+    </tr>
+    {loop $ad_array $ad}
+    <tr>
+        <td>{$ad['ad_title']}</td>
+        <td>{$ad['ad_link']}</td>
+        <td><img src="{$ad['ad_pic']}"  width="80" /></td>
+        <td>{$ad['ad_sort']}</td>
+        <td><a href="admin.php?{$cp_url}&del={$ad['ad_id']}">{lang sale:admin_ad_htm_11}</a></td>
+    </tr>
+    {/loop}
+    <tr>
+        {eval showformheader($self_url); }
+        <td><input type='text' name='ad_title' class='m' /></td>
+        <td><input type='text' name='ad_link' class='m'  /></td>
+        <td><input type='text' name='ad_pic' class='m'  /></td>
+        <td><input type='text' name='ad_sort' /></td>
+        <td><input type='submit' name='admin_submit' value='{lang sale:admin_ad_htm_12}' class='btn' /></td>
+         {eval showformfooter(); }
+    </tr>
+    </table>
+    <div>{lang sale:admin_ad_htm_13}:</div>
+    <div>
+        <p><img src="{$_G['siteurl']}source/plugin/sale/banner/1.gif" width="130" /> {$_G['siteurl']}source/plugin/sale/banner/1.gif</p>
+        <p><img src="{$_G['siteurl']}source/plugin/sale/banner/2.gif" width="130" /> {$_G['siteurl']}source/plugin/sale/banner/2.gif</p>
+        <p><img src="{$_G['siteurl']}source/plugin/sale/banner/3.gif" width="130" /> {$_G['siteurl']}source/plugin/sale/banner/3.gif</p>
+        <p><img src="{$_G['siteurl']}source/plugin/sale/banner/4.gif" width="130" /> {$_G['siteurl']}source/plugin/sale/banner/4.gif</p>
+        <p><img src="{$_G['siteurl']}source/plugin/sale/banner/5.gif" width="130" /> {$_G['siteurl']}source/plugin/sale/banner/5.gif</p>
+        <p><img src="{$_G['siteurl']}source/plugin/sale/banner/6.gif" width="130" /> {$_G['siteurl']}source/plugin/sale/banner/6.gif</p>
+    </div>
+</div>

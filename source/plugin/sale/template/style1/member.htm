@@ -1,0 +1,15 @@
+<!--{eval include template("sale:$style/header");}-->
+<!--{eval include template("sale:$style/style");}-->
+ <link href="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/post.css" rel="stylesheet" type="text/css">
+<div class="nav_bottom_line"></div>
+<div id="search_keyword"><div style="display: none;" id="container_website"></div></div>
+<script type="text/javascript" src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/event_public_pub.js"></script>
+<p style="padding:5px;"></p>
+            <!--{if $op =='mypost' || $op =='mypostup'}-->
+                <!--{eval include template("sale:$style/member/member_mypost");}-->
+            <!--{else}-->
+                <!--{eval include template("sale:$style/member/member_$op");}-->
+            <!--{/if}-->
+
+
+<!--{template common/footer}-->

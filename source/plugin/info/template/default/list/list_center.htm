@@ -1,0 +1,44 @@
+<table class="info_list_center_table fix" style="text-align:left;">
+     {eval $list_i =0;}
+     {loop $post_list $post}
+    <tr class="li {if $list_i==1} brian_post_list_bg {/if}" onmouseover="this.className='li hover'" onmouseout="this.className='li {if $list_i==1}brian_post_list_bg{/if} '" style="border:none; {if $post['post_up']} background-color:#FFFDE6; {/if}">
+        <td class="tdimg">
+            <div style="position:relative;">
+                {if $post['post_up']}<div class="post_up"></div>  {/if}
+                <a href="{$info_config['root']}?mod=view&post_id={$post['post_id']}">{if $post['post_img_1']}<img src="{$post['post_img_1']}" />{else}<img src="{$info_config['info']}static/images/noimage.jpg" />{/if}</a>
+            </div>
+       </td>
+        <td style="line-height:25px;">
+            <a class="info_list_center_title" href="{$info_config['root']}?mod=view&post_id={$post['post_id']}" target="_blank">{$post['post_title']}</a>
+            {if $post['post_up']}<img src="{$info_config['info']}static/images/ding.png" title="{lang info:index_htm_7}" />{/if}
+            {if $post['post_img_1']}<span class="ispic">{$info_lang['list_center_htm_1']}</span>{/if}
+            <div>
+                {echo cutstr(strip_tags($post['post_text']),60);}
+            </div>
+            <p style="line-height:25px;">
+                {$info_lang['area']}: {$post['area_title']} {$post['subarea_title']} {$post['thrarea_title']}</b>
+                <span class="pipe">|</span>
+                {$info_lang['list_center_htm_2']}: <a href="{$info_config['root']}?mod=list&subcat_id={$post['subcat_id']}" target="_blank" style="color:#666">{$post['subcat_title']}</a>
+                <span class="pipe">|</span>
+                {echo dgmdate($post['post_time'],'u');}
+            </p>
+        </td>
+        <td class="tc" style="width:150px;">
+            <div><span style="color:Red; font-size:16px; font-weight:bold; margin-right:3px;" >&yen;{$post['post_price']}</span>/{$post['post_price_unit']}</div>
+        </td>
+        <td style="width:100px; text-align:center;">
+            {if $post['verify'.$info_config['geren']]==1}
+                <div class="info_geren"><a href="home.php?mod=spacecp&ac=profile&op=verify&vid={$info_config['geren']}" target="_blank">{$info_lang['list_center_htm_3']}</a></div>
+            {elseif $post['verify'.$info_config['qiye']]==1}
+                <div class="info_qiye"><a href="home.php?mod=spacecp&ac=profile&op=verify&vid={$info_config['qiye']}" target="_blank">{$info_lang['list_center_htm_4']}</a></div>
+            {/if}
+        </td>
+    </tr>
+    {if $list_i ==1}
+        {eval $list_i =0;}
+    {else}
+        {eval $list_i =1;}
+    {/if}
+     {/loop}
+</table>
+<div class="cl">{$multipage}</div>

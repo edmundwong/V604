@@ -1,0 +1,14 @@
+{template common/header}
+
+<div class="userAddpc" style="width:300px;">
+    <h2><strong>{$tmp_lang['up_xgtpmc']}</strong><a href="javascript:;" onClick="hideWindow('updateimg');" class="flbc" title="{lang close}">{lang close}</a></h2>
+    <input type="hidden" value="{$img[id]}" id="img_id" />
+     <div class="addkk" style="width:96%;  margin:0 auto; text-align:center"><h3 style="height:100px; line-height:100px;">{$tmp_lang['up_tpmc']}£º<input type="text" value="{$img[title]}" id="imgtitle" /></h3></div> 
+     <div class="addkk" style="width:96%;  margin:0 auto; text-align:center"><input type="button" value="{$tmp_lang['addmapqued']}" onClick="updateimgtext()" />&nbsp;&nbsp;<input type="button" value="{lang close}" onClick="hideWindow('updateimg');" /></div> 
+  
+    
+</div>
+
+{template common/footer}
+
+

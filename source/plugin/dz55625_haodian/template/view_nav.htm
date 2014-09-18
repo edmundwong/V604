@@ -1,0 +1,49 @@
+<style type="text/css">
+.shadow{-moz-box-shadow:1px 1px 2px rgba(0,0,0,.2); -webkit-box-shadow:1px 1px 2px rgba(0,0,0,.2); box-shadow:1px 1px 2px rgba(0,0,0,.2);}
+</style>
+<div id="view_nav">
+    <ul>
+    	<li id="nava"><a href="<!--{if $RewriteStart == 1}-->{$curl}_add.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=add<!--{/if}-->" target="_blank">{lang dz55625_haodian:viewadds}</a></li>
+    	<li id="navb"><a href="<!--{if $RewriteStart == 1}-->{$curl}_user.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian_user<!--{/if}-->" target="_blank">{lang dz55625_haodian:viewadmins}</a></li>
+        <li <!--{if $p == 'index' || $p == ''}-->class="hover"<!--{else}-->id="navc"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vi{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&amp;mod=view&amp;p=index&amp;sid={$_G['gp_sid']}<!--{/if}-->">{lang dz55625_haodian:viewabout}</a></li>
+        <li <!--{if $p == 'news'}-->class="hover"<!--{else}-->id="navg"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vn{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&amp;mod=view&amp;p=news&amp;sid={$_G['gp_sid']}<!--{/if}-->">{lang dz55625_haodian:viewanews}</a></li>
+        <li <!--{if $p == 'listpic'}-->class="hover"<!--{else}-->id="navd"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vp{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&amp;mod=view&amp;p=listpic&amp;sid={$_G['gp_sid']}<!--{/if}-->">{lang dz55625_haodian:viewphoto}</a></li>
+        <!--{if $mythread[click]==1 && $StHop=='1'}--><li <!--{if $p == 'shop'}-->class="hover"<!--{else}-->id="navf"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vs{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&amp;mod=view&amp;p=shop&amp;sid={$_G['gp_sid']}<!--{/if}-->">{lang dz55625_haodian:viewshop}</a></li><!--{/if}-->
+        <li id="navh"><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$_G[gp_sid]}_books.html#books<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=index&sid={$_G[gp_sid]}#books<!--{/if}-->">{lang dz55625_haodian:viewbooks}</a></li>
+        <li id="navi" style="border-bottom:none"><a href="<!--{if $RewriteStart == 1}-->{$curl}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian<!--{/if}-->">{lang dz55625_haodian:viewlist}</a></li>
+    </ul>
+</div> 
+
+<script type="text/javascript">
+jq.fn.smartFloat = function() {
+	var position = function(element) {
+		var top = element.position().top, pos = element.css("position");
+		jq(window).scroll(function() {
+			var scrolls = jq(this).scrollTop();
+			if (scrolls > top) { //如果滚动到页面超出了当前元素element的相对页面顶部的高度
+				if (window.XMLHttpRequest) { //如果不是ie6
+					element.css({
+						position: "fixed",
+						top: 0
+					}).addClass("shadow");	
+				} else { //如果是ie6
+					element.css({
+						top: scrolls
+					});	
+				}
+			}else {
+				element.css({
+					position: pos,
+					top: top
+				}).removeClass("shadow");	
+			}
+		});
+	};
+	return jq(this).each(function() {
+		position(jq(this));						 
+	});
+};
+jq(function(){
+	jq("#view_nav").smartFloat();
+});
+</script>

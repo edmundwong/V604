@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[club_extend_sale.pack]]></item>
+	<item id="RevisionID"><![CDATA[11166]]></item>
+	<item id="SN"><![CDATA[2014011316syqV57JCb3]]></item>
+	<item id="RevisionDateline"><![CDATA[1359098338]]></item>
+	<item id="Data">
+		<item id="/source/class/block/sale/blockclass.php"><![CDATA[1c7946d5aebc04b82c987187e6f88cbe]]></item>
+		<item id="/source/class/block/sale/block_sale.php"><![CDATA[b317cd13e46c0209f80992360cd2ec64]]></item>
+		<item id="/source/class/block/sale/index.htm"><![CDATA[dec89760e62adf987c33e5400cc1bd11]]></item>
+	</item>
+</root>

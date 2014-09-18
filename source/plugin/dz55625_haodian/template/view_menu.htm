@@ -1,0 +1,11 @@
+<div id="view_nav">
+   <ul>
+   <li id="navi" style="border-bottom:none"><a href="<!--{if $RewriteStart == 1}-->{$curl}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian<!--{/if}-->">{lang dz55625_haodian:viewlist}</a></li>
+        <li <!--{if $p == 'index' || $p == ''}-->class="hover"<!--{else}-->id="navc"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vi{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=index&sid={$_G['gp_sid']}<!--{/if}-->">{lang dz55625_haodian:viewabout}</a></li>
+    	<li <!--{if $p == 'news'}-->class="hover"<!--{else}-->id="navg"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vn{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=news&sid={$_G['gp_sid']}<!--{/if}-->">{lang dz55625_haodian:viewanews}</a></li>
+        <li <!--{if $p == 'listpic'}-->class="hover"<!--{else}-->id="navd"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vp{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=listpic&sid={$_G['gp_sid']}<!--{/if}-->">{lang dz55625_haodian:viewphoto}</a></li>
+        <!--{if $mythread[click]==1 && $StHop=='1'}--><li <!--{if $p == 'shop'}-->class="hover"<!--{else}-->id="navf"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vs{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=shop&sid={$_G['gp_sid']}<!--{/if}-->">{lang dz55625_haodian:viewshop}</a></li><!--{/if}-->
+       <!--{if $Ystart == '1'}--><li <!--{if $p == 'yuyue'}-->class="hover"<!--{else}-->id="navg"<!--{/if}-->><a href="plugin.php?id=dz55625_haodian:haodian&mod=view&p=yuyue&sid={$_G['gp_sid']}">{lang dz55625_haodian:yuyuesi}</a></li><!--{/if}-->
+         <li><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$_G[gp_sid]}_books.html#books<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=index&sid={$_G[gp_sid]}#books<!--{/if}-->">{lang dz55625_haodian:viewbooks}</a></li>
+    </ul>
+</div> 

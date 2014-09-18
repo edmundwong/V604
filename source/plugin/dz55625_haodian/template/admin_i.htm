@@ -1,0 +1,100 @@
+  
+<table class="tb tb2 ">
+<tr><th colspan="15" class="partition">{$tmp_lang['adminlisth']}($counts){$tmp_lang['adminjia']}</th></tr>
+</table>
+
+<table class="tb tb2 ">
+    <tr>
+    <td>
+    <div style="line-height:2em">
+    <h2>{$tmp_lang['diyshuom_1']}<span>{if $kdiy==0}[ <a href="#" style="color:#F00">{$tmp_lang['diyshuom_2']}</a> ]</span>{else}[ <a href="$appurl&p=diy&d=yes">{$tmp_lang['diyshuom_3']}</a> ]</span>{/if}</h2>
+{$tmp_lang['diyshuom']}
+</div>
+    </td>
+    </tr>
+</table> 
+
+<table class="tb tb2 " style="border-bottom:1px dotted #DEEFFA">
+<tr>
+<td>
+ <form method="post" autocomplete="off" action="$appurl&p=index" name="applyform">
+ <input type="hidden" name="formhash" value="{FORMHASH}" />
+ <input class="keyword" type="text" name="title" value="{$tmp_lang['shurujiansuo']}" onfocus="if(value=='{$tmp_lang['shurujiansuo']}') {value='';}this.style.color='#000';" onblur="if (value=='') {value='{$tmp_lang['shurujiansuo']}';this.style.color='#999';}"  style="height:25px; line-height:25px; margin:0 8px 0 0; padding:0 5px; width:230px; float:left" />
+ <button type="submit" class="btn" style="border:1px #D4D4D4 solid; height:27px; float:left; width:70px; margin:0">{$tmp_lang['searchic']}</button>
+ </form>
+</td></tr></table> 
+
+<table class="tb tb2 ">
+<tr class="header">
+<th width="20"></th><th width="50">{$tmp_lang['adminpaixu']}</th><th width="340">{$tmp_lang['addmingc']}</th><th>{$tmp_lang['adminzts']}</th><th>{$tmp_lang['hometime']}</th><th>{$tmp_lang['adminczuo']}</th>
+</tr>
+<div>
+<ul class="tab1">
+		<li class="current"><a href="$appurl"><span>{$tmp_lang['adminduo']}</span></a></li>
+        {loop $listclass $k $v}
+        	<li><a href="$appurl&c=$k"><span>$v</span></a></li>
+        {/loop}
+</ul>
+ </div>
+ 
+ <form method="post" autocomplete="off" action="$appurl&p=index" name="applyform">
+
+ <input type="hidden" name="formhash" value="{FORMHASH}" />
+  {loop $mythreads $key $mythread}
+  
+  <tr class="hover">
+  <td><input type="checkbox" class="checkbox" name="piliang[]" value="{$mythread[id]}"></td>
+    <td><input type="text" name="xnum[{$mythread[id]}]" value="{$mythread[xnum]}" size="4" /></td>
+    <td><input type="text" class="txt" name="title[{$mythread['id']}]" value="{$mythread[title]}" style="width:320px;" /></td>
+    <td>
+    <!--{if empty($mythread[click])}-->
+    <a href="$appurl&p=vip&d=yes&id=$mythread[id]" onclick="return confirm('{$tmp_lang['avipadd']}')">{$tmp_lang['novip']}</a> <span class="pipe">|</span>
+    <!--{else}-->
+    <a href="$appurl&p=vip&d=no&id=$mythread[id]" style="color: #F00">{$tmp_lang['yesvip']}</a>  <span class="pipe">|</span>
+    <!--{/if}--> 
+    
+    <!--{if empty($mythread[topid])}-->
+    <a href="$appurl&p=topid&d=yes&id=$mythread[id]" onclick="return confirm('{$tmp_lang['toptixing']}')">{$tmp_lang['topnow']}</a>  <span class="pipe">|</span>
+    <!--{else}-->
+    <a href="$appurl&p=topid&d=no&id=$mythread[id]" style="color: #F90">{$tmp_lang['topyes']}</a>  <span class="pipe">|</span>
+    <!--{/if}--> 
+    <!--{if empty($mythread[top])}-->
+    <a href="$appurl&p=top&tj=yes&id=$mythread[id]">{$tmp_lang['adminwtuijian']}</a>  <span class="pipe">|</span>
+    <!--{else}-->
+    <a href="$appurl&p=top&tj=no&id=$mythread[id]" style="color: #F90">{$tmp_lang['adminytuijian']}</a>  <span class="pipe">|</span> 
+    <!--{/if}-->
+    
+    {if $fidstart == '1'}
+    <!--{if $mythread[tuis]=='1'}-->
+    	<a style="color:#F00">{$tmp_lang['ytuis']}</a>  <span class="pipe">|</span> 
+    <!--{elseif $mythread[tuis]=='0'}-->
+    	<a href="$appurl&p=tui&id=$mythread[id]">{$tmp_lang['wtuis']}</a>  <span class="pipe">|</span> 
+    <!--{/if}-->
+    {/if}
+    
+     <!--{if empty($mythread[display])}-->
+    <a href="$appurl&p=check&operation=yes&id=$mythread[id]" style="color:#F00">{$tmp_lang['adminshenhe']}</a>
+    <!--{else}-->
+    <a href="$appurl&p=check&operation=no&id=$mythread[id]" style="color:#090">{$tmp_lang['adminshenhek']}</a>
+    <!--{/if}-->
+
+    </td>
+    <td>
+    {echo date('y-m-d',$mythread[dateline])}
+    </td>
+    <td>
+    <a href="$appurl&amp;p=edit&amp;id=$mythread[id]">{$tmp_lang['adminbianji']}</a> <a href="$appurl&amp;p=del&amp;id=$mythread[id]" onclick="return confirm('{$tmp_lang['adminshanchutx']}')">{$tmp_lang['adminshanchu']}</a>
+    </td>
+  </tr>
+  {/loop}
+  <tr>
+  <table>
+  <input type="hidden" name="newid" value="{$mythread[id]}" size="1" />
+&nbsp;<input type="checkbox" onclick="checkAll('prefix', this.form, 'piliang')" class="checkbox" id="chkallxm8R" name="chkall"><label for="chkallxm8R">{$tmp_lang['quanxuanok']}</label>&nbsp;&nbsp;<input type="submit" value="VIP" name="applysubmvip" id="applysubmvip" class="btn">&nbsp;<input type="submit" value="{$tmp_lang['zhiding']}" name="applysubmzd" id="applysubmzd" class="btn">&nbsp;<input type="submit" value="{$tmp_lang['tuijiansok']}" name="applysubmtj" id="applysubmtj" class="btn">&nbsp;<input type="submit" value="{$tmp_lang['shenhesok']}" name="applysubmsh" id="applysubmsh" class="btn">&nbsp;<input type="submit" class="btn" id="applysubmdel" name="applysubmdel" value="{$tmp_lang['adminshanchu']}" />&nbsp;<input type="submit" class="btn" id="applysubmitz" name="applysubmitz" value="{$tmp_lang['paixusoks']}" />
+  </table>
+  </tr>
+</form>  
+
+</table>
+
+<div class="cuspages right"><div class="pg">{$multis}</div></div>

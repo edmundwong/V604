@@ -1,0 +1,27 @@
+<!--{eval include template("gongqiu:$style/style");}-->
+{template gongqiu:admin/style}
+
+<div id="plugin_admin" class="brian_main">
+<div class="brian_box pd5 bgf">
+
+    <h2 class="h2">{lang gongqiu:admin_jubao_htm_1}</h2>
+    {if $jubao_array}
+        <table class='brian_table'>
+        <tr>
+            <th>{lang gongqiu:admin_jubao_htm_2}</th>
+            <th>{lang gongqiu:admin_jubao_htm_3}</th>
+            <th>&nbsp;</th>
+        </tr>
+        {loop $jubao_array $jubao}
+        <tr>
+            <td><a href="{$gongqiu_config['root']}?mod=view&goods_id={$jubao['goods_id']}" target="_blank">{$jubao['goods_title']}</a></td>
+            <td>{echo dgmdate($jubao['jubao_time'],'u');}</td>
+            <td><a href="admin.php?{$cp_url}&del={$jubao['jubao_id']}">{lang gongqiu:admin_ad_htm_11}</a></td>
+        </tr>
+        {/loop}
+        </table>
+    {else}
+    <div class="brian_tips">{lang gongqiu:admin_jubao_htm_5}</div>
+    {/if}
+</div>
+</div>

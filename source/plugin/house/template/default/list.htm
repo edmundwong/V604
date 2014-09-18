@@ -1,0 +1,293 @@
+<!--{template common/header}-->
+<!--{eval include template("house:$style/style");}-->
+<!--{eval include template("house:$style/head");}-->
+
+<div class='brian_main'>
+
+    <div id="pt" class="bm cl">
+        <span class="z">
+            <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+            <em>&raquo;</em>
+            <a href="{$house_config['root']}">{$house_config['name']}</a>
+            <em>&raquo;</em>
+            <a href="{$house_config['root']}?mod=list&profile_type_id={$profile_type_id}">{$profile_type_title}</a>
+
+            {if $pre_area['uname']}
+                <em>&raquo;</em>
+                <a href="{$house_config['root']}?mod=list&profile_type_id={$profile_type_id}&upid={$pre_area['upid']}">{$pre_area['uname']}</a>
+            {/if}
+            <em>&raquo;</em>
+            <a href="{$house_config['root']}?mod=list&profile_type_id={$profile_type_id}&upid={$pre_area['id']}">{$pre_area['name']}</a>
+         </span>
+        <span class="y">
+            {$house_lang['welcome']} <b>{$_G['username']}</b>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=1">{$house_lang['rent']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=2">{$house_lang['need_rent']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=3">{$house_lang['sell']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=5">{$house_lang['need_sell']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=loupan">{$house_lang['loupan']}</a>
+            {if $_G['uid']}
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=member">{$house_lang['member']}</a>
+                {if $is_house_admin}
+                <span class="pipe">|</span>
+                <a href="{$house_config['root']}?mod=admin">{$house_lang['admin_main_1']}</a>
+                {/if}
+            {/if}
+            &nbsp;
+        </span>
+    </div>
+    
+    <!--[diy=house_list_top]--><div id="house_list_top" class="area"></div><!--[/diy]-->
+    
+    <div class="brian_box bgf house_list_search">
+            <h1 class="h1">{$house_lang['search']}</h1>
+            <table class="fix brian_select_table">
+                {if $area_array}
+                <tr>
+                    <td style="width:60px;" class="tr pd5">{$house_lang['area']}: </td>
+                    <td class="pd5">
+                        {loop $area_array $area}
+                            <a href="{$house_config['root']}?mod=list&profile_type_id={$profile_type_id}&level={$area['level']}&upid={$area['id']}">{$area['name']}</a>
+                        {/loop}
+                    </td>
+                </tr>
+                {/if}
+                {if $profile_type_id ==1}
+                    <tr>
+                        <td style="width:60px;" class="tr pd5">{$house_lang['rent_price']}: </td>
+                        <td class="pd5">
+                            <a href="{$house_config['root']}?mod={$mod}&profile_type_id={$profile_type_id}" {if empty($_GET['rent_price_2'])} class="hover" {/if}>{lang house:list_htm_20}</a>
+                            <input type="text" id="rent_price_1" value="{$rent_price_1}" class="text {if isset($_GET['rent_price_2'])} border_orange {/if}" style="width:50px;"  />
+                            <span class="pipe">-</span>
+                             <input type="text" id="rent_price_2" value="{$rent_price_2}" class="text {if isset($_GET['rent_price_2'])} border_orange {/if}" style="width:50px;" /> {$house_lang['yuan']}
+                            <a href="javascript:;" onclick="list_check_btn('rent_price');" class="btn" >{$house_lang['saixuan']}</a>
+                        </td>
+                    </tr>
+                {elseif $profile_type_id ==3 || $profile_type_id ==5 }
+                    <tr>
+                        <td style="width:60px;" class="tr pd5">{$house_lang['house_area']}: </td>
+                        <td class="pd5">
+                            <a href="{$house_config['root']}?mod={$mod}&profile_type_id={$profile_type_id}"  {if empty($_GET['house_area_2'])} class="hover" {/if}>{lang house:list_htm_20}</a>
+                            <input type="text" id="house_area_1" value="{$house_area_1}" class="text {if isset($_GET['house_area_2'])} border_orange {/if}" style="width:50px;" />
+                            <span class="pipe">-</span>
+                            <input type="text" id="house_area_2" value="{$house_area_2}" class="text {if isset($_GET['house_area_2'])} border_orange {/if}" style="width:50px;" /> {$house_lang['m2']}
+                            <a href="javascript:;" onclick="list_check_btn('house_area');" class="btn" >{$house_lang['saixuan']}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:60px;" class="tr pd5">{$house_lang['sell_price']}: </td>
+                        <td class="pd5">
+                            <a href="{$house_config['root']}?mod={$mod}&profile_type_id={$profile_type_id}" {if empty($_GET['sell_price_2'])} class="hover" {/if}>{lang house:list_htm_20}</a>
+                            <input type="text" id="sell_price_1" value="{$sell_price_1}" class="text {if isset($_GET['sell_price_2'])} border_orange {/if}" style="width:50px;" />
+                            <span class="pipe">-</span>
+                             <input type="text" id="sell_price_2" value="{$sell_price_2}" class="text {if isset($_GET['sell_price_2'])} border_orange {/if}" style="width:50px;" /> {$house_lang['wan']}
+                            <a href="javascript:;" onclick="list_check_btn('sell_price');" class="btn" >{$house_lang['saixuan']}</a>
+                        </td>
+                    </tr>
+                {/if}
+                {loop $profile_setting $ps}
+                    {if $ps['profile_setting_formtype'] =='select' && $ps['profile_setting_allowsearch']==1}
+                    <tr>
+                        <td style="width:60px;" class="tr pd5">{$ps['profile_setting_title']}: </td>
+                        <td class="pd5">
+                            {eval $ps['profile_setting_choices'] = explode("\r\n",$ps['profile_setting_choices']);}
+                                <a href="{$urlnow}&{$ps['profile_setting_name']}=" {if empty($_GET[$ps['profile_setting_name']])} class="hover" {/if}>{lang house:list_htm_20}</a>
+                                {loop $ps['profile_setting_choices'] $v}
+                                    <a href="{$urlnow}&{$ps['profile_setting_name']}={$v}" {if $_GET[$ps['profile_setting_name']] == $v } class="hover" {/if} >{$v}</a>
+                                {/if}
+                        </td>
+                    </tr>
+                    {/if}
+                {/loop}
+            </table>
+            <script type="text/javascript">
+                function list_check_btn(id){
+                    var urlnow = '{$urlnow}';
+                    location.href = urlnow + '&'+id+'_1=' + $(id+'_1').value + '&'+id+'_2=' + $(id+'_2').value;
+                }
+            </script>
+    </div>
+    
+    <div class="cl bgf">
+        <!--[diy=house_list_ad01]--><div id="house_list_ad01" class="area"></div><!--[/diy]-->
+    </div>
+    
+    <div class="brian_box pd5 bgf">
+        <div class="brian_post_list">
+            <div class="brian_post_list_cat cl">
+                <span class="z">
+                <span style="display:none;">
+                    <b>{$house_lang['list_htm_1']} : </b><a href="#" class="hover">{$house_lang['list_htm_2']}</a>
+                    <a href="#">{$house_lang['person']}</a>
+                    <a href="#">{$house_lang['broker']}</a>
+                </span>
+                
+                <b>{$house_lang['orderby']} : </b>
+                <a href="{$urlnow}&orderby=post_time" {if $orderby=='post_time'} class="hover" {/if}>{$house_lang['orderby_post_time']}</a>
+                <a href="{$urlnow}&orderby=post_end_time" {if $orderby=='post_end_time'} class="hover" {/if}>{$house_lang['orderby_post_end_time']}</a>
+                <a href="{$urlnow}&orderby=post_begin_time" {if $orderby=='post_begin_time'} class="hover" {/if}>{$house_lang['orderby_post_begin_time']}</a>  
+                </span>
+                <span class="y">
+                    <a href="{$house_config['root']}?mod=member&op=post&profile_type_id={$profile_type_id}" class="btn" {if !$_G['uid']}  onclick="showWindow('login', this.href);return false;" {/if}>+ {$house_lang['lijifabu']}</a>
+                    <span style="display:none">
+                        <span class="pipe">|</span>
+                        <a href="#" class="hover"><img src="{$house_config['house']}template/{$style}/css/images/btn_tuwen.gif" /></a>
+                        <span class="pipe">|</span>
+                        <a href="#"><img src="{$house_config['house']}template/{$style}/css/images/btn_wenben.gif" /></a>
+                    </span>
+                </span>
+            </div>
+            {if $profile_setting_done ==1 || $search['search_txt']}
+            <div class="ltips">
+                {if $profile_setting_done ==1}
+                    {lang house:list_htm_29} : 
+                    {loop $profile_setting $v}
+                        {if !empty($_GET[$v['profile_setting_name']])}
+                           <b>{$profile_setting[$v['profile_setting_name']]['profile_setting_title']}:</b> {$_GET[$v['profile_setting_name']]}
+                           <span class="pipe">|</span>
+                        {/if}
+                    {/loop}
+                {/if}
+                {if $search['search_txt']}<b>{$house_lang['search_txt']}: </b>{$search['search_txt']}{/if}
+            </div>
+            {/if}
+            <table class="dt mtm" style="text-align:left;">
+                <tr>
+                    <th style="width:170px;" class="tc">{$house_lang['img']}</th>
+                    <th>{$house_lang['info']}</th>
+                    <th style="width:120px;" class="tc">{$house_lang['loupan']}</th>
+                    
+                    {if $profile_type_id==1}
+                        <th style="width:100px;" class="tc">{$house_lang['rent_price']}</th>
+                        <th style="width:100px;">{$house_lang['rent_type']}</th>
+                    {elseif $profile_type_id==2}
+                        <th style="width:120px;">{$house_lang['hope_rent_price']}</th>
+                        <th style="width:80px;" class="tc">{$house_lang['house_type']}</th>
+                    {elseif $profile_type_id==3 ||  $profile_type_id==5}
+                        <th style="width:50px;" class="tc">{$house_lang['sell_price']}</th>
+                        <th style="width:100px;" class="tc">{$house_lang['junjia']}</th>
+                    {/if}
+                    
+                    <th style="width:100px; display:none;">{$house_lang['post_time']}</th>
+                </tr>
+                {eval $list_i =0;}
+                 {loop $post_list $post}
+                <tr class="li {if $list_i==1} brian_post_list_bg {/if}" onmouseover="this.className='li hover'" onmouseout="this.className='li {if $list_i==1}brian_post_list_bg{/if} '" style="border:none; {if $post['post_up']} background-color:#FFFDE6; {/if}">
+                    <td class="tdimg">
+                        <div style="position:relative;">
+                            {if $post['post_up']}<div class="post_up"></div>  {/if}
+                        <a href="{$house_config['root']}?mod=view&post_id={$post['post_id']}">{if $post['post_img_1']}<img src="{$post['post_img_1']}" />{else}<img src="{$house_config['house']}static/images/nophotosmall.gif" />{/if}</a>
+                        </div>
+                   </td>
+                    
+                    {if $profile_type_id==1}
+                    <td style="line-height:22px;">
+                        <div style="padding-bttom:10px;"><a href="{$house_config['root']}?mod=view&post_id={$post['post_id']}" style="font-size:14px; "><b>{$post['post_title']}</b></a>
+                        {if $post['post_up']}<img src="{$house_config['house']}static/images/ding.png" title="{lang house:index_htm_7}" />{/if}
+                         <span>[{$post['house_type']['post_profile_title']}]</span></div>
+                        <p>
+                            {$post['room']['profile_setting_title']}: {$post['room']['post_profile_title']}
+                            <span class="pipe">/</span>
+                            {$post['hall']['profile_setting_title']}: {$post['hall']['post_profile_title']}
+                            <span class="pipe">/</span>
+                            {$post['washroom']['profile_setting_title']}: {$post['washroom']['post_profile_title']}
+                        </p>
+                        <p><b>{$house_lang['area']}: </b>{$post['province']} {$post['city']} {$post['dist']} {$post['community']}</b></p>
+                    </td>
+                    <td class="tdtxq tc">
+                        {if $post['loupan_id']}<a href="{$house_config['root']}?mod=loupan&op=view&lid={$post['loupan_id']}" style="font-size:14px; line-height:30px;" target="_blank">{$post['loupan_title']}</a>{elseif $post['loupan_title']}{$post['loupan_title']}{else}{$house_lang['wu']}{/if}
+                    </td>
+                    <td class="tc">
+                        <div><em style="color:Red; font-size:14px; font-weight:bold;" >{$post['rent_price']['post_profile_title']}{$house_lang['rent_unit']}</em></div>
+                        <div>{$post['house_area']['post_profile_title']}{$house_lang['m2']}</div>
+                    </td>
+                    <td>{$post['rent_type']['post_profile_title']}</td>
+                    {elseif $profile_type_id==2}
+                    <td>
+                        <a href="{$house_config['root']}?mod=view&post_id={$post['post_id']}" style="font-size:14px; line-height:30px;"><b>{$post['post_title']}</b></a>
+                        {if $post['post_up']}<img src="{$house_config['house']}static/images/ding.png" title="{lang house:index_htm_7}" />{/if}
+                         [{$post['house_type']['post_profile_title']}]
+                        <p><b>{$house_lang['area']}: </b>{$post['province']} {$post['city']} {$post['dist']} {$post['community']}</b></p>
+                    </td>
+                    <td class="tdtxq tc">
+                        {if $post['loupan_id']}<a href="{$house_config['root']}?mod=loupan&op=view&lid={$post['loupan_id']}" style="font-size:14px; line-height:30px;" target="_blank">{$post['loupan_title']}</a>{elseif $post['loupan_title']}{$post['loupan_title']}{else}{$house_lang['wu']}{/if}
+                    </td>
+                    <td style="color:Red; font-size:14px; font-weight:bold;" >{$post['hope_rent_price']['post_profile_title']}</td>
+                    <td class="tc">{$post['house_type']['post_profile_title']}</td>
+                    {elseif $profile_type_id==3 || $profile_type_id==5}
+                    <td style="line-height:22px;">
+                        <a href="{$house_config['root']}?mod=view&post_id={$post['post_id']}" style="font-size:14px; line-height:30px;"><b>{$post['post_title']}</b></a>
+                        {if $post['post_up']}<img src="{$house_config['house']}static/images/ding.png" title="{lang house:index_htm_7}" />{/if}
+                         [{$post['house_type']['post_profile_title']}]
+                        <div>
+                        {$post['room']['profile_setting_title']}: {$post['room']['post_profile_title']}
+                        <span class="pipe">/</span>
+                        {$post['hall']['profile_setting_title']}: {$post['hall']['post_profile_title']}
+                        <span class="pipe">/</span>
+                        {$post['washroom']['profile_setting_title']}: {$post['washroom']['post_profile_title']}
+                        <span class="pipe">/</span>
+                        {$post['toward']['profile_setting_title']}: {$post['toward']['post_profile_title']}
+                        </div>
+                        <p><b>{$house_lang['area']}: </b>{$post['province']} {$post['city']} {$post['dist']} {$post['community']}</b></p>
+                    </td>
+                    <td class="tdtxq tc">
+                        {if $post['loupan_id']}<a href="{$house_config['root']}?mod=loupan&op=view&lid={$post['loupan_id']}" style="font-size:14px; line-height:30px;" target="_blank">{$post['loupan_title']}</a>{elseif $post['loupan_title']}{$post['loupan_title']}{else}{$house_lang['wu']}{/if}
+                    </td>
+                    <td class="tc">
+                        <p style="color:Red; font-size:14px; font-weight:bold;" >{$post['sell_price']['post_profile_title']}{$house_lang['wan']}</p>
+                        <p>{$post['house_area']['post_profile_title']}{$house_lang['m2']}</p>
+                    </td>
+                    <td class="tc">{eval echo round($post['sell_price']['post_profile_title']/$post['house_area']['post_profile_title']*10000);}{$house_lang['yuan']}/{$house_lang['m2']}</td>
+                    {/if}
+                    
+                    <td style=" display:none;">{echo dgmdate($post['post_time'],'u');}</td>
+                </tr>
+                {if $list_i ==1}
+                    {eval $list_i =0;}
+                {else}
+                    {eval $list_i =1;}
+                {/if}
+                 {/loop}
+            </table>
+            <div class="cl">{$multipage}</div>
+        </div>
+    </div>
+    
+    <div class="brian_box pd5 bgf">
+        <div style="line-height:23px;">{$house_config['topnotice']}</div>
+    </div>
+    
+    <!--[diy=house_list_bottom]--><div id="house_list_bottom" class="area"></div><!--[/diy]-->
+</div>
+<script type="text/javascript">
+function cat_change(cat,sub_cat,subname,classname){
+    var cat_title = $(cat).value;
+    var x = new Ajax();
+    var get_url = '{$house_config[root]}?mod=ajax&op=cat&inajax=1';
+    if(subname !=''){
+        get_url = get_url +'&sub_cat='+sub_cat;}
+    if(classname !=''){
+        get_url = get_url +'&classname='+classname;
+        }
+    get_url = get_url +'&cat_title='+cat_title;
+    x.get(get_url, function(str, x) {
+        if( str ==''){
+            $(sub_cat).style.display ='none';
+            $(sub_cat).innerHTML = "";
+        }else{
+            $(sub_cat).style.display ='inline-block';
+            $(sub_cat).innerHTML = str;
+        }
+     });
+}
+cat_change('cat_id','sub_cat_id','1','');
+</script>
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

@@ -1,0 +1,332 @@
+<!--{template common/header}-->
+<style id="diy_style" type="text/css">#frame1976YG {  border:#b1c8d7 1px solid !important;}#portal_block_184 {  margin:0px !important;border:transparent 1px solid !important;}#portal_block_184 .dxb_bc {  margin:0px !important;}#portal_block_185 {  border-top:transparent !important;}#portal_block_190 {  margin-top:6px !important;margin-right:8px !important;margin-bottom:3px !important;margin-left:8px !important;border-bottom-width:1px !important;border-bottom-style:dashed !important;border-bottom-color:#cccccc !important;}#portal_block_191 .dxb_bc a {  color:#cc0000 !important;}#portal_block_213 {  margin:0px !important;}#frame3U1QdL {  background-image:url('/template/dawen/images_site/news/img/txtbox_hdbg.gif') !important;background-repeat:repeat-x !important;}</style>
+<link rel="stylesheet" type="text/css" href="$_G['style']['styleimgdir']/news/home.css" />
+
+<div id="pt" class="bm cl note">
+	<div class="z" style="float:left;">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+		<a href="$_G[setting][navs][1][filename]">{lang portal}</a> <em>&rsaquo;</em>
+		<!--{loop $cat[ups] $value}--> <a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a><em>&rsaquo;</em><!--{/loop}-->
+		$cat[catname]
+	</div>
+    <div style="float:left; padding-right:10px;">最新消息:</div>
+    <div id="demo" style="overflow:hidden;height:20px;width:600px; line-height: 20px; float:left; margin-top:5px;">
+	<!--[diy=gd1]--><div id="gd1" class="area"><div id="frameNX2xyK" class="frame move-span cl frame-1"><div id="frameNX2xyK_left" class="column frame-1-c"><div id="frameNX2xyK_left_temp" class="move-span temp"></div><!--{block/327}--></div></div></div><!--[/diy]-->
+<div id="demo2"></div>
+</div> 
+<script> 
+var speed=40 
+var demo=document.getElementById("demo"); 
+var demo2=document.getElementById("demo2"); 
+var demo1=document.getElementById("demo1"); 
+demo2.innerHTML=demo1.innerHTML 
+function Marquee(){ 
+if(demo2.offsetTop-demo.scrollTop<=0) 
+  demo.scrollTop-=demo1.offsetHeight 
+else{ 
+  demo.scrollTop++ 
+} 
+} 
+var MyMar=setInterval(Marquee,speed) 
+demo.onmouseover=function() {clearInterval(MyMar)} 
+demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)} 
+</script> 
+    <div class="seaBar" style="float:right"><form id="searchbox" target="_blank" onsubmit="return setsite();" action="http://www.google.com/search">
+
+    <input id="set_site" type="hidden" name="q" value=""></input>
+    <input id="set_site1" class="seaText" type="text" onblur="javascript:if (this.value=='') {this.style.background='url('$_G['style']['styleimgdir']/news/img/google_custom_search_watermark.gif') no-repeat scroll left center rgb(255, 255, 255)'}" onfocus="this.style.background='#fff'" name="q1" style="background: url('$_G['style']['styleimgdir']/news/img/google_custom_search_watermark.gif') no-repeat scroll left center rgb(255, 255, 255);"></input>
+    <input type="submit" value="搜索"></input>
+
+</form>
+
+</div>
+</div>
+
+<div class="newscon">
+<div class="box-l">
+<!--[diy=diy01]--><div id="diy01" class="area"><div id="frame1976YG" class=" frame move-span cl frame-1"><div class="title frame-title" style='background-image:url("/template/dawen/images_site/news/img/txtbox_hdbg.gif");background-repeat:repeat;background-color:transparent;'><span class="titletext" style="font-size:14px;margin-left:22px;color:rgb(30, 80, 162);">新闻导航</span></div><div id="frame1976YG_left" class="column frame-1-c"><div id="frame1976YG_left_temp" class="move-span temp"></div><!--{block/184}--></div></div></div><!--[/diy]-->
+<!--[diy=diy02]--><div id="diy02" class="area"><div id="frame8QNdHy" class="txtbox frame move-span cl frame-1"><div class="title frame-title" style='background-image:url("/template/dawen/images_site/news/img/txtbox_hdbg.gif");background-repeat:repeat;background-color:transparent;'><span class="titletext" style="margin-left:22px;">社团消息</span></div><div id="frame8QNdHy_left" class="column frame-1-c"><div id="frame8QNdHy_left_temp" class="move-span temp"></div><!--{block/185}--></div></div></div><!--[/diy]-->
+<!--[diy=diy03]--><div id="diy03" class="area"><div id="frame3U1QdL" class="txtbox frame move-span cl frame-1"><div class="title frame-title" style='background-image:none;background-repeat:repeat;background-color:transparent;'><span class="titletext" style="margin-left:22px;">资讯专栏</span></div><div id="frame3U1QdL_left" class="column frame-1-c"><div id="frame3U1QdL_left_temp" class="move-span temp"></div><!--{block/186}--></div></div></div><!--[/diy]-->
+    
+    
+
+
+
+    </div>
+<div class="box-c">
+    	<div class="box-cl"><script type="text/javascript" src="$_G['style']['styleimgdir']/ddsliderplayer.js"></script>
+
+<div class="newflash pr">
+	<!--[diy=diy04]--><div id="diy04" class="area"><div id="frameO7Qd9z" class="cl_frame_bm frame move-span cl frame-1"><div id="frameO7Qd9z_left" class="column frame-1-c"><div id="frameO7Qd9z_left_temp" class="move-span temp"></div><!--{block/187}--></div></div></div><!--[/diy]-->
+</div>
+<!--[diy=diy05]--><div id="diy05" class="area"><div id="frameBY4VWL" class="box-cl-box frame move-span cl frame-1"><div class="title frame-title" style='background-image:none;background-repeat:repeat;background-color:transparent;'><span class="titletext">今日编辑推荐</span></div><div id="frameBY4VWL_left" class="column frame-1-c"><div id="frameBY4VWL_left_temp" class="move-span temp"></div><!--{block/188}--><!--{block/189}--></div></div></div><!--[/diy]-->
+            
+        </div>
+        <!--[diy=diy06]--><div id="diy06" class="area"><div id="frame6oNrUF" class="box-cr frame move-span cl frame-1"><div class="title frame-title" style='background-image:url("/template/dawen/images_site/news/img/txtbox_hdbg.gif");background-repeat:repeat;background-color:transparent;'><span class="titletext">头条新闻</span></div><div id="frame6oNrUF_left" class="column frame-1-c"><div id="frame6oNrUF_left_temp" class="move-span temp"></div><!--{block/190}--><!--{block/191}--><!--{block/192}--><!--{block/193}--></div></div></div><!--[/diy]-->
+        
+
+</div>
+    <div class="box-r">
+<div class="box-r-box">
+        	<div class="phead">
+        	<p class="ptitle">近期活动</p>
+                
+            </div>
+             <!--[diy=diy071]--><div id="diy071" class="area"><div id="frameP8Y27G" class="cl_frame_bm frame move-span cl frame-1"><div id="frameP8Y27G_left" class="column frame-1-c"><div id="frameP8Y27G_left_temp" class="move-span temp"></div><!--{block/374}--></div></div></div><!--[/diy]-->
+            	
+	<!-- Cached copy, generated 21:59 -->
+        </div>
+        <div class="box-r-ad">
+        	<!--[diy=box-r-ad]--><div id="box-r-ad" class="area"><div id="frame6sRb6T" class="frame move-span cl frame-1"><div id="frame6sRb6T_left" class="column frame-1-c"><div id="frame6sRb6T_left_temp" class="move-span temp"></div><!--{block/328}--></div></div></div><!--[/diy]-->
+        </div>
+        <div class="box-r-box">
+        	<div class="phead">
+        	<p class="ptitle">推荐去处</p>
+                <p class="pextra"><a href="/news/tjqc/" target="_blank">更多 &#187;</a></p>
+            </div>
+            <!--[diy=diy07]--><div id="diy07" class="area"><div id="frameBPMUs5" class="cl_frame_bm frame move-span cl frame-1"><div id="frameBPMUs5_left" class="column frame-1-c"><div id="frameBPMUs5_left_temp" class="move-span temp"></div><!--{block/206}--></div></div></div><!--[/diy]-->
+<!-- Cached copy, generated 18:58 -->
+        </div>
+        <div class="box-r-ad">
+        	<!--[diy=box-r-ad1]--><div id="box-r-ad1" class="area"><div id="frameT23562" class="frame move-span cl frame-1"><div id="frameT23562_left" class="column frame-1-c"><div id="frameT23562_left_temp" class="move-span temp"></div><!--{block/329}--></div></div></div><!--[/diy]-->
+        </div>
+    </div>
+</div>
+
+<div class="adrow">
+<!--[diy=adrow1]--><div id="adrow1" class="area"><div id="frameSEoP4S" class="cl_frame_bm frame move-span cl frame-1"><div id="frameSEoP4S_left" class="column frame-1-c"><div id="frameSEoP4S_left_temp" class="move-span temp"></div><!--{block/330}--><!--{block/331}--><!--{block/332}--><!--{block/333}--><!--{block/334}--></div></div></div><!--[/diy]-->
+</div>
+
+<div class="newscon">
+<div class="box-l">
+        
+    <div class="txtbox">
+        <div class="tbhead">跳蚤市场</div>
+        <!--[diy=tzsc]--><div id="tzsc" class="area"><div id="frame3UnL9v" class="cl_frame_bm frame move-span cl frame-1"><div id="frame3UnL9v_left" class="column frame-1-c"><div id="frame3UnL9v_left_temp" class="move-span temp"></div><!--{block/254}--></div></div></div><!--[/diy]-->
+    </div>
+    <div class="txtbox">
+        <div class="tbhead">房屋信息</div>
+        <ul class="flcats">            
+        <li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=17" target="_blank">房屋出租</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=19" target="_blank">出售求购</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=20" target="_blank">生意转让</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=18" target="_blank">房屋求租</a></li>        <li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=16" target="_blank">查看全部 »</a></li>
+        </ul>
+    </div>
+    <div class="txtbox">
+        <div class="tbhead">招聘求职</div>
+        <ul class="flcats">            
+        <li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=22" target="_blank">餐饮行业</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=23" target="_blank">保姆看护</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=24" target="_blank">销售/客服</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=29" target="_blank">电脑/网络</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=30" target="_blank">家教培训</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=34" target="_blank">其他工作</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=31" target="_blank">文秘助理</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=35" target="_blank">求职信息</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=24" target="_blank">保洁清洁</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=26" target="_blank">美容护理</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=27" target="_blank">各类工人</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=28" target="_blank">司机接送</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=32" target="_blank">医疗护理</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=33" target="_blank">金融财会</a></li>        <li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=21" target="_blank">查看全部 »</a></li>
+        </ul>
+    </div>
+    <div class="txtbox">
+        <div class="tbhead">其他信息</div>
+        <ul class="flcats" style="min-height:178px;">            
+        <li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=44" target="_blank">其他广告</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=40" target="_blank">寻人寻物</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=37" target="_blank">外币兑换</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=38" target="_blank">回国带物</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=41" target="_blank">寻求服务</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=39" target="_blank">拼车搭车</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=42" target="_blank">交友征婚</a></li><li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=43" target="_blank">结伴出游</a></li>        <li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=36" target="_blank">查看全部 »</a></li>
+        </ul>
+    </div>
+
+
+</div>
+<div class="box-c">
+<div class="box-cl">
+            <div class="box-cl-box">
+        	<div class="phead">
+        	<p class="ptitle">最新<font color="A12A2A">资讯文章</font></p>
+        	        <!--<p class="pextra"><a href="#" target="_blank">更多 &#187;</a></p>-->
+            	</div>
+<!--[diy=diy08]--><div id="diy08" class="area"><div id="frame9z2gmk" class="cl_frame_bm frame move-span cl frame-1"><div id="frame9z2gmk_left" class="column frame-1-c"><div id="frame9z2gmk_left_temp" class="move-span temp"></div><!--{block/208}--></div></div></div><!--[/diy]-->
+            	
+            </div>
+            <div class="box-cl-box" style="padding-bottom:4px;">
+        	<div class="phead">
+        	<p class="ptitle"><font color="#A12A2A">图片</font>报道</p>
+        	        <p class="pextra"><a href="/news/pic/" target="_blank">更多 &#187;</a></p>
+            	</div>
+                <!--[diy=diy09]--><div id="diy09" class="area"><div id="frameR6T533" class="cl_frame_bm frame move-span cl frame-1"><div id="frameR6T533_left" class="column frame-1-c"><div id="frameR6T533_left_temp" class="move-span temp"></div><!--{block/209}--></div></div></div><!--[/diy]-->
+                <!--[diy=diy10]--><div id="diy10" class="area"><div id="framex3Ir57" class="cl_frame_bm frame move-span cl frame-1"><div id="framex3Ir57_left" class="column frame-1-c"><div id="framex3Ir57_left_temp" class="move-span temp"></div><!--{block/210}--></div></div></div><!--[/diy]-->
+
+            </div>
+            <div class="box-cl-box" style="padding-bottom:4px;">
+        	<div class="phead">
+        	<p class="ptitle"><font color="#A12A2A">热评</font>新闻</p>
+        	        <p class="pextra"><a href="/news/top/" target="_blank">更多 &#187;</a></p>
+            	</div>
+                <!--[diy=diy11]--><div id="diy11" class="area"><div id="frame1nxU21" class="cl_frame_bm frame move-span cl frame-1"><div id="frame1nxU21_left" class="column frame-1-c"><div id="frame1nxU21_left_temp" class="move-span temp"></div><!--{block/213}--></div></div></div><!--[/diy]-->
+                
+<!-- Cached copy, generated 22:06 -->
+            </div>
+</div>
+<div class="box-cr">
+        	<div class="newsbox">
+            <div class="subheadline">
+    	        	<span>本地新闻</span>
+        	        <a href="/news/local/" target="_blank">更多 &#187;</a>
+            	</div>
+                <div class="news-list">
+                <!--[diy=diy12]--><div id="diy12" class="area"><div id="frameuk4Up7" class="cl_frame_bm frame move-span cl frame-1"><div id="frameuk4Up7_left" class="column frame-1-c"><div id="frameuk4Up7_left_temp" class="move-span temp"></div><!--{block/214}--></div></div></div><!--[/diy]-->
+
+</div>
+</div>
+            <div class="newsbox">
+            <div class="subheadline">
+    	        	<span>加国新闻</span>
+        	        <a href="/news/jgsh/" target="_blank">更多 &#187;</a>
+            	</div>
+                <div class="news-list">
+                 <!--[diy=diy13]--><div id="diy13" class="area"><div id="frameCBrG23" class="cl_frame_bm frame move-span cl frame-1"><div id="frameCBrG23_left" class="column frame-1-c"><div id="frameCBrG23_left_temp" class="move-span temp"></div><!--{block/215}--></div></div></div><!--[/diy]-->
+
+</div>
+</div>
+            <div class="newsbox">
+            <div class="subheadline">
+    	        	<span>移民生活</span>
+        	        <a href="/news/ymtd/" target="_blank">更多 &#187;</a>
+            	</div>
+                <div class="news-list">
+<!--[diy=diy14]--><div id="diy14" class="area"><div id="frameBw3882" class="cl_frame_bm frame move-span cl frame-1"><div id="frameBw3882_left" class="column frame-1-c"><div id="frameBw3882_left_temp" class="move-span temp"></div><!--{block/216}--></div></div></div><!--[/diy]-->
+</div>
+            </div>
+            <div class="newsbox">
+            <div class="subheadline">
+    	        	<span>北美国际</span>
+        	        <a href="/news/bmgj/" target="_blank">更多 &#187;</a>
+            	</div>
+                <div class="news-list">
+                <!--[diy=diy15]--><div id="diy15" class="area"><div id="frameL99oK1" class="cl_frame_bm frame move-span cl frame-1"><div id="frameL99oK1_left" class="column frame-1-c"><div id="frameL99oK1_left_temp" class="move-span temp"></div><!--{block/217}--></div></div></div><!--[/diy]-->
+
+</div>
+</div>
+            <div class="newsbox">
+            <div class="subheadline">
+    	        	<span>体娱明星</span>
+        	        <a href="/news/ylmx/" target="_blank">更多 &#187;</a>
+            	</div>
+                <div class="news-list">
+                <!--[diy=diy16]--><div id="diy16" class="area"><div id="frame4wfwN6" class="cl_frame_bm frame move-span cl frame-1"><div id="frame4wfwN6_left" class="column frame-1-c"><div id="frame4wfwN6_left_temp" class="move-span temp"></div><!--{block/218}--></div></div></div><!--[/diy]-->
+
+</div>
+</div>
+<div class="newsbox" style="min-height:218px;">
+            <div class="subheadline">
+    	        	<span>海外移民</span>
+        	        <a href="/news/hwym/" target="_blank">更多 &#187;</a>
+            	</div>
+                <div class="news-list" style="border:0;">
+                 <!--[diy=diy17]--><div id="diy17" class="area"><div id="framedFiJ1B" class="cl_frame_bm frame move-span cl frame-1"><div id="framedFiJ1B_left" class="column frame-1-c"><div id="framedFiJ1B_left_temp" class="move-span temp"></div><!--{block/219}--></div></div></div><!--[/diy]-->
+</div>
+            </div>
+</div>
+</div>
+<div class="box-r">
+<div class="box-r-box">
+        	<div class="phead">
+        	<p class="ptitle">市场信息</p>
+                <p class="pextra"><a href="/sale.php" target="_blank">更多 &#187;</a></p>
+            </div>
+            <!--[diy=diy172]--><div id="diy172" class="area"><div id="framefDd3rr" class="cl_frame_bm frame move-span cl frame-1"><div id="framefDd3rr_left" class="column frame-1-c"><div id="framefDd3rr_left_temp" class="move-span temp"></div><!--{block/249}--></div></div></div><!--[/diy]-->
+            
+<!-- Cached copy, generated 21:59 -->
+        </div>
+        <div class="box-r-ad">
+        	<!--[diy=box-r-ad3]--><div id="box-r-ad3" class="area"><div id="frameTzCgkn" class="frame move-span cl frame-1"><div id="frameTzCgkn_left" class="column frame-1-c"><div id="frameTzCgkn_left_temp" class="move-span temp"></div><!--{block/335}--></div></div></div><!--[/diy]-->
+        </div>
+<div class="box-r-box">
+        	<div class="phead">
+        	<p class="ptitle">服务信息</p>
+                <p class="pextra"><a href="/info.php" target="_blank">更多 &#187;</a></p>
+            </div>
+            <!--[diy=ptitle3]--><div id="ptitle3" class="area"><div id="frame55oM24" class="frame move-span cl frame-1"><div id="frame55oM24_left" class="column frame-1-c"><div id="frame55oM24_left_temp" class="move-span temp"></div><!--{block/353}--></div></div></div><!--[/diy]-->
+            
+        </div>
+        <div class="box-r-ad">
+                       <!--[diy=box-r-ad4]--><div id="box-r-ad4" class="area"><div id="frameprdl4O" class="frame move-span cl frame-1"><div id="frameprdl4O_left" class="column frame-1-c"><div id="frameprdl4O_left_temp" class="move-span temp"></div><!--{block/336}--></div></div></div><!--[/diy]-->    </div>
+</div>
+</div>
+<div class="adrow">
+<!--[diy=adrow2]--><div id="adrow2" class="area"><div id="framei9d76r" class="cl_frame_bm frame move-span cl frame-1"><div id="framei9d76r_left" class="column frame-1-c"><div id="framei9d76r_left_temp" class="move-span temp"></div><!--{block/212}--><!--{block/337}--><!--{block/338}--><!--{block/339}--><!--{block/340}--></div></div></div><!--[/diy]-->
+</div>
+<div class="clear"></div>
+<div class="newscon">
+<div class="box-l">
+        
+
+
+    <div class="txtbox">
+        <div class="tbhead">服务黄页</div>
+        <ul class="flcats">
+        <li><a href="info.php?mod=list&subcat_id=26" target="_blank">家庭旅馆</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=34" target="_blank">接送搬运</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=38" target="_blank">购车租车</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=47" target="_blank">汽车维修</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=49" target="_blank">机票旅游</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=53" target="_blank">翻译/生意/印刷/快递服务</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=66" target="_blank">清洁垃圾</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=69" target="_blank">水暖电工 通渠 维修</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=75" target="_blank">园艺杀虫</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=88" target="_blank">电脑网络</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=93" target="_blank">宠物相关</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=103" target="_blank">摄影/婚庆服务</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=108" target="_blank">留学移民</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=113" target="_blank">教育院校</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=115" target="_blank">雅思托福</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=121" target="_blank">家教补习</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=131" target="_blank">艺术辅导</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=136" target="_blank">汇款换汇</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=143" target="_blank">地产相关</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=148" target="_blank">建筑装修</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=157" target="_blank">验屋/开锁服务</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=164" target="_blank">热卖商品</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=172" target="_blank">月子托儿</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=178" target="_blank">老牌练车</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=184" target="_blank">会计报税</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=197" target="_blank">理财保险</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=199" target="_blank">法律公证</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=200" target="_blank">中医诊所</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=204" target="_blank">按摩护理</a></li>
+        <li><a href="/info.php?mod=list&subcat_id=209" target="_blank">成人娱乐/用品</a></li>        <li><a href="/info.php" target="_blank">查看全部 »</a></li>
+        </ul>
+    </div>
+	<div class="txtbox">
+    	<div class="tbhead">常用链接</div>
+        <ul class="flcats">
+        	<li><a href="http://www.successbc.ca/chn/" target="_blank">中侨互助会</a></li>
+        	<li><a href="/news/tjqc/" target="_blank">推荐好去处</a></li>
+        	<li><a href="/sale.php?mod=index&upid=0&level=0&cat_id=45" target="_blank">近期社团活动</a></li>
+        	<li><a href="http://www.gc.ca/" target="_blank">加国政府网站</a></li>
+        	<li><a href="http://www.canada.gc.ca/othergov/prov_e.html" target="_blank">各省政府网站</a></li>
+        	<li><a href="http://www.cic.gc.ca/" target="_blank">公民暨移民部</a></li>
+        	<li><a href="http://www.canadapost.ca/" target="_blank">加拿大邮政局</a></li>
+        	<li><a href="http://www.ppt.gc.ca/" target="_blank">加拿大护照局</a></li>
+        	<li><a href="http://www.cra-arc.gc.ca/" target="_blank">加拿大税务局</a></li>
+        	<li><a href="http://www.chinaembassycanada.org/chn/" target="_blank">中驻加大使馆</a></li>
+        	<li><a href="http://vancouver.chineseconsulate.org/chn/" target="_blank">中驻温总领馆</a></li>
+        	<li><a href="/toollink.php" target="_blank">查看全部 »</a></li>
+        </ul>
+    </div>
+	<div class="txtbox">
+    	<div class="tbhead">查询工具</div>
+        <ul class="flcats">
+        	<li><a href="/plugins/telbook.php?keepThis=true&" target="_blank">电话号码簿</a></li>
+        	<li><a href="/plugins/tvschedule.php?keepThis=true&" target="_blank">电视节目表</a></li>
+        	<li><a href="http://www.gvrd.com/traffic/" target="_blank">实时交通状况</a></li>
+        	<li><a href="http://www.translink.bc.ca/" target="_blank">公共交通查询</a></li>
+        	<li><a href="http://carcostcanada.com/1/en/" target="_blank">新车价格查询</a></li>
+        	<li><a href="/plugins/airline.php?keepThis=true&" target="_blank">航班时刻查询</a></li>
+        	<li><a href="http://www.canadapost.ca/cpotools/apps/fpc/personal/findByCity?execution=e1s1" target="_blank">加国邮编查询</a></li>
+        	<li><a href="/plugins/phone.php?keepThis=true&" target="_blank">常用电话号码</a></li>
+        	<li><a href="http://www.movietickets.com/search_city.asp?SearchCity=vancouver&SearchRadius=15&ShowDate=0&movie_id=0" target="_blank">上映电影查询</a></li>
+        	<li><a href="https://www.addresschange.gov.bc.ca/forms/help.html" target="_blank">网上修改地址</a></li>
+        	<li><a href="http://www.olg.ca/lotteries/viewWinningNumbers.do" target="_blank">彩票中奖号码</a></li>
+        	<li><a href="/tool.php" target="_blank">查看全部 »</a></li>
+        </ul>
+    </div>
+
+    </div>
+    <div class="box-cr"><div class="box"><div class="phead"><p class="ptitle">就业创业</p><p class="pextra"><a href="/news/jycy/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy18]--><div id="diy18" class="area"><div id="frame66tR9c" class="cl_frame_bm frame move-span cl frame-1"><div id="frame66tR9c_left" class="column frame-1-c"><div id="frame66tR9c_left_temp" class="move-span temp"></div><!--{block/221}--></div></div></div><!--[/diy]--></div><div class="box"><div class="phead"><p class="ptitle">地产专栏</p><p class="pextra"><a href="/news/dczl/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy19]--><div id="diy19" class="area"><div id="framekcCnzl" class="cl_frame_bm frame move-span cl frame-1"><div id="framekcCnzl_left" class="column frame-1-c"><div id="framekcCnzl_left_temp" class="move-span temp"></div><!--{block/222}--></div></div></div><!--[/diy]--></div><div class="box last"><div class="phead"><p class="ptitle">汽车专栏</p><p class="pextra"><a href="/news/qczl/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy20]--><div id="diy20" class="area"><div id="frame4oFqJ7" class="cl_frame_bm frame move-span cl frame-1"><div id="frame4oFqJ7_left" class="column frame-1-c"><div id="frame4oFqJ7_left_temp" class="move-span temp"></div><!--{block/223}--></div></div></div><!--[/diy]--></div><div class="box"><div class="phead"><p class="ptitle">法律专栏</p><p class="pextra"><a href="/news/flzl/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy21]--><div id="diy21" class="area"><div id="frameKgljlW" class="cl_frame_bm frame move-span cl frame-1"><div id="frameKgljlW_left" class="column frame-1-c"><div id="frameKgljlW_left_temp" class="move-span temp"></div><!--{block/224}--></div></div></div><!--[/diy]--></div><div class="box"><div class="phead"><p class="ptitle">留学专栏</p><p class="pextra"><a href="/news/lxzl/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy22]--><div id="diy22" class="area"><div id="frameIrlDM7" class="cl_frame_bm frame move-span cl frame-1"><div id="frameIrlDM7_left" class="column frame-1-c"><div id="frameIrlDM7_left_temp" class="move-span temp"></div><!--{block/225}--></div></div></div><!--[/diy]--></div><div class="box last"><div class="phead"><p class="ptitle">英语专栏</p><p class="pextra"><a href="/news/yyzl/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy23]--><div id="diy23" class="area"><div id="frames3X1Ur" class="cl_frame_bm frame move-span cl frame-1"><div id="frames3X1Ur_left" class="column frame-1-c"><div id="frames3X1Ur_left_temp" class="move-span temp"></div><!--{block/226}--></div></div></div><!--[/diy]--></div><div class="box"><div class="phead"><p class="ptitle">旅游功略</p><p class="pextra"><a href="/news/lygl/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy24]--><div id="diy24" class="area"><div id="framel523jW" class="cl_frame_bm frame move-span cl frame-1"><div id="framel523jW_left" class="column frame-1-c"><div id="framel523jW_left_temp" class="move-span temp"></div><!--{block/227}--></div></div></div><!--[/diy]--></div><div class="box"><div class="phead"><p class="ptitle">音乐专栏</p><p class="pextra"><a href="/news/yinyuezl/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy25]--><div id="diy25" class="area"><div id="frame4Z8YU5" class="cl_frame_bm frame move-span cl frame-1"><div id="frame4Z8YU5_left" class="column frame-1-c"><div id="frame4Z8YU5_left_temp" class="move-span temp"></div><!--{block/228}--></div></div></div><!--[/diy]--></div><div class="box last"><div class="phead"><p class="ptitle">美术专栏</p><p class="pextra"><a href="/news/meisuzl/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy26]--><div id="diy26" class="area"><div id="framex4ycon" class="cl_frame_bm frame move-span cl frame-1"><div id="framex4ycon_left" class="column frame-1-c"><div id="framex4ycon_left_temp" class="move-span temp"></div><!--{block/229}--></div></div></div><!--[/diy]--></div><div class="box"><div class="phead"><p class="ptitle">婴童专栏</p><p class="pextra"><a href="/news/ytzl/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy27]--><div id="diy27" class="area"><div id="frameP4fDGp" class="cl_frame_bm frame move-span cl frame-1"><div id="frameP4fDGp_left" class="column frame-1-c"><div id="frameP4fDGp_left_temp" class="move-span temp"></div><!--{block/230}--></div></div></div><!--[/diy]--></div><div class="box"><div class="phead"><p class="ptitle">税务理财</p><p class="pextra"><a href="/news/swlc/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy28]--><div id="diy28" class="area"><div id="framec1yCBG" class="cl_frame_bm frame move-span cl frame-1"><div id="framec1yCBG_left" class="column frame-1-c"><div id="framec1yCBG_left_temp" class="move-span temp"></div><!--{block/231}--></div></div></div><!--[/diy]--></div><div class="box last"><div class="phead"><p class="ptitle">牙医专栏</p><p class="pextra"><a href="/news/yayizl/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy29]--><div id="diy29" class="area"><div id="frame3IXLvs" class="cl_frame_bm frame move-span cl frame-1"><div id="frame3IXLvs_left" class="column frame-1-c"><div id="frame3IXLvs_left_temp" class="move-span temp"></div><!--{block/232}--></div></div></div><!--[/diy]--></div><div class="box"><div class="phead"><p class="ptitle">医疗养生</p><p class="pextra"><a href="/news/ylys/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy30]--><div id="diy30" class="area"><div id="frameYOCIQP" class="cl_frame_bm frame move-span cl frame-1"><div id="frameYOCIQP_left" class="column frame-1-c"><div id="frameYOCIQP_left_temp" class="move-span temp"></div><!--{block/233}--></div></div></div><!--[/diy]--></div><div class="box"><div class="phead"><p class="ptitle">移民天地</p><p class="pextra"><a href="/news/ymtd/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy31]--><div id="diy31" class="area"><div id="framebvKh8g" class="cl_frame_bm frame move-span cl frame-1"><div id="framebvKh8g_left" class="column frame-1-c"><div id="framebvKh8g_left_temp" class="move-span temp"></div><!--{block/234}--></div></div></div><!--[/diy]--></div><div class="box last"><div class="phead"><p class="ptitle">美容塑身</p><p class="pextra"><a href="/news/mrss/" target="_blank">更多 &#187;</a></p></div><!--[diy=diy32]--><div id="diy32" class="area"><div id="framewxZPjg" class="cl_frame_bm frame move-span cl frame-1"><div id="framewxZPjg_left" class="column frame-1-c"><div id="framewxZPjg_left_temp" class="move-span temp"></div><!--{block/235}--></div></div></div><!--[/diy]--></div>        <div class="clear"></div>
+    </div>
+</div>
+
+
+
+<div class="column11">
+<!--[diy=hezmt]--><div id="hezmt" class="area"><div id="frameQ4fM3X" class="frame move-span cl frame-1"><div id="frameQ4fM3X_left" class="column frame-1-c"><div id="frameQ4fM3X_left_temp" class="move-span temp"></div><!--{block/341}--><!--{block/342}--></div></div></div><!--[/diy]-->
+</div>
+<!--{template common/footer}-->

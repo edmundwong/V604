@@ -1,0 +1,73 @@
+<table class="fix">
+<tr>
+    <td>
+    <div class="brian_box pd5 bgf">
+        <h4 class="h4"><span>{$house_lang['loupan_view_htm_2']}</span></h4>
+        <div>
+        <div class="tuan_box_tab_nav  ">
+            <a href="javascript:;" id="m1" name="m1" onmouseover="mm_all(0,'m1','b1','');" class="hover" style="border-left:1px solid #C6C6C6;">{$house_lang['loupan_view_img_htm_2']} (<b style="color:#FF6600;">{$loupan_img_0}</b>)</a>
+            <a href="javascript:;" id="m1" name="m1" onmouseover="mm_all(1,'m1','b1','');" class="off" >{$house_lang['config_inc_php_1']} (<b style="color:#FF6600;">{$loupan_img_1}</b>)</a>
+            <a href="javascript:;" id="m1" name="m1" onmouseover="mm_all(2,'m1','b1','');" class="off" >{$house_lang['config_inc_php_2']} (<b style="color:#FF6600;">{$loupan_img_2}</b>)</a>
+            <a href="javascript:;" id="m1" name="m1" onmouseover="mm_all(3,'m1','b1','');" class="off" >{$house_lang['config_inc_php_3']} (<b style="color:#FF6600;">{$loupan_img_3}</b>)</a>
+            <a href="javascript:;" id="m1" name="m1" onmouseover="mm_all(4,'m1','b1','');" class="off" >{$house_lang['loupan_type_6']} (<b style="color:#FF6600;">{$loupan_img_4}</b>)</a>
+            {if $is_house_admin}
+            <a href="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=upload">{$house_lang['loupan_view_img_htm_7']}</a>
+            {/if}
+        </div>
+        
+        <div style="clear:both; padding:5px;">
+                <span name="b1" id="b1">
+                    {loop $loupan_img $li}
+                        {if $li['img_cat_id']=='1'}
+                        <div class="loupan_img_block cl">
+                            <a href="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=imgview&img_id={$li['img_id']}"><img src="{$li['img_pic']}" />
+                                <p>{$li['img_title']}</p>
+                            </a>
+                        </div>
+                        {/if}
+                    {/loop}
+                </span>
+                <span name="b1" id="b1">
+                    {loop $loupan_img $li}
+                        {if $li['img_cat_id']=='2'}
+                        <div class="loupan_img_block cl">
+                            <a href="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=imgview&img_id={$li['img_id']}"><img src="{$li['img_pic']}" />
+                                <p>{$li['img_title']}</p>
+                            </a>
+                        </div>
+                        {/if}
+                    {/loop}
+                </span>
+                <span name="b1" id="b1">
+                    {loop $loupan_img $li}
+                        {if $li['img_cat_id']=='3'}
+                        <div class="loupan_img_block cl">
+                            <a href="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=imgview&img_id={$li['img_id']}"><img src="{$li['img_pic']}" />
+                                <p>{$li['img_title']}</p>
+                            </a>
+                        </div>
+                        {/if}
+                    {/loop}
+                </span>
+                <span name="b1" id="b1">
+                    {loop $loupan_img $li}
+                        {if $li['img_cat_id']=='4'}
+                        <div class="loupan_img_block cl">
+                            <a href="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=imgview&img_id={$li['img_id']}"><img src="{$li['img_pic']}" />
+                                <p>{$li['img_title']}</p>
+                            </a>
+                        </div>
+                        {/if}
+                    {/loop}
+                </span>
+        </div>
+        
+        </div>
+    </div>
+
+    </td>
+        <td style="width:230px;">
+            <!--{eval include template("house:$style/loupan/loupan_view_right");}-->
+        </td>
+    </tr>
+</table>

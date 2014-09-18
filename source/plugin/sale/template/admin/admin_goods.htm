@@ -1,0 +1,48 @@
+<!--{eval include template("sale:$style/style");}-->
+{template sale:admin/style}
+
+<div id="plugin_admin" class="brian_main">
+<div class="brian_box pd5 bgf">
+    <h2 class="h2">1. {lang sale:admin_cat_htm_11}</h2>
+    <table class='brian_table fix' style=" margin-top:5px;">
+    <tr style="border:none;">
+        <th style="width:50px;">&nbsp;</th>
+        <th style="width:30px;">{$_lang['zhiding']}</th>
+        <th></th>
+        <th>{$_lang['goods_time']}</th>
+        <th>{$_lang['member_usernmae']}</th>
+         <th>IP</th>
+         <th style="width:60px;"></th>
+        <th>&nbsp;</th>
+    </tr>
+    {if $goods_array}
+    {loop $goods_array $goods}
+    <tr>
+        <td>{if $goods['goods_upload_file_1']}<img src="{$goods['goods_upload_file_1']}" style="width:40px; height:30px;" />{else}<img src="{$sale_config['sale']}images/nophotosmall.gif" style="width:40px; height:30px;"  />{/if}</td>
+        <td>{if $goods['goods_up']}<b style="color:red;">{$_lang['yes']}</b>{else}{$_lang['no']}{/if}</td>
+        <td><a href="{$sale_config['root']}?mod=view&goods_id={$goods['goods_id']}" target="_blank">{$goods['goods_title']}</a></td>
+        <td>{echo date('Y-m-d',$goods['goods_time']);}</a></td>
+        <td>{$goods['member_username']}</td>
+        <td>{$goods['goods_ip']}({$goods['goods_ip_adr']})</td>
+        <td style="text-align:center; line-height:20px;">
+            {if $goods['goods_status']==1}
+                <b style="color:green" class="tc">{$_lang['tongguo']}</b>
+                <div><a href="admin.php?{$cp_url}&goods_id={$goods[goods_id]}&goods_status=0" class="btn" style="width:30px;">{$_lang['xiajia']}</a></div>
+            {else}
+                <b style="color:red" class="tc">{$_lang['weishenhe']}</b>
+                <div><a href="admin.php?{$cp_url}&goods_id={$goods[goods_id]}&goods_status=1" class="btn" style="width:30px;">{$_lang['tongguo']}</a></div>
+            {/if}
+        </td>
+        <td><a href="{$sale_config['root']}?mod=post&ac=edit&goods_id={$goods['goods_id']}" target="_blank">{lang sale:admin_cat_htm_1}</a> | <a href="{$sale_config['root']}?mod=view&goods_id={$goods['goods_id']}" target="_blank">{$_lang['view']}</a></td>
+    </tr>
+    {/loop}
+    {/if}
+    </table>
+<div>{$multipage}</div>
+
+    <h2 class="h2">2. {$_lang['shenhe_piliang']}</h2>
+    <div class="brian_box pd5 bgf">
+    <a href="admin.php?{$cp_url}&goods_id=all&goods_status=1" class="btn">{$lang['all']}{$_lang['tongguo']}</a> | <a href="admin.php?{$cp_url}&goods_id=all&goods_status=0" class="btn">{$lang['all']}{$_lang['xiajia']}</a>
+    </div>
+</div>
+</div>

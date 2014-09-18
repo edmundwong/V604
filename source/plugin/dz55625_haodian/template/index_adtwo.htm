@@ -1,0 +1,29 @@
+<link rel="stylesheet" type="text/css" href="source/plugin/dz55625_adtwo/images/body.css" />
+    <style type="text/css">
+    .focusa{ overflow:hidden; width:{$adConfig['adwidth']}px; height:{$adConfig['adheight']}px; position:relative; margin:0 auto 10px }
+    .f426x240{width:{$adConfig['adwidth']}px; height:{$adConfig['adheight']}px; overflow:hidden}
+    .f426x240 img{width:{$adConfig['adwidth']}px; height:{$adConfig['adheight']}px}
+    </style>
+    
+    <div class="wp cl">
+        <div class="focusa">
+            <ul class="rslides f426x240">
+             <!--{loop $huandengs $huandeng}-->
+                <li><a href="{$huandeng['urls']}"{$Clickwindow}><img src="{$huandeng['photos']}" /></a></li>
+             <!--{/loop}-->  
+            </ul>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="source/plugin/dz55625_adtwo/images/lrtk.js"></script>
+    <script type="text/javascript">
+    jq(function() {
+        jq(".f426x240").responsiveSlides({
+            auto: true,
+            pager: true,
+            nav: true,
+            speed: 700,
+            maxwidth: {$adConfig['adwidth']}
+        });
+    });
+    </script>

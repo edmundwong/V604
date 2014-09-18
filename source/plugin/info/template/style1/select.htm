@@ -1,0 +1,45 @@
+<!--{eval include template("info:$style/header");}-->
+<style type="text/css">
+    .fenlei{}
+    .fenlei em{margin:0 10px;}
+    .list{padding:15px 20px;}
+    .list li{float:left; margin:0 20px 5px 0;width:170px}
+    .list li a{color:#3d3d45;font-size:14px;font-weight:#fc6328}
+</style>
+
+<div style="text-align:center; margin:40px auto 30px; font-size:18px; color:#828999;" class="fenlei">
+    <!--{if isset($_GET['cat_id']) && !empty($cat_id)}-->
+    <span >1.选择发布大类</span><em>></em><span style="color:#8cc152;">2.选择发布小类</span><em>></em><span>3.填写详细信息</span><em>></em><span>4.发布成功</span>
+    <!--{else}-->
+    <span style="color:#8cc152;">1.选择发布大类</span><em>></em><span >2.选择发布小类</span><em>></em><span>3.填写详细信息</span><em>></em><span>4.发布成功</span>
+    <!--{/if}-->
+</div>
+<div class="wrapper" style="font-size:14px; color:#828999;">
+    <!--{if isset($_GET['cat_id']) && !empty($cat_id)}-->
+    <strong>当前大类：</strong>
+    <span style="font-size:16px; margin-right:10px;font-weight:#fc6328">{$cat_array[$cat_id]['cat_title']}</span>
+    <a style="color:#fc6328;" href="/info.php?mod=select">[ 重新选择 ]</a>
+    <!--{else}-->
+    请从下面的列表中选择您要发布信息的所属类别：
+    <!--{/if}-->
+</div>
+<div class="wrapper" style="border:1px solid #fc6328; margin:20px auto;" class="list">
+    <ul class="list clearfix">
+        <!--{if isset($_GET['cat_id']) && !empty($cat_id)}-->
+            <!--{loop $cat_array $cat}-->
+                <!--{if $cat['cat_pid'] == $cat_id}-->
+                <li><a href="{$info_config['root']}?mod=member&op=post&subcat_id={$cat['cat_id']}">{$cat['cat_title']}</a></li>
+                <!--{/if}-->
+            <!--{/loop}-->
+        <!--{else}-->
+            <!--{loop $cat_array $cat}-->
+                <!--{if empty($cat['cat_pid']) || $cat['cat_pid']==0}-->
+                <li><a href="{$info_config['root']}?mod=select&cat_id={$cat['cat_id']}">{$cat['cat_title']}</a></li>
+                <!--{/if}-->
+            <!--{/loop}-->
+        <!--{/if}-->
+    </ul>
+</div>
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

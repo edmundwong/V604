@@ -1,0 +1,258 @@
+<!--{eval include template("sale:$style/header");}-->
+<!--{eval include template("sale:$style/style");}-->
+
+<script type="text/javascript" src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/frame.js"></script>
+<script language="javascript">
+            function emailto()
+                    {
+                    var l = document.documentElement.clientWidth / 2 - 250;
+                            l = l + 'px';
+                            $('#emailto').css("left", l);
+                            $('#emailto').css("top", "150px");
+                            $('#emailto').show("slow");
+                            }
+</script>
+
+<style type="text/css">
+    #emailto{
+        background-color:#FFFFFF;
+        border:10px #CCCCCC solid;
+        width:500px;
+        position:absolute;
+        display:none;
+        z-index:999;
+    }
+</style>
+<div id="emailto">
+    <form id="form1" name="form1" method="post" action="/info.php?mod=view&op=send_email">
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tr>
+                <td height="38" colspan="2" align="center"><b>把这条信息发给朋友</b></td>
+                <td width="4%"><img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/c.gif" style="cursor:pointer;" onclick="$('#emailto').hide();" /></td>
+            </tr>
+            <tr>
+                <td width="23%" height="32" align="right">Email地址：</td>
+                <td width="73%"><label>
+                        <input name="to_email" type="text" id="mailto" value="请输入邮件地址" size="40" onclick="if (this.value == '请输入邮件地址'){this.value = ''; }" />
+                    </label></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td height="32" align="right">邮件内容：</td>
+                <td><label>
+                        <textarea name="obj" cols="40" rows="5" id="txt"></textarea>
+                    </label></td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+            <input type="hidden" name="post_id" value="{$post['post_id']}" />
+            <td height="32" colspan="2" align="center"><label>
+                    <input type="submit" name="Submit" value="发送" />
+                </label></td>
+            <td>&nbsp;</td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+<div id="wrapper">
+    <!--{eval include template("sale:$style/head");}-->
+    <div id="content">
+        <div id="mainSide">
+            <div class="detail_title">
+                <h1>{$goods['goods_title']}</h1>
+                <div class="post_ext">
+
+                    <span class="code">{lang sale:member_mypost_htm_6} : {$goods['goods_id']}</span>
+                    <span class="op"><a href="{$sale_config['root']}?mod=post&ac=edit&goods_id={$goods_id}&pwd=check">{lang sale:member_mypost_htm_10}</a>
+                        |
+                        <a href="{$sale_config['root']}?mod=view&goods_id={$goods_id}&op=del"  onclick="return(confirm('{$_lang['queding_shanchu']}?'))">{lang sale:admin_ad_htm_11}</a></span>
+
+                </div>
+
+
+                <div class="pubTime"> 
+                    {lang sale:member_mypost_htm_8} : {echo dgmdate($goods['goods_time'],'dt');}
+                    |
+                    {lang sale:view_htm_13} : <font>{$goods['goods_view']}</font>{lang sale:view_htm_14}
+                </div>
+            </div>
+            {if $goods['goods_status'] == 0}
+            <div class="mainBox" style="background:#F00; color:#FFF; font-weight:bold;">
+
+
+                该信息尚未公开发表，正在等待管理员验证 
+
+
+
+            </div>
+            {/if}
+            <div class="mainBox">
+                <div class="detal_left border_right">
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt>{lang sale:post_htm_68} : </dt>
+                                <dd> {if !empty($goods['goods_price'])}{$goods['goods_price']}{lang sale:index_htm_5}{else}{$_lang['mianyi']}{/if}</dd>
+                            </dl>
+                        </li>
+
+
+                        <li>
+                            <dl>
+                                <dt>{lang sale:admin_cat_htm_3} :</dt>
+                                <dd>{if $goods['cat_id']}{$goods['cat_title']} - {/if}{if $goods['subcat_id']}{$goods['subcat_title']}{/if}</dd>
+                            </dl>
+                        </li>
+                        {if  $goods['huodong_star_time']}
+                        <li>
+                            <dl>
+
+                                <dt>活动开始时间:</dt>
+                                <dd> {$goods['huodong_star_time']}</dd>
+
+                            </dl>
+                        </li>
+                        {/if}
+                        {if  $goods['huodong_end_time']}
+                        <li>
+                            <dl>
+
+                                <dt>活动结束时间:</dt>
+                                <dd> {$goods['huodong_end_time']}</dd>
+
+                            </dl>
+                        </li>
+                        {/if}
+                    </ul>
+                </div>
+                <div class="detail_info2">
+                    <ul class="detail_info_ul">
+
+
+                        <li>
+                            <dl>
+                                <dt>{lang sale:post_htm_57}</dt>
+                                <dd>{$member['member_username']}</dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>联系电话:</dt>
+                                <dd class="phoneNum">{$member['member_phone']}</dd>
+                            </dl>
+                        </li>
+                        {if !empty($member['member_email'])}<li>
+                            <dl>
+                                <dt>电子邮件:</dt>
+                                <dd><a href="mailto:{$member['member_email']}">{$member['member_email']}</a></dd>
+                            </dl>
+                        </li>{/if}
+
+
+
+                    </ul>
+                    <div class="userReport">
+                        <dl id="id_jubao">
+                            <dt>举报:</dt>
+                            <dd>                              
+                                <input type="button" name="" value="分类不当" onclick="dcj_jubao({$goods_id}, '分类不当');" />&nbsp;&nbsp;&nbsp;
+                                <input type="button" name="" value="商业广告" onclick="dcj_jubao({$goods_id}, '商业广告');" />&nbsp;&nbsp;&nbsp;
+                                <input type="button" name="" value="其他问题举报" onclick="dcj_jubao({$goods_id}, '其他问题举报');" />
+
+
+                            </dd>
+                        </dl>
+                        <div class="userReportBg1">&nbsp;</div>
+                        <div class="userReportBg2">&nbsp;</div>
+                        <div class="userReportBg3">&nbsp;</div>
+                        <div class="userReportBg4">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                                function dcj_jubao(goods_id, reason)
+                                {
+                                var xmlhttp;
+                                        if (window.XMLHttpRequest)
+                                {
+                                xmlhttp = new XMLHttpRequest();
+                                }
+                                else
+                                {
+                                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                                }
+                                xmlhttp.onreadystatechange = function()
+                                {
+                                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                                {
+                                var xx = xmlhttp.responseText;
+                                        //var return_body = xx.body.force_encoding('UTF-8');
+                                        //return_body = return_body.gsub(/[\u0000-\u001f\u007f\u0080-\u009f]/,'');
+                                        var data = JSON.parse(xx);
+                                        //var data = eval("(" + xx ++ ")");
+                                        //var data = xx.parseJSON(xx);
+                                        //alert(xx);
+                                        if (data.status == 1)
+                                {
+                                alert("举报成功，谢谢！管理员会尽快处理！");
+                                }
+                                else
+                                {
+                                alert("举报失败！请稍后再试！");
+                                }
+                                }
+                                }
+                                var url = "sale.php?goods_id=" + goods_id + "&reason=" + reason + "&mod=jubao";
+                                        xmlhttp.open("GET", url, true);
+                                        xmlhttp.send(null);
+                                }
+            </script>
+            <div class="mainBox detailInfo" style="padding-top:3px;padding-bottom:3px;background:#ffffec;">
+                <p style="color:#f00;font-size:12px;line-height:100%;">提示：最近发现在广告内容内有留下网址骗取QQ账号等私人信息，请大家提高警惕，不要点击进入广告内容内的陌生网址。</p>
+                <p style="color:#f00;font-size:12px;text-indent:35px;line-height:100%;">如发现内容内含有诈骗信息内容，请举报至 support@vanpeople.com</p>
+            </div>
+            <div class="mainBox detailInfo">
+                <p class="mainBox_Cttt">描述</p>
+                <style type="text/css">.mainBox p, .mainBox span { line-height:22px; }</style>
+                {$goods['goods_text']}
+
+                <p>{$sale_config['helpnotice']}</p>
+                {if $goods['goods_upload_file_1']}<div class="pics"><p><img src="{$goods['goods_upload_file_1']}" class="image" alt="{$goods['goods_title']}" title="{lang sale:view_htm_46}" /></p></div>{/if}
+                {if $goods['goods_upload_file_2']}<div class="pics"><p><img src="{$goods['goods_upload_file_2']}" class="image" alt="{$goods['goods_title']}" title="{lang sale:view_htm_46}" /></p></div>{/if}
+                {if $goods['goods_upload_file_3']}<div class="pics"><p><img src="{$goods['goods_upload_file_3']}" class="image" alt="{$goods['goods_title']}" title="{lang sale:view_htm_46}" /></p></div>{/if}
+                {if $goods['goods_upload_file_4']}<div class="pics"><p><img src="{$goods['goods_upload_file_4']}" class="image" alt="{$goods['goods_title']}" title="{lang sale:view_htm_46}" /></p></div>{/if}
+            </div>
+            <div id="btn_messageTo"><a href="{$sale_config['root']}"><span>返回信息列表页</span></a></div>
+            <div id="mainBox">
+
+            </div>
+        </div>
+    </div>
+    <div id="rightSide">
+
+        <div class="box">
+            <dl class="rightNotice" style="background:#ffffec;">
+                <dt>常见<a href="forum.php?mod=forumdisplay&fid=72" target="_blank">问题解答</a>:</dt>
+                <dd><a href="forum.php?mod=viewthread&tid=19&extra=page%3D1" style="color:#000;" target="_blank">如何免费发布信息？</dd>
+                <dd><a href="forum.php?mod=viewthread&tid=21&extra=page%3D1" style="color:#000;" target="_blank">如何删除我发布的信息？</a></dd>
+                <dd><a href="forum.php?mod=viewthread&tid=22&extra=page%3D1" style="color:#000;" target="_blank">如何重新编辑/更新信息？</a></dd>
+                <dd><a href="forum.php?mod=viewthread&tid=23&extra=page%3D1" style="color:#000;" target="_blank">如何上传图片？上传图片有..</a></dd>
+            </dl>
+        </div>
+
+        <div class="box">
+            <dl class="rightNotice" style="background:#ffffec;">
+                <dt style="color:#f00;"><strong>免责声明:</strong></dt>
+                <dd style="text-indent:0;padding:0;background-position:-1000px -1000px;">如果您发现本网站上有侵犯您的知识产权或合法权益的内容，请及时与我们联络，我们会尽快移除被控侵权内容。</dd>
+            </dl>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<!--{template common/footer}-->

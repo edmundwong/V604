@@ -1,0 +1,23 @@
+{template common/header}
+
+<div class="dianzhaos">
+    <h2><strong>{$tmp_lang['dianbackbg']}</strong><a href="javascript:;" onClick="hideWindow('$_G[gp_handlekey]');" class="flbc" title="{lang close}">{lang close}</a></h2>
+    <ul>
+    <form method="post" enctype="multipart/form-data" action="plugin.php?id=dz55625_haodian:haodian_dz&action=bg&mod=view&applysubbg=true" name="applyformx">
+        <input type="hidden" name="formhash" value="{FORMHASH}" />
+       	<input type="hidden" name="newid" value="$active[id]" />
+        <select name="repeat" id="repeat">
+        	<option value="1">{$tmp_lang['dianjuzhong']}</option>
+            <option value="0">{$tmp_lang['dianpingpu']}</option>
+        </select>
+        <input type="file" name="uploads" id="pic" size="34"/>
+        <div style="text-align:center; margin:10px auto 0;">
+            <button type="submit" name="applysubbg" id="applysubbg" value="true" class="pn pnp" /><strong>{$tmp_lang['listtjj']}</strong></button>
+        </div>
+    </form>
+    </ul>
+</div>
+    
+{template common/footer}
+
+

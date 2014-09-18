@@ -1,0 +1,385 @@
+img.imgBorder {
+	padding:5px;
+	background:#FFF;
+	border:1px solid #EBEBEB;
+	margin:2px;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+#content {
+	color:#000;
+	font-size:14px;
+	margin:0 auto !important;
+}
+#content .w760 {
+	width:740px;
+	margin:0 auto 5px auto;
+	font-size:14px;
+}
+.errMsg {
+	border:1px solid #F00;
+	padding:5px;
+	background:#FEE9E1 url(http://static.baixing.net/images/css/global/error-32.gif) no-repeat 5px 10px;
+	padding-left:45px;
+	color:#000;
+}
+.successMsg {
+	border:1px solid #5EBF01;
+	padding:5px;
+	background:#E7FBC0 url(http://static.baixing.net/images/css/global/success-32.gif) no-repeat 5px 10px;
+	padding-left:45px;
+	color:#000;
+}
+.alertMsg {
+	border:1px solid #FFE304;
+	padding:5px 10px;
+	margin:10px 0;
+	background:#FEF8D1;
+	color:#000;
+}
+#postForm .item li {
+	display:inline;
+	margin-right:5px;
+}
+#postForm .item li a {
+	white-space:nowrap;
+}
+#postForm table label {
+	white-space:normal;
+}
+* html #postForm table label {
+	white-space:nowrap;
+}
+*+html #postForm table label {
+	white-space:nowrap;
+}
+#postForm .item {
+	clear:both;
+	padding:2px;
+	margin:1px 0;
+	width:980px;
+}
+#postForm .item td.attribute {
+	width:110px;
+	text-align:right;
+}
+#postForm .item td {
+	vertical-align:top;
+	line-height:21px;
+}
+#postForm .item .value, #postForm .item .attribute {
+	padding-top:2px;
+}
+#postForm .item td.value {
+	padding-left:5px;
+	color:#000;
+}
+#postForm #imagesTable {
+	width:580px;
+}
+#postForm #imagesUl li {
+	width:90px;
+	text-align:center;
+	float:left;
+}
+#postForm #imagesUl .imgUpload {
+	border:1px solid #FFD06F;
+	padding:9px;
+	background:#FFF;
+	margin:2px;
+}
+#postForm #imagesUl .imgUpError {
+	border:1px solid #F66;
+	background:url(http://static.baixing.net/images/css/global/img_error.gif) no-repeat 5px 5px;
+	padding:5px;
+	margin:2px;
+	text-align:center;
+	width:64px;
+	height:64px;
+}
+#postForm .item .postFormCheckBox li {
+	height:21px;
+	display:block;
+	float:left;
+	max-width:200px;
+	min-width:140px;
+}
+*html #postForm .item .postFormCheckBox li {
+	width:140px;
+}
+*+html #postForm .item .postFormCheckBox li {
+	width:140px;
+}
+#postForm .item .postFormRadio li {
+	height:21px;
+	display:block;
+	float:left;
+	max-width:200px;
+	min-width:140px;
+}
+*html #postForm .item .postFormRadio li {
+	width:140px;
+}
+*+html #postForm .item .postFormRadio li {
+	width:140px;
+}
+.input, .textarea {
+	padding:3px 2px 1px 2px;
+	font-size:14px;
+	border-top:1px solid #666;
+	border-left:1px solid #666;
+	border-bottom:1px solid #C2C2C2;
+	border-right:1px solid #C2C2C2;
+	background:#F5F5F5;
+}
+.textarea {
+	line-height:1.35;
+	width:580px;
+}
+.button {
+	padding:5px 20px;
+	font-size:14px;
+}
+#optContent {
+	border:1px solid #DDD;
+}
+#optContent table td {
+	padding:2px;
+}
+#categoryBox div {
+	width:150px;
+	float:left;
+	padding-bottom:5px;
+	margin-left:5px;
+}
+#categoryBox h2 {
+	line-height:1.7;
+	padding-left:5px;
+	background:#F3F3F3;
+	border-top:1px solid #EBEBEB;
+	border-bottom:1px solid #EBEBEB;
+}
+#categoryBox li {
+	font-size:14px;
+	line-height:1.7;
+	width:140px;
+	padding-left:5px;
+}
+.check {
+	font-size:12px;
+	color:#090;
+}
+.checkError {
+	background:#FEE9E1 url(http://static.baixing.net/images/css/global/error.gif) no-repeat 3px 4px;
+	padding-left:20px;
+	font-size:12px;
+	color:#F00;
+}
+.error, .ok, .load {
+	padding:2px 5px 2px 25px;
+	color:#000;
+	font-size:12px;
+}
+.error {
+	border:1px solid #F00;
+	background:#FEE9E1 url(http://static.baixing.net/images/css/global/error.gif) no-repeat 5px 6px;
+}
+.ok {
+	border:1px solid #5EBF01;
+	background:#E7FBC0 url(http://static.baixing.net/images/css/global/ok.gif) no-repeat 5px 6px;
+}
+.load {
+	border:1px solid #FFBD33;
+	background:#FFC url(http://static.baixing.net/images/css/global/ajax_loader.gif) no-repeat 5px 6px;
+}
+.succeed {
+	clear:both;
+	margin-bottom:10px;
+	border:2px solid #5ABD00;
+	padding:10px 5px 10px 50px;
+	background:#E7FBC0 url(http://static.baixing.net/images/css/global/success-32.gif) no-repeat 7px 7px;
+}
+.succeed h2 {
+	padding:5px;
+	margin:0;
+	font-size:14px;
+}
+.succeed p {
+	padding:0;
+	margin:0;
+}
+.succeed .red {
+	color:#F00;
+}
+.item label {
+	cursor:pointer;
+}
+.hidden {
+	display:none;
+}
+#content #firstCategory, #content #secondCategory {
+	line-height:1.5;
+	font-size:14px;
+}
+#firstCategory {
+	border:1px solid #7F9DB9;
+	padding:1px;
+	width:100px;
+	background:#fff;
+}
+#firstCategory div {
+	border:1px solid #716F64;
+	border-bottom:1px solid #F1EFE2;
+	border-right:1px solid #F1EFE2;
+}
+#content #firstCategory a {
+	text-decoration:none;
+	border:1px solid #fff;
+	width:95px;
+	padding-left:5px;
+	display:block;
+	background:#fff;
+	white-space:nowrap;
+	color:#000;
+}
+#content #firstCategory a:hover {
+	background:#316AC5 url(http://static.baixing.net/images/post/3-4.gif) no-repeat 90px 6px;
+	color:#fff;
+	text-decoration:none;
+}
+#content #firstCategory a.on {
+	background:#316AC5 url(http://static.baixing.net/images/post/3-4.gif) no-repeat 90px 6px;
+	color:#fff;
+	text-decoration:none;
+}
+#content #secondCategory table {
+	background:#fff;
+	border:1px solid #716F64;
+	border-bottom:1px solid #F1EFE2;
+	border-right:1px solid #F1EFE2;
+}
+#content #secondCategory a {
+	display:block;
+	width:120px;
+	text-decoration:none;
+	border:1px solid #fff;
+	padding-left:5px;
+	white-space:nowrap;
+	color:#000;
+	line-height:1.5;
+	font-size:14px;
+}
+#content #secondCategory div {
+	border:1px solid #7F9DB9;
+	padding:1px;
+	background:#fff;
+	position:relative;
+	z-index:98;
+}
+#categoryCheck {
+	position:relative;
+	z-index:99;
+}
+#content #secondCategory a:hover {
+	background:#316AC5;
+	color:#fff;
+	text-decoration:none;
+}
+#content #secondCategory a.on {
+	background:#316AC5;
+	color:#fff;
+	text-decoration:none;
+}
+#jiantou, #categoryBox {
+	display:none;
+}
+#seCategory small {
+	font-size:12px;
+}
+#postNav {
+	line-height:1.8;
+}
+#bangui {
+	border:1px solid #fff;
+	position:absolute;
+	background:#FAFAFA;
+	top:42px;
+	margin-left:700px;
+	width:270px;
+	padding:5px 10px;
+	font-size:12px;
+}
+#content select {
+	font-size:14px;
+}
+.imgBorderBeta {
+	float:left; margin:0 10px 6px 0; text-align:center; width:64px; height:80px; border:1px solid #999; padding:10px; font-size:12px;
+}
+.imgUpload{border:1px solid #FFD06F;padding:9px;background:#FFF;margin:2px;}
+span.imgBeta {
+	display:block;
+	background:#EEEEF0;
+	font-size:12px;
+	padding:2px 0 0 0;
+	color:#5B5B68;
+	margin:0 3px;
+	margin-top:-2px;
+	border:1px solid #EEEEE7;
+}
+#content #nav li {
+	font-size:14px;
+	font-weight:bold;
+	color:#B1B1B1;
+	display:inline;
+	padding:3px 5px 3px 45px;
+}
+#content #nav #nav1 {
+	background:url(postNav1.gif) no-repeat left bottom;
+	padding-left:27px;
+}
+#content #nav #nav2 {
+	background:url(postNav2.gif) no-repeat left bottom;
+}
+#content #nav #nav3 {
+	background:url(postNav3.gif) no-repeat left bottom;
+}
+#content #nav #nav4 {
+	background:url(postNav4.gif) no-repeat left bottom;
+}
+#content #nav #nav1.on, #content #nav #nav2.on, #content #nav #nav3.on, #content #nav #nav4.on {
+	background-position:left top;
+	color:#497201;
+}
+content{background:url(http://www.baixing.com/images/jiantou.gif) no-repeat -500px 0;}
+
+#postForm .showError {
+	background:#FFEBDD;
+	font-weight:bold;
+}
+#postForm .value .showError {
+	color:#F30;
+}
+#postForm .hiddenError {
+	display:none;
+}
+#postForm .item .hiddenTips {
+	display:none;
+}
+#postForm .item .showTips {
+	font-weight:normal;
+	display:block;
+	padding:0 5px 0 20px;
+	background:url(http://static.baixing.com/images/css/global/icon_comment2.gif) no-repeat 5px 4px;
+}
+.tips{background:#ffffeb;border:1px solid #fc0;padding:7px 0 8px 0;margin:0 0 15px 0;}
+.tips dt{font-weight:bold;padding:5px 0 5px 5px;margin:0;}
+.tips dd{padding:0 0 0 10px;color:#333;margin:0;line-height:26px;}
+.tips dd a{text-decoration:underline;}
+.tips dd b{color:#e40000;font-weight:normal;}
+
+span.red{border: none !important;
+background-color:inherit !important;
+color:red !important;
+}

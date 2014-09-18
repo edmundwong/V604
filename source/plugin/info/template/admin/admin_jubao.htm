@@ -1,0 +1,24 @@
+{template info:admin/style}
+<div id="plugin_admin">
+
+<h1>{lang info:admin_jubao_htm_1}</h1>
+{if $jubao_array}
+--
+    <table class='table'>
+    <tr>
+        <th>{lang info:admin_jubao_htm_2}</th>
+        <th>{lang info:admin_jubao_htm_3}</th>
+        <th>&nbsp;</th>
+    </tr>
+    {loop $jubao_array $jubao}
+    <tr>
+        <td><a href="{$info_config['root']}?mod=view&post_id={$jubao['post_id']}" target="_blank">{$jubao['post_title']}</a></td>
+        <td>{echo dgmdate($jubao['jubao_time'],'u');}</td>
+        <td><a href="admin.php?{$cp_url}&del={$jubao['jubao_id']}">{$info_lang['del']}</a></td>
+    </tr>
+    {/loop}
+    </table>
+{else}
+<div class="brian_tips">{lang info:admin_jubao_htm_5}</div>
+{/if}
+</div>

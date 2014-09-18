@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[club_house.pack]]></item>
+	<item id="RevisionID"><![CDATA[12107]]></item>
+	<item id="SN"><![CDATA[20140306222RHC22rsCK]]></item>
+	<item id="RevisionDateline"><![CDATA[1361264425]]></item>
+	<item id="Data">
+		<item id="/house.php"><![CDATA[a30bac4828b15919fdb8b97d08dc558e]]></item>
+		<item id="/source/include/cron/cms_house.php"><![CDATA[295ace1759319fe24aaf210c200b71cb]]></item>
+	</item>
+</root>

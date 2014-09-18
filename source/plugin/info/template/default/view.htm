@@ -1,0 +1,255 @@
+<!--{eval include template("info:$style/header");}-->
+<!--{eval include template("info:$style/style");}-->
+
+
+<script type="text/javascript" src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/frame.js"></script>
+
+<script language="javascript">
+function emailto()
+{
+	var l=document.documentElement.clientWidth/2-250;
+	l=l+'px';
+	$('#emailto').css("left",l);
+	$('#emailto').css("top","150px");
+	$('#emailto').show("slow");
+}
+</script>
+<style type="text/css">
+#emailto{
+background-color:#FFFFFF;
+border:10px #CCCCCC solid;
+width:500px;
+position:absolute;
+display:none;
+z-index:999;
+}
+</style>
+<div id="emailto">
+  <form id="form1" name="form1" method="post" action="/info.php?mod=view&op=send_email">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td height="38" colspan="2" align="center"><b>把这条信息发给朋友</b></td>
+	  <td width="4%"><img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/img/c.gif" style="cursor:pointer;" onclick="$('#emailto').hide();" /></td>
+    </tr>
+    <tr>
+      <td width="23%" height="32" align="right">Email地址：</td>
+	  <td width="73%"><label>
+	    <input name="to_email" type="text" id="mailto" value="请输入邮件地址" size="40" onclick="if(this.value=='请输入邮件地址'){this.value='';}" />
+	  </label></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="32" align="right">邮件内容：</td>
+      <td><label>
+        <textarea name="obj" cols="40" rows="5" id="txt"></textarea>
+      </label></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+	<input type="hidden" name="post_id" value="{$post['post_id']}" />
+      <td height="32" colspan="2" align="center"><label>
+        <input type="submit" name="Submit" value="发送" />
+      </label></td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  </form>
+</div>
+
+
+<div id="wrapper">
+<!--{eval include template("info:$style/head");}-->
+<div id="content">
+				<div id="mainSide">
+					<div class="detail_title">
+						<h1>[{$subcat_title}]{$post['post_title']}</h1>
+						<div class="post_ext">
+							<span class="code">{lang info:space_mypost_htm_6}: {$post['post_id']}</span>
+							<span class="op">{if $goods['member_uid']==$_G['uid'] || $is_sale_admin}
+                   {/if}
+                    <a href="{$info_config['root']}?mod=member&op=post&ac=edit&subcat_id={$subcat_id}&post_id={$post_id}">{lang info:space_mypost_htm_10}</a>
+                    |
+                    <a href="{$info_config['root']}?mod=view&post_id={$post_id}&op=del&check=pwd">{$info_lang['del']}</a></span>
+                    
+						</div>
+						<div class="pubTime"> {lang info:space_mypost_htm_6}: {$post['post_id']}
+                    |
+                    {lang info:space_mypost_htm_8}: {echo dgmdate($post['post_time'],'dt');}
+                    |
+                    {lang info:index_htm_29}: {eval echo date("Y-m-d",$post['post_begin_time']);}
+                    |
+                    {lang info:member_apply_htm_6}: {eval echo date("Y-m-d",$post['post_end_time']);}
+                    |
+                    {lang info:view_htm_13}: <font>{$post['post_view']}</font>{lang info:view_htm_14}
+                    </div>
+					</div>
+                    {if $post['goods_status'] == 0}
+                    <div class="mainBox" style="background:#F00; color:#FFF; font-weight:bold;">
+
+
+        该信息尚未公开发表，正在等待管理员验证 
+
+
+
+</div>
+{/if}
+										<div class="mainBox">
+						<div class="detal_left border_right">
+							<ul>
+																<li>
+								  <dl>
+                                  {if  $post['area_title']}
+									<dt>地址 :</dt>
+									<dd> {$post['area_title']} {$post['subarea_title']} {$post['thrarea_title']}</dd>
+                                    {/if}
+								  </dl>
+								</li>
+                                
+                                
+                                {if !empty($post['address1'])}<li>
+                            	<dl>
+                                    <dt>联系地址:</dt>
+                                    <dd>{$post['address1']}</dd>
+                                </dl>
+                            </li>{/if}
+                            
+                            
+                                
+																								<li>
+								  <dl>
+                                  {if  $post['cat_id']}
+									<dt>类别 :</dt>
+									<dd> {$post['cat_title']} {$post['subcat_title']} {$post['thrsubcat_title']}</dd>
+                                    {/if}
+								  </dl>
+								</li>
+
+                            																		  			</ul>
+						</div>
+						<div class="detail_info2">
+						  <ul class="detail_info_ul">
+							<li>
+							  <dl>
+								<dt>联系人:</dt>
+								<dd>{$post['member_username']}</dd>
+							  </dl>
+							</li>
+														<li>
+							  <dl>
+								<dt>联系电话:</dt>
+								<dd class="phoneNum">{$post['tel']}</dd>
+							  </dl>
+							</li>
+                            {if !empty($post['email'])}<li>
+                            	<dl>
+                                    <dt>电子邮件:</dt>
+                                    <dd><a href="mailto:{$post['email']}">{$post['email']}</a></dd>
+                                </dl>
+                            </li>{/if}
+                            
+                            
+
+                            
+																											  </ul>
+						  <div class="userReport">
+							<dl id="id_jubao">
+							  <dt>举报:</dt>
+							  <dd>                              
+                        <input type="button" name="" value="分类不当" onclick="dcj_jubao({$post['post_id']},'分类不当');" />&nbsp;&nbsp;&nbsp;
+                        <input type="button" name="" value="商业广告" onclick="dcj_jubao({$post['post_id']},'商业广告');" />&nbsp;&nbsp;&nbsp;
+                        <input type="button" name="" value="其他问题举报" onclick="dcj_jubao({$post['post_id']},'其他问题举报');" />
+                              
+                              
+                              </dd>
+							</dl>
+							<div class="userReportBg1">&nbsp;</div>
+							<div class="userReportBg2">&nbsp;</div>
+							<div class="userReportBg3">&nbsp;</div>
+							<div class="userReportBg4">&nbsp;</div>
+						  </div>
+						</div>
+			 		 </div>
+                     <script type="text/javascript">
+            function dcj_jubao(post_id,reason)
+            {
+                var xmlhttp;
+                if(window.XMLHttpRequest)
+                {
+                    xmlhttp = new XMLHttpRequest();
+                }
+                else
+                {
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function()
+                {
+                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                    {
+                        var xx = xmlhttp.responseText;
+                        //var return_body = xx.body.force_encoding('UTF-8');
+                        //return_body = return_body.gsub(/[\u0000-\u001f\u007f\u0080-\u009f]/,'');
+                        var data = JSON.parse(xx);
+                       //var data = eval("(" + xx ++ ")");
+                        //var data = xx.parseJSON(xx);
+                       //alert(xx);
+                        if(data.status == 1)
+                        {
+                            alert("举报成功，谢谢！管理员会尽快处理！");
+                        }
+                        else
+                        {
+                            alert("举报失败！请稍后再试！");
+                        }
+                    }
+                }
+                var url = "info.php?post_id="+post_id+"&mod=member&op=jubao&reason="+reason;
+                xmlhttp.open("GET",url,true);
+                xmlhttp.send(null);
+            }
+        </script>
+			  		 <div class="mainBox detailInfo" style="padding-top:3px;padding-bottom:3px;background:#ffffec;">
+						<p style="color:#f00;font-size:12px;line-height:100%;">提示：最近发现在广告内容内有留下网址骗取QQ账号等私人信息，请大家提高警惕，不要点击进入广告内容内的陌生网址。</p>
+						<p style="color:#f00;font-size:12px;text-indent:35px;line-height:100%;">如发现内容内含有诈骗信息内容，请举报至 support@vanpeople.com</p>
+					</div>
+					 <div class="mainBox detailInfo">
+						<p class="mainBox_Cttt">描述</p>
+                        <style type="text/css">.mainBox p, .mainBox span { line-height:22px; }</style>
+                        {$post['post_text']}
+                        
+                        <p>{$info_config['helpnotice']}</p>
+                {loop $info_img $im}
+				<div class="pics"><p><img src="{$im['img']}" class="image" alt="{$im['img']}" title="{lang sale:view_htm_46}" /></p></div>
+				{/loop}
+				
+					  </div>
+			  <div id="btn_messageTo"><a href="{$sale_config['root']}"><span>返回信息列表页</span></a></div>
+			  			  <div id="mainBox">
+			  </div>
+			  			</div>
+		  </div>
+          <div id="rightSide">
+		
+			  <div class="box">
+				<dl class="rightNotice" style="background:#ffffec;">
+					<dt>常见<a href="http://www.vanpeople.com/c/help/help1.php" target="_blank">问题解答</a>:</dt>
+					<dd><a href="http://www.vanpeople.com/c/help/help1.php" style="color:#000;" target="_blank">如何免费发布信息？</dd>
+					<dd><a href="http://www.vanpeople.com/c/help/help3.php" style="color:#000;" target="_blank">如何删除我发布的信息？</a></dd>
+					<dd><a href="http://www.vanpeople.com/c/help/help4.php" style="color:#000;" target="_blank">如何重新编辑/更新信息？</a></dd>
+					<dd><a href="http://www.vanpeople.com/c/help/help5.php" style="color:#000;" target="_blank">如何上传图片？上传图片有..</a></dd>
+				</dl>
+			  </div>
+			  
+			  <div class="box">
+				<dl class="rightNotice" style="background:#ffffec;">
+					<dt style="color:#f00;"><strong>免责声明:</strong></dt>
+					<dd style="text-indent:0;padding:0;background-position:-1000px -1000px;">如果您发现本网站上有侵犯您的知识产权或合法权益的内容，请及时与我们联络，我们会尽快移除被控侵权内容。</dd>
+				</dl>
+			  </div>
+		
+		  </div>
+</div>
+
+
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

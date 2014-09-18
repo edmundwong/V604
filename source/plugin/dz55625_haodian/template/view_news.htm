@@ -1,0 +1,22 @@
+<!--{if !$_GET['nw']}-->
+{if $yhcount != '0'}
+<ul>
+    <!--{loop $youhuis $key $youhui}-->
+       <li><strong><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$youhui['id']}_vn{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=news&nw={$youhui['id']}&sid={$_GET['sid']}<!--{/if}-->">{$youhui['title']}</a></strong><em>{$youhui['dateline']}</em></li>
+    <!--{/loop}-->
+</ul>
+{$ymulti}
+{else}
+	<ul style="padding-bottom:13px">{$tmp_lang['noaddnew']}</ul>
+{/if}
+
+<!--{elseif $_GET['nw']}-->
+
+<!--{loop $youhuis $key $youhui}-->
+
+<h3><strong>{$youhui['title']}</strong><span>{$youhui['dateline']}</span></h3>
+<dl>
+{$youhui['subject']}
+</dl>
+<!--{/loop}-->
+<!--{/if}-->

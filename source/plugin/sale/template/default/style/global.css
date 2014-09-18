@@ -1,0 +1,348 @@
+body {
+	text-align:center;
+	background:#FFF;
+	font:12px/1.6 Verdana, Arial, "宋体", SimSun, serif, sans-serif;
+	color:#666;
+	padding:0;
+	margin:0;
+}
+p, div, ul, li, h1, h2, h3, h4, h5, h6, input, textarea, form, table, tr, th, td {
+	margin:0;
+	padding:0;
+	list-style:none;
+	font-family:Verdana, Arial, "宋体", SimSun, serif, sans-serif;
+}
+h3, h4, h5, h6, input, textarea {
+	font-size:12px;
+}
+h1 {
+	font-size:16px;
+	color:#000;
+}
+h2 {
+	font-size:14px;
+	color:#000;
+}
+form input {
+	padding:2px;
+}
+img {
+	vertical-align:middle;
+	border:none;
+}
+a:link, a:visited {
+	color:#009;
+	text-decoration:none;
+}
+a:hover, a:active {
+	color:#000;
+	text-decoration:underline;
+}
+img.imgBorder {
+	padding:5px;
+	background:#FFF;
+	border:1px solid #EBEBEB;
+	margin:2px;
+}
+.error, .ok, .load {
+	padding:2px 5px 2px 25px;
+	color:#000;
+}
+.error {
+	border:1px solid #F00;
+	background:#FEE9E1 url(http://static.baixing.com/images/css/global/error.gif) no-repeat 5px 6px;
+}
+.ok {
+	border:1px solid #5EBF01;
+	background:#E7FBC0 url(http://static.baixing.com/images/css/global/ok.gif) no-repeat 5px 6px;
+}
+.load {
+	border:1px solid #FFBD33;
+	background:#FFC url(http://static.baixing.com/images/css/global/ajax_loader.gif) no-repeat 5px 6px;
+}
+.clear {
+	clear:both;
+	height:0;
+	overflow:hidden;
+}
+.hidden {
+	display:none;
+}
+.show {
+	display:block;
+}
+.red {
+	color:#F00;
+}
+.hot, .hot a {
+	color:#F60;
+}
+.font12 {
+	font-size:12px;
+}
+.font14 {
+	font-size:14px;
+}
+.blank2, .blank5, .blank10, .blank20, .blank50 {
+	clear:both;
+	overflow:hidden;
+}
+.blank2 {
+	height:2px;
+}
+.blank5 {
+	height:5px;
+}
+.blank10 {
+	height:10px;
+}
+.blank20 {
+	height:20px;
+}
+.blank25 {
+	height:25px;
+	clear:both;
+}
+.blank50 {
+	height:50px;
+}
+.blankColor2Px {
+	clear:both;
+	overflow:hidden;
+	height:2px;
+	background:#5DB30A;
+}
+.newButtonGreen {
+	background:#EEF9BE url(http://static.baixing.com//images/newhomepage/buttonbggreen.gif) repeat scroll 0 0;
+	border-color:#A2C758 #336633 #363 #A2C758;
+	border-style:solid;
+	border-width:1px;
+	cursor:pointer;
+	font-family:Arial, Verdana, helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	height:23px;
+	text-decoration:none;
+	vertical-align:middle;
+	width:auto;
+}
+#wrapper, #content, #footer, #header {
+	margin:0 auto;
+	text-align:left;
+	width:980px;
+}
+#header, #content, footer {
+	clear:both;
+	text-align:left;
+	margin:0 auto;
+}
+#header a:link, #header a:visited {
+	color:#006;
+	text-decoration:none;
+}
+#header a:hover, #header a:active {
+	color:red;
+	text-decoration:underline;
+}
+#header {
+	line-height:1.8;
+	background:url(http://static.baixing.com/images/css/global/header_bg2.gif) repeat-x;
+	height:110px;
+}
+#header .logoBg {
+	background:url(http://static.baixing.com/images/css/global/header_bg.gif) no-repeat 0 -178px;
+	padding:10px 80px 10px 10px;
+}
+#loginUser {
+	background:url(http://static.baixing.com/images/css/global/header_bg2.gif) repeat-x 0 -115px;
+	line-height:2.0;
+}
+#searchForm .newHeaderForm {
+	background:url(http://static.baixing.com/images/css/global/header_bg.gif) repeat-x 0 -64px;
+	line-height:2.0;
+}
+h3 {
+	background:url(http://static.baixing.com/images/css/global/h3bg.jpg) repeat-x left top;
+	padding-left:5px;
+	color:#fff;
+	line-height:1.8;
+}
+h3.yellow {
+	background:url(http://static.baixing.com/images/css/global/h3yellow.gif) repeat-x left top;
+	padding-left:5px;
+	color:#fff;
+	line-height:1.8;
+}
+#searchForm {
+	margin-top:15px;
+}
+#searchForm td {
+	padding:2px;
+	vertical-align:top;
+}
+#searchForm input, #searchForm select {
+	font-size:14px;
+	padding:1px 1px 0 1px;
+	float:left;
+}
+#searchForm .out {
+	background:transparent;
+	color:#000;
+}
+#searchForm .move {
+	background:#006;
+	color:#FFF;
+}
+#searchForm dl, #searchForm dt, #searchForm dd {
+	padding:0;
+	margin:0;
+	font-size:14px;
+	line-height:1.6;
+	font-family:Verdana;
+}
+#searchForm dl {
+	text-align:left;
+}
+#searchForm dt {
+	background:url(http://static.baixing.com/images/css/global/select_bg2.gif) no-repeat left top;
+	cursor:default;
+	padding-left:5px;
+	width:140px;
+}
+#searchForm dd {
+	line-height:1.9;
+	border:1px solid #000;
+	font-size:12px;
+	position:absolute;
+	background:#fff;
+	z-index:9999;
+	width:248px;
+	overflow:hidden;
+}
+#searchForm dd span {
+	display:block;
+	padding-left:10px;
+	cursor:default;
+	width:340px;
+}
+#searchForm ul.sub {
+	width:100%;
+	margin-left:20px;
+}
+#searchForm #subDiv {
+	background-color:#EDF1DE;
+	float:left;
+}
+#searchForm ul.sub li {
+	float:left;
+	padding-left:2px;
+	width:100px;
+	cursor:default;
+	white-space:nowrap;
+}
+#searchForm #souName {
+	background:transparent url(http://static.baixing.com/images/newhomepage/test/icon_q.gif) no-repeat scroll 3px 2px;
+	width:45px;
+}
+#searchForm #q {
+	width:300px;
+	background:#FFE none repeat scroll 0 0;
+	border:2px solid #5EA427;
+	font-size:14px;
+	height:17px;
+	padding:2px 2px 0;
+}
+.newTab li {
+	display:inline;
+	font-weight:bold;
+}
+.newTab a {
+	background:url(http://static.baixing.com/images/css/global/header_bg.gif) no-repeat;
+}
+.newTab a:link, .newTab a:visited {
+	float:left;
+	background-position:left top;
+	text-decoration:none;
+	margin-left:5px;
+}
+.newTab a:link span, .newTab a:visited span {
+	display:block;
+	background:url(http://static.baixing.com/images/css/global/header_bg.gif) no-repeat right top;
+	font-size:12px;
+	padding:2px 15px;
+	color:#000;
+}
+#header .newTab a:hover, #header .newTab a:active, #header .newTab .on a:link, #header .newTab .on a:visited {
+	background-position:left bottom;
+	text-decoration:none;
+}
+#header #corner {
+	background:url(http://static.baixing.com/images/css/global/header_bg.gif) no-repeat -45px -64px;
+	width:13px;
+	height:25px;
+}
+.newTab a:hover span, .newTab a:active span, .newTab .on a:link span, .newTab .on a:visited span {
+	background-position:right bottom;
+}
+#header img {
+	display:block;
+	border:none;
+}
+#chCity {
+	font-size:22px;
+	color:#F60;
+}
+.popupWindow2 {
+	position:absolute;
+	top:49px;
+	margin-left:223px;
+	background:#FFF;
+	border-right:1px solid #CEB503;
+	border-bottom:1px solid #CEB503;
+	border-left:1px solid #CEB503;
+	padding:5px 0 2px 0;
+	width:93px;
+	display:none;
+}
+#footer {
+	border-top:1px solid #efefef;
+	padding:5px;
+	margin-top:10px;
+	text-align:center;
+}
+#survey {
+	text-align:center;
+}
+#footer #version {
+	padding:0;
+	margin:0;
+	color:#f6f6f6;
+}
+.grayBorder {
+	padding:5px;
+	border:1px solid #EBEBEB;
+	margin-top:10px;
+	clear:both;
+	height:1%;
+}
+.ads {
+	padding:5px;
+	clear:both;
+	height:1%;
+}
+.ads h2 {
+	background:#EBEBEB;
+	padding-left:5px;
+	color:#397300;
+}
+.ads p {
+	text-align:right;
+}
+.ads li {
+	background:url(http://static.baixing.com/images/css/sidebar/li_green.gif) no-repeat 5px 8px;
+	padding-left:16px;
+	overflow:hidden;
+}
+#version {
+	color:#fff;
+}

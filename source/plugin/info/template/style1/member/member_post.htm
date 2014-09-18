@@ -1,0 +1,221 @@
+<script src="/static/js/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="/static/js/common.js?{VERHASH}" type="text/javascript"></script>
+
+<style type="text/css">
+    form div{margin:10px 0;}
+    form label{width:90px; text-align:right; display:inline-block; margin-right:10px;}
+    form label em{ color:#fc6328;}
+    .wrapper div{margin-top:15px}
+    input{
+        height:28px
+    }
+</style>
+
+<div style="text-align:center; margin:40px auto 30px; font-size:18px; color:#828999;" class="fenlei">
+    <span>1.选择发布大类</span><em>></em><span>2.选择发布小类</span><em>></em><span style="color:#8cc152;">3.填写详细信息</span><em>></em><span>4.发布成功</span>
+</div>
+<div class="wrapper">
+    <form style="margin-left:170px" action="{$info_config['root']}?mod={$mod}&op={$op}" method="post" enctype="multipart/form-data" onsubmit="return validate();">
+        <input type="hidden" name="mod" value="{$mod}" />
+        <input type="hidden" name="op" value="{$op}" />
+        <input type="hidden" name="ac" value="{$ac}" />
+        <input type="hidden" name="formhash" value="{$_G['formhash']}" />
+        <input type="hidden" id="dcj_post_id" name="post_id" value="{$post_id}" />
+        <input type="hidden" name="profile_type_id" value="{$profile_type_id}" />
+        <input type="hidden" name="subcat_id" value="{$subcat_id}" />
+        <!--{eval $a_pcat = $cat_array[$cat_array[$subcat_id]['cat_pid']];}-->
+        <!--{eval $s_cat_value = $a_pcat['cat_id'].'@@'.$a_pcat['cat_title'];}-->
+        <input type="hidden" name="cat" value="{$s_cat_value}" />
+        <!--{eval $s_subcat_value = $subcat_id.'@@'.$cat_array[$subcat_id]['cat_title'];}-->
+        <input type="hidden" name="subcat" value="{$s_subcat_value}" />
+
+        <div>
+            <label><em>*</em>当前分类:</label>
+            <!--{if $subcat_title }-->
+            <span>{$subcat_title}</span>
+            <!--{if $ac!='edit'}-->
+            <a href="{$info_config['root']}?mod=select" style="margin-left:10px;color:#fc6328">[更改分类]</a>
+            <!--{/if}-->
+            <!--{/if}-->
+        </div>
+
+        <!-- TODO -->
+        <table class="fb_form">
+            {eval $profile_setting_names=array();}
+            {eval $tr = 0;}
+            {loop $profile_setting $ps}
+            {if $tr ==0}
+            <tr>
+                {/if}
+                <td class="tdr">{if $ps['profile_setting_required']}<font color="red">*</font>{/if}{$ps['profile_setting_title']} : </td>
+                <td>
+                    {if $ps['profile_setting_formtype']=='select'}
+                    {eval $ps['profile_setting_choices'] = explode("\r\n",$ps['profile_setting_choices']);}
+                    <select name="profile_setting_{$ps['profile_setting_name']}">
+                        {loop $ps['profile_setting_choices'] $v}
+                        <option {if $post_profile[$ps['profile_setting_name']]['post_profile_title'] == $v } selected="selected" {/if} >{$v}</option>
+                        {/loop}
+                    </select>
+                    {elseif $ps['profile_setting_formtype']=='input'}
+                    <input type="text"  name="profile_setting_{$ps['profile_setting_name']}" value="{$post_profile[$ps['profile_setting_name']]['post_profile_title']}" />
+                    {elseif $ps['profile_setting_formtype']=='checkbox'}
+                    {eval $ps['profile_setting_choices'] = explode("\r\n",$ps['profile_setting_choices']);}
+                    {loop $ps['profile_setting_choices'] $k $v}
+                    <div class="z cl"><input type="checkbox" name="profile_setting_{$ps['profile_setting_name']}[]"
+                                             {if $ac=='edit' && @in_array($v,$post_profile[$ps['profile_setting_name']]['post_profile_title']) }
+                                             checked="checked"
+                                             {/if}
+                                             value="{$v}" />{$v}</div>
+                    {/loop}
+                    {/if}
+                    {$ps['profile_setting_unit']}
+                </td>
+                {if $tr ==1}
+            </tr>
+            {eval $tr = 0;}
+            {else}
+            {eval $tr++;}
+            {/if}
+
+            {eval $profile_setting_names[] = 'profile_setting_'.$ps['profile_setting_name'];}
+            {/loop}
+        </table>
+        <div>
+            <label><em>*</em>信息标题:</label>
+            <input type="text" style="width:550px; height:28px;" id="post_title" name="post_title" value="{$post['post_title']}"/>
+        </div>
+        <div>
+            <label><em>*</em>所属地区:</label>
+            <select id='area' name='area'>
+                <option>默认地区</option>
+                <!--{loop $area_array $area}-->
+                <!--{if $area['area_id'] == $area_id}-->
+                <option value="{$area['area_id']}@@{$area['area_title']}" selected='selected'>{$area['area_title']}</option>
+                <!--{else}-->
+                <option value="{$area['area_id']}@@{$area['area_title']}">{$area['area_title']}</option>
+                <!--{/if}-->
+                <!--{/loop}-->
+            </select>
+        </div>
+        <div>
+            <label><em>*</em>联系人:</label>
+            <input type="text" name="member_username" value="{$member['member_username']}"/>
+        </div>
+        <div>
+            <label><em>*</em>联系地址:</label>
+            <input type="text" name="address1" value="{$post['post_title']}" style="width:550px; height:28px" />
+        </div>
+        <div>
+            <label style="float:left;"><em>*</em>信息内容:</label>
+            <div style=" width:560px; height:420px;margin-left:4px;margin-top:0px;display:inline-block;">
+                <script type="text/javascript" src="/static/js/bbcode.js?{VERHASH}"></script>
+                <script type="text/javascript" src="/source/plugin/info/editor/editor_function.js?{VERHASH}"></script>
+                <textarea class="userData" name="post_text" id="uchome-ttHtmlEditor" style="display: none; ">{echo stripslashes($post['post_text']);}</textarea>
+                <iframe src="{$info_config['root']}?mod=editor" name="uchome-ifrHtmlEditor" id="uchome-ifrHtmlEditor" scrolling="no" border="0" frameborder="0" style="height:420px;border:1px solid #C5C5C5; width:550px;" ></iframe>
+            </div>
+        </div>
+        <div>
+            <label style="float:left;"><em>*</em>企业描述:</label>
+            <textarea style="width:550px; height:100px;margin-left:4px" class="userData" name="enterprise" value="{$post['enterprise']}">{$post['enterprise']}</textarea>
+        </div>
+        <div>
+            <label><em>*</em>联系电话:</label>
+            <input type="text" name="member_phone" value="{$member['member_phone']}"/>
+        </div>
+        <div>
+            <label><em>*</em>电子邮箱:</label>
+            <input type="text" name="member_email" value="{$member['member_email']}"/>
+        </div>
+        <div>
+            <label><em>*</em>上传图片:</label>
+            <a href="javascript:void();" onclick="getElementById('inputfile').click()" style="border:1px solid #fc6328;padding:5px 20px;margin-left:4px;color:#fc6328">点击上传图片</a>
+            <span style="margin-left:10px; color:#828999;">注：图片必须为png、jpg、gif格式；图片大小不得超过2M</span>
+            <div class="shangchuan">
+                <span class="loading" style="display:none;">图片上传中................</span>
+                <input type="file" name="" id="inputfile" style="display:none;" />
+            </div>
+            {loop $post_img $info_img}
+            <div class="shangchuan"><img width="100" height="100" src="{$info_img['img']}" />
+                <input type="hidden" name="up_file[]" value="{$info_img['img']}" />
+                <a href="javascript:;" onclick="dcj_del_img(this, {$info_img['post_id']}, '{$info_img['img']}');">删除</a>
+            </div>
+            {/loop}
+        </div>
+        <div>
+            <label><em>*</em>服务语言:</label>
+            <input type="checkbox" name="lang[]" style='height:auto' value="英语"/><label for="english" style="width:30px;">英语</label>
+            <input type="checkbox" name="lang[]" style='height:auto' value="国语"/><label for="english" style="width:30px;">国语</label>
+            <input type="checkbox" name="lang[]" style='height:auto' value="粤语"/><label for="english" style="width:30px;">粤语</label>
+        </div>
+        <input type="hidden" name="dcj_session" value="{$dcj_session}" />
+        <input type="submit" name="button_{$ac}_submit"  id="button_{$ac}_submit" value="{lang info:post_htm_61}"  style=" display:block; padding:10px 65px; margin:50px auto 70px; border-radius:2px; background:#fc6328; border:0 none; color:#fff;height:auto;margin-left:260px" />
+    </form>
+    <script type="text/javascript" language="javascript">
+                var allowhtml = 1;
+                var allowbbcode = 1;
+                var allowsmilies = 1;
+                var allowimgcode = 1;
+                $('uchome-ttHtmlEditor').value = bbcode2html($('uchome-ttHtmlEditor').value);
+                function validate() {
+                edit_save();
+                        window.onbeforeunload = null;
+                        $('uchome-ttHtmlEditor').value = html2bbcode($('uchome-ttHtmlEditor').value);
+                        if ($('post_title').value == '' || $('post_text').value == '') {
+                showPrompt(null, null, '"{lang info:admin_jubao_htm_2}" {lang info:post_htm_67}!', 2000);
+                        $('post_title').focus();
+                        return false;
+                }
+                }
+
+    </script>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+        //响应文件添加成功事件
+        jQuery("#inputfile").change(function(){
+        //创建FormData对象
+        var data = new FormData();
+                //为FormData对象添加数据
+                jQuery.each(jQuery('#inputfile')[0].files, function(i, file) {
+                data.append('upload_file' + i, file);
+                });
+                jQuery(".loading").show(); //显示加载图片
+                var post_id = jQuery("#dcj_post_id").val();
+                //发送数据
+                jQuery.ajax({
+                url:'info.php?mod=member&op=post&file=upfile',
+                        type:'POST',
+                        data:data,
+                        cache: false,
+                        contentType: false, //不可缺参数
+                        processData: false, //不可缺参数
+                        success:function(data){
+                        //data = $(data).html();
+                        //第一个feedback数据直接append，其他的用before第1个（ .eq(0).before() ）放至最前面。
+                        //data.replace(/&lt;/g,'<').replace(/&gt;/g,'>') 转换html标签，否则图片无法显示。
+                        var img = '<div class="shangchuan"><img width="100" height="100" src="' + data + '" />' +
+                                '<input type="hidden" name="up_file[]" value="' + data + '" />' +
+                                '<a href="javascript:;" onclick="dcj_del_img(this,' + post_id + ',\'' + data + '\')">删除</a></div>';
+                                jQuery(".shangchuan").last().after(img);
+                                jQuery(".loading").hide();
+                                jQuery("#inputfile").val(''); //加载成功移除加载图片
+                        },
+                        error:function(){
+                        alert('上传出错');
+                                jQuery(".loading").hide(); //加载失败移除加载图片
+                        }
+                });
+        });
+                });
+                function dcj_del_img(obj, post_id, img)
+                        {
+                        jQuery.post(
+                                'info.php?mod=member&op=post&file=del_upfile',
+                        {post_id:post_id, img:img},
+                                function(data)
+                                {
+                                jQuery(obj).parent().remove();
+                                }, 'json'
+                                );
+                                }
+    </script>
+</div>

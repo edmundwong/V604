@@ -1,0 +1,17 @@
+<!--{template common/header}-->
+{if $yhcount != '0'}
+<div class="dianzd">
+	<h2><strong>{$tmp_lang['slistne']}</strong><span><a href="<!--{if $RewriteStart == 1}-->{$curl}_vn{$_G[gp_zid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=news&sid={$_GET['zid']}<!--{/if}-->">{$tmp_lang['moregeng']}</a></span></h2>
+   <ul>
+   <!--{loop $news $new}-->
+   	<li><strong><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$new['id']}_vn{$_G[gp_zid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=news&nw={$new['id']}&sid={$_GET['zid']}<!--{/if}-->">{$new['title']}</a></strong><span>{$new['dateline']}</span></li>
+    <!--{/loop}-->
+   </ul>
+</div>
+{else}
+<div class="dianzd">
+	<h2><strong>{$tmp_lang['slistne']}</strong><span><a href="<!--{if $RewriteStart == 1}-->{$curl}_vn{$_G[gp_zid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=news&sid={$_GET['zid']}<!--{/if}-->">{$tmp_lang['moregeng']}</a></span></h2>
+   <ul class="dianerr">{$tmp_lang['noaddnew']}</ul>
+</div>  
+{/if}
+<!--{template common/footer}-->

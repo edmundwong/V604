@@ -1,0 +1,65 @@
+{template sale:admin/style}
+<div id="plugin_admin">
+    {if $edit}
+    <h1>{$_lang['edit']} <a href='admin.php?{$cp_url}'>{$_lang['return']}</a></h1>
+    <table class='table'>
+    {eval showformheader($self_url); }
+        <input type="hidden" name='area_id'  value='{$edit_array[area_id]}'  />
+        <tr>
+            <th>{$_lang['area_title']}</th><td><input type='text' class='b' name='area_title' value='{$edit_array[area_title]}' /></td>
+        </tr>
+        <tr>
+            <th>{$_lang['mark']}</th><td><input type='text' class='m' name='area_remarks' value='{$edit_array[area_remarks]}'  /></td>
+        </tr>
+        <tr>
+            <th>{$_lang['status']}</th><td>
+            <select  name='area_status'>
+            <option value='1'>{$_lang['show']}</option>
+            <option value='0'>{$_lang['hide']}</option>
+            </select></td>
+        </tr>
+        <tr>
+            <th>{$_lang['sort']}</th><td><input type='text' name='area_sort' value='{$edit_array[area_sort]}'  /></td>
+        </tr>
+        <tr>
+            <th></th><td><input type='submit' name='edit_submit' class='btn' value="{$_lang['edit']}" /> <a href='admin.php?{$cp_url}'>{$_lang['return']}</a></td>
+        </tr>
+    {eval showformfooter(); }
+    </table>
+    {else}
+    <h1>1. {$_lang['admin_area']}</h1>
+    <table class='table'>
+    <tr>
+        <th>ID</th>
+        <th>{$_lang['area_title']}</th>
+        <th>{$_lang['mark']}</th>
+        <th>{$_lang['status']}</th>
+        <th>{$_lang['sort']}</th>
+        <th>&nbsp;</th>
+    </tr>
+    {if $area_array}
+        {loop $area_array $area}
+        <tr>
+            <td>{$area['area_id']}</td>
+            <td>{$area['area_title']}</td>
+            <td>{$area['area_remarks']}</td>
+            <td>{if $area['area_status']}{$_lang['show']}{else}{$_lang['hide']}{/if}</td>
+            <td>{$area['area_sort']}</td>
+            <td><a href="admin.php?{$cp_url}&edit={$area['area_id']}">{$_lang['edit']}</a> | <a href="admin.php?{$cp_url}&del={$area['area_id']}">{$_lang['del']}</a></td>
+        </tr>
+        {/loop}
+    {/if}
+    <tr>
+    {eval showformheader($self_url); }
+    <input type='hidden' name='cat_level' value='0' />
+        <td></td>
+        <td><input type='text' name='area_title' class='m' /></td>
+        <td><input type='text' name='area_remarks' /></td>
+        <td><select name='area_status' ><option value=1>{$_lang['show']}</option><option value=0>{$_lang['hide']}</option></select></td>
+        <td><input type='text' name='area_sort' /></td>
+        <td><input type='submit' name='submit' value="{$_lang['add']}" class='btn' /></td>
+     {eval showformfooter(); }
+    </tr>
+    </table>
+    {/if}
+</div>

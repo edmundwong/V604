@@ -1,0 +1,24 @@
+<table style="width:100%" class="dt mtm">
+    <tr>
+        <th>缩略图</th>
+        <th>信息标题</th>
+        <th>发布人</th>
+        <th>类别名</th>
+        <th>价格</th>
+        <th>数量</th>
+        <th>发布时间</th>
+        <th>查看数</th>
+    </tr>
+[loop]
+    <tr>
+<td><a target="_blank" href='sale.php?mod=view&&goods_id={goods_id}'><img src='{goods_upload_file_1}' style='width:40px; height:40px;' /></a></td>
+<td><a target="_blank" href='sale.php?mod=view&&goods_id={goods_id}'>{goods_title}</a></td>
+        <td>{member_username}</td>
+        <td>{category_title}</td>
+        <td>{goods_price}</td>
+        <td>{goods_number}</td>
+        <td>{goods_time}</td>
+        <td>{goods_view}</td>
+    </tr>
+[/loop]
+</table>

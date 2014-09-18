@@ -1,0 +1,46 @@
+<div class="cat_menu2" style="display:none;">
+    <span><strong>{lang sale:post_htm_68} : </strong><input type="text" name="goods_price_begin" /> {lang sale:search_htm_2} <input type="text"  name="goods_price_end" /></span>
+    <span style="display:none;"><strong>{lang sale:search_htm_3} : </strong><input type="text" /> {lang sale:search_htm_2} <input type="text" /></span>
+    <span><strong>{lang sale:search_htm_5} : </strong><input type="text" style="width:170px;" name="goods_keyword" /> <input type="submit" class="pnc pn" value="&nbsp;{lang sale:search_htm_6}&nbsp;" /></span>
+</div>
+<div class="infoselect">
+    
+        <div class="pages_sort">
+            <strong>{lang sale:search_htm_7} : </strong>
+            <a {if empty($goods_selltype) } class="active"{/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}{if $keyword}&keyword={$keyword}{/if}">{lang sale:search_htm_8}</a>
+            <a {if strstr($goods_selltype,'sell')} class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_selltype=sell{if $keyword}&keyword={$keyword}{/if}">{lang sale:index_htm_8}</a>
+            <a {if strstr($goods_selltype,'swap')} class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_selltype=swap{if $keyword}&keyword={$keyword}{/if}">{lang sale:index_htm_9}</a>
+            <a {if strstr($goods_selltype,'give')} class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_selltype=give{if $keyword}&keyword={$keyword}{/if}">{lang sale:index_htm_10}</a>
+        </div>
+        <div class="pages_sort">
+            <strong>{lang sale:search_htm_12} : </strong>
+            <a {if empty($goods_howtopay) } class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}{if $keyword}&keyword={$keyword}{/if}">{lang sale:search_htm_8}</a>
+            <a {if $goods_howtopay==1} class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_howtopay=1{if $keyword}&keyword={$keyword}{/if}">{lang sale:post_htm_35}</a>
+            <a {if $goods_howtopay==2} class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_howtopay=2{if $keyword}&keyword={$keyword}{/if}">{lang sale:post_htm_36}</a>
+            <a {if $goods_howtopay==3} class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_howtopay=3{if $keyword}&keyword={$keyword}{/if}">{lang sale:post_htm_37}</a>
+            <a {if $goods_howtopay==4} class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_howtopay=4{if $keyword}&keyword={$keyword}{/if}">{lang sale:post_htm_38}</a>
+        </div>
+        <div class="pages_sort">
+            <strong>{lang sale:search_htm_18} : </strong>
+            <a {if empty($goods_newold) } class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}{if $keyword}&keyword={$keyword}{/if}">{lang sale:search_htm_8}</a>
+            <a {if $goods_newold==1} class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_newold=1{if $keyword}&keyword={$keyword}{/if}">{lang sale:index_htm_12}</a>
+            <a {if $goods_newold==9} class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_newold=9{if $keyword}&keyword={$keyword}{/if}">9{lang sale:index_htm_13}</a>
+            <a {if $goods_newold==8} class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_newold=8{if $keyword}&keyword={$keyword}{/if}">8{lang sale:index_htm_13}</a>
+            <a {if $goods_newold==7} class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_newold=7{if $keyword}&keyword={$keyword}{/if}">7{lang sale:index_htm_13}</a>
+            <a {if $goods_newold==6} class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_newold=6{if $keyword}&keyword={$keyword}{/if}">6{lang sale:search_htm_24}</a>
+        </div>
+        <div class="pages_sort">
+            <strong>地点区域 : </strong>
+            <a {if empty($goods_newold) } class="active" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id=0{if $keyword}&keyword={$keyword}{/if}">{lang sale:search_htm_8}</a>
+            {loop $city_array $city}<a href="{$sale_config['root']}?mod=index&level={$city['level']}&upid={$city['id']}{if $keyword}&keyword={$keyword}{/if}">{$city['name']}</a><span>({$city['sum']})</span>
+        {/loop}
+        </div>
+ 
+   
+</div>
+<div class="list_tab">
+        <ul>
+		          	  <li><a href="sale.php"><span>分类广告</span></a></li>
+	          <li><a href="sale.php?mod=index&upid=0&level=0&cat_id=45"><span>活动/讲座</span></a></li>
+		          </ul>
+      </div>

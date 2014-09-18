@@ -1,0 +1,74 @@
+.box5 .leftBar .twoList dt, .box2 .textListTwo .twoList dt, .box1 .newZxList .twoList dt{margin-top:0;}
+.box1{width:710px; overflow:hidden;}
+.box1 .rslides{ height:290px;}
+.box1 .newFocusList{width:290px;}
+.right h3{color:#dd6330; font-size:14px; text-indent:10px;}
+.box1 .slide .caption{width:100%;}
+.box1 .slide_container{float:none;margin-left:8px}
+.news_right li div{width:265px;}
+.liebiao{}
+.liebiao li{float:left; margin:0 7px;}
+.liebiao li a{display:block; width:126px; height:126px; position:relative;}
+.liebiao li a p{position:absolute; bottom:0; font-size:14px; width:100%; color:#fff; text-align:center; background:rgba(0,0,0,.5);}
+.duan{width:350px !important;  float:left;}
+.duan2{width:350px !important; margin-left:10px; float:left;}
+.shenghuo{width:330px; overflow:hidden;margin-left:10px;}
+.shenghuo img{float:left;}
+.width190{width:200px; float:left; margin:0 0 0 10px;}
+.width190 strong{ font-size:14px; color:#3d3d45;}
+.width190 p{color:#808080; margin-top:5px;line-height:15px}
+.kekou{ width:320px;margin-left:10px;margin-top:10px}
+.kekou a{ color:#3d3d45; font-size:14px;overflow: hidden;white-space: nowrap;}
+.kekou span{ float:right; color:#808080;}
+nav .left li a {
+padding: 0px 10px 10px;
+height: 13px;
+font-size: 14px;
+color: #000;
+display: block;
+font-weight: normal;
+margin-top:12px;
+}
+nav li a:hover{ background:#ff5200; text-decoration:none;background-position:10px 0px;color:#fff}
+.jiaguo {
+ width:330px; border-left:5px solid #fc6328; margin-bottom:10px; margin-top:15px; font-size:18px; text-indent:10px;border-right:0px;
+ 
+}
+.jiaguo1{
+ width:690px; border-left:5px solid #fc6328; margin-bottom:10px; margin-top:20px; font-size:18px; text-indent:10px;
+}
+.news_right li {
+margin: 10px 0 !important;
+height: 60px;
+line-height: 20px;
+}
+.news_right li:first-child {
+margin-top: 10px ;
+}
+.kekou li{
+line-height:20px
+}
+p a{
+color:#9c9c9c
+}
+.shreeList li p{
+float:left;
+width:260px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.kekou li p{
+float:left;
+width:280px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.news_right_text li p{
+float:left;
+width:250px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}

@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X3.1]]></item>
+	<item id="Time"><![CDATA[2014-02-18 00:13]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://www.discuzcms.com/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[【深藍】房產樓盤]]></item>
+			<item id="identifier"><![CDATA[house]]></item>
+			<item id="description"><![CDATA[【深藍科技】DISCUZ社區盈利計劃啟動！高端站長的一致選擇！【Discuz!CMS深藍科技】官方網站︰www.DiscuzCMS.com &lt;a href=&quot;http://addon.discuz.com/?@shenlan&quot; target=&quot;_blank&quot; style=&quot;color:red; font-weight:bold&quot;&gt;發現 最新深藍應用上線&lt;/a&gt;]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[house/]]></item>
+			<item id="copyright"><![CDATA[【DISCUZ!CMS深藍應用】版權所有.【官方網站】WWW.DISCUZCMS.COM]]></item>
+			<item id="version"><![CDATA[4.8]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[house]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[房產樓盤]]></item>
+					<item id="url"><![CDATA[house.php]]></item>
+					<item id="type"><![CDATA[1]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[admin_area]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[1. 區域管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[admin_jubao]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[2. 舉報信息]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[2]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="3">
+					<item id="name"><![CDATA[admin_profile]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[3. 字段管理]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[3]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="4">
+					<item id="name"><![CDATA[admin_help]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[4. 使用說明(必看)]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[4]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="5">
+					<item id="name"><![CDATA[admin_shenlan]]></item>
+					<item id="param"><![CDATA[]]></item>
+					<item id="menu"><![CDATA[<b style="color:red">深藍應用超市</b>]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[99]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X1.5,X2,X2.5,X3,X3.1]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[插件名]]></item>
+				<item id="description"><![CDATA[插件名,例如 房產系統 會顯示在標題上]]></item>
+				<item id="variable"><![CDATA[name]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[房產系統]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[站點地址]]></item>
+				<item id="description"><![CDATA[http://開頭,/結尾 ,例: http://www.discuzcms.com/]]></item>
+				<item id="variable"><![CDATA[siteurl]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[http://www.discuzcms.com/]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[開啟深藍頻道模式]]></item>
+				<item id="description"><![CDATA[僅對深藍模板有效]]></item>
+				<item id="variable"><![CDATA[shenlan_pindao]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[頻道LOGO]]></item>
+				<item id="description"><![CDATA[默認數據: template/shenlan_city/common/pindao/images/house_logo.png
+僅對深藍頻道模式有效]]></item>
+				<item id="variable"><![CDATA[pindao_logo]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[template/shenlan_city/common/pindao/images/house_logo.png]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[頻道背景]]></item>
+				<item id="description"><![CDATA[默認數據: template/shenlan_city/common/pindao/images/house_bg.gif
+僅對深藍頻道模式有效]]></item>
+				<item id="variable"><![CDATA[pindao_bg]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[template/shenlan_city/common/pindao/images/house_bg.gif]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[插件風格]]></item>
+				<item id="description"><![CDATA[模版目錄:source/plugin/house/template/
+default=默認
+style1=自定義1
+style2=自定義2
+style3=自定義3]]></item>
+				<item id="variable"><![CDATA[style]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[default]]></item>
+				<item id="extra"><![CDATA[default=默認
+style1=自定義1
+style2=自定義2
+style3=自定義3]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[隱藏discuz頭部]]></item>
+				<item id="description"><![CDATA[默認模版有效]]></item>
+				<item id="variable"><![CDATA[header]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[隱藏discuz搜索條]]></item>
+				<item id="description"><![CDATA[默認模版有效]]></item>
+				<item id="variable"><![CDATA[scbar]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[系統底部提示]]></item>
+				<item id="description"><![CDATA[首頁,列表頁,內容頁底部顯示
+不顯示,留空即可
+可以輸入HTML代碼]]></item>
+				<item id="variable"><![CDATA[topnotice]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<h2 class="h2">溫馨提示</h2>
+<p>1. 購買產權滿5年的二手房, 可以節省5%左右的稅費.</p>
+<p>2. 若通過中介聯系購房，房產公司可能會發郵件或打電話通知，敬請留意！</p>
+<p>3. 普通用戶發布數量是有限制的, 如果想要不受條數限制請申請成為經紀人. </p>
+<p>4. 最新的二手房出售置頂信息, 會在房產首頁展示.  </p>
+<h2 class="h2">使用須知</h2>
+<p>1. 此處可以在後台設置中自由定義, 可以輸入HTML代碼</p>
+<p>2. 後台 - 設置 - 系統底部提示 , 不需要顯示這些內容, 清空即可</p>
+<h2 class="h2">系統幫助</h2>
+<p>1. 樓盤只有管理員可以發布並且編輯, 普通用戶可以在發布信息時綁定樓盤信息.</p>
+<p>2. 後台設置, 綁定經紀人用戶組, 此用戶組可以無人值守讓用戶用積分購買.</p>
+<p>3. 普通用戶發布的房源條數可以在後台自由定義, 默認是5條. 普通用戶的限制包括 出租 和 出售信息, 不包括求租信息.</p>
+<p>4. 房產首頁右側的 "房產知識", "業主社區", "互動問答" 均是DIY區塊, 可以進入DIY高級模式自定義顯示內容</p>
+<p>5. 信息發布收費默認是收取1積分, 如果您不想要在發布的時候扣分, 後台設置發布扣費為0即可. </p>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[地圖默認坐標]]></item>
+				<item id="description"><![CDATA[地圖坐標查詢: 在插件前台地圖里拖動紅色標志, 獲得要默認的坐標.
+例如: 39.91132708229412, 116.39689999999996 北京天安門]]></item>
+				<item id="variable"><![CDATA[google_map]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[39.91132708229412, 116.39689999999996]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[每頁顯示多少條]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[perpage]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[10]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="11">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[聯系人旁邊提示]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[helpnotice]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[聯系我時, 請說是在DisuczCMS的<a href='http://addon.discuz.com/?@house.plugin'>房產樓盤系統</a>看到的,謝謝! ]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="12">
+				<item id="displayorder"><![CDATA[8]]></item>
+				<item id="title"><![CDATA[管理員用戶組]]></item>
+				<item id="description"><![CDATA[可 刪除 房源信息
+新增樓盤信息]]></item>
+				<item id="variable"><![CDATA[admingroup]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[1]]></item>
+				</item>
+			</item>
+			<item id="13">
+				<item id="displayorder"><![CDATA[9]]></item>
+				<item id="title"><![CDATA[經紀人用戶組]]></item>
+				<item id="description"><![CDATA[綁定經紀人用戶組
+可以無限制發布出租和出售房源信息]]></item>
+				<item id="variable"><![CDATA[brokergroup]]></item>
+				<item id="type"><![CDATA[groups]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[1]]></item>
+				</item>
+			</item>
+			<item id="14">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[綁定消費積分]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[extcredits]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="15">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[發布信息扣積分]]></item>
+				<item id="description"><![CDATA[0為不扣積分.
+設置扣積分,輸入一個大于0的正整數.例如 1 5 10 等]]></item>
+				<item id="variable"><![CDATA[postcredit]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="16">
+				<item id="displayorder"><![CDATA[11]]></item>
+				<item id="title"><![CDATA[積分單位]]></item>
+				<item id="description"><![CDATA[前台積分消費提示,填寫例如 : 金幣,積分等]]></item>
+				<item id="variable"><![CDATA[credit_unit]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[金幣]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="17">
+				<item id="displayorder"><![CDATA[12]]></item>
+				<item id="title"><![CDATA[置頂每天收費]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[daycredit]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="18">
+				<item id="displayorder"><![CDATA[13]]></item>
+				<item id="title"><![CDATA[積分充值地址]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[chongzhi]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[home.php?mod=spacecp&ac=credit&op=buy]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="19">
+				<item id="displayorder"><![CDATA[14]]></item>
+				<item id="title"><![CDATA[經紀人身份認證]]></item>
+				<item id="description"><![CDATA[後台-用戶-認證設置-填寫認證代號 verify 後的數字
+例如:認證代號 verify1 這里填寫 1]]></item>
+				<item id="variable"><![CDATA[verify]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="20">
+				<item id="displayorder"><![CDATA[15]]></item>
+				<item id="title"><![CDATA[搜索熱銷樓盤]]></item>
+				<item id="description"><![CDATA[每行一個, 默認是搜索二手房 例如: 
+萬達廣場
+SOHO
+恆大花園]]></item>
+				<item id="variable"><![CDATA[search_hot_word]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[萬達廣場
+西山別墅
+林肯公園
+SOHO
+城市花園
+綠城
+恆大花園]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="21">
+				<item id="displayorder"><![CDATA[16]]></item>
+				<item id="title"><![CDATA[普通用戶限制]]></item>
+				<item id="description"><![CDATA[限制普通用戶發布的房源條數.
+包括 出租 和 出售信息, 不包括求租信息.
+默認 5 條]]></item>
+				<item id="variable"><![CDATA[maxpost]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[5]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="22">
+				<item id="displayorder"><![CDATA[19]]></item>
+				<item id="title"><![CDATA[加入經紀人地址]]></item>
+				<item id="description"><![CDATA[介紹如何申請加入經紀人的鏈接地址
+建議發布一個帖子說明收費情況和規章制度等等.
+復制帖子的鏈接地址到這里]]></item>
+				<item id="variable"><![CDATA[borker_link]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[home.php?mod=spacecp&ac=usergroup&do=list]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="23">
+				<item id="displayorder"><![CDATA[20]]></item>
+				<item id="title"><![CDATA[同步論壇板塊]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[fid]]></item>
+				<item id="type"><![CDATA[forum]]></item>
+				<item id="value"><![CDATA[45]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="24">
+				<item id="displayorder"><![CDATA[21]]></item>
+				<item id="title"><![CDATA[自定義CSS]]></item>
+				<item id="description"><![CDATA[.brian_main { width:960px; overflow:hidden;}
+默認CSS,無經驗請勿修改]]></item>
+				<item id="variable"><![CDATA[diy_css]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[.brian_main { width:960px;  margin:0 auto}
+.wp {width:960px;}]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="25">
+				<item id="displayorder"><![CDATA[22]]></item>
+				<item id="title"><![CDATA[SEO_標題口號]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[seo_title]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[SEO_標題口號]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="26">
+				<item id="displayorder"><![CDATA[23]]></item>
+				<item id="title"><![CDATA[SEO_關鍵詞]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[seo_keywords]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[SEO_關鍵詞]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="27">
+				<item id="displayorder"><![CDATA[24]]></item>
+				<item id="title"><![CDATA[SEO_描述]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[seo_description]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[SEO_描述]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="28">
+				<item id="displayorder"><![CDATA[25]]></item>
+				<item id="title"><![CDATA[開啟偽靜態]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[weijingtai]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="shouye"><![CDATA[首頁]]></item>
+				<item id="need_sell"><![CDATA[求購]]></item>
+				<item id="post_need_sell"><![CDATA[發布求購]]></item>
+				<item id="fabu_koufei"><![CDATA[發布扣費]]></item>
+				<item id="xinxi_zhiding"><![CDATA[信息置頂]]></item>
+				<item id="biaozhuditu"><![CDATA[地圖標注]]></item>
+				<item id="map_tips"><![CDATA[用鼠標拖動 "紅色箭頭" 到目的地, 即可完成定位. 使用地圖左側的 "+", "-" , 來確定區域. ]]></item>
+				<item id="xinxixiangqing"><![CDATA[信息詳情]]></item>
+				<item id="loupan_img_tips"><![CDATA[樓盤圖片可以手工輸入或在線上傳]]></item>
+				<item id="loupan_addr"><![CDATA[樓盤位置]]></item>
+				<item id="mypost_loupan"><![CDATA[我發布的樓盤]]></item>
+				<item id="loupan_junjia"><![CDATA[樓盤均價]]></item>
+				<item id="loupan_worktime"><![CDATA[工作時間]]></item>
+				<item id="loupan_tel"><![CDATA[聯系電話]]></item>
+				<item id="loupan_zhuli"><![CDATA[主力戶型]]></item>
+				<item id=""><![CDATA[]]></item>
+				<item id="xiangqing_chakang"><![CDATA[詳情請查看]]></item>
+				<item id="yes"><![CDATA[是]]></item>
+				<item id="member_post_1"><![CDATA[您是個人用戶, 最多只能發布]]></item>
+				<item id="member_post_2"><![CDATA[條信息, 請加入經紀人用戶組, 無限制信息發布]]></item>
+				<item id="member_post_3"><![CDATA[點此申請經紀人]]></item>
+				<item id="member_post_4"><![CDATA[請完善個人資料之後再發布信息, 點擊前往完善個人資料.]]></item>
+				<item id="admin_1"><![CDATA[必須填寫完整]]></item>
+				<item id="admin_main_1"><![CDATA[管理中心]]></item>
+				<item id="welcome"><![CDATA[歡迎您]]></item>
+				<item id="rent"><![CDATA[出租]]></item>
+				<item id="queding_shanchu"><![CDATA[確認刪除]]></item>
+				<item id="need_rent"><![CDATA[求租]]></item>
+				<item id="sell"><![CDATA[出售]]></item>
+				<item id="loupan"><![CDATA[樓盤]]></item>
+				<item id="member"><![CDATA[個人中心]]></item>
+				<item id="post_loupan"><![CDATA[發布新樓盤]]></item>
+				<item id="setting_loupan"><![CDATA[樓盤設置]]></item>
+				<item id="loupan_address"><![CDATA[樓盤地址]]></item>
+				<item id="loupan_title"><![CDATA[樓盤名稱]]></item>
+				<item id="loupan_company"><![CDATA[開發商]]></item>
+				<item id="loupan_wuye"><![CDATA[物業公司]]></item>
+				<item id="loupan_type"><![CDATA[建築類型]]></item>
+				<item id="loupan_type_1"><![CDATA[公寓]]></item>
+				<item id="loupan_type_2"><![CDATA[別墅]]></item>
+				<item id="loupan_type_3"><![CDATA[寫字樓]]></item>
+				<item id="loupan_type_4"><![CDATA[商場]]></item>
+				<item id="loupan_type_5"><![CDATA[綜合]]></item>
+				<item id="loupan_type_6"><![CDATA[其他]]></item>
+				<item id="loupan_park"><![CDATA[停車位]]></item>
+				<item id="loupan_park_tips"><![CDATA[例如: 100-120個 或 無]]></item>
+				<item id="loupan_traffic"><![CDATA[交通情況]]></item>
+				<item id="loupan_traffic_tips"><![CDATA[例如: 地鐵1號線,地鐵3號線. 公交23,47,59,87路.]]></item>
+				<item id="loupan_date"><![CDATA[建築年代]]></item>
+				<item id="loupan_date_tips"><![CDATA[例如: 2003-07]]></item>
+				<item id="loupan_img"><![CDATA[樓盤圖片]]></item>
+				<item id="loupan_text"><![CDATA[樓盤簡介]]></item>
+				<item id="search"><![CDATA[搜索]]></item>
+				<item id="area"><![CDATA[所屬區域]]></item>
+				<item id="loupan_index_1"><![CDATA[樓盤共有]]></item>
+				<item id="loupan_index_2"><![CDATA[條信息]]></item>
+				<item id="loupan_info"><![CDATA[樓盤信息]]></item>
+				<item id="loupan_map"><![CDATA[地圖標注]]></item>
+				<item id="post_rent"><![CDATA[發布出租]]></item>
+				<item id="post_need_rent"><![CDATA[發布求租]]></item>
+				<item id="post_sell"><![CDATA[發布出售]]></item>
+				<item id="mypost"><![CDATA[我發布的信息]]></item>
+				<item id="mypost_up"><![CDATA[我置頂的信息]]></item>
+				<item id="profile"><![CDATA[資料設置]]></item>
+				<item id="search_loupan"><![CDATA[查詢樓盤]]></item>
+				<item id="by_hand"><![CDATA[手工輸入]]></item>
+				<item id="search_loupan_tips"><![CDATA[可以 "手工輸入" 或者使用 "查詢樓盤" 功\能輔助輸入.]]></item>
+				<item id="search_loupan_error"><![CDATA[該地區沒有相關樓盤信息,請重新查詢]]></item>
+				<item id="member_title"><![CDATA[姓名]]></item>
+				<item id="member_phone"><![CDATA[聯系電話]]></item>
+				<item id="member_qq"><![CDATA[聯系QQ]]></item>
+				<item id="member_email"><![CDATA[聯系郵箱]]></item>
+				<item id="member_address"><![CDATA[聯系地址]]></item>
+				<item id="about_info"><![CDATA[相關信息]]></item>
+				<item id="fdjsq"><![CDATA[房貸計算器]]></item>
+				<item id="gfpg"><![CDATA[購房能力評估]]></item>
+				<item id="zsht"><![CDATA[租/售合同範本]]></item>
+				<item id="house_tool"><![CDATA[購房工具箱]]></item>
+				<item id="rent_unit"><![CDATA[元/月]]></item>
+				<item id="about_loupan"><![CDATA[相關樓盤信息]]></item>
+				<item id="about"><![CDATA[相關]]></item>
+				<item id="info"><![CDATA[信息]]></item>
+				<item id="wan"><![CDATA[萬]]></item>
+				<item id="house_dj"><![CDATA[房屋單價]]></item>
+				<item id="search_txt_tips"><![CDATA[請輸入房源特征, 樓盤名...]]></item>
+				<item id="2sell"><![CDATA[二手房]]></item>
+				<item id="hot_loupan"><![CDATA[熱銷樓盤]]></item>
+				<item id="new_come"><![CDATA[最新加入]]></item>
+				<item id="borker_link"><![CDATA[申請經紀人]]></item>
+				<item id="gfpgg"><![CDATA[購房評估]]></item>
+				<item id="zshtt"><![CDATA[租/售合同]]></item>
+				<item id="index_hot_2sell_tips"><![CDATA[最新的二手房出售置頂信息會出現在這里]]></item>
+				<item id="hot_tuijian"><![CDATA[置頂信息]]></item>
+				<item id="fczs"><![CDATA[房產知識]]></item>
+				<item id="more"><![CDATA[更多]]></item>
+				<item id="new_2sell"><![CDATA[最新二手房]]></item>
+				<item id="yzsq"><![CDATA[業主社區]]></item>
+				<item id="new_rent"><![CDATA[最新出租]]></item>
+				<item id="hdwd"><![CDATA[互動問答]]></item>
+				<item id="rent_price"><![CDATA[房屋租金]]></item>
+				<item id="saixuan"><![CDATA[篩選]]></item>
+				<item id="house_area"><![CDATA[房屋面積]]></item>
+				<item id="sell_price"><![CDATA[房屋總價]]></item>
+				<item id="orderby"><![CDATA[信息排序]]></item>
+				<item id="orderby_post_time"><![CDATA[按發布時間]]></item>
+				<item id="orderby_post_end_time"><![CDATA[按結束時間]]></item>
+				<item id="orderby_post_begin_time"><![CDATA[按開始時間]]></item>
+				<item id="lijifabu"><![CDATA[立即發布信息]]></item>
+				<item id="search_txt"><![CDATA[關鍵詞]]></item>
+				<item id="img"><![CDATA[配圖]]></item>
+				<item id="rent_type"><![CDATA[出租方式]]></item>
+				<item id="hope_rent_price"><![CDATA[期望租金]]></item>
+				<item id="house_type"><![CDATA[房屋類型]]></item>
+				<item id="junjia"><![CDATA[均價]]></item>
+				<item id="post_time"><![CDATA[發布時間]]></item>
+				<item id="wu"><![CDATA[無]]></item>
+				<item id="verify"><![CDATA[身份認證]]></item>
+				<item id="broker_company"><![CDATA[經紀公司]]></item>
+				<item id="company_address"><![CDATA[公司地址]]></item>
+				<item id="verify_yes"><![CDATA[已通過認證]]></item>
+				<item id="verify_no"><![CDATA[未認證]]></item>
+				<item id="broker"><![CDATA[經紀人]]></item>
+				<item id="person"><![CDATA[個人]]></item>
+				<item id="details"><![CDATA[詳細介紹]]></item>
+				<item id="house_text"><![CDATA[房屋介紹]]></item>
+				<item id="house_img"><![CDATA[房屋圖片]]></item>
+				<item id="otherpost"><![CDATA[該用戶的其他房源]]></item>
+				<item id="otherpost_no"><![CDATA[該用戶沒有其他房源信息]]></item>
+				<item id="aroundpost"><![CDATA[周邊房源]]></item>
+				<item id="aroundpost_no"><![CDATA[周邊沒有房源信息]]></item>
+				<item id="m2"><![CDATA[m<sup>2</sup>]]></item>
+				<item id="money"><![CDATA[&yen;]]></item>
+				<item id="yuan"><![CDATA[元]]></item>
+				<item id="dian"><![CDATA[ : ]]></item>
+				<item id="space"><![CDATA[空間]]></item>
+				<item id="no_cat"><![CDATA[類別設置錯誤,請聯系管理員]]></item>
+				<item id="login"><![CDATA[您需要在登錄之後才能使用]]></item>
+				<item id="ajax_inc_php_1"><![CDATA[您已申請過此信息.]]></item>
+				<item id="ajax_inc_php_2"><![CDATA[申請失敗, 錯誤原因請查看是否已完成 '我的簡歷' 內的信息.]]></item>
+				<item id="ajax_inc_php_3"><![CDATA[舉報成功\!]]></item>
+				<item id="upload_msg_error_1"><![CDATA[不允許\上傳該類型的文件!]]></item>
+				<item id="upload_msg_error_2"><![CDATA[上傳的文件超過規定的大小!]]></item>
+				<item id="upload_msg_error_3"><![CDATA[未知錯誤,文件上傳失敗!]]></item>
+				<item id="upload_msg_error_4"><![CDATA[,請返回換另一張圖片再試.]]></item>
+				<item id="must_post"><![CDATA[必填項目, 必須填寫!]]></item>
+				<item id="must_goods_title"><![CDATA[信息標題 必須填寫!]]></item>
+				<item id="must_goods_text"><![CDATA[信息內容 必須填寫!]]></item>
+				<item id="must_goods_price"><![CDATA[價格 必須填寫!]]></item>
+				<item id="must_member_username"><![CDATA[聯系人,必須填寫!]]></item>
+				<item id="must_member_qq"><![CDATA[聯系QQ,必須填寫!]]></item>
+				<item id="must_member_phone"><![CDATA[聯系電話,必須填寫!]]></item>
+				<item id="must_goods_selltype"><![CDATA[出售類型,必須選擇!]]></item>
+				<item id="delete_ok"><![CDATA[刪除成功\!]]></item>
+				<item id="edit_ok"><![CDATA[修改成功\!]]></item>
+				<item id="edit"><![CDATA[修改]]></item>
+				<item id="add"><![CDATA[添加]]></item>
+				<item id="del"><![CDATA[刪除]]></item>
+				<item id="no_quanxian"><![CDATA[沒有權限操作]]></item>
+				<item id="edit_title"><![CDATA[編輯信息]]></item>
+				<item id="note_new_jubao"><![CDATA[有新舉報信息,請盡快處理]]></item>
+				<item id="jubao_ok"><![CDATA[舉報成功\! 請等待管理員審核]]></item>
+				<item id="myaccount"><![CDATA[個人中心]]></item>
+				<item id="no_extcredits"><![CDATA[積分功\能暫不能使用,請聯系管理員綁定積分]]></item>
+				<item id="must_resideprovince"><![CDATA[所屬地區,必須填寫!]]></item>
+				<item id="post_ok"><![CDATA[發布成功\!]]></item>
+				<item id="post"><![CDATA[發布信息]]></item>
+				<item id="setpostup_ok"><![CDATA[置頂設置成功\!]]></item>
+				<item id="not_credit"><![CDATA[不足]]></item>
+				<item id="what_error"><![CDATA[未知錯誤請返回重試]]></item>
+				<item id="max7"><![CDATA[最多支持7個]]></item>
+				<item id="xinxifabu_tishi1"><![CDATA[信息發布提示 : 發布信息需要消費]]></item>
+				<item id="nin_dangqian"><![CDATA[您當前]]></item>
+				<item id="return"><![CDATA[返回]]></item>
+				<item id="area_title"><![CDATA[區域名稱]]></item>
+				<item id="admin_cat"><![CDATA[行業/信息管理]]></item>
+				<item id="mark"><![CDATA[備注]]></item>
+				<item id="status"><![CDATA[狀態]]></item>
+				<item id="show"><![CDATA[顯示]]></item>
+				<item id="hide"><![CDATA[隱藏]]></item>
+				<item id="sort"><![CDATA[排序]]></item>
+				<item id="admin_area"><![CDATA[區域管理]]></item>
+				<item id="cat_title"><![CDATA[類別名稱]]></item>
+				<item id="attr"><![CDATA[屬性]]></item>
+				<item id="discuz_diy"><![CDATA[]]></item>
+				<item id="admin_help"><![CDATA[
+1. 設置 計劃任務, 進入 網站後台 - 工具 - 計劃任務 - cms_house 啟用, 每日0時1分執行. 如果沒有手工添加, 任務腳本: cms_house.php 每日0時1分執行
+2. 設置 房產後台 - 設置 站點地址 / 前台管理用戶組 / 綁定消費積分
+3. 設置 房產後台 -  區域管理 
+4. 進入<a href='http://www.discuzcms.com/thread-74-1-1.html'>點擊這里下載DIY文件</a>, 在房產首頁(域名/house.php) 導入 index.xml
+5. 設置完成!
+
+Discuz!CMS&深藍科技官方主頁 : <a href='http://www.discuzcms.com' target='_blank'>http://www.discuzcms.com</a>
+]]></item>
+				<item id="sql_area"><![CDATA[
+INSERT INTO `pre_house_area` VALUES ('1', '北京市', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('2', '天津市', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('3', '河北省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('4', '山西省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('5', '內蒙古', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('6', '遼寧省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('7', '吉林省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('8', '黑龍江省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('9', '上海市', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('10', '江甦省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('11', '浙江省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('12', '安徽省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('13', '福建省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('14', '江西省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('15', '山東省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('16', '河南省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('17', '湖北省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('18', '湖南省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('19', '廣東省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('20', '廣西', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('21', '海南省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('22', '重慶市', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('23', '四川省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('24', '貴州省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('25', '雲南省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('26', '西藏', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('27', '陝西省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('28', '甘肅省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('29', '青海省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('30', '寧夏', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('31', '新疆', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('32', '台灣省', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('33', '香港', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('34', '澳門', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('35', '海外', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('36', '其他', '1', '0', '0', '0');
+INSERT INTO `pre_house_area` VALUES ('37', '東城區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('38', '西城區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('39', '崇文區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('40', '宣武區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('41', '朝陽區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('42', '豐台區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('43', '石景山區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('44', '海澱區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('45', '門頭溝區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('46', '房山區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('47', '通州區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('48', '順義區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('49', '昌平區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('50', '大興區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('51', '懷柔區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('52', '平谷區', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('53', '密雲縣', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('54', '延慶縣', '2', '0', '1', '0');
+INSERT INTO `pre_house_area` VALUES ('55', '和平區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('56', '河東區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('57', '河西區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('58', '南開區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('59', '河北區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('60', '紅橋區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('61', '塘沽區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('62', '漢沽區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('63', '大港區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('64', '東麗區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('65', '西青區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('66', '津南區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('67', '北辰區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('68', '武清區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('69', '寶坻區', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('70', '寧河縣', '2', '0', '2', '0');
+INSERT INTO `pre_house_area` VALUES ('71', '靜海縣', '2', '0', '2', '0');]]></item>
+				<item id="sql_profile_setting"><![CDATA[
+INSERT INTO `pre_house_profile_setting` VALUES ('rent_type', '出租方式', '1', '1', '1', 'select', '整套出租\r\n單間出租\r\n床位出租', '0', '');
+INSERT INTO `pre_house_profile_setting` VALUES ('room', '臥室', '1', '1', '1', 'select', '一間\r\n二間\r\n三間\r\n四間\r\n五間\r\n五間以上', '0', '');
+INSERT INTO `pre_house_profile_setting` VALUES ('hall', '客廳', '1', '1', '1', 'select', '一間\r\n二間\r\n三間\r\n四間\r\n五間\r\n五間以上', '0', '');
+INSERT INTO `pre_house_profile_setting` VALUES ('washroom', '房屋廚衛', '1', '1', '1', 'select', '有\r\n無', '0', '');
+INSERT INTO `pre_house_profile_setting` VALUES ('now_floor', '當前樓層', '1', '1', '0', 'input', '', '0', '');
+INSERT INTO `pre_house_profile_setting` VALUES ('total_floor', '總樓層', '1', '1', '0', 'input', '', '0', '');
+INSERT INTO `pre_house_profile_setting` VALUES ('house_area', '房屋面積', '1', '1', '1', 'input', '', '0', 'm<sup>2</sup>');
+INSERT INTO `pre_house_profile_setting` VALUES ('house_type', '房屋類型', '1', '1', '1', 'select', '住宅\r\n寫字樓\r\n公寓\r\n平房\r\n別墅\r\n商鋪\r\n其他', '0', '');
+INSERT INTO `pre_house_profile_setting` VALUES ('rent_price', '租金', '1', '1', '1', 'input', '', '0', '元/月');
+INSERT INTO `pre_house_profile_setting` VALUES ('hope_rent_price', '期望租金', '1', '1', '1', 'select', '500以下\r\n500-1000\r\n1000-1500\r\n1500-2000\r\n2000-3000\r\n3000-4500\r\n4500以上', '0', '元/月');
+INSERT INTO `pre_house_profile_setting` VALUES ('sell_price', '總價', '1', '1', '1', 'input', '', '0', '萬');
+INSERT INTO `pre_house_profile_setting` VALUES ('sell_5', '產權滿五', '1', '1', '1', 'select', '是\r\n否', '0', '稅費相關');
+INSERT INTO `pre_house_profile_setting` VALUES ('house_allocation', '房屋配置', '1', '1', '1', 'checkbox', '床\r\n桌子\r\n衣櫃\r\n沙發\r\n電視\r\n冰箱\r\n洗衣機\r\n空調\r\n熱水器\r\n微波爐\r\n寬帶\r\n暖氣\r\n天然氣\r\n電梯\r\n門禁\r\n車位', '0', '');
+INSERT INTO `pre_house_profile_setting` VALUES ('toward', '房屋朝向', '1', '1', '1', 'select', '東\r\n南\r\n西\r\n北\r\n南北\r\n東西\r\n東南\r\n西南\r\n東北\r\n西北', '0', '');
+INSERT INTO `pre_house_profile_setting` VALUES ('broker_company', '經紀公司', '1', '1', '1', 'input', '', '0', '');
+INSERT INTO `pre_house_profile_setting` VALUES ('company_address', '公司地址', '1', '1', '1', 'input', '', '0', '');
+]]></item>
+				<item id="sql_profile_type"><![CDATA[
+INSERT INTO `pre_house_profile_type` VALUES ('1', '出租', '1');
+INSERT INTO `pre_house_profile_type` VALUES ('2', '求租', '1');
+INSERT INTO `pre_house_profile_type` VALUES ('3', '出售', '1');
+INSERT INTO `pre_house_profile_type` VALUES ('5', '求購', '1');
+INSERT INTO `pre_house_profile_type` VALUES ('4', '經紀人', '1');]]></item>
+				<item id="sql_profile_type_setting"><![CDATA[
+INSERT INTO `pre_house_profile_type_setting` VALUES ('1', 'rent_type', '出租方式', '1', '1', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('2', 'room', '室', '1', '7', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('3', 'hall', '廳', '1', '8', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('4', 'washroom', '衛', '1', '9', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('5', 'now_floor', '第層', '1', '5', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('6', 'total_floor', '共層', '1', '6', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('7', 'house_area', '面積', '1', '4', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('8', 'house_type', '房屋類型', '1', '2', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('9', 'rent_price', '租金', '1', '3', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('10', 'house_allocation', '房屋配置', '1', '11', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('11', 'house_area', '面積', '2', '0', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('12', 'house_type', '房屋類型', '2', '0', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('13', 'hope_rent_price', '期望租金', '2', '0', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('14', 'room', '室', '3', '8', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('15', 'hall', '廳', '3', '9', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('16', 'washroom', '衛', '3', '10', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('17', 'now_floor', '第層', '3', '5', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('18', 'total_floor', '共層', '3', '7', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('19', 'house_area', '面積', '3', '4', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('20', 'house_type', '房屋類型', '3', '1', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('21', 'sell_price', '總價', '3', '3', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('22', 'sell_5', '產權滿五年', '3', '2', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('23', 'house_allocation', '房屋配置', '3', '12', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('24', 'toward', '房屋朝向', '1', '10', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('25', 'toward', '房屋朝向', '3', '11', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('26', 'broker_company', '經紀公司', '4', '0', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('27', 'company_address', '公司地址', '4', '0', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('28', 'house_type', '房屋類型', '5', '1', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('29', 'sell_5', '產權滿五', '5', '2', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('30', 'sell_price', '總價', '5', '3', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('31', 'house_area', '房屋面積', '5', '4', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('32', 'now_floor', '當前樓層', '5', '5', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('33', 'total_floor', '總樓層', '5', '6', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('34', 'room', '臥室', '5', '7', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('35', 'hall', '客廳', '5', '8', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('36', 'washroom', '房屋廚衛', '5', '9', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('37', 'toward', '房屋朝向', '5', '10', '1');
+INSERT INTO `pre_house_profile_type_setting` VALUES ('38', 'house_allocation', '房屋配置', '5', '11', '1');]]></item>
+				<item id="admin_profile_inc_php_1"><![CDATA[字段名不能為空]]></item>
+				<item id="admin_profile_inc_php_3"><![CDATA[模型名不能為空]]></item>
+				<item id="admin_profile_inc_php_4"><![CDATA[字段不能為空]]></item>
+				<item id="admin_profile_inc_php_5"><![CDATA[模型關聯]]></item>
+				<item id="admin_profile_inc_php_6"><![CDATA[字段名]]></item>
+				<item id="admin_profile_inc_php_7"><![CDATA[是否可用]]></item>
+				<item id="admin_profile_inc_php_10"><![CDATA[否]]></item>
+				<item id="admin_profile_inc_php_11"><![CDATA[保存]]></item>
+				<item id="admin_profile_inc_php_12"><![CDATA[確定刪除]]></item>
+				<item id="admin_profile_inc_php_15"><![CDATA[綁定新字段]]></item>
+				<item id="admin_profile_inc_php_16"><![CDATA[一個模型只能綁定一個字段一次]]></item>
+				<item id="admin_profile_inc_php_20"><![CDATA[模型管理]]></item>
+				<item id="admin_profile_inc_php_21"><![CDATA[模型名稱]]></item>
+				<item id="admin_profile_inc_php_28"><![CDATA[添加模型]]></item>
+				<item id="admin_profile_inc_php_32"><![CDATA[字段管理]]></item>
+				<item id="admin_profile_inc_php_35"><![CDATA[是否必填]]></item>
+				<item id="admin_profile_inc_php_36"><![CDATA[參與搜索]]></item>
+				<item id="admin_profile_inc_php_37"><![CDATA[字段類型]]></item>
+				<item id="admin_profile_inc_php_38"><![CDATA[可選值]]></item>
+				<item id="admin_profile_inc_php_39"><![CDATA[最大輸入值]]></item>
+				<item id="admin_profile_inc_php_40"><![CDATA[字段單位]]></item>
+				<item id="admin_profile_inc_php_47"><![CDATA[單選]]></item>
+				<item id="admin_profile_inc_php_48"><![CDATA[多選]]></item>
+				<item id="admin_profile_inc_php_49"><![CDATA[輸入]]></item>
+				<item id="admin_profile_inc_php_53"><![CDATA[添加字段]]></item>
+				<item id="admin_profile_inc_php_54"><![CDATA[字母和下劃線組成]]></item>
+				<item id="admin_profile_inc_php_55"><![CDATA[全局唯一.例如]]></item>
+				<item id="admin_profile_inc_php_56"><![CDATA[字段名,中文標示. 例如]]></item>
+				<item id="admin_profile_inc_php_57"><![CDATA[證件類型]]></item>
+				<item id="admin_profile_inc_php_67"><![CDATA[可選值每行一個,回車換行輸入]]></item>
+				<item id="admin_profile_inc_php_68"><![CDATA[添加新字段]]></item>
+				<item id="config_inc_php_1"><![CDATA[戶型圖]]></item>
+				<item id="config_inc_php_2"><![CDATA[實景圖]]></item>
+				<item id="config_inc_php_3"><![CDATA[效果圖]]></item>
+				<item id="function_class_php_1"><![CDATA[├]]></item>
+				<item id="function_class_php_4"><![CDATA[└]]></item>
+				<item id="loupan_inc_php_1"><![CDATA[手機號碼應為11位的數字, 請返回重新輸入]]></item>
+				<item id="loupan_inc_php_2"><![CDATA[新的預約看房信息]]></item>
+				<item id="loupan_inc_php_3"><![CDATA[查看詳情]]></item>
+				<item id="loupan_inc_php_4"><![CDATA[預約看房提交成功\]]></item>
+				<item id="loupan_inc_php_5"><![CDATA[操作成功\]]></item>
+				<item id="+head_htm_1"><![CDATA[首頁]]></item>
+				<item id="admin_post_loupan_htm_2"><![CDATA[平米]]></item>
+				<item id="admin_post_loupan_htm_3"><![CDATA[例如]]></item>
+				<item id="admin_post_loupan_htm_4"><![CDATA[售樓處免費咨詢電話（工作時間︰]]></item>
+				<item id="admin_post_loupan_htm_5"><![CDATA[）]]></item>
+				<item id="admin_post_loupan_htm_7"><![CDATA[轉 8008  或]]></item>
+				<item id="list_htm_1"><![CDATA[信息來源]]></item>
+				<item id="list_htm_2"><![CDATA[全部]]></item>
+				<item id="loupan_view_htm_1"><![CDATA[樓盤首頁]]></item>
+				<item id="loupan_view_htm_2"><![CDATA[樓盤圖庫]]></item>
+				<item id="loupan_view_htm_3"><![CDATA[地圖交通]]></item>
+				<item id="loupan_view_htm_4"><![CDATA[我要看房]]></item>
+				<item id="loupan_view_img_htm_2"><![CDATA[所有]]></item>
+				<item id="loupan_view_img_htm_7"><![CDATA[上傳圖片]]></item>
+				<item id="loupan_view_kanfang_htm_3"><![CDATA[手機]]></item>
+				<item id="loupan_view_kanfang_htm_4"><![CDATA[提交]]></item>
+				<item id="loupan_view_kanfang_htm_5"><![CDATA[看房記錄]]></item>
+				<item id="loupan_view_kanfang_htm_7"><![CDATA[電話]]></item>
+				<item id="loupan_view_kanfang_htm_8"><![CDATA[時間]]></item>
+				<item id="loupan_view_map_htm_1"><![CDATA[周邊配套]]></item>
+				<item id="loupan_view_right_htm_5"><![CDATA[周邊樓盤]]></item>
+				<item id="loupan_view_upload_htm_3"><![CDATA[圖片類別]]></item>
+				<item id="loupan_view_upload_htm_4"><![CDATA[圖片標題]]></item>
+				<item id="loupan_view_upload_htm_5"><![CDATA[圖片描述]]></item>
+				<item id="index_htm_2"><![CDATA[新開樓盤]]></item>
+				<item id="index_htm_5"><![CDATA[暫無數據]]></item>
+				<item id="admin_post_loupan_htm_1"><![CDATA[定位坐標, 請拖動此按鈕]]></item>
+				<item id="admin_shenlan_inc_php_1"><![CDATA[版權聲明]]></item>
+				<item id="admin_shenlan_inc_php_2"><![CDATA[該程序為]]></item>
+				<item id="admin_shenlan_inc_php_3"><![CDATA[獨立自主開發, 依法擁有該產品知識產權,所有代碼版權歸]]></item>
+				<item id="admin_shenlan_inc_php_4"><![CDATA[所有, 程序內均為商業代碼, 僅為購買者提供使用授權]]></item>
+				<item id="admin_shenlan_inc_php_5"><![CDATA[法律聲明]]></item>
+				<item id="admin_shenlan_inc_php_6"><![CDATA[未經官方授權使用修改或者傳播都是屬于侵權和違法行為, 依法將追究一切相關法律責任]]></item>
+				<item id="admin_shenlan_inc_php_7"><![CDATA[官方網站]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="done_htm_1"><![CDATA[提示信息]]></item>
+				<item id="done_htm_2"><![CDATA[操作成功\!]]></item>
+				<item id="done_htm_3"><![CDATA[秒後窗口關閉]]></item>
+				<item id="done_htm_4"><![CDATA[確定]]></item>
+				<item id="index_htm_1"><![CDATA[歡迎您, 企業會員]]></item>
+				<item id="index_htm_2"><![CDATA[企業房產]]></item>
+				<item id="index_htm_3"><![CDATA[企業空間]]></item>
+				<item id="index_htm_4"><![CDATA[簡歷庫]]></item>
+				<item id="index_htm_5"><![CDATA[歡迎您]]></item>
+				<item id="index_htm_6"><![CDATA[我的簡歷]]></item>
+				<item id="index_htm_7"><![CDATA[申請記錄]]></item>
+				<item id="index_htm_8"><![CDATA[信息收藏]]></item>
+				<item id="index_htm_9"><![CDATA[還不是會員]]></item>
+				<item id="index_htm_10"><![CDATA[立即注冊]]></item>
+				<item id="index_htm_11"><![CDATA[登錄]]></item>
+				<item id="index_htm_12"><![CDATA[全部]]></item>
+				<item id="index_htm_13"><![CDATA[信息名]]></item>
+				<item id="index_htm_14"><![CDATA[公司名]]></item>
+				<item id="index_htm_15"><![CDATA[搜索]]></item>
+				<item id="index_htm_16"><![CDATA[熱門搜索]]></item>
+				<item id="index_htm_17"><![CDATA[發布信息]]></item>
+				<item id="index_htm_18"><![CDATA[填寫簡歷]]></item>
+				<item id="index_htm_19"><![CDATA[高級搜索]]></item>
+				<item id="index_htm_20"><![CDATA[房產資訊]]></item>
+				<item id="index_htm_21"><![CDATA[更多]]></item>
+				<item id="index_htm_22"><![CDATA[推薦信息]]></item>
+				<item id="index_htm_23"><![CDATA[急聘]]></item>
+				<item id="index_htm_24"><![CDATA[最新加入企業]]></item>
+				<item id="index_htm_25"><![CDATA[優秀人才推薦]]></item>
+				<item id="index_htm_27"><![CDATA[最新信息]]></item>
+				<item id="index_htm_28"><![CDATA[信息名稱]]></item>
+				<item id="index_htm_29"><![CDATA[開始時間]]></item>
+				<item id="list_htm_16"><![CDATA[搜索信息]]></item>
+				<item id="list_htm_17"><![CDATA[工作地點]]></item>
+				<item id="list_htm_19"><![CDATA[行業類別]]></item>
+				<item id="list_htm_20"><![CDATA[不限]]></item>
+				<item id="list_htm_25"><![CDATA[排序方式]]></item>
+				<item id="list_htm_26"><![CDATA[默認排序]]></item>
+				<item id="list_htm_27"><![CDATA[按截至時間]]></item>
+				<item id="list_htm_28"><![CDATA[按開始時間]]></item>
+				<item id="list_htm_29"><![CDATA[搜索條件]]></item>
+				<item id="list_htm_31"><![CDATA[公司名稱]]></item>
+				<item id="list_htm_33"><![CDATA[更新日期]]></item>
+				<item id="list_htm_35"><![CDATA[公司規模]]></item>
+				<item id="member_htm_5"><![CDATA[收藏]]></item>
+				<item id="member_htm_6"><![CDATA[打印]]></item>
+				<item id="member_htm_8"><![CDATA[預覽簡歷]]></item>
+				<item id="member_htm_9"><![CDATA[我的頭像]]></item>
+				<item id="member_htm_10"><![CDATA[身份認證]]></item>
+				<item id="member_apply_htm_5"><![CDATA[發布時間]]></item>
+				<item id="member_apply_htm_6"><![CDATA[結束時間]]></item>
+				<item id="member_apply_htm_7"><![CDATA[申請時間]]></item>
+				<item id="member_fav_htm_7"><![CDATA[收藏時間]]></item>
+				<item id="member_fav_htm_8"><![CDATA[操作]]></item>
+				<item id="member_fav_htm_10"><![CDATA[刪除]]></item>
+				<item id="member_resume_htm_2"><![CDATA[真實姓名]]></item>
+				<item id="member_resume_htm_3"><![CDATA[工作年限]]></item>
+				<item id="member_resume_htm_4"><![CDATA[性別]]></item>
+				<item id="member_resume_htm_5"><![CDATA[出生日期]]></item>
+				<item id="member_resume_htm_6"><![CDATA[居住地]]></item>
+				<item id="member_resume_htm_7"><![CDATA[戶口]]></item>
+				<item id="member_resume_htm_8"><![CDATA[證件類型]]></item>
+				<item id="member_resume_htm_9"><![CDATA[證件號]]></item>
+				<item id="member_resume_htm_10"><![CDATA[手機]]></item>
+				<item id="member_resume_htm_11"><![CDATA[最高學歷]]></item>
+				<item id="member_resume_htm_12"><![CDATA[學歷]]></item>
+				<item id="member_resume_htm_13"><![CDATA[專業]]></item>
+				<item id="member_resume_htm_14"><![CDATA[學校]]></item>
+				<item id="member_resume_htm_15"><![CDATA[自我評價]]></item>
+				<item id="member_resume_htm_17"><![CDATA[求職意向]]></item>
+				<item id="member_resume_htm_18"><![CDATA[期望月薪]]></item>
+				<item id="member_resume_htm_19"><![CDATA[期望行業]]></item>
+				<item id="member_resume_htm_20"><![CDATA[期望信息]]></item>
+				<item id="member_resume_htm_21"><![CDATA[工作經驗]]></item>
+				<item id="member_resume_htm_23"><![CDATA[預覽]]></item>
+				<item id="member_resume_htm_24"><![CDATA[編輯]]></item>
+				<item id="member_resume_htm_26"><![CDATA[結束時間]]></item>
+				<item id="member_resume_htm_27"><![CDATA[公司]]></item>
+				<item id="member_resume_htm_28"><![CDATA[行業]]></item>
+				<item id="member_resume_htm_29"><![CDATA[信息]]></item>
+				<item id="member_resume_htm_30"><![CDATA[描述]]></item>
+				<item id="member_resume_htm_31"><![CDATA[添加]]></item>
+				<item id="member_resume_htm_32"><![CDATA[專業技能]]></item>
+				<item id="member_resume_htm_36"><![CDATA[技能類別]]></item>
+				<item id="member_resume_htm_37"><![CDATA[例如]]></item>
+				<item id="member_resume_htm_38"><![CDATA[等專業技能名稱]]></item>
+				<item id="member_resume_htm_39"><![CDATA[掌握程度]]></item>
+				<item id="member_resume_htm_40"><![CDATA[一般]]></item>
+				<item id="member_resume_htm_41"><![CDATA[良好]]></item>
+				<item id="member_resume_htm_42"><![CDATA[精通]]></item>
+				<item id="member_resume_htm_43"><![CDATA[使用時間]]></item>
+				<item id="member_resume_htm_44"><![CDATA[年]]></item>
+				<item id="member_resume_htm_49"><![CDATA[年以上]]></item>
+				<item id="member_resume_htm_51"><![CDATA[語言能力]]></item>
+				<item id="member_resume_htm_55"><![CDATA[語言類別]]></item>
+				<item id="member_resume_htm_60"><![CDATA[讀寫听能力]]></item>
+				<item id="member_resume_htm_65"><![CDATA[提交資料]]></item>
+				<item id="member_resume_htm_66"><![CDATA[未填寫]]></item>
+				<item id="member_user_htm_2"><![CDATA[公司行業]]></item>
+				<item id="member_user_htm_3"><![CDATA[公司性質]]></item>
+				<item id="member_user_htm_5"><![CDATA[公司簡介]]></item>
+				<item id="member_user_htm_6"><![CDATA[公司網站]]></item>
+				<item id="member_user_htm_7"><![CDATA[負責人]]></item>
+				<item id="member_view_htm_1"><![CDATA[的簡歷]]></item>
+				<item id="member_view_htm_3"><![CDATA[已認證]]></item>
+				<item id="member_view_htm_4"><![CDATA[未認證]]></item>
+				<item id="member_view_htm_5"><![CDATA[姓名]]></item>
+				<item id="member_view_htm_26"><![CDATA[收藏簡歷]]></item>
+				<item id="space_company_htm_7"><![CDATA[聯系人員]]></item>
+				<item id="space_company_htm_8"><![CDATA[聯系地址]]></item>
+				<item id="space_company_htm_9"><![CDATA[交通提示]]></item>
+				<item id="space_company_htm_10"><![CDATA[聯系電話]]></item>
+				<item id="space_company_htm_11"><![CDATA[工作時間]]></item>
+				<item id="space_company_htm_12"><![CDATA[地址坐標]]></item>
+				<item id="space_company_htm_13"><![CDATA[消息通知]]></item>
+				<item id="space_company_htm_14"><![CDATA[聯系郵箱]]></item>
+				<item id="space_company_htm_15"><![CDATA[不對外顯示, 只做新簡歷投遞通知]]></item>
+				<item id="space_company_htm_16"><![CDATA[聯系手機]]></item>
+				<item id="space_fav_htm_4"><![CDATA[年齡]]></item>
+				<item id="space_post_htm_1"><![CDATA[信息類別]]></item>
+				<item id="space_post_htm_2"><![CDATA[開始日期]]></item>
+				<item id="space_post_htm_4"><![CDATA[截止日期]]></item>
+				<item id="space_view_htm_5"><![CDATA[聯系方式]]></item>
+				<item id="space_view_htm_9"><![CDATA[固定電話]]></item>
+				<item id="space_view_htm_11"><![CDATA[地圖坐標]]></item>
+				<item id="space_view_htm_12"><![CDATA[房產信息]]></item>
+				<item id="admin_cat_htm_2"><![CDATA[行業類別]]></item>
+				<item id="admin_cat_htm_5"><![CDATA[信息類別]]></item>
+				<item id="admin_help_htm_1"><![CDATA[安裝插件擴展,地址]]></item>
+				<item id="admin_help_htm_2"><![CDATA[此擴展是插件的必備擴展,必須安裝 內含插件入口文件和計劃任務腳本文件.
+2. 設置 房產後台]]></item>
+				<item id="admin_help_htm_3"><![CDATA[設置 站點地址]]></item>
+				<item id="admin_help_htm_4"><![CDATA[前台管理用戶組]]></item>
+				<item id="admin_help_htm_5"><![CDATA[綁定消費積分]]></item>
+				<item id="admin_help_htm_6"><![CDATA[進入 後台]]></item>
+				<item id="admin_help_htm_7"><![CDATA[工具]]></item>
+				<item id="admin_help_htm_8"><![CDATA[計劃任務]]></item>
+				<item id="admin_help_htm_9"><![CDATA[新增 房產計劃任務]]></item>
+				<item id="admin_help_htm_10"><![CDATA[編輯 小時 選擇 0時 , 分鐘 填 0  , 任務腳本 填寫]]></item>
+				<item id="admin_help_htm_11"><![CDATA[提交]]></item>
+				<item id="admin_help_htm_12"><![CDATA[在任務列表  可用 打勾 提交
+可以在列表上 點擊 執行 測試一下 如果出現 計劃任務執行成功\ 則設置成功\
+4. 設置完畢]]></item>
+				<item id="admin_jubao_htm_1"><![CDATA[舉報信息]]></item>
+				<item id="admin_jubao_htm_2"><![CDATA[信息名稱]]></item>
+				<item id="admin_jubao_htm_3"><![CDATA[舉報時間]]></item>
+				<item id="admin_jubao_htm_5"><![CDATA[還沒有舉報信息]]></item>
+				<item id="jubao_htm_1"><![CDATA[舉報此信息]]></item>
+				<item id="jubao_htm_3"><![CDATA[確認舉報]]></item>
+				<item id="myaccount_htm_3"><![CDATA[發布信息]]></item>
+				<item id="myaccount_htm_5"><![CDATA[我置頂的信息]]></item>
+				<item id="myaccount_htm_6"><![CDATA[我的資料]]></item>
+				<item id="myaccount_htm_7"><![CDATA[賬戶積分]]></item>
+				<item id="myaccount_htm_9"><![CDATA[在線客服]]></item>
+				<item id="myaccount_memberinfo_htm_1"><![CDATA[姓名]]></item>
+				<item id="myaccount_memberinfo_htm_2"><![CDATA[稱呼]]></item>
+				<item id="myaccount_memberinfo_htm_3"><![CDATA[聯系]]></item>
+				<item id="myaccount_memberinfo_htm_4"><![CDATA[聯系電話]]></item>
+				<item id="myaccount_memberinfo_htm_5"><![CDATA[電子郵箱]]></item>
+				<item id="myaccount_mycredit_htm_1"><![CDATA[帳戶余額]]></item>
+				<item id="myaccount_mycredit_htm_2"><![CDATA[&yen;]]></item>
+				<item id="myaccount_mycredit_htm_4"><![CDATA[消費記錄]]></item>
+				<item id="myaccount_mycredit_htm_6"><![CDATA[置頂天數]]></item>
+				<item id="myaccount_mycredit_htm_7"><![CDATA[積分變更]]></item>
+				<item id="myaccount_mycredit_htm_8"><![CDATA[操作時間]]></item>
+				<item id="myaccount_mycredit_htm_9"><![CDATA[到期時間]]></item>
+				<item id="myaccount_mycredit_htm_10"><![CDATA[還沒有消費記錄]]></item>
+				<item id="myaccount_mypost_htm_2"><![CDATA[類別]]></item>
+				<item id="myaccount_mypost_htm_3"><![CDATA[已置頂]]></item>
+				<item id="myaccount_mypost_htm_5"><![CDATA[未置頂]]></item>
+				<item id="myaccount_mypost_htm_6"><![CDATA[信息編號]]></item>
+				<item id="myaccount_mypost_htm_7"><![CDATA[區域]]></item>
+				<item id="myaccount_mypost_htm_8"><![CDATA[發布時間]]></item>
+				<item id="myaccount_mypost_htm_10"><![CDATA[修改]]></item>
+				<item id="myaccount_mypost_htm_11"><![CDATA[還沒有此類信息]]></item>
+				<item id="post_htm_4"><![CDATA[發布]]></item>
+				<item id="post_htm_5"><![CDATA[房產信息]]></item>
+				<item id="post_htm_12"><![CDATA[基本信息]]></item>
+				<item id="post_htm_13"><![CDATA[帶]]></item>
+				<item id="post_htm_14"><![CDATA[為必填項]]></item>
+				<item id="post_htm_15"><![CDATA[信息分類 : ]]></item>
+				<item id="post_htm_16"><![CDATA[管理員還沒有設置類別,暫時不能發布]]></item>
+				<item id="post_htm_17"><![CDATA[所屬地區 : ]]></item>
+				<item id="post_htm_19"><![CDATA[信息有效期 : ]]></item>
+				<item id="post_htm_20"><![CDATA[長期有效]]></item>
+				<item id="post_htm_21"><![CDATA[一周內有效]]></item>
+				<item id="post_htm_22"><![CDATA[一個月內有效]]></item>
+				<item id="post_htm_23"><![CDATA[三個月內有效]]></item>
+				<item id="post_htm_24"><![CDATA[半年內有效]]></item>
+				<item id="post_htm_25"><![CDATA[信息標題 : ]]></item>
+				<item id="post_htm_26"><![CDATA[信息內容 : ]]></item>
+				<item id="post_htm_27"><![CDATA[詳細內容]]></item>
+				<item id="post_htm_30"><![CDATA[出售類型  : ]]></item>
+				<item id="post_htm_34"><![CDATA[交易方式 : ]]></item>
+				<item id="post_htm_35"><![CDATA[當面交易]]></item>
+				<item id="post_htm_36"><![CDATA[擔保交易]]></item>
+				<item id="post_htm_37"><![CDATA[電匯]]></item>
+				<item id="post_htm_38"><![CDATA[其他]]></item>
+				<item id="post_htm_39"><![CDATA[價格 : ]]></item>
+				<item id="post_htm_41"><![CDATA[數量 : ]]></item>
+				<item id="post_htm_42"><![CDATA[新舊程度 : ]]></item>
+				<item id="post_htm_48"><![CDATA[上傳圖片 : ]]></item>
+				<item id="post_htm_49"><![CDATA[圖片必須是png,jpg,gif格式! 圖片大小不得超過]]></item>
+				<item id="post_htm_50"><![CDATA[附件圖片]]></item>
+				<item id="post_htm_54"><![CDATA[聯系方式]]></item>
+				<item id="post_htm_57"><![CDATA[聯系人 : ]]></item>
+				<item id="post_htm_58"><![CDATA[聯系QQ : ]]></item>
+				<item id="post_htm_59"><![CDATA[聯系電話 : ]]></item>
+				<item id="post_htm_60"><![CDATA[電子郵箱 : ]]></item>
+				<item id="post_htm_61"><![CDATA[發布信息]]></item>
+				<item id="post_htm_62"><![CDATA[發布秘籍]]></item>
+				<item id="post_htm_63"><![CDATA[信息填寫越完整詳細, 越能提高排名增加可信度! ]]></item>
+				<item id="post_htm_64"><![CDATA[您的IP是 : ]]></item>
+				<item id="post_htm_65"><![CDATA[, 請不要發布虛假信息, 重復信息]]></item>
+				<item id="post_htm_67"><![CDATA[必須填寫]]></item>
+				<item id="post_htm_68"><![CDATA[價格]]></item>
+				<item id="search_htm_2"><![CDATA[至]]></item>
+				<item id="search_htm_3"><![CDATA[數量]]></item>
+				<item id="search_htm_5"><![CDATA[關鍵詞]]></item>
+				<item id="search_htm_6"><![CDATA[查詢]]></item>
+				<item id="search_htm_7"><![CDATA[出售類型]]></item>
+				<item id="search_htm_8"><![CDATA[不限]]></item>
+				<item id="search_htm_12"><![CDATA[交易方式]]></item>
+				<item id="search_htm_18"><![CDATA[新舊程度]]></item>
+				<item id="search_htm_24"><![CDATA[成及以下]]></item>
+				<item id="search_htm_25"><![CDATA[信息總數]]></item>
+				<item id="search_htm_26"><![CDATA[信息置頂可使信息展示效果更好]]></item>
+				<item id="setpostup_htm_1"><![CDATA[設置置頂信息]]></item>
+				<item id="setpostup_htm_2"><![CDATA[置頂信息]]></item>
+				<item id="setpostup_htm_3"><![CDATA[置頂時長]]></item>
+				<item id="setpostup_htm_4"><![CDATA[天]]></item>
+				<item id="setpostup_htm_6"><![CDATA[一周]]></item>
+				<item id="setpostup_htm_7"><![CDATA[半個月]]></item>
+				<item id="setpostup_htm_8"><![CDATA[一個月]]></item>
+				<item id="setpostup_htm_9"><![CDATA[兩個月]]></item>
+				<item id="setpostup_htm_10"><![CDATA[三個月]]></item>
+				<item id="setpostup_htm_11"><![CDATA[半年]]></item>
+				<item id="setpostup_htm_12"><![CDATA[積分]]></item>
+				<item id="setpostup_htm_14"><![CDATA[本次需要]]></item>
+				<item id="setpostup_htm_16"><![CDATA[設置置頂]]></item>
+				<item id="top_htm_1"><![CDATA[熱門信息]]></item>
+				<item id="top_htm_3"><![CDATA[最新置頂信息顯示]]></item>
+				<item id="top_htm_4"><![CDATA[最新置頂信息]]></item>
+				<item id="top_htm_5"><![CDATA[所屬分類]]></item>
+				<item id="top_htm_6"><![CDATA[人氣]]></item>
+				<item id="view_htm_7"><![CDATA[該信息]]></item>
+				<item id="view_htm_13"><![CDATA[瀏覽]]></item>
+				<item id="view_htm_14"><![CDATA[次]]></item>
+				<item id="view_htm_15"><![CDATA[企業名稱]]></item>
+				<item id="view_htm_19"><![CDATA[分享一下,很簡單]]></item>
+				<item id="view_htm_20"><![CDATA[信息描述]]></item>
+				<item id="view_htm_21"><![CDATA[立即申請]]></item>
+				<item id="view_htm_23"><![CDATA[信息申請]]></item>
+				<item id="view_htm_30"><![CDATA[公司介紹]]></item>
+				<item id="view_htm_18"><![CDATA[舉報]]></item>
+				<item id="view_htm_40"><![CDATA[查歸屬地]]></item>
+				<item id="view_htm_41"><![CDATA[咨詢 : ]]></item>
+				<item id="view_htm_42"><![CDATA[ : ]]></item>
+				<item id="view_htm_43"><![CDATA[發布者IP : ]]></item>
+				<item id="view_htm_44"><![CDATA[小提示 : ]]></item>
+				<item id="view_htm_45"><![CDATA[信息詳情]]></item>
+				<item id="view_htm_46"><![CDATA[點擊查看原圖]]></item>
+				<item id="view_htm_50"><![CDATA[您對以下信息或許\感興趣]]></item>
+				<item id="view_htm_51"><![CDATA[立即發布一條信息]]></item>
+				<item id="view_htm_52"><![CDATA[我們還提供相關分類]]></item>
+				<item id="space_htm_3"><![CDATA[發布信息]]></item>
+				<item id="space_htm_5"><![CDATA[置頂信息]]></item>
+				<item id="space_htm_6"><![CDATA[企業設置]]></item>
+				<item id="space_htm_7"><![CDATA[賬戶]]></item>
+				<item id="space_mypost_htm_5"><![CDATA[未置頂]]></item>
+				<item id="space_mypost_htm_6"><![CDATA[信息編號]]></item>
+				<item id="space_mypost_htm_7"><![CDATA[信息置頂]]></item>
+				<item id="space_mypost_htm_9"><![CDATA[充值]]></item>
+				<item id="space_mypost_htm_8"><![CDATA[發布時間]]></item>
+				<item id="space_mypost_htm_10"><![CDATA[修改]]></item>
+				<item id="space_mypost_htm_11"><![CDATA[沒有信息]]></item>
+				<item id="space_mycredit_htm_10"><![CDATA[沒有信息]]></item>
+				<item id="shopinfo_htm_9"><![CDATA[地圖坐標]]></item>
+				<item id="shopinfo_htm_10"><![CDATA[請使用 地圖左側的]]></item>
+				<item id="shopinfo_htm_11"><![CDATA[以鼠標左鍵點擊來確定您商店的坐標]]></item>
+				<item id="shopinfo_htm_12"><![CDATA[開始定位,請在地圖上點擊鼠標左鍵確定您的坐標]]></item>
+				<item id="shopinfo_htm_13"><![CDATA[定位成功\!]]></item>
+				<item id="space_mycredit_htm_1"><![CDATA[賬戶余額]]></item>
+				<item id="space_mycredit_htm_2"><![CDATA[&yen;]]></item>
+				<item id="space_mycredit_htm_6"><![CDATA[置頂天數]]></item>
+				<item id="space_mycredit_htm_7"><![CDATA[變更]]></item>
+				<item id="space_mycredit_htm_8"><![CDATA[操作時間]]></item>
+				<item id="space_mycredit_htm_9"><![CDATA[到期時間]]></item>
+				<item id="view_htm_35"><![CDATA[聯系電話 : ]]></item>
+				<item id="view_htm_36"><![CDATA[聯系地址 : ]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+	</item>
+</root>

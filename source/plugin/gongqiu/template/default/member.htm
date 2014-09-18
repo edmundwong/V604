@@ -1,0 +1,41 @@
+<!--{template common/header}-->
+<!--{eval include template("gongqiu:$style/style");}-->
+
+<div class='brian_main'>
+    
+    <!--{eval include template("gongqiu:$style/head");}-->
+    
+    <div class="brian_member">
+        <div class="brian_member_left">
+            <ul>
+                <li><a href="{$gongqiu_config['root']}?mod=post">{lang gongqiu:member_htm_3}</a></li>
+                <li><a href="{$gongqiu_config['root']}?mod=member&op=mypost" {if $op=='mypost'} class="hover" {/if}>{lang gongqiu:index_htm_3}</a></li>
+                <li><a href="{$gongqiu_config['root']}?mod=member&op=mypostup"  {if $op=='mypostup'} class="hover" {/if}>{lang gongqiu:member_htm_5}</a></li>
+            </ul>
+            <ul>
+                <li><a href="{$gongqiu_config['root']}?mod=member&op=memberinfo"  {if $op=='memberinfo'} class="hover" {/if}>{lang gongqiu:member_htm_6}</a></li>
+                <li><a href="{$gongqiu_config['root']}?mod=member&op=mycredit"  {if $op=='mycredit'} class="hover" {/if}>{lang gongqiu:member_htm_7}</a></li>
+                <li><a  href="{$gongqiu_config['chongzhi']}" target="_blank">{$gongqiu_config['credit_unit']}{lang gongqiu:index_htm_4}</a></li>
+            </ul>
+            <ul style="display:none;">
+                <li><a href="{$gongqiu_config['root']}?mod=member&op=kefu"  {if $op=='kefu'} class="hover" {/if}>{lang gongqiu:member_htm_9}</a></li>
+            </ul>
+        </div>
+        <div class="brian_member_right">
+            <!--{if $op =='mypost'}-->
+                <!--{eval include template("gongqiu:$style/member/member_mypost");}-->
+            <!--{elseif $op =='mypostup'}-->
+                <!--{eval include template("gongqiu:$style/member/member_mypost");}-->
+            <!--{elseif $op =='memberinfo'}-->
+                <!--{eval include template("gongqiu:$style/member/member_memberinfo");}-->
+            <!--{elseif $op =='mycredit'}-->
+                <!--{eval include template("gongqiu:$style/member/member_mycredit");}-->
+             <!--{elseif $op =='setpostup'}-->
+                <!--{eval include template("gongqiu:$style/member/member_setpostup");}-->
+            <!--{/if}-->
+        </div>
+    </div>
+
+</div>
+
+<!--{template common/footer}-->

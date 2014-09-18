@@ -1,0 +1,204 @@
+<!--{template common/header}-->
+<!--{eval $list = array();}-->
+<!--{eval $wheresql = category_get_wheresql($cat);}-->
+<!--{eval $list = category_get_list($cat, $wheresql, $page);}-->
+<style id="diy_style" type="text/css"></style>
+<link href="$_G['style']['styleimgdir']/news/main.css" rel="stylesheet" type="text/css" media="screen">
+<link href="$_G['style']['styleimgdir']/news/list.css" rel="stylesheet" type="text/css" media="screen">
+<link href="$_G['style']['styleimgdir']/news/common.css" rel="stylesheet" type="text/css" media="screen">
+<div id="pt" class="bm cl note">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a> <em>&rsaquo;</em>
+		<a href="$_G[setting][navs][1][filename]">{lang portal}</a> <em>&rsaquo;</em>
+		<!--{loop $cat[ups] $value}--> <a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a><em>&rsaquo;</em><!--{/loop}-->
+		$cat[catname]
+	</div>
+    <div class="seaBar"><form id="searchbox" action="http://www.google.com/search" onsubmit="return setsite();" target="_blank"><input id="set_site" type="hidden" value="" name="q"><input id="set_site1" type="text" class="seaText" name="q1"  onfocus="this.style.background='#fff'" onblur="javascript:if (this.value=='') {this.style.background='url(http://www.vanpeople.com/info/templates/default/images/google_custom_search_watermark.gif) no-repeat scroll left center rgb(255, 255, 255)'}"  /><input type="submit" value="搜索" /></form></div>
+</div>
+
+	
+<!-- start mainbodybox -->
+<div id="mainbodybox">
+  <div id="listmainbody" class="mainbody">
+    <!-- start leftside bar -->
+    <div id="leftsidebar" class="leftsidebar">
+<div class="leftnav">
+        <style type="text/css">
+#floater { margin-top:0; }
+.newskuang1 {
+	font-size:14px;
+	background-color: #ffffef;
+	padding-left:0;
+	padding-bottom:2px;
+}
+.newskuang2 { margin-bottom:5px;border:1px solid #669900;border-left:0;border-right:0;background-color:#f8ffeb; }
+.newskuang2 .title { font-size:14px;line-height:20px;padding-top:0;*padding-top:2px;padding-bottom:3px;*padding-bottom:0;*margin-bottom:2px;border-bottom:1px solid #669900;color:#000;text-align:center;background:#d6e8b5; }
+.newskuang2 .cat { background:url('$_G['style']['styleimgdir']/news/img/subscribecategory.gif') 7px 8px no-repeat;*background-position:7px 6px;padding-top:4px;padding-bottom:1px;*padding-bottom:2px;line-height:18px;border-bottom:1px solid #cccc99;text-indent:25px; }
+.enfont { font: 10.4px tahoma, verdana, arial;color:#666; }
+.newskuang2 .more { text-align:center;padding:1px 0; }
+
+
+A.green_12p_link:link {
+	COLOR: #008000;
+	TEXT-DECORATION: none;
+	font-size: 12px;
+	font-weight: normal;
+}
+A.green_12p_link:visited {
+	COLOR:#008000;
+	TEXT-DECORATION: none;
+	font-size: 12px;
+	font-weight: normal;
+}
+A.green_12p_link:hover {
+	COLOR: #F00000;
+	TEXT-DECORATION: underline;
+	font-size: 12px;
+	font-weight: normal;
+}
+A.black_14p_link {
+	COLOR: #000;
+	TEXT-DECORATION: none;
+	font-size: 14px;
+	font-weight: normal;
+}
+A.black_14p_link:visited {
+	COLOR:#000;
+	TEXT-DECORATION: none;
+	font-size: 14px;
+	font-weight: normal;
+}
+A.black_14p_link:hover {
+	COLOR: #000;
+	TEXT-DECORATION: underline;
+	font-size: 14px;
+	font-weight: normal;
+}
+.black_14p {
+	font-size: 14px;
+	color: #000;
+	line-height:20px;
+	*padding-top:4px;
+}
+.leftnav_sub { width:120px;margin:0;padding:0; }
+.leftnav_sub ul { background-color:#669900;border:0;padding-bottom:0; }
+.leftnav_sub ul li { border-top:0;background-color:#ffffef;margin-bottom:1px;height:23px;line-height:22px; }
+.leftnav_sub ul li a { text-indent:8px;color:#333;padding-left:2px; }
+.recate{padding-left:23px;}
+.recate a{font-size:14px;}
+#diy02{width:615px !important;}
+#framemMo8E2_left{width:615px !important;}
+.arcsol{width:615px !important;}
+.toplistcattype li span{cursor:hand;}
+</style>
+<div id="floater">
+<!--[diy=diy01]--><div id="diy01" class="area"></div><!--[/diy]-->
+  <table width="120" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="100%" height="20">
+      	<table width="100%"  border="0" cellpadding="3" cellspacing="1" bgcolor="#C1D5F9">
+          <tr bgcolor="#D8E3F6">
+          		        <td width="8%" bgcolor="#597BCC">&nbsp;</td>
+    	    <td width="92%" align="center" bgcolor="#F5F9FC" class="black_14p"><a href="news/" class="black_14p_link">新闻首页</a></td>
+                      </tr>
+        </table></td>
+    </tr>
+   <!--{loop $cat[others] $value}-->
+   <tr><td height="4"></td></tr>
+    <tr>
+      <td height="20"><table width="100%"  border="0" cellpadding="3" cellspacing="1" bgcolor="#C1D5F9">
+          <tr bgcolor="#C1D5F9">
+	        <td width="8%" bgcolor="#597BCC">&nbsp;</td>
+    	        <td width="92%" align="center" bgcolor="#F5F9FC" class="black_14p"><a href="{$portalcategory[$value['catid']]['caturl']}">$value[catname]</a></td>
+          </tr>
+        </table></td>
+    </tr>
+
+					<!--{/loop}-->
+    
+  </table>
+</div>
+</div>
+    </div>
+    <!-- end leftside bar -->
+    <!-- start content -->
+    <div id="content" class="content">
+      <!-- start artlistbox -->
+      <div id="arclistbox" class="arclistbox">
+            <div id="arclistbox" class="arclistbox">
+
+			<!-- start listtitle -->
+			<div id="listtitle" class="listtitle" style="background:#666;height:28px; color:#fff; padding-left:20px; font-weight:bold;">
+				<span>24小时新闻排行</span>
+			</div>
+			<!-- /end listtitle -->
+		
+			<div id="arclist" class="arclist altbg1 ">
+			<ul id="test2_li_now_" class="toplistcattype altbg1">
+				<li class="now a" onclick="switchTab('cr180tab',1,4,'a');" id="cr180tab_1"><span>全部分类</span></li>
+				<li class="lsepline" onclick="switchTab('cr180tab',2,4,'a');" id="cr180tab_2"><span>本地要闻</span></li>
+				<li class="lsepline" onclick="switchTab('cr180tab',3,4,'a');" id="cr180tab_3"><span>加国要闻</span></li>
+				<li class="lsepline" onclick="switchTab('cr180tab',4,4,'a');" id="cr180tab_4"><span>加国生活</span></li>
+				<li class="lsepline" onclick="switchTab('cr180tab',5,4,'a');" id="cr180tab_5"><span>北美国际</span></li>
+				<li class="lsepline" onclick="switchTab('cr180tab',6,4,'a');" id="cr180tab_6"><span>体娱明星</span></li>
+				<li class="lsepline" onclick="switchTab('cr180tab',7,4,'a');" id="cr180tab_7"><span>海外华人</span></li>
+			</ul>
+<div class="cr180_hover_body">
+                    <div id="cr180tab_c_1">
+                   <!--{block/238}-->
+                    </div>
+                    <div id="cr180tab_c_2" style="display:none">
+                    <!--{block/239}-->
+                    </div>
+                    <div id="cr180tab_c_3" style="display:none">
+                      <!--{block/240}-->
+                    </div>
+                    <div id="cr180tab_c_4" style="display:none">
+                    <!--{block/241}-->
+                    </div>
+                    <div id="cr180tab_c_5" style="display:none">
+                    <!--{block/242}-->
+                    </div>
+                    <div id="cr180tab_c_6" style="display:none">
+                    <!--{block/243}-->
+                    </div>
+                    <div id="cr180tab_c_7" style="display:none">
+                    <!--{block/244}-->
+                    </div>
+                </div>
+			
+			</div>
+		</div>
+       
+</div>
+<!-- /end artlistbox -->
+
+<!-- start bottombar -->
+<div id="bottombar" class="bottombar"></div>
+<!-- /end bottombar -->
+</div>
+<!-- / end content -->
+<!-- start rightside bar -->
+<div id="rightsidebar" class="rightsidebar" style="margin-top:0 !important;">
+
+<div class="dshly">
+  <h1 class="mainBoxh1">新闻点击排行 <!--<span class="more"><a href="/top/">更多 &#187;</a></span>--></h1>
+ <!--{block/200}-->
+</div>
+
+<div class="right_bot"><div class="right_img">
+	<div class="box_title">
+		<ol><li class="moverad"><a>热门图片</a></li></ol>
+		<span class="more"><a href="/pic/" target="_top">更多 &#187;</a></span>
+	</div>
+<!--{block/201}-->
+</div></div>
+      <div class="dshly">
+	<h1 class="mainBoxh1">近期活动<span class="more"><a href="info.php">更多 &#187;</a></span></h1>
+	<!--{block/372}-->
+</div>      
+    </div>
+    <!-- /end rightside bar -->
+  </div>
+</div>
+<!--{template common/footer}-->

@@ -1,0 +1,59 @@
+<script>
+<!--
+	function setTab(name,cursel,n){
+		for(i=1;i<=n;i++){
+			var menu=document.getElementById(name+i);
+			var con=document.getElementById("con_"+name+"_"+i);
+			menu.className=i==cursel?"hover":"";
+			con.style.display=i==cursel?"block":"none";
+		}
+	}
+//-->
+</script>
+<div class="Menuboxs z cl">
+    <ul>
+        <li id="tt1" onclick="setTab('tt',1,2)" class="hover">{$tmp_lang['homedtj']}</li>
+        <li id="tt2" onclick="setTab('tt',2,2)" style="width:128px;">{$kaname}</li>
+    </ul>
+</div>
+
+<div class="Contentboxs z cl"> 
+
+    <div id="con_tt_1" class="hover">
+            <div class="hdxx cl">  
+            <!--{if $tuijians}-->        
+                {loop $tuijians $key $tuijian}
+                    <dl>
+                        <dt>
+                        <!--{if !empty($tuijian[pic])}-->
+                        <a href="<!--{if $isdomain && $tuijian[domain]}-->$tuijian[domain]<!--{elseif $RewriteStart == 1}-->{$curl}_{$tuijian[id]}.html<!--{else}-->{$curls}{$tuijian[id]}<!--{/if}-->"{$Clickwindow}><img src="{$tuijian[pic]}"></a>
+                        <!--{else}-->
+                        <a href="<!--{if $isdomain && $tuijian[domain]}-->$tuijian[domain]<!--{elseif $RewriteStart == 1}-->{$curl}_{$tuijian[id]}.html<!--{else}-->{$curls}{$tuijian[id]}<!--{/if}-->"{$Clickwindow}><img src="source/plugin/dz55625_haodian/images/over2.jpg" /></a>
+                        <!--{/if}-->
+                        </dt>
+                        <dd>
+                        <strong><a href="<!--{if $isdomain && $tuijian[domain]}-->$tuijian[domain]<!--{elseif $RewriteStart == 1}-->{$curl}_{$tuijian[id]}.html<!--{else}-->{$curls}{$tuijian[id]}<!--{/if}-->"{$Clickwindow}>{$tuijian[title]}</a></strong>
+                        <span>{$tuijian[tel]}</span>
+                        </dd>
+                    </dl>
+                {/loop} 
+            <!--{else}--> 
+                <ul class="erroe">{$tmp_lang['homewtj']}</ul>
+            <!--{/if}--> 
+            </div>
+        
+    </div>
+
+    <div id="con_tt_2" style="display:none">
+    	<ul>
+        <!--{if $yikas}-->        
+         {loop $yikas $key $yika}
+        	<li><a href="<!--{if $isdomain && $yika[domain]}-->$yika[domain]<!--{elseif $RewriteStart == 1}-->{$curl}_{$yika[id]}.html<!--{else}-->{$curls}{$yika[id]}<!--{/if}-->"{$Clickwindow}>{$yika[title]}</a></li>
+          {/loop} 
+           <!--{else}--> 
+                <li style="padding:0; border:none">{$tmp_lang['homewtj']}</li>
+            <!--{/if}-->
+        </ul>
+    </div>
+
+</div>

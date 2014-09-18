@@ -1,0 +1,168 @@
+<!--{eval include template("sale:$style/head");}-->
+<link rel="stylesheet" type="text/css" href="{$sale_config['sale']}template/{$style}/css/style.css?{VERHASH}" />
+<link href="{$sale_config['sale']}template/{$style}/style/info.css" rel="stylesheet" type="text/css">
+<link href="{$sale_config['sale']}template/{$style}/style/post.css" rel="stylesheet" type="text/css"> 
+<body class="page_home" style="width: 990px; margin: 0 auto;">
+    <a name="header"></a>
+    <div class="header-top">
+       <!--{eval include template("sale:$style/sale_head");}-->
+       <div style="position: relative; float: right;">
+        <div class="channel_top" style="position: absolute; top: 29px; width: 420px; right: 0;">
+            <div class="links">
+                <a href="#" title="返回人在温哥华">主站</a><span class="sublinks"><a href="#">分类广告</a>｜<a href="#">服务黄页</a>｜<a href="#">大温店铺</a>｜<a href="http://www.vanpeople.com/c/redirect.php?ref=forum">社区论坛</a>｜<a href="http://www.vanpeople.com/c/redirect.php?ref=space">个人空间</a></span>
+            </div>
+        </div>
+     </div>
+    <div class="nav_bottom_line"></div>       
+    </div>
+ <div class="nav_bottom_line"></div>
+
+    <!-- END OF HOME PAGE MAIN MENU //-->
+    <script type="text/javascript" language="javascript" src="{$sale_config['sale']}template/{$style}/style/post.js"></script>
+    <p style="padding: 8px;"></p>
+    <div style="height: 30px; clear: both;"></div>
+    <div id="content" >
+            <div id="postTable" style="width: 910px; margin: 0 auto;">
+            <div id="nav">
+                <ul>
+                    <li id="nav1"><a href="http://www.vanpeople.com/c/post.aspx" style="font-size: 14px;">选择发布类型</a></li>
+                    <li id="nav2" class="on">填写详细信息
+                    </li>
+                    <li id="nav3">发布成功</li>
+                </ul>
+            </div>
+            <p style="padding: 10px;"></p>
+          </div>
+          
+                  <form action="{$sale_config['root']}?mod=post" method="post" enctype="multipart/form-data" onSubmit="return validate();">
+            <input type="hidden" name="mod" value="{$mod}" />
+            <input type="hidden" name="op" value="{$op}" />
+            <input type="hidden" name="formhash" value="{$_G['formhash']}" />
+            <input type="hidden" name="goods_id" value="{$goods_id}" />
+            <div class="brian_main_subcontent_content">
+            {if $op!='edit'}<p>{$_lang['xinxifabu_tishi1']} <b>{$sale_config['postcredit']}</b> {$sale_config['credit_unit']} , {$_lang['nin_dangqian']}{$sale_config['credit_unit']} : <b>{$my_credit}. </b></p>{/if}
+            <div class="fb_bt"><span class="f14">{lang sale:post_htm_12} </span> {lang sale:post_htm_13}<font color="red">*</font>{lang sale:post_htm_14} </div>
+            <table class="fb_form">
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_15}</td>
+                    <td>
+                        <span id="catbox"></span>
+                        {if empty($goods['cat_id'])}
+                        <script type='text/javascript' language='javascript'>
+                        brian_showcat("catbox",["0","0","0"],"{$sale_config['root']}");
+                        </script>
+                        {else}
+                        <script type='text/javascript' language='javascript'>
+                        brian_showcat("catbox",["0","{$goods['cat_id']}","{$goods['subcat_id']}"],"{$sale_config['root']}");
+                        </script>
+                        {/if}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_17}</td>
+                    <td>
+                        <span id="districtbox_show">{$goods['province']} {$goods['city']} {$goods['dist']} {$goods['community']}</span>
+                        <span id="districtbox">
+                            <a href="javascript:;" onClick="districtbox_edit_fun()">{lang sale:member_mypost_htm_10}</a>
+                        </span>
+                        {if $op == 'post'}
+                        <script type='text/javascript' language='javascript'>
+                            brian_showdistrict("districtbox", ["province", "city", "dist", "community"], 4, 1);
+                        </script>
+                        {/if}
+                    </td>
+                </tr>
+                
+                <!--
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_19}</td>
+                    <td>
+                        <select name="goods_settime">
+                            <option value="0" {if $goods['goods_settime']==0} selected='selected' {/if}>{lang sale:post_htm_20}</option>
+                            <option value="7" {if $goods['goods_settime']==7} selected='selected' {/if}>{lang sale:post_htm_21}</option>
+                            <option value="30" {if $goods['goods_settime']==30} selected='selected' {/if}>{lang sale:post_htm_22}</option>
+                            <option value="90" {if $goods['goods_settime']==90} selected='selected' {/if}>{lang sale:post_htm_23}</option>
+                            <option value="180" {if $goods['goods_settime']==180} selected='selected' {/if}>{lang sale:post_htm_24}</option>
+                        </select>
+                    </td>
+                </tr>
+                
+                -->
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_25}</td>
+                    <td><input type="text" class="text" id="goods_title" name="goods_title" style="width:350px;"  value="{$goods['goods_title']}"/></td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_26}</td>
+                    <td>
+                    +++++++
+<script type="text/javascript">
+var charset ="{$_G['charset']}";
+</script>
+<script type="text/javascript" charset="{$_G['charset']}" src="{$sale_config['ue']}editor_config.js"></script>
+<script type="text/javascript" charset="{$_G['charset']}" src="{$sale_config['ue']}editor_all.js"></script>
+<script  id="bb_editor" type="text/plain">{echo stripslashes($goods['goods_text']);}</script>
+<script type="text/javascript">
+var ue = UE.getEditor('bb_editor');
+</script>
+        <input type="hidden" name="goods_text" id="goods_text" />
+                    </td>
+                </tr>
+            </table>
+            <div class="fb_bt"><span class="f14">{lang sale:post_htm_27} </span><a name="salaryInfo"></a> {lang sale:post_htm_13}<font color="red">*</font>{lang sale:post_htm_14}</div>
+             <table class="fb_form">
+               
+                <tr>
+                    <td class="tdr">{lang sale:post_htm_48}</td>
+                    <td><p>{lang sale:post_htm_49}2M </p>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                            <b>{lang sale:post_htm_50}1 : </b><input type="hidden" name="temp_goods_upload_file_1" value="{$goods['goods_upload_file_1']}" />
+                            <input type="file" name="goods_upload_file_1" />
+                            {if $goods['goods_upload_file_1']}<p><img src="{$goods['goods_upload_file_1']}" alt="goods_upload_file_1" /></p>{/if}
+                        </div>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                            <b>{lang sale:post_htm_50}2 : </b><input type="hidden" name="temp_goods_upload_file_2" value="{$goods['goods_upload_file_2']}" />
+                            <input type="file" name="goods_upload_file_2" />
+                            {if $goods['goods_upload_file_2']}<p><img src="{$goods['goods_upload_file_2']}" alt="goods_upload_file_2" /></p>{/if}
+                        </div>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                            <b>{lang sale:post_htm_50}3 : </b><input type="hidden" name="temp_goods_upload_file_3" value="{$goods['goods_upload_file_3']}" />
+                            <input type="file" name="goods_upload_file_3" />
+                            {if $goods['goods_upload_file_3']}<p><img src="{$goods['goods_upload_file_3']}" alt="goods_upload_file_3" /></p>{/if}
+                        </div>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px;margin-bottom:5px;">
+                            <b>{lang sale:post_htm_50}4 : </b><input type="hidden" name="temp_goods_upload_file_4" value="{$goods['goods_upload_file_4']}" />
+                            <input type="file" name="goods_upload_file_4" />
+                            {if $goods['goods_upload_file_4']}<p><img src="{$goods['goods_upload_file_4']}" alt="goods_upload_file_4" /></p>{/if}
+                        </div>
+                    </td>
+                </tr>
+             </table>
+            <div class="fb_bt"><span class="f14">{lang sale:post_htm_54}</span><a name="contactInfo"></a> {lang sale:post_htm_13}<font color="red">*</font>{lang sale:post_htm_14}</div>
+            <table class="fb_form">
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_57}</td>
+                    <td><input type="text" class="text" name="member_username" value="{$member['member_username']}" /></td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font color="red">*</font>{lang sale:post_htm_59}</td>
+                    <td><input type="text" class="text" name="member_phone" value="{$member['member_phone']}" /></td>
+                </tr>
+                
+                <tr>
+                    <td class="tdr">{lang sale:post_htm_60}</td>
+                    <td><input type="text" class="text" name="member_email" value="{$member['member_email']}" /></td>
+                </tr>
+            </table>
+            <div class="post_box">
+                <input type="submit" name="{$op}_submit"  id="{$op}_submit" class="ljfb" value="{lang sale:post_htm_61}" />
+            </div>
+        </div>
+        </form>
+          
+    </div>
+
+   
+<!--{eval include template("sale:$style/foot");}-->
+</body>
+</html>

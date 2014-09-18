@@ -1,0 +1,38 @@
+﻿<!--{eval include template("sale:$style/header");}-->
+<div class="nav_bottom_line"></div>
+<p style="padding:15px;"></p>
+
+
+<div style="margin:0 auto; width:100%;">
+<form id="dcj_form" action="sale.php?mod=member" method="post" >
+  <table width="100%" border="0" align="center">
+    <tr>
+      <td style="font-size:14px; text-align:center;">请输入您的 电话号码 或者 e-mail 查找要编辑的信息：</td>
+    </tr>
+	<tr><td height="10"></td></tr>
+    <tr>
+      <td align="center">
+	    <table align="center">
+		<tr><td align="center">电话号码：<input id="tel" type="text" name="tel" style="padding:2px;" maxlength="10"/>&nbsp;&nbsp;&nbsp;或&nbsp;&nbsp;电子邮箱： <input id="email" type="text" name="email" style="padding:2px; width:200px;" /></td></tr>
+		<tr><td height="10"></td></tr>
+        <tr><td align="center"><input type="button" name=""  value="查找我发布过的信息" onclick="dcj_check();"/></td></tr>
+		</table>
+	  </td>
+    </tr>
+  </table>
+</form>
+ <script type="text/javascript">
+			function dcj_check()
+			{
+				var tel = document.getElementById("tel").value;
+				var email = document.getElementById("email").value;
+				if(tel =='' && email == '')
+				{
+					alert("电话号码或者邮件至少填一项！");return false;
+				}
+				document.getElementById("dcj_form").submit();
+			}
+		</script>
+</div>
+<p style="padding:15px;"></p>
+<!--{template common/footer}-->

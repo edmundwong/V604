@@ -1,0 +1,46 @@
+{template common/header}
+
+<div class="userAddpc" style="width:300px;">
+    <h2><strong>{$tmp_lang['shangchuanpic']}</strong><span  onClick="close_img_up()" class="flbc" title="{lang close}">{lang close}</span></h2>
+    
+   
+   <!--{if $counts == 0}--> 
+     <div class="addkk" style="width:96%; margin:0 auto"><h3>{$tmp_lang['nodengji']}</h3></div> 
+    <!--{else}-->
+    <ul>
+    <div class="addkk"><h3>{$tmp_lang['userguige']}{echo round($piczhanshi/1024)}K</h3></div> 
+    <form method="post" enctype="multipart/form-data" action="plugin.php?id=dz55625_haodian:haodian_pc&action=pc&applysubpc=true" name="applyformx">
+
+<input type="hidden" name="formhash" value="{FORMHASH}" />
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">  
+  <tr>
+    <td class="h2Bt">
+  
+    </td>
+    <td>&nbsp;<select id="dian_id" name="dian_id" style="width:215px; height:24px">
+      <!--{loop $zuyongs $zuyong}-->
+      <option value="{$zuyong[id]}">{$zuyong[title]}</option>
+      <!--{/loop}-->
+    </select>
+    </td>
+ </tr>
+ 
+  <tr>
+    <td class="h2Bt">
+   {$tmp_lang['xzbiaoti']}
+    </td>
+    <td>&nbsp;<input name="dian_title" type="text" id="dian_title" size="33"  onblur="if(this.value==''){this.value='{$tmp_lang['usertitle']}';this.style.color='#999'}" onfocus="if(this.value=='{$tmp_lang['usertitle']}'){this.value='';this.style.color='#999'}" value='{$tmp_lang['usertitle']}' />
+    </td>
+ </tr>
+</table>
+</form>
+</ul>
+<div id="imgup" name="imgup"></div>
+{$tempt}
+<!--{/if}-->
+    
+</div>
+
+{template common/footer}
+
+

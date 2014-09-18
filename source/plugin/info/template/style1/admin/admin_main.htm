@@ -1,0 +1,48 @@
+<!--{template common/header}-->
+<!--{eval include template("info:$style/style");}-->
+<!--{eval include template("info:$style/head");}-->
+
+<div class='brian_main'>
+
+    <div id="pt" class="bm cl">
+        <span class="z">
+            <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+            <em>&raquo;</em>
+            <a href="{$info_config['root']}">{$info_config['name']}</a>
+            <em>&raquo;</em>
+            <a href="{$info_config['root']}?mod=admin">{$info_lang['admin_main_1']}</a>
+        </span>
+        <span class="y">
+            {$info_lang['welcome']} <b>{$_G['username']}</b>
+            <span class="pipe">|</span>
+            <a href="{$info_config['root']}?mod=list&profile_type_id=1">{$info_lang['rent']}</a>
+            <span class="pipe">|</span>
+            <a href="{$info_config['root']}?mod=list&profile_type_id=2">{$info_lang['need_rent']}</a>
+            <span class="pipe">|</span>
+            <a href="{$info_config['root']}?mod=list&profile_type_id=3">{$info_lang['sell']}</a>
+            <span class="pipe">|</span>
+            <a href="{$info_config['root']}?mod=list&profile_type_id=3">{$info_lang['need_sell']}</a>
+            <span class="pipe">|</span>
+            <a href="{$info_config['root']}?mod=loupan">{$info_lang['loupan']}</a>
+            <span class="pipe">|</span>
+            <a href="{$info_config['root']}?mod=member">{$info_lang['member']}</a>
+            <span class="pipe">|</span>
+            <a href="{$info_config['root']}?mod=admin">{$info_lang['admin_main_1']}</a>
+            &nbsp;
+        </span>
+    </div>
+    
+    <div class="brian_space">
+        <div class="brian_space_left">
+            <ul>
+                <li><a href="{$info_config['root']}?mod=admin&op=post_loupan" {if $op=='post_loupan'} class="hover" {/if}>{$info_lang['post_loupan']}</a></li>
+            </ul>
+        </div>
+        <div class="brian_space_right">
+             <!--{eval include template("info:$style/$mod/admin_$op");}-->
+        </div>
+    </div>
+
+</div>
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->

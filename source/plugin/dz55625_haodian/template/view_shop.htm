@@ -1,0 +1,64 @@
+<!--{if !$_GET['sp']}-->
+<!--{if $SpdConfig['start'] != '1'}-->
+
+<div class="tipGou">
+	<ol>
+    	{$tmp_lang['shopcips']}&nbsp;&nbsp;[ <a href="http://addon.discuz.com/?@747.developer" target="_blank">{$tmp_lang['buyshop']}</a> ]
+    </ol>
+</div>
+
+<!--{else}-->
+
+{if $Spcount!='0'}
+<div class="Shoping">
+    <ul>
+        <!--{loop $Spings $key $Sping}-->
+           <dl>
+           	<!--{if $Sping['cprice']!='0' && $Sping['price'] > $Sping['cprice']}--><div class="c_ico"><img src="source/plugin/dz55625_haodian/images/c_ico.png"></div><!--{/if}-->
+            <dt><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$Sping['id']}_vs{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=shop&sp={$Sping['id']}&sid={$_GET['sid']}<!--{/if}-->"><img src="{$Sping['photos']}" /></a></dt> 
+            <dd><strong>{$Sping['title']}</strong><em><!--{if $Sping['cprice']!='0' && $Sping['price'] > $Sping['cprice']}-->{$tmp_lang['leftkuoh']}{$tmp_lang['mams']}{$Sping['cprice']}{$tmp_lang['rightkuoh']}<!--{else}-->{$tmp_lang['leftkuoh']}{$tmp_lang['mams']}{$Sping['price']}{$tmp_lang['rightkuoh']}<!--{/if}--></em></dd> 
+           </dl>
+        <!--{/loop}-->
+    </ul>    
+</div>
+{$Spmulti}
+{else}
+<div class="Shoping">
+	<ul style="padding:10px 0 0px 10px;">{$tmp_lang['noaddnew']}</ul>  
+</div>
+{/if}
+
+<!--{/if}-->
+
+<!--{elseif $_GET['sp']}-->
+
+<div class="Shopins">
+<!--{loop $Spins $Spin}-->
+    <h4><strong>{$Spin['title']}</strong><span><a onclick="showDialog('{$tmp_lang['querenhp']}', 'confirm', '{$tmp_lang['querentip']}', function () { window.location.href='plugin.php?id=dz55625_hshop:shop&option=haoping&sp={$_GET['sp']}&sid={$_GET['sid']}'; return false; })" id="haoping">{$tmp_lang['icohaoping']}</a> | <a onclick="showDialog('{$tmp_lang['querencp']}', 'confirm', '{$tmp_lang['querentip']}', function () { window.location.href='plugin.php?id=dz55625_hshop:shop&option=chaping&sp={$_GET['sp']}&sid={$_GET['sid']}'; return false; })" id="chaping">{$tmp_lang['icochaping']}</a></span></h4>
+    <dl>
+    
+    <!--{if $Spin['cprice']!='0' && $Spin['price'] > $Spin['cprice']}--><div class="cx_ico"><img src="source/plugin/dz55625_haodian/images/cx_ico.png"></div><!--{/if}-->
+    
+        <dt><img src="{$Spin['photos']}" /></dt>
+        <dd>
+        	<!--{if $Spin['price'] > $Spin['cprice'] && $Spin['cprice']!='0'}--><p style="text-decoration:line-through;"><strong>{$tmp_lang['shichangjg']}</strong> {$Spin['price']} {$tmp_lang['kkprice']}</p><!--{else}--><p><strong>{$tmp_lang['shichangjg']}</strong> <em>{$Spin['price']}</em> {$tmp_lang['kkprice']}</p><!--{/if}-->
+            <!--{if $Spin['cprice']!='0' && $Spin['price'] > $Spin['cprice']}--><p><strong>{$tmp_lang['cuxiaojg']}</strong> <em>{$Spin['cprice']}</em> {$tmp_lang['kkprice']}</p><!--{/if}-->
+            <p><strong>{$tmp_lang['chanphaop']}</strong> <!--{if $Spin['good']>$Spin['bad']}--><span>{$tmp_lang['toptou']}</span><!--{else}-->{$tmp_lang['toptou']}<!--{/if}--> {$Spin['good']}</p>
+            <p><strong>{$tmp_lang['chanpchap']}</strong> <!--{if $Spin['bad']>$Spin['good']}--><span>{$tmp_lang['dowtou']}</span><!--{else}-->{$tmp_lang['dowtou']}<!--{/if}--> {$Spin['bad']}</p>
+            <p><strong>{$tmp_lang['kucnumber']}</strong> {$Spin['cnumber']} {$tmp_lang['kkjian']}</p>
+            <p><strong>{$tmp_lang['lianxibuy']}</strong> <a target="_blank" href=tencent://message/?uin={$Spin['oicq']}&Site=$_G['setting'][siteurl]&Menu=yes>
+<img src=http://wpa.qq.com/pa?p=5:{$Spin['oicq']}:16 alt="{$tmp_lang['listxiaoxixx']}" border="0" align="absmiddle">
+</a></p>
+            <p><strong>{$tmp_lang['zuihtime']}</strong> <em style="color: #999; font-family:Arial; font-size:12px">{$Spin['dateline']}</em></p>
+        </dd>
+        
+    </dl>
+    <h5><strong><img src="source/plugin/dz55625_haodian/images/h5_ico.jpg" /></strong></h5>
+    <ol>
+        {$Spin['subject']}
+    </ol>
+<!--{/loop}-->
+</div>
+<!--{/if}-->
+
+

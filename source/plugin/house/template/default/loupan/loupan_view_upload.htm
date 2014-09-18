@@ -1,0 +1,50 @@
+<div class="brian_box pd5 bgf">
+    <h4 class="h4"><span>{$house_lang['loupan_view_img_htm_7']}</span></h4>
+    <div>
+    <div>
+        <form method="post"  action="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=upload"  enctype="multipart/form-data" >
+            <input type="hidden" name="mod" value="loupan" />
+            <input type="hidden" name="op" value="view" />
+            <input type="hidden" name="lid" value="{$loupan_id}" />
+            <input type="hidden" name="loupan_id" value="{$loupan_id}" />
+            <input type="hidden" name="ac" value="upload" />
+            <input type="hidden" name="formhash" value="{$_G['formhash']}" />
+            
+            <table class="fix fb_form" style="width:800px; margin:0 auto;">
+                <tr>
+                    <td class="tdr">{$house_lang['loupan_title']}: </td>
+                    <td>{$loupan['loupan_title']}</td>
+                </tr>
+                <tr>
+                    <td class="tdr"><b style="color:Red">*</b>{$house_lang['loupan_view_upload_htm_3']}: </td>
+                    <td>
+                        <select name="img_cat_id">
+                            {loop $loupan_cat $lc}
+                                <option value="{$lc['loupan_cat_id']}">{$lc['loupan_cat_title']}</option>
+                            {/loop}
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdr"><b style="color:Red">*</b>{$house_lang['loupan_view_upload_htm_4']}: </td>
+                    <td><input type="text" class="text" style="width:550px;" name="img_title" /></td>
+                </tr>
+                <tr>
+                    <td class="tdr">{$house_lang['loupan_view_upload_htm_5']}: </td>
+                    <td><textarea style="width:550px;" name="img_text"></textarea></td>
+                </tr>
+                <tr>
+                    <td class="tdr"><b style="color:Red">*</b>{$house_lang['loupan_view_img_htm_7']}: </td>
+                    <td><input type="file" name="img_pic" /></td>
+                </tr>
+                <tr>
+                    <td colspan=2 style="text-align:center;">
+                        <input type="submit" name="upload_pic" value="{$house_lang['loupan_view_img_htm_7']}" class="btn" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    </div>
+</div>
+

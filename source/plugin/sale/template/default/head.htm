@@ -1,0 +1,19 @@
+ 
+{if $mod!='index'}
+
+<div id="where">
+				<a href="./" title="{lang homepage}">$_G[setting][bbname]</a> &gt; <a href="{$sale_config['root']}">{$sale_config['name']}</a> {if $pre_city['uname']}&gt; <a href="{$sale_config['root']}?mod=index&upid={$pre_city['upid']}">{$pre_city['uname']}</a>
+        {/if} &gt; <a href="{$sale_config['root']}?mod=index&upid={$pre_city['id']}">{$pre_city['name']}</a>
+            {$goods['goods_title']}<div class="where_right"><a href="#" onclick="addFavorite(window.location,document.title);return false;" title="将帖子收藏到浏览器收藏夹">加入收藏</a> <a href="javascript:void(0);" title="复制帖子链接发送给好友" onClick="javascript:emailto();">告诉朋友</a></div>
+				<div class="wherebg1">&nbsp;</div>
+				<div class="wherebg2">&nbsp;</div>
+				<div class="wherebg3">&nbsp;</div>
+			</div>
+
+
+
+
+
+
+{/if}
+<div style="clear:both"></div>

@@ -1,0 +1,129 @@
+<!--{subtemplate common/header_common}-->
+	<meta name="application-name" content="$_G['setting']['bbname']" />
+	<meta name="msapplication-tooltip" content="$_G['setting']['bbname']" />
+	<!--{if $_G['setting']['portalstatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][1]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['portal']) ? 'http://'.$_G['setting']['domain']['app']['portal'] : $_G[siteurl].'portal.php'};icon-uri={$_G[siteurl]}{IMGDIR}/portal.ico" /><!--{/if}-->
+	<meta name="msapplication-task" content="name=$_G['setting']['navs'][2]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['forum']) ? 'http://'.$_G['setting']['domain']['app']['forum'] : $_G[siteurl].'forum.php'};icon-uri={$_G[siteurl]}{IMGDIR}/bbs.ico" />
+	<!--{if $_G['setting']['groupstatus']}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][3]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['group']) ? 'http://'.$_G['setting']['domain']['app']['group'] : $_G[siteurl].'group.php'};icon-uri={$_G[siteurl]}{IMGDIR}/group.ico" /><!--{/if}-->
+	<!--{if helper_access::check_module('feed')}--><meta name="msapplication-task" content="name=$_G['setting']['navs'][4]['navname'];action-uri={echo !empty($_G['setting']['domain']['app']['home']) ? 'http://'.$_G['setting']['domain']['app']['home'] : $_G[siteurl].'home.php'};icon-uri={$_G[siteurl]}{IMGDIR}/home.ico" /><!--{/if}-->
+	<!--{if $_G['basescript'] == 'forum' && $_G['setting']['archiver']}-->
+		<link rel="archives" title="$_G['setting']['bbname']" href="{$_G[siteurl]}archiver/" />
+	<!--{/if}-->
+	<!--{if !empty($rsshead)}-->$rsshead<!--{/if}-->
+	<!--{if widthauto()}-->
+		<link rel="stylesheet" id="css_widthauto" type="text/css" href="data/cache/style_{STYLEID}_widthauto.css?{VERHASH}" />
+		<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
+	<!--{/if}-->
+	<!--{if $_G['basescript'] == 'forum' || $_G['basescript'] == 'group'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}forum.js?{VERHASH}"></script>
+	<!--{elseif $_G['basescript'] == 'home' || $_G['basescript'] == 'userapp'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}home.js?{VERHASH}"></script>
+	<!--{elseif $_G['basescript'] == 'portal'}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+	<!--{/if}-->
+	<!--{if $_G['basescript'] != 'portal' && $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+		<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+	<!--{/if}-->
+	<!--{if $_GET['diy'] == 'yes' && check_diy_perm($topic)}-->
+	<link rel="stylesheet" type="text/css" id="diy_common" href="data/cache/style_{STYLEID}_css_diy.css?{VERHASH}" />
+	<!--{/if}-->
+    <script type="text/javascript" src="source/plugin/dz55625_haodian/images/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="source/plugin/dz55625_haodian/images/view.css" />
+</head>
+
+<body id="nv_{$_G[basescript]}" class="pg_{CURMODULE}{if $_G['basescript'] === 'portal' && CURMODULE === 'list' && !empty($cat)} {$cat['bodycss']}{/if}" onkeydown="if(event.keyCode==27) return false;">
+	<div id="append_parent"></div><div id="ajaxwaitid"></div>
+
+
+<div style="width:100%; height:51px">
+    <div id="toptbs" class="cl">
+    <div class="wp">
+    	<div class="z">
+            <ul>
+            <li id="navi" style="border-bottom:none"><a href="<!--{if $isdomain && $haodiaon_view_back}-->$haodiaon_view_back<!--{elseif $RewriteStart == 1}-->{$curl}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian<!--{/if}-->">{$tmp_lang['viewlist']}</a></li>
+            <li <!--{if $p == 'index' || $p == ''}-->class="hover"<!--{else}-->id="navc"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=index&sid={$_GET['sid']}<!--{/if}-->">{$tmp_lang['viewabout']}</a></li>
+            <!--{if $active[click]==1}--><li <!--{if $p == 'news'}-->class="hover"<!--{else}-->id="navg"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vn{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=news&sid={$_GET['sid']}<!--{/if}-->">{$tmp_lang['viewanews']}</a></li><!--{/if}-->
+            <li <!--{if $p == 'listpic'}-->class="hover"<!--{else}-->id="navd"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vp{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=listpic&sid={$_GET['sid']}<!--{/if}-->">{$tmp_lang['viewphoto']}</a></li>
+            
+             <!--{if $ShopFw=='1'}--> 
+             <!--{if $StHop=='1'}--><li <!--{if $p == 'shop'}-->class="hover"<!--{else}-->id="navf"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vs{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=shop&sid={$_GET['sid']}<!--{/if}-->">{$tmp_lang['viewshop']}</a></li><!--{/if}-->
+             <!--{elseif $ShopFw=='2'}-->
+            <!--{if $active[click]==1 && $StHop=='1'}--><li <!--{if $p == 'shop'}-->class="hover"<!--{else}-->id="navf"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vs{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=shop&sid={$_GET['sid']}<!--{/if}-->">{$tmp_lang['viewshop']}</a></li><!--{/if}-->
+            <!--{/if}-->
+            
+            <!--{if $Ystart == '1'}--><li <!--{if $p == 'yuyue'}-->class="hover"<!--{else}-->id="navg"<!--{/if}-->><a href="<!--{if $RewriteStart == 1}-->{$curl}_vy{$_G[gp_sid]}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=view&p=yuyue&sid={$_GET['sid']}<!--{/if}-->">{$tmp_lang['yuyuesi']}</a></li><!--{/if}-->
+            </ul>
+        </div>
+        <div class="y">
+        <!--{if $active[author] == $_G['username']}-->
+				<a onMouseOver="showMenu({'ctrlid':'qmenu','pos':'34!','ctrlclass':'a','duration':2});" id="qmenu" href="javascript:;" initialized="true" class="">{$tmp_lang['kadmintl']}</a>
+        <!--{else}-->   
+       			<a id="qmenu" class="">{$tmp_lang['kadmintl']}</a>    
+        <!--{/if}--> 
+        </div>
+        </div>
+    </div>
+</div>
+<!--{if !IS_ROBOT}-->
+        <div id="qmenu_menu" class="p_pop {if !$_G['uid']}blk{/if}" style="display: none;">
+            <!--{if $_G['uid']}-->
+            <ul>
+<!--{if $active[click]==1}--><li><a style="background-image:url(static/image/feed/friend_b.png) !important" href="javascript:;" onClick="showWindow('yh', 'plugin.php?id=dz55625_haodian:haodian_yh', 'get', 0)" >{$tmp_lang['newadds']}</a></li><!--{/if}-->
+<!--{if $ShopFw=='1'}--> 
+<!--{if $StHop=='1'}--><li><a style="background-image:url(static/image/feed/thread_b.png) !important" href="javascript:;" onClick="showWindow('addshop', 'plugin.php?id=dz55625_hshop:shop&option=add&sid={$_G[gp_sid]}', 'get', 0)">{$tmp_lang['shopadd']}</a></li><!--{/if}--> 
+ <!--{elseif $ShopFw=='2'}-->
+<!--{if $active[click]==1 && $StHop=='1'}--><li><a style="background-image:url(static/image/feed/thread_b.png) !important" href="javascript:;" onClick="showWindow('addshop', 'plugin.php?id=dz55625_hshop:shop&option=add&sid={$_G[gp_sid]}', 'get', 0)">{$tmp_lang['shopadd']}</a></li><!--{/if}--> 
+<!--{/if}-->
+           
+<!--{if $active[click]==1}--><li><a style="background-image:url(static/image/feed/favorite_b.png) !important" href="javascript:;" onClick="showWindow('beijing', 'plugin.php?id=dz55625_haodian:haodian_dz&action=bg&mod=view&sid={$_G[gp_sid]}', 'get', 0)" >{$tmp_lang['beijinggl']}</a></li><!--{/if}-->
+<!--{if $active[click]==1}--><li><a style="background-image:url(static/image/feed/magic_b.png) !important" href="javascript:;" onClick="showWindow('dianzhao', 'plugin.php?id=dz55625_haodian:haodian_dz&action=dz&mod=view&sid={$_G[gp_sid]}', 'get', 0)" >{$tmp_lang['dianzhaogl']}</a></li><!--{/if}-->
+<li><a style="background-image:url(static/image/feed/medal_b.png) !important" href="<!--{if $RewriteStart == 1}-->{$curl}_user.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian_user<!--{/if}-->" target="_blank">{$tmp_lang['viewadmins']}</a></li>
+<!--{if $zhu_Start==1}--><li><a style="background-image:url(static/image/feed/ranklist_b.png) !important" href="plugin.php?id=dz55625_haodian:haodian_user&p=zizhu">{$tmp_lang['v_zizhu_7']}</a></li><!--{/if}-->
+            </ul>
+            <!--{elseif $_G[connectguest]}-->
+                <div class="ptm pbw hm">
+                    {lang connect_fill_profile_to_visit}
+                </div>
+            <!--{else}-->
+                <div class="ptm pbw hm">
+                    {lang my_nav_login}
+                </div>
+            <!--{/if}-->
+        </div>
+<!--{/if}-->
+    
+<script type="text/javascript">
+var jqz = jQuery.noConflict(); 
+jqz.fn.smartFloat = function() {
+	var position = function(element) {
+		var top = element.position().top, pos = element.css("position");
+		jqz(window).scroll(function() {
+			var scrolls = jqz(this).scrollTop();
+			if (scrolls > top) { //如果滚动到页面超出了当前元素element的相对页面顶部的高度
+				if (window.XMLHttpRequest) { //如果不是ie6
+					element.css({
+						position: "fixed",
+						top: 0
+					}).addClass("shadow");	
+				} else { //如果是ie6
+					element.css({
+						top: scrolls
+					});	
+				}
+			}else {
+				element.css({
+					position: pos,
+					top: top
+				}).removeClass("shadow");	
+			}
+		});
+	};
+	return jqz(this).each(function() {
+		position(jqz(this));						 
+	});
+};
+jqz(function(){
+	jqz("#toptbs").smartFloat();
+});
+</script>
+
+	<div id="wp" class="wp">

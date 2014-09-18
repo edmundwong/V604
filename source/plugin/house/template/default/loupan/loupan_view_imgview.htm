@@ -1,0 +1,17 @@
+<div class="brian_box pd5 bgf">
+    <h4 class="h4"><span>{$house_lang['loupan_view_htm_2']}</span></h4>
+    <div>
+    
+    <div style="clear:both; padding:5px;">
+        <h1 style="text-align:center; font-size:30px; line-height:60px;">{$img['img_title']}</h1>
+         <div class="imgview_img">
+            <img src="{$img['img_pic']}" style="width:640px; margin:0 auto;" />
+         </div>
+         <div style="width:800px; margin:0 auto; font-size:20px;">{$img['img_text']}</div>
+         {if $is_house_admin}
+         <div style="text-align:center;"><a href="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=deleteimg&img_id={$img_id}">[{$house_lang['del']}]</a></div>
+        {/if}
+    </div>
+    
+    </div>
+</div>

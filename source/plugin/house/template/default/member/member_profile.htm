@@ -1,0 +1,79 @@
+<form action="{$house_config['root']}?mod=space&op=member" method="post" onsubmit="return validate();">
+<input type="hidden" name="formhash" value="{$_G['formhash']}" />
+<input type="hidden"  name="mod" value="{$mod}" />
+<input type="hidden"  name="op" value="{$op}" />
+<input type="hidden"  name="ac" value="{$ac}" />
+<input type="hidden"  name="member_uid" value="{$post['member_uid']}" />
+
+<div class="brian_main_crumb"><ol class="pre" style="width:auto;">{$house_lang['profile']}</ol>{lang house:post_htm_13}<font color="red">*</font>{lang house:post_htm_14}</div>
+
+<div class="fb_bt"><span class="f14">{lang house:post_htm_12} </span> {lang house:post_htm_13}<font color="red">*</font>{lang house:post_htm_14} </div>
+<table class="fb_form">
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['member_title']}: </td>
+        <td><input type="text" class="text" style="width:250px;" name="member_title" value="{$post['member_title']}" /></td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['member_phone']}: </td>
+        <td><input type="text" class="text" style="width:250px;" name="member_phone" value="{$post['member_phone']}" /></td>
+    </tr>
+    <tr>
+        <td class="tdr">{$house_lang['member_qq']}: </td>
+        <td><input type="text" class="text" style="width:250px;" name="member_qq" value="{$post['member_qq']}" /></td>
+    </tr>
+    <tr>
+        <td class="tdr">{$house_lang['member_email']}: </td>
+        <td><input type="text" class="text" style="width:250px;" name="member_email" value="{$post['member_email']}" /></td>
+    </tr>
+    <tr>
+        <td class="tdr">{$house_lang['member_address']}: </td>
+        <td><input type="text" class="text" style="width:250px;" name="member_address" value="{$post['member_address']}" /></td>
+    </tr>
+</table>
+{if $profile_setting}
+<div class="fb_bt"><span class="f14">{$house_lang['about_info']}</span><a name="contactInfo"></a> {lang house:post_htm_13}<font color="red">*</font>{lang house:post_htm_14}</div>
+<table class="fb_form">
+{loop $profile_setting $ps}
+<tr>
+	<td class="tdr">{if $ps['profile_setting_required']}<font color="red">*</font>{/if}{$ps['profile_setting_title']}: </td>
+	<td>
+	    {if $ps['profile_setting_formtype']=='select'}
+		{eval $ps['profile_setting_choices'] = explode("\r\n",$ps['profile_setting_choices']);}
+		<select name="profile_setting_{$ps['profile_setting_name']}">
+		    {loop $ps['profile_setting_choices'] $v}
+			<option {if $post_profile[$ps['profile_setting_name']]['post_profile_title'] == $v } selected="selected" {/if} >{$v}</option>
+		    {/loop}
+		</select>
+	    {elseif $ps['profile_setting_formtype']=='input'}
+		<input type="text"  name="profile_setting_{$ps['profile_setting_name']}" value="{$post_profile[$ps['profile_setting_name']]['post_profile_title']}" style="width:250px;"  />
+	    {elseif $ps['profile_setting_formtype']=='checkbox'}
+		{eval $ps['profile_setting_choices'] = explode("\r\n",$ps['profile_setting_choices']);}
+		{loop $ps['profile_setting_choices'] $v}
+		    <div class="z cl"><input type="checkbox" name="profile_setting_{$ps['profile_setting_name']}[]" {if $post_profile[$ps['profile_setting_name']]['post_profile_title'] == $v }checked="checked" {/if} value="{$v}" />{$v}</div>
+		{/loop}
+	    {/if}
+	    $ps['profile_setting_unit']
+	</td>
+</tr>
+{/loop}
+</table>
+{/if}
+
+<table class="fb_form">
+    <tr>
+        <td class="tdr"> </td>
+        <td style="padding:10px;"><input type="submit" name="submit_member" class="ljfb"  value="{lang house:member_resume_htm_65}" /></td>
+    </tr>
+</table>
+</form>
+<script type="text/javascript" language="javascript">
+function validate() {
+    edit_save();
+    window.onbeforeunload = null;
+    if($('member_company_title').value =='' || $('uchome-ttHtmlEditor').value ==''){
+        showPrompt(null, null, '"{lang house:admin_jubao_htm_2}",{lang house:post_htm_67}!', 2000);
+        $('post_title').focus();
+        return false;
+    }
+}
+</script>

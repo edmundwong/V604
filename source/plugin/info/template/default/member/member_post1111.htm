@@ -1,0 +1,312 @@
+<script src="/static/js/common.js?{VERHASH}" type="text/javascript"></script>
+<script type="text/javascript" src="/{$_G['setting']['jspath']}calendar.js?{VERHASH}"></script>
+
+<div class="brian_main_subcontent" style="line-height:28px;">
+    <div class="brian_main_crumb"><ol class="pre" style="width:auto;">{if $ac=='edit'}{lang info:space_mypost_htm_10}{lang info:post_htm_5}{else}{lang info:space_htm_3}{/if} </ol>
+    
+    </div>
+    {if $ac!='edit'}
+    <!--<div class="brian_tips">
+        {$info_lang['xinxifabu_tishi1']} <b>{$info_config['postcredit']}</b> {$info_config['credit_unit']} , {$info_lang['nin_dangqian']}{$info_config['credit_unit']} : <b>{$my_credit}. </b>
+    </div>-->
+    {/if}
+    
+    {if $subcat_title }
+    <div class="pd5" style="margin-left:10px; font-size:14px;">
+        {$info_lang['member_post_htm_1']}: {$subcat_title}
+        {if $ac!='edit'}
+        [<a href="{$info_config['root']}?mod=select">{$info_lang['member_post_htm_2']}</a>]
+        {/if}
+    </div>
+    {/if}
+
+    <form action="{$info_config['root']}?mod={$mod}&op={$op}" method="post" enctype="multipart/form-data" onsubmit="return validate();">
+        <input type="hidden" name="mod" value="{$mod}" />
+        <input type="hidden" name="op" value="{$op}" />
+        <input type="hidden" name="ac" value="{$ac}" />
+        <input type="hidden" name="formhash" value="{$_G['formhash']}" />
+        <input type="hidden" name="post_id" value="{$post_id}" />
+        <input type="hidden" name="profile_type_id" value="{$profile_type_id}" />
+        <input type="hidden" name="subcat_id" value="{$subcat_id}" />
+        
+        <div class="brian_main_subcontent_content">
+        
+        <!--<div class="fb_bt"><span class="f14">{lang info:post_htm_27} </span><a name="salaryInfo"></a> {lang info:post_htm_13}<font color="red">*</font>{lang info:post_htm_14}</div>-->
+         <table class="fb_form">
+         {eval $profile_setting_names=array();}
+         {eval $tr = 0;}
+         {loop $profile_setting $ps}
+            {if $tr ==0}
+            <tr>
+            {/if}
+                <td class="tdr">{if $ps['profile_setting_required']}<font color="red">*</font>{/if}{$ps['profile_setting_title']} : </td>
+                <td>
+                    {if $ps['profile_setting_formtype']=='select'}
+                        {eval $ps['profile_setting_choices'] = explode("\r\n",$ps['profile_setting_choices']);}
+                        <select name="profile_setting_{$ps['profile_setting_name']}">
+                            {loop $ps['profile_setting_choices'] $v}
+                                <option {if $post_profile[$ps['profile_setting_name']]['post_profile_title'] == $v } selected="selected" {/if} >{$v}</option>
+                            {/loop}
+                        </select>
+                    {elseif $ps['profile_setting_formtype']=='input'}
+                        <input type="text"  name="profile_setting_{$ps['profile_setting_name']}" value="{$post_profile[$ps['profile_setting_name']]['post_profile_title']}" />
+                    {elseif $ps['profile_setting_formtype']=='checkbox'}
+                        {eval $ps['profile_setting_choices'] = explode("\r\n",$ps['profile_setting_choices']);}
+                        {loop $ps['profile_setting_choices'] $k $v}
+                            <div class="z cl"><input type="checkbox" name="profile_setting_{$ps['profile_setting_name']}[]"
+                             {if $ac=='edit' && @in_array($v,$post_profile[$ps['profile_setting_name']]['post_profile_title']) }
+                             checked="checked"
+                             {/if}
+                             value="{$v}" />{$v}</div>
+                        {/loop}
+                    {/if}
+                    {$ps['profile_setting_unit']}
+                </td>
+            {if $tr ==1}
+                </tr>
+                {eval $tr = 0;}
+            {else}
+                {eval $tr++;}
+            {/if}
+            
+            {eval $profile_setting_names[] = 'profile_setting_'.$ps['profile_setting_name'];}
+         {/loop}
+         </table>
+        
+        <div class="fb_bt"><span class="f14">{lang info:post_htm_12} </span> {lang info:post_htm_13}<font color="red">*</font>{lang info:post_htm_14} </div>
+        <table class="fb_form">
+                        <tr>
+                <td class="tdr"><font color="red">*</font>{lang info:post_htm_25}</td>
+                <td><input type="text" class="text" id="post_title" name="post_title" style="width:350px;"  value="{$post['post_title']}"/></td>
+            </tr>
+            <tr>
+                <td class="tdr"><font color="red">*</font>{$info_lang[area]}{$info_lang['dian']}</td>
+                <td>
+                <span id="areabox"></span>
+{if empty($post['area_id'])}
+<script type='text/javascript' language='javascript'>
+brian_showarea("areabox",["0","0","0"],"{$info_config['root']}");
+</script>
+{else}
+<script type='text/javascript' language='javascript'>
+brian_showarea("areabox",["0","{$post['area_id']}","{$post['subarea_id']}","{$post['thrarea_id']}"],"{$info_config['root']}");
+</script>
+{/if}
+                </td>
+            </tr>
+            <tr>
+                <td class="tdr"><font color="red">*</font>{lang info:post_htm_57}</td>
+                <td><input type="text" class="text" name="member_username" value="{$member['member_username']}" /></td>
+            </tr>
+            <tr style="display:none;">
+                <td class="tdr">{$info_lang['member_post_htm_3']}{$info_lang['dian']}</td>
+                <td>
+                <span id="catbox"></span>
+{if empty($post['cat_id'])}
+<script type='text/javascript' language='javascript'>
+brian_showcat("catbox",["0","0","0"],"{$info_config['root']}");
+</script>
+{else}
+<script type='text/javascript' language='javascript'>
+brian_showcat("catbox",["0","{$post['cat_id']}","{$post['subcat_id']}"],"{$info_config['root']}");
+</script>
+{/if}
+                </td>
+            </tr>
+           <!--  <tr>
+                <td class="tdr"><font color="red">*</font>{lang info:space_post_htm_2}{$info_lang['dian']}</td>
+                <td><input type="text" id="post_begin_time" name="post_begin_time"  value="{if $post['post_begin_time']}{echo date('Y-m-d',$post['post_begin_time'])}{/if}" class="w200" onclick="showcalendar(event, this)" />
+                <span class="ltips">{lang info:member_resume_htm_37} : 2010-06-10</span></td>
+            </tr>
+            <tr>
+                <td class="tdr"><font color="red">*</font>{lang info:space_post_htm_4}{$info_lang['dian']}</td>
+                <td><input type="text" id="post_end_time" name="post_end_time"  value="{if $post['post_end_time']}{echo date('Y-m-d',$post['post_end_time'])}{/if}" class="w200" onclick="showcalendar(event, this)" />
+                <span class="ltips">{lang info:member_resume_htm_37} : 2010-06-10</span></td>
+            </tr> -->
+
+            <tr>
+                <td class="tdr"><font color="red">*联系地址</font></td>
+                <td><input type="text" class="text" id="address1" name="address1" style="width:350px;"  value="{$post['post_title']}"/></td>
+            </tr>
+            <tr>
+                <td class="tdr"><font color="red">*</font>{lang info:post_htm_26}</td>
+                <td>
+                    <script type="text/javascript" src="/static/js/bbcode.js?{VERHASH}"></script>
+                    <script type="text/javascript" src="/source/plugin/info/editor/editor_function.js?{VERHASH}"></script>
+                    <textarea class="userData" name="post_text" id="uchome-ttHtmlEditor" style="display: none; ">{echo stripslashes($post['post_text']);}</textarea>
+                    <iframe src="{$info_config['root']}?mod=editor" name="uchome-ifrHtmlEditor" id="uchome-ifrHtmlEditor" scrolling="no" border="0" frameborder="0" style="height:420px;border:1px solid #C5C5C5; width:600px;" ></iframe>
+                </td>
+            </tr>
+            <tr>
+                <td class="tdr">{lang info:post_htm_48}</td>
+                <td><p class="ltips">{lang info:post_htm_49}2M </p>
+                    <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                        <b>{lang info:post_htm_50}1 : </b><input type="hidden" name="temp_post_img_1" value="{$post['post_img_1']}" />
+                        <input type="file" name="post_img_1" />
+                        {if $post['post_img_1']}<p><img src="{$post['post_img_1']}" alt="post_img_1" /></p>{/if}
+                    </div>
+                    <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                        <b>{lang info:post_htm_50}2 : </b><input type="hidden" name="temp_post_img_2" value="{$post['post_img_2']}" />
+                        <input type="file" name="post_img_2" />
+                        {if $post['post_img_2']}<p><img src="{$post['post_img_2']}" alt="post_img_2" /></p>{/if}
+                    </div>
+                    <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                        <b>{lang info:post_htm_50}3 : </b><input type="hidden" name="temp_gpost_img_3" value="{$post['post_img_3']}" />
+                        <input type="file" name="post_img_3" />
+                        {if $post['post_img_3']}<p><img src="{$post['post_img_3']}" alt="post_img_3" /></p>{/if}
+                    </div>
+                    <div style="border-bottom:1px dashed #ccc; padding:5px;margin-bottom:5px;">
+                        <b>{lang info:post_htm_50}4 : </b><input type="hidden" name="temp_post_img_4" value="{$post['post_img_4']}" />
+                        <input type="file" name="post_img_4" />
+                        {if $post['post_img_4']}<p><img src="{$post['post_img_4']}" alt="post_img_4" /></p>{/if}
+                    </div>
+                </td>
+            </tr>
+        </table>
+         
+        <div class="fb_bt" style="display:none;"><span class="f14">{lang info:post_htm_54}</span><a name="contactInfo"></a> {lang info:post_htm_13}<font color="red">*</font>{lang info:post_htm_14}</div>
+        <table class="fb_form" style="display:block;">
+            
+            <tr>
+
+                <td class="tdr">{lang info:post_htm_58}</td>
+                <td><input type="text" class="text" name="member_qq" value="{$member['member_qq']}" /></td>
+            </tr>
+            <tr>
+                <td class="tdr"><font color="red">*</font>{lang info:post_htm_59}</td>
+                <td><input type="text" class="text" name="member_phone" value="{$member['member_phone']}" /></td>
+            </tr>
+            <tr>
+                <td class="tdr"><font color="red">*</font>{lang info:post_htm_60}</td>
+                <td><input type="text" class="text" name="member_email" value="{$member['member_email']}" /></td>
+            </tr>
+        </table>
+        <!--<div class="fb_bt" ><span class="f14">{$info_lang['biaozhuditu']}</span><a name="contactInfo"></a> {lang info:post_htm_13}<font color="red">*</font>{lang info:post_htm_14}</div>-->
+         <table class="fb_form">
+           <!--  <tr>
+                <td class="tdr"><font color="red">*</font>{$info_lang['biaozhuditu']} : </td>
+                <td><input type="text" id="post_map" name="post_map" value='{$post['post_map']}' style="width:350px;" /></td>
+            </tr> -->
+            <tr>
+<!--             <td colspan=2>
+<script src="http://ditu.google.cn/maps/api/js?sensor=false&language={$_G['config']['output']['language']}" type="text/javascript"></script>
+                    <div class="ltips tc">{$info_lang['map_tips']}</div>
+                    <div id="mapCanvas" style="width:99%; height:300px; margin:0 auto; "></div>
+                    <p style="color:Green" id="map_tips"></p>
+<script type="text/javascript" language="javascript">
+var google_latlng= new google.maps.LatLng({$post['post_map']});
+var google_map;
+var google_marker;
+var google_geocoder;
+var google_zoom = 13;
+
+function google_initialize() {
+    var myOptions = {
+        zoom: google_zoom,
+        center: google_latlng,
+        mapTypeControl: false,	
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    google_map = new google.maps.Map(document.getElementById("mapCanvas"), myOptions);
+    
+    google_marker = new google.maps.Marker({
+        position: google_latlng,
+        title: '',
+        map: google_map,
+        draggable: true}); 
+    
+    var contentString = "{$info_lang['admin_post_loupan_htm_1']}";
+var infowindow = new google.maps.InfoWindow({
+content: contentString
+});
+infowindow.open(google_map,google_marker);
+
+    google_geocoder = new google.maps.Geocoder();
+    google_setZoom(google_map.getZoom());
+    google_setPosition(google_marker.getPosition());
+    google_setAddress(google_marker.getPosition());
+    
+    google.maps.event.addListener(google_map, 'zoom_changed', function() {
+    google_setZoom(google_map.getZoom());});
+
+    google.maps.event.addListener(google_marker, 'drag', function() {
+    google_setPosition(google_marker.getPosition());});
+    
+    google.maps.event.addListener(google_marker, 'dragend', function() {
+    google_setAddress(google_marker.getPosition());}); 
+}
+
+function google_getAddress(address) {
+    google_geocoder.geocode( {"address": address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            google_map.setCenter(results[0].geometry.location);  
+            google_marker.setPosition(results[0].geometry.location);
+            google_setZoom(google_map.getZoom());
+            google_setAddress(results[0].geometry.location);
+            google_setPosition(results[0].geometry.location);
+            google.maps.event.addListener(google_map, 'zoom_changed', function() {
+                google_setZoom(google_map.getZoom());
+            });
+            google.maps.event.addListener(google_marker, 'drag', function() {
+                google_setPosition(google_marker.getPosition());
+            });
+            google.maps.event.addListener(google_marker, 'dragend', function() {
+                google_setAddress(google_marker.getPosition());
+            });
+        } else {
+            alert('searchcity');     
+        }
+    });
+}
+
+function google_setAddress(pos){
+  google_geocoder.geocode({
+    latLng: pos
+  }, function(responses) {
+
+  });
+}
+function google_setPosition(latlng){    
+  newxy = [
+    latlng.lat(),
+    latlng.lng()
+  ].join(', ');
+  document.getElementById('post_map').value = newxy;
+}
+function google_setZoom(zoom){    
+    //document.getElementById('mapzoom').value = zoom;
+}
+
+google.maps.event.addDomListener(window, 'load', google_initialize);
+</script>
+            </td> -->
+            </tr>
+        </table>
+        <div class="post_box" style="text-align:center; padding-left:0;">
+            <input type="hidden" name="dcj_session" value="{$dcj_session}" />
+            <input type="submit" name="button_{$ac}_submit"  id="button_{$ac}_submit" class="ljfb" value="{lang info:post_htm_61}" />
+        </div>
+    </div>
+    </form>
+
+</div>
+<script type="text/javascript" language="javascript">
+var allowhtml = 1;
+var allowbbcode = 1;
+var allowsmilies = 1;
+var allowimgcode = 1;
+
+$('uchome-ttHtmlEditor').value = bbcode2html($('uchome-ttHtmlEditor').value);
+
+function validate() {
+    edit_save();
+    window.onbeforeunload = null;
+    $('uchome-ttHtmlEditor').value = html2bbcode($('uchome-ttHtmlEditor').value);
+    if($('post_title').value =='' || $('post_text').value ==''){
+        showPrompt(null, null, '"{lang info:admin_jubao_htm_2}" {lang info:post_htm_67}!', 2000);
+        $('post_title').focus();
+        return false;
+    }
+}
+
+</script>

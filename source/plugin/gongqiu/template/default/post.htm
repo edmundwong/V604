@@ -1,0 +1,200 @@
+<!--{template common/header}-->
+<!--{eval include template("gongqiu:$style/style");}-->
+
+<div class='brian_main'>
+    
+    <!--{eval include template("gongqiu:$style/head");}-->
+    
+    <div class="brian_main_crumb"><ol class="pre" style="width:auto;">{if $op=='edit'}{lang gongqiu:admin_cat_htm_1}{lang gongqiu:post_htm_5}{else}{lang gongqiu:post_htm_4}{lang gongqiu:post_htm_5} {/if} </ol></div>
+    
+    <div class="brian_main_subcontent">
+        <form action="{$gongqiu_config['root']}?mod=post" method="post" enctype="multipart/form-data" onsubmit="return validate();">
+            <input type="hidden" name="mod" value="{$now}" />
+            <input type="hidden" name="op" value="{$op}" />
+            <input type="hidden" name="formhash" value="{$_G['formhash']}" />
+            <input type="hidden" name="goods_id" value="{$goods_id}" />
+            <div class="brian_main_subcontent_content">
+            {if $op!='edit'}<p>{$_lang['xinxifabu_tishi1']} <b>{$gongqiu_config['postcredit']}</b> {$gongqiu_config['credit_unit']} , {$_lang['nin_dangqian']}{$gongqiu_config['credit_unit']} : <b>{$my_credit}. </b></p>{/if}
+            <div class="fb_bt"><span class="f14">{lang gongqiu:post_htm_12} </span> {lang gongqiu:post_htm_13}<font style="color:red">*</font>{lang gongqiu:post_htm_14} </div>
+            <table class="fb_form">
+                  <tr>
+                    <td class="tdr"><font style="color:red">*</font>{lang gongqiu:post_htm_17}</td>
+                    <td>
+                        <span id="districtbox_show">{$goods['province']} {$goods['city']} {$goods['dist']} {$goods['community']}</span>
+                        <span id="districtbox">
+                            <a href="javascript:;" onclick="districtbox_edit_fun()">{lang gongqiu:member_mypost_htm_10}</a>
+                        </span>
+                        {if $op == 'post'}
+                        <script type='text/javascript' language='javascript'>
+                            brian_showdistrict("districtbox", ["province", "city", "dist", "community"], 4, 1);
+                        </script>
+                        {/if}
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="tdr"><font style="color:red">*</font>{lang gongqiu:post_htm_15}</td>
+                    <td>
+                        <span id="catbox"></span>
+                        {if empty($goods['cat_id'])}
+                        <script type='text/javascript' language='javascript'>
+                        brian_showcat("catbox",["0","0","0"],"{$gongqiu_config['root']}");
+                        </script>
+                        {else}
+                        <script type='text/javascript' language='javascript'>
+                        brian_showcat("catbox",["0","{$goods['cat_id']}","{$goods['subcat_id']}"],"{$gongqiu_config['root']}");
+                        </script>
+                        {/if}
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="tdr"><font style="color:red">*</font>{$_lang['xinxileixing']}</td>
+                    <td>
+                        <select name="goods_type">
+                        {loop $goods_type_array $gta_key $gta}
+                            <option value="{$gta_key}" {if $goods['goods_type']==$gta_key} selected="selected" {/if} >{$gta}</option>
+                        {/loop}
+                        </select>
+                    </td>
+                </tr>
+                
+                <tr style="display:none;">
+                    <td colspan=2>
+                        <div class="fb_bt"><span class="f14">{$_lang['xinxineirong']}</span> {lang gongqiu:post_htm_13}<font style="color:red">*</font>{lang gongqiu:post_htm_14} </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="tdr"><font style="color:red">*</font>{lang gongqiu:post_htm_25}</td>
+                    <td><input type="text" class="text" id="goods_title" name="goods_title" style="width:350px;"  value="{$goods['goods_title']}"/></td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font style="color:red">*</font>{lang gongqiu:post_htm_26}</td>
+                    <td>
+<script type="text/javascript">
+var charset ="{$_G['charset']}";
+</script>
+<script type="text/javascript" charset="{$_G['charset']}" src="{$gongqiu_config['ue']}editor_config.js"></script>
+<script type="text/javascript" charset="{$_G['charset']}" src="{$gongqiu_config['ue']}editor_all.js"></script>
+<script  id="bb_editor" type="text/plain">{$goods['goods_text']}</script>
+<script type="text/javascript">
+var ue = UE.getEditor('bb_editor');
+</script>
+<input type="hidden" name="goods_text" id="goods_text" />
+                    </td>
+                </tr>
+            </table>
+            <div class="fb_bt"><span class="f14">{lang gongqiu:post_htm_27} </span><a name="salaryInfo"></a> {lang gongqiu:post_htm_13}<font style="color:red">*</font>{lang gongqiu:post_htm_14}</div>
+             <table class="fb_form">
+                <tr>
+                    <td class="tdr"><font style="color:red">*</font>{lang gongqiu:post_htm_19}</td>
+                    <td>
+                        <select name="goods_settime">
+                            <option value="0" {if $goods['goods_settime']==0} selected='selected' {/if}>{lang gongqiu:post_htm_20}</option>
+                            <option value="7" {if $goods['goods_settime']==7} selected='selected' {/if}>{lang gongqiu:post_htm_21}</option>
+                            <option value="30" {if $goods['goods_settime']==30} selected='selected' {/if}>{lang gongqiu:post_htm_22}</option>
+                            <option value="90" {if $goods['goods_settime']==90} selected='selected' {/if}>{lang gongqiu:post_htm_23}</option>
+                            <option value="180" {if $goods['goods_settime']==180} selected='selected' {/if}>{lang gongqiu:post_htm_24}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font style="color:red">*</font>{lang gongqiu:post_htm_34}</td>
+                    <td>
+                        <select name="goods_howtopay">
+                            <option value="1">{lang gongqiu:post_htm_35}</option>
+                            <option value="2">{lang gongqiu:post_htm_36}</option>
+                            <option value="3">{lang gongqiu:post_htm_37}</option>
+                            <option value="4">{lang gongqiu:post_htm_38}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font style="color:red">*</font>{lang gongqiu:post_htm_39}</td>
+                    <td><input type="text" class="text" id="goods_price" name="goods_price" value="{if $goods['goods_price']}{$goods['goods_price']}{else}0{/if}" /> {lang gongqiu:index_htm_5}</td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font style="color:red">*</font>{lang gongqiu:post_htm_41}</td>
+                    <td><input type="text" class="text" name="goods_number" value="{if $goods['goods_number']}{$goods['goods_number']}{else}1{/if}"  /></td>
+                </tr>
+                <tr>
+                    <td class="tdr">{lang gongqiu:post_htm_48}</td>
+                    <td><p>{lang gongqiu:post_htm_49}2M </p>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                            <b>{lang gongqiu:post_htm_50}1 : </b><input type="hidden" name="temp_goods_upload_file_1" value="{$goods['goods_upload_file_1']}" />
+                            <input type="file" name="goods_upload_file_1" />
+                            {if $goods['goods_upload_file_1']}<p><img src="{$goods['goods_upload_file_1']}" alt="goods_upload_file_1" /></p>{/if}
+                        </div>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                            <b>{lang gongqiu:post_htm_50}2 : </b><input type="hidden" name="temp_goods_upload_file_2" value="{$goods['goods_upload_file_2']}" />
+                            <input type="file" name="goods_upload_file_2" />
+                            {if $goods['goods_upload_file_2']}<p><img src="{$goods['goods_upload_file_2']}" alt="goods_upload_file_2" /></p>{/if}
+                        </div>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px; margin-bottom:5px;">
+                            <b>{lang gongqiu:post_htm_50}3 : </b><input type="hidden" name="temp_goods_upload_file_3" value="{$goods['goods_upload_file_3']}" />
+                            <input type="file" name="goods_upload_file_3" />
+                            {if $goods['goods_upload_file_3']}<p><img src="{$goods['goods_upload_file_3']}" alt="goods_upload_file_3" /></p>{/if}
+                        </div>
+                        <div style="border-bottom:1px dashed #ccc; padding:5px;margin-bottom:5px;">
+                            <b>{lang gongqiu:post_htm_50}4 : </b><input type="hidden" name="temp_goods_upload_file_4" value="{$goods['goods_upload_file_4']}" />
+                            <input type="file" name="goods_upload_file_4" />
+                            {if $goods['goods_upload_file_4']}<p><img src="{$goods['goods_upload_file_4']}" alt="goods_upload_file_4" /></p>{/if}
+                        </div>
+                    </td>
+                </tr>
+             </table>
+            <div class="fb_bt"><span class="f14">{lang gongqiu:post_htm_54}</span><a name="contactInfo"></a> {lang gongqiu:post_htm_13}<font style="color:red">*</font>{lang gongqiu:post_htm_14}</div>
+            <table class="fb_form">
+                <tr>
+                    <td class="tdr"><font style="color:red">*</font>{lang gongqiu:post_htm_57}</td>
+                    <td><input type="text" class="text" name="member_username" value="{$member['member_username']}" /></td>
+                </tr>
+                <tr>
+                    <td class="tdr"><font style="color:red">*</font>{lang gongqiu:post_htm_59}</td>
+                    <td><input type="text" class="text" name="member_phone" value="{$member['member_phone']}" /></td>
+                </tr>
+                <tr>
+                    <td class="tdr">{lang gongqiu:post_htm_58}</td>
+                    <td><input type="text" class="text" name="member_qq" value="{$member['member_qq']}" /></td>
+                </tr>
+                <tr>
+                    <td class="tdr">{lang gongqiu:post_htm_60}</td>
+                    <td><input type="text" class="text" name="member_email" value="{$member['member_email']}" /></td>
+                </tr>
+            </table>
+            <div class="post_box">
+                <input type="submit" name="{$op}_submit"  id="{$op}_submit" class="ljfb" value="{lang gongqiu:post_htm_61}" />
+            </div>
+        </div>
+        </form>
+        <div class="side_tip">
+            <dl>
+            <dt class="f14"><strong>{lang gongqiu:post_htm_62}</strong></dt>
+            <dd>{lang gongqiu:post_htm_63}</dd>
+            <dd>{lang gongqiu:post_htm_64}<span style="color:red">{$_SERVER["REMOTE_ADDR"]}</span>{lang gongqiu:post_htm_65}</dd>
+            </dl>
+        </div>
+    </div>
+    
+</div>
+<script type="text/javascript" language="javascript">
+function validate() {
+    if($('goods_title').value ==''){
+        showPrompt(null, null, '"{lang gongqiu:admin_jubao_htm_2}",{lang gongqiu:post_htm_67}!', 2000);
+        $('goods_title').focus();
+        return false;
+    }else if($('goods_price').value ==''){
+        showPrompt(null, null, '"{lang gongqiu:post_htm_68}",{lang gongqiu:post_htm_67}!', 2000);
+        $('goods_price').focus();
+        return false;
+    }else{
+        $('goods_text').value =  UE.getEditor('bb_editor').getContent();
+    }
+}
+function districtbox_edit_fun(){
+    display('districtbox_show');
+    brian_showdistrict("districtbox", ["province", "city", "dist", "community"], 4, 1);
+}
+</script>
+<!--{template common/footer}-->

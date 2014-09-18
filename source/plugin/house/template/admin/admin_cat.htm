@@ -1,0 +1,101 @@
+{template house:admin/style}
+<div id="plugin_admin">
+
+    {if $edit}
+    <h1>{$house_lang['edit']} <a href='admin.php?{$cp_url}'>{$house_lang['return']}</a></h1>
+    <table class='table'>
+    {eval showformheader($self_url); }
+    <input type="hidden" name='cat_id'  value='{$edit_array[cat_id]}'  />
+        <tr>
+            <th style="width:60px;">{$house_lang['cat_title']}</th><td><input type='text' class='b' name='cat_title' value='{$edit_array[cat_title]}' /></td>
+        </tr>
+        <tr>
+            <th>{$house_lang['mark']}</th><td><input type='text' class='m' name='cat_remarks' value='{$edit_array[cat_remarks]}'  /></td>
+        </tr>
+        <tr>
+            <th>{$house_lang['status']}</th><td>
+            <select name='cat_status' >
+                <option value='1' {if $edit_array['cat_status'] == '1'} selected="selected"  {/if}>{$house_lang['show']}</option>
+                <option value='0'{if $edit_array['cat_status'] == '0'} selected="selected"  {/if}>{$house_lang['hide']}</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <th>{$house_lang['attr']}</th>
+            <td>
+                <select name="cat_pid">
+                    <option value="0">{lang house:admin_cat_htm_2}</option>
+                    {loop $cat_array $cat}
+                        {if $cat['cat_pid'] =='0'}
+                        <option value="{$cat['cat_id']}" {if $edit_array['cat_pid'] == $cat['cat_id']} selected="selected"  {/if}>{$cat['cat_title']}</option>
+                        {/if}
+                    {/loop}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>{$house_lang['sort']}</th><td><input type='text' name='cat_sort' value='{$edit_array[cat_sort]}'  /></td>
+        </tr>
+        <tr>
+            <th></th><td><input type='submit' name='edit_submit' class='btn' value='{$house_lang['edit']}' /> <a href='admin.php?{$cp_url}'>{$house_lang['return']}</a></td>
+        </tr>
+     {eval showformfooter(); }
+    </table>
+    {else}
+
+    <h1>1. {$house_lang['admin_cat']}</h1>
+    <table class='table'>
+    <tr>
+        <th>ID</th>
+        <th>{$house_lang['cat_title']}{if !empty($pid_cat_array['cat_id'])} - {$pid_cat_array['cat_title']}  <a href='admin.php?{$cp_url}'>{$house_lang['return']}</a>{/if}</th>
+        <th>{$house_lang['attr']}</th>
+        <th>{$house_lang['mark']}</th>
+        <th>{$house_lang['status']}</th>
+        <th style="width:60px;">{$house_lang['sort']}</th>
+        <th>&nbsp;</th>
+    </tr>
+    {if $cat_array}
+    {loop $cat_array $cat}
+        {if $cat['cat_pid'] ==$cat_pid}
+            <tr>
+                <td>{$cat['cat_id']}</td>
+                <td>{if $cat['cat_pid'] !=0}{$cat['cat_title']}{else}<a href="admin.php?{$cp_url}&cat_pid={$cat['cat_id']}">{$cat['cat_title']}({lang house:admin_cat_htm_5}:{$cat['sum']})</a>{/if}</td>
+                <td>{if $cat['cat_pid'] =='0'}{lang house:admin_cat_htm_2}{else}{lang house:admin_cat_htm_5}{/if}</td>
+                <td>{$cat['cat_remarks']}</td>
+                <td>{if $cat['cat_status']}{$house_lang['show']}{else}{$house_lang['hide']}{/if}</td>
+                <td>{$cat['cat_sort']}</td>
+                <td><a href="admin.php?{$cp_url}&edit={$cat['cat_id']}">{$house_lang['edit']}</a> | <a href="admin.php?{$cp_url}&del={$cat['cat_id']}">{$house_lang['del']}</a></td>
+            </tr>
+        {/if}
+    {/loop}
+    {else}
+    <tr>
+        <td colspan=7 style="text-align:center;">{lang house:admin_cat_htm_6}</td>
+    </tr>
+    {/if}
+    <tr>
+    {eval showformheader($self_url); }
+        <td></td>
+        <td><input type='text' name='cat_title' class='m' /></td>
+        <td>
+            <select name="cat_pid">
+                <option value="0">{lang house:admin_cat_htm_2}</option>
+                {loop $cat_array $cat}
+                    {if $cat['cat_pid'] ==0}
+                    <option value="{$cat['cat_id']}" {if $cat_pid==$cat['cat_id']} selected="selected" {/if} >{$cat['cat_title']}</option>
+                    {/if}
+                {/loop}
+            </select>
+        </td>
+        <td><input type='text' name='cat_remarks' /></td>
+        <td><select name='cat_status' >
+                <option value='1'>{$house_lang['show']}</option>
+                <option value='0'>{$house_lang['hide']}</option>
+            </select></td>
+        <td><input type='text' name='cat_sort' /></td>
+        <td><input type='submit' name='submit' value='{$house_lang['add']}' class='btn' /></td>
+     {eval showformfooter(); }
+    </tr>
+    </table>
+    {/if}
+</div>

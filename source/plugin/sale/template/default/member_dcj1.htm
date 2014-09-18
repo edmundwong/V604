@@ -1,0 +1,27 @@
+﻿<!--{template common/header}-->
+<!--{eval include template("sale:$style/style");}-->
+
+<div class='brian_main'>
+    
+    <!--{eval include template("sale:$style/head");}-->
+    
+ <div class="brian_member">
+        <!--<div class="brian_member_left">
+          
+        </div>-->
+
+        <div class="brian_member_right" style="float:left;">
+            您发布的信息:{$goods_array['goods_title']} 正在等待管理员验证</br>
+            需要验证的原因：<font color="red">广告内容含有敏感的词汇，等待管理员审核</font>,我们将在24小时以内审核发布您的广告</br>
+            以下是您发布的信息：</br>
+            <a target="_blank" href="{$new_url1}">{$new_url}</a></br>
+            如果您不想等待管理员的验证，可以使用密码：{$goods_array['pwd']}，</br>
+自行到<a href="{$edit_url}">编辑信息</a> 更改电话号码，这样您的信息仍可以立即显示。</br>
+
+如果您有任何疑问，请发送邮件到 support@vanpeople.com 查询。</br>
+        </div>
+    </div>
+
+</div>
+
+<!--{template common/footer}-->

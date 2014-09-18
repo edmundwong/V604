@@ -1,0 +1,135 @@
+<!--{template common/header}-->
+<!--{eval include template("sale:$style/style");}-->
+
+<div class='brian_main'>
+    <!--[diy=diy_sale_1]--><div id="diy_sale_1" class="area"></div><!--[/diy]-->
+
+<div class="sale_daohang">
+    <div class="sale_daohang_left z">
+        <a href="{$sale_config['root']}">{$sale_config['name']}</a>
+    </div>
+    <div class="y">
+       
+        <a {if strstr($goods_selltype,'sell')} class="hover" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_selltype=sell">{lang sale:index_htm_8}</a>
+        <span class="pipe">|</span>
+        <a {if strstr($goods_selltype,'swap')} class="hover" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_selltype=swap">{lang sale:index_htm_9}</a>
+        <span class="pipe">|</span>
+        <a {if strstr($goods_selltype,'give')} class="hover" {/if} href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&goods_selltype=give">{lang sale:index_htm_10}</a>
+       <span class="pipe">|</span>
+       <a href="{$sale_config['root']}?mod=post">{$_lang['kuaisu_fabu']}</a>
+    </div>
+</div>
+ 
+
+<div id="pt" class="bm cl">
+    <span class="z">
+        <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+        <em>&raquo;</em>
+        <a href="{$sale_config['root']}">{$sale_config['name']}</a>
+        {if $pre_city['uname']}
+        <em>&raquo;</em>
+        <a href="{$sale_config['root']}?mod=index&upid={$pre_city['upid']}">{$pre_city['uname']}</a>
+        {/if}
+        <em>&raquo;</em>
+        <a href="{$sale_config['root']}?mod=index&upid={$pre_city['id']}">{$pre_city['name']}</a>
+            {$goods['goods_title']}
+    </span>
+    
+    <span class="y">
+        {if $_G['uid']}
+        <a href="{$sale_config['root']}?mod=member"> {lang sale:index_htm_2}</a>
+        <span class="pipe">|</span>
+        <a href="{$sale_config['root']}?mod=member"> {lang sale:index_htm_3}</a>
+        <span class="pipe">|</span>
+        <a href="{$sale_config['root']}?mod=member&op=mycredit"> {$sale_config['credit_unit']}{lang sale:index_htm_4}</a>
+        &nbsp;
+            {/if}
+    </span>
+
+</div>
+
+<div class="clear"></div>
+
+    <!--{eval include template("sale:$style/top");}-->
+    
+    <!--[diy=diy_sale_2]--><div id="diy_sale_2" class="area"></div><!--[/diy]-->
+    
+    {if $city_array}
+     <div class="cat_menu">
+        <ul>
+        {loop $city_array $city}
+            <li><a href="{$sale_config['root']}?mod=index&level={$city['level']}&upid={$city['id']}">{$city['name']}</a><span>({$city['sum']})</span></li>
+        {/loop}
+        </ul>
+    </div>
+    <div class="clear"></div>
+    {/if}
+    
+   <div class="cat_menu cl">
+        <ul>
+        {loop $cat_array $cat}
+        {if $cat['cat_pid']==1}
+            <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}" {if $cat['cat_id']==$cat_id} class="hover"{/if}>{$cat['cat_title']}</a><span>({$cat['sum']})</span></li>
+        {/if}
+        {/loop}
+        </ul>
+    </div>
+    
+    {if !empty($cat_id)}
+    <div class="cat_menu cl">
+        <ul>
+        {loop $cat_array $cat}
+        {if $cat['cat_pid']==$cat_id}
+            <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat_id}&subcat_id={$cat['cat_id']}" {if $cat['cat_id']==$subcat_id} class="hover"{/if}>{$cat['cat_title']}</a><span>({$cat['sum']})</span></li>
+        {/if}
+        {/loop}
+        </ul>
+    </div>
+    {/if}
+    <div class="clear"></div>
+    
+    <!--{eval include template("sale:$style/search");}-->
+   <!--[diy=diy_sale_3]--><div id="diy_sale_3" class="area"></div><!--[/diy]-->
+    <div class="salelist">
+        
+        <table class="fix cl">
+
+        {loop $goods_list $goods}
+          <tr style="border-bottom:1px dashed #e1e1e1;">
+            <td style="width:90px;" class="tc"><span class="sale_pic tc"><a href="{$sale_config['root']}?mod=view&goods_id={$goods['goods_id']}">{if $goods['goods_upload_file_1']}<img src="{$goods['goods_upload_file_1']}" />{else}<img src="{$sale_config['sale']}images/nophotosmall.gif" />{/if}</a></span></td>
+            <td style="width:80px; " class="tc"><span>
+            <b>
+            {if $goods['goods_selltype_sell']}<div style="color:#FF5500; font-size:12px;">[{lang sale:index_htm_8}]</div>{/if}
+            {if $goods['goods_selltype_swap']}<div style="color:#FF5500; font-size:12px;">[{lang sale:index_htm_9}]</div>{/if}
+            {if $goods['goods_selltype_give']}<div style="color:#FF5500; font-size:12px;">[{lang sale:index_htm_10}]</div>{/if}
+            </b></span></td>
+            <td style="width:400px;">
+                <span class="sale_title">
+                <div style="font-size:14px;">
+                    <a href="{$sale_config['root']}?mod=view&goods_id={$goods['goods_id']}" style="font-size:15px;">{if $goods['goods_selltype_give']}{lang sale:index_htm_10}{/if}{$goods['goods_title']}</a> 
+                    
+                    {if $goods['goods_upload_file_1']}<span class="ispic">{$_lang['tu']}</span>{/if}
+                    {if $goods['goods_up']}<img src="{$sale_config['siteurl']}source/plugin/sale/template/{$style}/css/images/ding.png" title="{lang sale:index_htm_7}" />{/if}
+                </div>
+                </span>
+                <div>{lang sale:index_htm_11}:{if $goods['province']}<span class="sale_title_area">{$goods['province']}</span>{/if}{if $goods['city']}-<span class="sale_title_area">{$goods['city']}</span>{/if}{if $goods['dist']} - <span class="sale_title_area">{$goods['dist']}</span>{/if}{if $goods['community']}-<span class="sale_title_area">{$goods['community']}</span>{/if}</div>
+            </td>
+            <td class="tr">
+                <span class="sale_price tr cl"><b style="color:#FF5500; font-size:16px;">&yen;{$goods['goods_price']}</b>{lang sale:index_htm_5}</span>
+            </td>
+            <td class="tc" style="padding-left:10px;">
+                <span class="sale_new_old">{if $goods['goods_newold']==1}{lang sale:index_htm_12}{elseif $goods['goods_newold']==9 }9{lang sale:index_htm_13}{elseif $goods['goods_newold']==8 }8{lang sale:index_htm_13}{elseif $goods['goods_newold']==7 }7{lang sale:index_htm_13}{elseif $goods['goods_newold']==6}6{lang sale:index_htm_16}{/if}</span>
+            </td>
+            <td class="tc" style="width:120px;">{if $goods['cat_id']}{$goods['cat_title']}{/if}{if $goods['subcat_id']}<br />{$goods['subcat_title']}{/if}</td>
+            <td style="width:100px;" class="tc">{echo dgmdate($goods['goods_time'],'u');}</td>
+          </tr>
+         {/loop}
+        </table>
+        <div class="cl pd5">
+            <div class="z">{$multipage}</div>
+            <div class="y">{$_lang['meiyoushihe']}<a href="{$sale_config['root']}?mod=post">{$_lang['dianjijinru']}>></a></div>
+        </div>
+    </div>
+</div>
+<!--[diy=diy_sale_4]--><div id="diy_sale_4" class="area"></div><!--[/diy]-->
+<!--{template common/footer}-->

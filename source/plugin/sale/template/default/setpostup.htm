@@ -1,0 +1,61 @@
+<!--{template common/header}-->
+<!--{eval include template("sale:$style/style");}-->
+<div class='brian_main' style="width:350px !important;">
+    <h3 class="flb">
+	    <em id="return_{$_GET['handlekey']}">{lang sale:setpostup_htm_1}</em>
+	    <span>
+		    <a href="javascript:;" class="flbc" onclick="hideWindow('$_GET['handlekey']')" title="{lang close}">{lang close}</a>
+	    </span>
+    </h3>
+
+    <div class="brian_account_memberinfo">
+    <form action="{$sale_config['root']}?mod=setpostup" method="post">
+    <input type="hidden" name="formhash" value="{$_G['formhash']}" />
+    <input type="hidden"  name="mod" value="setpostup" />
+    <input type="hidden"  name="goods_id" value="{$goods['goods_id']}" />
+    <table>
+        <tr>
+            <td class="brian_account_memberinfo_left">{lang sale:setpostup_htm_2} : </td>
+            <td class="brian_account_memberinfo_right"><a target="_blank" href="{$sale_config['root']}?mod=view&goods_id={$goods['goods_id']}">{$goods['goods_title']}</a></td>
+        </tr>
+        <tr>
+            <td class="brian_account_memberinfo_left">{lang sale:setpostup_htm_3} : </td>
+            <td class="brian_account_memberinfo_right">
+            <select id="up_day_{$goods['goods_id']}" name="up_day" onchange="day_chenge()" >
+                <option value="1">1{lang sale:setpostup_htm_4}</option>
+                <option value="3">3{lang sale:setpostup_htm_4}</option>
+                <option value="7">{lang sale:setpostup_htm_6}</option>
+                <option value="15">{lang sale:setpostup_htm_7}</option>
+                <option value="30">{lang sale:setpostup_htm_8}</option>
+                <option value="60">{lang sale:setpostup_htm_9}</option>
+                <option value="90">{lang sale:setpostup_htm_10}</option>
+                <option value="180">{lang sale:setpostup_htm_11}</option>
+            </select>  ({$sale_config['daycredit']}{$sale_config['credit_unit']}/{lang sale:setpostup_htm_4})</td>
+        </tr>
+        <tr>
+            <td class="brian_account_memberinfo_left">{lang sale:setpostup_htm_14} : </td>
+            <td class="brian_account_memberinfo_right"><span id="nowneedcredit_{$goods[goods_id]}">{$sale_config['daycredit']}</span> {$sale_config['credit_unit']}</td>
+        </tr>
+        <tr>
+            <td class="brian_account_memberinfo_left"> </td>
+            <td class="brian_account_memberinfo_right"><input type="submit" name="submit_member" class="ljfb" value="{lang sale:setpostup_htm_16}"  /></td>
+        </tr>
+    </table>
+    </form>
+    </div>
+</div>
+<script>
+    function day_chenge(){
+       var up_day = $('up_day_{$goods[goods_id]}');
+       var up_day_value = 0;
+       for(var i=0;i< up_day.length;i ++){
+            if(up_day[i].selected){
+                 up_day_value = up_day[i].value
+            }
+       }
+       up_day_value = up_day_value * {$sale_config['daycredit']};
+       $('nowneedcredit_{$goods[goods_id]}').innerHTML = up_day_value;
+    }
+</script>
+
+<!--{template common/footer}-->

@@ -1,0 +1,116 @@
+<table class="fix">
+<tr>
+    <td>
+<style type="text/css">
+table.fix td { font-size:14px; color:#666; padding:5px; }
+</style>
+<div class="brian_box pd5 bgf">
+    <h4 class="h4"><span>{$house_lang['loupan_map']}</span></h4>
+    <div>
+    <div>
+        <table class="fix">
+            <tr>
+                <td class="tr" style="width:80px;">{$house_lang['loupan_addr']}: </td>
+                <td colspan=3>{$loupan['loupan_addr']}</td>
+            </tr>
+            <tr>
+                <td class="tr" style="width:80px;">{$house_lang['loupan_traffic']}: </td>
+                <td colspan=3>{$loupan['loupan_traffic']}</td>
+            </tr>
+        </table>
+    </div>
+<script src="http://ditu.google.cn/maps/api/js?sensor=false&language={$_G['config']['output']['language']}" type="text/javascript"></script>
+                    <div id="mapCanvas" style="width:99%; height:400px; margin:0 auto; "></div>
+                    <p style="color:Green" id="map_tips"></p>
+<script type="text/javascript" language="javascript"> 
+
+var google_latlng= new google.maps.LatLng({$loupan['loupan_map']});
+var google_map;
+var google_marker;
+var google_geocoder;
+var google_zoom = 13;
+function google_initialize() {
+    var myOptions = {
+        zoom: google_zoom,
+        center: google_latlng,
+        mapTypeControl: false,	
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    google_map = new google.maps.Map(document.getElementById("mapCanvas"), myOptions);
+    
+    google_marker = new google.maps.Marker({
+        position: google_latlng,
+        title: '',
+        map: google_map,
+        draggable: true}); 
+    
+    google_geocoder = new google.maps.Geocoder();
+    google_setZoom(google_map.getZoom());
+    google_setPosition(google_marker.getPosition());
+    google_setAddress(google_marker.getPosition());
+    
+    google.maps.event.addListener(google_map, 'zoom_changed', function() {
+    google_setZoom(google_map.getZoom());});
+
+    google.maps.event.addListener(google_marker, 'drag', function() {
+    google_setPosition(google_marker.getPosition());});
+    
+    google.maps.event.addListener(google_marker, 'dragend', function() {
+    google_setAddress(google_marker.getPosition());}); 
+}
+
+function google_getAddress(address) {
+    google_geocoder.geocode( {"address": address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            google_map.setCenter(results[0].geometry.location);  
+            google_marker.setPosition(results[0].geometry.location);
+            google_setZoom(google_map.getZoom());
+            google_setAddress(results[0].geometry.location);
+            google_setPosition(results[0].geometry.location);
+            google.maps.event.addListener(google_map, 'zoom_changed', function() {
+                google_setZoom(google_map.getZoom());
+            });
+            google.maps.event.addListener(google_marker, 'drag', function() {
+                google_setPosition(google_marker.getPosition());
+            });
+            google.maps.event.addListener(google_marker, 'dragend', function() {
+                google_setAddress(google_marker.getPosition());
+            });
+        } else {
+            alert('searchcity');     
+        }
+    });
+}
+
+function google_setAddress(pos){   
+  google_geocoder.geocode({
+    latLng: pos
+  }, function(responses) {
+   
+  });
+}
+function google_setPosition(latlng){    
+  newxy = [
+    latlng.lat(),
+    latlng.lng()
+  ].join(', ');
+  document.getElementById('shop_map').value = newxy;
+}
+function google_setZoom(zoom){    
+    //document.getElementById('mapzoom').value = zoom;
+}
+
+google.maps.event.addDomListener(window, 'load', google_initialize);
+</script>
+
+    <h4 class="h4"><span>{$house_lang['loupan_view_map_htm_1']}</span></h4>
+    <pre style="font-size:14px; color:#666;">{$loupan['loupan_zhoubian']}</pre>
+    </div>
+</div>
+
+    </td>
+        <td style="width:230px;">
+            <!--{eval include template("house:$style/loupan/loupan_view_right");}-->
+        </td>
+    </tr>
+</table>

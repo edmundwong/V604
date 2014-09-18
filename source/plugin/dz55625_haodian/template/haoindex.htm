@@ -1,0 +1,1007 @@
+<!--{if !$_G[gp_mod]}-->
+	{template common/header}
+<!--{elseif $_G[gp_mod] == 'view'}-->
+	<!--{template dz55625_haodian:header}-->
+<!--{elseif $_G[gp_mod] == 'add'}-->
+		{template common/header}
+<!--{/if}-->
+<link rel="stylesheet" type="text/css" href="source/plugin/dz55625_haodian/images/body.css" />
+
+<!--{if !$_G[gp_mod]}--> 
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/jquery.min.js"></script>  
+<script type="text/javascript">
+	var jq = jQuery.noConflict(); 
+	jq(function(){
+		get_rate('{$aver}');
+	});
+</script>
+
+<div class="cl alliance">
+<div id="pt" class="bm cl" style="width:960px; float:left;">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em><a href="forum.php"{if $_G['setting']['forumjump']} id="fjump" onmouseover="delayShow(this, 'showForummenu($_G[fid])');" class="showmenu" {/if}>{$_G[setting][navs][2][navname]}</a><em>&raquo;</em><a href="<!--{if $RewriteStart == 1}-->haodian.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian<!--{/if}-->">{$dhname}</a>
+	</div>
+</div>
+
+        <!--{if $hus != $stu || $hakign != $hurlz}--><div class="haomsn cl">{$tmp_lang['dbmsn']}</div><!--{else}-->
+        
+        
+        <!--{if $huangTop == 1}--> 
+ 		<div class="z" style="margin-bottom:10px"><!--{template dz55625_haodian:huangTop}--></div>
+        <style type="text/css">.alliance{ margin-bottom:10px}</style>
+      	<!--{/if}-->
+        <div class="wpLeft z">
+        <!--{if $Hstop=='0'}-->
+        	<div class="indexSa">
+                <ul>
+            <script type="text/javascript">
+			var config = '5|0xffffff|{$pic_color}|50|0xffffff|{$pic_color}|0x000000';
+			var files = '{$picdz}';
+			var links = '{$piclj}';
+			var texts = '{$picwz}';
+            document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="685" height="177">');
+            document.write('<param name="movie" value="source/plugin/dz55625_haodian/images/focus.swf" />');
+            document.write('<param name="quality" value="high" />');
+            document.write('<param name="menu" value="false" />');
+            //document.write('<param name="wmode" value="transparent" />');
+            document.write('<param name="wmode" value="Opaque" />');
+            document.write('<param name="FlashVars" value="config='+config+'&bcastr_flie='+files+'&bcastr_link='+links+'" />');
+            document.write('<embed src="source/plugin/dz55625_haodian/images/focus.swf" wmode="opaque" FlashVars="config='+config+'&bcastr_flie='+files+'&bcastr_link='+links+'" menu="false" quality="high" width="685" height="177" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+            document.write('</object>');
+            </script> 
+                
+                </ul>
+            </div>
+            
+            
+		<!--{/if}-->
+        
+			<!--{template dz55625_haodian:search}-->
+
+            <div class="indexList">
+
+				<div id="fenleis"><img src="source/plugin/dz55625_haodian/images/slist.png" /></div>	
+                    
+                <h3><span>
+                <a href="<!--{if $RewriteStart == 1}-->haodian.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian<!--{/if}-->">{$tmp_lang['homenews']}</a>
+                <a href="<!--{if $RewriteStart == 1}-->haodian_{$cid}_{$did}_{$epes}_{$sd}_d.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&c=$cid&d=$did&e=$epes&sd=$sd&px=d<!--{/if}-->"{$a_hover[d]}>{$tmp_lang['hometime']}</a>
+                <a href="<!--{if $RewriteStart == 1}-->haodian_{$cid}_{$did}_{$epes}_{$sd}_f.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&c=$cid&d=$did&e=$epes&sd=$sd&ps=f<!--{/if}-->"{$a_hover[f]}>{$tmp_lang['pingfensx']}</a>
+                
+                <a href="<!--{if $RewriteStart == 1}-->haodian_{$cid}_{$did}_{$epes}_{$sd}_1.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&c=$cid&d=$did&e=$epes&sd=$sd&types=1<!--{/if}-->"{$a_hover[1]}>VIP</a>
+                
+                <a href="<!--{if $RewriteStart == 1}-->haodian_{$cid}_{$did}_{$epes}_{$sd}_2.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&c=$cid&d=$did&e=$epes&sd=$sd&types=2<!--{/if}-->"{$a_hover[2]}>{$tmp_lang['zhiding']}</a>
+                <!--{if $zkstart != 3}--><a href="<!--{if $RewriteStart == 1}-->haodian_{$cid}_{$did}_{$epes}_{$sd}_3.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&c=$cid&d=$did&e=$epes&sd=$sd&types=3<!--{/if}-->"{$a_hover[3]}>{$tmp_lang['zhekouindex']}</a><!--{/if}-->
+                
+                </span><strong>
+                    {if $_G[gp_e]=='1'}<a href="<!--{if $RewriteStart == 1}-->haodian_{$cid}_{$did}_0_{$sd}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&c=$cid&d=$did&e=0&sd=$sd<!--{/if}-->" id="pca">{$tmp_lang['wzlist']}</a>{else}<a href="<!--{if $RewriteStart == 1}-->haodian_{$cid}_{$did}_1_{$sd}.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&c=$cid&d=$did&e=1&sd=$sd<!--{/if}-->" id="pcb">{$tmp_lang['tplist']}</a>{/if}
+                </strong></h3>
+                
+            
+           <script language="javascript">
+				var clickwindow='{$Clickwindow}';
+				var zkstart={$zkstart};
+				var kastart={$kastart};
+				var liststyle=$listStyle;
+				var e="{$_G[gp_e]}";
+                function ajax_haodian(page){
+					var cx={id:'dz55625_haodian:haodian_ajax',page:page,action:'index_list',fun:"ajax_haodian",condition:"{$condition}",orderby:"{$orderby}"}
+					jq.ajax({
+						url: "plugin.php",  
+						type: "POST",
+						data:cx,
+						 dataType: "json",
+						 error: function(){  
+						// alert("dfsfd");
+						},  
+						 success: function(ajax_data){
+							if(ajax_data.counts>0){
+								data=ajax_data.data;
+								var s='';
+								if(liststyle==1){
+										if(e == '1' || e == ''){
+											s+='<ul>';
+											
+										}
+									}else{
+										if(e == '0' || e == ''){
+											s+='<ul>';
+										}
+									}
+								for(var i=0;i<data.length;i++){
+									if(liststyle==1){
+										if(e == '0' || e == ''){
+											s+=loaddata(data[i]);
+										}else if(e == '1' || e == ''){
+										
+											s+=loaddata1(data[i]);
+											
+										}
+									}else{
+										if(e == '0' || e == ''){
+										
+											s+=loaddata1(data[i]);
+										
+										}else if(e == '1' || e == ''){
+											s+=loaddata(data[i]);
+										}
+									}
+								}
+								if(liststyle==1){
+										if(e == '1' || e == ''){
+											
+											s+='</ul>';
+										}
+									}else{
+										if(e == '0' || e == ''){
+											s+='</ul>';
+										}
+									}
+									
+								jq("#bh").html(s);
+								if(liststyle==1){
+										if(e=='0' || e==''){
+											var o=document.getElementById("bh").getElementsByTagName("ol");
+											for(var i=0;i<o.length;i++){
+												o[i].innerHTML+=(i+1)+"#";
+											}
+											jq(".listSj dl").mouseover(function(){ 
+											//如果鼠标移到class为stripe_tb的表格的tr上时，执行函数
+											jq(this).addClass("over");}).mouseout(function(){ 
+											//给这行添加class值为over，并且当鼠标一出该行时执行函数
+											jq(this).removeClass("over");}) //移除该行的class
+											jq(".listSj dl:even").addClass("alt");
+											//给class为stripe_tb的表格的偶数行添加class值为alt
+										}
+									}else{
+										if(e=='1' || e==''){
+											var o=document.getElementById("bh").getElementsByTagName("ol");
+											for(var i=0;i<o.length;i++){
+												o[i].innerHTML+=(i+1)+"#";
+											}
+											jq(".listSj dl").mouseover(function(){ 
+											//如果鼠标移到class为stripe_tb的表格的tr上时，执行函数
+											jq(this).addClass("over");}).mouseout(function(){ 
+											//给这行添加class值为over，并且当鼠标一出该行时执行函数
+											jq(this).removeClass("over");}) //移除该行的class
+											jq(".listSj dl:even").addClass("alt");
+											//给class为stripe_tb的表格的偶数行添加class值为alt
+										}
+									}
+								
+								//if((parseInt(ajax_data.page)*parseInt(ajax_data.pagenum))<ajax_data.counts){
+							jq("#page_content").html(ajax_data.multis);
+									//alert(ajax_data.multis);
+								//}else{
+									//jq("#page_content").html("");
+								//}
+							}else{
+								jq("#bh").html('<ul class="cl erroe">{$tmp_lang['homewsj']}</ul>');
+							}
+						}
+					 });
+				}
+				
+				function loaddata(data){
+					var s='';
+					s+='<dl><ol></ol>';
+										if(data.topid==1){
+											s+='<div class="topid"></div>';
+										}
+										s+='<dt>';
+										if(data.click==1){
+											s+='<span></span>';
+										}
+										s+='<a href="'+data.haodian_url+'" '+clickwindow+'><img src="'+data.pic+'" width="120" height="120" /></a>';
+										s+='</dt><dd class="xx"><strong>';
+										if(zkstart==1 && data.sad>0 && data.click==1){
+											s+='<a title="{$tmp_lang['userzhekou']}"><img src="source/plugin/dz55625_haodian/images/zkou.gif" alt="{$tmp_lang['userzhekou']}" /></a>&nbsp;';
+										}else if(zkstart==2 && data.sad>0){
+											s+='<a title="{$tmp_lang['userzhekou']}"><img src="source/plugin/dz55625_haodian/images/zkou.gif" alt="{$tmp_lang['userzhekou']}" /></a>&nbsp;';
+										}
+										if(kastart==1 && data.lat==1){
+											s+='<a title="{$tmp_lang['zhichiyikt']}{$kaname}"><img src="source/plugin/dz55625_haodian/images/ka.gif" />&nbsp;</a>';
+										}
+										s+='<a href="'+data.haodian_url+'" '+clickwindow+'>'+data.title+'</a></strong>';
+										s+='<p>{$tmp_lang['homeaddress']} '+data.address+'</p>';
+										s+='<p>';
+										if(data.sad>0){
+											s+='{$tmp_lang['pazhekou']}<em>'+data.sad+' {$tmp_lang['pazhe']}</em>&nbsp;&nbsp;';
+										}
+										s+='{$tmp_lang['hometel']} '+data.tel+'&nbsp;&nbsp;';
+										if(data.tese){
+											s+='{$tmp_lang['listtese']} '+data.tese;
+										}
+										s+='</p></dd><dd class="ss">'+data.tvs+'</dd></dl>';
+										return s;
+				}
+				function loaddata1(data){
+					var s='';
+					var li_style="";
+					if(data.topid==1){
+						li_style='style="background:#FFFDE6"';
+					}else{
+						li_style='onmouseover="this.style.background=\'#FFFDE6\'" onmouseout="this.style.background=\'\'"';
+					}
+					s+='<li '+li_style+'>';
+					s+='<p class="P_a">';
+       				if(data.click==1){
+						s+='<span></span>';
+					}
+					s+='<a href="'+data.haodian_url+'" '+clickwindow+'><img src="'+data.pic+'" width="120" height="120" /></a>';
+           			s+='</p><p class="P_b">';
+        			s+='<a href="'+data.haodian_url+'" '+clickwindow+'>'+data.s_title+'</a>';
+					s+='</p>';
+					s+='<p class="P_c">'+data.tvs+'&nbsp;&nbsp;';
+					if(data.sad>0){
+						s+='{$tmp_lang['pazhekou']}<span>'+data.sad+'</span>';
+					}
+					s+="</p></li>";
+        
+       
+					return s;
+				}
+    			</script>  
+        
+         {if $listStyle == '1'}
+    
+                <!--{if $_G[gp_e] == '0' || $_G[gp_e] == ''}-->
+                
+                <div class="listSj cl" id="bh">
+                   
+                </div>
+               <div  class='pages cl' id="page_content">.</div>
+               <script language="javascript" >ajax_haodian(1);</script>
+              <!--{elseif $_G[gp_e] == '1' || $_G[gp_e] == ''}-->
+              	<div class="listSp cl" id="bh">
+  
+				</div>
+				<div  class='pages cl' id="page_content">.</div>
+                <script language="javascript" >ajax_haodian(1);</script>
+              <!--{/if}-->
+            {elseif $listStyle == '2'}  
+              <!--{if $_G[gp_e] == '0' || $_G[gp_e] == ''}-->
+               <div class="listSp cl" id="bh">
+  
+				</div>
+				<div  class='pages cl' id="page_content">.</div>
+                <script language="javascript" >ajax_haodian(1);</script>
+              <!--{elseif $_G[gp_e] == '1' || $_G[gp_e] == ''}-->
+              	<div class="listSj cl" id="bh">
+                    
+                </div>
+              <div  class='pages cl' id="page_content">.</div>
+               <script language="javascript" >ajax_haodian(1);</script>
+              <!--{/if}-->
+            
+            {/if}
+              
+            </div>
+        </div>
+        
+        
+        <div class="wpRight y">
+        	<div id="chicknew"><a href="<!--{if $RewriteStart == 1}-->{$curl}_add.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian&mod=add<!--{/if}-->" class=\"xis\">{$tmp_lang['homeadd']}</a></div>
+            <div id="chickadmin"><a href="<!--{if $RewriteStart == 1}-->{$curl}_user.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian_user<!--{/if}-->">{$tmp_lang['xinxiguanlid']}</a></div>
+            <div class="listLei">
+            <h2><img src="source/plugin/dz55625_haodian/images/listH2.jpg"></h2>
+                 <ul class="cl">  
+                    <li><a href="<!--{if $RewriteStart == 1}-->{$curl}.html<!--{else}-->$appurl<!--{/if}-->">{$tmp_lang['homecha']}</a></li>
+                    {loop $listclass $k $v}
+                    <li><a href="<!--{if $RewriteStart == 1}-->{$curl}_{$k}_{$did}_{$epes}_{$sd}.html<!--{else}-->$appurl&c=$k&d=$did&e=$epes&sd=$sd<!--{/if}-->"{$av_ds[$k]}>$v({echo classnum($k)})</a></li>
+                    {/loop} 
+                </ul> 
+        	</div>
+            
+                                    <!--{if $mapStarts=='1'}-->
+            <div class="search_s z cl" style="margin:10px auto 0">
+            	<a href="<!--{if $RewriteStart == 1}-->{$curl}_map.html<!--{else}-->plugin.php?id=dz55625_haodian:baidu_map_start<!--{/if}-->"><img src="source/plugin/dz55625_haodian/images/search_s.jpg"></a>
+            </div>
+            <!--{/if}-->
+            
+       
+            
+           {if $kastart == 1} <!--{template dz55625_haodian:recommend}--> {else} <!--{template dz55625_haodian:recommends}--> {/if}
+            
+    <!--{if $iscoupon=='1'}-->
+            <div class="search_y z cl" style="margin-top:10px"><a href="<!--{if $RewriteStart == 1}-->{$curl}_coupon.html<!--{else}-->plugin.php?id=dz55625_haodian_coupon:coupon_sjcard<!--{/if}-->"><img src="source/plugin/dz55625_haodian/images/youhui_s.jpg"></a></div>
+            <!--{/if}-->
+           
+            <div id="dianping">
+              <h2><strong>{$tmp_lang['homerpr']}</strong><span><button id="btn1"></button><button id="btn2"></button></span></h2>
+            <div id="scrollDiv">
+             <!--{if $mypls}-->  
+                <ul>      
+                    {loop $mypls $key $mypl}
+                        <li>
+                        <p class="st"><strong><img src="{$uc}/avatar.php?uid={$mypl[uid]}&size=small"></strong><span>{$mypl[author]}</span><em><a href="<!--{if $isdomain && $mypl[domain]}-->$mypl[domain]<!--{elseif $RewriteStart == 1}-->{$curl}_{$mypl[sid]}.html<!--{else}-->{$curls}{$mypl[sid]}<!--{/if}-->"{$Clickwindow}><img src="source/plugin/dz55625_haodian/images/guanzhuIco.jpg"></a><a class="xi2" onclick="showWindow(this.id, this.href, 'get', 0);" id="a_poke_1" href="home.php?mod=spacecp&amp;ac=poke&amp;op=send&amp;uid={$mypl[uid]}&amp;handlekey=propokehk_1"><img src="source/plugin/dz55625_haodian/images/chuanmenIco.jpg"></a></em></p>
+                        <p class="sx">{$mypl[message]}</p>
+                        </li>
+                    {/loop} 
+                </ul>
+            <!--{else}--> 
+                <ul class="erroe">{$tmp_lang['homerprno']}</ul>
+             <!--{/if}-->
+              </div>
+              <div id="dianpBot"><span>{$tmp_lang['banuas']}</span><strong style="display:none">Make:Www.55625.Com BY:Lovenr</strong></div>
+            </div>
+            
+
+            
+            <!--{if $ylianjie && $ypic}-->  
+           <div class="wad cl z">
+                <ul>
+                        <li><a href="{$ylianjie}"{$Clickwindow}><img src="{$ypic}" /></a></li>
+                    
+                </ul>
+            </div>
+            <!--{/if}--> 
+        </div>
+        
+        </div>
+      
+      <!--{if $huangTop == 2}-->  
+ 		<div style="margin:10px auto"><!--{template dz55625_haodian:huangTop}--></div>
+      <!--{/if}-->
+        
+
+<!--{/if}-->
+
+<!--{elseif $_G[gp_mod] == 'view'}-->
+<!--{if $StHop=='1'}--><link rel="stylesheet" type="text/css" href="source/plugin/dz55625_hshop/images/body.css" /><!--{/if}-->
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/jquery.min.js"></script>  
+<script type="text/javascript">
+	var jq = jQuery.noConflict(); 
+	jq(function(){
+		get_rate('{$aver}');
+	});
+</script>
+{loop $mythreads $key $mythread}
+<!--{if $mythread[click]==1}-->
+<style type="text/css">
+	body{ background:url({$mythread[background]}) {$mythread[repeat]};} 
+</style>
+<!--{/if}-->
+{/loop}    
+
+<script>
+<!--
+	function setTab(name,cursel,n){
+		for(i=1;i<=n;i++){
+			var menu=document.getElementById(name+i);
+			var con=document.getElementById("con_"+name+"_"+i);
+			menu.className=i==cursel?"hover":"";
+			con.style.display=i==cursel?"block":"none";
+		}
+	}
+//-->
+</script>
+<!--{if $hus != $stu || $hakign != $hurlz}--><div class="haomsn cl">{$tmp_lang['dbmsn']}</div><!--{else}-->
+<!--{loop $mythreads $mythread}-->
+<div class="cl alliance" style="margin-bottom:10px">
+ 
+<!--{if $mythread[click]==1}-->
+<!--{if !empty($mythread[dianzhao])}-->
+            	<style type="text/css">
+				.dianzhao{ width:960px; height:{$mythread[dheight]}px; background:#F9F9F9 url({$mythread[dianzhao]}) no-repeat;}
+			    </style>
+         <!--{else}-->
+               <style type="text/css">
+				.dianzhao{ width:960px; height:{$mythread[dheight]}px; background:#F9F9F9 url(source/plugin/dz55625_haodian/images/dianzhao.gif) no-repeat;}
+			    </style>
+<!--{/if}-->
+<div class="dianzhao"></div>
+<!--{/if}-->
+
+<div class="shangTopwp">
+
+    <div class="shangTopleft">
+        <!--{template dz55625_haodian:shangTopleft}-->
+    </div>
+    <div class="shangTopright cl">
+        <!--{template dz55625_haodian:view_sid}-->
+       <!--{if $mythread[click]=='1' && $hadConfig['start'] == '1'}--><div class="shangHuan"><!--{template dz55625_haodian:view_hadone}--></div><!--{/if}-->
+       <!--{if $stMap==1}--> 
+            <!--{if $mapStart==1}-->
+			<style type="text/css">
+				#mapCanvas .anchorBL{ display:none}
+            </style>
+            <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+            <script type="text/javascript" src="source/plugin/dz55625_haodian/images/convertor.js"></script>
+            <div id="maps"><div id="mapCanvas"></div></div>
+            <!--{else}-->
+			<script src="http://maps.google.cn/maps/api/js?sensor=false&language=zh-cn" type="text/javascript"></script>
+            <div id="maps"><div id="mapCanvas">{$tmp_lang['maplading']}</div></div>
+            <!--{/if}-->
+        <!--{/if}-->
+        
+        <!--{if $ShopFw=='1'}--> 
+       			<!--{if $mythread[click]=='1'}-->
+         		{if $NewStart=='1'}
+                <div id="listinfa" class="cl">
+                    <script type="text/javascript">
+                    function loadinga(){
+                        ajaxget('plugin.php?id=dz55625_haodian:haodian_fs&action=mlistinfa&zid={$_G[gp_sid]}', 'listinfa');
+                    }
+                    setTimeout('loadinga()', 1800);
+                    </script>
+                </div>   
+                {/if}  
+                <!--{/if}-->
+                {if $ShopStart=='1'}   
+                <div id="listinfo" class="cl">
+                    <script type="text/javascript">
+                    function loadings(){
+                        ajaxget('plugin.php?id=dz55625_haodian:haodian_fs&action=mlistinfo&zid={$_G[gp_sid]}', 'listinfo');
+                    }
+                    setTimeout('loadings()', 2600);
+                    </script>
+                </div>
+                {/if} 
+        <!--{elseif $ShopFw=='2'}-->
+            <!--{if $mythread[click]=='1'}-->
+                {if $NewStart=='1'}
+                <div id="listinfa" class="cl">
+                    <script type="text/javascript">
+                    function loadinga(){
+                        ajaxget('plugin.php?id=dz55625_haodian:haodian_fs&action=mlistinfa&zid={$_G[gp_sid]}', 'listinfa');
+                    }
+                    setTimeout('loadinga()', 1800);
+                    </script>
+                </div>   
+                {/if}  
+                {if $ShopStart=='1'}   
+                <div id="listinfo" class="cl">
+                    <script type="text/javascript">
+                    function loadings(){
+                        ajaxget('plugin.php?id=dz55625_haodian:haodian_fs&action=mlistinfo&zid={$_G[gp_sid]}', 'listinfo');
+                    }
+                    setTimeout('loadings()', 2600);
+                    </script>
+                </div>
+                {/if} 
+            <!--{/if}-->
+        <!--{/if}-->
+
+    </div>
+</div>
+</div>
+<!--{if $stMap==1}-->  
+    <!--{if $mapStart==1}-->
+	<script type="text/javascript">
+		var map = new BMap.Map("mapCanvas");  
+		var lng="{$mythread[lng]}";
+		var os=null;
+		var point=null;
+		{if !empty($mythread[lng]) }
+			os=lng.split(",");
+			if($mythread[map_type]==1){
+				point=new BMap.Point(os[0],os[1]);
+			}else{
+				point=new BMap.Point(os[1],os[0]);
+			}
+		{else}
+			point=new BMap.Point({$zuobiao});
+		{/if}
+		
+		var marker=null;
+			{if !empty($mythread[lng])}
+				{if $mythread[map_type]==1}
+					marker = new BMap.Marker(point);
+					marker_s(point);
+				{else}
+				 BMap.Convertor.translate(point,2,function(point1){
+							 marker = new BMap.Marker(point1);
+							 marker_s(point1);		  
+										});
+				{/if}
+				
+			{/if}
+		 function marker_s(point2){
+				 map.centerAndZoom(point2, {$mythread[jib]});         
+		map.addOverlay(marker);  
+		marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画  
+			 }
+		   
+		
+		
+		var opts = {type: BMAP_NAVIGATION_CONTROL_SMALL}  
+		map.addControl(new BMap.NavigationControl(opts));  
+		map.addControl(new BMap.MapTypeControl());  
+		map.enableScrollWheelZoom();                            
+    </script>
+    <!--{else}-->
+    <script type="text/javascript"> 
+    var geocoder = new google.maps.Geocoder();
+    function initialize() {
+      var mapxy = '{$mythread[lng]}';
+    xyarr=mapxy.split(",");
+      var latLng = new google.maps.LatLng(xyarr[0], xyarr[1]);
+      var map = new google.maps.Map($('mapCanvas'), {
+        zoom: {$mythread[jib]},
+        center: latLng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+      var marker = new google.maps.Marker({
+        position: latLng,
+        title: '',
+        map: map,
+        draggable: false
+      });
+       google.maps.event.addListener(map, 'zoom_changed', function() {
+        zoomLevel = map.getZoom();
+        map.setCenter(latLng);
+        if (zoomLevel == 0) {
+          map.setZoom({$mythread[jib]});
+        }
+      });
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <!--{/if}-->
+<!--{/if}-->
+
+<!--{/loop}-->
+<!--{/if}-->
+<!--{elseif $_G[gp_mod] == 'add'}-->
+
+
+<!--{if $stMap==1}-->
+    <!--{if $mapStart==1}-->
+    	<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <!--{else}-->
+    	<script src="http://maps.google.cn/maps/api/js?sensor=false&language=zh-cn" type="text/javascript"></script>
+    <!--{/if}-->
+<!--{/if}-->
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/swfobject.js"></script>
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/jquery.uploadify.v2.1.0.min.js"></script>
+<script type="text/javascript">
+var jq = jQuery.noConflict();
+jq(document).ready(function() {
+	jq("#fileInput2").uploadify({
+		'uploader': 'source/plugin/dz55625_haodian/images/uploadify.swf',
+		'cancelImg': 'source/plugin/dz55625_haodian/images/cancel.png',
+		'script': 'plugin.php?id=dz55625_haodian:haodian_up',
+		'folder': 'source/plugin/dz55625_haodian/upimg/',
+		'multi': true,
+		'displayData': 'speed',
+		'fileDesc': 'Image(*.jpg;*.gif;*.png;*.JPG;*.GIF;*.PNG)',
+		'fileExt': '*.jpg;*.jpeg;*.gif;*.png;*.JPG;*.GIF;*.PNG',
+		'sizeLimit': 1024000,
+		'queueSizeLimit' :5, 
+		'buttonImg': 'source/plugin/dz55625_haodian/images/browseBtn.png',
+		'width': 88,
+		'height': 29,
+		'rollover': true,
+		onComplete: function (evt, queueID, fileObj, response, data) {
+			getResult(response);
+		},
+		onAllComplete: function(evt, data){
+			//alert("dfdfd");
+			document.getElementById("picinfo_s").innerHTML="";
+			//jq("#picinfo_s").val("");
+			var s="";
+			var img_inputs=document.getElementsByName("filelist[]");
+			
+			//alert(img_inputs.length);
+			for(var i=0;i<img_inputs.length;i++){
+				
+					s+="<div class=\"picinfo\">"+
+						"<div class=\"picdivsize\"><dt><span><b>{$tmp_lang['jchanru']}</b></span></dt><a href=\"javascript:content_add('{$_G['siteurl']}"+img_inputs[i].value+"')\"><img src=\""+img_inputs[i].value+"\" border=\"0\" /></a></div>"+
+						"<div class=\"text\"><a href=\"javascript:delpic('"+img_inputs[i].value+"')\">{$tmp_lang['jshancu']}</a></div>"+
+						"</div>";
+				
+			}
+			
+			document.getElementById("picinfo_s").innerHTML=s;
+		}
+	});
+	if(document.getElementById("local_1").value){
+		ajaxget('plugin.php?id=dz55625_haodian:attclass&action=getlocal&lid='+document.getElementById("local_1").value, 'local_2');   
+	}
+});
+</script>
+<script type="text/javascript">
+	function getResult(content){
+			var board = document.getElementById("divTxt");
+			var boarda = document.getElementById("divTxts");
+			//board.style.display="";
+			boarda.style.display="";
+			var newInput = document.createElement("input");
+			newInput.type = "hidden"; 
+			newInput.size = "45"; 
+			newInput.name="filelist[]";
+			newInput.id="filelist[]";
+			var obj = board.appendChild(newInput);
+			var br= document.createElement("br"); 
+			board.appendChild(br);
+			obj.value=content;
+	}
+	function delpic(imgsrc){
+		document.getElementById("picinfo_s").innerHTML="";
+		var board = document.getElementById("divTxt");
+		var s="";
+		var img_inputs=document.getElementsByName("filelist[]");
+
+		var obj=null;
+		for(var i=0;i<img_inputs.length;i++){
+			if(img_inputs[i].value==imgsrc){
+				obj=img_inputs[i]
+				
+			}else{
+				s+="<div class=\"picinfo\">"+
+						"<div class=\"picdivsize\"><dt><span><b>{$tmp_lang['jchanru']}</b></span></dt><a href=\"javascript:content_add('{$_G['siteurl']}"+img_inputs[i].value+"')\"><img src=\""+img_inputs[i].value+"\" border=\"0\" /></a></div>"+
+						"<div class=\"text\"><a href=\"javascript:delpic('"+img_inputs[i].value+"')\">{$tmp_lang['jshancu']}</a></div>"+
+						"</div>";
+			}
+		}
+		if(obj!=null)
+		board.removeChild(obj);
+		document.getElementById("picinfo_s").innerHTML=s;
+		ajaxget('plugin.php?id=dz55625_haodian:delpic&action=deladd&picsrc='+imgsrc, 'delpic_s');
+		
+	}
+	function content_add(imgsrc){
+		//SWalert(imgsrc);
+		jq("#propagandamessage").val(jq("#propagandamessage").val()+"[img]"+imgsrc+"[/img]");
+		
+	}
+	
+</script>
+<script language="javascript">
+<!--
+	function validate(heform) {
+		if(heform.title.value == "") {
+			showError('{$tmp_lang['shanghumingc']}');
+			return false;
+		} 
+				
+		if(heform.pic.value == "") {
+			showError('{$tmp_lang['baoqiannin']}');
+			return false;
+		} 
+		return true;
+	}
+-->
+</SCRIPT>
+
+<div class="cl alliance">
+
+  <div id="pt" class="bm cl">
+	<div class="z">
+		<a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a><em>&raquo;</em><a href="forum.php"{if $_G['setting']['forumjump']} id="fjump" onmouseover="delayShow(this, 'showForummenu($_G[fid])');" class="showmenu" {/if}>{$_G[setting][navs][2][navname]}</a><em>&raquo;</em><a href="<!--{if $RewriteStart == 1}-->haodian.html<!--{else}-->plugin.php?id=dz55625_haodian:haodian<!--{/if}-->">{$dhname}</a><em>&raquo;</em>{$tmp_lang['mapaddxx']}
+	</div>
+</div>
+
+<div class="addkk">
+	<!--{if $hus != $stu || $hakign != $hurlz}--><div class="haomsn cl">{$tmp_lang['dbmsn']}</div><!--{else}-->
+    <!--{if $addstart==1}-->
+        <!--{if $ZjenStart==1}-->
+        	<h3>{$tmp_lang['adddianpus']} {$addshuliang} {$haodians['extcredits'][$set[extcredita]]['title']}</h3>
+        <!--{else}-->
+        	<h3>{$tmp_lang['adddianpuk']} {$addshuliang} {$haodians['extcredits'][$set[extcredita]]['title']}</h3>
+        <!--{/if}-->
+    <!--{/if}-->
+    <ul>
+        <form action="" method="post" enctype="multipart/form-data" name="applyform" id="applyform" onsubmit="return validate(this)">
+        <input type="hidden" name="formhash" value="{FORMHASH}" />
+        <input type="hidden" name="display" id="display" value="$active[display]" />
+        <input type="hidden" name="uid" id="uid" value="$active[uid]" />
+        <input type="hidden" name="username" id="username" value="$active[username]" />  
+        <input type="hidden" name="lng" id="mapxy" value="{$zuobiao}" />
+		<input type="hidden" name="jib" id="mapzoom" value="{$jibie}" />
+        <input type="hidden" name="xnum" id="xnum" value="50" />
+        <div class="tablesx">
+        <table border="0">
+        
+        
+        <tr>
+              <td class="tb2s">{$tmp_lang['addfenlei']}</td>
+              <td>&nbsp;<select name="acid" id="acid">
+                {loop $listclass $k $v}
+                <option value="$k" {if $k==$active[cid]}selected="selected"{/if}>$v</option>
+                {/loop}
+                </select>
+                
+                
+ 			<select class="ps" name="local_1" id="local_1" onchange="ajaxget('plugin.php?id=dz55625_haodian:attclass&action=getlocal&lid='+this.value, 'local_2')" />
+				<!--{if $local}-->
+				<!--{loop $local $lid $localname}-->
+				<option value="{$lid}" {if $lid == $localupid} selected {/if} >{$localname['subject']}</option>
+				<!--{/loop}-->
+				<!--{/if}-->
+			</select>
+            
+			<span id="local_2" name="local_2">{$localshow}</span>
+            
+              <span>{$tmp_lang['addsfenlei']}</span></td>
+        </tr>
+        
+                        <tr>
+              <td class="tb2s">{$tmp_lang['yytimes']}</td>
+             
+              <td>&nbsp;{$tmp_lang['ztimes']}&nbsp;<input name="yy_ztime" type="text" id="yy_ztime" size="10" value="08:30" />&nbsp;&nbsp;{$tmp_lang['wtimes']}&nbsp;&nbsp;<input name="yy_wtime" type="text" id="yy_wtime" size="10" value="06:30" />
+              <span>{$tmp_lang['yysuom']}</span></td>
+        </tr>
+        
+        <tr>
+              <td class="tb2s">{$tmp_lang['addmingc']}</td>
+              <td>&nbsp;<input name="title" type="text" id="title" value="$active[title]" size="50" /><!--{if $zkstart != 3}-->&nbsp;&nbsp;{$tmp_lang['Susers']}&nbsp;<input name="sad" type="text" size="5" />&nbsp;<span>{$tmp_lang['Susersms']}</span><!--{/if}--><!--{if $kastart == 1}-->&nbsp;&nbsp;&nbsp;{$tmp_lang['yikatong']}{$kaname}<input name="lat" type="radio" value="0" checked />{$tmp_lang['yikatongno']}&nbsp;<input name="lat" type="radio" value="1" />{$tmp_lang['yikatongyes']}&nbsp;&nbsp;[ <a href="{$kalinks}" target="_blank" style="color:#F00">{$kaname}{$tmp_lang['katongabout']}</a> ]<!--{else}--><span>&nbsp;{$tmp_lang['addtxa']}</span><!--{/if}--></td>
+        </tr>
+        <!--{if $zkstart != 3}-->
+       <tr>
+              <td class="tb2s">{$tmp_lang['userzhekoub']}</td>
+              <td>
+                &nbsp;<input name="zkoubj" type="text" id="zkoubj" size="120" />&nbsp;<span>{$tmp_lang['zhekousa']}</span>
+              </td>
+        </tr>
+<!--{/if}--> 
+        <tr>
+              <td class="tb2s">{$tmp_lang['addpic']}</td>
+              <td><label>
+                {if $UpCover=='1'}<input type="file" name="file" id="pic" size="60" />{else}<input type="file" name="file" size="29" />{/if}
+              </label><span>{$tmp_lang['addtxb']}{echo round($picdx/1000)}K</span></td>
+        </tr>
+        
+        <tr>
+              <td class="tb2s">{$tmp_lang['adddianhua']}</td>
+              <td><label>
+                <input name="tel" type="text" value="$active[tel]" size="40" /></label>&nbsp;&nbsp;&nbsp;{$tmp_lang['listtese']} <input name="tese" id="tese" type="text" value="$active[tese]" size="30" />
+              <span>{$tmp_lang['tixingts']}</span></td>
+        </tr>
+        
+         </tr>
+        
+                <tr>
+              <td class="tb2s">{$tmp_lang['lianxiqq']}</td>
+              <td><label>
+                	<input name="tenqq" id="tenqq" type="text" value="$active[tenqq]" size="40" /></label>&nbsp;&nbsp;&nbsp;{$tmp_lang['wangdiant']} <input name="taobao" id="taobao" type="text" value="$active[taobao]" size="30" />
+              <span>{$tmp_lang['tixingtx']}</span></td>
+        </tr>
+       
+                <tr>
+              <td class="tb2s">{$tmp_lang['adddizhi']}</td>
+              <td>&nbsp;<input type="text" name="address" id="daddress" value="" size="60"> <!--{if $stMap==1}-->&nbsp;&nbsp;<input type="text" id="address_txt" class="px" /> <button type="button" class="pn" onclick="google_getAddress($('address_txt').value);"><span>{$tmp_lang['sousuocity']}</span></button>
+              <a href="javascript:;" style="color:red;" onclick="dhiddmap(this);">{$tmp_lang['mapdiscuz']}</a><!--{/if}--> &nbsp;&nbsp;[ <em style="color:#06F">{$tmp_lang['e_map_d']}</em> ]</td>
+        </tr>
+        
+       <!--{if $stMap==1}-->
+        <tr id="displaynone" style="overflow: hidden;width:100%;">
+        	<td class="tb2s" style="background:#F2F2F2; height:260px">{$tmp_lang['mapbiaozhu']}</td>
+            <td><!--{if $mapStart==1}--><style type="text/css">#container{width:99%; margin:5px auto; height: 250px; }</style><div id="container"></div><!--{else}--><style type="text/css">#mapCanvas {width:99%; margin:5px auto; height: 250px;}</style><div id="mapCanvas">{$tmp_lang['maplading']}</div><!--{/if}--></td>
+        </tr>
+       <!--{/if}-->
+        
+        <tr>
+              <td class="tb2x">{$tmp_lang['addjieshao']}</td>
+              <td>
+
+            
+            <div class="tedt">
+              <div class=bar>
+                <span class="hook">{$tmp_lang['addjieshao']}</span>
+					<!--{eval $seditor = array('propaganda', array('bold', 'color', 'link'));}-->
+					<!--{subtemplate common/seditor}-->
+              </div>
+              <div class=area>
+                <textarea id="propagandamessage" class=pt tabIndex="5" rows="3" cols="40" name="summary"></textarea>
+              </div>
+            </div>
+            
+            
+              </td>
+        </tr>
+        
+        <tr>
+            <td class="tb2x">{$tmp_lang['duotuzshi']}</td>
+            <td style="padding-top:5px">
+          <div class="picinfos cl" id="picinfo_s"></div>
+            &nbsp;<input id="fileInput2" name="fileInput2" type="file" class="z" /><div class="fileInput5"><div id="divTxts" style="display:none">{$tmp_lang['yishangc']}</div><input type="button" value="{$tmp_lang['qingchup']}" onClick="javascript:jq('#fileInput2').uploadifyClearQueue();" id="fileInput3" ><input type="button" value="{$tmp_lang['qxiansc']}" onClick="javascript:jq('#fileInput2').uploadifyUpload();" id="fileInput4" >
+            
+            
+            </div></td>
+        </tr>
+       
+        </table>
+        </div>
+        
+        <!--{if $displays==0}--><h3 style="margin-top:8px">{$tmp_lang['addtx']}</h3><!--{/if}-->
+        <div id="divTxt" style="display:none"></div>
+        <div style="text-align:center; margin:10px auto 0;">
+            <button type="submit" name="applysubmit" id="applysubmit" value="true" class="pn pnp" /><strong>{$tmp_lang['qqueding']}</strong></button>
+            <button type="reset" name="sendreset" class="pn pnp" /><strong>{$tmp_lang['chexiao']}</strong></button>
+        </div>
+        
+        </form>
+        <div style="display:none" id="delpic_s">xxxxxxxxxxxxxxx</div>
+    </ul>
+  <!--{/if}-->  
+</div>
+<!--{if $stMap==1}-->
+    <!--{if $mapStart==1}-->
+		<script type="text/javascript">
+			var map = new BMap.Map("container");  
+			point=new BMap.Point({$zuobiao}); 
+			map.centerAndZoom(point, {$jibie});         
+			var native = new BMap.LocalCity();
+			var contextMenu = new BMap.ContextMenu();
+			var marker=null;
+			var txtMenuItem = [
+			  {
+			   text:'{$tmp_lang['map_f_a']}',
+			   callback:function(){map.zoomIn()}
+			  },
+			  {
+			   text:'{$tmp_lang['map_f_b']}',
+			   callback:function(){map.zoomOut()}
+			  },
+			  {
+			   text:'{$tmp_lang['map_f_c']}',
+			   callback:function(){map.setZoom(18)}
+			  },
+			  {
+			   text:'{$tmp_lang['map_f_d']}',
+			   callback:function(p){
+				   if(marker==null){
+						marker = new BMap.Marker(p);
+				   }else{
+					   map.removeOverlay(marker);
+					    $('mapxy').value = "";
+						$('mapzoom').value = "";
+						marker=null;
+						marker = new BMap.Marker(p);
+				   }
+				   $('mapxy').value = p.lng + ", " + p.lat;
+				   $('mapzoom').value = map.getZoom();
+					var px = map.pointToPixel(p);
+					map.addOverlay(marker);
+					marker.enableDragging();
+					//---------------------------------
+					marker.addEventListener("dragend", function(e){  
+					window.setTimeout(function(){    
+						map.panTo(new BMap.Point(e.point.lng, e.point.lat));   
+					}, 1000);
+					  $('mapxy').value = e.point.lng + ", " + e.point.lat;
+					})  
+					map.addEventListener("zoomend", function(){  
+					   $('mapzoom').value = this.getZoom();
+					}); 
+							
+				   }
+			  }
+			 ];
+			 for(var i=0; i < txtMenuItem.length; i++){
+			  contextMenu.addItem(new BMap.MenuItem(txtMenuItem[i].text,txtMenuItem[i].callback,100));
+			  if(i==1 || i==3) {
+			   contextMenu.addSeparator();
+			  }
+			 }
+			map.addContextMenu(contextMenu);
+			 //----------------------------------
+			var opts = {type: BMAP_NAVIGATION_CONTROL_SMALL}  
+			map.addControl(new BMap.NavigationControl(opts));  
+			map.addControl(new BMap.MapTypeControl());  
+			map.enableScrollWheelZoom();  
+			function dhiddmap(obj){
+				var obj=obj;
+				if ($('displaynone').style.display=='none'){
+					$('displaynone').style.display='';
+					obj.innerHTML='{$tmp_lang['mapdiscuz']}';
+				} else {
+					$('displaynone').style.display='none';
+					obj.innerHTML='{$tmp_lang['mapbiaozhu']}';
+				}
+			}
+			
+			function google_getAddress(cityname){
+				map.centerAndZoom(cityname, {$jibie});
+			}
+			
+        </script>
+    <!--{else}-->           
+		<script type="text/javascript"> 
+			var google_latlng= new google.maps.LatLng({$zuobiao});
+			var google_map;
+			var google_marker;
+			var google_geocoder;
+			function google_initialize() {
+			var myOptions = {
+			zoom: {$jibie},
+			center: google_latlng,
+			mapTypeControl: false,	 mapTypeId: google.maps.MapTypeId.ROADMAP	};
+			google_map = new google.maps.Map($("mapCanvas"), myOptions);
+			google_marker = new google.maps.Marker({
+				position: google_latlng,
+				title: '',
+				map: google_map,
+				draggable: true
+			  }); 
+			google_geocoder = new google.maps.Geocoder();
+			google_setZoom(google_map.getZoom());
+			google_setPosition(google_marker.getPosition());
+			google_setAddress(google_marker.getPosition()); 
+			google.maps.event.addListener(google_map, 'zoom_changed', function() {
+			  google_setZoom(google_map.getZoom());
+			  });
+			  
+			  google.maps.event.addListener(google_marker, 'drag', function() {
+			google_setPosition(google_marker.getPosition());
+			  });
+			  google.maps.event.addListener(google_marker, 'dragend', function() {
+			   google_setAddress(google_marker.getPosition());
+			  }); 
+			 
+			}
+			function google_getAddress(address) {
+			 
+			google_geocoder.geocode( {"address": address}, function(results, status) {
+			 
+			if (status == google.maps.GeocoderStatus.OK) {
+			 
+			google_map.setCenter(results[0].geometry.location);  
+			 
+			google_marker.setPosition(results[0].geometry.location);
+			google_setZoom(google_map.getZoom());
+			   google_setAddress(results[0].geometry.location);
+			 
+			google_setPosition(results[0].geometry.location);
+			 
+			   google.maps.event.addListener(google_map, 'zoom_changed', function() {
+			  google_setZoom(google_map.getZoom());
+			  });
+			  
+			  google.maps.event.addListener(google_marker, 'drag', function() {
+			google_setPosition(google_marker.getPosition());
+			  });
+			  google.maps.event.addListener(google_marker, 'dragend', function() {
+			   google_setAddress(google_marker.getPosition());
+			  });
+			 } else {
+			 
+			alert('{$tmp_lang['searchcity']}');     
+			 }
+			 
+			});
+			 
+			}
+			function google_setAddress(pos){   
+			  google_geocoder.geocode({
+				latLng: pos
+			  }, function(responses) {
+				
+			  });
+			}
+			function google_setPosition(latlng){    
+			  newxy = [
+				latlng.lat(),
+				latlng.lng()
+			  ].join(', ');
+			  $('mapxy').value = newxy;
+			}
+			function google_setZoom(zoom){    
+			  $('mapzoom').value = zoom;
+			}
+			 
+			google.maps.event.addDomListener(window, 'load', google_initialize);
+			 
+			function dhiddmap(obj){
+			var obj=obj;
+			if ($('displaynone').style.display=='none'){
+				$('displaynone').style.display='';
+				obj.innerHTML='{$tmp_lang['mapdiscuz']}';
+			} else {
+				$('displaynone').style.display='none';
+				obj.innerHTML='{$tmp_lang['mapbiaozhu']}';
+			}
+			}
+    </script>
+    <!--{/if}-->
+<!--{/if}-->
+</div>
+
+
+<!--{/if}-->
+
+{template common/footer}
+       
+<script type="text/javascript" src="source/plugin/dz55625_haodian/images/jq.js"></script>

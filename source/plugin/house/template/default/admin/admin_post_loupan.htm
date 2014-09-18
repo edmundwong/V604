@@ -1,0 +1,258 @@
+<script src="{$house_config['house']}static/js/common.js?{VERHASH}" type="text/javascript"></script>
+<script type="text/javascript" src="{$_G['setting']['jspath']}bbcode.js?{VERHASH}"></script>
+
+<form action="{$house_config['root']}?mod={$mod}&op={$op}" method="post" onsubmit="return validate();"enctype="multipart/form-data" >
+<input type="hidden" name="formhash" value="{$_G['formhash']}" />
+<input type="hidden"  name="mod" value="{$mod}" />
+<input type="hidden"  name="op" value="{$op}" />
+<input type="hidden"  name="ac" value="{$ac}" />
+<input type="hidden"  name="loupan_id" value="{$loupan['loupan_id']}" />
+<div class="brian_main_crumb"><ol class="pre" style="width:auto;">{$house_lang['setting_loupan']}</ol>{lang house:post_htm_13}<font color="red">*</font>{lang house:post_htm_14}</div>
+
+<table class="fb_form">
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_address']}{$house_lang['dian']}</td>
+        <td>
+            <span id="districtbox_show">{$loupan['province']} {$loupan['city']} {$loupan['dist']} {$loupan['community']}</span>
+            <span id="districtbox">
+            <a href="javascript:;" onclick="districtbox_edit_fun()">{lang house:myaccount_mypost_htm_10}</a>
+            </span>
+            {if $ac == 'post'}
+            <script type='text/javascript' language='javascript'>
+                brian_showdistrict("districtbox", ["province", "city", "dist", "community"], 4, 1);
+            </script>
+            {/if}
+        </td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_title']}{$house_lang['dian']}</td>
+        <td><input type="text" class="text" style="width:550px;" id="loupan_title" name="loupan_title" value="{$loupan['loupan_title']}" /></td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_addr']}{$house_lang['dian']}</td>
+        <td><input type="text" class="text" style="width:550px;" id="loupan_addr" name="loupan_addr" value="{$loupan['loupan_addr']}" /></td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_junjia']}{$house_lang['dian']}</td>
+        <td><input type="text" class="text" style="width:150px;" id="loupan_junjia" name="loupan_junjia" value="{$loupan['loupan_junjia']}" /> {$house_lang['yuan']}/{$house_lang['admin_post_loupan_htm_2']}</td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_zhuli']}{$house_lang['dian']}</td>
+        <td><input type="text" class="text" style="width:550px;" id="loupan_zhuli" name="loupan_zhuli" value="{$loupan['loupan_zhuli']}" /></td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_worktime']}{$house_lang['dian']}</td>
+        <td><input type="text" class="text" style="width:550px;" id="loupan_worktime" name="loupan_worktime" value="{$loupan['loupan_worktime']}" />
+        <div class="brian_ltips">{$house_lang['admin_post_loupan_htm_3']}: {$house_lang['admin_post_loupan_htm_4']}8:00 - 21:00{$house_lang['admin_post_loupan_htm_5']}</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_tel']}{$house_lang['dian']}</td>
+        <td><input type="text" class="text" style="width:550px;" id="loupan_tel" name="loupan_tel" value="{$loupan['loupan_tel']}" />
+        <div class="brian_ltips">{$house_lang['admin_post_loupan_htm_3']}: 400-808-8088 {$house_lang['admin_post_loupan_htm_7']} (010)66552288</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_company']}{$house_lang['dian']}</td>
+        <td><input type="text" class="text" style="width:550px;" id="loupan_company" name="loupan_company" value="{$loupan['loupan_company']}" /></td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_wuye']}{$house_lang['dian']}</td>
+        <td><input type="text" class="text" style="width:550px;" id="loupan_wuye" name="loupan_wuye" value="{$loupan['loupan_wuye']}" /></td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_type']}{$house_lang['dian']}</td>
+        <td>
+            <select name="loupan_type">
+                <option>{$house_lang['loupan_type_1']}</option>
+                <option>{$house_lang['loupan_type_2']}</option>
+                <option>{$house_lang['loupan_type_3']}</option>
+                <option>{$house_lang['loupan_type_4']}</option>
+                <option>{$house_lang['loupan_type_5']}</option>
+                <option>{$house_lang['loupan_type_6']}</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_park']}{$house_lang['dian']}</td>
+        <td><input type="text" class="text" style="width:550px;" id="loupan_park" name="loupan_park" value="{$loupan['loupan_park']}" />
+            <div class="brian_ltips">{$house_lang['loupan_park_tips']}</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_traffic']}{$house_lang['dian']}</td>
+        <td><input type="text" class="text" style="width:550px;" id="loupan_traffic" name="loupan_traffic" value="{$loupan['loupan_traffic']}" />
+            <div class="brian_ltips">{$house_lang['loupan_traffic_tips']}</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_date']}{$house_lang['dian']}</td>
+        <td><input type="text" class="text" style="width:550px;" id="loupan_date" name="loupan_date" value="{$loupan['loupan_date']}" />
+            <div class="brian_ltips">{$house_lang['loupan_date_tips']}</div>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_img']}{$house_lang['dian']}</td>
+        <td>
+            <input type="file" id="loupan_img" name="loupan_img" />
+            
+            <p>
+            {if $loupan['loupan_img']}
+                <img src="{$loupan['loupan_img']}" />
+            {/if}
+            </p>
+        </td>
+    </tr>
+    {if $loupan['loupan_img']}
+    <tr>
+        <td class="tdr">{$house_lang['loupan_img']} : </td>
+        <td><input type="text" name="temp_loupan_img" value="{$loupan['loupan_img']}" class="w450" /></td>
+    </tr>
+    {/if}
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_text']}{$house_lang['dian']}</td>
+        <td>
+            <script type="text/javascript" language="javascript" src="{$house_config['house']}editor/editor_function.js?{VERHASH}"></script>
+            <textarea class="userData" name="loupan_text" id="uchome-ttHtmlEditor" style="display: none; ">{$loupan[loupan_text]}</textarea>
+            <iframe src="{$house_config['root']}?mod=editor&charset={CHARSET}&allowhtml=0&isportal=0" name="uchome-ifrHtmlEditor" id="uchome-ifrHtmlEditor" scrolling="no" border="0" frameborder="0" style="height:420px;border:1px solid #C5C5C5;position:relative;"  class="w550"></iframe>
+        </td>
+    </tr>
+    <tr style="display:none">
+        <td class="tdr"><font color="red">*</font>{$house_lang['loupan_text']}{$house_lang['dian']}</td>
+        <td>
+        <textarea name="loupan_zhoubian" style="width:550px; height:100px;">{$loupan['loupan_zhoubian']}</textarea>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdr"><font color="red">*</font>{$house_lang['biaozhuditu']} : </td>
+        <td><input type="text" id="loupan_map" name="loupan_map" value='{$loupan['loupan_map']}' style="width:350px;" /></td>
+    </tr>
+    <tr>
+    <td colspan=2>
+<script src="http://ditu.google.cn/maps/api/js?sensor=false&language={$_G['config']['output']['language']}" type="text/javascript"></script>
+                    <div class="ltips tc">{$house_lang['map_tips']}</div>
+                    <div id="mapCanvas" style="width:99%; height:300px; margin:0 auto; "></div>
+                    <p style="color:Green" id="map_tips"></p>
+<script type="text/javascript" language="javascript">
+var google_latlng= new google.maps.LatLng({$loupan['loupan_map']});
+var google_map;
+var google_marker;
+var google_geocoder;
+var google_zoom = 13;
+
+function google_initialize() {
+    var myOptions = {
+        zoom: google_zoom,
+        center: google_latlng,
+        mapTypeControl: false,	
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    google_map = new google.maps.Map(document.getElementById("mapCanvas"), myOptions);
+    
+    google_marker = new google.maps.Marker({
+        position: google_latlng,
+        title: '',
+        map: google_map,
+        draggable: true}); 
+    
+    var contentString = "{$house_lang['admin_post_loupan_htm_1']}";
+var infowindow = new google.maps.InfoWindow({
+content: contentString
+});
+infowindow.open(google_map,google_marker);
+
+    google_geocoder = new google.maps.Geocoder();
+    google_setZoom(google_map.getZoom());
+    google_setPosition(google_marker.getPosition());
+    google_setAddress(google_marker.getPosition());
+    
+    google.maps.event.addListener(google_map, 'zoom_changed', function() {
+    google_setZoom(google_map.getZoom());});
+
+    google.maps.event.addListener(google_marker, 'drag', function() {
+    google_setPosition(google_marker.getPosition());});
+    
+    google.maps.event.addListener(google_marker, 'dragend', function() {
+    google_setAddress(google_marker.getPosition());}); 
+}
+
+function google_getAddress(address) {
+    google_geocoder.geocode( {"address": address}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            google_map.setCenter(results[0].geometry.location);  
+            google_marker.setPosition(results[0].geometry.location);
+            google_setZoom(google_map.getZoom());
+            google_setAddress(results[0].geometry.location);
+            google_setPosition(results[0].geometry.location);
+            google.maps.event.addListener(google_map, 'zoom_changed', function() {
+                google_setZoom(google_map.getZoom());
+            });
+            google.maps.event.addListener(google_marker, 'drag', function() {
+                google_setPosition(google_marker.getPosition());
+            });
+            google.maps.event.addListener(google_marker, 'dragend', function() {
+                google_setAddress(google_marker.getPosition());
+            });
+        } else {
+            alert('searchcity');     
+        }
+    });
+}
+
+function google_setAddress(pos){   
+  google_geocoder.geocode({
+    latLng: pos
+  }, function(responses) {
+   
+  });
+}
+function google_setPosition(latlng){    
+  newxy = [
+    latlng.lat(),
+    latlng.lng()
+  ].join(', ');
+  document.getElementById('loupan_map').value = newxy;
+}
+function google_setZoom(zoom){    
+    //document.getElementById('mapzoom').value = zoom;
+}
+
+google.maps.event.addDomListener(window, 'load', google_initialize);
+</script>
+    </td>
+    </tr>
+    <tr>
+        <td class="tdr"> </td>
+        <td style="padding:10px;"><input type="submit" name="submit_loupan_post" class="ljfb"  value="{lang house:member_resume_htm_65}" /></td>
+    </tr>
+</table>
+
+</form>
+
+
+<script type="text/javascript">
+var allowhtml = 1;
+var allowbbcode = 1;
+var allowsmilies = 1;
+var allowimgcode = 1;
+
+$('uchome-ttHtmlEditor').value = bbcode2html($('uchome-ttHtmlEditor').value);
+
+function validate() {
+    edit_save();
+    window.onbeforeunload = null;
+    $('uchome-ttHtmlEditor').value = html2bbcode($('uchome-ttHtmlEditor').value);
+    
+    if($('loupan_title').value =='' || $('loupan_text').value ==''){
+        showPrompt(null, null, '"{lang house:admin_jubao_htm_2}",{lang house:post_htm_67}!', 2000);
+        $('loupan_title').focus();
+        return false;
+    }
+}
+
+function districtbox_edit_fun(){
+    display('districtbox_show');
+    brian_showdistrict("districtbox", ["province", "city", "dist", "community"], 4, 1);
+}
+
+</script>

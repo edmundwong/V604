@@ -1,0 +1,174 @@
+<!--{eval include template("info:$style/style");}-->
+<!--{template info:admin/style}-->
+
+<div id="plugin_admin" class=" brian_main brian_box pd5 bgf">
+    <h1 class="h1">{$info_lang['admin_cat_htm_1']}</h1>
+    <script type="text/javascript">
+    var rowtypedata = [
+        [
+            [1, '']
+            ,[1,'<input type="text" class="txt" name="newcat[cat_sort][]" value="0" />', 'td25']
+            ,[5, '<div><input name="newcat[cat_title][]" value="{$info_lang['admin_cat_htm_2']}" size="20" type="text" class="txt" /><a href="javascript:;" class="deleterow" onClick="deleterow(this)">{$info_lang['del']}</a></div>']
+        ],
+       
+        [
+            [1, '']
+            , [1,'<input type="text" class="txt" name="newcat[cat_sort][]" value="0" />', 'td25']
+            , [3, '<div class="board"><input name="newcat[cat_title][]" value="{$info_lang['admin_cat_htm_4']}" size="20" type="text" class="txt" /><a href="javascript:;" class="deleterow" onClick="deleterow(this)">{$info_lang['del']}</a></div>']
+            , [1,'<input type="hidden" class="txt" name="newcat[cat_pid][]" value="{1}" />', 'td25']
+        ],
+       
+        [
+            [1, '']
+            , [2,'<input type="text" class="txt" name="newcat[cat_sort][]" value="0" />', 'td25']
+            , [3, '<div class="childboard"><input name="newcat[cat_title][]" value="{$info_lang['admin_cat_htm_6']}" size="20" type="text" class="txt" /><a href="javascript:;" class="deleterow" onClick="deleterow(this)">{$info_lang['del']}</a>&nbsp;</div>']
+            , [1,'<input type="hidden" class="txt" name="newcat[cat_pid][]" value="{1}" />', 'td25']
+        ],
+    ];
+    </script>
+   
+    {eval showformheader($self_url); }
+    <table class="tb tb2 ">
+        <tbody>
+            <tr class="header">
+                <th class="td25"></th>
+                <th style="width:80px;">{$info_lang['admin_area_htm_8']}</th>
+                <th>{$info_lang['cat_title']}</th>
+                <th>{$info_lang['admin_cat_htm_10']}</th>
+                <th style="width:50px;">ID</th>
+                <th class="td25">{$info_lang['admin_area_htm_12']}ID</th>
+                <th class="td25">{$info_lang['admin_area_htm_13']}</th>
+                <th style="width:100px;"></th>
+            </tr>
+        </tbody>
+        {loop $cat_array $cat}
+            {if empty($cat['cat_pid'])}
+                <tbody>
+                    <tr class="hover">
+                        <td class="td25" onclick="toggle_group('group_{$cat['cat_id']}', $('a_group_{$cat['cat_id']}'))">
+                            <a id="a_group_{$cat['cat_id']}" href="javascript:;">[-]</a>
+                        </td>
+                        <td class="td25">
+                            <input class="txt" type="text" name="cat_sort[{$cat['cat_id']}]" value="{$cat['cat_sort']}"  />
+                        </td>
+                        <td>
+                            <input class="txt" type="hidden" name="cat_id[{$cat['cat_id']}]" value="{$cat['cat_id']}"  />
+                            <input class="txt" type="text" name="cat_title[{$cat['cat_id']}]" value="{$cat['cat_title']}" style="width:200px;" />
+                        </td>
+                        <td></td>
+                        <td>
+                            {$cat['cat_id']}
+                        </td>
+                        <td class="td25">
+                            <input class="txt" type="text" name="cat_pid[{$cat['cat_id']}]" value="{$cat['cat_pid']}" />
+                        </td>
+                        <td class="td25">
+                            <input class="txt" type="text" name="cat_level[{$cat['cat_id']}]" value="{$cat['cat_level']}" />
+                        </td>
+                        <td>
+                            <a class="act"  href="{$now_url}&del={$cat['cat_id']}">{$info_lang['del']}</a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody id="group_{$cat['cat_id']}">
+                    {loop $cat_array $_cat}
+                        {if $_cat['cat_pid'] == $cat['cat_id']}
+                            <tr class="hover">
+                                <td class="td25"></td>
+                                <td class="td25">
+                                    <input class="txt" type="text" name="cat_sort[{$_cat['cat_id']}]" value="{$_cat['cat_sort']}"  />
+                                </td>
+                                <td>
+                                    <div class="board">
+                                        <input class="txt" type="hidden" name="cat_id[{$_cat['cat_id']}]" value="{$_cat['cat_id']}"  />
+                                        <input class="txt" type="text" name="cat_title[{$_cat['cat_id']}]" value="{$_cat['cat_title']}" style="width:200px;" />
+                                        <a style="display:none;" class="addchildboard" onclick="addrowdirect = 1;addrow(this, 2, {$_cat['cat_id']})" href="###">{$info_lang['admin_cat_htm_14']}</a>
+                                    </div>
+                                </td>
+                                <td>
+                                    <select name="cat_mod_id[{$_cat['cat_id']}]">
+                                        <option>{$info_lang['admin_cat_htm_15']}</option>
+                                        {loop $profile_type_array $pty}
+                                        <option {if $_cat['cat_mod_id'] ==$pty['profile_type_id']} selected="selected" {/if} value="{$pty['profile_type_id']}" >{$pty['profile_type_title']}</option>
+                                        {/loop}
+                                    </select>
+                                </td>
+                                <td>
+                                    {$_cat['cat_id']}
+                                </td>
+                                <td class="td25">
+                                    <input  class="txt" type="text" name="cat_pid[{$_cat['cat_id']}]" value="{$_cat['cat_pid']}" />
+                                </td>
+                                <td class="td25">
+                                    <input class="txt" type="text" name="cat_level[{$_cat['cat_id']}]" value="{$_cat['cat_level']}" />
+                                </td>
+                                <td>
+                                    <a class="act"  href="{$now_url}&del={$_cat['cat_id']}">{$info_lang['del']}</a>
+                                </td>
+                            </tr>
+                            {loop $cat_array $__cat}
+                                {if $__cat['cat_pid'] == $_cat['cat_id']}
+                                    <tr class="hover">
+                                        <td class="td25"></td>
+                                        <td class="td25">
+                                            <input class="txt" type="text" name="cat_sort[{$__cat['cat_id']}]" value="{$__cat['cat_sort']}"  />
+                                        </td>
+                                        <td>
+                                            <div class="lastchildboard">
+                                                <input class="txt" type="hidden" name="cat_id[{$__cat['cat_id']}]" value="{$__cat['cat_id']}"  />
+                                                <input type="text" name="cat_title[{$__cat['cat_id']}]" value="{$__cat['cat_title']}" style="width:200px;" />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            {$__cat['cat_id']}
+                                        </td>
+                                        <td class="td25">
+                                            <input  class="txt" type="text" name="cat_pid[{$__cat['cat_id']}]" value="{$__cat['cat_pid']}" />
+                                        </td>
+                                        <td class="td25">
+                                            <input class="txt" type="text" name="cat_level[{$__cat['cat_id']}]" value="{$__cat['cat_level']}" />
+                                        </td>
+                                        <td>
+                                            <a class="act"  href="{$now_url}&del={$__cat['cat_id']}">{$info_lang['del']}</a>
+                                        </td>
+                                    </tr>
+                                {/if}
+                            {/loop}
+                        {/if}
+                    {/loop}
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td colspan=2></td>
+                        <td colspan=5>
+                            <div class="lastboard">
+                                <a class="addtr" onclick="addrow(this, 1, {$cat['cat_id']})" href="###">{$info_lang['admin_cat_htm_18']}</a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            {/if}
+        {/loop}
+        <tbody>
+            <tr>
+                <td></td>
+                <td colspan=6>
+                    <div class="board">
+                        <a class="addtr" onclick="addrow(this, 0)" href="###">{$info_lang['admin_cat_htm_19']}</a>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr>
+                <td></td>
+                <td colspan=6>
+                    <div class="fixsel">
+                        <input type="submit" class="btn" name="editsubmit" value="{$info_lang['loupan_view_kanfang_htm_4']}" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    {eval showformfooter(); }
+</div>

@@ -1,0 +1,59 @@
+<div id="pt" class="bm cl">
+    <span class="z">
+        <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+        <em>&raquo;</em>
+        <a href="{$house_config['root']}">{$house_config['name']}</a>
+        <em>&raquo;</em>
+        <a href="{$house_config['root']}?mod=loupan">{$house_lang['loupan']}</a>
+
+        {if $pre_area['uname']}
+            <em>&raquo;</em>
+            <a href="{$house_config['root']}?mod=loupan&profile_type_id={$profile_type_id}&upid={$pre_area['upid']}">{$pre_area['uname']}</a>
+        {/if}
+        <em>&raquo;</em>
+        <a href="{$house_config['root']}?mod=loupan&profile_type_id={$profile_type_id}&upid={$pre_area['id']}">{$pre_area['name']}</a>
+     </span>
+    <span class="y">
+        {$house_lang['welcome']} <b>{$_G['username']}</b>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=list&profile_type_id=1">{$house_lang['rent']}</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=list&profile_type_id=2">{$house_lang['need_rent']}</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=list&profile_type_id=3">{$house_lang['sell']}</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=loupan">{$house_lang['loupan']}</a>
+        {if $_G['uid']}
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=member">{$house_lang['member']}</a>
+        {if $is_house_admin}
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=admin">{$house_lang['admin_main_1']}</a>
+        {/if}
+        {/if}
+    </span>
+</div>
+
+<div class="loupan_view_title">
+    <h1 class="z">{$loupan['loupan_title']} </h1>
+    <span class="y">
+    {if $is_house_admin}
+        <a href="{$house_config['root']}?mod=admin&op=post_loupan&ac=edit&lid={$loupan_id}">[{$house_lang['edit']}]</a>
+        <span class="pipe">|</span>
+        <a href="{$house_config['root']}?mod=admin&op=post_loupan&ac=del&lid={$loupan_id}"  onclick="return(confirm('{$house_lang['queding_shanchu']}?'))">[{$house_lang['del']}]</a>
+    {/if}
+    </span>
+</div>
+
+<div class="loupan_view_page">
+    <a href="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=index" {if $ac=='index'} class="hover" {/if}>{$house_lang['loupan_view_htm_1']}</a>
+    <a href="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=img" {if $ac=='img'} class="hover" {/if}>{$house_lang['loupan_view_htm_2']}</a>
+    <a href="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=map" {if $ac=='map'} class="hover" {/if}>{$house_lang['loupan_view_htm_3']}</a>
+    <a href="{$house_config['root']}?mod=loupan&op=view&lid={$loupan_id}&ac=kanfang" {if $ac=='kanfang'} class="hover" {/if}>{$house_lang['loupan_view_htm_4']}</a>
+</div>
+
+<!--{eval include template("house:$style/loupan/loupan_view_$ac");}-->
+
+<div class="brian_box pd5 bgf">
+    <div style="line-height:23px;">{$house_config['topnotice']}</div>
+</div>

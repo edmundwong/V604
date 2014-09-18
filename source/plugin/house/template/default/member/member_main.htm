@@ -1,0 +1,68 @@
+<!--{template common/header}-->
+<!--{eval include template("house:$style/style");}-->
+<!--{eval include template("house:$style/head");}-->
+
+<div class='brian_main'>
+
+    <div id="pt" class="bm cl">
+         <span class="z">
+            <a href="./" class="nvhm" title="{lang homepage}">$_G[setting][bbname]</a>
+            <em>&raquo;</em>
+            <a href="{$house_config['root']}">{$house_config['name']}</a>
+            <em>&raquo;</em>
+            <a href="{$house_config['root']}?mod=member">{$house_lang['member']}</a>
+         </span>
+        <span class="y">
+            {$house_lang['welcome']} <b>{$_G['username']}</b>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=1">{$house_lang['rent']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=2">{$house_lang['need_rent']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=3">{$house_lang['sell']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=list&profile_type_id=5">{$house_lang['need_sell']}</a>
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=loupan">{$house_lang['loupan']}</a>
+            {if $_G['uid']}
+            <span class="pipe">|</span>
+            <a href="{$house_config['root']}?mod=member">{$house_lang['member']}</a>
+                {if $is_house_admin}
+                <span class="pipe">|</span>
+                <a href="{$house_config['root']}?mod=admin">{$house_lang['admin_main_1']}</a>
+                {/if}
+            {/if}
+            &nbsp;
+        </span>
+    </div>
+    
+    <div class="brian_space">
+        <div class="brian_space_left">
+                <ul>
+                    <li><a href="{$house_config['root']}?mod=member&op=post&profile_type_id=1" {if $op=='post' && $profile_type_id =='1'} class="hover" {/if}>{$house_lang['post_rent']}</a></li>
+                    <li><a href="{$house_config['root']}?mod=member&op=post&profile_type_id=2" {if $op=='post' && $profile_type_id =='2'} class="hover" {/if}>{$house_lang['post_need_rent']}</a></li>
+                    <li><a href="{$house_config['root']}?mod=member&op=post&profile_type_id=3" {if $op=='post' && $profile_type_id =='3'} class="hover" {/if}>{$house_lang['post_sell']}</a></li>
+                    <li><a href="{$house_config['root']}?mod=member&op=post&profile_type_id=5" {if $op=='post' && $profile_type_id =='5'} class="hover" {/if}>{$house_lang['post_need_sell']}</a></li>
+                </ul>
+                <ul>
+                    <li><a href="{$house_config['root']}?mod=member&op=mypost"  {if $op=='mypost' && $ac==''} class="hover" {/if}>{$house_lang['mypost']}</a></li>
+                    <li><a href="{$house_config['root']}?mod=member&op=mypost&ac=up" {if $op=='mypost' && $ac=='up' } class="hover" {/if}>{$house_lang['mypost_up']}</a></li>
+                </ul>
+                <ul>
+                    <li><a href="{$house_config['root']}?mod=member&op=profile"  {if $op=='profile' } class="hover" {/if}>{$house_lang['profile']}</a></li>
+                </ul>
+                <ul>
+                    <li><a href="home.php?mod=spacecp&ac=avatar"  target="_blank">{lang house:member_htm_9}</a></li>
+                    {if $is_house_broker}
+                    <li><a href="home.php?mod=spacecp&ac=profile&op=verify&vid={$house_config[verify]}" target="_blank">{lang house:member_htm_10}</a></li>
+                    {/if}
+                </ul>
+        </div>
+        <div class="brian_space_right">
+            <!--{eval include template("house:$style/$mod/member_$op");}-->
+        </div>
+    </div>
+</div>
+
+<!--{eval brian_output();}-->
+<!--{template common/footer}-->
