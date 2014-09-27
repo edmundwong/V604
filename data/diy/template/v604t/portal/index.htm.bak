@@ -25,37 +25,37 @@
     <table class="menu">
         <tr>
             <td><a  href="info.php?mod=list&cat_id=1"><div class='bg_sprite ico1'></div>旅馆</a></td>
-            <td><a  href="#"><div class='bg_sprite ico2'></div>搬运</a></td>
-            <td><a  href="#"><div class='bg_sprite ico3'></div>租车</a></td>
-            <td><a  href="#"><div class='bg_sprite ico4'></div>汽车维修</a></td>
-            <td><a  href="#"><div class='bg_sprite ico5'></div>机票旅游</a></td>
-            <td><a  href="#"><div class='bg_sprite ico6'></div>快递服务</a></td>
-            <td><a  href="#"><div class='bg_sprite ico7'></div>清洁</a></td>
-            <td><a  href="#"><div class='bg_sprite ico8'></div>水暖电工</a></td>
-            <td><a  href="#"><div class='bg_sprite ico9'></div>园艺</a></td>
-            <td><a  href="#"><div class='bg_sprite ico10'></div>电脑</a></td>
+            <td><a  href="info.php?mod=list&cat_id=2"><div class='bg_sprite ico2'></div>搬运</a></td>
+            <td><a  href="info.php?mod=list&cat_id=3"><div class='bg_sprite ico3'></div>租车</a></td>
+            <td><a  href="info.php?mod=list&cat_id=4"><div class='bg_sprite ico4'></div>汽车维修</a></td>
+            <td><a  href="info.php?mod=list&cat_id=5"><div class='bg_sprite ico5'></div>机票旅游</a></td>
+            <td><a  href="info.php?mod=list&cat_id=6"><div class='bg_sprite ico6'></div>快递服务</a></td>
+            <td><a  href="info.php?mod=list&cat_id=7"><div class='bg_sprite ico7'></div>清洁</a></td>
+            <td><a  href="info.php?mod=list&cat_id=8"><div class='bg_sprite ico8'></div>水暖电工</a></td>
+            <td><a  href="info.php?mod=list&cat_id=9"><div class='bg_sprite ico9'></div>园艺</a></td>
+            <td><a  href="info.php?mod=list&cat_id=10"><div class='bg_sprite ico10'></div>电脑</a></td>
         </tr><tr>
-            <td><a  href="#"><div class='bg_sprite ico11'></div>美食/食品</a></td>
-            <td><a  href="#"><div class='bg_sprite ico12'></div>婚庆服务</a></td>
-            <td><a  href="#"><div class='bg_sprite ico13'></div>移民签证</a></td>
-            <td><a  href="#"><div class='bg_sprite ico14'></div>院校</a></td>
-            <td><a  href="#"><div class='bg_sprite ico15'></div>雅思托福</a></td>
-            <td><a  href="#"><div class='bg_sprite ico16'></div>各类辅导</a></td>
-            <td><a  href="#"><div class='bg_sprite ico17'></div>艺术/运动</a></td>
-            <td><a  href="#"><div class='bg_sprite ico18'></div>汇款换汇</a></td>
-            <td><a  href="#"><div class='bg_sprite ico19'></div>地产/贷款</a></td>
-            <td><a  href="#"><div class='bg_sprite ico20'></div>建筑装修</a></td>
+            <td><a  href="info.php?mod=list&cat_id=11"><div class='bg_sprite ico11'></div>美食/食品</a></td>
+            <td><a  href="info.php?mod=list&cat_id=12"><div class='bg_sprite ico12'></div>婚庆服务</a></td>
+            <td><a  href="info.php?mod=list&cat_id=13"><div class='bg_sprite ico13'></div>移民签证</a></td>
+            <td><a  href="info.php?mod=list&cat_id=14"><div class='bg_sprite ico14'></div>院校</a></td>
+            <td><a  href="info.php?mod=list&cat_id=15"><div class='bg_sprite ico15'></div>雅思托福</a></td>
+            <td><a  href="info.php?mod=list&cat_id=16"><div class='bg_sprite ico16'></div>各类辅导</a></td>
+            <td><a  href="info.php?mod=list&cat_id=17"><div class='bg_sprite ico17'></div>艺术/运动</a></td>
+            <td><a  href="info.php?mod=list&cat_id=18"><div class='bg_sprite ico18'></div>汇款换汇</a></td>
+            <td><a  href="info.php?mod=list&cat_id=19"><div class='bg_sprite ico19'></div>地产/贷款</a></td>
+            <td><a  href="info.php?mod=list&cat_id=20"><div class='bg_sprite ico20'></div>建筑装修</a></td>
         </tr><tr>
-            <td><a  href="#"><div class='bg_sprite ico21'></div>验屋</a></td>
-            <td><a  href="#"><div class='bg_sprite ico22'></div>舞蹈/瑜伽</a></td>
-            <td><a  href="#"><div class='bg_sprite ico23'></div>保姆</a></td>
-            <td><a  href="#"><div class='bg_sprite ico24'></div>驾照</a></td>
-            <td><a  href="#"><div class='bg_sprite ico25'></div>报税/退税</a></td>
-            <td><a  href="#"><div class='bg_sprite ico26'></div>理财投资</a></td>
-            <td><a  href="#"><div class='bg_sprite ico27'></div>医疗诊断</a></td>
-            <td><a  href="#"><div class='bg_sprite ico28'></div>法律服务</a></td>
-            <td><a  href="#"><div class='bg_sprite ico29'></div>推拿按摩</a></td>
-            <td><a  href="#"><div class='bg_sprite ico30'></div>成人娱乐</a></td>
+            <td><a  href="info.php?mod=list&cat_id=21"><div class='bg_sprite ico21'></div>验屋</a></td>
+            <td><a  href="info.php?mod=list&cat_id=22"><div class='bg_sprite ico22'></div>特产/保健</a></td>
+            <td><a  href="info.php?mod=list&cat_id=23"><div class='bg_sprite ico23'></div>保姆</a></td>
+            <td><a  href="info.php?mod=list&cat_id=24"><div class='bg_sprite ico24'></div>驾照</a></td>
+            <td><a  href="info.php?mod=list&cat_id=25"><div class='bg_sprite ico25'></div>报税/退税</a></td>
+            <td><a  href="info.php?mod=list&cat_id=192"><div class='bg_sprite ico26'></div>理财投资</a></td>
+            <td><a  href="info.php?mod=list&cat_id=194"><div class='bg_sprite ico27'></div>医疗诊断</a></td>
+            <td><a  href="info.php?mod=list&cat_id=193"><div class='bg_sprite ico28'></div>法律服务</a></td>
+            <td><a  href="info.php?mod=list&cat_id=195"><div class='bg_sprite ico29'></div>推拿按摩</a></td>
+            <td><a  href="info.php?mod=list&cat_id=196"><div class='bg_sprite ico30'></div>成人娱乐</a></td>
         </tr>
     </table>
     <!-- menu over -->
