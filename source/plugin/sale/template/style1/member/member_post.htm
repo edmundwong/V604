@@ -1,7 +1,7 @@
 <style type="text/css">
 form label{width:90px; text-align:right; display:inline-block; margin-right:10px;font-size:14px}
 form label em{ color:#fc6328;}
-.wrapper form div{margin-top:20px;}
+#postForm div{margin-top:20px;}
 header {border-bottom: 0px solid #efe6e0;}
 #bb_editor{
     display:inline-block !important; 
@@ -73,6 +73,10 @@ header {border-bottom: 0px solid #efe6e0;}
             </select>
         </div>
         <div>
+            <label>地址:</label>
+            <input type="text" name="address1" id="address1" value="{$goods['address1']}" style="width:550px; height:28px;">
+        </div>
+        <div>
             <label><em>*</em>联系人:</label>
             <input type="text" autocomplete="off" name="member_username" size="30" maxlength="60"  value="{$member['member_username']}" style="width:220px; height:28px;">
             <div id="b0b0P0st1d8hint" class="hiddenError"></div>
@@ -114,11 +118,11 @@ header {border-bottom: 0px solid #efe6e0;}
 <style type="text/css">
 #picbox { font-size:12px; }
 #picbox table { margin-bottom:5px; }
-</style><!--
+</style>
 <div id="b0b0P0st1d12" class="item">
     <table>
         <tr>
-            <td class="attribute">{lang sale:post_htm_48}</td>
+            <td class="attribute"></td>
             <td class="inputTd">
                 <table id="imagesTable">
                     <tr>
@@ -128,12 +132,12 @@ header {border-bottom: 0px solid #efe6e0;}
                                 <span class="loading" style="display:none;">图片上传中................</span>
                                 <input type="file" style="display:none;" id="goods_upload_file" name="goods_upload_file" />
                             </div>
-                            <!--{loop $sale_goods_img $sale_img}--
+                            <!--{loop $sale_goods_img $sale_img}-->
                             <div class="shangchuan"><img width="100" height="100" src="{$sale_img['img']}" />
                                 <input type="hidden" name="goods_upload_file_[]" value="{$sale_img['img']}" />
                                 <a href="javascript:;" onclick="dcj_del_img(this,{$sale_img['goods_id']},'{$sale_img['img']}');">删除</a>
                             </div>
-                            <!--{/loop}--
+                            <!--{/loop}-->
                         </td>
                     </tr>
                 </table>
@@ -194,7 +198,7 @@ header {border-bottom: 0px solid #efe6e0;}
       );
     }
     </script>
-    </div>-->
+    </div>
     <div style="height:5px; overflow:hidden; clear:both;"></div>
     <script type="text/javascript" language="javascript">
         function validate() {
@@ -212,6 +216,6 @@ header {border-bottom: 0px solid #efe6e0;}
         }
     </script>
     <input type="submit" name="{$ac}_submit" value="发布信息" style=" display:block; padding:8px 50px; margin:50px auto 20px; border-radius:2px; background:#fc6328; border:0 none; color:#fff;margin-left:240px;font-size:14px" />
-    <p style="text-align:center; color:#828999; margin-bottom:50px;margin-left:-190px">注：发布即代表您已阅读并同意 <a href="#" style="color:#fc6328;">《人在温哥华网服务条款》</a></p>
+    <p style="text-align:center; color:#828999; margin-bottom:50px;margin-left:-190px">注：发布即代表您已阅读并同意 <a href="#" style="color:#fc6328;">《大温同城网服务条款》</a></p>
     </form>
 </div>

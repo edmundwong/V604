@@ -1,0 +1,32 @@
+
+<div id="plugin_admin" class=" brian_main brian_box pd5 bgf">
+    <table>
+        <!--{loop $__links $p_key=>$p_value}-->
+        <tr style='border-bottom: 1px solid #CCCCCC'>
+            <td style='text-align: center;width:200px;'>
+                {$__links[$p_key][title]}
+            </td>
+            <td>
+                <ul>
+                    <!--{loop $p_value[child] $key=>$value}-->
+                    <li style='border-bottom: 1px solid blueviolet;line-height: 30px;width:600px;'>
+                        <span style='display:inline-block;width:300px;font-size:13px;color:#0033cc;font-weight:bolder;text-align: right;margin-right:20px'>{$value[title]}</span>
+                        <!--{if isset($a_subcat_linkinfo[$key])}-->
+                        <span style='color:#009900'>
+                        ({$a_subcat_linkinfo[$key][didnum]}/{$a_subcat_linkinfo[$key][linknum]})
+                        <!--{else}-->
+                        <span>
+                        0/0
+                        <!--{/if}-->
+                        </span>
+                        <span style='float:right;'>
+                            <a href='{$now_url}&sp_ac=getlink&catid={$p_key}&subcatid={$key}' style='border:1px solid #0000CC;padding:2px 5px 2px 5px;'>操作</a>
+                        </span>
+                    </li>
+                    <!--{/loop}-->
+                </ul>
+            </td>
+        </tr>
+        <!--{/loop}-->
+    </table>
+</div>

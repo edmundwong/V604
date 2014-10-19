@@ -6,16 +6,33 @@
 **/
 
 if(!defined('IN_DISCUZ')) {exit('Access Denied');}
-//error_reporting(E_ALL);
+//检测用户是否已经登录
 //if(empty($_G['uid']) ) {	showmessage($_lang['login'],'',array(),array('login' => true));}
 $server_name = $_SERVER['SERVER_NAME'];
 $goods_id = intval($_GET['goods_id']);
 $ac = !empty($_GET['ac']) ? addslashes($_GET['ac']) : 'post';
 $uid = $_G['uid'];
 
-if($_REQUEST['goods_file'] == 'goods_upload_file')
-{
-    //echo "222";exit;
+/**
+ * 是否为邮箱地址
+ * @param type $sValue
+ * @return type
+ */
+function v604_IsEmail($sValue) {
+    return strlen($sValue) > 6 && preg_match("/^[\w\-\.]+@[\w\-\.]+(\.\w+)+$/", $sValue);
+}
+
+/**
+ * 是否为电话号码
+ * @param type $sValue
+ * @return type
+ */
+function v604_IsPhone($sValue) {
+    return strlen($sValue) == 12 && preg_match("/^\d{3}\-\d{3}\-\d{4}$/", $sValue);
+}
+
+//上传图片
+if($_REQUEST['goods_file'] == 'goods_upload_file'){
     header('content-type:text/html charset:utf-8');
     $dir_base = "./data/attachment/sale/";  //文件上传根目录
     $_dir_base = "data/attachment/sale/";
@@ -27,42 +44,42 @@ if($_REQUEST['goods_file'] == 'goods_upload_file')
     
     $output = "";
     $index = 0;     //$_FILES 以文件name为数组下标，不适用foreach($_FILES as $index=>$file)
-    //foreach($_FILES as $file){
-        $upload_file_name = 'goods_upload_file_' . $index;     //对应index.html FomData中的文件命名
-        $filename = $_FILES[$upload_file_name]['name'];
-        $gb_filename = iconv('utf-8','gb2312',$filename);   //名字转换成gb2312处理
-        //文件不存在才上传
-        $new_name = time().rand(1,100000);
-        if(!file_exists($dir_base.$new_name.$gb_filename)) {
-            $isMoved = false;  //默认上传失败
-            $MAXIMUM_FILESIZE = 1 * 1024 * 1024;    //文件大小限制    1M = 1 * 1024 * 1024 B;
-            $rEFileTypes = "/^\.(jpg|jpeg|gif|png){1}$/i"; 
-            //$isMoved = @move_uploaded_file ( $_FILES[$upload_file_name]['tmp_name'], $dir_base.$new_name.$gb_filename);   
-            if ($_FILES[$upload_file_name]['size'] <= $MAXIMUM_FILESIZE && 
-                preg_match($rEFileTypes, strrchr($gb_filename, '.'))) { 
-                $isMoved = @move_uploaded_file ( $_FILES[$upload_file_name]['tmp_name'], $dir_base.$new_name.$gb_filename);     //上传文件
-            }
-        }else{
-            $isMoved = true;    //已存在文件设置为上传成功
-        }
-        if($isMoved){
-            //输出图片文件<img>标签
-            //注：在一些系统src可能需要urlencode处理，发现图片无法显示，
-            //    请尝试 urlencode($gb_filename) 或 urlencode($filename)，不行请查看HTML中显示的src并酌情解决。
-            $output = $_dir_base.$new_name.$filename;
-            //$output .= "<img src='{$dir_base}{$new_name}{$filename}' title='{$filename}' alt='{$filename}'/>";
-        }else {
-            $output = '';
-            //$output .= "<img src='{$dir_base}error.jpg' title='{$filename}' alt='{$filename}'/>";
-        }
+    
+    $upload_file_name = 'goods_upload_file_' . $index;     //对应index.html FomData中的文件命名
+    $filename = $_FILES[$upload_file_name]['name'];
+    $gb_filename = iconv('utf-8','gb2312',$filename);   //名字转换成gb2312处理
+    //文件不存在才上传
+    $new_name = time().rand(1,100000);
+    if(!file_exists($dir_base.$new_name.$gb_filename)) {
+        $isMoved = false;  //默认上传失败
+        $MAXIMUM_FILESIZE = 1 * 1024 * 1024;    //文件大小限制    1M = 1 * 1024 * 1024 B;
+        $rEFileTypes = "/^\.(jpg|jpeg|gif|png){1}$/i"; 
         
-        $index++;
-    //}
+        if ($_FILES[$upload_file_name]['size'] <= $MAXIMUM_FILESIZE && 
+            preg_match($rEFileTypes, strrchr($gb_filename, '.'))) { 
+            $isMoved = @move_uploaded_file ( $_FILES[$upload_file_name]['tmp_name'], $dir_base.$new_name.$gb_filename);     //上传文件
+        }
+    }else{
+        $isMoved = true;    //已存在文件设置为上传成功
+    }
+    if($isMoved){
+        //输出图片文件<img>标签
+        //注：在一些系统src可能需要urlencode处理，发现图片无法显示，
+        //    请尝试 urlencode($gb_filename) 或 urlencode($filename)，不行请查看HTML中显示的src并酌情解决。
+        $output = $_dir_base.$new_name.$filename;
+        //$output .= "<img src='{$dir_base}{$new_name}{$filename}' title='{$filename}' alt='{$filename}'/>";
+    }else {
+        $output = '';
+        //$output .= "<img src='{$dir_base}error.jpg' title='{$filename}' alt='{$filename}'/>";
+    }
+
+    $index++;
+        
     exit($output);
 }
 
-if($_REQUEST['goods_file'] == 'del_upfile')
-{
+//删除上传图片
+if($_REQUEST['goods_file'] == 'del_upfile'){
     $post_id = trim($_REQUEST['post_id']);
     $img = trim($_REQUEST['img']);
     $img = './'.$img;
@@ -75,7 +92,6 @@ $goods = fetch_all('sale_goods'," WHERE goods_id='{$goods_id}'");
 $goods = $goods[0];
 
 $cat = fetch_all("sale_cat"," WHERE cat_status='1' ORDER BY cat_sort DESC ");
-
 
 if(isset($_REQUEST['classid']) && trim($_REQUEST['classid'])){
     $cat_id2 = trim($_REQUEST['classid']);
@@ -97,23 +113,42 @@ $my_credit = fetch_all("common_member_count"," WHERE uid='{$uid}'"," extcredits{
 $my_credit = $my_credit["extcredits{$sale_config['extcredits']}"];
 //var_dump(submitcheck('post_submit'));var_dump(submitcheck('edit_submit'));exit;
 if(submitcheck('post_submit') || submitcheck('edit_submit')){
-
-    if(empty($_GET['province']) && $ac =='post'){
+    
+    //所属区域是否为空
+    if (empty($_GET['province']) && $ac == 'post') {
         showmessage($_lang['must_province']);
     }
     
+    //内容是否为空
     $_GET['goods_text'] = $_GET['editorValue'];
-    if(empty($_GET['goods_text'])){
+    if (empty($_GET['goods_text'])) {
         showmessage($_lang['must_goods_text']);
     }
-    if(empty($_GET['goods_price'])){
+    
+    //物品价格是否为空
+    if (empty($_GET['goods_price'])) {
         $_GET['goods_price'] = 0;
     }
-    if(empty($_GET['member_username'])){
+    
+    //联系人是否为空
+    if (empty($_GET['member_username'])) {
         showmessage($_lang['must_member_username']);
     }
-    if(empty($_GET['member_phone'])){
+    
+    //联系电话是否为空
+    if (empty($_GET['member_phone'])) {
         showmessage($_lang['must_member_phone']);
+    //联系电话是否有效
+    }else if (!isPhone($_GET['member_phone'])){
+        showmessage('联系电话无效，请重新输入。电话格式:XXX-XXX-XXXX');
+    }
+    
+    //电子邮箱是否为空
+    if (empty($_GET['member_email'])) {
+        showmessage($_lang['must_member_phone']);
+    //电子邮箱是否有效
+    }else if (!isEmail($_GET['member_email'])){
+        showmessage('电子邮件无效，请重新输入。邮件格式:test@van604.com');
     }
     
     $goods_array = gpc('goods_');

@@ -177,7 +177,7 @@
                         </a>
                         <span><!--{if $goods['province']}-->{$goods['province']}<!--{/if}--></span>
                         <p>
-                       <!--{eval echo mb_substr(strip_tags($goods['goods_text']),0,30,'UTF-8');}-->
+                       <!--{$goods['summary']}-->
                         </p>
                     </div>
                     <span>{$goods['member_phone']}</span>

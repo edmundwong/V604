@@ -55,7 +55,7 @@
             <div class="v604_title">
                 <strong>{$goods['goods_title']}</strong>
                 <div class="clearfix" style='color:#747474;margin-top:5px'><p class="v604_fl">发布时间 : {echo dgmdate($goods['goods_time'],'dt');} | 浏览 : {$goods['goods_view']}次</p>
-                    <p class="fr">信息编号 : {$goods['goods_id']}
+                    <p class="fr"> | 信息编号 : {$goods['goods_id']}
                         <a href="{$sale_config['root']}?mod=post&ac=edit&goods_id={$goods_id}&pwd=check" style='margin-left:10px'>修改</a>
                         | <a href="{$sale_config['root']}?mod=view&goods_id={$goods_id}&op=del"  onclick="return(confirm('{$_lang['queding_shanchu']}?'))" >删除</a>
                     </p>
@@ -75,20 +75,32 @@
                             </span>
                         </div>
                         <div>
-                            <strong>类别从属：</strong>
+                            <strong>地区：</strong>
+                            <span>
+                                <!--{$goods['province']}-->
+                            </span>
+                        </div>
+                        <div>
+                            <strong>地址：</strong>
+                            <span>
+                                <!--{$goods['address1']}-->
+                            </span>
+                        </div>
+                        <div>
+                            <strong>类别：</strong>
                             <span>
                                 <!--{if $goods['cat_id']}-->{$goods['cat_title']} - <!--{/if}-->
                                 <!--{if $goods['subcat_id']}-->{$goods['subcat_title']}<!--{/if}-->
                             </span>
                         </div>
-                        <div><strong>开始时间：</strong><span>{$goods['huodong_star_time']}</span></div>
-                        <div><strong>结束时间：</strong><span>{$goods['huodong_end_time']}</span></div>
+                        <!--{if $goods['huodong_star_time']}--><div><strong>开始时间：</strong><span>{$goods['huodong_star_time']}</span></div><!--{/if}-->
                     </div>
                 </div>
                 <div class="v604_fl right">
                     <div><strong>联 系 人：</strong><span>{$member['member_username']}</span></div>
                     <div><strong>联系电话：</strong><span>{$member['member_phone']}</span></div>
-                    <div><strong>电子邮件：</strong><span>{$member['member_email']}</span></div>
+                    <div><strong>电子邮件：</strong><span>{$member['member_email']}</span></div>                    
+                        <!--{if $goods['huodong_end_time']}--><div><strong>结束时间：</strong><span>{$goods['huodong_end_time']}</span></div><!--{/if}-->
                     <div style='font-size:12px'><strong>举报：</strong><span class='subtitle' onclick="dcj_jubao({$goods_id}, '分类不当');">分类不当</span><span class='subtitle' onclick="dcj_jubao({$goods_id}, '商业广告');">商业广告</span><span class='subtitle' onclick="dcj_jubao({$goods_id}, '其他问题举报');">其他问题</span></div>
                 </div>
             </div>
@@ -106,7 +118,7 @@
                 <!--{if $goods['goods_upload_file_4']}--><div class="pics"><p><img src="{$goods['goods_upload_file_4']}" class="image" alt="{$goods['goods_title']}" title="{lang sale:view_htm_46}" /></p></div><!--{/if}-->
             </div>
         </section>
-        <aside class="fr right">
+        <aside class="v604_fl right">
             <div class="xinxi">
                 <strong>问题解答</strong>
                 <ul class="news">
