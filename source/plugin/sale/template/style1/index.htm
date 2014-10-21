@@ -45,24 +45,6 @@
             <table border="1" class="navigation">
                 <tr>
                     <td>
-                        <strong>二手物品/求购信息</strong>
-                        <ul>
-                            <!--{loop $cat_array $cat}-->
-                                <!--{if $cat['cat_pid'] == 1}-->
-                                    <!--{eval $s_keyword_tmp = '';}-->
-                                    <!--{eval $s_class_tmp = '';}-->
-                                    <!--{if $keyword }-->
-                                        <!--{eval $s_keyword_tmp = '&keyword='.$keyword;}-->
-                                    <!--{/if}-->
-                                    <!--{if $cat['cat_id'] == $cat_id}-->
-                                        <!--{eval $s_class_tmp = 'class="hover"';}-->
-                                    <!--{/if}-->
-                            <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}{$s_keyword_tmp}" {$s_class_tmp}>{$cat['cat_title']}</a><span class='line'>&nbsp;|</span></li>
-                                <!--{/if}-->
-                            <!--{/loop}-->
-                        </ul>
-                    </td>
-                    <td>
                         <strong>房屋信息</strong>
                         <ul>
                             <!--{loop $cat_array $cat}-->
@@ -113,6 +95,26 @@
                                     <!--{/if}-->
                             <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}{$s_keyword_tmp}" {$s_class_tmp}>{$cat['cat_title']}</a><span class='line'>&nbsp;|</span></li>
                             <!--{/if}-->
+                            <!--{/loop}-->
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <strong>二手物品/求购信息</strong>
+                        <ul>
+                            <!--{loop $cat_array $cat}-->
+                                <!--{if $cat['cat_pid'] == 1}-->
+                                    <!--{eval $s_keyword_tmp = '';}-->
+                                    <!--{eval $s_class_tmp = '';}-->
+                                    <!--{if $keyword }-->
+                                        <!--{eval $s_keyword_tmp = '&keyword='.$keyword;}-->
+                                    <!--{/if}-->
+                                    <!--{if $cat['cat_id'] == $cat_id}-->
+                                        <!--{eval $s_class_tmp = 'class="hover"';}-->
+                                    <!--{/if}-->
+                            <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}{$s_keyword_tmp}" {$s_class_tmp}>{$cat['cat_title']}</a><span class='line'>&nbsp;|</span></li>
+                                <!--{/if}-->
                             <!--{/loop}-->
                         </ul>
                     </td>
