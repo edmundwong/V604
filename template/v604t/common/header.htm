@@ -10,7 +10,7 @@
 	<!--{/if}-->
 	<!--{if !empty($rsshead)}-->$rsshead<!--{/if}-->
 	<!--{if widthauto()}-->
-		<link rel="stylesheet" id="css_widthauto" type="text/css" href='{$_G['setting']['csspath']}{STYLEID}_widthauto.css?{VERHASH}' />
+		<link rel="stylesheet" id="css_widthauto" type="text/css" href="{$_G['setting']['csspath']}{STYLEID}_widthauto.css?{VERHASH}" />
 		<script type="text/javascript">HTMLNODE.className += ' widthauto'</script>
 	<!--{/if}-->
 	<!--{if $_G['basescript'] == 'forum' || $_G['basescript'] == 'group'}-->
@@ -83,7 +83,7 @@
 			| <a href="forum.php?mod=modcp&fid=$_G[fid]" target="_blank">{lang forum_manager}</a>
 		<!--{/if}-->
 		<!--{if $_G['uid'] && getstatus($_G['member']['allowadmincp'], 1)}-->
-			| <a href="manager4v604.php" target="_blank">{lang admincp}</a>
+			| <a href="admin.php" target="_blank">{lang admincp}</a>
 		<!--{/if}-->
 		| <a href="home.php?mod=spacecp&ac=usergroup" id="g_upmine" class="showmenu" onMouseOver="delayShow(this, showUpgradeinfo)">{lang usergroup}: $_G[group][grouptitle]<!--{if $_G[member]['freeze']}--><span class="xi1">({lang freeze})</span><!--{/if}--></a>        
  <a href="home.php?mod=spacecp&ac=credit&showcredit=1" id="extcreditmenu"{if !$_G[setting][bbclosed]} onMouseOver="delayShow(this, showCreditmenu);" class="showmenu"{/if}>{lang credits}: $_G[member][credits]</a>       
@@ -157,15 +157,17 @@
         </div>
       </div>        
         
-    <div class="banner"><img src="$_G['style']['v604t_common']/img/banner.jpg" alt="描述记得加上呐" /><img src="$_G['style']['v604t_common']/img/banner.jpg" alt="描述记得加上呐" /><img src="$_G['style']['v604t_common']/img/banner.jpg" alt="描述记得加上呐" /><img src="$_G['style']['v604t_common']/img/banner.jpg" alt="描述记得加上呐" /><img src="$_G['style']['v604t_common']/img/banner.jpg" alt="描述记得加上呐" /></div>
+    <div class="banner">
+        <!--{ad/custom_1}-->
+    </div>
     <header class="wrapper clearfix">
     	<div class="v604_fl left">
 <!--{if !isset($_G['setting']['navlogos'][$mnid])}--><a href="{if $_G['setting']['domain']['app']['default']}http://{$_G['setting']['domain']['app']['default']}/{else}./{/if}" title="$_G['setting']['bbname']">{$_G['style']['boardlogo']}</a><!--{else}-->$_G['setting']['navlogos'][$mnid]<!--{/if}-->        
         </div>
-		<div class="v604_fl left" style='margin-left:8px'>
-			<a href=""><img src="$_G['style']['v604t_common']/img/yzl/g6.jpg" alt="描述" width="155" height="65"/></a>
-			<a href="" title="链接描述哦"><img src="$_G['style']['v604t_common']/img/yzl/g4.jpg" alt="描述哦" width="156" height="65"/></a>
-		</div>
+		<div class="v604_fl left v604_adv_inline" style='margin-left:8px'>
+			<!--{ad/custom_2}-->
+                        <!--{ad/custom_3}-->
+                </div>
         <div class="right v604_fr">
         	<div class="clearfix"><span class="v604_fr">Mon, 12 May , 10 : 57 : 02 </span><span class="jianada v604_fr">Mon, 12 May , 18:56:28 </span></div>
             <p><span>今日最低油价：104.9 Mac’s</span><span>今日汇率 - 加币/人民币：5.7323</span></p>

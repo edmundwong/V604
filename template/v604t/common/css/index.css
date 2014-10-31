@@ -48,8 +48,8 @@ table.menu td:first-child,table.menu tr:first-child { border:none; }
 .nm1 span a { font-size:14px; color:#fc6328; }
 
 /*fourAd*/
-.fourAd a { margin-left:8px; }
-.fourAd a:first-child { margin-left:0; }
+.fourAd div { margin-left:9px; }
+.fourAd div:first-child { margin-left:0; }
 
 /*box1 最新消息*/
 .box1 .newFocusList { width:220px; }
