@@ -45,7 +45,7 @@
             <table border="1" class="navigation">
                 <tr>
                     <td>
-                        <strong>房屋信息</strong>
+                        <a href="{$sale_config['root']}?mod=index&upid=0&level=0&cat_id=16{$s_keyword_tmp}"><strong>房屋信息</strong></a>
                         <ul>
                             <!--{loop $cat_array $cat}-->
                             <!--{if $cat['cat_pid'] == 16}-->
@@ -57,13 +57,13 @@
                                 <!--{if $cat['cat_id'] == $cat_id}-->
                                     <!--{eval $s_class_tmp = 'class="hover"';}-->
                                 <!--{/if}-->
-                            <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}{$s_keyword_tmp}" {$s_class_tmp}>{$cat['cat_title']}</a><span class='line'>&nbsp;|</span></li>
+                            <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&subcat_id={$cat['cat_id']}{$s_keyword_tmp}" {$s_class_tmp}>{$cat['cat_title']}</a><span class='line'>&nbsp;|</span></li>
                             <!--{/if}-->
                             <!--{/loop}-->
                         </ul>
                     </td>
                     <td>
-                        <strong>求职/招聘</strong>
+                        <a href="{$sale_config['root']}?mod=index&upid=0&level=0&cat_id=21{$s_keyword_tmp}"><strong>求职/招聘</strong></a>
                         <ul>
                             <!--{loop $cat_array $cat}-->
                             <!--{if $cat['cat_pid'] == 21}-->
@@ -75,13 +75,13 @@
                                     <!--{if $cat['cat_id'] == $cat_id}-->
                                         <!--{eval $s_class_tmp = 'class="hover"';}-->
                                     <!--{/if}-->
-                            <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}{$s_keyword_tmp}" {$s_class_tmp}>{$cat['cat_title']}</a><span class='line'>&nbsp;|</span></li>
+                                    <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&subcat_id={$cat['cat_id']}{$s_keyword_tmp}" <!--{$s_class_tmp}-->><!--{$cat['cat_title']}--></a><span class='line'>&nbsp;|</span></li>
                             <!--{/if}-->
                             <!--{/loop}-->
                         </ul>
                     </td>
                     <td>
-                        <strong>其他个人信息</strong>
+                        <a href="{$sale_config['root']}?mod=index&upid=0&level=0&cat_id=36{$s_keyword_tmp}"><strong>其他信息</strong></a>
                         <ul>
                             <!--{loop $cat_array $cat}-->
                             <!--{if $cat['cat_pid'] == 36}-->
@@ -93,7 +93,7 @@
                                     <!--{if $cat['cat_id'] == $cat_id}-->
                                         <!--{eval $s_class_tmp = 'class="hover"';}-->
                                     <!--{/if}-->
-                            <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}{$s_keyword_tmp}" {$s_class_tmp}>{$cat['cat_title']}</a><span class='line'>&nbsp;|</span></li>
+                            <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&subcat_id={$cat['cat_id']}{$s_keyword_tmp}" {$s_class_tmp}>{$cat['cat_title']}</a><span class='line'>&nbsp;|</span></li>
                             <!--{/if}-->
                             <!--{/loop}-->
                         </ul>
@@ -101,7 +101,7 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <strong>二手物品/求购信息</strong>
+                        <a href="{$sale_config['root']}?mod=index&upid=0&level=0&cat_id=1{$s_keyword_tmp}"><strong>二手物品/求购信息</strong></a>
                         <ul>
                             <!--{loop $cat_array $cat}-->
                                 <!--{if $cat['cat_pid'] == 1}-->
@@ -113,7 +113,7 @@
                                     <!--{if $cat['cat_id'] == $cat_id}-->
                                         <!--{eval $s_class_tmp = 'class="hover"';}-->
                                     <!--{/if}-->
-                            <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&cat_id={$cat['cat_id']}{$s_keyword_tmp}" {$s_class_tmp}>{$cat['cat_title']}</a><span class='line'>&nbsp;|</span></li>
+                            <li><a href="{$sale_config['root']}?mod=index&upid={$upid}&level={$level}&subcat_id={$cat['cat_id']}{$s_keyword_tmp}" {$s_class_tmp}>{$cat['cat_title']}</a><span class='line'>&nbsp;|</span></li>
                                 <!--{/if}-->
                             <!--{/loop}-->
                         </ul>
@@ -131,23 +131,37 @@
                         </li>
                         <!--<li style="float:right;margin-top:7px"><select><option value ="1">有图片</option></select></li>-->
                         <li style="float:right;margin-top:7px">
-                            <select>
+                            <select name="sale_area">
                                 <option value ="">请选择地区</option>
-                                <option value="West Vancouver">West Vancouver</option><option value="White Rock">White Rock</option><option value="Surrey">Surrey</option><option value="Langley">Langley</option><option value="Delta">Delta</option><option value="North Vancouver">North Vancouver</option><option value="West Vancouver">West Vancouver</option><option value="Vancouver">Vancouver</option><option value="Richmond">Richmond</option><option value="New Westminster">New Westminster</option><option value="Coquitlam">Coquitlam</option><option value="Burnaby">Burnaby</option>
+                                <!--{loop $_a_area $area}-->
+                                    <!--{if (isset($dcj_sale_area) && ($dcj_sale_area == {$area['name']}))}-->
+                                <option value ="{$area['name']}" selected>{$area['name']}</option>
+                                    <!--{else}-->
+                                <option value ="{$area['name']}">{$area['name']}</option>
+                                    <!--{/if}-->
+                                <!--{/loop}-->
                             </select>
                         </li>
                         <li style="float:right;margin-top:7px">
-                            <select>
+                            <select name="sale_cat_id">
                                 <option value ="">请选择类目</option>
                                 <!--{loop $cat_array $cat}-->
-                                <!--{if $cat['cat_pid'] != 0}-->
-                                <option value ="{$cat['cat_id']}">{$cat['cat_title']}</option>
+                                    <!--{if $cat['cat_pid'] != 0}-->
+                                        <!--{if (isset($sale_cat_id) && ($sale_cat_id==$cat['cat_id']))}-->
+                                <option value ="{$cat['cat_id']}" selected>{$cat['cat_title']}</option>
+                                        <!--{else}-->
+                                <option value ="{$cat['cat_id']}">{$cat['cat_title']}</option>        
+                                        <!--{/if}-->
                                 <!--{/if}-->
                                 <!--{/loop}-->
                             </select>
                         </li>
                         <li style="float:right;margin-top:7px">
+                            <!--{if (isset($sale_title))}-->
+                            <input type="text" onclick="if(this.value=='标题/描述') this.value='';" value="<!--{$sale_title}-->" name="title" placeholder="请输入关键字;" style="border:1px solid #fc6328;border-right:1px solid #b4b4b4;height:22px;width:150px;"/>
+                            <!--{else}-->
                             <input type="text" onclick="if(this.value=='标题/描述') this.value='';" value="" name="title" placeholder="请输入关键字;" style="border:1px solid #fc6328;border-right:1px solid #b4b4b4;height:22px;width:150px;"/>
+                            <!--{/if}-->
                         </li>
                     </ul>
                 </form>
@@ -168,7 +182,7 @@
                             <!--{/if}-->
                         </a>
                     </div>
-                    <div class="xinxi">
+                    <div class="xinxi v604_txt_ellipsis">
                         <a href="{$sale_config['root']}?mod=view&goods_id={$goods['goods_id']}" target="_blank">
                             <strong>
                             <!--{if $goods['goods_selltype_give']}-->

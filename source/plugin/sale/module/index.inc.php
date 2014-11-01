@@ -52,6 +52,9 @@ $where = " WHERE goods_status='1' ";
 if(!empty($cat_id)){
 	$where .= " AND cat_id='{$cat_id}' ";
 }
+if(!empty($subcat_id)){
+	$where .= " AND subcat_id='{$subcat_id}' ";
+}
 
 if(!empty($pre_city['name'])){
 	$where .=" AND {$area}='{$pre_city['name']}' ";
@@ -75,23 +78,19 @@ if(!empty($goods_newold)){
 	$where .= " AND goods_newold ='{$goods_newold}' ";
 }
 
-if(!empty($_POST['title']))
-{
+if(!empty($_POST['title'])){
 	$sale_title = trim($_POST['title']) ;
-	$where .=" and `goods_title` like '%{$sale_title}%' ";
+	$where .=" AND `goods_title` like '%{$sale_title}%' ";
 }
-if(!empty($_POST['sale_cat_id']))
-{
+if(!empty($_POST['sale_cat_id'])){
 	$sale_cat_id = trim($_POST['sale_cat_id']);
-	$where .=" and `cat_id` = '{$sale_cat_id}' ";
+	$where .=" AND `subcat_id` = '{$sale_cat_id}' ";
 }
-if(!empty($_POST['sale_area']))
-{
+if(!empty($_POST['sale_area'])){
 	$dcj_sale_area = trim($_POST['sale_area']);
-	$where .=" and `province` = '{$dcj_sale_area}' ";
+	$where .=" AND `province` = '{$dcj_sale_area}' ";
 }
-if(isset($_POST['sale_img']))
-{
+if(isset($_POST['sale_img'])){
 	$sale_img = trim($_POST['sale_img']);
 	$where .= " and ( `goods_upload_file_1` is not null or `goods_upload_file_2` is not null or `goods_upload_file_3` is not null or `goods_upload_file_4` is not null)  ";
 }
@@ -111,13 +110,13 @@ $where .= " LIMIT {$stat_limit},{$perpage}";
 
 $goods_list = fetch_all('sale_goods',$where);
 
-foreach($goods_list as $k => $v)
-{
+foreach($goods_list as $k => $v){
 	$goods_list[$k]['member_phone'] = DB::result_first("select member_phone from ".DB::table('sale_member')." where sale_goods_id = '{$v['goods_id']}' ");
 	$goods_list[$k]['goods_time'] = date('Y/m/d');
 }
 //var_dump($goods_list);exit;
 
+//获得基础数据数组-类别
 $cat_array = fetch_all('sale_cat'," WHERE cat_status='1' ORDER BY cat_sort ASC");
 foreach($cat_array as $key=>$cat){
 	$where ='';
@@ -134,14 +133,16 @@ foreach($cat_array as $key=>$cat){
 	$cat_array[$key]['sum'] = DB::result_first('SELECT count(goods_id) FROM '.DB::table('sale_goods').$where); 
 }
 
+//获得基础数据数组-区域
+$_a_area = fetch_all('sale_area',' WHERE level=1 ORDER BY displayorder ASC');
+
 $top_goods_list = fetch_all('sale_goods'," WHERE goods_status='1' AND goods_upload_file_1 <>'' ORDER BY goods_time DESC limit 14");
 $top_left_goods_list = fetch_all('sale_goods'," WHERE goods_status='1' AND goods_up='1' ORDER BY goods_time DESC limit 10");
 $top_hot_goods_list = fetch_all('sale_goods'," WHERE goods_status='1' ORDER BY goods_time DESC limit 5");
 $new_hot_goods_list = fetch_all('sale_goods'," WHERE goods_status='1' ORDER BY goods_view DESC, goods_time DESC limit 6");
 //error_reporting(E_ALL);
 $sale_area_result = DB::query("select * from pre_sale_area where `level` = 1 ");
-while($a_r = DB::fetch($sale_area_result))
-{
+while($a_r = DB::fetch($sale_area_result)){
 	$sale_area[] = $a_r;
 }
 $sale_cat_result = DB::query("select * from pre_sale_cat");
