@@ -2,14 +2,21 @@
 if(!defined('IN_DISCUZ')) {exit('Access Denied');}
 loadcache('diytemplatename');
 
+//基础数据-地区数组 TODO 后期作为缓存数组存在
+$a_base_area = fetch_all('info_area','ORDER BY area_sort ASC','area_id,area_title');
+//基础数据-分类数组 TODO 后期作为缓存数组存在
+$a_base_cat = fetch_all('info_cat','WHERE cat_pid=0 ORDER BY cat_sort ASC','cat_id,cat_title');
+
 $keyword =  htmlspecialchars(urldecode($_GET['keyword']));
 
 $subcat_id = intval($_GET['subcat_id']);
 
-if($subcat_id > 0)
-{	$cat_one = DB::fetch(DB::query("select * from pre_info_cat where `cat_id` = '{$subcat_id}' "));
-	$cat_array_title = fetch_all("info_cat"," where `cat_pid` = {$cat_one['cat_pid']} ");
-}
+$i_cat_id = (isset($_GET['cat_id']) ? intval($_GET['cat_id']) : 0);
+
+//if($subcat_id > 0){
+//    $cat_one = DB::fetch(DB::query("select * from pre_info_cat where `cat_id` = '{$subcat_id}' "));
+//    $cat_array_title = fetch_all("info_cat"," where `cat_pid` = {$cat_one['cat_pid']} ");
+//}
 
 $subcat_title = $cat_array[$subcat_id]['cat_title'];
 $my_cat_array = brian_fetch_all("info_cat"," WHERE cat_id='{$subcat_id}'",array('first'=>1));
@@ -20,24 +27,24 @@ if(!empty($profile_type_id)){
 	$profile_setting = get_profile_setting($profile_type_id);
 }
 
-$subarea_id = intval($_GET['subarea_id']);
+//$subarea_id = intval($_GET['subarea_id']);
+$s_area_title = $_GET['subarea_id'];
 $orderby = addslashes($_GET['orderby']);
 $orderby = in_array($_GET['orderby'],array('post_time','post_end_time','post_begin_time')) ? addslashes($_GET['orderby']) : 'post_time';
 $_GET['search_type'] = !empty($_GET['search_type']) ? intval($_GET['search_type']) : "1";
 
 $urlnow = get_url();
-$where = " as ip 
- LEFT JOIN ".DB::table('info_post_profile')." as ipp ON ip.post_id = ipp.post_id 
- LEFT JOIN ".DB::table('common_member_verify')." as cmv ON ip.member_uid=cmv.uid 
- WHERE  1=1 ";
+//$where = " as ip 
+// LEFT JOIN ".DB::table('info_post_profile')." as ipp ON ip.post_id = ipp.post_id 
+// LEFT JOIN ".DB::table('common_member_verify')." as cmv ON ip.member_uid=cmv.uid 
+// WHERE  1=1 ";
+$where = ' as ip WHERE 1=1 ';
 
  /*
 if($area_id){
 	$where .= " AND ip.area_id='{$area_id}' ";
 }*/
-if($subarea_id){
-	$where .= " AND ip.subarea_id='{$subarea_id}' ";
-}
+
 if($thrarea_id){
 	$where .= " AND ip.thrarea_id='{$thrarea_id}' ";
 }
@@ -45,11 +52,19 @@ if($thrarea_id){
 if(!empty($keyword)){
 	$where .=" AND post_title LIKE '%{$keyword}%'";
 }
-
-if($subcat_id){
-	$where .=" AND ip.subcat_id ='{$subcat_id}' ";
+if($s_area_title){
+	$where .= " AND ip.area_title LIKE '%$s_area_title%' ";
+        $keyword .= $s_area_title.' ';
 }
-//echo $where;exit;
+if($subcat_id){
+	$where .=" AND ip.subcat_id =$subcat_id ";
+}
+
+if($i_cat_id){
+    $where .= " AND ip.cat_id=$i_cat_id ";
+    $subcat_title = $cat_array[$i_cat_id]['cat_title'];
+}
+
 $post_ids = array();
 $_post_ids = array();
 $_post_ids_i = 0;
@@ -119,14 +134,13 @@ $where .= "  ORDER BY ip.post_up DESC,{$orderby} DESC ";
 
 $page = $_GET['page']? intval($_GET['page']):1;
 $perpage = $info_config['perpage'];
-$pagenum = DB::num_rows(DB::query("SELECT distinct  ip.post_id FROM ".DB::table('info_post').$where));
+$pagenum = DB::num_rows(DB::query("SELECT distinct ip.post_id FROM ".DB::table('info_post').$where));
 
 $multipage = multi($pagenum, $perpage, $page, $urlnow , 0, 10);
 $stat_limit = ($page -1) * $perpage;
 $where .= " LIMIT {$stat_limit},{$perpage}";
-//echo $where;exit;
-$post_list = brian_fetch_all('info_post',$where,array('filter'=>' distinct ip.post_id, ip.*, cmv.*'));
-//var_dump($post_list);exit;
+//$post_list = brian_fetch_all('info_post',$where,array('filter'=>' distinct ip.post_id, ip.*, cmv.*'));
+$post_list = brian_fetch_all('info_post',$where,array('filter'=>' distinct ip.post_id,ip.post_title,ip.area_title,ip.enterprise,ip.tel,ip.post_time,ip.post_img_1 '));
 /*
 foreach($post_list as $k=>$v){
 	$_post_profile = array();

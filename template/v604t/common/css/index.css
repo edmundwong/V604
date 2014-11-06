@@ -48,7 +48,7 @@ table.menu td:first-child,table.menu tr:first-child { border:none; }
 .nm1 span a { font-size:14px; color:#fc6328; }
 
 /*fourAd*/
-.fourAd div { margin-left:9px; }
+.fourAd div { margin-left:8px; }
 .fourAd div:first-child { margin-left:0; }
 
 /*box1 最新消息*/

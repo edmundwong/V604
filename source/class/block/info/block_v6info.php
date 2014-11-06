@@ -137,7 +137,7 @@ class block_v6info  {
 		}
                 
                 //制定要返回的数据字段，禁止用*
-                $s_sql_fields = 'post_id,post_img_1,post_title,enterprise,'
+                $s_sql_fields = 'post_id,post_img_1,post_title,LEFT(enterprise,26) enterprise,'
                         . 'subcat_title,area_title,post_time,post_view';
 		$sql ="SELECT $s_sql_fields FROM ".DB::table("info_post").$where." LIMIT ".$parameter['items'];
                 
@@ -150,7 +150,7 @@ class block_v6info  {
 			$fields['post_img'] = $tem['post_img_1'];
 					
 			$fields['cat'] = $tem['subcat_title'];
-			$fields['area'] = $tem['area_title'];
+			$fields['area'] = ($tem['area_title']?$tem['area_title']:'vancouver');
 			$fields['time'] = date($parameter['dateformat'],$tem['post_time']);
 			$fields['view'] = $tem['post_view'];
                         
@@ -161,6 +161,7 @@ class block_v6info  {
 				'idtype' => 'post_id',
 				'title' => $fields['post_title'],
                                 'enterprise' => $fields['enterprise'],
+                                'area' => $fields['area'],
 				'url' => $fields['url'],
 				'pic' => $fields['post_img'],
 				'picflag' => $picflag,

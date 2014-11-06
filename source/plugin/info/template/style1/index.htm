@@ -1,11 +1,15 @@
 <!--{eval include template("info:$style/header");}-->
+<!--[name]服务黄页首页[/name]-->
 <link type="text/css" rel="stylesheet" href="$_G['style']['v604t_common']css/service.css" />
 <link type="text/css" rel="stylesheet" href="$_G['style']['v604t_common']css/navigation.css" />
 
 <div style="background:url($_G['style']['v604t_common']img/banner.png) no-repeat center; height:200px; position:relative;background-color:#ea5e29">
     <div class="fabu"><a href="/sale.php?mod=choclass">免费发布信息</a><span>|</span><a href="/info.php?mod=member&op=post">发布服务信息</a></div>
-    <div style="position:absolute; background:url($_G['style']['v604t_common']img/search.png) no-repeat; width:401px; height:42px; bottom:-20px; left:50%; margin-left:-200px; z-index:9;"><form action="#" method="get">
-            <input type="text" style=" width:350px;background:transparent; outline:none; text-indent:20px; border:0 none;line-height: 37px;" /><input type="submit" value="" style=" width:40px;background:transparent; border:0 none; outline:none;" />
+    <div style="position:absolute; background:url($_G['style']['v604t_common']img/search.png) no-repeat; width:401px; height:42px; bottom:-20px; left:50%; margin-left:-200px; z-index:9;">
+        <form action="./info.php" method="get">
+            <input type="hidden" name="mod" value="list"/>
+            <input name="keyword" type="text" style=" width:350px;background:transparent; outline:none; text-indent:20px; border:0 none;line-height: 37px;" />
+            <input type="submit" value="" style=" width:40px;background:transparent; border:0 none; outline:none;" />
         </form>
     </div>
 </div>
@@ -40,7 +44,7 @@
     <div class="lianxi wrapper" >
         <h2 style='margin-top:10px'>公告 / 联系我们</h2>
         <p>若您对我们的服务感到不满或对我们的服务有良好的建议，欢迎致电：778-686-6618 或直接发邮件给我们：support@vanpeople.com
-            感谢您对 人在温哥华 - VanPeople.com 的大力支持。</p>
+            感谢您对 大温同城 - Van604.com 的大力支持。</p>
     </div>
     <div class="lianxi wrapper">
         <h2 style='margin-top:10px'>服务黄页介绍</h2>
