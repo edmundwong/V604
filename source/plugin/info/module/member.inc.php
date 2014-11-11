@@ -1,8 +1,12 @@
 <?php
 
-$yuming = "http://112.225.163.46/";
-//$yuming = $_SERVER['SERVER_NAME'] . "/";
+$__a_info_config =  $_G['cache']['plugin']['info'];
+$__s_site_url = $__a_info_config['siteurl'];
+$__s_paypal_url = 'https://www.sandbox.paypal.com/cgi-bin/webscr';
+$__s_paypal_account = 'v604_business@v604.com';
+//$__s_site_url = $_SERVER['SERVER_NAME'] . "/";
 //error_reporting(E_ALL);
+
 if (!defined('IN_DISCUZ')) {
     exit('Access Denied');
 }
@@ -14,11 +18,10 @@ $biaozhun_money = array(1 => 240, 2 => 360, 3 => 600);
 $zhifu_arr = array(1, 2, 3);
 $op_array = array('post', 'postlist', 'mypostup', 'profile', 'setpostup', 'dcj_zhifu','dcj_return','dcj_success_return');
 $op = in_array($_GET['op'], $op_array) ? addslashes($_GET['op']) : 'mypost';
-//var_dump($_REQUEST);exit;
+
 $is_info_broker = is_info_broker();
-//echo $op;exit;
+
 if ($op == 'post') {
-    //echo DISCUZ_ROOT."./source/plugin/info/module/{$mod}/{$mod}_{$op}.inc.php";exit;
     require_once DISCUZ_ROOT . "./source/plugin/info/module/{$mod}/{$mod}_{$op}.inc.php";
 }
 if ($_REQUEST['op'] == 'jubao') {
@@ -66,10 +69,9 @@ if ($_REQUEST['op'] == 'jubao') {
         $invoice = $post_id . '|' . $biaozhun_time[$biaozhun];
         $biaoti = trim($_POST['biaoti']);
         //TODO 此处paypal沙箱始终不返回通知，需要上线后进行正式域名的测试
-        $notify_url = $yuming . 'info.php?mod=member&op=dcj_success_return&post_id=' . $post_id . '&time=' . $biaozhun_time[$biaozhun] . '&dcj_price=' . $biaozhun_money[$biaozhun];
+        $notify_url = $__s_site_url . 'info.php?mod=member&op=dcj_success_return&post_id=' . $post_id . '&time=' . $biaozhun_time[$biaozhun] . '&dcj_price=' . $biaozhun_money[$biaozhun];
 //        $notify_url = urlencode($notify_url);
-//echo "info:{$style}/{$mod}/{$mod}_main_dcj";exit;
-        $return_url = $yuming . "info.php?mod=member&op=dcj_return&post_id={$post_id}&time={$biaozhun_time[$biaozhun]}";
+        $return_url = $__s_site_url . "info.php?mod=member&op=dcj_return&post_id={$post_id}&time={$biaozhun_time[$biaozhun]}";
         include template("info:{$style}/{$mod}/{$mod}_main_dcj");
         exit;
     }
@@ -86,36 +88,61 @@ if ($_REQUEST['op'] == 'jubao') {
 } elseif ($op == 'dcj_return') {
     $post_id = (int) $_REQUEST['post_id'];
     showmessage("恭喜您支付成功！", $info_config['root'] . "?mod=view&post_id={$post_id}");
+
+//PAYPAL支付成功后通知    
 } elseif ($op == 'dcj_success_return') {
     $data_id = trim($_REQUEST['post_id']);
     $data_time = trim($_REQUEST['time']);
     $req = 'cmd=_notify-validate';
-    DB::insert('info_order', array('post_id' => $data_id, 'time' => $data_time));
+    
     foreach ($_POST as $k => $v) {
         $v = urlencode(stripslashes($v));
         $req .= "&{$k}={$v}";
     }
 
+    //订单数据
+    $t = time();
+    $o_order_data = array(
+        'info_id' => $data_id, 
+        'info_time' => $data_time,
+        'req' => $req,
+        'info_begin_time' => $t,
+        'info_end_time' => strtotime("+ $data_time months"),
+        'info_price' => trim($_REQUEST['dcj_price']),
+        'pay_status' => 0,
+        'time' => $t
+    );
+        
+    //与PAYPAL通讯验证
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'http://www.sandbox.paypal.com/cgi-bin/webscr');
+    curl_setopt($ch, CURLOPT_URL, $__s_paypal_url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $req);
     $res = curl_exec($ch);
     curl_close($ch);
+    
     if ($res && strcmp($res, 'VERIFIED') == 0) {
-        $t = time();
+        //更新黄页信息
         $arr = array(
             'post_begin_time' => $t,
-            'post_end_time' => strtotime("$t + $data_time months"),
+            'post_end_time' => strtotime("+ $data_time months"),
             'price' => trim($_REQUEST['dcj_price'])
         );
-        DB::update('info_post', $arr, " post_id='{$user['user_uid']}'");
+        DB::update('info_post', $arr, " post_id='$data_id'");
+        
+        //更新订单信息
+        $o_order_data['pay_status'] = 1;
+        
         brian_cat_cache();
         exit("成功！");
     } else {
         exit("失败！");
-    }
+    } 
+    //TODO 此处无法新增记录 原因不明
+    //插入订单信息
+    DB::insert('info_order', $o_order_data);
+    
 } elseif ($op == 'mypost' || $op == 'mypostup') {
     $ac = !empty($_GET['ac']) ? addslashes($_GET['ac']) : '';
     $where = " WHERE member_uid='{$_G['uid']}'";
@@ -203,6 +230,6 @@ if ($_REQUEST['op'] == 'jubao') {
 }
 
 $navtitle = $info_lang['space'] . " - " . $info_config['name'];
-//echo "info:{$style}/{$mod}/{$mod}_main";exit;
+
 include template("info:{$style}/{$mod}/{$mod}_main");
 ?>

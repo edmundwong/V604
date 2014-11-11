@@ -6,9 +6,9 @@
 </head>
 <body>
 支付正在提交中...........................................
-<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" name="form1" target="_top" id="su">
+<form action="{$__s_paypal_url}" method="post" name="form1" target="_top" id="su">
 <input type="hidden" name="cmd" value="_xclick"/>
-<input type="hidden" name="business" value="v604_business@v604.com" />
+<input type="hidden" name="business" value="{$__s_paypal_account}" />
 <input type="hidden" name="item_name" value="{$biaoti}" />
 <input type="hidden" name="amount" value="{$biaozhun_money[$biaozhun]}" />
 <input type="hidden" name="currency" value="USD" />
