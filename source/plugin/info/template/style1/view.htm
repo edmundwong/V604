@@ -75,15 +75,13 @@
                 <p style='font-size:14px'>{$post[enterprise]}</p>
                 <strong style='font-size:16px;'>信息内容</strong>
                 <!--{eval echo $post['post_text'];}-->
-                <!--{if substr($post['pwd'],0,5) != '_auto'}-->
-                    <!--{loop $info_img $im}-->
+                <!--{loop $info_img $im}-->
                 <div class="pics">
                     <p>
                         <img src="{$im['img']}" class="image" style='margin-top:20px' alt="{$im['img']}" title="{lang sale:view_htm_46}" />
                     </p>
                 </div>
-                    <!--{/loop}-->
-                <!--{/if}-->
+                <!--{/loop}-->
                 <p>{$info_config['helpnotice']}</p>
             </div>
         </section>

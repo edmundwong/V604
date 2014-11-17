@@ -40,8 +40,13 @@ $_SPIDER_CONTENT_ONCE = 1;
 //每次批量采集的时间间隔(毫秒)
 $_SPIDER_CONTENT_WAIT = 3000;
 
+//刷新缓存
+if(isset($_GET['sp_ac']) && $_GET['sp_ac'] == 'cache'){
+    require_once DISCUZ_ROOT.'./source/plugin/info/include/function.class.php';
+    brian_cat_cache();
+    echo 'refresh cache success!';
 //删除链接
-if(isset($_GET['sp_ac']) && $_GET['sp_ac'] == 'delLink'){
+}else if(isset($_GET['sp_ac']) && $_GET['sp_ac'] == 'delLink'){
     $_cur_catid = $_GET['catid'];
     $_cur_subcatid = $_GET['subcatid'];
     $id = $_GET['id'];

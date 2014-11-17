@@ -60,6 +60,8 @@ class SaleListData {
 class SalePageData {
     //原分类信息编号
     public $vanpeople_id = '';
+    //原黄页信息发布时间
+    public $vanpeople_time = 0;
     //标题
     public $title = '';
     //地区
@@ -110,7 +112,14 @@ class SalePageData {
         //标题
         $dom_caption = $dom_main->find('h1', 0);
         $this->title = $dom_caption->innertext;
-
+        
+        //原黄页信息发布时间
+        $dom_ep_info = $dom_main->find('div[class=ep_info]', 0);
+        $s_dateinfo = $dom_ep_info->first_child()->innertext;
+        $s_date = $this->getDateStrByStr($s_dateinfo);
+        $this->vanpeople_time = ($s_date == 0 ? 0 : strtotime($s_date));
+        echo "this->vanpeople_time:$this->vanpeople_time<br/>";
+        
         $dom_info = $dom_main->find('div[class=ep_news]', 0);
         $dom_info_left = $dom_info->find('div[class=l]',0);
         $a_dom_linfos = $dom_info_left->find('dt');
@@ -283,7 +292,7 @@ class SalePageData {
         curl_close($ch);
         
         $a_result = array();
-	preg_match_all("/[\w\-\.]+@[\w\-\.]+(\.\w+)+/", $result, $a_result);
+		preg_match_all("/[\w\-\.]+@[\w\-\.]+(\.\w+)+/", $result, $a_result);
         
         //这个返回值是用作判断的依据
         return $a_result[0][0];
@@ -319,7 +328,7 @@ class SalePageData {
         $aValues['summary'] = $this->enterprise;
         $aValues['member_username'] = $this->person;
         $aValues['address1'] = $this->addr;
-        $aValues['goods_time'] = time();
+        $aValues['goods_time'] = ($this->vanpeople_time == 0 ? time() : $this->vanpeople_time);
         $aValues['member_uid'] = $i_member_uid;
         $aValues['province'] = $a_config['area'];
         $aValues['cat_id'] = $a_config['catId'];
@@ -341,6 +350,7 @@ class SalePageData {
         $d_post_end = mktime(0, 0, 0, date("m"), date("d"), date("Y") + 2);
         $i_member_uid = 0;
         $a_config = $this->_config;
+        $i_post_time = ($this->vanpeople_time == 0 ? time() : $this->vanpeople_time);
         //qq,price,post_up,post_ip,post_ip_adr,member_title,up_endtime,loupan_id,loupan_title,subarea_title,thrarea_title,tid,post_map,subarea_id,thrarea_id,post_price,post_price_unit
         //不知道干什么用的 profile_type_id,profile_type_title
         //$s_sql = 'pwd,pay_way,post_title,lang,';
@@ -348,7 +358,7 @@ class SalePageData {
                 //post_text,enterprise,tel,email
                 . ",'$this->content','$this->enterprise','$this->phone1','$this->email'"
                 //,member_username,address1,post_time,post_begin_time,post_end_time
-                . ",'$this->person','$this->addr','" . time() . "','$d_post_begin','$d_post_end'"
+                . ",'$this->person','$this->addr',$i_post_time,'$d_post_begin','$d_post_end'"
                 //,member_uid,,,,area_title,,cat_id,cat_title,subcat_id,subcat_title,';
                 . ",$i_member_uid,'$a_config[area]',$a_config[catId],'$a_config[catTitle]',$a_config[subCatId],'$a_config[subCatTitle]'";
         for ($i = 0; $i < 30; $i++) {

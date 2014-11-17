@@ -165,9 +165,7 @@ if (submitcheck('button_post_submit') || submitcheck('button_edit_submit')) {
       @$post_array[$file_name] = upload_image($file_name,'info',"600","400");
       }
       } */
-    ////////////var_dump($post_array);exit;
     $post_array['enterprise'] = $_REQUEST['enterprise'];
-    //var_dump($post_array);exit;
     $post_array['profile_type_id'] = $profile_type_id;
     $post_array['profile_type_title'] = $profile_type_title;
 
@@ -286,7 +284,7 @@ if (submitcheck('button_post_submit') || submitcheck('button_edit_submit')) {
             ));
         }
 
-        //brian_cat_cache();
+        brian_cat_cache();
         $dcj_url = $info_config['root'] . "?mod=view&post_id={$post_id}";
         session_start();
         $biaoti = $post_array['cat_title'] . '/' . $post_array['subcat_title'];
