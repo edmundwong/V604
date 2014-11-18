@@ -36,8 +36,13 @@ $_SPIDER_CONTENT_ONCE = 1;
 //每次批量采集的时间间隔(毫秒)
 $_SPIDER_CONTENT_WAIT = 3000;
 
+//自动抓取数据
+if(isset($_GET['sp_ac']) && $_GET['sp_ac'] == 'auto'){
+    require_once DISCUZ_ROOT.'./source/plugin/sale/module/spider/SaleAutoSpider.class.php';
+    $o_spider = new SaleAutoSpider();
+    $o_spider->doRun();
 //删除链接
-if(isset($_GET['sp_ac']) && $_GET['sp_ac'] == 'delLink'){
+}else if(isset($_GET['sp_ac']) && $_GET['sp_ac'] == 'delLink'){
     $_cur_catid = $_GET['catid'];
     $_cur_subcatid = $_GET['subcatid'];
     $id = $_GET['id'];

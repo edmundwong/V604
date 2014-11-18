@@ -253,6 +253,16 @@ class SalePageData {
         $dom_mt->outertext = '';
     }
     
+    private function getDateStrByStr($sStr) {
+        $a_result = array();
+        preg_match_all('/[0-9]{4}\/[0-9]{2}\/[0-9]{2}.[0-9]{2}:[0-9]{2}:[0-9]{2}/', $sStr, $a_result);
+        if (count($a_result[0]) == 0) {
+            return 0;
+        } else {
+            return $a_result[0][0];
+        }
+    }
+    
     /**
      * 从字符串中取出数字
      * @param type $sText

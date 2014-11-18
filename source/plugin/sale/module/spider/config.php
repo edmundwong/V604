@@ -63,7 +63,7 @@ $__links = array(
             32 => array('link' => 'http://www.vanpeople.com/c/list/125/0/0.html','title' => '医疗护理'),
             33 => array('link' => 'http://www.vanpeople.com/c/list/126/0/0.html','title' => '金融财会'),
             34 => array('link' => 'http://www.vanpeople.com/c/list/70/0/0.html','title' => '其他工作'),
-            '' => array('link' => 'http://www.vanpeople.com/c/list/197/0/0.html','title' => '义工/志愿者'),
+//            '' => array('link' => 'http://www.vanpeople.com/c/list/197/0/0.html','title' => '义工/志愿者'),
             35 => array('link' => 'http://www.vanpeople.com/c/list/99/0/0.html','title' => '求职')
         )
     ),
