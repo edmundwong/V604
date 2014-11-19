@@ -11,18 +11,18 @@ class SaleAutoSpider {
     private $_s_log_filename = '_sale_spider.txt';
     private $_s_log_filepath = './data/log/';
     private $_i_wait_second = 1;
-    //日志信息
-    private $_a_log_msg = array();
     
     public function __construct() {
-        $this->_a_log_msg[] = '-------------------------'.date('Y-m-d H:i:s').'-------------------------';
+        $s_pre_filename = date('Ymd');
+        $this->_s_log_filename = $s_pre_filename.$this->_s_log_filename;
+        $this->addLog("\r\n\r\n-------------------------".date('Y-m-d H:i:s').'-------------------------',true);
     }
     
     public function doRun() {
         set_time_limit(0);
         global $__links;
         
-        $this->_a_log_msg[] = "start spiderLink:";
+        $this->addLog('start spiderLink:',true);
         //更新所有最新链接
         foreach ($__links as $o_link_key => $o_link_value) {
             foreach ($o_link_value['child'] as $o_sublink_key => $o_sublink_value) {
@@ -30,11 +30,10 @@ class SaleAutoSpider {
             }
         }
         
-        $this->_a_log_msg[] = 'start spiderContent:';
+        $this->addLog('start spiderContent:',true);
         //抓取所有页面数据
         $this->doSpiderContent();
         
-        $this->writeLog();
     }
     
     
@@ -42,7 +41,6 @@ class SaleAutoSpider {
      * 抓取页面数据
      */
     private function doSpiderContent() {
-        $s_log_msg = '';
         $s_sql_link = 'SELECT id,catid,cattitle,subcatid,subcattitle,title,area,summary,url '
                 . 'FROM pre_sale_spider_links WHERE state=0 ORDER BY id asc';
         $r_result = DB::query($s_sql_link);
@@ -71,12 +69,10 @@ class SaleAutoSpider {
             DB::update('sale_spider_links', array('state' => 1), "id=$a_link[id]");
             
             //日志
-            $s_log_time = date('H:i:s');
-            $s_log_msg = "[$s_log_time] id:$s_goods_id,catid:$a_link[subcatid],title:$a_link[title]";
-            $this->_a_log_msg[] = $s_log_msg;
+            $this->addLog("id:$s_goods_id,catid:$a_link[subcatid],title:$a_link[title]");
             
             //暂停N秒
-            sleep($this->_i_wait_second);
+//            sleep($this->_i_wait_second);
         }
     }
     
@@ -122,28 +118,25 @@ class SaleAutoSpider {
         }
         
         //增加日志
-        $s_log_time = date('H:i:s');
-        $i_log_value1 = count($a_link);
-        $this->_a_log_msg[] = "[$s_log_time] $s_cattitle -> $s_subcattitle ($i_log_value1)";
+        $i_log_value1 = count($a_link_list);
+        $this->addLog("$s_cattitle -> $s_subcattitle ($i_log_value1)");
+//        sleep($this->_i_wait_second);
     }
-
-    /**
-     * 记录日志
-     */
-    private function writeLog(){
-        $s_log = '';
-        foreach ($this->_a_log_msg as $s_log_msg){
-            $s_log .= "$s_log_msg \r\n";
+    
+    private function addLog($sMsg, $bOnlyMsg=false){        
+        if ($bOnlyMsg){
+            $sMsg = "$sMsg \r\n";
+        }else{
+            $s_log_time = date('H:i:s');
+            $sMsg = "[$s_log_time] $sMsg \r\n";
         }
         
-	$s_pre_filename = date('YmdHi');
-        $s_file_path = DISCUZ_ROOT . $this->_s_log_filepath.$s_pre_filename.$this->_s_log_filename;
+        $s_file_path = DISCUZ_ROOT . $this->_s_log_filepath.$this->_s_log_filename;
         
         if($fd = @fopen($s_file_path, "a")) {
-            fputs($fd, $s_log);
+            fputs($fd, $sMsg);
             fclose($fd);
         }
-        
     }
 }
 ?>

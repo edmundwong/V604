@@ -209,9 +209,9 @@ class SalePageData {
             $dom_pic->parent()->outertext = '';            
             $s_path = $this->_dirBase . basename($s_tmp_picpath);
             array_push($this->picsLocal,$s_path);
-            echo "$s_tmp_picpath -> $s_path <br/>";
             curl_download($s_tmp_picpath, $s_path);
         }
+        echo 'img count : '.count($this->pics) .'<br/>';
         
         /*$dom_desc_title = $dom_content->find('p[class=mainBox_Ct]',0);
         $dom_desc_title->innertext = '';
@@ -220,6 +220,7 @@ class SalePageData {
         //内容
         $this->content = trim($dom_content->innertext);
         $html->clear();
+        echo '---------------------------------------------------<br/>';
         return;
     }
     
