@@ -11,30 +11,30 @@ class SaleListData {
     public function __construct($s_url, $a_db_urls = null) {
         $html = file_get_html($s_url);
         $a_dom_root = $html->find('div[class$=show]');
-        $o_dom_root = (count($a_dom_root)>1?$a_dom_root[1]:$a_dom_root[0]);
+        $o_dom_root = (count($a_dom_root) > 1 ? $a_dom_root[1] : $a_dom_root[0]);
         $a_dom_list = $o_dom_root->find('dl[class=list_img]');
-        
+
         //URL补全
         $i_pos = strripos($s_url, '/');
         $this->sBaseURL = substr($s_url, 0, $i_pos + 1);
         $s_area = '';
         $s_url = '';
         $i = 0;
-        
-        foreach ($a_dom_list as $dom_node){
-            $dom_title = $dom_node->find('dt a[class=title]',0);
+
+        foreach ($a_dom_list as $dom_node) {
+            $dom_title = $dom_node->find('dt a[class=title]', 0);
             $s_url = $dom_title->getAttribute('href');
             if (null != $a_db_urls && $this->isSameInArr($s_url, $a_db_urls)) {
                 continue;
             }
             $this->aLink[$i] = $s_url;
             $this->aTitle[$i] = $dom_title->first_child()->innertext;
-            $dom_area = $dom_node->find('dt span[class=yellow]',0);
-            $this->aArea[$i] = ($dom_area ? $dom_area->innertext:'vancouver');
-            $this->aDesc[$i] = $dom_node->find('dt div[class=word]',0)->innertext;
+            $dom_area = $dom_node->find('dt span[class=yellow]', 0);
+            $this->aArea[$i] = ($dom_area ? $dom_area->innertext : 'vancouver');
+            $this->aDesc[$i] = $dom_node->find('dt div[class=word]', 0)->innertext;
             $i++;
         }
-        
+
         $html->clear();
     }
 
@@ -58,6 +58,7 @@ class SaleListData {
  * 分类信息页面内容解析
  */
 class SalePageData {
+
     //原分类信息编号
     public $vanpeople_id = '';
     //原黄页信息发布时间
@@ -97,47 +98,47 @@ class SalePageData {
     public $aValues = array();
     public $aUserValues = array();
 
-    public function __construct($s_url, $a_config = array(), $s_base_url = '') {
-        if ($s_base_url == '') {
-            $i_pos = strripos($s_url, '/');
-            $s_base_url = substr($s_url, 0, $i_pos + 1);
-        }
+    public function doParse($s_url, $a_config = array()) {
         //保存页面号
-        $this->vanpeople_id = str_replace('.html','',basename($s_url));
-        
+        $this->vanpeople_id = str_replace('.html', '', basename($s_url));
+
         $this->_config = $a_config;
         $html = file_get_html($s_url);
         $dom_main = $html->find('div[class=side]', 0);
 
+        if (null == $dom_main) {
+            return false;
+        }
+
         //标题
         $dom_caption = $dom_main->find('h1', 0);
         $this->title = $dom_caption->innertext;
-        
+
         //原黄页信息发布时间
         $dom_ep_info = $dom_main->find('div[class=ep_info]', 0);
         $s_dateinfo = $dom_ep_info->first_child()->innertext;
         $s_date = $this->getDateStrByStr($s_dateinfo);
         $this->vanpeople_time = ($s_date == 0 ? 0 : strtotime($s_date));
         echo "this->vanpeople_time:$this->vanpeople_time<br/>";
-        
+
         $dom_info = $dom_main->find('div[class=ep_news]', 0);
-        $dom_info_left = $dom_info->find('div[class=l]',0);
+        $dom_info_left = $dom_info->find('div[class=l]', 0);
         $a_dom_linfos = $dom_info_left->find('dt');
 
         //地址
         $this->addr = '';
-        foreach ($a_dom_linfos as $dom_linfo){
-            if (mb_substr($dom_linfo->innertext,0,2,'utf-8') == '价格'){
+        foreach ($a_dom_linfos as $dom_linfo) {
+            if (mb_substr($dom_linfo->innertext, 0, 2, 'utf-8') == '价格') {
                 $dom_price = $dom_linfo->next_sibling();
                 $this->price = $this->getNum4Text($dom_price->innertext);
                 continue;
             }
-            if (mb_substr($dom_linfo->innertext,0,2,'utf-8') == '地区'){
+            if (mb_substr($dom_linfo->innertext, 0, 2, 'utf-8') == '地区') {
                 $dom_area = $dom_linfo->next_sibling();
                 $this->area = $dom_area->innertext;
                 continue;
             }
-            if (mb_substr($dom_linfo->innertext,0,2,'utf-8') == '地址'){
+            if (mb_substr($dom_linfo->innertext, 0, 2, 'utf-8') == '地址') {
                 $dom_addr = $dom_linfo->next_sibling();
                 $this->addr = $dom_addr->innertext;
                 continue;
@@ -146,34 +147,34 @@ class SalePageData {
         echo "this->price: $this->price <br/>";
         echo "this->area: $this->area <br/>";
         echo "this->addr: $this->addr <br/>";
-        
-        $dom_info_right = $dom_info->find('div[class=r]',0);;
+
+        $dom_info_right = $dom_info->find('div[class=r]', 0);
         $a_dom_rinfos = $dom_info_right->find('dt');
 
         //联系人
         $this->person = '';
-        foreach ($a_dom_rinfos as $dom_rinfo){
-            if (mb_substr($dom_rinfo->innertext,0,3,'utf-8') == '联系人'){
+        foreach ($a_dom_rinfos as $dom_rinfo) {
+            if (mb_substr($dom_rinfo->innertext, 0, 3, 'utf-8') == '联系人') {
                 $dom_person = $dom_rinfo->next_sibling();
                 $this->person = $dom_person->innertext;
                 continue;
             }
-            if (mb_substr($dom_rinfo->innertext,0,2,'utf-8') == '电话'){
+            if (mb_substr($dom_rinfo->innertext, 0, 2, 'utf-8') == '电话') {
                 $dom_phone = $dom_rinfo->next_sibling();
                 $this->phone1 = $dom_phone->innertext;
                 continue;
             }
-            if (mb_substr($dom_rinfo->innertext,0,2,'utf-8') == 'QQ'){
+            if (mb_substr($dom_rinfo->innertext, 0, 2, 'utf-8') == 'QQ') {
                 $dom_phone = $dom_rinfo->next_sibling();
                 $this->qq = $dom_phone->innertext;
                 continue;
             }
-            if (mb_substr($dom_rinfo->innertext,0,2,'utf-8') == '微信'){
+            if (mb_substr($dom_rinfo->innertext, 0, 2, 'utf-8') == '微信') {
                 $dom_phone = $dom_rinfo->next_sibling();
                 $this->weixin = $dom_phone->innertext;
                 continue;
             }
-            if (mb_substr($dom_rinfo->innertext,0,4,'utf-8') == '电子邮件'){
+            if (mb_substr($dom_rinfo->innertext, 0, 4, 'utf-8') == '电子邮件') {
                 $dom_phone = $dom_rinfo->next_sibling();
                 $this->email = $dom_phone->innertext;
                 continue;
@@ -183,77 +184,84 @@ class SalePageData {
         echo "this->phone1: $this->phone1 <br/>";
         echo "this->qq: $this->qq <br/>";
         echo "this->weixin: $this->weixin <br/>";
-        
+
         //电子邮件
-        if ((null != $this->email) && ($this->email != '')){
+        if ((null != $this->email) && ($this->email != '')) {
             $this->email = $this->getEMailByAJAX($this->vanpeople_id, $s_url);
             echo "this->email: $this->email <br/>";
         }
-        
+
         $dom_content = $dom_main->find('div[class=desc]', 0);
 
         //摘要
-        $this->enterprise = $a_config['desc'];        
-        
+        $this->enterprise = $a_config['desc'];
+
         //清理无用HTML
         $this->clearHTML($dom_content);
-        
+
         //http://www.vanpeople.com/c/978680.html
         //保存图片路径并下载图片
         $dom_content_pics = $dom_content->find('img[src^=http://vanpeople.com/c/uploadpic]');
         $s_tmp_picpath = '';
-        foreach ($dom_content_pics as $dom_pic){
+        foreach ($dom_content_pics as $dom_pic) {
             $s_src_picpath = $dom_pic->getAttribute('src');
             $s_tmp_picpath = str_replace('vanpeople', 'www.vanpeople', $s_src_picpath);
-            array_push($this->pics,$s_tmp_picpath);
-            $dom_pic->parent()->outertext = '';            
+            array_push($this->pics, $s_tmp_picpath);
+            $dom_pic->parent()->outertext = '';
             $s_path = $this->_dirBase . basename($s_tmp_picpath);
-            array_push($this->picsLocal,$s_path);
+            array_push($this->picsLocal, $s_path);
             curl_download($s_tmp_picpath, $s_path);
         }
-        echo 'img count : '.count($this->pics) .'<br/>';
-        
-        /*$dom_desc_title = $dom_content->find('p[class=mainBox_Ct]',0);
-        $dom_desc_title->innertext = '';
-        $dom_desc_title->outertext = '';
-        */
+        echo 'img count : ' . count($this->pics) . '<br/>';
+
+        /* $dom_desc_title = $dom_content->find('p[class=mainBox_Ct]',0);
+          $dom_desc_title->innertext = '';
+          $dom_desc_title->outertext = '';
+         */
         //内容
         $this->content = trim($dom_content->innertext);
         $html->clear();
         echo '---------------------------------------------------<br/>';
-        return;
+        return true;
     }
-    
+
     /**
      * 清理无用HTML
      * @param type $domContent
      */
-    private function clearHTML($domContent){
+    private function clearHTML($domContent) {
         //清理隐藏的HTML
         $dom_hiddens = $domContent->find('[style^=display]');
-        foreach($dom_hiddens as $dom_hidden){$dom_hidden->outertext = '';}        
+        foreach ($dom_hiddens as $dom_hidden) {
+            $dom_hidden->outertext = '';
+        }
         //清理内容部分图片以防重复
         $dom_imgs = $domContent->find('img[src^=uploadpic]');
-        foreach ($dom_imgs as $dom_img){$dom_img->outertext = '';}        
+        foreach ($dom_imgs as $dom_img) {
+            $dom_img->outertext = '';
+        }
         //描述标记
         $dom_h3s = $domContent->find('h3');
-        foreach($dom_h3s as $dom_h3){
-            if (mb_substr($dom_h3->innertext,0,2,'utf-8') == '描述'){
-               $dom_h3->outertext = '';continue;
+        foreach ($dom_h3s as $dom_h3) {
+            if (mb_substr($dom_h3->innertext, 0, 2, 'utf-8') == '描述') {
+                $dom_h3->outertext = '';
+                continue;
             }
-            if (mb_substr($dom_h3->innertext,0,2,'utf-8') == '地图'){
-               $dom_h3->next_sibling()->outertext = '';
-               $dom_h3->outertext = '';continue;
+            if (mb_substr($dom_h3->innertext, 0, 2, 'utf-8') == '地图') {
+                $dom_h3->next_sibling()->outertext = '';
+                $dom_h3->outertext = '';
+                continue;
             }
-            if (mb_substr($dom_h3->innertext,0,2,'utf-8') == '图片'){
-               $dom_h3->outertext = '';continue;
+            if (mb_substr($dom_h3->innertext, 0, 2, 'utf-8') == '图片') {
+                $dom_h3->outertext = '';
+                continue;
             }
-        }        
+        }
         //附加信息
-        $dom_mt = $domContent->find('p.mt',0);
+        $dom_mt = $domContent->find('p.mt', 0);
         $dom_mt->outertext = '';
     }
-    
+
     private function getDateStrByStr($sStr) {
         $a_result = array();
         preg_match_all('/[0-9]{4}\/[0-9]{2}\/[0-9]{2}.[0-9]{2}:[0-9]{2}:[0-9]{2}/', $sStr, $a_result);
@@ -263,34 +271,34 @@ class SalePageData {
             return $a_result[0][0];
         }
     }
-    
+
     /**
      * 从字符串中取出数字
      * @param type $sText
      * @return int
      */
-    public function getNum4Text($sText){
+    public function getNum4Text($sText) {
         $a_result = array();
         preg_match_all('/[0-9\.]+/', $sText, $a_result);
-        if (count($a_result[0])==0){
+        if (count($a_result[0]) == 0) {
             return 0;
-        }else{
+        } else {
             return $a_result[0][0];
         }
     }
-    
+
     /**
      * 从目标站获得邮件地址
      * @param type $iID     分类信息ID
      * @param type $sRefURL 伪造来源URL
      * @return type         EMAIL地址
      */
-    public function getEMailByAJAX($iID,$sRefURL){
+    public function getEMailByAJAX($iID, $sRefURL) {
         //http://www.vanpeople.com/c/home/ajax.html
         //param:control=show&action=email&data=1005812
         //return:{"status":true,"info":"antoine_sung@hotmail.com"}
         $url = "http://www.vanpeople.com/c/home/ajax.html";
-        $data = array('control' => 'show','action' => 'email','data' => $iID);
+        $data = array('control' => 'show', 'action' => 'email', 'data' => $iID);
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -301,20 +309,20 @@ class SalePageData {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);   //发送POST数据
         $result = curl_exec($ch);    //发送HTTP请求        
         curl_close($ch);
-        
+
         $a_result = array();
-		preg_match_all("/[\w\-\.]+@[\w\-\.]+(\.\w+)+/", $result, $a_result);
-        
+        preg_match_all("/[\w\-\.]+@[\w\-\.]+(\.\w+)+/", $result, $a_result);
+
         //这个返回值是用作判断的依据
         return $a_result[0][0];
     }
-    
+
     /**
      * 获得用户相关数据数组
      * @param type $iGoodsID    相关分类信息ID
      * @return array
      */
-    public function getUserDataArr($iGoodsID){
+    public function getUserDataArr($iGoodsID) {
         $aUserValues['sale_goods_id'] = $iGoodsID;
         $aUserValues['member_uid'] = 0;
         $aUserValues['member_username'] = $this->person;
@@ -325,7 +333,7 @@ class SalePageData {
         $aUserValues['member_time'] = time();
         return $aUserValues;
     }
-    
+
     /**
      * 获得数据数组
      * @return type

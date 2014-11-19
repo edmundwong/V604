@@ -18,6 +18,9 @@
     .sp_link_list .is_done_tr{
         background-color: #DDDDDD;
     }
+    .sp_link_list .is_error_tr{
+        background-color: #EE3333;
+    }
     .a_button {
         border:1px solid #0000CC;
         padding:2px 5px 2px 5px;
@@ -43,6 +46,8 @@
         <!--{loop $a_link_list $a_link}-->
         <!--{if $a_link[state]==1}-->
         <tr class='is_done_tr'>
+        <!--{elseif $a_link[state]==2}-->
+        <tr class='is_error_tr'>
         <!--{else}-->
         <tr>
         <!--{/if}-->

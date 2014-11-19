@@ -51,6 +51,9 @@ class SaleAutoSpider {
         
         $a_config_temp = array();
         foreach ($a_link_list as $a_link) {
+            //日志
+            $this->addLog($a_link['url'],true);
+            
             $a_config_temp['catId'] = $a_link['catid'];
             $a_config_temp['catTitle'] = $a_link['cattitle'];
             $a_config_temp['subCatId'] = $a_link['subcatid'];
@@ -58,8 +61,15 @@ class SaleAutoSpider {
             $a_config_temp['area'] = $a_link['area'];
             $a_config_temp['desc'] = $a_link['summary'];
                         
-            $o_operation = new SalePageData($a_link['url'], $a_config_temp);
-
+            $o_operation = new SalePageData();
+            $b_flag = $o_operation->doParse($a_link['url'], $a_config_temp);
+            //解析失败
+            if ($b_flag == false){ 
+                DB::update('sale_spider_links', array('state' => 2), "id=$a_link[id]");
+                //日志
+                $this->addLog('doParse Error');
+                continue; 
+            }
             $a_goods_values = $o_operation->getArrayData();
             $s_goods_id = DB::insert('sale_goods', $a_goods_values, $s_goods_id = true);
 
@@ -118,7 +128,7 @@ class SaleAutoSpider {
         }
         
         //增加日志
-        $i_log_value1 = count($a_link_list);
+        $i_log_value1 = count($a_link);
         $this->addLog("$s_cattitle -> $s_subcattitle ($i_log_value1)");
 //        sleep($this->_i_wait_second);
     }

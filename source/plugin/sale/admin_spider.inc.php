@@ -129,8 +129,13 @@ if(isset($_GET['sp_ac']) && $_GET['sp_ac'] == 'auto'){
         $a_config_temp['area'] = $a_link['area'];
         $a_config_temp['desc'] = $a_link['summary'];
                 
-        $o_operation = new SalePageData($a_link['url'],$a_config_temp);
-        
+        $o_operation = new SalePageData();
+        $b_flag = $o_operation->doParse($a_link['url'], $a_config_temp);
+        //解析失败
+        if ($b_flag == false){
+            DB::update('sale_spider_links', array('state'=>2), "id=$a_link[id]");
+            continue; 
+        }
         $a_goods_values = $o_operation->getArrayData();
         $s_goods_id = DB::insert('sale_goods', $a_goods_values, $s_goods_id=true);
         
