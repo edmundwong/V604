@@ -57,6 +57,7 @@ width:260px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 }
 .kekou li p{
 float:left;
@@ -64,6 +65,7 @@ width:280px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 }
 .news_right_text li p{
 float:left;
@@ -71,4 +73,5 @@ width:250px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 }

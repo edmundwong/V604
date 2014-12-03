@@ -3,6 +3,7 @@ $__sale_spider_config = array(
     'pageSize' => 60
 );
 
+global $__links;
 $__links = array(
     1 => array(
         'title' => '二手物品/求购',

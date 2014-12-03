@@ -167,8 +167,29 @@
                         <!--{ad/custom_3}-->
 		</div>
         <div class="right v604_fr">
-        	<div class="clearfix"><span class="v604_fr">Mon, 12 May , 10 : 57 : 02 </span><span class="jianada v604_fr">Mon, 12 May , 18:56:28 </span></div>
+        	<div class="clearfix"><span class="v604_fr" id="header_time_cn">Mon, 12 May , 10 : 57 : 02 </span><span class="jianada v604_fr" id="header_time_van">Mon, 12 May , 18:56:28 </span></div>
             <p><span>今日最低油价：104.9 Mac’s</span><span>今日汇率 - 加币/人民币：5.7323</span></p>
+            <script>
+                var __offset_van = -8;
+                var __offset_cn = 8;
+                function getOffsetTime(iTimeZone){
+                    var d = new Date();
+                    var localTime = d.getTime();
+                    var localOffset = d.getTimezoneOffset()*60000;
+                    var utc = localTime + localOffset;
+                    var offset = iTimeZone;
+                    var calctime = utc + (3600000 * offset);
+                    var nd = new Date(calctime);
+                    return nd.toLocaleString();
+                }
+                function fillHeaderTime(){
+                    var dom_time_cn = document.getElementById('header_time_cn');
+                    var dom_time_van = document.getElementById('header_time_van');
+                    dom_time_cn.innerText = getOffsetTime(__offset_cn);
+                    dom_time_van.innerText = getOffsetTime(__offset_van);
+                }
+                fillHeaderTime();
+            </script>
         </div>
     </header>
     <nav>
@@ -180,16 +201,14 @@
                                 <!--{/loop}-->
         </ul>
         <!--<div class="sline"></div>-->
-          <ul class="right v604_fr" style="border-left:1px solid #dd997d;">
-        	<li><a href="#">天气</a></li>
-            <li><a href="#">油价</a></li>
-            <li><a href="#">交通</a></li>
-            <li><a href="#">路况</a></li>
-            <li><a href="#">彩票</a></li>
-            <li><a href="#">常用</a></li>
-            <li><a href="#">工具</a></li>
+        <ul class="right v604_fr" style="border-left:1px solid #dd997d;">
+            <li><a href="http://www.theweathernetwork.com/weather/canada/british-columbia/vancouver" target="_blank">天气</a></li>
+            <li><a href="http://www.vancouvergasprices.com/" target="_blank">油价</a></li>
+            <li><a href="http://tripplanning.translink.ca/hiwire?.a=iScheduleLookup" target="_blank">交通</a></li>
+            <li><a href="http://www.drivebc.com/redirect_v1.html?mapId=320738290&viewFinderMapId=0&navMode=&scale=500000&mapImageX=271&mapImageY=113&eventId=&district=&ferry=on&camera=on&planned=on&current=on&roadConditions=on&trafficIncidents=on&chkbxRoadConditions=on&chkbxTrafficIncidents=on&chkbxCurrent=on&chkbxPlanned=on&chkbxCamera=on&chkbxFerry=on" target="_blank">路况</a></li>
+            <li><a href="http://www.olg.ca/lotteries/viewWinningNumbers.do" target="_blank">彩票</a></li>
         </ul>
-        </div>
+    </div>
     </nav>
 		<!--{if !IS_ROBOT}-->
 			<!--{if $_G['uid']}-->
@@ -230,3 +249,4 @@
         <!--{hook/global_header}-->
 	<!--{/if}-->
 <style id="diy_style" type="text/css"></style>
+<div class="wrapper">

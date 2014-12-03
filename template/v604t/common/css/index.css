@@ -150,7 +150,7 @@ table.menu td:first-child,table.menu tr:first-child { border:none; }
 
 .box5 .leftBar .twoList dt,
 .box2 .textListTwo .twoList dt,
-.box1 .newZxList .twoList dt { margin-top:5px; overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}/*box5 合并的在这*/
+.box1 .newZxList .twoList dt { margin-top:5px; overflow: hidden;white-space: nowrap;text-overflow: ellipsis;word-wrap: normal;}/*box5 合并的在这*/
 
 .box5 .leftBar .twoList dt a,
 .box2 .textListTwo .twoList dt a,

@@ -113,7 +113,7 @@ $my_credit = fetch_all("common_member_count"," WHERE uid='{$uid}'"," extcredits{
 $my_credit = $my_credit["extcredits{$sale_config['extcredits']}"];
 //var_dump(submitcheck('post_submit'));var_dump(submitcheck('edit_submit'));exit;
 if(submitcheck('post_submit') || submitcheck('edit_submit')){
-    
+//    error_reporting(E_ALL);
     //所属区域是否为空
     if (empty($_GET['province']) && $ac == 'post') {
         showmessage($_lang['must_province']);
@@ -139,16 +139,16 @@ if(submitcheck('post_submit') || submitcheck('edit_submit')){
     if (empty($_GET['member_phone'])) {
         showmessage($_lang['must_member_phone']);
     //联系电话是否有效
-    }else if (!isPhone($_GET['member_phone'])){
-        showmessage('联系电话无效，请重新输入。电话格式:XXX-XXX-XXXX');
+    }else if (!v604_IsPhone($_GET['member_phone'])){
+        showmessage("联系电话无效，请重新输入！例如：888-888-8888");
     }
     
     //电子邮箱是否为空
     if (empty($_GET['member_email'])) {
         showmessage($_lang['must_member_phone']);
     //电子邮箱是否有效
-    }else if (!isEmail($_GET['member_email'])){
-        showmessage('电子邮件无效，请重新输入。邮件格式:test@van604.com');
+    }else if (!v604_IsEmail($_GET['member_email'])){
+        showmessage('电子邮件无效，请重新输入！邮件格式：test@van604.com');
     }
     
     $goods_array = gpc('goods_');

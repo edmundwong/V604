@@ -4,14 +4,14 @@
 .chongfu1{ float:left;margin-left:10px;margin-top:5px}
 .chongfu2{ float:left; width:360px; margin:0 10px 0 20px;}
 .chongfu3{ float:right;}
-.chongfu1_list li a{color:#262626; font-size:14px;overflow: hidden;white-space: nowrap;}
+.chongfu1_list li a{color:#262626; font-size:14px;overflow: hidden;white-space: nowrap;word-wrap: normal;}
 .chongfu2_liebiao ul{ margin-bottom:5px;}
-.chongfu2_liebiao li a{ font-size:14px; color:#3d3d45;overflow: hidden;white-space: nowrap;}
+.chongfu2_liebiao li a{ font-size:14px; color:#3d3d45;overflow: hidden;white-space: nowrap;word-wrap: normal;}
 .chongfu2_liebiao li span:last-child{float:right;color:#9c9c9c;}
 .chongfu2_liebiao li span:first-child{width: 260px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;display:inline-block;
-line-height:16px
+line-height:16px;
 }
 

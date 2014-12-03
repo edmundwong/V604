@@ -3,6 +3,7 @@
 body { font:12px/22px "微软雅黑";  background: url("") no-repeat scroll 50% 0 #ffffff;}
 ul{
 text-overflow:ellipsis;
+word-wrap: normal;
 }
 header{padding-bottom: 5px !important;}
 .wrapper{width:1000px !important; margin:auto !important;}
@@ -62,7 +63,8 @@ background:#fc6328 !important;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    word-wrap: normal;
 }
-
 .v604_adv_inline{}
 .v604_adv_inline div{display:inline-block;}
+

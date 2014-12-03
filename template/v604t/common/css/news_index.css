@@ -84,6 +84,7 @@ margin: 5px 0;
 .news_right li div p{
 height:50px;
 text-overflow:ellipsis;
+word-wrap: normal;
 }
 .news_right li div a {
 color: #9c9c9c;
@@ -92,7 +93,7 @@ color: #9c9c9c;
 width: 260px;
 overflow: hidden;
 /*white-space: nowrap;*/
-text-overflow: ellipsis;display:inline-block;
+text-overflow: ellipsis;display:inline-block;word-wrap: normal;
 line-height:16px
 }
 .newZxList .shreeList li{
@@ -103,6 +104,7 @@ width: 190px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 line-height:16px;
 display: inline-block;
 }

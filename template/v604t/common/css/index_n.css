@@ -1,6 +1,4 @@
-/*
-修改后样式
-*/
+
 .twoList dt:first-child{
 margin-top:5px !important
 }
@@ -93,53 +91,61 @@ width: 330px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 }
 .meishi  li{
 width: 300px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 }
 .luntan  li{
 width: 300px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 }
 .middleBar li{
 width: 230px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 }
 .imgList li{
 width: 250px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 }
 .newHyList li{
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 }
 .box1 .newGgList li dt  {
-
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 }
 .name p{
 width:180px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 }
 .leftBar p, .leftBar dt{
 width:250px;
 overflow: hidden;
 white-space: nowrap;
 text-overflow: ellipsis;
+word-wrap: normal;
 }
 dt{
 font-weight:bold;

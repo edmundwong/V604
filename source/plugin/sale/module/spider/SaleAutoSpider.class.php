@@ -133,7 +133,7 @@ class SaleAutoSpider {
 //        sleep($this->_i_wait_second);
     }
     
-    private function addLog($sMsg, $bOnlyMsg=false){        
+    public function addLog($sMsg, $bOnlyMsg=false){        
         if ($bOnlyMsg){
             $sMsg = "$sMsg \r\n";
         }else{
